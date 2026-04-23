@@ -1,5 +1,5 @@
 ```markdown
-# Intelligent Project Management System
+# Intelligent Project Management System for Undergraduate Students
 
 A comprehensive MERN and FastAPI stack application for managing undergraduate research projects, featuring intelligent team formation, feasibility analysis, and progress tracking.
 
