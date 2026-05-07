@@ -1,0 +1,6 @@
+__pycache__/
+*.pdf
+*.docx
+datasets/
+models/t5_wbs_final/model.safetensors
+models/t5_wbs_parser/
