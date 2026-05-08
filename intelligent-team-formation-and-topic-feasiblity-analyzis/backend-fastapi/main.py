@@ -1,6 +1,8 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+import numpy as np
+from deap import base, creator, tools, algorithms
 import pandas as pd
 import os
 import random
@@ -47,6 +49,15 @@ except Exception as e:
     print(f"⚠️ Warning: Could not load ML model: {e}")
     feasibility_model = None
 
+# ---------------------------------------------------------
+# 2.5 DEAP Genetic Algorithm Blueprint (NSGA-II)
+# ---------------------------------------------------------
+# We want to MINIMIZE 3 things: Skill Deficits, Redundancy, and Power Imbalance
+if not hasattr(creator, "FitnessMulti"):
+    creator.create("FitnessMulti", base.Fitness, weights=(-1.0, -1.0, -1.0)) 
+
+if not hasattr(creator, "Individual"):
+    creator.create("Individual", list, fitness=creator.FitnessMulti)
 # ---------------------------------------------------------
 # 3. Define the Request Schemas (Pydantic)
 # ---------------------------------------------------------
@@ -154,70 +165,115 @@ def calculate_feasibility(data: FeasibilityRequest):
 @app.post("/api/ml/optimize-teams")
 def optimize_team_formation(data: TeamFormationRequest):
     """
-    Multi-Objective Grouping Algorithm.
-    Balances technical skill coverage and academic history to form optimal project teams.
+    NSGA-II Multi-Objective Grouping Algorithm.
+    Evolves optimal teams by minimizing skill deficits, minimizing redundancy, and balancing power scores.
     """
     if df_students is None:
         raise HTTPException(status_code=500, detail="Dataset not loaded.")
 
-    # 1. Grab a random pool of students to simulate a class registering for this topic
     if data.total_students > len(df_students):
-         raise HTTPException(status_code=400, detail="Requested more students than available in database.")
-         
+         raise HTTPException(status_code=400, detail="Requested more students than available.")
+
+    # 1. Grab the student pool and calculate base power scores
     pool = df_students.sample(data.total_students).to_dict('records')
-    
-    # 2. Calculate a "Power Score" for each student
-    for student in pool:
-        academic_strength = (student['Previous_Scores'] / 100) + (student['Attendance'] / 100)
-        
-        tech_match = 0
-        if student['Skill_React'] >= data.topic_requirements.Skill_React: tech_match += 1
-        if student['Skill_NodeJS'] >= data.topic_requirements.Skill_NodeJS: tech_match += 1
-        if student['Skill_Python'] >= data.topic_requirements.Skill_Python: tech_match += 1
-        if student['Skill_MongoDB'] >= data.topic_requirements.Skill_MongoDB: tech_match += 1
-        
-        student['power_score'] = academic_strength + tech_match
+    for i, student in enumerate(pool):
+        student['student_id'] = f"STU-{random.randint(1000,9999)}"
+        student['power_score'] = (student['Previous_Scores'] / 100) + (student['Attendance'] / 100)
+        # Add index to track them during evolution
+        student['pool_idx'] = i 
 
-    # Sort students from strongest to weakest overall profile
-    pool.sort(key=lambda x: x['power_score'], reverse=True)
-
-    # 3. Initialize empty teams
     num_teams = max(1, data.total_students // data.team_size)
-    teams = [{"team_id": f"Team-{i+1}", "members": [], "stats": {}} for i in range(num_teams)]
+    reqs = data.topic_requirements
 
-    # 4. Multi-Objective Snake Draft (Distribute talent evenly)
-    direction = 1
-    team_idx = 0
+    # 2. The Fitness Function (The 3 Objectives)
+    def evaluate_teams(individual):
+        # Decode the individual (a shuffled list of indices) into teams
+        teams = [individual[i:i + data.team_size] for i in range(0, len(individual), data.team_size)]
+        
+        total_deficit = 0
+        total_redundancy = 0
+        team_powers = []
+
+        for team_indices in teams:
+            team_members = [pool[idx] for idx in team_indices]
+            
+            # Aggregate skills for this specific team
+            t_react = sum(m['Skill_React'] for m in team_members)
+            t_node = sum(m['Skill_NodeJS'] for m in team_members)
+            t_py = sum(m['Skill_Python'] for m in team_members)
+            t_mongo = sum(m['Skill_MongoDB'] for m in team_members)
+            
+            # Objective 1: Minimize Deficit (Are they missing required skills?)
+            total_deficit += max(0, reqs.Skill_React - t_react)
+            total_deficit += max(0, reqs.Skill_NodeJS - t_node)
+            total_deficit += max(0, reqs.Skill_Python - t_py)
+            total_deficit += max(0, reqs.Skill_MongoDB - t_mongo)
+            
+            # Objective 2: Minimize Redundancy (Do they have too many overlapping skills?)
+            total_redundancy += max(0, t_react - reqs.Skill_React)
+            total_redundancy += max(0, t_node - reqs.Skill_NodeJS)
+            total_redundancy += max(0, t_py - reqs.Skill_Python)
+            total_redundancy += max(0, t_mongo - reqs.Skill_MongoDB)
+            
+            # Objective 3: Balance Power (Calculate average power to find variance)
+            avg_power = sum(m['power_score'] for m in team_members) / len(team_members)
+            team_powers.append(avg_power)
+
+        # We want the variance between team powers to be as close to 0 as possible
+        power_imbalance = np.var(team_powers) * 100 
+
+        return (total_deficit, total_redundancy, power_imbalance)
+
+    # 3. Setup the Evolutionary Toolbox
+    toolbox = base.Toolbox()
+    # An individual is just a shuffled list of student indices (e.g., [3, 11, 1, 5, ...])
+    toolbox.register("indices", random.sample, range(data.total_students), data.total_students)
+    toolbox.register("individual", tools.initIterate, creator.Individual, toolbox.indices)
+    toolbox.register("population", tools.initRepeat, list, toolbox.individual)
     
-    for student in pool:
-        teams[team_idx]['members'].append({
-            "student_id": f"STU-{random.randint(1000,9999)}",
-            "power_score": round(student['power_score'], 2),
-            "skills": {
-                "React": student['Skill_React'],
-                "NodeJS": student['Skill_NodeJS'],
-                "Python": student['Skill_Python'],
-                "MongoDB": student['Skill_MongoDB']
+    toolbox.register("evaluate", evaluate_teams)
+    # Custom mutation: Swap two random students between teams
+    toolbox.register("mate", tools.cxPartialyMatched)
+    toolbox.register("mutate", tools.mutShuffleIndexes, indpb=0.1)
+    toolbox.register("select", tools.selNSGA2) # <-- The NSGA-II Magic!
+
+    # 4. Run the Evolution!
+    pop = toolbox.population(n=50) # Create 50 random class configurations
+    algorithms.eaSimple(pop, toolbox, cxpb=0.5, mutpb=0.2, ngen=30, verbose=False)
+
+    # 5. Extract the absolute best configuration (Pareto Front)
+    best_ind = tools.selBest(pop, 1)[0]
+    
+    # 6. Format the winning DNA back into JSON for React
+    final_teams_indices = [best_ind[i:i + data.team_size] for i in range(0, len(best_ind), data.team_size)]
+    formatted_teams = []
+
+    for i, t_indices in enumerate(final_teams_indices):
+        members = [pool[idx] for idx in t_indices]
+        
+        formatted_teams.append({
+            "team_id": f"Team-{i+1}",
+            "members": [{
+                "student_id": m['student_id'],
+                "power_score": round(m['power_score'], 2),
+                "skills": {
+                    "React": m['Skill_React'],
+                    "NodeJS": m['Skill_NodeJS'],
+                    "Python": m['Skill_Python'],
+                    "MongoDB": m['Skill_MongoDB']
+                }
+            } for m in members],
+            "stats": {
+                "avg_power": round(sum(m['power_score'] for m in members) / len(members), 2),
+                "total_react": sum(m['Skill_React'] for m in members),
+                "total_node": sum(m['Skill_NodeJS'] for m in members),
+                "total_python": sum(m['Skill_Python'] for m in members),
+                "total_mongo": sum(m['Skill_MongoDB'] for m in members)
             }
         })
-        
-        team_idx += direction
-        if team_idx >= num_teams or team_idx < 0:
-            direction *= -1
-            team_idx += direction
-
-    # 5. Calculate Aggregate Team Vectors
-    for team in teams:
-        team['stats'] = {
-            "avg_power": round(sum(m['power_score'] for m in team['members']) / len(team['members']), 2),
-            "total_react": sum(m['skills']['React'] for m in team['members']),
-            "total_node": sum(m['skills']['NodeJS'] for m in team['members']),
-            "total_python": sum(m['skills']['Python'] for m in team['members']),
-            "total_mongo": sum(m['skills']['MongoDB'] for m in team['members'])
-        }
 
     return {
-        "algorithm": "Greedy Vector Balancing",
+        "algorithm": "NSGA-II Genetic Algorithm",
         "total_teams_formed": num_teams,
-        "teams": teams
+        "teams": formatted_teams
     }
