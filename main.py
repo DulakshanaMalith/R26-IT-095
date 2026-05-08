@@ -11,6 +11,9 @@ import numpy as np
 import pandas as pd
 from datetime import datetime, timedelta
 from contextlib import asynccontextmanager
+import sqlite3
+import json
+import re
 
 from fastapi import FastAPI, HTTPException, File, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
@@ -29,6 +32,21 @@ except ImportError:
     HAS_PYPDF2 = False
 from pydantic import BaseModel, Field
 from transformers import T5ForConditionalGeneration, T5Tokenizer
+
+# Initialize SQLite database for Schedule Drift Analytics (Novelty 5)
+def init_db():
+    conn = sqlite3.connect("schedule_drift.db")
+    c = conn.cursor()
+    c.execute('''CREATE TABLE IF NOT EXISTS schedule_versions
+                 (id INTEGER PRIMARY KEY AUTOINCREMENT, 
+                  project_id TEXT, 
+                  version INTEGER, 
+                  schedule_json TEXT, 
+                  created_at TEXT)''')
+    conn.commit()
+    conn.close()
+
+init_db()
 
 sys.stdout.reconfigure(encoding="utf-8")
 warnings.filterwarnings("ignore")
@@ -123,11 +141,19 @@ class ExternalRiskSignal(BaseModel):
     days_inactive: int
     severity: str
 
+class GithubCommit(BaseModel):
+    message: str
+    timestamp: str
+
+class GithubWebhookPayload(BaseModel):
+    ref: str
+    commits: list[GithubCommit]
+    repository: dict
 
 # ════════════════════════════════════════════════════════════════════════════
 # 4. ML PIPELINE HELPER FUNCTIONS
 # ════════════════════════════════════════════════════════════════════════════
-import re as _re
+# ════════════════════════════════════════════════════════════════════════════
 
 # Standard WBS phases used as smart fallback for academic IT projects
 _STANDARD_WBS = [
@@ -148,10 +174,10 @@ def _is_valid_task(name: str) -> bool:
     if len(name) < 6 or len(name) > 65:
         return False
     # Reject names with version numbers or decimal numbers (e.g. L6 V2, 0.85, 3.1)
-    if _re.search(r'\b\d+\.\d+\b|\bv\d+\b|\bl\d+\b|\b\d{4}\b', name.lower()):
+    if re.search(r'\b\d+\.\d+\b|\bv\d+\b|\bl\d+\b|\b\d{4}\b', name.lower()):
         return False
     # Reject all-caps acronyms as standalone names
-    if _re.fullmatch(r'[A-Z]{2,}(\s[A-Z]{2,})*', name):
+    if re.fullmatch(r'[A-Z]{2,}(\s[A-Z]{2,})*', name):
         return False
     # Reject known noise tokens
     noise = ['figure', 'table', 'http', 'www', 'et al', 'ibid', 'chapter', 'section',
@@ -247,7 +273,6 @@ def estimate_durations(tasks: list[str], team_size: int, duration_months: float,
 def predict_delay_risks(tasks: list[str], efforts: list[float], team_size: int, duration_months: float) -> list[dict]:
     """Blends JIRA logistic regression probability with capacity-based risk for realistic flags."""
     lr_pipe = models["logreg"]
-    thresh = models["logreg_thresh"]
 
     total_working_days = duration_months * 22  # ~22 working days per month
     days_per_task = total_working_days / len(tasks)
@@ -358,7 +383,6 @@ async def upload_pdf(file: UploadFile = File(...)):
         try:
             raw = content.decode("latin-1", errors="ignore")
             # Pull printable ASCII fragments only
-            import re
             fragments = re.findall(r'[A-Za-z][A-Za-z0-9 ,.;:\-\(\)]{10,}', raw)
             text = " ".join(fragments)
             print(f"  [PDF] Raw decode fallback: {len(text)} chars")
@@ -374,7 +398,9 @@ async def upload_pdf(file: UploadFile = File(...)):
                    "If it is a scanned image PDF, please copy-paste the text manually."
         )
 
-    return {"extracted_text": clean_text[:15000]}
+    # NOVELTY FIX: Removing the 15,000 character limit so the entire thesis 
+    # document is sent to the extraction pipeline!
+    return {"extracted_text": clean_text}
 
 @app.post("/api/schedule/generate", response_model=ScheduleResponse)
 def generate_schedule(req: ProjectRequest):
@@ -417,6 +443,20 @@ def generate_schedule(req: ProjectRequest):
         # Next task starts the day after current task ends (simplified finish-to-start)
         current_date = end_date + timedelta(days=1)
 
+    # NOVELTY 5: Persistent Storage for Schedule Drift Analytics
+    # Save this generated version to the database so we can compare it to future changes
+    schedule_data = [s.model_dump() if hasattr(s, 'model_dump') else s.dict() for s in schedule_items]
+    try:
+        conn = sqlite3.connect("schedule_drift.db")
+        c = conn.cursor()
+        c.execute("INSERT INTO schedule_versions (project_id, version, schedule_json, created_at) VALUES (?, ?, ?, ?)",
+                  ("demo_project_01", 1, json.dumps(schedule_data), datetime.now().isoformat()))
+        conn.commit()
+        conn.close()
+        print("  [Novelty 5] Saved schedule version to SQLite for Drift Analytics.")
+    except Exception as e:
+        print(f"  [Novelty 5] DB Save Error: {e}")
+
     return ScheduleResponse(
         project_summary=req.description[:100] + "...",
         team_size=req.team_size,
@@ -441,6 +481,99 @@ def receive_risk_signal(signal: ExternalRiskSignal):
         "status": "Signal received and processed",
         "action_taken": "LSTM Proactive Rescheduling Triggered (Simulated)",
         "group_id": signal.group_id
+    }
+
+@app.post("/api/webhooks/github")
+def github_webhook(payload: GithubWebhookPayload):
+    """
+    PHASE 1 & 2: GitHub Webhook + Semantic Task Matching
+    Automatically maps incoming commits to WBS tasks and updates the schedule.
+    """
+    from difflib import SequenceMatcher
+    
+    if not payload.commits:
+        return {"status": "ignored", "reason": "No commits found"}
+
+    latest_commit = payload.commits[-1]
+    commit_message = latest_commit.message.lower()
+
+    # 1. Load the latest active schedule from the database
+    conn = sqlite3.connect("schedule_drift.db")
+    c = conn.cursor()
+    c.execute("SELECT version, schedule_json FROM schedule_versions WHERE project_id = 'demo_project_01' ORDER BY version DESC LIMIT 1")
+    row = c.fetchone()
+    
+    if not row:
+        conn.close()
+        return {"status": "error", "reason": "No active schedule found for project."}
+    
+    current_version, schedule_json_str = row
+    schedule_data = json.loads(schedule_json_str)
+
+    # 2. Semantic Task Matching (Lightweight SBERT simulation using SequenceMatcher)
+    matched_task = None
+    highest_sim = 0.0
+    
+    for task in schedule_data:
+        # Ignore already completed tasks
+        if task.get("status") == "COMPLETED":
+            continue
+            
+        # Calculate similarity between commit message and task name
+        sim = SequenceMatcher(None, commit_message, task["task_name"].lower()).ratio()
+        
+        # Check for keyword overlap (simulating NLP token matching)
+        commit_words = set(re.findall(r'\w+', commit_message))
+        task_words = set(re.findall(r'\w+', task["task_name"].lower()))
+        overlap = len(commit_words.intersection(task_words))
+        
+        if overlap > 0:
+            sim += 0.3 * overlap  # Boost similarity if keywords match (e.g. 'database', 'frontend')
+            
+        if sim > highest_sim and sim > 0.4:  # Threshold for a match
+            highest_sim = sim
+            matched_task = task
+
+    if not matched_task:
+        conn.close()
+        return {"status": "ignored", "reason": "Commit did not semantically match any pending task"}
+
+    # 3. Task Completed! Execute Adaptive "Auto-Rescheduling" Loop
+    print(f"\n✅ [AUTO-TRACK] Commit '{commit_message}' mapped to task -> {matched_task['task_name']} (Sim: {highest_sim:.2f})")
+    matched_task["status"] = "COMPLETED"
+    matched_task["actual_completion_date"] = datetime.now().isoformat()
+    
+    # Calculate Velocity: Did they finish early or late?
+    planned_end = datetime.strptime(matched_task["end_date"], "%Y-%m-%d")
+    days_diff = (datetime.now() - planned_end).days
+    
+    if days_diff > 0:
+        print(f"  ⚠️ Task completed {days_diff} days LATE. Triggering Parkinson's Tightening Factor on remaining tasks...")
+        # Reduce remaining durations by 10% (Tightening Factor Novelty)
+        for t in schedule_data:
+            if t.get("status") != "COMPLETED":
+                t["duration_days"] = max(1, int(t["duration_days"] * 0.90))
+    elif days_diff < 0:
+        print(f"  ⚡ Task completed {-days_diff} days EARLY. Pulling schedule forward (BEDF)...")
+        # Pull forward BEDF novelty
+        for t in schedule_data:
+            if t.get("status") != "COMPLETED":
+                t["duration_days"] = max(1, int(t["duration_days"] * 0.95))
+
+    # 4. Save to Database (Schedule Drift Analytics - Novelty 5)
+    new_version = current_version + 1
+    c.execute("INSERT INTO schedule_versions (project_id, version, schedule_json, created_at) VALUES (?, ?, ?, ?)",
+              ("demo_project_01", new_version, json.dumps(schedule_data), datetime.now().isoformat()))
+    conn.commit()
+    conn.close()
+
+    print(f"  💾 Saved Drift Analytics Version {new_version} to Database.")
+    
+    return {
+        "status": "success",
+        "matched_task": matched_task["task_name"],
+        "adaptive_action": "Tightened remaining deadlines" if days_diff > 0 else "Pulled schedule forward",
+        "new_schedule_version": new_version
     }
 
 if __name__ == "__main__":
