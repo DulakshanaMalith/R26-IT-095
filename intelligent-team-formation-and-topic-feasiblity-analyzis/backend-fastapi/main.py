@@ -12,7 +12,7 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# Allow your React frontend to communicate with this API later
+# Allow your React frontend to communicate with this API
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"], # Change this to your React app's URL in production
@@ -48,7 +48,7 @@ except Exception as e:
     feasibility_model = None
 
 # ---------------------------------------------------------
-# 3. Define the Request Schema (Pydantic)
+# 3. Define the Request Schemas (Pydantic)
 # ---------------------------------------------------------
 class FeasibilityRequest(BaseModel):
     Hours_Studied: float
@@ -59,6 +59,17 @@ class FeasibilityRequest(BaseModel):
     Skill_NodeJS: int
     Skill_Python: int
     Skill_MongoDB: int
+
+class TopicRequirements(BaseModel):
+    Skill_React: int
+    Skill_NodeJS: int
+    Skill_Python: int
+    Skill_MongoDB: int
+
+class TeamFormationRequest(BaseModel):
+    team_size: int
+    total_students: int
+    topic_requirements: TopicRequirements
 
 # ---------------------------------------------------------
 # 4. API Endpoints
@@ -126,8 +137,8 @@ def calculate_feasibility(data: FeasibilityRequest):
     # Convert the raw score into a clean "Feasibility Percentage"
     feasibility_percentage = min(max((predicted_score / 100) * 100, 0), 100)
 
-    # Determine risk category
-    if feasibility_percentage >= 75:
+    # Determine risk category (Adjusted to 70% threshold)
+    if feasibility_percentage >= 70:
         risk_level = "Low Risk (Highly Feasible)"
     elif feasibility_percentage >= 50:
         risk_level = "Medium Risk (Feasible with support)"
@@ -138,4 +149,75 @@ def calculate_feasibility(data: FeasibilityRequest):
         "predicted_score": round(predicted_score, 2),
         "feasibility_percentage": round(feasibility_percentage, 2),
         "risk_assessment": risk_level
+    }
+
+@app.post("/api/ml/optimize-teams")
+def optimize_team_formation(data: TeamFormationRequest):
+    """
+    Multi-Objective Grouping Algorithm.
+    Balances technical skill coverage and academic history to form optimal project teams.
+    """
+    if df_students is None:
+        raise HTTPException(status_code=500, detail="Dataset not loaded.")
+
+    # 1. Grab a random pool of students to simulate a class registering for this topic
+    if data.total_students > len(df_students):
+         raise HTTPException(status_code=400, detail="Requested more students than available in database.")
+         
+    pool = df_students.sample(data.total_students).to_dict('records')
+    
+    # 2. Calculate a "Power Score" for each student
+    for student in pool:
+        academic_strength = (student['Previous_Scores'] / 100) + (student['Attendance'] / 100)
+        
+        tech_match = 0
+        if student['Skill_React'] >= data.topic_requirements.Skill_React: tech_match += 1
+        if student['Skill_NodeJS'] >= data.topic_requirements.Skill_NodeJS: tech_match += 1
+        if student['Skill_Python'] >= data.topic_requirements.Skill_Python: tech_match += 1
+        if student['Skill_MongoDB'] >= data.topic_requirements.Skill_MongoDB: tech_match += 1
+        
+        student['power_score'] = academic_strength + tech_match
+
+    # Sort students from strongest to weakest overall profile
+    pool.sort(key=lambda x: x['power_score'], reverse=True)
+
+    # 3. Initialize empty teams
+    num_teams = max(1, data.total_students // data.team_size)
+    teams = [{"team_id": f"Team-{i+1}", "members": [], "stats": {}} for i in range(num_teams)]
+
+    # 4. Multi-Objective Snake Draft (Distribute talent evenly)
+    direction = 1
+    team_idx = 0
+    
+    for student in pool:
+        teams[team_idx]['members'].append({
+            "student_id": f"STU-{random.randint(1000,9999)}",
+            "power_score": round(student['power_score'], 2),
+            "skills": {
+                "React": student['Skill_React'],
+                "NodeJS": student['Skill_NodeJS'],
+                "Python": student['Skill_Python'],
+                "MongoDB": student['Skill_MongoDB']
+            }
+        })
+        
+        team_idx += direction
+        if team_idx >= num_teams or team_idx < 0:
+            direction *= -1
+            team_idx += direction
+
+    # 5. Calculate Aggregate Team Vectors
+    for team in teams:
+        team['stats'] = {
+            "avg_power": round(sum(m['power_score'] for m in team['members']) / len(team['members']), 2),
+            "total_react": sum(m['skills']['React'] for m in team['members']),
+            "total_node": sum(m['skills']['NodeJS'] for m in team['members']),
+            "total_python": sum(m['skills']['Python'] for m in team['members']),
+            "total_mongo": sum(m['skills']['MongoDB'] for m in team['members'])
+        }
+
+    return {
+        "algorithm": "Greedy Vector Balancing",
+        "total_teams_formed": num_teams,
+        "teams": teams
     }
