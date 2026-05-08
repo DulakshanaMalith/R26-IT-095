@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 
 export default function TeamOptimizer() {
   const [formData, setFormData] = useState({
@@ -24,7 +25,6 @@ export default function TeamOptimizer() {
   const optimizeTeams = async () => {
     setLoading(true);
     
-    // Format the payload to match the FastAPI Pydantic schema
     const payload = {
       team_size: formData.team_size,
       total_students: formData.total_students,
@@ -41,7 +41,7 @@ export default function TeamOptimizer() {
       setResult(response.data);
     } catch (error) {
       console.error("Error optimizing teams:", error);
-      alert("Failed to connect to the ML engine. Check your total students limit!");
+      alert("Failed to connect to the ML engine.");
     }
     setLoading(false);
   };
@@ -53,7 +53,6 @@ export default function TeamOptimizer() {
       </h2>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Class Configuration */}
         <div className="space-y-4 bg-blue-50 p-5 rounded-lg border border-blue-100">
           <h3 className="font-semibold text-blue-800">Class constraints</h3>
           <div className="flex justify-between items-center">
@@ -66,7 +65,6 @@ export default function TeamOptimizer() {
           </div>
         </div>
 
-        {/* Project Requirements */}
         <div className="space-y-4 bg-gray-50 p-5 rounded-lg border border-gray-100">
           <h3 className="font-semibold text-gray-700">Project Tech Requirements (1-5)</h3>
           <div className="grid grid-cols-2 gap-4">
@@ -89,7 +87,6 @@ export default function TeamOptimizer() {
         </button>
       </div>
 
-      {/* Visualizer Dashboard */}
       {result && (
         <div className="mt-10 animate-fade-in-up">
           <div className="flex justify-between items-center mb-6">
@@ -99,38 +96,49 @@ export default function TeamOptimizer() {
             </span>
           </div>
           
-          {/* Team Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {result.teams.map((team, index) => (
-              <div key={index} className="bg-white border-2 border-slate-100 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                {/* Card Header */}
-                <div className="bg-slate-800 text-white p-4 flex justify-between items-center">
-                  <h4 className="font-bold text-lg">{team.team_id}</h4>
-                  <div className="text-right">
-                    <p className="text-xs text-slate-400">Avg Power</p>
-                    <p className="font-mono font-bold text-emerald-400">{team.stats.avg_power}</p>
+            {result.teams.map((team, index) => {
+              
+              // Map the team stats into the specific format Recharts needs for the Radar Chart
+              const chartData = [
+                { subject: 'React', value: team.stats.total_react },
+                { subject: 'NodeJS', value: team.stats.total_node },
+                { subject: 'Python', value: team.stats.total_python },
+                { subject: 'MongoDB', value: team.stats.total_mongo },
+              ];
+
+              return (
+                <div key={index} className="bg-white border-2 border-slate-100 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                  <div className="bg-slate-800 text-white p-4 flex justify-between items-center">
+                    <h4 className="font-bold text-lg">{team.team_id}</h4>
+                    <div className="text-right">
+                      <p className="text-xs text-slate-400">Avg Power</p>
+                      <p className="font-mono font-bold text-emerald-400">{team.stats.avg_power}</p>
+                    </div>
+                  </div>
+
+                  {/* Recharts Radar Visualization */}
+                  <div className="h-48 w-full bg-slate-50 border-b border-slate-100 p-2">
+                    <ResponsiveContainer width="100%" height="100%">
+                      <RadarChart cx="50%" cy="50%" outerRadius="70%" data={chartData}>
+                        <PolarGrid stroke="#cbd5e1" />
+                        <PolarAngleAxis dataKey="subject" tick={{ fill: '#475569', fontSize: 11, fontWeight: 600 }} />
+                        <Radar name="Skills" dataKey="value" stroke="#4f46e5" fill="#6366f1" fillOpacity={0.5} />
+                      </RadarChart>
+                    </ResponsiveContainer>
+                  </div>
+                  
+                  <div className="p-4 space-y-3 max-h-48 overflow-y-auto">
+                    {team.members.map((member, mIdx) => (
+                      <div key={mIdx} className="flex justify-between items-center p-2 bg-white rounded border border-slate-100 shadow-sm">
+                        <span className="font-mono text-sm text-slate-600">{member.student_id}</span>
+                        <span className="font-mono text-sm font-bold text-indigo-600">{member.power_score}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
-                
-                {/* Team Members */}
-                <div className="p-4 space-y-3">
-                  {team.members.map((member, mIdx) => (
-                    <div key={mIdx} className="flex justify-between items-center p-2 bg-slate-50 rounded border border-slate-100">
-                      <span className="font-mono text-sm text-slate-600">{member.student_id}</span>
-                      <span className="font-mono text-sm font-bold text-indigo-600">{member.power_score}</span>
-                    </div>
-                  ))}
-                </div>
-                
-                {/* Aggregate Skills Footer */}
-                <div className="bg-slate-100 p-3 flex justify-around text-xs font-mono text-slate-500 border-t border-slate-200">
-                  <span>Re:{team.stats.total_react}</span>
-                  <span>No:{team.stats.total_node}</span>
-                  <span>Py:{team.stats.total_python}</span>
-                  <span>Mo:{team.stats.total_mongo}</span>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       )}
