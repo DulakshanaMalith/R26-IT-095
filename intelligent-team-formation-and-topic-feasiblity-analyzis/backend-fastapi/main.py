@@ -143,7 +143,8 @@ def calculate_feasibility(data: FeasibilityRequest):
     ]]
 
     # Ask the AI to predict the score based on its training
-    predicted_score = feasibility_model.predict(input_vector)[0]
+    # Ask the AI to predict the score based on its training (converted to standard float)
+    predicted_score = float(feasibility_model.predict(input_vector)[0])
 
     # Convert the raw score into a clean "Feasibility Percentage"
     feasibility_percentage = min(max((predicted_score / 100) * 100, 0), 100)
