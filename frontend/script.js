@@ -142,11 +142,13 @@ document.addEventListener('DOMContentLoaded', () => {
             // Left Sidebar: Task Info
             const info = document.createElement('div');
             info.className = 'task-info';
+            const shapHtml = task.shap_explanation ? `<div class="shap-explanation" title="${task.shap_explanation}">${task.shap_explanation}</div>` : '';
             info.innerHTML = `
                 <div class="task-name" title="${task.task_name}">${index + 1}. ${task.task_name}</div>
                 <div class="task-meta">${task.effort_hours} hrs | ${task.duration_days} days</div>
+                ${shapHtml}
             `;
-            
+
             // Right Sidebar: Gantt Track
             const track = document.createElement('div');
             track.className = 'task-track';
@@ -183,6 +185,73 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 50 * index); // Stagger animation
 
             currentDayOffset += task.duration_days;
+        });
+    }
+
+    // --- Novelty 10: What-If Simulator ---
+    const btnSimulate = document.getElementById('btnSimulate');
+    if (btnSimulate) {
+        btnSimulate.addEventListener('click', async () => {
+            const intervention = document.getElementById('simIntervention').value;
+            const resContainer = document.getElementById('simResults');
+            btnSimulate.textContent = "Simulating...";
+            btnSimulate.disabled = true;
+
+            try {
+                const response = await fetch('/api/simulate', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ intervention_type: intervention, intervention_value: 1.0 })
+                });
+                
+                if (!response.ok) throw new Error("Need an active schedule first!");
+                const data = await response.json();
+                
+                document.getElementById('simRuns').textContent = data.simulated_runs;
+                document.getElementById('simDuration').textContent = data.mean_new_duration_days.toFixed(1);
+                document.getElementById('simProb').textContent = data.probability_on_time.toFixed(1) + "%";
+                
+                resContainer.classList.remove('hidden');
+            } catch (err) {
+                alert(err.message);
+            } finally {
+                btnSimulate.textContent = "Run Monte Carlo";
+                btnSimulate.disabled = false;
+            }
+        });
+    }
+
+    // --- Novelty 8: Multi-Objective Pareto Schedules ---
+    const btnPareto = document.getElementById('btnPareto');
+    if (btnPareto) {
+        btnPareto.addEventListener('click', async () => {
+            const resContainer = document.getElementById('paretoResults');
+            const tableBody = document.getElementById('paretoTableBody');
+            btnPareto.textContent = "Running NSGA-II...";
+            btnPareto.disabled = true;
+
+            try {
+                const response = await fetch('/api/schedule/pareto', { method: 'POST' });
+                const data = await response.json();
+                
+                tableBody.innerHTML = "";
+                data.pareto_fronts.forEach(opt => {
+                    tableBody.innerHTML += `
+                        <tr>
+                            <td><strong>Option ${opt.option_id}</strong></td>
+                            <td>${opt.duration_days} d</td>
+                            <td>${opt.burnout_variance_score}</td>
+                            <td>${opt.milestone_visibility_score}</td>
+                        </tr>
+                    `;
+                });
+                resContainer.classList.remove('hidden');
+            } catch (err) {
+                alert("Failed to generate Pareto schedules.");
+            } finally {
+                btnPareto.textContent = "Generate NSGA-II Trade-offs";
+                btnPareto.disabled = false;
+            }
         });
     }
 });

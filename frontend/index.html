@@ -135,6 +135,50 @@
                         </div>
                     </div>
 
+                    <!-- ADVANCED AI ANALYTICS (NOVELTIES 8 & 10) -->
+                    <div class="advanced-analytics">
+                        <!-- What-If Simulator (Novelty 10) -->
+                        <div class="analytics-card glass-panel">
+                            <div class="panel-header">
+                                <h2><i class="fa-solid fa-code-branch"></i> What-If Simulation</h2>
+                            </div>
+                            <div class="sim-controls">
+                                <select id="simIntervention">
+                                    <option value="ADD_DEVELOPER">Add 1 Developer</option>
+                                    <option value="EXTEND_SPRINT">Extend Sprints by 20%</option>
+                                </select>
+                                <button id="btnSimulate" class="secondary-btn">Run Monte Carlo</button>
+                            </div>
+                            <div id="simResults" class="sim-results hidden">
+                                <p><strong>Simulated Runs:</strong> <span id="simRuns">1000</span></p>
+                                <p><strong>Mean Expected Duration:</strong> <span id="simDuration">0</span> days</p>
+                                <p><strong>Probability of On-Time Success:</strong> <span id="simProb" style="color: var(--success); font-weight: bold;">0%</span></p>
+                            </div>
+                        </div>
+
+                        <!-- Pareto Options (Novelty 8) -->
+                        <div class="analytics-card glass-panel">
+                            <div class="panel-header">
+                                <h2><i class="fa-solid fa-layer-group"></i> Multi-Objective Pareto Schedules</h2>
+                            </div>
+                            <button id="btnPareto" class="secondary-btn">Generate NSGA-II Trade-offs</button>
+                            <div id="paretoResults" class="pareto-results hidden">
+                                <table class="pareto-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Option</th>
+                                            <th>Duration (Days)</th>
+                                            <th>Burnout Variance</th>
+                                            <th>Milestone Vis.</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="paretoTableBody">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </section>
         </main>
