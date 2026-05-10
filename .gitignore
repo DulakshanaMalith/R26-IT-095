@@ -4,3 +4,7 @@ __pycache__/
 datasets/
 models/t5_wbs_final/model.safetensors
 models/t5_wbs_parser/
+node_modules/
+*.db
+scratch_main.py
+diag_test.py
