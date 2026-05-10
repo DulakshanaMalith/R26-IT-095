@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPMS Risk Prediction</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="app-shell">
+    <header class="app-header">
+        <div>
+            <p class="eyebrow">Intelligent Project Management System</p>
+            <h1>Risk Prediction</h1>
+        </div>
+        <div class="status-chip">ML Model Active</div>
+    </header>
+
+    <main class="workspace">
+        <section class="panel input-panel">
+            <div class="panel-heading">
+                <div>
+                    <p class="eyebrow">Project Signals</p>
+                    <h2>Assessment Input</h2>
+                </div>
+            </div>
+
+            <div class="sample-bar" aria-label="Sample presets">
+                <button type="button" class="sample-button high {% if form_data.sample_profile == 'high' %}active{% endif %}" data-sample="high">High Risk</button>
+                <button type="button" class="sample-button medium {% if form_data.sample_profile == 'medium' %}active{% endif %}" data-sample="medium">Medium Risk</button>
+                <button type="button" class="sample-button low {% if form_data.sample_profile == 'low' %}active{% endif %}" data-sample="low">Low Risk</button>
+            </div>
+
+            <form action="/predict" method="post">
+                <input type="hidden" name="sample_profile" value="{{ form_data.sample_profile }}">
+
+                <div class="form-section">
+                    <h3>Project</h3>
+                    <div class="field-grid">
+                        <label>
+                            <span>Project Name</span>
+                            <input type="text" name="project_name" value="{{ form_data.project_name }}" required>
+                        </label>
+
+                        <label>
+                            <span>Team ID</span>
+                            <input type="text" name="team_id" value="{{ form_data.team_id }}" required>
+                        </label>
+                    </div>
+
+                        <label>
+                            <span>GitHub Repository URL</span>
+                            <input type="url" name="github_url" value="{{ form_data.github_url }}" placeholder="https://github.com/user/repo" required>
+                        </label>
+                </div>
+
+                <div class="form-section">
+                    <h3>Delivery</h3>
+                    <div class="field-grid">
+                        <label>
+                            <span>Overdue Tasks</span>
+                            <input type="number" name="overdue_tasks" value="{{ form_data.overdue_tasks }}" min="0" required>
+                        </label>
+
+                        <label>
+                            <span>Delay Count</span>
+                            <input type="number" name="delay_count" value="{{ form_data.delay_count }}" min="0" required>
+                        </label>
+
+                        <label>
+                            <span>Task Completion Rate (%)</span>
+                            <input type="number" step="0.01" name="task_completion_rate" value="{{ form_data.task_completion_rate }}" min="0" max="100" required>
+                        </label>
+
+                        <label>
+                            <span>Progress Percentage</span>
+                            <input type="number" step="0.01" name="progress_percentage" value="{{ form_data.progress_percentage }}" min="0" max="100" required>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Team Quality</h3>
+                    <div class="field-grid">
+                        <label>
+                            <span>Code Quality Score</span>
+                            <input type="number" step="0.01" name="code_quality_score" value="{{ form_data.code_quality_score }}" min="0" max="100" required>
+                        </label>
+
+                        <label>
+                            <span>Collaboration Score</span>
+                            <input type="number" step="0.01" name="collaboration_score" value="{{ form_data.collaboration_score }}" min="0" max="100" required>
+                        </label>
+
+                        <label>
+                            <span>Overall Contribution Index Score</span>
+                            <input type="number" step="0.01" name="overall_ci_score" value="{{ form_data.overall_ci_score }}" min="0" max="100" required>
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit">Predict Risk</button>
+            </form>
+        </section>
+
+        <section class="panel result-panel">
+            <div class="panel-heading">
+                <div>
+                    <p class="eyebrow">Output</p>
+                    <h2>Prediction Result</h2>
+                </div>
+            </div>
+
+            {% if result %}
+            <div class="result-summary">
+                <div>
+                    <span class="summary-label">Project</span>
+                    <strong>{{ result.project_name }}</strong>
+                </div>
+                <div>
+                    <span class="summary-label">Team</span>
+                    <strong>{{ result.team_id }}</strong>
+                </div>
+            </div>
+
+            <div class="risk-badge {{ result.risk_status|lower|replace(' ', '-') }}">
+                {{ result.risk_status }}
+            </div>
+
+            <div class="metrics-grid">
+                {% for key, value in result.features.items() %}
+                <div class="metric-card">
+                    <span>{{ key|replace('_', ' ')|title }}</span>
+                    <strong>{{ value }}</strong>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="empty-state">
+                <span class="empty-mark"></span>
+                <h3>Ready for Assessment</h3>
+                <p>No prediction has been generated yet.</p>
+            </div>
+            {% endif %}
+        </section>
+    </main>
+</div>
+
+<script>
+    const samples = {
+        high: {
+            sample_profile: "high",
+            project_name: "Legacy Payment Migration",
+            team_id: "TEAM-404",
+            github_url: "https://github.com/ipms-samples/high-risk-demo",
+            overdue_tasks: "12",
+            delay_count: "8",
+            task_completion_rate: "28.00",
+            progress_percentage: "22.00",
+            code_quality_score: "35.00",
+            collaboration_score: "30.00",
+            overall_ci_score: "25.00"
+        },
+        medium: {
+            sample_profile: "medium",
+            project_name: "Student Portal Upgrade",
+            team_id: "TEAM-101",
+            github_url: "https://github.com/ipms-samples/medium-risk-demo",
+            overdue_tasks: "4",
+            delay_count: "3",
+            task_completion_rate: "63.00",
+            progress_percentage: "58.00",
+            code_quality_score: "68.00",
+            collaboration_score: "61.00",
+            overall_ci_score: "64.00"
+        },
+        low: {
+            sample_profile: "low",
+            project_name: "Library Services Dashboard",
+            team_id: "TEAM-208",
+            github_url: "https://github.com/ipms-samples/low-risk-demo",
+            overdue_tasks: "0",
+            delay_count: "0",
+            task_completion_rate: "94.00",
+            progress_percentage: "96.00",
+            code_quality_score: "91.00",
+            collaboration_score: "89.00",
+            overall_ci_score: "93.00"
+        }
+    };
+
+    const form = document.querySelector("form");
+    const buttons = document.querySelectorAll(".sample-button");
+
+    buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+            const sample = samples[button.dataset.sample];
+
+            Object.entries(sample).forEach(([name, value]) => {
+                const field = form.elements[name];
+                if (field) {
+                    field.value = value;
+                }
+            });
+
+            buttons.forEach((item) => item.classList.remove("active"));
+            button.classList.add("active");
+        });
+    });
+
+    form.addEventListener("input", (event) => {
+        if (event.target.name !== "sample_profile") {
+            form.elements.sample_profile.value = "";
+            buttons.forEach((item) => item.classList.remove("active"));
+        }
+    });
+</script>
+
+</body>
+</html>
