@@ -651,3 +651,249 @@ body {
 }
 .task-submit-btn:hover { background: rgba(59,130,246,0.3); }
 .task-bar.completed { background: linear-gradient(90deg, #16a34a, #22c55e) !important; }
+
+/* =====================================================
+   NOVELTY 12: Individual WBS Progress Tracker Styles
+   ===================================================== */
+.progress-tracker-panel {
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+.project-progress-row {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.25rem;
+    background: rgba(0,0,0,0.2);
+    border-radius: 12px;
+    border: 1px solid var(--panel-border);
+    flex-wrap: wrap;
+}
+
+.project-ring-wrapper {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
+}
+
+.ring-label {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.project-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    flex-grow: 1;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+}
+
+.stat-label { color: var(--text-muted); }
+.stat-val { font-weight: 600; color: var(--text-main); }
+
+/* Task Assignment Table */
+.assignment-table {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.assign-row {
+    display: grid;
+    grid-template-columns: 1.5rem 1fr 160px 80px auto;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.65rem 1rem;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--panel-border);
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.assign-row:hover {
+    background: rgba(255,255,255,0.05);
+    border-color: rgba(255,255,255,0.15);
+}
+
+.assign-row.is-completed {
+    opacity: 0.6;
+    border-color: rgba(16,185,129,0.2);
+    background: rgba(16,185,129,0.04);
+}
+
+.assign-task-num {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+.assign-task-name {
+    font-size: 0.88rem;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.assign-select {
+    background: rgba(0,0,0,0.3);
+    border: 1px solid var(--panel-border);
+    border-radius: 6px;
+    padding: 0.35rem 0.5rem;
+    color: var(--text-main);
+    font-size: 0.8rem;
+    cursor: pointer;
+    width: 100%;
+}
+
+.assign-effort {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-align: right;
+    white-space: nowrap;
+}
+
+.btn-complete-task {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+    background: rgba(16,185,129,0.1);
+    border: 1px solid rgba(16,185,129,0.3);
+    color: #10b981;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: var(--transition);
+    white-space: nowrap;
+}
+
+.btn-complete-task:hover {
+    background: rgba(16,185,129,0.25);
+}
+
+.btn-complete-task:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.completed-badge {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+    background: rgba(16,185,129,0.15);
+    border: 1px solid rgba(16,185,129,0.3);
+    color: #34d399;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+
+/* Per-Member Progress Cards */
+.member-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1rem;
+}
+
+.member-card {
+    padding: 1.25rem;
+    background: rgba(0,0,0,0.2);
+    border: 1px solid var(--panel-border);
+    border-radius: 12px;
+    transition: var(--transition);
+}
+
+.member-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255,255,255,0.2);
+}
+
+.member-card.bottleneck {
+    border-color: rgba(239,68,68,0.4);
+    background: rgba(239,68,68,0.05);
+}
+
+.member-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+}
+
+.member-avatar {
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--brand-primary), var(--purple));
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 0.9rem; color: white;
+    flex-shrink: 0;
+}
+
+.member-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-left: 0.6rem;
+    flex-grow: 1;
+}
+
+.member-pct {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--brand-primary);
+}
+
+.member-pct.done { color: var(--success); }
+.member-pct.warning { color: #f59e0b; }
+.member-pct.danger { color: var(--danger); }
+
+.member-progress-bar {
+    width: 100%;
+    height: 6px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 999px;
+    overflow: hidden;
+    margin: 0.6rem 0;
+}
+
+.member-progress-fill {
+    height: 100%;
+    border-radius: 999px;
+    background: var(--brand-primary);
+    transition: width 1s ease;
+}
+
+.member-progress-fill.done { background: var(--success); }
+.member-progress-fill.warning { background: #f59e0b; }
+.member-progress-fill.danger { background: var(--danger); }
+
+.member-stats-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 0.4rem;
+}
+
+.bottleneck-alert {
+    margin-top: 0.75rem;
+    padding: 0.4rem 0.6rem;
+    background: rgba(239,68,68,0.1);
+    border: 1px solid rgba(239,68,68,0.3);
+    border-radius: 6px;
+    font-size: 0.75rem;
+    color: #f87171;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}

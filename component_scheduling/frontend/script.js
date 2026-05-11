@@ -110,6 +110,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Render Gantt
         renderGantt(data.schedule, data.total_duration_days);
+
+        // NOVELTY 12: Initialize the progress tracker with this schedule's tasks
+        initProgressTracker(data.schedule, data.team_size);
     }
 
     function renderGantt(schedule, totalDays) {
@@ -393,3 +396,206 @@ document.getElementById('githubModal').addEventListener('click', (e) => {
 document.getElementById('submitModal').addEventListener('click', (e) => {
     if (e.target === document.getElementById('submitModal')) document.getElementById('submitModal').classList.add('hidden');
 });
+
+// ============================================================
+// NOVELTY 12: Individual WBS Progress Tracker JavaScript
+// ============================================================
+
+// Default team member names (can be changed by user via select)
+const DEFAULT_MEMBERS = ['Alice', 'Bob', 'Charlie', 'Diana', 'Eve', 'Frank'];
+
+// Store current schedule so we can re-reference it
+let currentSchedule = [];
+
+async function initProgressTracker(schedule, teamSize) {
+    currentSchedule = schedule;
+
+    // Reset old assignments on the backend when a new schedule is generated
+    await fetch('/api/progress/reset', { method: 'DELETE' });
+
+    // Build the dropdown options based on team size
+    const memberNames = DEFAULT_MEMBERS.slice(0, teamSize);
+
+    // Render the assignment table
+    renderAssignmentTable(schedule, memberNames);
+
+    // Load any existing progress data (in case of page refresh)
+    loadProgressCards();
+}
+
+function renderAssignmentTable(schedule, memberNames) {
+    const container = document.getElementById('assignmentTable');
+    container.innerHTML = '';
+
+    // Header row
+    const header = document.createElement('div');
+    header.className = 'assign-row';
+    header.style.cssText = 'background:rgba(255,255,255,0.04);font-size:0.78rem;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:0.05em;';
+    header.innerHTML = `
+        <span>#</span>
+        <span>Task Name</span>
+        <span>Assign To</span>
+        <span>Effort</span>
+        <span>Status</span>
+    `;
+    container.appendChild(header);
+
+    schedule.forEach(task => {
+        const isCompleted = task.status === 'COMPLETED';
+        const row = document.createElement('div');
+        row.className = `assign-row ${isCompleted ? 'is-completed' : ''}`;
+        row.id = `assign-row-${task.task_id}`;
+
+        // Member options dropdown
+        const memberOptions = memberNames.map(m =>
+            `<option value="${m}">${m}</option>`
+        ).join('');
+
+        const completeBtn = isCompleted
+            ? `<span class="completed-badge"><i class="fa-solid fa-check"></i> Done</span>`
+            : `<button class="btn-complete-task" data-taskid="${task.task_id}" title="Mark as completed"><i class="fa-solid fa-check"></i> Complete</button>`;
+
+        row.innerHTML = `
+            <span class="assign-task-num">${task.task_id}</span>
+            <span class="assign-task-name" title="${task.task_name}">${task.task_name}</span>
+            <select class="assign-select" data-taskid="${task.task_id}" data-taskname="${task.task_name}" data-effort="${task.effort_hours}">
+                <option value="">-- Assign --</option>
+                ${memberOptions}
+            </select>
+            <span class="assign-effort">${task.effort_hours}h</span>
+            ${completeBtn}
+        `;
+        container.appendChild(row);
+    });
+
+    // Event: when a member is selected from dropdown, auto-assign via API
+    container.addEventListener('change', async (e) => {
+        const sel = e.target.closest('.assign-select');
+        if (!sel) return;
+        const assignedTo = sel.value;
+        if (!assignedTo) return;
+
+        const taskId = parseInt(sel.dataset.taskid);
+        const taskName = sel.dataset.taskname;
+        const effortHours = parseFloat(sel.dataset.effort);
+
+        try {
+            await fetch('/api/progress/assign', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    task_id: taskId,
+                    task_name: taskName,
+                    assigned_to: assignedTo,
+                    effort_hours: effortHours
+                })
+            });
+            // Refresh member cards after assignment
+            loadProgressCards();
+        } catch (err) {
+            console.error('Assignment failed:', err);
+        }
+    });
+
+    // Event: Complete button click
+    container.addEventListener('click', async (e) => {
+        const btn = e.target.closest('.btn-complete-task');
+        if (!btn) return;
+        const taskId = parseInt(btn.dataset.taskid);
+        btn.disabled = true;
+        btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>';
+
+        try {
+            await fetch('/api/progress/task-complete', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ task_id: taskId })
+            });
+
+            // Update the row visually
+            const row = document.getElementById(`assign-row-${taskId}`);
+            if (row) {
+                row.classList.add('is-completed');
+                btn.outerHTML = `<span class="completed-badge"><i class="fa-solid fa-check"></i> Done</span>`;
+            }
+
+            // Refresh progress cards and ring
+            loadProgressCards();
+        } catch (err) {
+            btn.disabled = false;
+            btn.innerHTML = '<i class="fa-solid fa-check"></i> Complete';
+            console.error('Complete task failed:', err);
+        }
+    });
+}
+
+async function loadProgressCards() {
+    try {
+        const res = await fetch('/api/progress/individual');
+        const data = await res.json();
+        renderProgressRing(data.project_progress_pct);
+        renderMemberCards(data);
+        // Update project stats
+        document.getElementById('projectTotalEffort').textContent = `${data.total_effort_hours} hrs`;
+        document.getElementById('projectCompletedEffort').textContent = `${data.completed_effort_hours} hrs`;
+        document.getElementById('projectAssignedTasks').textContent =
+            data.members.reduce((sum, m) => sum + m.total_tasks, 0);
+    } catch (err) {
+        console.error('Progress load failed:', err);
+    }
+}
+
+function renderProgressRing(pct) {
+    const circle = document.getElementById('projectRingCircle');
+    const label = document.getElementById('projectProgressPct');
+    if (!circle || !label) return;
+    const circumference = 314.16;
+    const offset = circumference - (pct / 100) * circumference;
+    circle.style.strokeDashoffset = offset;
+    // Color based on progress
+    circle.style.stroke = pct >= 75 ? '#10b981' : pct >= 40 ? '#3b82f6' : '#f59e0b';
+    label.textContent = `${pct}%`;
+}
+
+function renderMemberCards(data) {
+    const container = document.getElementById('memberCards');
+    if (!data.members || data.members.length === 0) {
+        container.innerHTML = '<p style="color:var(--text-muted);font-size:0.85rem;">Assign tasks above to see individual progress cards.</p>';
+        return;
+    }
+
+    container.innerHTML = data.members.map(member => {
+        const pct = member.progress_pct;
+        const pctClass = pct >= 75 ? 'done' : pct >= 40 ? 'warning' : 'danger';
+        const initials = member.member.split(' ').map(w => w[0]).join('').toUpperCase().slice(0, 2);
+        const bottleneckHtml = member.is_bottleneck
+            ? `<div class="bottleneck-alert"><i class="fa-solid fa-triangle-exclamation"></i> Bottleneck detected — behind schedule</div>`
+            : '';
+
+        return `
+            <div class="member-card ${member.is_bottleneck ? 'bottleneck' : ''}">
+                <div class="member-card-header">
+                    <div style="display:flex;align-items:center;">
+                        <div class="member-avatar">${initials}</div>
+                        <span class="member-name">${member.member}</span>
+                    </div>
+                    <span class="member-pct ${pctClass}">${pct}%</span>
+                </div>
+                <div class="member-progress-bar">
+                    <div class="member-progress-fill ${pctClass}" style="width:${pct}%"></div>
+                </div>
+                <div class="member-stats-row">
+                    <span>${member.completed_tasks}/${member.total_tasks} tasks done</span>
+                    <span>${member.completed_effort_hours}/${member.total_effort_hours} hrs</span>
+                </div>
+                ${bottleneckHtml}
+            </div>
+        `;
+    }).join('');
+}
+
+// Refresh button
+document.getElementById('btnRefreshProgress').addEventListener('click', loadProgressCards);
+
+// On page load, try to load existing progress (persisted in DB)
+loadProgressCards();

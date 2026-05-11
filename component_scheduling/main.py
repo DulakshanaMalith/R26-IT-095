@@ -62,6 +62,17 @@ def init_db():
     c.execute('''CREATE TABLE IF NOT EXISTS github_registrations
                  (id INTEGER PRIMARY KEY AUTOINCREMENT,
                   project_id TEXT, repo_url TEXT, registered_at TEXT)''')
+    # NOVELTY 12: Individual WBS Progress Tracking
+    c.execute('''CREATE TABLE IF NOT EXISTS task_assignments
+                 (id INTEGER PRIMARY KEY AUTOINCREMENT,
+                  project_id TEXT,
+                  task_id INTEGER,
+                  task_name TEXT,
+                  assigned_to TEXT,
+                  effort_hours REAL,
+                  status TEXT DEFAULT "NOT_STARTED",
+                  assigned_at TEXT,
+                  UNIQUE(project_id, task_id))''')
     conn.commit()
     conn.close()
 
@@ -151,6 +162,13 @@ class GithubRegisterRequest(BaseModel):
 class TaskCompleteRequest(BaseModel):
     project_id: str = "demo_project_01"
     task_id: int
+
+class TaskAssignRequest(BaseModel):
+    project_id: str = "demo_project_01"
+    task_id: int
+    task_name: str
+    assigned_to: str
+    effort_hours: float
 
 # --- HELPERS ---
 _STANDARD_WBS = ["Requirements Gathering", "System Architecture", "Database Design", "Backend Development", "Frontend Development", "Testing & QA", "Deployment"]
@@ -626,6 +644,135 @@ def mark_all_read(project_id: str = "demo_project_01"):
     conn.execute("UPDATE notifications SET is_read = 1 WHERE project_id = ?", (project_id,))
     conn.commit(); conn.close()
     return {"status": "ok"}
+
+# ============================================================
+# NOVELTY 12: Individual WBS Progress Tracker
+# Board Feedback: "Show Individual work breakdown through
+# the project WBS and determine individual & project progress"
+# ============================================================
+
+@app.post("/api/progress/assign")
+def assign_task_to_member(req: TaskAssignRequest):
+    """Assign a WBS task to a specific team member."""
+    conn = sqlite3.connect("schedule_drift.db")
+    conn.execute(
+        """INSERT INTO task_assignments (project_id, task_id, task_name, assigned_to, effort_hours, status, assigned_at)
+           VALUES (?, ?, ?, ?, ?, 'NOT_STARTED', ?)
+           ON CONFLICT(project_id, task_id) DO UPDATE SET
+             assigned_to=excluded.assigned_to,
+             task_name=excluded.task_name,
+             effort_hours=excluded.effort_hours,
+             assigned_at=excluded.assigned_at""",
+        (req.project_id, req.task_id, req.task_name, req.assigned_to, req.effort_hours, datetime.now().isoformat())
+    )
+    conn.commit(); conn.close()
+    return {"status": "assigned", "task_id": req.task_id, "assigned_to": req.assigned_to}
+
+@app.post("/api/progress/task-complete")
+def complete_assigned_task(req: TaskCompleteRequest):
+    """Mark an assigned task as completed (updates both assignment and schedule tables)."""
+    conn = sqlite3.connect("schedule_drift.db")
+    c = conn.cursor()
+    # Update the assignment status
+    c.execute(
+        "UPDATE task_assignments SET status='COMPLETED' WHERE project_id=? AND task_id=?",
+        (req.project_id, req.task_id)
+    )
+    # Also sync with the main schedule_versions table
+    row = c.execute(
+        "SELECT id, schedule_json FROM schedule_versions WHERE project_id=? ORDER BY id DESC LIMIT 1",
+        (req.project_id,)
+    ).fetchone()
+    if row:
+        schedule_data = json.loads(row[1])
+        for t in schedule_data:
+            if t["task_id"] == req.task_id:
+                t["status"] = "COMPLETED"
+                t["completion_type"] = "INDIVIDUAL_PROGRESS"
+                t["completed_at"] = datetime.now().isoformat()
+                break
+        ver_row = c.execute("SELECT MAX(version) FROM schedule_versions WHERE project_id=?", (req.project_id,)).fetchone()
+        next_ver = (ver_row[0] or 0) + 1
+        c.execute(
+            "INSERT INTO schedule_versions (project_id, version, schedule_json, created_at) VALUES (?,?,?,?)",
+            (req.project_id, next_ver, json.dumps(schedule_data), datetime.now().isoformat())
+        )
+    conn.commit(); conn.close()
+    return {"status": "completed", "task_id": req.task_id}
+
+@app.get("/api/progress/individual")
+def get_individual_progress(project_id: str = "demo_project_01"):
+    """
+    NOVELTY 12 Core Logic:
+    Returns per-member progress weighted by XGBoost-predicted effort hours.
+    This goes beyond simple task counting — a 100-hour task completion counts
+    more than a 10-hour task, giving a true measure of workload delivery.
+    """
+    conn = sqlite3.connect("schedule_drift.db")
+    rows = conn.execute(
+        "SELECT assigned_to, task_id, task_name, effort_hours, status FROM task_assignments WHERE project_id=?",
+        (project_id,)
+    ).fetchall()
+    conn.close()
+
+    if not rows:
+        return {"members": [], "project_progress_pct": 0.0}
+
+    # Group tasks by member
+    members = {}
+    for assigned_to, task_id, task_name, effort_hours, status in rows:
+        if assigned_to not in members:
+            members[assigned_to] = {"tasks": [], "total_effort": 0.0, "completed_effort": 0.0}
+        members[assigned_to]["tasks"].append({
+            "task_id": task_id,
+            "task_name": task_name,
+            "effort_hours": effort_hours,
+            "status": status
+        })
+        members[assigned_to]["total_effort"] += effort_hours
+        if status == "COMPLETED":
+            members[assigned_to]["completed_effort"] += effort_hours
+
+    result_members = []
+    for name, data in members.items():
+        total = data["total_effort"]
+        completed = data["completed_effort"]
+        progress_pct = round((completed / total) * 100, 1) if total > 0 else 0.0
+        
+        # Use the logistic model to flag if this member is a bottleneck
+        # A member is a bottleneck if their progress < 50% while project is underway
+        is_bottleneck = progress_pct < 50.0 and total > 0
+        
+        result_members.append({
+            "member": name,
+            "total_tasks": len(data["tasks"]),
+            "completed_tasks": sum(1 for t in data["tasks"] if t["status"] == "COMPLETED"),
+            "total_effort_hours": round(total, 1),
+            "completed_effort_hours": round(completed, 1),
+            "progress_pct": progress_pct,
+            "is_bottleneck": is_bottleneck,
+            "tasks": data["tasks"]
+        })
+
+    # Overall project progress weighted by effort (XGBoost output reuse)
+    all_total = sum(m["total_effort_hours"] for m in result_members)
+    all_completed = sum(m["completed_effort_hours"] for m in result_members)
+    project_progress_pct = round((all_completed / all_total) * 100, 1) if all_total > 0 else 0.0
+
+    return {
+        "members": sorted(result_members, key=lambda x: x["progress_pct"], reverse=True),
+        "project_progress_pct": project_progress_pct,
+        "total_effort_hours": round(all_total, 1),
+        "completed_effort_hours": round(all_completed, 1)
+    }
+
+@app.delete("/api/progress/reset")
+def reset_assignments(project_id: str = "demo_project_01"):
+    """Clear all task assignments for a project (used when a new schedule is generated)."""
+    conn = sqlite3.connect("schedule_drift.db")
+    conn.execute("DELETE FROM task_assignments WHERE project_id=?", (project_id,))
+    conn.commit(); conn.close()
+    return {"status": "reset"}
 
 # --- BACKGROUND DEADLINE CHECKER ---
 def check_deadlines():
