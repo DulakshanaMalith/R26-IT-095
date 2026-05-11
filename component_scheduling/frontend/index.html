@@ -26,6 +26,7 @@
                     <span class="badge model-badge"><i class="fa-solid fa-brain"></i> Multi-Task T5</span>
                     <span class="badge model-badge"><i class="fa-solid fa-chart-line"></i> XGBoost</span>
                     <span class="badge model-badge"><i class="fa-solid fa-shield-halved"></i> LogReg</span>
+                    <span class="badge model-badge" style="background:rgba(16,185,129,0.15);border-color:rgba(16,185,129,0.3);color:#34d399;"><i class="fa-solid fa-users"></i> Progress Tracker</span>
                 </div>
                 <button id="btnGithubConnect" class="secondary-btn" title="Connect GitHub Repository">
                     <i class="fa-brands fa-github"></i> Connect GitHub
@@ -184,6 +185,56 @@
                                     <tbody id="paretoTableBody">
                                     </tbody>
                                 </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- NOVELTY 12: Individual WBS Progress Tracker -->
+                    <div class="progress-tracker-panel glass-panel" id="progressTrackerPanel">
+                        <div class="panel-header">
+                            <h2><i class="fa-solid fa-users-gear"></i> Individual WBS Progress Tracker <span style="font-size:0.7rem;padding:0.2rem 0.6rem;background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.3);color:#34d399;border-radius:999px;margin-left:0.5rem;">NOVELTY 12</span></h2>
+                            <p style="font-size:0.82rem;color:var(--text-muted);margin-top:0.25rem;">Assign WBS tasks to team members. Progress is weighted by XGBoost-predicted effort hours.</p>
+                        </div>
+
+                        <!-- Project-Level Progress Ring -->
+                        <div class="project-progress-row">
+                            <div class="project-ring-wrapper">
+                                <svg class="progress-ring" width="120" height="120" viewBox="0 0 120 120">
+                                    <circle cx="60" cy="60" r="50" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="12"/>
+                                    <circle id="projectRingCircle" cx="60" cy="60" r="50" fill="none" stroke="#3b82f6" stroke-width="12"
+                                        stroke-linecap="round" stroke-dasharray="314.16" stroke-dashoffset="314.16"
+                                        transform="rotate(-90 60 60)" style="transition:stroke-dashoffset 1s ease;"/>
+                                </svg>
+                                <div class="ring-label">
+                                    <span id="projectProgressPct" style="font-size:1.4rem;font-weight:700;color:var(--text-main);">0%</span>
+                                    <span style="font-size:0.7rem;color:var(--text-muted);">PROJECT</span>
+                                </div>
+                            </div>
+                            <div class="project-stats">
+                                <div class="stat-item"><span class="stat-label">Total Effort</span><span class="stat-val" id="projectTotalEffort">0 hrs</span></div>
+                                <div class="stat-item"><span class="stat-label">Completed Effort</span><span class="stat-val" id="projectCompletedEffort">0 hrs</span></div>
+                                <div class="stat-item"><span class="stat-label">Assigned Tasks</span><span class="stat-val" id="projectAssignedTasks">0</span></div>
+                            </div>
+                            <button id="btnRefreshProgress" class="secondary-btn" style="align-self:center;"><i class="fa-solid fa-rotate"></i> Refresh</button>
+                        </div>
+
+                        <!-- Task Assignment Table -->
+                        <div style="margin-top:1.5rem;">
+                            <h3 style="font-size:0.9rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:1rem;">
+                                <i class="fa-solid fa-table-list"></i> Task Assignment Board
+                            </h3>
+                            <div id="assignmentTable" class="assignment-table">
+                                <p style="color:var(--text-muted);font-size:0.85rem;">Generate a schedule first to assign tasks to team members.</p>
+                            </div>
+                        </div>
+
+                        <!-- Per-Member Cards -->
+                        <div style="margin-top:1.5rem;">
+                            <h3 style="font-size:0.9rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:1rem;">
+                                <i class="fa-solid fa-id-card"></i> Individual Progress Cards
+                            </h3>
+                            <div id="memberCards" class="member-cards-grid">
+                                <p style="color:var(--text-muted);font-size:0.85rem;">Assign tasks above to see individual progress cards.</p>
                             </div>
                         </div>
                     </div>
