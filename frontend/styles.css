@@ -556,3 +556,98 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+/* Header right group */
+.header-right { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+
+/* Notification Bell */
+.notif-bell {
+    position: relative; cursor: pointer;
+    width: 40px; height: 40px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--panel-border);
+    transition: var(--transition);
+    font-size: 1rem;
+}
+.notif-bell:hover { background: rgba(255,255,255,0.1); border-color: var(--brand-primary); }
+.notif-badge {
+    position: absolute; top: -4px; right: -4px;
+    background: #ef4444; color: #fff;
+    font-size: 0.65rem; font-weight: 700;
+    border-radius: 999px; padding: 1px 5px;
+    min-width: 16px; text-align: center;
+}
+
+/* Modals */
+.modal-overlay {
+    position: fixed; inset: 0; z-index: 1000;
+    background: rgba(0,0,0,0.6); backdrop-filter: blur(4px);
+    display: flex; align-items: center; justify-content: center;
+}
+.modal-box {
+    width: 100%; max-width: 520px;
+    padding: 2rem; border-radius: 16px;
+    animation: fadeInScale 0.2s ease;
+}
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+.modal-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 1.2rem;
+}
+.modal-header h3 { font-size: 1.1rem; font-weight: 600; }
+.icon-btn {
+    background: none; border: none; color: var(--text-muted);
+    font-size: 1.2rem; cursor: pointer; padding: 0.25rem;
+}
+.icon-btn:hover { color: var(--text-main); }
+.modal-input-group { display: flex; gap: 0.75rem; }
+.modal-input-group input {
+    flex: 1; padding: 0.75rem 1rem;
+    background: rgba(0,0,0,0.3); border: 1px solid var(--panel-border);
+    border-radius: 8px; color: var(--text-main); font-size: 0.9rem;
+}
+.status-banner {
+    padding: 0.75rem 1rem; border-radius: 8px;
+    margin-bottom: 1rem; font-size: 0.85rem;
+    background: rgba(34,197,94,0.15); color: #22c55e;
+}
+
+/* Notifications Panel */
+.notif-panel {
+    position: fixed; top: 70px; right: 1.5rem; z-index: 900;
+    width: 360px; max-height: 480px;
+    border-radius: 16px; overflow: hidden;
+    display: flex; flex-direction: column;
+}
+.notif-panel-header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--panel-border);
+}
+.notif-panel-header h3 { font-size: 0.95rem; font-weight: 600; }
+.notif-list { overflow-y: auto; flex: 1; }
+.notif-item {
+    padding: 0.85rem 1.25rem;
+    border-bottom: 1px solid var(--panel-border);
+    font-size: 0.82rem; line-height: 1.5;
+}
+.notif-item.overdue { border-left: 3px solid #ef4444; }
+.notif-item.warning { border-left: 3px solid #f59e0b; }
+.notif-time { font-size: 0.7rem; color: var(--text-muted); margin-top: 0.2rem; }
+
+/* Per-task submit button */
+.task-submit-btn {
+    font-size: 0.65rem; padding: 0.2rem 0.5rem;
+    background: rgba(59,130,246,0.15);
+    border: 1px solid rgba(59,130,246,0.3);
+    border-radius: 5px; color: var(--brand-primary);
+    cursor: pointer; transition: var(--transition);
+    margin-top: 0.3rem;
+}
+.task-submit-btn:hover { background: rgba(59,130,246,0.3); }
+.task-bar.completed { background: linear-gradient(90deg, #16a34a, #22c55e) !important; }

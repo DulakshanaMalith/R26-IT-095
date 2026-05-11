@@ -143,10 +143,22 @@ document.addEventListener('DOMContentLoaded', () => {
             const info = document.createElement('div');
             info.className = 'task-info';
             const shapHtml = task.shap_explanation ? `<div class="shap-explanation" title="${task.shap_explanation}">${task.shap_explanation}</div>` : '';
+            const isCompleted = task.status === 'COMPLETED';
+            
+            let actionBadge = '';
+            if (isCompleted) {
+                actionBadge = `<span style="font-size:0.65rem;color:#22c55e;">✓ Completed</span>`;
+            } else if (task.requires_document) {
+                actionBadge = `<button class="task-submit-btn" data-taskid="${task.task_id}" data-taskname="${task.task_name}">📎 Submit Doc</button>`;
+            } else {
+                actionBadge = `<span style="font-size:0.65rem;color:#94a3b8;"><i class="fa-brands fa-github"></i> Tracked via GitHub</span>`;
+            }
+
             info.innerHTML = `
                 <div class="task-name" title="${task.task_name}">${index + 1}. ${task.task_name}</div>
                 <div class="task-meta">${task.effort_hours} hrs | ${task.duration_days} days</div>
                 ${shapHtml}
+                ${actionBadge}
             `;
 
             // Right Sidebar: Gantt Track
@@ -184,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 bar.style.width = `${widthPct}%`;
             }, 50 * index); // Stagger animation
 
-            currentDayOffset += task.duration_days;
+            currentDayOffset += Number(task.duration_days);
         });
     }
 
@@ -254,4 +266,130 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // Delegate submit doc button clicks inside gantt
+    ganttContainer.addEventListener('click', (e) => {
+        const btn = e.target.closest('.task-submit-btn');
+        if (!btn) return;
+        currentSubmitTaskId = parseInt(btn.dataset.taskid);
+        document.getElementById('submitModalTaskName').textContent = `Task: ${btn.dataset.taskname}`;
+        document.getElementById('submitResult').classList.add('hidden');
+        document.getElementById('milestoneFile').value = '';
+        document.getElementById('submitModal').classList.remove('hidden');
+    });
+});
+
+// --- State for submit modal ---
+let currentSubmitTaskId = null;
+
+// --- GitHub Connect Modal ---
+document.getElementById('btnGithubConnect').addEventListener('click', async () => {
+    const modal = document.getElementById('githubModal');
+    const banner = document.getElementById('githubStatusBanner');
+    modal.classList.remove('hidden');
+    banner.classList.add('hidden');
+    // Check if already connected
+    try {
+        const res = await fetch('/api/github/status');
+        const data = await res.json();
+        if (data.connected) {
+            banner.textContent = `✅ Connected to: ${data.repo_url}`;
+            banner.classList.remove('hidden');
+            document.getElementById('githubRepoUrl').value = data.repo_url;
+        }
+    } catch(e) {}
+});
+document.getElementById('closeGithubModal').addEventListener('click', () => {
+    document.getElementById('githubModal').classList.add('hidden');
+});
+document.getElementById('btnRegisterGithub').addEventListener('click', async () => {
+    const url = document.getElementById('githubRepoUrl').value.trim();
+    if (!url) return;
+    const btn = document.getElementById('btnRegisterGithub');
+    btn.textContent = 'Connecting...';
+    try {
+        const res = await fetch('/api/github/register', {
+            method: 'POST',
+            headers: {'Content-Type':'application/json'},
+            body: JSON.stringify({repo_url: url})
+        });
+        const data = await res.json();
+        document.getElementById('webhookUrl').textContent = window.location.origin + '/api/webhooks/github';
+        document.getElementById('webhookInstructions').classList.remove('hidden');
+        const banner = document.getElementById('githubStatusBanner');
+        banner.textContent = '✅ Repository registered! Follow the instructions below to activate webhook.';
+        banner.classList.remove('hidden');
+    } catch(e) { alert('Failed to register.'); }
+    btn.textContent = 'Connect';
+});
+
+// --- Notifications ---
+async function loadNotifications() {
+    try {
+        const res = await fetch('/api/notifications');
+        const data = await res.json();
+        const badge = document.getElementById('notifBadge');
+        const list = document.getElementById('notifList');
+        const count = data.notifications.length;
+        if (count > 0) {
+            badge.textContent = count;
+            badge.classList.remove('hidden');
+            list.innerHTML = data.notifications.map(n => `
+                <div class="notif-item ${n.type.toLowerCase()}">
+                    <div>${n.message}</div>
+                    <div class="notif-time">${new Date(n.created_at).toLocaleString()}</div>
+                </div>
+            `).join('');
+        } else {
+            badge.classList.add('hidden');
+            list.innerHTML = '<p style="color:var(--text-muted);padding:1rem;font-size:0.85rem;">No unread notifications.</p>';
+        }
+    } catch(e) {}
+}
+loadNotifications();
+setInterval(loadNotifications, 30000);
+
+document.getElementById('notifBell').addEventListener('click', () => {
+    document.getElementById('notifPanel').classList.toggle('hidden');
+});
+document.getElementById('btnMarkRead').addEventListener('click', async () => {
+    await fetch('/api/notifications/read', {method:'POST'});
+    loadNotifications();
+    document.getElementById('notifPanel').classList.add('hidden');
+});
+
+// --- Milestone Submit Modal ---
+document.getElementById('closeSubmitModal').addEventListener('click', () => {
+    document.getElementById('submitModal').classList.add('hidden');
+});
+document.getElementById('btnSubmitMilestone').addEventListener('click', async () => {
+    const fileInput = document.getElementById('milestoneFile');
+    if (!fileInput.files[0]) { alert('Please select a file first.'); return; }
+    const btn = document.getElementById('btnSubmitMilestone');
+    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Uploading...';
+    btn.disabled = true;
+    const formData = new FormData();
+    formData.append('file', fileInput.files[0]);
+    formData.append('task_id', currentSubmitTaskId);
+    try {
+        const res = await fetch('/api/milestone/submit', {method:'POST', body: formData});
+        const data = await res.json();
+        const result = document.getElementById('submitResult');
+        result.textContent = `✅ ${data.message} — File: ${data.filename}`;
+        result.classList.remove('hidden');
+        loadNotifications();
+        setTimeout(() => {
+            document.getElementById('submitModal').classList.add('hidden');
+        }, 2000);
+    } catch(e) { alert('Upload failed. Please try again.'); }
+    btn.innerHTML = '<i class="fa-solid fa-upload"></i> Upload & Mark Complete';
+    btn.disabled = false;
+});
+
+// Close modals on overlay click
+document.getElementById('githubModal').addEventListener('click', (e) => {
+    if (e.target === document.getElementById('githubModal')) document.getElementById('githubModal').classList.add('hidden');
+});
+document.getElementById('submitModal').addEventListener('click', (e) => {
+    if (e.target === document.getElementById('submitModal')) document.getElementById('submitModal').classList.add('hidden');
 });

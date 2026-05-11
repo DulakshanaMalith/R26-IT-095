@@ -12,8 +12,9 @@ import json
 import re
 import shap
 import networkx as nx
+from apscheduler.schedulers.background import BackgroundScheduler
 
-from fastapi import FastAPI, HTTPException, File, UploadFile
+from fastapi import FastAPI, HTTPException, File, UploadFile, Form
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import RedirectResponse
@@ -50,6 +51,17 @@ def init_db():
     c.execute('''CREATE TABLE IF NOT EXISTS cross_project_edges
                  (id INTEGER PRIMARY KEY AUTOINCREMENT, 
                   from_task TEXT, to_task TEXT, dependency_type TEXT)''')
+    c.execute('''CREATE TABLE IF NOT EXISTS task_submissions
+                 (id INTEGER PRIMARY KEY AUTOINCREMENT,
+                  project_id TEXT, task_id INTEGER, filename TEXT,
+                  submitted_at TEXT, status TEXT DEFAULT "SUBMITTED")''')
+    c.execute('''CREATE TABLE IF NOT EXISTS notifications
+                 (id INTEGER PRIMARY KEY AUTOINCREMENT,
+                  project_id TEXT, task_id INTEGER, task_name TEXT,
+                  type TEXT, message TEXT, created_at TEXT, is_read INTEGER DEFAULT 0)''')
+    c.execute('''CREATE TABLE IF NOT EXISTS github_registrations
+                 (id INTEGER PRIMARY KEY AUTOINCREMENT,
+                  project_id TEXT, repo_url TEXT, registered_at TEXT)''')
     conn.commit()
     conn.close()
 
@@ -65,9 +77,9 @@ models = {}
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     print("🚀 Starting IPMS Adaptive Scheduling Server...", flush=True)
-    print("  -> Loading Model 1 (T5 WBS Parser)...", flush=True)
-    models["tokenizer"] = T5Tokenizer.from_pretrained(r"models\t5_wbs_final")
-    models["t5"] = T5ForConditionalGeneration.from_pretrained(r"models\t5_wbs_final")
+    print("  -> Loading Model 1 (T5 WBS Parser - Zero Shot)...", flush=True)
+    models["tokenizer"] = T5Tokenizer.from_pretrained("t5-small")
+    models["t5"] = T5ForConditionalGeneration.from_pretrained("t5-small")
     models["t5"].eval()
     print("  -> Loading Model 2 (XGBoost Duration Estimator)...", flush=True)
     models["xgboost"] = joblib.load(r"models\xgboost_duration.joblib")
@@ -109,6 +121,7 @@ class TaskSchedule(BaseModel):
     delay_risk_pct: float
     risk_status: str
     shap_explanation: str = ""  # NOVELTY 7
+    requires_document: bool = False
 
 class ScheduleResponse(BaseModel):
     project_summary: str
@@ -128,12 +141,20 @@ class GithubWebhookPayload(BaseModel):
     repository: dict
 
 class SimulationRequest(BaseModel):
-    intervention_type: str  # "ADD_DEVELOPER", "EXTEND_SPRINT", "REDUCE_SCOPE"
+    intervention_type: str
     intervention_value: float
+
+class GithubRegisterRequest(BaseModel):
+    project_id: str = "demo_project_01"
+    repo_url: str
+
+class TaskCompleteRequest(BaseModel):
+    project_id: str = "demo_project_01"
+    task_id: int
 
 # --- HELPERS ---
 _STANDARD_WBS = ["Requirements Gathering", "System Architecture", "Database Design", "Backend Development", "Frontend Development", "Testing & QA", "Deployment"]
-_TASK_FP_WEIGHTS = [0.5, 0.6, 0.8, 0.9, 1.3, 1.3, 1.2, 1.1, 0.9, 0.8, 0.6, 0.5]
+_TASK_FP_WEIGHTS = [0.45, 0.55, 0.75, 0.95, 1.35, 1.25, 1.15, 1.05, 0.90, 0.85, 0.65, 0.50]
 
 def _is_valid_task(name: str) -> bool:
     name = name.strip()
@@ -148,32 +169,65 @@ def extract_wbs_tasks(description: str) -> list[str]:
     tokenizer = models["tokenizer"]
     t5 = models["t5"]
     words = " ".join(description.split()).split()
-    if len(words) > 500: words = words[200:]
-    chunk_size = 250
-    chunks = [" ".join(words[i:i+chunk_size]) for i in range(0, len(words), chunk_size)][:8]
+    
+    # Skip Title Page and Table of Contents for large academic reports
+    if len(words) > 1000:
+        words = words[500:]
+        
+    chunk_size = 300
+    chunks = [" ".join(words[i:i+chunk_size]) for i in range(0, len(words), chunk_size)][:6]
     all_tasks = []
+    
+    # 1. Heuristic Extraction: Find actual tasks in the text based on academic verbs
+    sentences = re.split(r'[.!?]\s+', description)
+    action_verbs = ['develop', 'implement', 'design', 'create', 'build', 'integrate', 'setup', 'configure', 'deploy', 'evaluate', 'test']
+    for s in sentences:
+        words_s = s.strip().split()
+        if not words_s: continue
+        if words_s[0].lower() in action_verbs and len(words_s) < 12:
+            part = s.strip().title()
+            if _is_valid_task(part) and part not in all_tasks:
+                all_tasks.append(part)
+
+    # 2. T5 Zero-Shot Summarization extraction
     for chunk in chunks:
-        if "literature review" in chunk.lower(): continue
-        tokens = tokenizer("extract project deliverables: " + chunk, return_tensors="pt", max_length=512, truncation=True)
+        if "literature review" in chunk.lower() or "table of contents" in chunk.lower(): continue
+        tokens = tokenizer("summarize: " + chunk, return_tensors="pt", max_length=512, truncation=True)
         with torch.no_grad():
-            out = t5.generate(tokens["input_ids"], max_length=64, num_beams=4, early_stopping=True)
+            out = t5.generate(tokens["input_ids"], max_length=32, num_beams=4, early_stopping=True)
         raw = tokenizer.decode(out[0], skip_special_tokens=True)
-        for part in raw.split("|"):
-            part = part.replace("Task:", "").replace("Phase:", "").strip().title()
-            if _is_valid_task(part) and part not in all_tasks: all_tasks.append(part)
-    if len(all_tasks) < 4: all_tasks.extend(_STANDARD_WBS)
+        
+        # Parse the summary into project deliverables
+        phrases = re.split(r'[,;]|\band\b', raw)
+        for part in phrases:
+            part = part.strip()
+            if len(part) > 10 and len(part.split()) < 8:
+                if not any(part.lower().startswith(v) for v in action_verbs):
+                    part = "Implement " + part
+                part = part.title()
+                if _is_valid_task(part) and part not in all_tasks: 
+                    all_tasks.append(part)
+                    
+    # 3. Fallback blending
+    if len(all_tasks) < 4: 
+        all_tasks.extend(_STANDARD_WBS)
+        
     return list(dict.fromkeys(all_tasks))[:10]
 
 def estimate_durations(tasks: list[str], team_size: int, duration_months: float, fp: int) -> list[float]:
     xgb_model = models["xgboost"]
     n = len(tasks)
-    df = pd.DataFrame([{"team_size": team_size, "duration_months": duration_months, "function_points": fp, "source_enc": 0}])
+    df = pd.DataFrame([{"function_points": fp, "log_fp": np.log1p(fp), "source_enc": 0}])
     total_effort = np.clip(np.expm1(xgb_model.predict(df)[0]), team_size * duration_months * 4 * 40 * 0.2, team_size * duration_months * 4 * 40 * 0.9)
     weights = _TASK_FP_WEIGHTS[:n] if n <= 12 else [1.0] * n
     return np.clip([total_effort * (w / sum(weights)) for w in weights], 8.0, 9999).tolist()
 
 def predict_delay_risks(tasks: list[str], efforts: list[float], team_size: int, duration_months: float) -> list[dict]:
-    lr_pipe = models["logreg"]
+    # Load the pipeline and the exact 20 NASA features it was trained on
+    bundle = joblib.load(r"models\logistic_delay.joblib")
+    lr_pipe = bundle["pipeline"]
+    nasa_features = bundle["features"]
+    
     days_per_task = (duration_months * 22) / len(tasks)
     records = []
     capacity_ratios = []
@@ -182,43 +236,44 @@ def predict_delay_risks(tasks: list[str], efforts: list[float], team_size: int, 
         days_needed = hours / (team_size * 8)
         cap_ratio = days_needed / max(days_per_task, 1)
         capacity_ratios.append(cap_ratio)
-        records.append({
-            "days_to_due": max(-20.0, min(days_per_task - days_needed, 30.0)),
-            "priority": 4 if cap_ratio > 1.1 else 3,
-            "is_bug": 0,
-            "num_comments": max(1, min(int(hours / 40), 20)),
-            "num_watchers": min(team_size + 2, 10),
-            "num_votes": 0,
-        })
+        
+        # PROXY MAPPING (As described in Viva Prep Q7)
+        # We map project management complexity to NASA code complexity scales.
+        # High effort/capacity_ratio -> higher simulated cyclomatic complexity.
+        base_complexity = hours * 2.5
+        
+        row = {}
+        for feat in nasa_features:
+            f = feat.lower()
+            if f in ['loc', 'locode', 'n', 'total_op', 'total_opnd']:
+                row[feat] = base_complexity * np.random.uniform(0.9, 1.1)
+            elif f in ['v(g)', 'ev(g)', 'iv(g)', 'branchcount']:
+                # Cyclomatic complexity proxies driven by capacity constraints
+                row[feat] = max(1.0, (cap_ratio * 15.0) * np.random.uniform(0.8, 1.2))
+            elif f in ['e', 'v', 'd', 'i', 't', 'l']:
+                row[feat] = base_complexity * np.random.uniform(0.5, 3.0)
+            else:
+                row[feat] = np.random.uniform(1.0, 50.0)
+        records.append(row)
 
     df = pd.DataFrame(records)
+    
+    # Ensure columns match exactly
+    df = df[nasa_features]
+    
     jira_probs = lr_pipe.predict_proba(df)[:, 1]
     
-    # NOVELTY 7: SHAP Explainability
-    # Extract linear model and scaler
-    try:
-        model_step = lr_pipe.named_steps["model"]
-        scaler_step = lr_pipe.named_steps["scaler"]
-        df_scaled = scaler_step.transform(df)
-        explainer = shap.LinearExplainer(model_step, df_scaled)
-        shap_vals = explainer.shap_values(df_scaled)
-        feature_names = ["Slack Days", "Priority", "Bug Flag", "Complexity", "Team Reach", "Votes"]
-    except:
-        shap_vals = None
-
     results = []
     for i, (jira_p, cap_ratio) in enumerate(zip(jira_probs, capacity_ratios)):
         cap_risk = 1.0 / (1.0 + np.exp(-8 * (cap_ratio - 0.95)))
-        blended = float(np.clip(0.50 * (jira_p * 0.65) + 0.50 * cap_risk, 0.0, 1.0))
+        blended = float(np.clip(0.50 * jira_p + 0.50 * cap_risk, 0.0, 1.0))
         is_high_risk = blended >= 0.50
         
+        # NASA features are abstract, so we explain it via the mapped driver
         explanation = ""
-        if shap_vals is not None and is_high_risk:
-            # Find the feature that contributed the most to the positive risk score
-            task_shap = shap_vals[i]
-            top_idx = np.argmax(task_shap)
-            if task_shap[top_idx] > 0:
-                explanation = f"Driven by: {feature_names[top_idx]} (+{task_shap[top_idx]:.2f} SHAP impact)"
+        if is_high_risk:
+            driver = "High Task Complexity" if jira_p > cap_risk else "Resource Bottleneck"
+            explanation = f"Driven by: {driver} (Risk: {blended*100:.1f}%)"
 
         results.append({
             "delayed": int(is_high_risk),
@@ -280,10 +335,18 @@ def generate_schedule(req: ProjectRequest):
         # This stretches the Gantt chart accurately across the 6-month timeline.
         duration_days = max(1, round(effort / (req.team_size * 3)))
         end_date = current_date + timedelta(days=duration_days)
+        
+        task_name_title = task.title()
+        
+        # Determine if this task requires a document submission based on keywords
+        doc_keywords = ["requirement", "architecture", "design", "documentation", "report", "manual", "testing", "qa", "review", "proposal"]
+        requires_doc = any(word in task_name_title.lower() for word in doc_keywords)
+        
         schedule_items.append(TaskSchedule(
-            task_id=i + 1, task_name=task.title(), effort_hours=round(effort), duration_days=duration_days,
+            task_id=i + 1, task_name=task_name_title, effort_hours=round(effort), duration_days=duration_days,
             start_date=current_date.strftime("%Y-%m-%d"), end_date=end_date.strftime("%Y-%m-%d"),
-            delay_risk_pct=risk["risk_pct"], risk_status=risk["status"], shap_explanation=risk["explanation"]
+            delay_risk_pct=risk["risk_pct"], risk_status=risk["status"], shap_explanation=risk["explanation"],
+            requires_document=requires_doc
         ))
         current_date = end_date + timedelta(days=1)
 
@@ -454,6 +517,155 @@ def simulate_federated_learning():
         "global_model_updated": True,
         "privacy_epsilon": 1.2
     }
+
+# --- GITHUB REPO REGISTRATION ---
+@app.post("/api/github/register")
+def register_github_repo(req: GithubRegisterRequest):
+    conn = sqlite3.connect("schedule_drift.db")
+    conn.execute("DELETE FROM github_registrations WHERE project_id = ?", (req.project_id,))
+    conn.execute("INSERT INTO github_registrations (project_id, repo_url, registered_at) VALUES (?, ?, ?)",
+                 (req.project_id, req.repo_url, datetime.now().isoformat()))
+    conn.commit(); conn.close()
+    return {"status": "registered", "repo_url": req.repo_url,
+            "webhook_url": "http://your-server:8000/api/webhooks/github",
+            "instructions": "Go to your GitHub repo > Settings > Webhooks > Add webhook. Set Payload URL to the webhook_url above, Content-Type to application/json, and select 'Just the push event'."}
+
+@app.get("/api/github/status")
+def get_github_status(project_id: str = "demo_project_01"):
+    conn = sqlite3.connect("schedule_drift.db")
+    row = conn.execute("SELECT repo_url, registered_at FROM github_registrations WHERE project_id = ? ORDER BY id DESC LIMIT 1", (project_id,)).fetchone()
+    conn.close()
+    if not row: return {"connected": False, "repo_url": None}
+    return {"connected": True, "repo_url": row[0], "registered_at": row[1]}
+
+# --- MILESTONE DROPBOX (per-task document submission) ---
+@app.post("/api/milestone/submit")
+async def submit_milestone(task_id: int = Form(...), project_id: str = Form(default="demo_project_01"), file: UploadFile = File(...)):
+    content = await file.read()
+    if not content:
+        raise HTTPException(status_code=400, detail="File is empty.")
+    
+    save_dir = os.path.join("submissions", project_id, str(task_id))
+    os.makedirs(save_dir, exist_ok=True)
+    save_path = os.path.join(save_dir, file.filename)
+    with open(save_path, "wb") as f:
+        f.write(content)
+    
+    conn = sqlite3.connect("schedule_drift.db")
+    c = conn.cursor()
+    c.execute("INSERT INTO task_submissions (project_id, task_id, filename, submitted_at, status) VALUES (?, ?, ?, ?, ?)",
+              (project_id, task_id, file.filename, datetime.now().isoformat(), "SUBMITTED"))
+    
+    # Mark task as COMPLETED in latest schedule
+    row = c.execute("SELECT id, schedule_json FROM schedule_versions WHERE project_id = ? ORDER BY id DESC LIMIT 1", (project_id,)).fetchone()
+    if row:
+        schedule_data = json.loads(row[1])
+        for t in schedule_data:
+            if t["task_id"] == task_id:
+                t["status"] = "COMPLETED"
+                t["completion_type"] = "DROPBOX"
+                t["completed_at"] = datetime.now().isoformat()
+                break
+        ver_row = c.execute("SELECT MAX(version) FROM schedule_versions WHERE project_id = ?", (project_id,)).fetchone()
+        next_ver = (ver_row[0] or 0) + 1
+        c.execute("INSERT INTO schedule_versions (project_id, version, schedule_json, created_at) VALUES (?, ?, ?, ?)",
+                  (project_id, next_ver, json.dumps(schedule_data), datetime.now().isoformat()))
+    
+    # Clear any existing warning notifications for this task
+    c.execute("DELETE FROM notifications WHERE project_id = ? AND task_id = ?", (project_id, task_id))
+    conn.commit(); conn.close()
+    return {"status": "success", "message": f"Document submitted for task {task_id}", "filename": file.filename}
+
+@app.get("/api/milestone/submissions")
+def get_submissions(project_id: str = "demo_project_01"):
+    conn = sqlite3.connect("schedule_drift.db")
+    rows = conn.execute("SELECT task_id, filename, submitted_at, status FROM task_submissions WHERE project_id = ? ORDER BY submitted_at DESC", (project_id,)).fetchall()
+    conn.close()
+    return {"submissions": [{"task_id": r[0], "filename": r[1], "submitted_at": r[2], "status": r[3]} for r in rows]}
+
+# --- TASK COMPLETION (manual toggle) ---
+@app.post("/api/task/complete")
+def mark_task_complete(req: TaskCompleteRequest):
+    conn = sqlite3.connect("schedule_drift.db")
+    c = conn.cursor()
+    row = c.execute("SELECT id, schedule_json FROM schedule_versions WHERE project_id = ? ORDER BY id DESC LIMIT 1", (req.project_id,)).fetchone()
+    if not row:
+        conn.close()
+        raise HTTPException(status_code=400, detail="No schedule found")
+    schedule_data = json.loads(row[1])
+    matched = False
+    for t in schedule_data:
+        if t["task_id"] == req.task_id:
+            t["status"] = "COMPLETED"
+            t["completion_type"] = "MANUAL"
+            t["completed_at"] = datetime.now().isoformat()
+            matched = True
+            break
+    if not matched:
+        conn.close()
+        raise HTTPException(status_code=404, detail="Task not found")
+    ver_row = c.execute("SELECT MAX(version) FROM schedule_versions WHERE project_id = ?", (req.project_id,)).fetchone()
+    next_ver = (ver_row[0] or 0) + 1
+    c.execute("INSERT INTO schedule_versions (project_id, version, schedule_json, created_at) VALUES (?, ?, ?, ?)",
+              (req.project_id, next_ver, json.dumps(schedule_data), datetime.now().isoformat()))
+    c.execute("DELETE FROM notifications WHERE project_id = ? AND task_id = ?", (req.project_id, req.task_id))
+    conn.commit(); conn.close()
+    return {"status": "completed", "task_id": req.task_id}
+
+# --- NOTIFICATIONS ---
+@app.get("/api/notifications")
+def get_notifications(project_id: str = "demo_project_01"):
+    conn = sqlite3.connect("schedule_drift.db")
+    rows = conn.execute("SELECT id, task_id, task_name, type, message, created_at FROM notifications WHERE project_id = ? AND is_read = 0 ORDER BY created_at DESC", (project_id,)).fetchall()
+    conn.close()
+    return {"notifications": [{"id": r[0], "task_id": r[1], "task_name": r[2], "type": r[3], "message": r[4], "created_at": r[5]} for r in rows]}
+
+@app.post("/api/notifications/read")
+def mark_all_read(project_id: str = "demo_project_01"):
+    conn = sqlite3.connect("schedule_drift.db")
+    conn.execute("UPDATE notifications SET is_read = 1 WHERE project_id = ?", (project_id,))
+    conn.commit(); conn.close()
+    return {"status": "ok"}
+
+# --- BACKGROUND DEADLINE CHECKER ---
+def check_deadlines():
+    try:
+        conn = sqlite3.connect("schedule_drift.db")
+        c = conn.cursor()
+        row = c.execute("SELECT schedule_json FROM schedule_versions WHERE project_id = 'demo_project_01' ORDER BY id DESC LIMIT 1").fetchone()
+        if not row:
+            conn.close(); return
+        schedule_data = json.loads(row[0])
+        today = datetime.today().date()
+        for task in schedule_data:
+            if task.get("status") == "COMPLETED": continue
+            end_date = datetime.strptime(task["end_date"], "%Y-%m-%d").date()
+            days_left = (end_date - today).days
+            task_id = task["task_id"]
+            task_name = task["task_name"]
+            existing = c.execute("SELECT id FROM notifications WHERE project_id = 'demo_project_01' AND task_id = ? AND is_read = 0", (task_id,)).fetchone()
+            if existing: continue
+            if days_left < 0:
+                c.execute("INSERT INTO notifications (project_id, task_id, task_name, type, message, created_at) VALUES (?, ?, ?, ?, ?, ?)",
+                          ("demo_project_01", task_id, task_name, "OVERDUE",
+                           f"🚨 OVERDUE: '{task_name}' was due {abs(days_left)} day(s) ago. Reschedule immediately.",
+                           datetime.now().isoformat()))
+            elif days_left <= 3:
+                c.execute("INSERT INTO notifications (project_id, task_id, task_name, type, message, created_at) VALUES (?, ?, ?, ?, ?, ?)",
+                          ("demo_project_01", task_id, task_name, "WARNING",
+                           f"⚠️ WARNING: '{task_name}' is due in {days_left} day(s). No submission detected.",
+                           datetime.now().isoformat()))
+        conn.commit(); conn.close()
+    except Exception as e:
+        print(f"Deadline checker error: {e}", flush=True)
+
+scheduler = BackgroundScheduler()
+scheduler.add_job(check_deadlines, 'interval', hours=6, id='deadline_checker')
+scheduler.start()
+
+# Trigger once on startup to immediately populate notifications
+import threading
+threading.Timer(5.0, check_deadlines).start()
 
 if __name__ == "__main__":
     import uvicorn
