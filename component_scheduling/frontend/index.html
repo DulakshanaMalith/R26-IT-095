@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPMS Adaptive Scheduling Engine</title>
+    <meta name="description" content="AI-Powered Project Planning and Delay Risk Prediction">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-elements">
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+    </div>
+
+    <div class="container">
+        <header class="app-header">
+            <div class="logo">
+                <i class="fa-solid fa-layer-group"></i>
+                <h1>IPMS Adaptive <span>Scheduler</span></h1>
+            </div>
+            <div class="header-right">
+                <div class="header-badges">
+                    <span class="badge model-badge"><i class="fa-solid fa-brain"></i> Multi-Task T5</span>
+                    <span class="badge model-badge"><i class="fa-solid fa-chart-line"></i> XGBoost</span>
+                    <span class="badge model-badge"><i class="fa-solid fa-shield-halved"></i> LogReg</span>
+                </div>
+                <button id="btnGithubConnect" class="secondary-btn" title="Connect GitHub Repository">
+                    <i class="fa-brands fa-github"></i> Connect GitHub
+                </button>
+                <div class="notif-bell" id="notifBell" title="Notifications">
+                    <i class="fa-solid fa-bell"></i>
+                    <span class="notif-badge hidden" id="notifBadge">0</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="dashboard">
+            <!-- Left Column: Input Form -->
+            <section class="input-section glass-panel">
+                <div class="section-header">
+                    <h2><i class="fa-solid fa-pen-to-square"></i> Project Proposal</h2>
+                    <p>Paste your raw academic proposal text below. Our AI will automatically extract the WBS and generate an adaptive schedule.</p>
+                </div>
+
+                <form id="scheduleForm">
+                    <div class="input-group">
+                        <div class="label-with-action">
+                            <label for="description">Proposal Description</label>
+                            <label for="pdfUpload" class="upload-btn">
+                                <i class="fa-solid fa-file-pdf"></i> Upload PDF
+                            </label>
+                            <input type="file" id="pdfUpload" accept="application/pdf" class="hidden">
+                        </div>
+                        <textarea id="description" rows="8" placeholder="e.g., We are building a comprehensive hospital management system. The system requires a patient registration module, a doctor appointment scheduling system, a pharmacy inventory tracker, and a secure billing gateway..."></textarea>
+                    </div>
+
+                    <div class="params-grid">
+                        <div class="input-group">
+                            <label for="teamSize"><i class="fa-solid fa-users"></i> Team Size</label>
+                            <input type="number" id="teamSize" value="4" min="1" max="20">
+                        </div>
+                        <div class="input-group">
+                            <label for="duration"><i class="fa-solid fa-calendar-days"></i> Expected Months</label>
+                            <input type="number" id="duration" value="6" min="1" max="24" step="0.5">
+                        </div>
+                        <div class="input-group">
+                            <label for="complexity"><i class="fa-solid fa-gears"></i> Est. Function Points</label>
+                            <input type="number" id="complexity" value="120" min="10" max="1000">
+                        </div>
+                        <div class="input-group">
+                            <label for="startDate"><i class="fa-solid fa-flag-checkered"></i> Start Date</label>
+                            <input type="date" id="startDate">
+                        </div>
+                    </div>
+
+                    <button type="submit" id="generateBtn" class="primary-btn">
+                        <span><i class="fa-solid fa-wand-magic-sparkles"></i> Generate AI Schedule</span>
+                        <div class="loader hidden" id="btnLoader"></div>
+                    </button>
+                </form>
+            </section>
+
+            <!-- Right Column: Results & Gantt Chart -->
+            <section class="results-section">
+                <!-- Empty State -->
+                <div id="emptyState" class="empty-state glass-panel">
+                    <div class="empty-icon">
+                        <i class="fa-solid fa-timeline"></i>
+                    </div>
+                    <h3>Awaiting Proposal Data</h3>
+                    <p>Input your project parameters on the left to see the AI-generated Work Breakdown Structure and risk-aware Gantt chart.</p>
+                </div>
+
+                <!-- Results Container (Hidden initially) -->
+                <div id="resultsContainer" class="hidden">
+                    
+                    <!-- KPI Cards -->
+                    <div class="kpi-grid">
+                        <div class="kpi-card glass-panel">
+                            <div class="kpi-icon blue"><i class="fa-solid fa-list-check"></i></div>
+                            <div class="kpi-data">
+                                <span class="kpi-label">Extracted Tasks</span>
+                                <h3 id="kpiTasks">0</h3>
+                            </div>
+                        </div>
+                        <div class="kpi-card glass-panel">
+                            <div class="kpi-icon purple"><i class="fa-solid fa-stopwatch"></i></div>
+                            <div class="kpi-data">
+                                <span class="kpi-label">Total Effort</span>
+                                <h3 id="kpiEffort">0 hrs</h3>
+                            </div>
+                        </div>
+                        <div class="kpi-card glass-panel">
+                            <div class="kpi-icon green"><i class="fa-solid fa-calendar-check"></i></div>
+                            <div class="kpi-data">
+                                <span class="kpi-label">Working Days</span>
+                                <h3 id="kpiDays">0</h3>
+                            </div>
+                        </div>
+                        <div class="kpi-card glass-panel">
+                            <div class="kpi-icon red"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                            <div class="kpi-data">
+                                <span class="kpi-label">High Risk Tasks</span>
+                                <h3 id="kpiRisk">0</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gantt Chart Panel -->
+                    <div class="gantt-panel glass-panel">
+                        <div class="panel-header">
+                            <h2><i class="fa-solid fa-chart-gantt"></i> Predictive Schedule & Risk Flags</h2>
+                            <div class="legend">
+                                <span class="legend-item"><div class="color-box low-risk"></div> On Track</span>
+                                <span class="legend-item"><div class="color-box high-risk"></div> Delay Risk</span>
+                            </div>
+                        </div>
+
+                        <div class="gantt-container" id="ganttContainer">
+                            <!-- JS will populate rows here -->
+                        </div>
+                    </div>
+
+                    <!-- ADVANCED AI ANALYTICS (NOVELTIES 8 & 10) -->
+                    <div class="advanced-analytics">
+                        <!-- What-If Simulator (Novelty 10) -->
+                        <div class="analytics-card glass-panel">
+                            <div class="panel-header">
+                                <h2><i class="fa-solid fa-code-branch"></i> What-If Simulation</h2>
+                            </div>
+                            <div class="sim-controls">
+                                <select id="simIntervention">
+                                    <option value="ADD_DEVELOPER">Add 1 Developer</option>
+                                    <option value="EXTEND_SPRINT">Extend Sprints by 20%</option>
+                                </select>
+                                <button id="btnSimulate" class="secondary-btn">Run Monte Carlo</button>
+                            </div>
+                            <div id="simResults" class="sim-results hidden">
+                                <p><strong>Simulated Runs:</strong> <span id="simRuns">1000</span></p>
+                                <p><strong>Mean Expected Duration:</strong> <span id="simDuration">0</span> days</p>
+                                <p><strong>Probability of On-Time Success:</strong> <span id="simProb" style="color: var(--success); font-weight: bold;">0%</span></p>
+                            </div>
+                        </div>
+
+                        <!-- Pareto Options (Novelty 8) -->
+                        <div class="analytics-card glass-panel">
+                            <div class="panel-header">
+                                <h2><i class="fa-solid fa-layer-group"></i> Multi-Objective Pareto Schedules</h2>
+                            </div>
+                            <button id="btnPareto" class="secondary-btn">Generate NSGA-II Trade-offs</button>
+                            <div id="paretoResults" class="pareto-results hidden">
+                                <table class="pareto-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Option</th>
+                                            <th>Duration (Days)</th>
+                                            <th>Burnout Variance</th>
+                                            <th>Milestone Vis.</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="paretoTableBody">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- GitHub Connect Modal -->
+    <div id="githubModal" class="modal-overlay hidden">
+        <div class="modal-box glass-panel">
+            <div class="modal-header">
+                <h3><i class="fa-brands fa-github"></i> Connect GitHub Repository</h3>
+                <button id="closeGithubModal" class="icon-btn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div id="githubStatusBanner" class="status-banner hidden"></div>
+            <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem;">Paste your repository URL below. The system will track your commits and automatically mark coding tasks as completed.</p>
+            <div class="modal-input-group">
+                <input type="text" id="githubRepoUrl" placeholder="https://github.com/username/repository" />
+                <button id="btnRegisterGithub" class="primary-btn" style="padding:0.75rem 1.5rem;">Connect</button>
+            </div>
+            <div id="webhookInstructions" class="hidden" style="margin-top:1rem;padding:1rem;background:rgba(0,0,0,0.2);border-radius:8px;font-size:0.8rem;">
+                <strong>Manual Webhook Setup (one-time):</strong>
+                <ol style="margin-top:0.5rem;padding-left:1.2rem;line-height:2;">
+                    <li>Go to your GitHub repo → <strong>Settings → Webhooks → Add webhook</strong></li>
+                    <li>Set <strong>Payload URL</strong> to: <code id="webhookUrl" style="color:var(--brand-primary)"></code></li>
+                    <li>Set <strong>Content type</strong> to <code>application/json</code></li>
+                    <li>Select <strong>"Just the push event"</strong> and click Save</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notifications Panel -->
+    <div id="notifPanel" class="notif-panel glass-panel hidden">
+        <div class="notif-panel-header">
+            <h3><i class="fa-solid fa-bell"></i> Notifications</h3>
+            <button id="btnMarkRead" class="secondary-btn" style="font-size:0.75rem;padding:0.3rem 0.7rem;">Mark all read</button>
+        </div>
+        <div id="notifList" class="notif-list">
+            <p style="color:var(--text-muted);padding:1rem;font-size:0.85rem;">No unread notifications.</p>
+        </div>
+    </div>
+
+    <!-- Milestone Submit Modal -->
+    <div id="submitModal" class="modal-overlay hidden">
+        <div class="modal-box glass-panel">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-file-arrow-up"></i> Submit Milestone Document</h3>
+                <button id="closeSubmitModal" class="icon-btn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <p id="submitModalTaskName" style="color:var(--text-muted);font-size:0.85rem;margin-bottom:1rem;"></p>
+            <input type="file" id="milestoneFile" accept=".pdf,.docx,.doc,.txt" style="color:var(--text-main);margin-bottom:1rem;width:100%;" />
+            <button id="btnSubmitMilestone" class="primary-btn" style="width:100%;">
+                <i class="fa-solid fa-upload"></i> Upload & Mark Complete
+            </button>
+            <div id="submitResult" class="hidden" style="margin-top:1rem;padding:0.75rem;border-radius:8px;background:rgba(34,197,94,0.15);color:#22c55e;font-size:0.85rem;"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

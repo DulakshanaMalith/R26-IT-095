@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPMS Unified Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --surface: #1e293b;
+            --primary: #3b82f6;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 4rem 2rem;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            background: linear-gradient(to right, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        p.subtitle {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            width: 100%;
+            max-width: 1200px;
+        }
+        .card {
+            background: var(--surface);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+            border-color: rgba(59, 130, 246, 0.5);
+        }
+        .icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        .card h2 {
+            font-size: 1.5rem;
+            margin: 0 0 1rem 0;
+        }
+        .card p {
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+        .btn {
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            width: 100%;
+            transition: background 0.2s;
+        }
+        .card:hover .btn {
+            background: #2563eb;
+        }
+        .status {
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>IPMS Unified Workspace</h1>
+        <p class="subtitle">Integrated Project Management System - AI Microservices Architecture</p>
+    </header>
+
+    <div class="grid">
+        <!-- Component 1 -->
+        <a href="http://127.0.0.1:8000/app" target="_blank" class="card">
+            <i class="fa-solid fa-timeline icon" style="color: #60a5fa;"></i>
+            <h2>Adaptive Scheduling</h2>
+            <p>Generative WBS planning, XGBoost duration estimation, and NASA-trained schedule risk analysis.</p>
+            <div class="btn">Launch Subsystem</div>
+
+        </a>
+
+        <!-- Component 2 -->
+        <a href="http://127.0.0.1:3000" target="_blank" class="card">
+            <i class="fa-solid fa-microscope icon" style="color: #a78bfa;"></i>
+            <h2>Quality Assessment</h2>
+            <p>Automated semantic rubric matching and ML-based document quality analysis.</p>
+            <div class="btn">Launch Subsystem</div>
+
+        </a>
+
+        <!-- Component 3 -->
+        <a href="http://127.0.0.1:5000" target="_blank" class="card">
+            <i class="fa-solid fa-chart-line icon" style="color: #f472b6;"></i>
+            <h2>Risk Monitoring</h2>
+            <p>Predictive contribution analytics and real-time project risk detection algorithms.</p>
+            <div class="btn">Launch Subsystem</div>
+
+        </a>
+
+        <!-- Component 4 -->
+        <a href="http://127.0.0.1:3001" target="_blank" class="card">
+            <i class="fa-solid fa-users icon" style="color: #4ade80;"></i>
+            <h2>Team Formation</h2>
+            <p>Intelligent clustering and topic feasibility analysis for optimized developer allocation.</p>
+            <div class="btn">Launch Subsystem</div>
+
+        </a>
+    </div>
+
+</body>
+</html>
