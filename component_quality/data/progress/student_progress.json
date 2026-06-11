@@ -388,5 +388,27 @@
     "improvement": 14.13,
     "timestamp": "2026-05-11T11:50:29.258630Z",
     "improvement_percentage": 30.33
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 1",
+    "final_score": 46.58,
+    "semantic_score": 28.59,
+    "ml_score": 80.0,
+    "grade": "D",
+    "status": "Needs Improvement",
+    "strongest_section": "Methodology",
+    "weakest_section": "SMART Objectives",
+    "weaknesses": [
+      "Introduction and Problem Statement",
+      "Literature Review",
+      "Research Gap",
+      "Methodology",
+      "SMART Objectives",
+      "Academic Writing and References"
+    ],
+    "improvement": 0,
+    "timestamp": "2026-05-11T13:07:52.467210Z",
+    "improvement_percentage": 0
   }
 ]
