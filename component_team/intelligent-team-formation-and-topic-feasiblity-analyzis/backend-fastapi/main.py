@@ -52,12 +52,14 @@ except Exception as e:
 # ---------------------------------------------------------
 # 2.5 DEAP Genetic Algorithm Blueprint (NSGA-II)
 # ---------------------------------------------------------
-# We want to MINIMIZE 3 things: Skill Deficits, Redundancy, and Power Imbalance
+# We want to MINIMIZE 3 things: Skill Deficits, Redundancy, Power Imbalance
+# We want to MAXIMIZE 1 thing: Cultural Diversity (+1.0)
 if not hasattr(creator, "FitnessMulti"):
-    creator.create("FitnessMulti", base.Fitness, weights=(-1.0, -1.0, -1.0)) 
+    creator.create("FitnessMulti", base.Fitness, weights=(-1.0, -1.0, -1.0, 1.0)) 
 
 if not hasattr(creator, "Individual"):
     creator.create("Individual", list, fitness=creator.FitnessMulti)
+
 # ---------------------------------------------------------
 # 3. Define the Request Schemas (Pydantic)
 # ---------------------------------------------------------
@@ -130,7 +132,7 @@ def calculate_feasibility(data: FeasibilityRequest):
     if feasibility_model is None:
         raise HTTPException(status_code=500, detail="ML Model not loaded on server.")
 
-    # Convert the incoming JSON request into a 2D array for the Random Forest model
+    # Convert the incoming JSON request into a 2D array for the model
     input_vector = [[
         data.Hours_Studied,
         data.Attendance,
@@ -142,7 +144,6 @@ def calculate_feasibility(data: FeasibilityRequest):
         data.Skill_MongoDB
     ]]
 
-    # Ask the AI to predict the score based on its training
     # Ask the AI to predict the score based on its training (converted to standard float)
     predicted_score = float(feasibility_model.predict(input_vector)[0])
 
@@ -167,7 +168,7 @@ def calculate_feasibility(data: FeasibilityRequest):
 def optimize_team_formation(data: TeamFormationRequest):
     """
     NSGA-II Multi-Objective Grouping Algorithm.
-    Evolves optimal teams by minimizing skill deficits, minimizing redundancy, and balancing power scores.
+    Evolves optimal teams by minimizing skill deficits, minimizing redundancy, balancing power scores, and maximizing diversity.
     """
     if df_students is None:
         raise HTTPException(status_code=500, detail="Dataset not loaded.")
@@ -186,7 +187,21 @@ def optimize_team_formation(data: TeamFormationRequest):
     num_teams = max(1, data.total_students // data.team_size)
     reqs = data.topic_requirements
 
-    # 2. The Fitness Function (The 3 Objectives)
+    # --- NEW: Simpson's Diversity Helper Function ---
+    def calculate_simpsons_diversity(team_members):
+        if not team_members:
+            return 0.0
+        N = len(team_members)
+        ethnicity_counts = {}
+        for m in team_members:
+            # Uses .get() to safely fall back to 'Unknown' if the dataset doesn't have the column yet
+            eth = m.get('Ethnicity_Group', 'Unknown')
+            ethnicity_counts[eth] = ethnicity_counts.get(eth, 0) + 1
+        
+        sum_of_squares = sum((n / N) ** 2 for n in ethnicity_counts.values())
+        return 1.0 - sum_of_squares
+
+    # 2. The Fitness Function (The 4 Objectives)
     def evaluate_teams(individual):
         # Decode the individual (a shuffled list of indices) into teams
         teams = [individual[i:i + data.team_size] for i in range(0, len(individual), data.team_size)]
@@ -194,6 +209,7 @@ def optimize_team_formation(data: TeamFormationRequest):
         total_deficit = 0
         total_redundancy = 0
         team_powers = []
+        team_diversities = [] # NEW
 
         for team_indices in teams:
             team_members = [pool[idx] for idx in team_indices]
@@ -220,10 +236,15 @@ def optimize_team_formation(data: TeamFormationRequest):
             avg_power = sum(m['power_score'] for m in team_members) / len(team_members)
             team_powers.append(avg_power)
 
+            # Objective 4: Cultural Diversity (Simpson's Index)
+            team_diversities.append(calculate_simpsons_diversity(team_members))
+
         # We want the variance between team powers to be as close to 0 as possible
         power_imbalance = np.var(team_powers) * 100 
+        avg_class_diversity = sum(team_diversities) / len(team_diversities) if team_diversities else 0.0
 
-        return (total_deficit, total_redundancy, power_imbalance)
+        # RETURN 4 OBJECTIVES 
+        return (total_deficit, total_redundancy, power_imbalance, avg_class_diversity)
 
     # 3. Setup the Evolutionary Toolbox
     toolbox = base.Toolbox()
@@ -257,6 +278,7 @@ def optimize_team_formation(data: TeamFormationRequest):
             "members": [{
                 "student_id": m['student_id'],
                 "power_score": round(m['power_score'], 2),
+                "ethnicity": m.get('Ethnicity_Group', 'Unknown'), # Pass back to UI
                 "skills": {
                     "React": m['Skill_React'],
                     "NodeJS": m['Skill_NodeJS'],
@@ -266,6 +288,7 @@ def optimize_team_formation(data: TeamFormationRequest):
             } for m in members],
             "stats": {
                 "avg_power": round(sum(m['power_score'] for m in members) / len(members), 2),
+                "diversity_score": round(calculate_simpsons_diversity(members), 2), # Expose to frontend
                 "total_react": sum(m['Skill_React'] for m in members),
                 "total_node": sum(m['Skill_NodeJS'] for m in members),
                 "total_python": sum(m['Skill_Python'] for m in members),
@@ -274,7 +297,7 @@ def optimize_team_formation(data: TeamFormationRequest):
         })
 
     return {
-        "algorithm": "NSGA-II Genetic Algorithm",
+        "algorithm": "NSGA-II Genetic Algorithm (4-Objective)",
         "total_teams_formed": num_teams,
         "teams": formatted_teams
     }
