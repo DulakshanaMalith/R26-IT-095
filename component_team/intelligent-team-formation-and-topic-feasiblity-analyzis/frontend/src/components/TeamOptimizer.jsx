@@ -24,7 +24,7 @@ export default function TeamOptimizer() {
 
   const optimizeTeams = async () => {
     setLoading(true);
-    
+
     const payload = {
       team_size: formData.team_size,
       total_students: formData.total_students,
@@ -51,7 +51,7 @@ export default function TeamOptimizer() {
       <h2 className="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">
         Multi-Objective Team Formation
       </h2>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="space-y-4 bg-blue-50 p-5 rounded-lg border border-blue-100">
           <h3 className="font-semibold text-blue-800">Class constraints</h3>
@@ -79,7 +79,7 @@ export default function TeamOptimizer() {
       </div>
 
       <div className="mt-8 text-center">
-        <button 
+        <button
           onClick={optimizeTeams} disabled={loading}
           className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-lg shadow transition-all duration-200 disabled:opacity-50"
         >
@@ -95,10 +95,10 @@ export default function TeamOptimizer() {
               {result.algorithm}
             </span>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {result.teams.map((team, index) => {
-              
+
               // Map the team stats into the specific format Recharts needs for the Radar Chart
               const chartData = [
                 { subject: 'React', value: team.stats.total_react },
@@ -109,11 +109,19 @@ export default function TeamOptimizer() {
 
               return (
                 <div key={index} className="bg-white border-2 border-slate-100 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+
+                  {/* UPDATE: Header now includes the Diversity Score */}
                   <div className="bg-slate-800 text-white p-4 flex justify-between items-center">
                     <h4 className="font-bold text-lg">{team.team_id}</h4>
-                    <div className="text-right">
-                      <p className="text-xs text-slate-400">Avg Power</p>
-                      <p className="font-mono font-bold text-emerald-400">{team.stats.avg_power}</p>
+                    <div className="flex space-x-4 text-right">
+                      <div>
+                        <p className="text-xs text-slate-400">Diversity</p>
+                        <p className="font-mono font-bold text-blue-400">{team.stats.diversity_score}</p>
+                      </div>
+                      <div>
+                        <p className="text-xs text-slate-400">Avg Power</p>
+                        <p className="font-mono font-bold text-emerald-400">{team.stats.avg_power}</p>
+                      </div>
                     </div>
                   </div>
 
@@ -127,11 +135,19 @@ export default function TeamOptimizer() {
                       </RadarChart>
                     </ResponsiveContainer>
                   </div>
-                  
+
                   <div className="p-4 space-y-3 max-h-48 overflow-y-auto">
                     {team.members.map((member, mIdx) => (
                       <div key={mIdx} className="flex justify-between items-center p-2 bg-white rounded border border-slate-100 shadow-sm">
-                        <span className="font-mono text-sm text-slate-600">{member.student_id}</span>
+
+                        {/* UPDATE: Now shows the student's assigned cultural group underneath their ID */}
+                        <div className="flex flex-col">
+                          <span className="font-mono text-sm text-slate-600">{member.student_id}</span>
+                          <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">
+                            {member.ethnicity}
+                          </span>
+                        </div>
+
                         <span className="font-mono text-sm font-bold text-indigo-600">{member.power_score}</span>
                       </div>
                     ))}

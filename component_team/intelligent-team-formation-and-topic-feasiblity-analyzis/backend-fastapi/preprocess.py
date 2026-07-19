@@ -25,7 +25,7 @@ if os.path.exists(factors_file):
         mode_val = df_factors[col].mode()[0]
         df_factors[col] = df_factors[col].fillna(mode_val)
 
-    # FEATURE ENGINEERING: Inject Synthetic Technical Skills
+    # FEATURE ENGINEERING: Inject Synthetic Technical Skills & Diversity Groups
     # To test team formation, we need to pretend these students know the tech stack.
     # We assign a random skill level from 1 (Novice) to 5 (Expert) for each tech.
     np.random.seed(42) # Ensures the random numbers are the same every time you run it
@@ -33,11 +33,17 @@ if os.path.exists(factors_file):
     df_factors['Skill_NodeJS'] = np.random.randint(1, 6, df_factors.shape[0])
     df_factors['Skill_Python'] = np.random.randint(1, 6, df_factors.shape[0])
     df_factors['Skill_MongoDB'] = np.random.randint(1, 6, df_factors.shape[0])
+    
+    # NEW: Inject Synthetic Ethnicity/Cultural Groups for the Simpson's Diversity Index
+    cultural_groups = ["Group A", "Group B", "Group C", "Group D"]
+    df_factors['Ethnicity_Group'] = np.random.choice(cultural_groups, size=df_factors.shape[0])
 
     # ENCODING: Convert text columns (like "Low", "High", "Male", "Female") to numbers
     cat_columns = df_factors.select_dtypes(include=['object']).columns
     for col in cat_columns:
-        df_factors[col] = df_factors[col].astype('category').cat.codes
+        # Skip encoding the Ethnicity_Group so it remains readable as Group A, B, etc.
+        if col != 'Ethnicity_Group':
+            df_factors[col] = df_factors[col].astype('category').cat.codes
 
     # Save the math-ready data
     out_path = os.path.join(processed_dir, "cleaned_student_factors.csv")
