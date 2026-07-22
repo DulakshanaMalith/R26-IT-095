@@ -1,18 +1,28 @@
 import FeasibilityPredictor from './components/FeasibilityPredictor';
-import TeamOptimizer from './components/TeamOptimizer'; // Import the new component
+import TeamOptimizer from './components/TeamOptimizer';
+import StudentOnboarding from './components/StudentOnboarding'; // <-- 1. Import the new form
 
 function App() {
   return (
-   <div className="min-h-screen bg-gray-100 py-10">
+   <div className="min-h-screen bg-[#1e293b] py-10"> {/* Kept dark mode background to match your screenshot */}
       <div className="max-w-6xl mx-auto px-4">
-        <h1 className="text-4xl font-extrabold text-center text-blue-900 mb-2">Intelligent Project Management</h1>
-        <p className="text-center text-gray-500 mb-10">Undergraduate Research Assistant Dashboard</p>
+        <h1 className="text-4xl font-extrabold text-center text-white mb-2">Intelligent Project Management</h1>
+        <p className="text-center text-slate-400 mb-10">Undergraduate Research Assistant Dashboard</p>
         
-        {/* The Predictive Component */}
-        <FeasibilityPredictor />
+        {/* Step 1: Student NLP Data Entry */}
+        <div className="mb-12">
+          <StudentOnboarding />
+        </div>
 
-        {/* The Team Formation Component */}
-        <TeamOptimizer />
+        {/* Step 2: The Predictive Component */}
+        <div className="mb-12">
+          <FeasibilityPredictor />
+        </div>
+
+        {/* Step 3: The Team Formation Component */}
+        <div>
+          <TeamOptimizer />
+        </div>
         
       </div>
     </div>
