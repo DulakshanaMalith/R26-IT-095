@@ -345,13 +345,13 @@ def extract_skills_from_text(data: NLPProfileRequest):
         
         # 3. Map the semantic similarity to your 1-5 scale
         # SBERT similarity scores typically range from 0.1 to 0.5 for related context
-        if similarity >= 0.35:
+        if similarity >= 0.40:
             score = 5
-        elif similarity >= 0.25:
+        elif similarity >= 0.28:
             score = 4
-        elif similarity >= 0.15:
+        elif similarity >= 0.18:
             score = 3
-        elif similarity >= 0.05:
+        elif similarity >= 0.12:
             score = 2
         else:
             score = 1
