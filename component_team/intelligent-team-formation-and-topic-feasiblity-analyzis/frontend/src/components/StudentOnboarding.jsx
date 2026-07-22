@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import axios from 'axios'; 
 
 export default function StudentOnboarding() {
   const [loading, setLoading] = useState(false);
@@ -17,15 +18,25 @@ export default function StudentOnboarding() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setSuccess(false);
     
-    // In the next step, this is where we will use axios to send this text 
-    // to your FastAPI SBERT endpoint to calculate the 1-5 vectors.
-    console.log("Sending to SBERT Engine:", formData);
-    
-    setTimeout(() => {
-      setLoading(false);
+    try {
+      // Send the text to the SBERT backend
+      const response = await axios.post('http://127.0.0.1:8003/api/ml/extract-skills', formData);
+      
+      console.log("AI Extracted Vector:", response.data);
+      
+      // Display the mathematically extracted scores to the user
+      const skills = response.data.extracted_skills;
+      alert(`Success! AI mapped your text to:\n\nReact: ${skills.Skill_React}/5\nNodeJS: ${skills.Skill_NodeJS}/5\nPython: ${skills.Skill_Python}/5\nMongoDB: ${skills.Skill_MongoDB}/5`);
+      
       setSuccess(true);
-    }, 1500); // Mock network delay
+    } catch (error) {
+      console.error("NLP Extraction failed:", error);
+      alert("Failed to connect to the NLP engine. Make sure the FastAPI server is running!");
+    }
+    
+    setLoading(false);
   };
 
   return (

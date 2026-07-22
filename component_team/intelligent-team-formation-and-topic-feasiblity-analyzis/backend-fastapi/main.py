@@ -7,6 +7,8 @@ import pandas as pd
 import os
 import random
 import joblib
+from sentence_transformers import SentenceTransformer
+from sklearn.metrics.pairwise import cosine_similarity
 
 app = FastAPI(
     title="Intelligent Project Management ML API",
@@ -37,7 +39,7 @@ except Exception as e:
     df_students = None
 
 # ---------------------------------------------------------
-# 2. Load the Trained ML Model into Memory
+# 2. Load the Trained ML Models into Memory
 # ---------------------------------------------------------
 MODELS_DIR = "./models"
 MODEL_PATH = os.path.join(MODELS_DIR, "feasibility_model.pkl")
@@ -48,6 +50,14 @@ try:
 except Exception as e:
     print(f"⚠️ Warning: Could not load ML model: {e}")
     feasibility_model = None
+
+try:
+    # all-MiniLM-L6-v2 is a highly efficient, lightweight SBERT model perfect for APIs
+    sbert_model = SentenceTransformer('all-MiniLM-L6-v2')
+    print("🧠 SBERT Semantic NLP Model loaded successfully!")
+except Exception as e:
+    print(f"⚠️ Warning: Could not load SBERT model: {e}")
+    sbert_model = None
 
 # ---------------------------------------------------------
 # 2.5 DEAP Genetic Algorithm Blueprint (NSGA-II)
@@ -83,6 +93,11 @@ class TeamFormationRequest(BaseModel):
     team_size: int
     total_students: int
     topic_requirements: TopicRequirements
+
+class NLPProfileRequest(BaseModel):
+    studentId: str
+    ethnicity: str
+    projectHistory: str
 
 # ---------------------------------------------------------
 # 4. API Endpoints
@@ -300,4 +315,53 @@ def optimize_team_formation(data: TeamFormationRequest):
         "algorithm": "NSGA-II Genetic Algorithm (4-Objective)",
         "total_teams_formed": num_teams,
         "teams": formatted_teams
+    }
+
+@app.post("/api/ml/extract-skills")
+def extract_skills_from_text(data: NLPProfileRequest):
+    """
+    Takes a natural language paragraph and uses SBERT Cosine Similarity 
+    to map semantic context to a 1-5 technical skill vector.
+    """
+    if sbert_model is None:
+        raise HTTPException(status_code=500, detail="SBERT Model not loaded.")
+
+    # The target vectors your platform tracks
+    target_skills = ["React", "NodeJS", "Python", "MongoDB"]
+    
+    # 1. Encode the student's entire project history into a mathematical vector
+    history_embedding = sbert_model.encode([data.projectHistory])
+    
+    extracted_vector = {}
+    raw_scores = {}
+    
+    # 2. Compare the history against each specific tech requirement
+    for skill in target_skills:
+        skill_embedding = sbert_model.encode([skill])
+        
+        # Calculate Cosine Similarity
+        similarity = cosine_similarity(history_embedding, skill_embedding)[0][0]
+        raw_scores[skill] = float(similarity)
+        
+        # 3. Map the semantic similarity to your 1-5 scale
+        # SBERT similarity scores typically range from 0.1 to 0.5 for related context
+        if similarity >= 0.35:
+            score = 5
+        elif similarity >= 0.25:
+            score = 4
+        elif similarity >= 0.15:
+            score = 3
+        elif similarity >= 0.05:
+            score = 2
+        else:
+            score = 1
+            
+        extracted_vector[f"Skill_{skill}"] = score
+
+    return {
+        "student_id": data.studentId,
+        "ethnicity": data.ethnicity,
+        "extracted_skills": extracted_vector,
+        "raw_similarity_scores": raw_scores,
+        "message": "NLP Vector Extraction Complete"
     }
