@@ -7,10 +7,20 @@ import requests
 from datetime import datetime, timedelta
 from pathlib import Path
 import re
+import time
 
-app = FastAPI()
+from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).resolve().parent
+
+# Load credentials (JIRA_*, GITHUB_TOKEN) from the app's .env file
+# before any module reads them from the environment.
+load_dotenv(BASE_DIR / ".env")
+
+from contribution import build_headers, compute_contribution_index
+from jira_client import compute_project_metrics, fetch_project_issues, get_jira_analytics
+
+app = FastAPI()
 
 templates = Jinja2Templates(directory=str(BASE_DIR / "templates"))
 app.mount("/static", StaticFiles(directory=str(BASE_DIR / "static")), name="static")
@@ -69,6 +79,7 @@ DEFAULT_FORM_DATA = {
     "project_name": "Student Portal Upgrade",
     "team_id": "TEAM-101",
     "github_url": "https://github.com/ipms-samples/medium-risk-demo",
+    "jira_project_key": "",
     "overdue_tasks": 4,
     "delay_count": 3,
     "task_completion_rate": 63.00,
@@ -174,9 +185,7 @@ def get_github_metrics(github_url):
             "high_priority_bugs": 0
         }
 
-    headers = {
-        "Accept": "application/vnd.github+json"
-    }
+    headers = build_headers()
 
     commits_url = f"https://api.github.com/repos/{owner}/{repo}/commits"
     issues_url = f"https://api.github.com/repos/{owner}/{repo}/issues"
@@ -202,6 +211,10 @@ def get_github_metrics(github_url):
     issues = get_all_paginated_items(issues_url, headers)
 
     for issue in issues:
+        # The issues endpoint also returns pull requests; skip them.
+        if "pull_request" in issue:
+            continue
+
         labels = [label["name"].lower() for label in issue.get("labels", [])]
 
         if "bug" in labels:
@@ -231,12 +244,301 @@ def home(request: Request):
     )
 
 
+@app.get("/contribution")
+def contribution_page(request: Request):
+    return templates.TemplateResponse(
+        request=request,
+        name="contribution.html",
+        context={
+            "analysis": None,
+            "github_url": "",
+            "jira_project_key": ""
+        }
+    )
+
+
+@app.post("/contribution")
+def analyze_contribution(
+    request: Request,
+    github_url: str = Form(...),
+    jira_project_key: str = Form("")
+):
+    analysis = compute_contribution_index(github_url)
+
+    jira_project_key = jira_project_key.strip()
+    analysis["jira"] = get_jira_analytics(jira_project_key) if jira_project_key else None
+
+    return templates.TemplateResponse(
+        request=request,
+        name="contribution.html",
+        context={
+            "analysis": analysis,
+            "github_url": github_url,
+            "jira_project_key": jira_project_key
+        }
+    )
+
+
+def get_weekly_commit_activity(github_url):
+    owner, repo = extract_github_owner_repo(github_url)
+    if owner is None:
+        return []
+
+    url = f"https://api.github.com/repos/{owner}/{repo}/stats/commit_activity"
+    try:
+        response = requests.get(url, headers=build_headers(), timeout=15)
+    except requests.RequestException:
+        return []
+
+    # GitHub returns 202 while it computes statistics for the repo.
+    if response.status_code != 200:
+        return []
+
+    data = response.json()
+    if not isinstance(data, list):
+        return []
+
+    return [
+        {"week": week.get("week", 0), "total": week.get("total", 0)}
+        for week in data
+    ]
+
+
+def build_dashboard_alerts(risk_status, github_metrics, jira_metrics, members):
+    alerts = []
+
+    if risk_status == "High Risk":
+        alerts.append({
+            "level": "critical",
+            "message": "Project is predicted HIGH RISK — supervisor intervention recommended."
+        })
+    elif risk_status == "Medium Risk":
+        alerts.append({
+            "level": "warning",
+            "message": "Project is predicted MEDIUM RISK — monitor progress closely."
+        })
+
+    if github_metrics["inactive_days"] > 14:
+        alerts.append({
+            "level": "critical",
+            "message": f"No commits for {github_metrics['inactive_days']} days."
+        })
+    elif github_metrics["weekly_commits"] == 0:
+        alerts.append({
+            "level": "warning",
+            "message": "No commits in the last 7 days."
+        })
+
+    if github_metrics["high_priority_bugs"] > 0:
+        alerts.append({
+            "level": "critical",
+            "message": f"{github_metrics['high_priority_bugs']} high-priority bug(s) open on GitHub."
+        })
+
+    if jira_metrics:
+        if jira_metrics["overdue_tasks"] > 0:
+            alerts.append({
+                "level": "warning",
+                "message": f"{jira_metrics['overdue_tasks']} task(s) past their due date in Jira."
+            })
+        if jira_metrics["delay_count"] > jira_metrics["overdue_tasks"]:
+            late = jira_metrics["delay_count"] - jira_metrics["overdue_tasks"]
+            alerts.append({
+                "level": "warning",
+                "message": f"{late} task(s) were completed after their due date."
+            })
+
+    if members:
+        top = members[0]
+        if top["share"] > 60:
+            alerts.append({
+                "level": "warning",
+                "message": (
+                    f"Uneven participation: {top['login']} accounts for "
+                    f"{top['share']}% of team contribution."
+                )
+            })
+
+    if not alerts:
+        alerts.append({
+            "level": "ok",
+            "message": "No active risk alerts — project activity looks healthy."
+        })
+
+    return alerts
+
+
+def get_github_rate_remaining():
+    try:
+        response = requests.get(
+            "https://api.github.com/rate_limit",
+            headers=build_headers(),
+            timeout=10
+        )
+        if response.status_code == 200:
+            return response.json()["resources"]["core"]["remaining"]
+    except (requests.RequestException, KeyError, ValueError):
+        pass
+    return None
+
+
+def build_dashboard_data(github_url, jira_project_key):
+    rate_remaining = get_github_rate_remaining()
+    contribution = compute_contribution_index(github_url)
+    github_metrics = get_github_metrics(github_url)
+    weekly_activity = get_weekly_commit_activity(github_url)
+    jira = get_jira_analytics(jira_project_key) if jira_project_key else None
+
+    warnings = list(contribution.get("warnings") or [])
+    if contribution.get("error"):
+        warnings.append(contribution["error"])
+
+    if rate_remaining is not None and rate_remaining < 20:
+        warnings.append(
+            f"GitHub API rate limit nearly exhausted ({rate_remaining} requests left) — "
+            "GitHub metrics may show as 0. Add a GITHUB_TOKEN to .env for a 5,000/hour limit."
+        )
+
+    members = contribution.get("members") or []
+    team = contribution.get("team") or {}
+
+    # Derive the team-quality features from live data instead of manual input.
+    overall_ci = team.get("average_ci", 0.0)
+    collaboration_score = (
+        round(sum(m["scores"]["collaboration"] for m in members) / len(members), 1)
+        if members else 0.0
+    )
+    total_prs_opened = sum(m["stats"]["prs_opened"] for m in members)
+    total_prs_merged = sum(m["stats"]["prs_merged"] for m in members)
+    code_quality_score = (
+        round(total_prs_merged / total_prs_opened * 100, 1)
+        if total_prs_opened else 0.0
+    )
+
+    jira_metrics = None
+    if jira:
+        if jira.get("error"):
+            warnings.append(jira["error"])
+        else:
+            jira_metrics = jira["metrics"]
+    else:
+        warnings.append("No Jira project key provided — delivery metrics default to 0.")
+
+    delivery = jira_metrics or {
+        "total_tasks": 0,
+        "completed_tasks": 0,
+        "in_progress_tasks": 0,
+        "todo_tasks": 0,
+        "overdue_tasks": 0,
+        "delay_count": 0,
+        "task_completion_rate": 0.0,
+        "progress_percentage": 0.0
+    }
+
+    input_data = {
+        "total_commits": github_metrics["total_commits"],
+        "weekly_commits": github_metrics["weekly_commits"],
+        "inactive_days": github_metrics["inactive_days"],
+        "overdue_tasks": delivery["overdue_tasks"],
+        "bug_count": github_metrics["bug_count"],
+        "high_priority_bugs": github_metrics["high_priority_bugs"],
+        "task_completion_rate": delivery["task_completion_rate"],
+        "code_quality_score": code_quality_score,
+        "collaboration_score": collaboration_score,
+        "overall_ci_score": overall_ci,
+        "progress_percentage": delivery["progress_percentage"],
+        "delay_count": delivery["delay_count"]
+    }
+
+    risk_status = None
+    try:
+        df = pd.DataFrame([input_data], columns=FEATURE_COLUMNS)
+        prediction = model.predict(scaler.transform(df))[0]
+        risk_status = LABEL_MAP.get(prediction, str(prediction))
+    except Exception:
+        warnings.append("Risk prediction failed for the derived feature set.")
+
+    return {
+        "generated_at": datetime.now().strftime("%H:%M:%S"),
+        "repo": contribution.get("repo"),
+        "risk_status": risk_status,
+        "github": {**github_metrics, "weekly_activity": weekly_activity},
+        "delivery": delivery,
+        "jira_available": jira_metrics is not None,
+        "jira_members": (jira or {}).get("members") or [],
+        "team": {
+            "average_ci": overall_ci,
+            "collaboration_score": collaboration_score,
+            "code_quality_score": code_quality_score,
+            "member_count": team.get("member_count", 0)
+        },
+        "members": [
+            {
+                "login": m["login"],
+                "ci": m["ci"],
+                "share": m["share"],
+                "commits": m["stats"]["commits"]
+            }
+            for m in members
+        ],
+        "alerts": build_dashboard_alerts(risk_status, github_metrics, jira_metrics, members),
+        "warnings": list(dict.fromkeys(warnings))
+    }
+
+
+DASHBOARD_CACHE = {}
+DASHBOARD_CACHE_TTL_SECONDS = 120
+
+
+@app.get("/dashboard")
+def dashboard_page(request: Request, github_url: str = "", jira_project_key: str = ""):
+    return templates.TemplateResponse(
+        request=request,
+        name="dashboard.html",
+        context={
+            "github_url": github_url.strip(),
+            "jira_project_key": jira_project_key.strip()
+        }
+    )
+
+
+@app.get("/api/dashboard-data")
+def dashboard_data(github_url: str, jira_project_key: str = "", force: int = 0):
+    cache_key = (github_url.strip(), jira_project_key.strip())
+    now = time.time()
+
+    entry = DASHBOARD_CACHE.get(cache_key)
+    if entry and not force and now - entry[0] < DASHBOARD_CACHE_TTL_SECONDS:
+        data = dict(entry[1])
+        data["cached"] = True
+        return data
+
+    data = build_dashboard_data(*cache_key)
+    data["cached"] = False
+    DASHBOARD_CACHE[cache_key] = (now, data)
+    return data
+
+
+@app.get("/api/jira-metrics")
+def jira_metrics(project_key: str):
+    issues, error = fetch_project_issues(project_key.strip())
+
+    if error:
+        return {"error": error, "metrics": None}
+
+    if not issues:
+        return {"error": f"No issues found in Jira project '{project_key}'.", "metrics": None}
+
+    return {"error": None, "metrics": compute_project_metrics(issues)}
+
+
 @app.post("/predict")
 def predict_risk(
     request: Request,
     project_name: str = Form(...),
     team_id: str = Form(...),
     github_url: str = Form(...),
+    jira_project_key: str = Form(""),
     sample_profile: str = Form(""),
     overdue_tasks: int = Form(...),
     task_completion_rate: float = Form(...),
@@ -247,11 +549,34 @@ def predict_risk(
     delay_count: int = Form(...)
 ):
     github_metrics = SAMPLE_GITHUB_METRICS.get(sample_profile) or get_github_metrics(github_url)
+
+    # When a Jira project key is provided, delivery metrics come from Jira
+    # and override the manually entered values.
+    jira_project_key = jira_project_key.strip()
+    jira_warning = None
+    jira_used = False
+
+    if jira_project_key and not sample_profile:
+        issues, jira_error = fetch_project_issues(jira_project_key)
+
+        if jira_error:
+            jira_warning = jira_error
+        elif not issues:
+            jira_warning = f"No issues found in Jira project '{jira_project_key}'."
+        else:
+            jira = compute_project_metrics(issues)
+            overdue_tasks = jira["overdue_tasks"]
+            delay_count = jira["delay_count"]
+            task_completion_rate = jira["task_completion_rate"]
+            progress_percentage = jira["progress_percentage"]
+            jira_used = True
+
     form_data = {
         "sample_profile": sample_profile,
         "project_name": project_name,
         "team_id": team_id,
         "github_url": github_url,
+        "jira_project_key": jira_project_key,
         "overdue_tasks": overdue_tasks,
         "delay_count": delay_count,
         "task_completion_rate": task_completion_rate,
@@ -293,7 +618,10 @@ def predict_risk(
                 "project_name": project_name,
                 "team_id": team_id,
                 "risk_status": risk_status,
-                "features": input_data
+                "features": input_data,
+                "jira_used": jira_used,
+                "jira_project_key": jira_project_key,
+                "jira_warning": jira_warning
             }
         }
     )

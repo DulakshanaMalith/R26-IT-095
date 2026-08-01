@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPMS Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="app-shell">
+    <header class="app-header">
+        <div>
+            <p class="eyebrow">Intelligent Project Management System</p>
+            <h1>Analytics Dashboard</h1>
+        </div>
+        <nav class="page-nav">
+            <a href="/">Risk Prediction</a>
+            <a href="/contribution">Contribution Index</a>
+            <a href="/dashboard" class="active">Dashboard</a>
+        </nav>
+    </header>
+
+    <main class="workspace single-column">
+        <section class="panel input-panel">
+            <div class="panel-heading">
+                <div>
+                    <p class="eyebrow">Project</p>
+                    <h2>Monitor a Project</h2>
+                </div>
+            </div>
+
+            <form action="/dashboard" method="get">
+                <div class="field-grid">
+                    <label>
+                        <span>GitHub Repository URL</span>
+                        <input type="url" name="github_url" value="{{ github_url }}" placeholder="https://github.com/user/repo" required>
+                    </label>
+                    <label>
+                        <span>Jira Project Key (optional)</span>
+                        <input type="text" name="jira_project_key" value="{{ jira_project_key }}" placeholder="e.g. IPMS">
+                    </label>
+                </div>
+                <button type="submit">Load Dashboard</button>
+            </form>
+        </section>
+
+        {% if github_url %}
+        <div id="dash-loading" class="panel result-panel">
+            <div class="empty-state">
+                <span class="empty-mark"></span>
+                <h3>Loading Live Data</h3>
+                <p>Fetching GitHub and Jira analytics. This can take ~10&ndash;20 seconds.</p>
+            </div>
+        </div>
+
+        <div id="dash-root" hidden>
+            <div class="panel dash-toolbar">
+                <div class="toolbar-meta">
+                    <strong id="dash-repo"></strong>
+                    <span id="dash-updated" class="toolbar-updated"></span>
+                </div>
+                <div class="toolbar-actions">
+                    <span class="toolbar-updated">Auto-refresh: 60s</span>
+                    <button type="button" class="secondary" id="dash-refresh">Refresh Now</button>
+                </div>
+            </div>
+
+            <div id="dash-alerts" class="alert-stack"></div>
+
+            <div class="kpi-grid" id="dash-kpis"></div>
+
+            <div class="chart-row">
+                <section class="panel chart-panel">
+                    <h3>Task Status <span class="chart-sub">Jira</span></h3>
+                    <div id="chart-tasks"></div>
+                </section>
+                <section class="panel chart-panel">
+                    <h3>Commit Activity <span class="chart-sub">last 52 weeks</span></h3>
+                    <div id="chart-commits"></div>
+                </section>
+            </div>
+
+            <div class="chart-row">
+                <section class="panel chart-panel">
+                    <h3>Top Contributors <span class="chart-sub">Contribution Index</span></h3>
+                    <div id="chart-members"></div>
+                </section>
+                <section class="panel chart-panel">
+                    <h3>Task Contribution <span class="chart-sub">Jira assignees</span></h3>
+                    <div id="chart-jira-members"></div>
+                </section>
+            </div>
+
+            <div id="dash-warnings"></div>
+        </div>
+        {% else %}
+        <section class="panel result-panel">
+            <div class="empty-state">
+                <span class="empty-mark"></span>
+                <h3>No Project Loaded</h3>
+                <p>Enter a GitHub repository URL (and optionally a Jira key) to open the live dashboard.</p>
+            </div>
+        </section>
+        {% endif %}
+    </main>
+</div>
+
+{% if github_url %}
+<script>
+    const GITHUB_URL = {{ github_url|tojson }};
+    const JIRA_KEY = {{ jira_project_key|tojson }};
+    const REFRESH_SECONDS = 60;
+
+    function esc(value) {
+        return String(value).replace(/[&<>"']/g, (ch) => ({
+            "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+        })[ch]);
+    }
+
+    function kpiTile(label, value, extraClass) {
+        return `<div class="metric-card ${extraClass || ""}">
+            <span>${esc(label)}</span>
+            <strong>${esc(value)}</strong>
+        </div>`;
+    }
+
+    function renderKpis(data) {
+        const g = data.github;
+        const d = data.delivery;
+        const riskClass = data.risk_status
+            ? "risk-tile " + data.risk_status.toLowerCase().replace(" ", "-")
+            : "";
+
+        document.getElementById("dash-kpis").innerHTML = [
+            kpiTile("Risk Status", data.risk_status || "N/A", riskClass),
+            kpiTile("Progress", d.progress_percentage + "%"),
+            kpiTile("Task Completion", d.task_completion_rate + "%"),
+            kpiTile("Overdue Tasks", d.overdue_tasks),
+            kpiTile("Delays", d.delay_count),
+            kpiTile("Weekly Commits", g.weekly_commits),
+            kpiTile("Inactive Days", g.inactive_days),
+            kpiTile("Team Avg CI", data.team.average_ci)
+        ].join("");
+    }
+
+    function renderAlerts(alerts) {
+        document.getElementById("dash-alerts").innerHTML = alerts.map((alert) =>
+            `<div class="alert-item ${esc(alert.level)}">
+                <span class="alert-dot"></span>${esc(alert.message)}
+            </div>`
+        ).join("");
+    }
+
+    function renderTaskChart(data) {
+        const el = document.getElementById("chart-tasks");
+        const d = data.delivery;
+
+        if (!data.jira_available || d.total_tasks === 0) {
+            el.innerHTML = '<p class="chart-note">No Jira task data available.</p>';
+            return;
+        }
+
+        const segments = [
+            { label: "Done", value: d.completed_tasks, cls: "seg-done" },
+            { label: "In Progress", value: d.in_progress_tasks, cls: "seg-progress" },
+            { label: "To Do", value: d.todo_tasks, cls: "seg-todo" }
+        ];
+
+        const bar = segments
+            .filter((s) => s.value > 0)
+            .map((s) => {
+                const pct = (s.value / d.total_tasks * 100).toFixed(1);
+                return `<div class="stack-seg ${s.cls}" style="width:${pct}%"
+                    title="${esc(s.label)}: ${s.value} task(s) (${pct}%)"></div>`;
+            })
+            .join("");
+
+        const legend = segments.map((s) =>
+            `<span class="legend-item">
+                <span class="legend-swatch ${s.cls}"></span>${esc(s.label)}
+                <strong>${s.value}</strong>
+            </span>`
+        ).join("");
+
+        el.innerHTML = `<div class="stack-bar">${bar}</div><div class="chart-legend">${legend}</div>`;
+    }
+
+    function renderCommitChart(data) {
+        const el = document.getElementById("chart-commits");
+        const weeks = data.github.weekly_activity || [];
+
+        if (!weeks.length) {
+            el.innerHTML = '<p class="chart-note">GitHub is still preparing commit statistics — refresh in a moment.</p>';
+            return;
+        }
+
+        const W = 520, H = 130, padLeft = 30, padBottom = 16, padTop = 14;
+        const max = Math.max(...weeks.map((w) => w.total), 1);
+        const slot = (W - padLeft) / weeks.length;
+        const barWidth = Math.max(slot - 2, 1);
+
+        const bars = weeks.map((w, i) => {
+            const h = Math.round((w.total / max) * (H - padTop - padBottom));
+            const x = padLeft + i * slot;
+            const y = H - padBottom - h;
+            const weekDate = new Date(w.week * 1000).toISOString().slice(0, 10);
+            return `<rect x="${x.toFixed(1)}" y="${y}" width="${barWidth.toFixed(1)}"
+                height="${Math.max(h, 1)}" rx="1.5" class="spark-bar">
+                <title>Week of ${weekDate}: ${w.total} commit(s)</title></rect>`;
+        }).join("");
+
+        el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Commits per week, last 52 weeks">
+            <text x="0" y="${padTop + 4}" class="axis-text">${max}</text>
+            <text x="0" y="${H - padBottom}" class="axis-text">0</text>
+            <line x1="${padLeft}" y1="${H - padBottom}" x2="${W}" y2="${H - padBottom}" class="axis-line"/>
+            ${bars}
+        </svg>`;
+    }
+
+    function scoreRow(name, value, sub) {
+        const width = Math.max(Math.min(value, 100), 0);
+        return `<div class="score-row">
+            <div class="score-head">
+                <span class="score-name">${esc(name)}</span>
+                <span class="score-value">${esc(value)}${sub ? ` <em>${esc(sub)}</em>` : ""}</span>
+            </div>
+            <div class="ci-bar-track"><div class="ci-bar-fill" style="width:${width}%"></div></div>
+        </div>`;
+    }
+
+    function renderMembers(data) {
+        const el = document.getElementById("chart-members");
+        if (!data.members.length) {
+            el.innerHTML = '<p class="chart-note">No contributor data available.</p>';
+            return;
+        }
+        el.innerHTML = data.members.slice(0, 8).map((m) =>
+            scoreRow(m.login, m.ci, m.share + "% share")
+        ).join("");
+    }
+
+    function renderJiraMembers(data) {
+        const el = document.getElementById("chart-jira-members");
+        if (!data.jira_available || !data.jira_members.length) {
+            el.innerHTML = '<p class="chart-note">No Jira task data available.</p>';
+            return;
+        }
+        el.innerHTML = data.jira_members.slice(0, 8).map((m) =>
+            scoreRow(
+                m.name,
+                m.task_score,
+                `${m.stats.completed}/${m.stats.assigned} done, ${m.on_time_rate}% on time`
+            )
+        ).join("");
+    }
+
+    function renderWarnings(warnings) {
+        document.getElementById("dash-warnings").innerHTML = (warnings || [])
+            .map((w) => `<div class="warning-box">${esc(w)}</div>`)
+            .join("");
+    }
+
+    function renderDashboard(data) {
+        document.getElementById("dash-repo").textContent = data.repo || GITHUB_URL;
+        document.getElementById("dash-updated").textContent =
+            `Updated ${data.generated_at}${data.cached ? " (cached)" : " (live)"}`;
+
+        renderKpis(data);
+        renderAlerts(data.alerts);
+        renderTaskChart(data);
+        renderCommitChart(data);
+        renderMembers(data);
+        renderJiraMembers(data);
+        renderWarnings(data.warnings);
+
+        document.getElementById("dash-loading").hidden = true;
+        document.getElementById("dash-root").hidden = false;
+    }
+
+    async function loadDashboard(force) {
+        const params = new URLSearchParams({
+            github_url: GITHUB_URL,
+            jira_project_key: JIRA_KEY
+        });
+        if (force) {
+            params.set("force", "1");
+        }
+
+        try {
+            const response = await fetch(`/api/dashboard-data?${params}`);
+            const data = await response.json();
+            renderDashboard(data);
+        } catch (error) {
+            document.getElementById("dash-loading").innerHTML =
+                '<div class="warning-box error">Could not load dashboard data. Is the server still running?</div>';
+        }
+    }
+
+    document.getElementById("dash-refresh").addEventListener("click", () => loadDashboard(true));
+
+    loadDashboard(false);
+    setInterval(() => loadDashboard(false), REFRESH_SECONDS * 1000);
+</script>
+{% endif %}
+
+</body>
+</html>
