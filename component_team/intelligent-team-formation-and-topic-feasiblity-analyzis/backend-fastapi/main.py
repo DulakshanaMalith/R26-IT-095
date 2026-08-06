@@ -90,7 +90,8 @@ class TopicRequirements(BaseModel):
     Skill_MongoDB: int
 
 class TeamFormationRequest(BaseModel):
-    team_size: int
+    max_team_size: int
+    max_groups: int
     total_students: int
     topic_requirements: TopicRequirements
 
@@ -183,26 +184,29 @@ def calculate_feasibility(data: FeasibilityRequest):
 def optimize_team_formation(data: TeamFormationRequest):
     """
     NSGA-II Multi-Objective Grouping Algorithm.
-    Evolves optimal teams by minimizing skill deficits, minimizing redundancy, balancing power scores, and maximizing diversity.
     """
     if df_students is None:
         raise HTTPException(status_code=500, detail="Dataset not loaded.")
 
-    if data.total_students > len(df_students):
-         raise HTTPException(status_code=400, detail="Requested more students than available.")
+    # --- ENFORCE PANEL CONSTRAINTS ---
+    # Mathematically ensure we don't process more students than the groups can hold
+    max_allowed_students = data.max_groups * data.max_team_size
+    effective_total = min(data.total_students, max_allowed_students)
 
-    # 1. Grab the student pool and calculate base power scores
-    pool = df_students.sample(data.total_students).to_dict('records')
+    if effective_total > len(df_students):
+         raise HTTPException(status_code=400, detail="Requested more students than available in database.")
+
+    # 1. Grab the student pool based on the constrained total
+    pool = df_students.sample(effective_total).to_dict('records')
     for i, student in enumerate(pool):
         student['student_id'] = f"STU-{random.randint(1000,9999)}"
         student['power_score'] = (student['Previous_Scores'] / 100) + (student['Attendance'] / 100)
-        # Add index to track them during evolution
         student['pool_idx'] = i 
 
-    num_teams = max(1, data.total_students // data.team_size)
+    num_teams = max(1, effective_total // data.max_team_size)
     reqs = data.topic_requirements
 
-    # --- NEW: Simpson's Diversity Helper Function ---
+    # --- Simpson's Diversity Helper Function ---
     def calculate_simpsons_diversity(team_members):
         if not team_members:
             return 0.0
@@ -217,7 +221,7 @@ def optimize_team_formation(data: TeamFormationRequest):
 
     # 2. The Fitness Function (The 4 Objectives)
     def evaluate_teams(individual):
-        teams = [individual[i:i + data.team_size] for i in range(0, len(individual), data.team_size)]
+        teams = [individual[i:i + data.max_team_size] for i in range(0, len(individual), data.max_team_size)]
         
         total_deficit = 0
         total_redundancy = 0
@@ -254,7 +258,7 @@ def optimize_team_formation(data: TeamFormationRequest):
 
     # 3. Setup the Evolutionary Toolbox
     toolbox = base.Toolbox()
-    toolbox.register("indices", random.sample, range(data.total_students), data.total_students)
+    toolbox.register("indices", random.sample, range(effective_total), effective_total)
     toolbox.register("individual", tools.initIterate, creator.Individual, toolbox.indices)
     toolbox.register("population", tools.initRepeat, list, toolbox.individual)
     
@@ -271,13 +275,13 @@ def optimize_team_formation(data: TeamFormationRequest):
     best_ind = tools.selBest(pop, 1)[0]
     
     # 6. Format the winning DNA back into JSON for React
-    final_teams_indices = [best_ind[i:i + data.team_size] for i in range(0, len(best_ind), data.team_size)]
+    final_teams_indices = [best_ind[i:i + data.max_team_size] for i in range(0, len(best_ind), data.max_team_size)]
     formatted_teams = []
 
     for i, t_indices in enumerate(final_teams_indices):
         members = [pool[idx] for idx in t_indices]
         
-        # --- NEW: AUTOMATED XGBOOST PREDICTION ---
+        # --- AUTOMATED XGBOOST PREDICTION ---
         avg_hours = sum(m['Hours_Studied'] for m in members) / len(members)
         avg_attendance = sum(m['Attendance'] for m in members) / len(members)
         avg_scores = sum(m['Previous_Scores'] for m in members) / len(members)
@@ -303,8 +307,7 @@ def optimize_team_formation(data: TeamFormationRequest):
         else:
             feasibility_percentage = 0.0
             risk_level = "Model Error"
-        # ----------------------------------------
-
+        
         formatted_teams.append({
             "team_id": f"Team-{i+1}",
             "members": [{

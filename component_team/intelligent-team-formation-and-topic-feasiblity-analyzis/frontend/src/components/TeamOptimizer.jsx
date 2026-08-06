@@ -4,7 +4,8 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } fro
 
 export default function TeamOptimizer() {
   const [formData, setFormData] = useState({
-    team_size: 4,
+    max_team_size: 4, // Updated per panel request
+    max_groups: 3,    // Added per panel request
     total_students: 12,
     Skill_React: 4,
     Skill_NodeJS: 3,
@@ -26,7 +27,8 @@ export default function TeamOptimizer() {
     setLoading(true);
 
     const payload = {
-      team_size: formData.team_size,
+      max_team_size: formData.max_team_size, 
+      max_groups: formData.max_groups,       
       total_students: formData.total_students,
       topic_requirements: {
         Skill_React: formData.Skill_React,
@@ -55,13 +57,20 @@ export default function TeamOptimizer() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="space-y-4 bg-blue-50 p-5 rounded-lg border border-blue-100">
           <h3 className="font-semibold text-blue-800">Class constraints</h3>
+          
           <div className="flex justify-between items-center">
             <label className="text-sm font-medium text-gray-700">Total Students to Group</label>
             <input type="number" name="total_students" value={formData.total_students} onChange={handleInputChange} className="w-20 p-2 border rounded text-right focus:ring-2 focus:ring-blue-500" />
           </div>
+          
           <div className="flex justify-between items-center">
-            <label className="text-sm font-medium text-gray-700">Target Team Size</label>
-            <input type="number" name="team_size" value={formData.team_size} onChange={handleInputChange} className="w-20 p-2 border rounded text-right focus:ring-2 focus:ring-blue-500" />
+            <label className="text-sm font-medium text-gray-700">Maximum Team Size</label>
+            <input type="number" name="max_team_size" value={formData.max_team_size} onChange={handleInputChange} className="w-20 p-2 border rounded text-right focus:ring-2 focus:ring-blue-500" />
+          </div>
+
+          <div className="flex justify-between items-center">
+            <label className="text-sm font-medium text-gray-700">Maximum Number of Groups</label>
+            <input type="number" name="max_groups" value={formData.max_groups} onChange={handleInputChange} className="w-20 p-2 border rounded text-right focus:ring-2 focus:ring-blue-500" />
           </div>
         </div>
 
@@ -109,7 +118,6 @@ export default function TeamOptimizer() {
               return (
                 <div key={index} className="bg-white border-2 border-slate-100 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
 
-                  {/* UPDATE: Header now includes the Feasibility Prediction */}
                   <div className="bg-slate-800 text-white p-4 flex flex-col space-y-3">
                     <div className="flex justify-between items-center">
                       <h4 className="font-bold text-lg">{team.team_id}</h4>
@@ -125,7 +133,6 @@ export default function TeamOptimizer() {
                       </div>
                     </div>
                     
-                    {/* XGBoost Feasibility Badge */}
                     <div className="flex justify-between items-center bg-slate-900 rounded p-2 border border-slate-700">
                       <span className="text-xs font-semibold text-slate-300">Project Feasibility</span>
                       <div className="flex items-center space-x-2">
@@ -141,7 +148,6 @@ export default function TeamOptimizer() {
                     </div>
                   </div>
 
-                  {/* Recharts Radar Visualization */}
                   <div className="h-48 w-full bg-slate-50 border-b border-slate-100 p-2">
                     <ResponsiveContainer width="100%" height="100%">
                       <RadarChart cx="50%" cy="50%" outerRadius="70%" data={chartData}>
@@ -155,14 +161,12 @@ export default function TeamOptimizer() {
                   <div className="p-4 space-y-3 max-h-48 overflow-y-auto">
                     {team.members.map((member, mIdx) => (
                       <div key={mIdx} className="flex justify-between items-center p-2 bg-white rounded border border-slate-100 shadow-sm">
-
                         <div className="flex flex-col">
                           <span className="font-mono text-sm text-slate-600">{member.student_id}</span>
                           <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">
                             {member.ethnicity}
                           </span>
                         </div>
-
                         <span className="font-mono text-sm font-bold text-indigo-600">{member.power_score}</span>
                       </div>
                     ))}
