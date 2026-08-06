@@ -99,7 +99,6 @@ export default function TeamOptimizer() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {result.teams.map((team, index) => {
 
-              // Map the team stats into the specific format Recharts needs for the Radar Chart
               const chartData = [
                 { subject: 'React', value: team.stats.total_react },
                 { subject: 'NodeJS', value: team.stats.total_node },
@@ -110,17 +109,34 @@ export default function TeamOptimizer() {
               return (
                 <div key={index} className="bg-white border-2 border-slate-100 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
 
-                  {/* UPDATE: Header now includes the Diversity Score */}
-                  <div className="bg-slate-800 text-white p-4 flex justify-between items-center">
-                    <h4 className="font-bold text-lg">{team.team_id}</h4>
-                    <div className="flex space-x-4 text-right">
-                      <div>
-                        <p className="text-xs text-slate-400">Diversity</p>
-                        <p className="font-mono font-bold text-blue-400">{team.stats.diversity_score}</p>
+                  {/* UPDATE: Header now includes the Feasibility Prediction */}
+                  <div className="bg-slate-800 text-white p-4 flex flex-col space-y-3">
+                    <div className="flex justify-between items-center">
+                      <h4 className="font-bold text-lg">{team.team_id}</h4>
+                      <div className="flex space-x-4 text-right">
+                        <div>
+                          <p className="text-xs text-slate-400">Diversity</p>
+                          <p className="font-mono font-bold text-blue-400">{team.stats.diversity_score}</p>
+                        </div>
+                        <div>
+                          <p className="text-xs text-slate-400">Avg Power</p>
+                          <p className="font-mono font-bold text-emerald-400">{team.stats.avg_power}</p>
+                        </div>
                       </div>
-                      <div>
-                        <p className="text-xs text-slate-400">Avg Power</p>
-                        <p className="font-mono font-bold text-emerald-400">{team.stats.avg_power}</p>
+                    </div>
+                    
+                    {/* XGBoost Feasibility Badge */}
+                    <div className="flex justify-between items-center bg-slate-900 rounded p-2 border border-slate-700">
+                      <span className="text-xs font-semibold text-slate-300">Project Feasibility</span>
+                      <div className="flex items-center space-x-2">
+                        <span className="font-mono text-sm font-bold text-white">{team.stats.feasibility_score}%</span>
+                        <span className={`text-[10px] uppercase font-bold px-2 py-1 rounded tracking-wide ${
+                          team.stats.risk_level === 'Low Risk' ? 'bg-emerald-900/80 text-emerald-400 border border-emerald-500/50' : 
+                          team.stats.risk_level === 'Medium Risk' ? 'bg-amber-900/80 text-amber-400 border border-amber-500/50' : 
+                          'bg-red-900/80 text-red-400 border border-red-500/50'
+                        }`}>
+                          {team.stats.risk_level}
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -140,7 +156,6 @@ export default function TeamOptimizer() {
                     {team.members.map((member, mIdx) => (
                       <div key={mIdx} className="flex justify-between items-center p-2 bg-white rounded border border-slate-100 shadow-sm">
 
-                        {/* UPDATE: Now shows the student's assigned cultural group underneath their ID */}
                         <div className="flex flex-col">
                           <span className="font-mono text-sm text-slate-600">{member.student_id}</span>
                           <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">
