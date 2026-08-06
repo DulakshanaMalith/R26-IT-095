@@ -9,6 +9,7 @@ import random
 import joblib
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
+from typing import Dict 
 
 app = FastAPI(
     title="Intelligent Project Management ML API",
@@ -16,10 +17,9 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# Allow your React frontend to communicate with this API
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], # Change this to your React app's URL in production
+    allow_origins=["*"], 
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -52,7 +52,6 @@ except Exception as e:
     feasibility_model = None
 
 try:
-    # all-MiniLM-L6-v2 is a highly efficient, lightweight SBERT model perfect for APIs
     sbert_model = SentenceTransformer('all-MiniLM-L6-v2')
     print("🧠 SBERT Semantic NLP Model loaded successfully!")
 except Exception as e:
@@ -62,8 +61,6 @@ except Exception as e:
 # ---------------------------------------------------------
 # 2.5 DEAP Genetic Algorithm Blueprint (NSGA-II)
 # ---------------------------------------------------------
-# We want to MINIMIZE 3 things: Skill Deficits, Redundancy, Power Imbalance
-# We want to MAXIMIZE 1 thing: Cultural Diversity (+1.0)
 if not hasattr(creator, "FitnessMulti"):
     creator.create("FitnessMulti", base.Fitness, weights=(-1.0, -1.0, -1.0, 1.0)) 
 
@@ -83,21 +80,18 @@ class FeasibilityRequest(BaseModel):
     Skill_Python: int
     Skill_MongoDB: int
 
-class TopicRequirements(BaseModel):
-    Skill_React: int
-    Skill_NodeJS: int
-    Skill_Python: int
-    Skill_MongoDB: int
-
 class TeamFormationRequest(BaseModel):
     max_team_size: int
     max_groups: int
     total_students: int
-    topic_requirements: TopicRequirements
+    topic_requirements: Dict[str, int] 
 
+# UPDATE: Schema changed to accept the multi-dimensional demographics
 class NLPProfileRequest(BaseModel):
     studentId: str
-    ethnicity: str
+    gender: str
+    religion: str
+    livingCity: str
     projectHistory: str
 
 # ---------------------------------------------------------
@@ -110,12 +104,8 @@ def read_root():
 
 @app.get("/api/ml/vector-profile/random")
 def get_random_student_vector():
-    """
-    Fetches a random student from our cleaned dataset and returns their 'Vector Profile'.
-    """
     if df_students is None:
         raise HTTPException(status_code=500, detail="Dataset not loaded.")
-
     random_idx = random.randint(0, len(df_students) - 1)
     student_row = df_students.iloc[random_idx]
 
@@ -125,14 +115,12 @@ def get_random_student_vector():
         "Python": int(student_row['Skill_Python']),
         "MongoDB": int(student_row['Skill_MongoDB'])
     }
-
     academic_vector = {
         "Previous_Scores": float(student_row['Previous_Scores']),
         "Attendance": float(student_row['Attendance']),
         "Hours_Studied": float(student_row['Hours_Studied']),
         "Motivation_Level": float(student_row['Motivation_Level'])
     }
-
     return {
         "student_id": f"STU-{random_idx}",
         "technical_vector": tech_skills,
@@ -142,31 +130,16 @@ def get_random_student_vector():
 
 @app.post("/api/ml/feasibility-score")
 def calculate_feasibility(data: FeasibilityRequest):
-    """
-    Takes a student's vector profile and predicts their project success rate.
-    """
     if feasibility_model is None:
         raise HTTPException(status_code=500, detail="ML Model not loaded on server.")
 
-    # Convert the incoming JSON request into a 2D array for the model
     input_vector = [[
-        data.Hours_Studied,
-        data.Attendance,
-        data.Previous_Scores,
-        data.Motivation_Level,
-        data.Skill_React,
-        data.Skill_NodeJS,
-        data.Skill_Python,
-        data.Skill_MongoDB
+        data.Hours_Studied, data.Attendance, data.Previous_Scores, data.Motivation_Level,
+        data.Skill_React, data.Skill_NodeJS, data.Skill_Python, data.Skill_MongoDB
     ]]
-
-    # Ask the AI to predict the score based on its training (converted to standard float)
     predicted_score = float(feasibility_model.predict(input_vector)[0])
-
-    # Convert the raw score into a clean "Feasibility Percentage"
     feasibility_percentage = min(max((predicted_score / 100) * 100, 0), 100)
 
-    # Determine risk category (Adjusted to 70% threshold)
     if feasibility_percentage >= 70:
         risk_level = "Low Risk (Highly Feasible)"
     elif feasibility_percentage >= 50:
@@ -182,44 +155,57 @@ def calculate_feasibility(data: FeasibilityRequest):
 
 @app.post("/api/ml/optimize-teams")
 def optimize_team_formation(data: TeamFormationRequest):
-    """
-    NSGA-II Multi-Objective Grouping Algorithm.
-    """
     if df_students is None:
         raise HTTPException(status_code=500, detail="Dataset not loaded.")
 
-    # --- ENFORCE PANEL CONSTRAINTS ---
-    # Mathematically ensure we don't process more students than the groups can hold
     max_allowed_students = data.max_groups * data.max_team_size
     effective_total = min(data.total_students, max_allowed_students)
 
     if effective_total > len(df_students):
          raise HTTPException(status_code=400, detail="Requested more students than available in database.")
 
-    # 1. Grab the student pool based on the constrained total
     pool = df_students.sample(effective_total).to_dict('records')
+    reqs = data.topic_requirements
+
+    # Lists to simulate demographic data if it's missing from the CSV
+    mock_genders = ["Male", "Female", "Non-binary"]
+    mock_religions = ["Buddhism", "Hinduism", "Islam", "Christianity", "Other"]
+    mock_cities = ["Colombo", "Kandy", "Galle", "Jaffna", "Negombo"]
+
     for i, student in enumerate(pool):
         student['student_id'] = f"STU-{random.randint(1000,9999)}"
         student['power_score'] = (student['Previous_Scores'] / 100) + (student['Attendance'] / 100)
         student['pool_idx'] = i 
+        
+        # Inject mock demographics for the Simpson's Math
+        if 'gender' not in student:
+            student['gender'] = random.choice(mock_genders)
+        if 'religion' not in student:
+            student['religion'] = random.choice(mock_religions)
+        if 'livingCity' not in student:
+            student['livingCity'] = random.choice(mock_cities)
+        
+        for tech in reqs.keys():
+            col_name = f"Skill_{tech}"
+            if col_name not in student:
+                student[col_name] = random.randint(1, 5)
 
     num_teams = max(1, effective_total // data.max_team_size)
-    reqs = data.topic_requirements
 
-    # --- Simpson's Diversity Helper Function ---
+    # UPDATE: Multi-dimensional Novelty Diversity Math
     def calculate_simpsons_diversity(team_members):
         if not team_members:
             return 0.0
         N = len(team_members)
-        ethnicity_counts = {}
+        composite_counts = {}
         for m in team_members:
-            eth = m.get('Ethnicity_Group', 'Unknown')
-            ethnicity_counts[eth] = ethnicity_counts.get(eth, 0) + 1
+            # Create a composite signature (e.g., "Male-Buddhism-Colombo")
+            signature = f"{m.get('gender')}-{m.get('religion')}-{m.get('livingCity')}"
+            composite_counts[signature] = composite_counts.get(signature, 0) + 1
         
-        sum_of_squares = sum((n / N) ** 2 for n in ethnicity_counts.values())
+        sum_of_squares = sum((n / N) ** 2 for n in composite_counts.values())
         return 1.0 - sum_of_squares
 
-    # 2. The Fitness Function (The 4 Objectives)
     def evaluate_teams(individual):
         teams = [individual[i:i + data.max_team_size] for i in range(0, len(individual), data.max_team_size)]
         
@@ -231,24 +217,15 @@ def optimize_team_formation(data: TeamFormationRequest):
         for team_indices in teams:
             team_members = [pool[idx] for idx in team_indices]
             
-            t_react = sum(m['Skill_React'] for m in team_members)
-            t_node = sum(m['Skill_NodeJS'] for m in team_members)
-            t_py = sum(m['Skill_Python'] for m in team_members)
-            t_mongo = sum(m['Skill_MongoDB'] for m in team_members)
-            
-            total_deficit += max(0, reqs.Skill_React - t_react)
-            total_deficit += max(0, reqs.Skill_NodeJS - t_node)
-            total_deficit += max(0, reqs.Skill_Python - t_py)
-            total_deficit += max(0, reqs.Skill_MongoDB - t_mongo)
-            
-            total_redundancy += max(0, t_react - reqs.Skill_React)
-            total_redundancy += max(0, t_node - reqs.Skill_NodeJS)
-            total_redundancy += max(0, t_py - reqs.Skill_Python)
-            total_redundancy += max(0, t_mongo - reqs.Skill_MongoDB)
+            for tech, req_score in reqs.items():
+                col_name = f"Skill_{tech}"
+                team_total_skill = sum(m[col_name] for m in team_members)
+                
+                total_deficit += max(0, req_score - team_total_skill)
+                total_redundancy += max(0, team_total_skill - req_score)
             
             avg_power = sum(m['power_score'] for m in team_members) / len(team_members)
             team_powers.append(avg_power)
-
             team_diversities.append(calculate_simpsons_diversity(team_members))
 
         power_imbalance = np.var(team_powers) * 100 
@@ -256,7 +233,6 @@ def optimize_team_formation(data: TeamFormationRequest):
 
         return (total_deficit, total_redundancy, power_imbalance, avg_class_diversity)
 
-    # 3. Setup the Evolutionary Toolbox
     toolbox = base.Toolbox()
     toolbox.register("indices", random.sample, range(effective_total), effective_total)
     toolbox.register("individual", tools.initIterate, creator.Individual, toolbox.indices)
@@ -267,26 +243,20 @@ def optimize_team_formation(data: TeamFormationRequest):
     toolbox.register("mutate", tools.mutShuffleIndexes, indpb=0.1)
     toolbox.register("select", tools.selNSGA2) 
 
-    # 4. Run the Evolution!
     pop = toolbox.population(n=50) 
     algorithms.eaSimple(pop, toolbox, cxpb=0.5, mutpb=0.2, ngen=30, verbose=False)
 
-    # 5. Extract the absolute best configuration
     best_ind = tools.selBest(pop, 1)[0]
-    
-    # 6. Format the winning DNA back into JSON for React
     final_teams_indices = [best_ind[i:i + data.max_team_size] for i in range(0, len(best_ind), data.max_team_size)]
     formatted_teams = []
 
     for i, t_indices in enumerate(final_teams_indices):
         members = [pool[idx] for idx in t_indices]
         
-        # --- AUTOMATED XGBOOST PREDICTION ---
         avg_hours = sum(m['Hours_Studied'] for m in members) / len(members)
         avg_attendance = sum(m['Attendance'] for m in members) / len(members)
         avg_scores = sum(m['Previous_Scores'] for m in members) / len(members)
         avg_motivation = sum(m['Motivation_Level'] for m in members) / len(members)
-        
         avg_react = sum(m['Skill_React'] for m in members) / len(members)
         avg_node = sum(m['Skill_NodeJS'] for m in members) / len(members)
         avg_python = sum(m['Skill_Python'] for m in members) / len(members)
@@ -307,27 +277,24 @@ def optimize_team_formation(data: TeamFormationRequest):
         else:
             feasibility_percentage = 0.0
             risk_level = "Model Error"
+            
+        dynamic_tech_scores = {}
+        for tech in reqs.keys():
+            col_name = f"Skill_{tech}"
+            dynamic_tech_scores[tech] = sum(m[col_name] for m in members)
         
         formatted_teams.append({
             "team_id": f"Team-{i+1}",
             "members": [{
                 "student_id": m['student_id'],
                 "power_score": round(m['power_score'], 2),
-                "ethnicity": m.get('Ethnicity_Group', 'Unknown'),
-                "skills": {
-                    "React": m['Skill_React'],
-                    "NodeJS": m['Skill_NodeJS'],
-                    "Python": m['Skill_Python'],
-                    "MongoDB": m['Skill_MongoDB']
-                }
+                # UPDATE: Sending the combined demographics string to React
+                "demographics": f"{m.get('gender')} • {m.get('religion')} • {m.get('livingCity')}"
             } for m in members],
             "stats": {
                 "avg_power": round(sum(m['power_score'] for m in members) / len(members), 2),
                 "diversity_score": round(calculate_simpsons_diversity(members), 2),
-                "total_react": sum(m['Skill_React'] for m in members),
-                "total_node": sum(m['Skill_NodeJS'] for m in members),
-                "total_python": sum(m['Skill_Python'] for m in members),
-                "total_mongo": sum(m['Skill_MongoDB'] for m in members),
+                "dynamic_tech_scores": dynamic_tech_scores, 
                 "feasibility_score": round(feasibility_percentage, 2),
                 "risk_level": risk_level
             }
@@ -339,17 +306,13 @@ def optimize_team_formation(data: TeamFormationRequest):
         "teams": formatted_teams
     }
 
+# UPDATE: Return the new fields to the UI upon successful extraction
 @app.post("/api/ml/extract-skills")
 def extract_skills_from_text(data: NLPProfileRequest):
-    """
-    Takes a natural language paragraph and uses SBERT Cosine Similarity 
-    to map semantic context to a 1-5 technical skill vector.
-    """
     if sbert_model is None:
         raise HTTPException(status_code=500, detail="SBERT Model not loaded.")
 
     target_skills = ["React", "NodeJS", "Python", "MongoDB"]
-    
     history_embedding = sbert_model.encode([data.projectHistory])
     
     extracted_vector = {}
@@ -357,7 +320,6 @@ def extract_skills_from_text(data: NLPProfileRequest):
     
     for skill in target_skills:
         skill_embedding = sbert_model.encode([skill])
-        
         similarity = cosine_similarity(history_embedding, skill_embedding)[0][0]
         raw_scores[skill] = float(similarity)
         
@@ -376,7 +338,9 @@ def extract_skills_from_text(data: NLPProfileRequest):
 
     return {
         "student_id": data.studentId,
-        "ethnicity": data.ethnicity,
+        "gender": data.gender,
+        "religion": data.religion,
+        "livingCity": data.livingCity,
         "extracted_skills": extracted_vector,
         "raw_similarity_scores": raw_scores,
         "message": "NLP Vector Extraction Complete"

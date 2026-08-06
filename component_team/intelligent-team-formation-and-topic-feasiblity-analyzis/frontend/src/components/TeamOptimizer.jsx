@@ -9,7 +9,6 @@ export default function TeamOptimizer() {
     total_students: 12
   });
 
-  // NEW: Dynamic Tech Stack State
   const [techList, setTechList] = useState([
     { category: 'Frontend', tech: 'React', score: 4 },
     { category: 'Backend', tech: 'NodeJS', score: 3 },
@@ -21,7 +20,6 @@ export default function TeamOptimizer() {
   const [selectedTech, setSelectedTech] = useState('MySQL');
   const [selectedScore, setSelectedScore] = useState(3);
 
-  // Pre-configured options based on the panel's request
   const techCategories = {
     'Frontend': ['React', 'HTML/CSS', 'Angular', 'Vue'],
     'Backend': ['NodeJS', 'Express', 'Java', 'PHP', 'FastAPI'],
@@ -42,7 +40,7 @@ export default function TeamOptimizer() {
   const handleCategoryChange = (e) => {
     const category = e.target.value;
     setSelectedCategory(category);
-    setSelectedTech(techCategories[category][0]); // Reset tech to first item in new category
+    setSelectedTech(techCategories[category][0]); 
   };
 
   const handleAddTech = () => {
@@ -60,22 +58,17 @@ export default function TeamOptimizer() {
   const optimizeTeams = async () => {
     setLoading(true);
 
-    // Safely map the required core skills to the backend payload
-    const reactSkill = techList.find(t => t.tech === 'React')?.score || 0;
-    const nodeSkill = techList.find(t => t.tech === 'NodeJS')?.score || 0;
-    const pySkill = techList.find(t => t.tech === 'Python')?.score || 0;
-    const mongoSkill = techList.find(t => t.tech === 'MongoDB')?.score || 0;
+    // Build the dynamic dictionary to send to the backend
+    const dynamicRequirements = {};
+    techList.forEach(t => {
+      dynamicRequirements[t.tech] = t.score;
+    });
 
     const payload = {
       max_team_size: formData.max_team_size, 
       max_groups: formData.max_groups,       
       total_students: formData.total_students,
-      topic_requirements: {
-        Skill_React: reactSkill,
-        Skill_NodeJS: nodeSkill,
-        Skill_Python: pySkill,
-        Skill_MongoDB: mongoSkill
-      }
+      topic_requirements: dynamicRequirements 
     };
 
     try {
@@ -179,12 +172,11 @@ export default function TeamOptimizer() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {result.teams.map((team, index) => {
 
-              const chartData = [
-                { subject: 'React', value: team.stats.total_react },
-                { subject: 'NodeJS', value: team.stats.total_node },
-                { subject: 'Python', value: team.stats.total_python },
-                { subject: 'MongoDB', value: team.stats.total_mongo },
-              ];
+              // Read directly from the real, mathematically generated backend scores!
+              const chartData = techList.map(item => ({
+                subject: item.tech,
+                value: team.stats.dynamic_tech_scores[item.tech] || 0
+              }));
 
               return (
                 <div key={index} className="bg-slate-900 border-2 border-slate-700 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
@@ -209,11 +201,12 @@ export default function TeamOptimizer() {
                       <div className="flex items-center space-x-2">
                         <span className="font-mono text-sm font-bold text-white">{team.stats.feasibility_score}%</span>
                         <span className={`text-[10px] uppercase font-bold px-2 py-1 rounded tracking-wide ${
-                          team.stats.risk_level === 'Low Risk' ? 'bg-emerald-900/80 text-emerald-400 border border-emerald-500/50' : 
-                          team.stats.risk_level === 'Medium Risk' ? 'bg-amber-900/80 text-amber-400 border border-amber-500/50' : 
+                          team.stats.risk_level.includes('Low Risk') ? 'bg-emerald-900/80 text-emerald-400 border border-emerald-500/50' : 
+                          team.stats.risk_level.includes('Medium Risk') ? 'bg-amber-900/80 text-amber-400 border border-amber-500/50' : 
                           'bg-red-900/80 text-red-400 border border-red-500/50'
                         }`}>
-                          {team.stats.risk_level}
+                          {/* Extracts just "Low Risk" or "Medium Risk" from the longer string */}
+                          {team.stats.risk_level.split(" ")[0] + " " + team.stats.risk_level.split(" ")[1]} 
                         </span>
                       </div>
                     </div>
@@ -235,7 +228,7 @@ export default function TeamOptimizer() {
                         <div className="flex flex-col">
                           <span className="font-mono text-sm text-slate-300">{member.student_id}</span>
                           <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">
-                            {member.ethnicity}
+                            {member.demographics}
                           </span>
                         </div>
                         <span className="font-mono text-sm font-bold text-indigo-400">{member.power_score}</span>

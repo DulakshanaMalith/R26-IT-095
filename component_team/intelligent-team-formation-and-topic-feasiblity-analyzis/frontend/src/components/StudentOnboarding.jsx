@@ -5,9 +5,12 @@ export default function StudentOnboarding() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   
+  // UPDATE: Replaced 'ethnicity' with the 3 new demographic fields
   const [formData, setFormData] = useState({
     studentId: '',
-    ethnicity: '',
+    gender: '',
+    religion: '',
+    livingCity: '',
     projectHistory: "During my previous semester, I worked as a full-stack developer on a university research project building an intelligent dashboard. I was responsible for the frontend, which I built entirely using React and styled with modern CSS frameworks. For the backend, I designed RESTful APIs using Node.js and Express, securely storing all our user data and logs in a MongoDB database. Recently, I have also been expanding my data science skills by writing microservices in Python to process and clean large datasets before they are sent to the client."
   });
 
@@ -21,12 +24,11 @@ export default function StudentOnboarding() {
     setSuccess(false);
     
     try {
-      // Send the text to the SBERT backend
+      // Send the text and new demographic data to the SBERT backend
       const response = await axios.post('http://127.0.0.1:8003/api/ml/extract-skills', formData);
       
       console.log("AI Extracted Vector:", response.data);
       
-      // Display the mathematically extracted scores to the user
       const skills = response.data.extracted_skills;
       alert(`Success! AI mapped your text to:\n\nReact: ${skills.Skill_React}/5\nNodeJS: ${skills.Skill_NodeJS}/5\nPython: ${skills.Skill_Python}/5\nMongoDB: ${skills.Skill_MongoDB}/5`);
       
@@ -49,8 +51,8 @@ export default function StudentOnboarding() {
       <form onSubmit={handleSubmit} className="space-y-6">
         
         {/* Basic Info Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="space-y-2">
+        <div className="space-y-4">
+          <div className="md:w-1/2">
             <label className="text-sm font-semibold text-slate-300">Student ID</label>
             <input 
               type="text" 
@@ -59,33 +61,65 @@ export default function StudentOnboarding() {
               placeholder="e.g., STU-9921"
               value={formData.studentId} 
               onChange={handleInputChange} 
-              className="w-full p-3 bg-slate-900 border border-slate-600 rounded-lg text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none"
+              className="w-full p-3 mt-1 bg-slate-900 border border-slate-600 rounded-lg text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none"
             />
           </div>
 
-          <div className="space-y-2">
-            <label className="text-sm font-semibold text-slate-300">Cultural Background (Optional)</label>
-            <select 
-              name="ethnicity" 
-              value={formData.ethnicity} 
-              onChange={handleInputChange} 
-              className="w-full p-3 bg-slate-900 border border-slate-600 rounded-lg text-white focus:ring-2 focus:ring-indigo-500 outline-none"
-            >
-              <option value="" disabled>Select a background...</option>
-              <option value="South Asian">South Asian</option>
-              <option value="East Asian">East Asian</option>
-              <option value="Southeast Asian">Southeast Asian</option>
-              <option value="Middle Eastern">Middle Eastern</option>
-              <option value="African">African</option>
-              <option value="European / Caucasian">European / Caucasian</option>
-              <option value="Hispanic / Latino">Hispanic / Latino</option>
-              <option value="Prefer not to say">Prefer not to say</option>
-            </select>
+          {/* NEW: Multi-Dimensional Demographics for Novelty Integration */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+            <div className="space-y-1">
+              <label className="text-sm font-semibold text-slate-300">Gender</label>
+              <select 
+                name="gender" 
+                required
+                value={formData.gender} 
+                onChange={handleInputChange} 
+                className="w-full p-3 bg-slate-900 border border-slate-600 rounded-lg text-white focus:ring-2 focus:ring-indigo-500 outline-none"
+              >
+                <option value="" disabled>Select Gender...</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Non-binary">Non-binary</option>
+                <option value="Prefer not to say">Prefer not to say</option>
+              </select>
+            </div>
+
+            <div className="space-y-1">
+              <label className="text-sm font-semibold text-slate-300">Religion</label>
+              <select 
+                name="religion" 
+                required
+                value={formData.religion} 
+                onChange={handleInputChange} 
+                className="w-full p-3 bg-slate-900 border border-slate-600 rounded-lg text-white focus:ring-2 focus:ring-indigo-500 outline-none"
+              >
+                <option value="" disabled>Select Religion...</option>
+                <option value="Buddhism">Buddhism</option>
+                <option value="Hinduism">Hinduism</option>
+                <option value="Islam">Islam</option>
+                <option value="Christianity">Christianity</option>
+                <option value="Other">Other</option>
+                <option value="Prefer not to say">Prefer not to say</option>
+              </select>
+            </div>
+
+            <div className="space-y-1">
+              <label className="text-sm font-semibold text-slate-300">Living City</label>
+              <input 
+                type="text" 
+                name="livingCity" 
+                required
+                placeholder="e.g., Colombo"
+                value={formData.livingCity} 
+                onChange={handleInputChange} 
+                className="w-full p-3 bg-slate-900 border border-slate-600 rounded-lg text-white focus:ring-2 focus:ring-indigo-500 outline-none"
+              />
+            </div>
           </div>
         </div>
 
         {/* The SBERT NLP Input Section */}
-        <div className="space-y-2">
+        <div className="space-y-2 pt-2">
           <label className="text-sm font-semibold text-slate-300 flex justify-between">
             <span>Academic & Project History</span>
             <span className="text-xs text-indigo-400 font-mono">NLP Semantic Engine Active</span>
