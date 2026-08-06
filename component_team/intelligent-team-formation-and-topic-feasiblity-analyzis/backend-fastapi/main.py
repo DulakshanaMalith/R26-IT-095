@@ -209,7 +209,6 @@ def optimize_team_formation(data: TeamFormationRequest):
         N = len(team_members)
         ethnicity_counts = {}
         for m in team_members:
-            # Uses .get() to safely fall back to 'Unknown' if the dataset doesn't have the column yet
             eth = m.get('Ethnicity_Group', 'Unknown')
             ethnicity_counts[eth] = ethnicity_counts.get(eth, 0) + 1
         
@@ -218,67 +217,57 @@ def optimize_team_formation(data: TeamFormationRequest):
 
     # 2. The Fitness Function (The 4 Objectives)
     def evaluate_teams(individual):
-        # Decode the individual (a shuffled list of indices) into teams
         teams = [individual[i:i + data.team_size] for i in range(0, len(individual), data.team_size)]
         
         total_deficit = 0
         total_redundancy = 0
         team_powers = []
-        team_diversities = [] # NEW
+        team_diversities = [] 
 
         for team_indices in teams:
             team_members = [pool[idx] for idx in team_indices]
             
-            # Aggregate skills for this specific team
             t_react = sum(m['Skill_React'] for m in team_members)
             t_node = sum(m['Skill_NodeJS'] for m in team_members)
             t_py = sum(m['Skill_Python'] for m in team_members)
             t_mongo = sum(m['Skill_MongoDB'] for m in team_members)
             
-            # Objective 1: Minimize Deficit (Are they missing required skills?)
             total_deficit += max(0, reqs.Skill_React - t_react)
             total_deficit += max(0, reqs.Skill_NodeJS - t_node)
             total_deficit += max(0, reqs.Skill_Python - t_py)
             total_deficit += max(0, reqs.Skill_MongoDB - t_mongo)
             
-            # Objective 2: Minimize Redundancy (Do they have too many overlapping skills?)
             total_redundancy += max(0, t_react - reqs.Skill_React)
             total_redundancy += max(0, t_node - reqs.Skill_NodeJS)
             total_redundancy += max(0, t_py - reqs.Skill_Python)
             total_redundancy += max(0, t_mongo - reqs.Skill_MongoDB)
             
-            # Objective 3: Balance Power (Calculate average power to find variance)
             avg_power = sum(m['power_score'] for m in team_members) / len(team_members)
             team_powers.append(avg_power)
 
-            # Objective 4: Cultural Diversity (Simpson's Index)
             team_diversities.append(calculate_simpsons_diversity(team_members))
 
-        # We want the variance between team powers to be as close to 0 as possible
         power_imbalance = np.var(team_powers) * 100 
         avg_class_diversity = sum(team_diversities) / len(team_diversities) if team_diversities else 0.0
 
-        # RETURN 4 OBJECTIVES 
         return (total_deficit, total_redundancy, power_imbalance, avg_class_diversity)
 
     # 3. Setup the Evolutionary Toolbox
     toolbox = base.Toolbox()
-    # An individual is just a shuffled list of student indices (e.g., [3, 11, 1, 5, ...])
     toolbox.register("indices", random.sample, range(data.total_students), data.total_students)
     toolbox.register("individual", tools.initIterate, creator.Individual, toolbox.indices)
     toolbox.register("population", tools.initRepeat, list, toolbox.individual)
     
     toolbox.register("evaluate", evaluate_teams)
-    # Custom mutation: Swap two random students between teams
     toolbox.register("mate", tools.cxPartialyMatched)
     toolbox.register("mutate", tools.mutShuffleIndexes, indpb=0.1)
-    toolbox.register("select", tools.selNSGA2) # <-- The NSGA-II Magic!
+    toolbox.register("select", tools.selNSGA2) 
 
     # 4. Run the Evolution!
-    pop = toolbox.population(n=50) # Create 50 random class configurations
+    pop = toolbox.population(n=50) 
     algorithms.eaSimple(pop, toolbox, cxpb=0.5, mutpb=0.2, ngen=30, verbose=False)
 
-    # 5. Extract the absolute best configuration (Pareto Front)
+    # 5. Extract the absolute best configuration
     best_ind = tools.selBest(pop, 1)[0]
     
     # 6. Format the winning DNA back into JSON for React
@@ -288,12 +277,40 @@ def optimize_team_formation(data: TeamFormationRequest):
     for i, t_indices in enumerate(final_teams_indices):
         members = [pool[idx] for idx in t_indices]
         
+        # --- NEW: AUTOMATED XGBOOST PREDICTION ---
+        avg_hours = sum(m['Hours_Studied'] for m in members) / len(members)
+        avg_attendance = sum(m['Attendance'] for m in members) / len(members)
+        avg_scores = sum(m['Previous_Scores'] for m in members) / len(members)
+        avg_motivation = sum(m['Motivation_Level'] for m in members) / len(members)
+        
+        avg_react = sum(m['Skill_React'] for m in members) / len(members)
+        avg_node = sum(m['Skill_NodeJS'] for m in members) / len(members)
+        avg_python = sum(m['Skill_Python'] for m in members) / len(members)
+        avg_mongo = sum(m['Skill_MongoDB'] for m in members) / len(members)
+        
+        team_vector = [[avg_hours, avg_attendance, avg_scores, avg_motivation, avg_react, avg_node, avg_python, avg_mongo]]
+        
+        if feasibility_model is not None:
+            predicted_score = float(feasibility_model.predict(team_vector)[0])
+            feasibility_percentage = min(max((predicted_score / 100) * 100, 0), 100)
+            
+            if feasibility_percentage >= 70:
+                risk_level = "Low Risk"
+            elif feasibility_percentage >= 50:
+                risk_level = "Medium Risk"
+            else:
+                risk_level = "High Risk"
+        else:
+            feasibility_percentage = 0.0
+            risk_level = "Model Error"
+        # ----------------------------------------
+
         formatted_teams.append({
             "team_id": f"Team-{i+1}",
             "members": [{
                 "student_id": m['student_id'],
                 "power_score": round(m['power_score'], 2),
-                "ethnicity": m.get('Ethnicity_Group', 'Unknown'), # Pass back to UI
+                "ethnicity": m.get('Ethnicity_Group', 'Unknown'),
                 "skills": {
                     "React": m['Skill_React'],
                     "NodeJS": m['Skill_NodeJS'],
@@ -303,16 +320,18 @@ def optimize_team_formation(data: TeamFormationRequest):
             } for m in members],
             "stats": {
                 "avg_power": round(sum(m['power_score'] for m in members) / len(members), 2),
-                "diversity_score": round(calculate_simpsons_diversity(members), 2), # Expose to frontend
+                "diversity_score": round(calculate_simpsons_diversity(members), 2),
                 "total_react": sum(m['Skill_React'] for m in members),
                 "total_node": sum(m['Skill_NodeJS'] for m in members),
                 "total_python": sum(m['Skill_Python'] for m in members),
-                "total_mongo": sum(m['Skill_MongoDB'] for m in members)
+                "total_mongo": sum(m['Skill_MongoDB'] for m in members),
+                "feasibility_score": round(feasibility_percentage, 2),
+                "risk_level": risk_level
             }
         })
 
     return {
-        "algorithm": "NSGA-II Genetic Algorithm (4-Objective)",
+        "algorithm": "NSGA-II + XGBoost Pipeline",
         "total_teams_formed": num_teams,
         "teams": formatted_teams
     }
@@ -326,25 +345,19 @@ def extract_skills_from_text(data: NLPProfileRequest):
     if sbert_model is None:
         raise HTTPException(status_code=500, detail="SBERT Model not loaded.")
 
-    # The target vectors your platform tracks
     target_skills = ["React", "NodeJS", "Python", "MongoDB"]
     
-    # 1. Encode the student's entire project history into a mathematical vector
     history_embedding = sbert_model.encode([data.projectHistory])
     
     extracted_vector = {}
     raw_scores = {}
     
-    # 2. Compare the history against each specific tech requirement
     for skill in target_skills:
         skill_embedding = sbert_model.encode([skill])
         
-        # Calculate Cosine Similarity
         similarity = cosine_similarity(history_embedding, skill_embedding)[0][0]
         raw_scores[skill] = float(similarity)
         
-        # 3. Map the semantic similarity to your 1-5 scale
-        # SBERT similarity scores typically range from 0.1 to 0.5 for related context
         if similarity >= 0.40:
             score = 5
         elif similarity >= 0.28:
