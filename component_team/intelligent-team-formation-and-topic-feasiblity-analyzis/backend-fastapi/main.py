@@ -312,7 +312,14 @@ def extract_skills_from_text(data: NLPProfileRequest):
     if sbert_model is None:
         raise HTTPException(status_code=500, detail="SBERT Model not loaded.")
 
-    target_skills = ["React", "NodeJS", "Python", "MongoDB"]
+    # UPDATE: Expanded to include all the dynamic UI technologies! and more technologies
+    target_skills = [
+        "React", "HTML/CSS", "Angular", "Vue", 
+        "NodeJS", "Express", "Java", "PHP", "FastAPI",
+        "MongoDB", "MySQL", "PostgreSQL", "Firebase",
+        "Python", "TensorFlow", "Pandas"
+    ]
+    
     history_embedding = sbert_model.encode([data.projectHistory])
     
     extracted_vector = {}
