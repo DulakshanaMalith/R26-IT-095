@@ -86,7 +86,6 @@ class TeamFormationRequest(BaseModel):
     total_students: int
     topic_requirements: Dict[str, int] 
 
-# UPDATE: Schema changed to accept the multi-dimensional demographics
 class NLPProfileRequest(BaseModel):
     studentId: str
     gender: str
@@ -167,7 +166,6 @@ def optimize_team_formation(data: TeamFormationRequest):
     pool = df_students.sample(effective_total).to_dict('records')
     reqs = data.topic_requirements
 
-    # Lists to simulate demographic data if it's missing from the CSV
     mock_genders = ["Male", "Female", "Non-binary"]
     mock_religions = ["Buddhism", "Hinduism", "Islam", "Christianity", "Other"]
     mock_cities = ["Colombo", "Kandy", "Galle", "Jaffna", "Negombo"]
@@ -177,7 +175,6 @@ def optimize_team_formation(data: TeamFormationRequest):
         student['power_score'] = (student['Previous_Scores'] / 100) + (student['Attendance'] / 100)
         student['pool_idx'] = i 
         
-        # Inject mock demographics for the Simpson's Math
         if 'gender' not in student:
             student['gender'] = random.choice(mock_genders)
         if 'religion' not in student:
@@ -192,14 +189,12 @@ def optimize_team_formation(data: TeamFormationRequest):
 
     num_teams = max(1, effective_total // data.max_team_size)
 
-    # UPDATE: Multi-dimensional Novelty Diversity Math
     def calculate_simpsons_diversity(team_members):
         if not team_members:
             return 0.0
         N = len(team_members)
         composite_counts = {}
         for m in team_members:
-            # Create a composite signature (e.g., "Male-Buddhism-Colombo")
             signature = f"{m.get('gender')}-{m.get('religion')}-{m.get('livingCity')}"
             composite_counts[signature] = composite_counts.get(signature, 0) + 1
         
@@ -219,10 +214,12 @@ def optimize_team_formation(data: TeamFormationRequest):
             
             for tech, req_score in reqs.items():
                 col_name = f"Skill_{tech}"
-                team_total_skill = sum(m[col_name] for m in team_members)
                 
-                total_deficit += max(0, req_score - team_total_skill)
-                total_redundancy += max(0, team_total_skill - req_score)
+                # FIXED: Compare requirement to the team's AVERAGE skill, not the sum!
+                team_avg_skill = sum(m[col_name] for m in team_members) / len(team_members)
+                
+                total_deficit += max(0, req_score - team_avg_skill)
+                total_redundancy += max(0, team_avg_skill - req_score)
             
             avg_power = sum(m['power_score'] for m in team_members) / len(team_members)
             team_powers.append(avg_power)
@@ -266,7 +263,21 @@ def optimize_team_formation(data: TeamFormationRequest):
         
         if feasibility_model is not None:
             predicted_score = float(feasibility_model.predict(team_vector)[0])
-            feasibility_percentage = min(max((predicted_score / 100) * 100, 0), 100)
+            base_feasibility = min(max((predicted_score / 100) * 100, 0), 100)
+            
+            team_deficit = 0
+            for tech, req_score in reqs.items():
+                col_name = f"Skill_{tech}"
+                
+                # FIXED: Compare requirement to the team's AVERAGE skill, not the sum!
+                team_avg_skill = sum(m[col_name] for m in members) / len(members)
+                
+                if team_avg_skill < req_score:
+                    team_deficit += (req_score - team_avg_skill)
+            
+            # FIXED: 10% penalty per missing average skill point
+            penalty_multiplier = 10.0
+            feasibility_percentage = max(base_feasibility - (team_deficit * penalty_multiplier), 0.0)
             
             if feasibility_percentage >= 70:
                 risk_level = "Low Risk"
@@ -288,7 +299,6 @@ def optimize_team_formation(data: TeamFormationRequest):
             "members": [{
                 "student_id": m['student_id'],
                 "power_score": round(m['power_score'], 2),
-                # UPDATE: Sending the combined demographics string to React
                 "demographics": f"{m.get('gender')} • {m.get('religion')} • {m.get('livingCity')}"
             } for m in members],
             "stats": {
@@ -306,13 +316,11 @@ def optimize_team_formation(data: TeamFormationRequest):
         "teams": formatted_teams
     }
 
-# UPDATE: Return the new fields to the UI upon successful extraction
 @app.post("/api/ml/extract-skills")
 def extract_skills_from_text(data: NLPProfileRequest):
     if sbert_model is None:
         raise HTTPException(status_code=500, detail="SBERT Model not loaded.")
 
-    # UPDATE: Expanded to include all the dynamic UI technologies! and more technologies
     target_skills = [
         "React", "HTML/CSS", "Angular", "Vue", 
         "NodeJS", "Express", "Java", "PHP", "FastAPI",
