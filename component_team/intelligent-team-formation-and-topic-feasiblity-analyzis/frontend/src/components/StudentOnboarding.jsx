@@ -24,15 +24,25 @@ export default function StudentOnboarding() {
     setSuccess(false);
     
     try {
-      // Send the text and new demographic data to the SBERT backend
       const response = await axios.post('http://127.0.0.1:8003/api/ml/extract-skills', formData);
       
       console.log("AI Extracted Vector:", response.data);
       
       const skills = response.data.extracted_skills;
-      alert(`Success! AI mapped your text to:\n\nReact: ${skills.Skill_React}/5\nNodeJS: ${skills.Skill_NodeJS}/5\nPython: ${skills.Skill_Python}/5\nMongoDB: ${skills.Skill_MongoDB}/5`);
       
+      // UPDATE: Dynamically build the alert message based on what the AI actually returns
+      let alertMessage = "Success! AI mapped your text to the following vectors:\n\n";
+      
+      // Loop through every skill the AI extracted and add it to the popup
+      Object.keys(skills).forEach(key => {
+        // Clean up the string (e.g., turn "Skill_React" into "React")
+        const cleanName = key.replace("Skill_", "");
+        alertMessage += `${cleanName}: ${skills[key]}/5\n`;
+      });
+      
+      alert(alertMessage);
       setSuccess(true);
+      
     } catch (error) {
       console.error("NLP Extraction failed:", error);
       alert("Failed to connect to the NLP engine. Make sure the FastAPI server is running!");
