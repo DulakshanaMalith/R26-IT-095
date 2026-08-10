@@ -25,6 +25,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# --- NEW: GLOBAL MEMORY POOL FOR LIVE STUDENTS ---
+# This holds students created via the NLP form so the Optimizer can draft them!
+custom_students_pool = []
+
 # ---------------------------------------------------------
 # 1. Load the Dataset into Memory
 # ---------------------------------------------------------
@@ -101,32 +105,6 @@ class NLPProfileRequest(BaseModel):
 def read_root():
     return {"message": "Intelligent Team Formation ML Engine is Online 🚀"}
 
-@app.get("/api/ml/vector-profile/random")
-def get_random_student_vector():
-    if df_students is None:
-        raise HTTPException(status_code=500, detail="Dataset not loaded.")
-    random_idx = random.randint(0, len(df_students) - 1)
-    student_row = df_students.iloc[random_idx]
-
-    tech_skills = {
-        "React": int(student_row['Skill_React']),
-        "NodeJS": int(student_row['Skill_NodeJS']),
-        "Python": int(student_row['Skill_Python']),
-        "MongoDB": int(student_row['Skill_MongoDB'])
-    }
-    academic_vector = {
-        "Previous_Scores": float(student_row['Previous_Scores']),
-        "Attendance": float(student_row['Attendance']),
-        "Hours_Studied": float(student_row['Hours_Studied']),
-        "Motivation_Level": float(student_row['Motivation_Level'])
-    }
-    return {
-        "student_id": f"STU-{random_idx}",
-        "technical_vector": tech_skills,
-        "academic_vector": academic_vector,
-        "raw_data": student_row.to_dict()
-    }
-
 @app.post("/api/ml/feasibility-score")
 def calculate_feasibility(data: FeasibilityRequest):
     if feasibility_model is None:
@@ -163,7 +141,20 @@ def optimize_team_formation(data: TeamFormationRequest):
     if effective_total > len(df_students):
          raise HTTPException(status_code=400, detail="Requested more students than available in database.")
 
-    pool = df_students.sample(effective_total).to_dict('records')
+    # --- NEW: POOL GENERATION STRATEGY ---
+    # 1. Grab all custom students submitted via the NLP form FIRST
+    pool = []
+    for cs in custom_students_pool:
+        if len(pool) < effective_total:
+            pool.append(cs.copy())
+            
+    # 2. Fill the remaining spots with random students from the CSV dataset
+    remaining_slots = effective_total - len(pool)
+    if remaining_slots > 0:
+        csv_sample = df_students.sample(remaining_slots).to_dict('records')
+        pool.extend(csv_sample)
+    # -------------------------------------
+
     reqs = data.topic_requirements
 
     mock_genders = ["Male", "Female", "Non-binary"]
@@ -171,8 +162,11 @@ def optimize_team_formation(data: TeamFormationRequest):
     mock_cities = ["Colombo", "Kandy", "Galle", "Jaffna", "Negombo"]
 
     for i, student in enumerate(pool):
-        student['student_id'] = f"STU-{random.randint(1000,9999)}"
-        student['power_score'] = (student['Previous_Scores'] / 100) + (student['Attendance'] / 100)
+        # Only assign a random ID if they don't already have one from the NLP form!
+        if 'student_id' not in student:
+            student['student_id'] = f"STU-{random.randint(1000,9999)}"
+            
+        student['power_score'] = (student.get('Previous_Scores', 75) / 100) + (student.get('Attendance', 80) / 100)
         student['pool_idx'] = i 
         
         if 'gender' not in student:
@@ -214,8 +208,6 @@ def optimize_team_formation(data: TeamFormationRequest):
             
             for tech, req_score in reqs.items():
                 col_name = f"Skill_{tech}"
-                
-                # FIXED: Compare requirement to the team's AVERAGE skill, not the sum!
                 team_avg_skill = sum(m[col_name] for m in team_members) / len(team_members)
                 
                 total_deficit += max(0, req_score - team_avg_skill)
@@ -250,14 +242,15 @@ def optimize_team_formation(data: TeamFormationRequest):
     for i, t_indices in enumerate(final_teams_indices):
         members = [pool[idx] for idx in t_indices]
         
-        avg_hours = sum(m['Hours_Studied'] for m in members) / len(members)
-        avg_attendance = sum(m['Attendance'] for m in members) / len(members)
-        avg_scores = sum(m['Previous_Scores'] for m in members) / len(members)
-        avg_motivation = sum(m['Motivation_Level'] for m in members) / len(members)
-        avg_react = sum(m['Skill_React'] for m in members) / len(members)
-        avg_node = sum(m['Skill_NodeJS'] for m in members) / len(members)
-        avg_python = sum(m['Skill_Python'] for m in members) / len(members)
-        avg_mongo = sum(m['Skill_MongoDB'] for m in members) / len(members)
+        avg_hours = sum(m.get('Hours_Studied', 15) for m in members) / len(members)
+        avg_attendance = sum(m.get('Attendance', 80) for m in members) / len(members)
+        avg_scores = sum(m.get('Previous_Scores', 75) for m in members) / len(members)
+        avg_motivation = sum(m.get('Motivation_Level', 80) for m in members) / len(members)
+        
+        avg_react = sum(m.get('Skill_React', 1) for m in members) / len(members)
+        avg_node = sum(m.get('Skill_NodeJS', 1) for m in members) / len(members)
+        avg_python = sum(m.get('Skill_Python', 1) for m in members) / len(members)
+        avg_mongo = sum(m.get('Skill_MongoDB', 1) for m in members) / len(members)
         
         team_vector = [[avg_hours, avg_attendance, avg_scores, avg_motivation, avg_react, avg_node, avg_python, avg_mongo]]
         
@@ -268,16 +261,17 @@ def optimize_team_formation(data: TeamFormationRequest):
             team_deficit = 0
             for tech, req_score in reqs.items():
                 col_name = f"Skill_{tech}"
-                
-                # FIXED: Compare requirement to the team's AVERAGE skill, not the sum!
-                team_avg_skill = sum(m[col_name] for m in members) / len(members)
+                team_avg_skill = sum(m.get(col_name, 1) for m in members) / len(members)
                 
                 if team_avg_skill < req_score:
                     team_deficit += (req_score - team_avg_skill)
             
-            # FIXED: 10% penalty per missing average skill point
             penalty_multiplier = 10.0
-            feasibility_percentage = max(base_feasibility - (team_deficit * penalty_multiplier), 0.0)
+            total_penalty = team_deficit * penalty_multiplier
+            feasibility_percentage = max(base_feasibility - total_penalty, 0.0)
+            
+            print(f"\n🧠 DIAGNOSTICS FOR TEAM-{i+1}:")
+            print(f"  -> Base Score: {base_feasibility:.2f}% | Penalty: -{total_penalty:.2f}% | Final: {feasibility_percentage:.2f}%")
             
             if feasibility_percentage >= 70:
                 risk_level = "Low Risk"
@@ -292,7 +286,7 @@ def optimize_team_formation(data: TeamFormationRequest):
         dynamic_tech_scores = {}
         for tech in reqs.keys():
             col_name = f"Skill_{tech}"
-            dynamic_tech_scores[tech] = sum(m[col_name] for m in members)
+            dynamic_tech_scores[tech] = sum(m.get(col_name, 1) for m in members)
         
         formatted_teams.append({
             "team_id": f"Team-{i+1}",
@@ -350,6 +344,27 @@ def extract_skills_from_text(data: NLPProfileRequest):
             score = 1
             
         extracted_vector[f"Skill_{skill}"] = score
+
+    # --- NEW: SAVE TO GLOBAL MEMORY POOL ---
+    # Create a new student object using the UI data and SBERT skills
+    new_student = {
+        "student_id": data.studentId,
+        "gender": data.gender,
+        "religion": data.religion,
+        "livingCity": data.livingCity,
+        # Give them strong academic baseline stats for the XGBoost model
+        "Hours_Studied": 20.0,
+        "Attendance": 90.0,
+        "Previous_Scores": 85.0,
+        "Motivation_Level": 88.0
+    }
+    # Merge the extracted skills into this student's profile
+    for skill_name, val in extracted_vector.items():
+        new_student[skill_name] = val
+        
+    custom_students_pool.append(new_student)
+    print(f"\n✅ SUCCESS: Added {data.studentId} to the live drafting pool!")
+    # ---------------------------------------
 
     return {
         "student_id": data.studentId,
