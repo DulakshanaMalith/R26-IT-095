@@ -1,0 +1,46 @@
+{
+    "model_type": "XGBRegressor",
+    "model_role": "Academic Performance Indicator",
+    "target": "Exam_Score",
+    "features": [
+        "Hours_Studied",
+        "Attendance",
+        "Previous_Scores",
+        "Motivation_Level"
+    ],
+    "technical_skills_used_for_training": false,
+    "training_rows": 6607,
+    "train_rows": 5285,
+    "test_rows": 1322,
+    "random_state": 42,
+    "holdout_metrics": {
+        "mae": 1.3979780673980713,
+        "rmse": 2.3200702990371576,
+        "r2": 0.6191936135292053,
+        "baseline_mae": 2.823489538084122,
+        "mae_improvement_percent": 50.48757756876022
+    },
+    "cross_validation": {
+        "folds": 5,
+        "mae_mean": 1.4653247117996215,
+        "mae_std": 0.06397179412005159,
+        "r2_mean": 0.5672959089279175,
+        "r2_std": 0.082139556346435
+    },
+    "feature_importance": {
+        "Attendance": 0.5234725475311279,
+        "Hours_Studied": 0.309518963098526,
+        "Previous_Scores": 0.09726540744304657,
+        "Motivation_Level": 0.06974297761917114
+    },
+    "hyperparameters": {
+        "objective": "reg:squarederror",
+        "n_estimators": 300,
+        "learning_rate": 0.05,
+        "max_depth": 4,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "random_state": 42,
+        "n_jobs": -1
+    }
+}
