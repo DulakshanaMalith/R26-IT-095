@@ -13,7 +13,7 @@ RESULTS_DIR = "./results"
 
 TOTAL_STUDENTS = 12
 TEAM_SIZE = 4
-RUNS = 5
+RUNS = 30
 
 TOPIC_REQUIREMENTS = {
     "React": 4,
@@ -211,31 +211,30 @@ def team_diversity(team_indices, pool):
     if not team_indices:
         return 0.0
 
-    counts = {}
+    team = [
+        pool[idx]
+        for idx in team_indices
+    ]
 
-    for idx in team_indices:
-        member = pool[idx]
+    attribute_scores = []
 
-        signature = (
-            f"{member['gender']}-"
-            f"{member['religion']}-"
-            f"{member['livingCity']}"
-        )
+    for field in ["gender", "religion", "livingCity"]:
+        counts = {}
 
-        counts[signature] = (
-            counts.get(signature, 0)
-            + 1
-        )
+        for member in team:
+            value = str(member[field]).strip()
+            counts[value] = counts.get(value, 0) + 1
 
-    n = len(team_indices)
+        n = len(team)
 
-    return float(
-        1.0
-        - sum(
+        simpson_score = 1.0 - sum(
             (count / n) ** 2
             for count in counts.values()
         )
-    )
+
+        attribute_scores.append(simpson_score)
+
+    return float(np.mean(attribute_scores))
 
 def team_technical_feasibility(team_indices, pool):
     if not team_indices:

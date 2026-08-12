@@ -1,3 +1,4 @@
+from asyncio import streams
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
@@ -247,22 +248,29 @@ def optimize_team_formation(data: TeamFormationRequest):
                 "explanation": "The optimizer does not generate random replacement skill values."
             })
 
-    def calculate_simpsons_diversity(team):
-        if not team:
-            return 0.0
+        def calculate_simpsons_diversity(team):
+            if not team:
+                return 0.0
 
-        counts = {}
+            attribute_scores = []
 
-        for member in team:
-            signature = f"{member['gender']}-{member['religion']}-{member['livingCity']}"
-            counts[signature] = counts.get(signature, 0) + 1
+            for field in ["gender", "religion", "livingCity"]:
+                counts = {}
 
-        n = len(team)
+                for member in team:
+                    value = str(member[field]).strip()
+                    counts[value] = counts.get(value, 0) + 1
 
-        return 1.0 - sum(
-            (count / n) ** 2
-            for count in counts.values()
-        )
+                n = len(team)
+
+                simpson_score = 1.0 - sum(
+                    (count / n) ** 2
+                    for count in counts.values()
+                )
+
+                attribute_scores.append(simpson_score)
+
+            return float(np.mean(attribute_scores))
 
     def calculate_skill_redundancy(team):
         if len(team) < 2:
