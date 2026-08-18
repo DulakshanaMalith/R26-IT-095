@@ -2,6 +2,10 @@ import random
 from typing import Dict, List, Set, Tuple
 from deap import base, creator, tools
 from app.models.cohort_import import CohortImportData
+from app.services.baseline_team_formation import (
+    build_preference_greedy_assignment,
+    build_technical_greedy_assignment,
+)
 from app.services.team_formation_objectives import (
     TeamAssignment,
     evaluate_assignment,
@@ -59,14 +63,6 @@ def canonicalize_individual(
     data: CohortImportData,
     individual: List[int],
 ) -> List[int]:
-    """
-    Sort student indexes inside each project team.
-
-    The order of students inside a team has no meaning.
-    Canonicalization ensures that equivalent team
-    allocations have one chromosome representation.
-    """
-
     segments = _get_project_segments(
         data
     )
@@ -82,14 +78,6 @@ def mutate_swap_between_teams(
     individual: List[int],
     segments: List[Tuple[int, int]],
 ):
-    """
-    Swap exactly one student between two different teams.
-
-    This guarantees that mutation changes the actual
-    team allocation instead of merely changing the
-    ordering of students inside the same team.
-    """
-
     if len(segments) < 2:
         return (individual,)
 
@@ -161,16 +149,12 @@ def individual_to_assignment(
             + project.team_size
         )
 
-        student_indexes = (
-            individual[offset:end]
-        )
-
         assignment[
             project.project_id
         ] = [
             student_ids[index]
             for index
-            in student_indexes
+            in individual[offset:end]
         ]
 
         offset = end
@@ -182,6 +166,72 @@ def individual_to_assignment(
         )
 
     return assignment
+
+def assignment_to_individual(
+    data: CohortImportData,
+    assignment: TeamAssignment,
+) -> List[int]:
+    student_index_lookup = {
+        student.student_id: index
+        for index, student
+        in enumerate(data.students)
+    }
+
+    individual = []
+
+    for project in data.projects:
+        project_id = (
+            project.project_id
+        )
+
+        if project_id not in assignment:
+            raise ValueError(
+                f"Assignment is missing "
+                f"project '{project_id}'."
+            )
+
+        team = assignment[
+            project_id
+        ]
+
+        if len(team) != project.team_size:
+            raise ValueError(
+                f"Project '{project_id}' "
+                f"requires {project.team_size} "
+                f"students, but received "
+                f"{len(team)}."
+            )
+
+        for student_id in team:
+            if (
+                student_id
+                not in student_index_lookup
+            ):
+                raise ValueError(
+                    f"Unknown student "
+                    f"'{student_id}'."
+                )
+
+            individual.append(
+                student_index_lookup[
+                    student_id
+                ]
+            )
+
+    if sorted(individual) != list(
+        range(len(data.students))
+    ):
+        raise ValueError(
+            "Assignment does not contain "
+            "every student exactly once."
+        )
+
+    canonicalize_individual(
+        data=data,
+        individual=individual,
+    )
+
+    return individual
 
 def canonicalize_assignment(
     data: CohortImportData,
@@ -214,6 +264,179 @@ def canonicalize_assignment_for_output(
         for project in data.projects
     }
 
+def _build_initial_population(
+    data: CohortImportData,
+    toolbox: base.Toolbox,
+    population_size: int,
+    segments: List[Tuple[int, int]],
+    seeded_initialization: bool,
+    seed_variant_count: int,
+):
+    population = []
+    seen = set()
+    seeded_count = 0
+
+    def add_individual(
+        values: List[int],
+        is_seeded: bool,
+    ) -> bool:
+        nonlocal seeded_count
+
+        canonicalize_individual(
+            data=data,
+            individual=values,
+        )
+
+        key = tuple(values)
+
+        if key in seen:
+            return False
+
+        seen.add(key)
+
+        individual = (
+            creator
+            .IndividualTeamFormationV1(
+                values
+            )
+        )
+
+        population.append(
+            individual
+        )
+
+        if is_seeded:
+            seeded_count += 1
+
+        return True
+
+    if seeded_initialization:
+        technical_assignment = (
+            build_technical_greedy_assignment(
+                data
+            )
+        )
+
+        preference_assignment = (
+            build_preference_greedy_assignment(
+                data
+            )
+        )
+
+        technical_seed = (
+            assignment_to_individual(
+                data=data,
+                assignment=(
+                    technical_assignment
+                ),
+            )
+        )
+
+        preference_seed = (
+            assignment_to_individual(
+                data=data,
+                assignment=(
+                    preference_assignment
+                ),
+            )
+        )
+
+        anchors = [
+            technical_seed,
+            preference_seed,
+        ]
+
+        for anchor in anchors:
+            add_individual(
+                list(anchor),
+                is_seeded=True,
+            )
+
+        for anchor in anchors:
+            created = 0
+            attempts = 0
+            max_attempts = max(
+                100,
+                seed_variant_count * 20,
+            )
+
+            while (
+                created
+                < seed_variant_count
+                and attempts
+                < max_attempts
+                and len(population)
+                < population_size
+            ):
+                variant = list(
+                    anchor
+                )
+
+                swap_count = (
+                    1
+                    + (
+                        created
+                        % 3
+                    )
+                )
+
+                for _ in range(
+                    swap_count
+                ):
+                    mutate_swap_between_teams(
+                        variant,
+                        segments,
+                    )
+
+                canonicalize_individual(
+                    data=data,
+                    individual=variant,
+                )
+
+                if add_individual(
+                    variant,
+                    is_seeded=True,
+                ):
+                    created += 1
+
+                attempts += 1
+
+    attempts = 0
+    max_attempts = (
+        population_size
+        * 100
+    )
+
+    while (
+        len(population)
+        < population_size
+        and attempts
+        < max_attempts
+    ):
+        random_values = random.sample(
+            range(len(data.students)),
+            len(data.students),
+        )
+
+        add_individual(
+            random_values,
+            is_seeded=False,
+        )
+
+        attempts += 1
+
+    if len(population) != population_size:
+        raise RuntimeError(
+            "Could not construct the requested "
+            "number of unique initial "
+            "individuals."
+        )
+
+    return (
+        population,
+        seeded_count,
+    )
+
 def optimize_team_formation(
     data: CohortImportData,
     population_size: int = 120,
@@ -223,18 +446,9 @@ def optimize_team_formation(
     mutation_gene_probability: float | None = None,
     seed: int = 42,
     progress_interval: int = 25,
+    seeded_initialization: bool = True,
+    seed_variant_count: int = 12,
 ) -> Dict:
-    """
-    Run NSGA-II for team formation.
-
-    mutation_gene_probability is retained temporarily
-    for backward compatibility with existing experiment
-    services. It is not used by the V2 mutation operator.
-
-    V2 mutation performs one semantic student swap
-    between two different project teams.
-    """
-
     if population_size < 4:
         raise ValueError(
             "Population size must be "
@@ -252,6 +466,12 @@ def optimize_team_formation(
         raise ValueError(
             "Generations must be "
             "at least 1."
+        )
+
+    if seed_variant_count < 0:
+        raise ValueError(
+            "Seed variant count cannot "
+            "be negative."
         )
 
     if not (
@@ -374,8 +594,20 @@ def optimize_team_formation(
         tools.selNSGA2,
     )
 
-    population = toolbox.population(
-        n=population_size
+    (
+        population,
+        seeded_individual_count,
+    ) = _build_initial_population(
+        data=data,
+        toolbox=toolbox,
+        population_size=population_size,
+        segments=segments,
+        seeded_initialization=(
+            seeded_initialization
+        ),
+        seed_variant_count=(
+            seed_variant_count
+        ),
     )
 
     evaluations = 0
@@ -398,7 +630,6 @@ def optimize_team_formation(
         individual.fitness.values = (
             fitness
         )
-
         evaluations += 1
 
     population = toolbox.select(
@@ -521,7 +752,6 @@ def optimize_team_formation(
             individual.fitness.values = (
                 fitness
             )
-
             evaluations += 1
 
         population = toolbox.select(
@@ -663,11 +893,22 @@ def optimize_team_formation(
     )
 
     return {
-        "algorithm": "NSGA-II",
-        "optimizer_version": "V2",
+        "algorithm": (
+            "Heuristic-Seeded NSGA-II"
+            if seeded_initialization
+            else "NSGA-II"
+        ),
+        "optimizer_version": "V3",
         "representation": (
             "Canonical fixed-team-size "
             "student permutation"
+        ),
+        "initialization": (
+            "Technical greedy + "
+            "preference greedy + "
+            "seed variants + random"
+            if seeded_initialization
+            else "Random"
         ),
         "crossover_operator": (
             "Ordered crossover"
@@ -675,6 +916,15 @@ def optimize_team_formation(
         "mutation_operator": (
             "Single cross-team "
             "student swap"
+        ),
+        "seeded_initialization": (
+            seeded_initialization
+        ),
+        "seed_variant_count": (
+            seed_variant_count
+        ),
+        "seeded_individual_count": (
+            seeded_individual_count
         ),
         "seed": seed,
         "population_size": (

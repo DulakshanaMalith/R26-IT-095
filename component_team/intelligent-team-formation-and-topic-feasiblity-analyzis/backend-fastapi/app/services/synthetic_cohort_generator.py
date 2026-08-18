@@ -10,136 +10,59 @@ from app.models.cohort_import import (
 from app.services.team_formation_objectives import TeamAssignment
 from app.services.validation_service import REQUIRED_SKILLS
 
-ConflictLevel = Literal["low", "medium", "high"]
-
-PROJECT_TECH_PROFILES = [
-    ["React", "HTML_CSS", "NodeJS", "PostgreSQL"],
-    ["Python", "TensorFlow", "Pandas", "FastAPI"],
-    ["Java", "Angular", "MySQL", "PostgreSQL"],
-    ["Vue", "PHP", "Firebase", "MongoDB"],
-    ["Express", "NodeJS", "MongoDB", "MySQL"],
+ConflictLevel = Literal[
+    "low",
+    "medium",
+    "high",
 ]
 
-STRONG_SKILL_PATTERN = {
-    0: [0, 1],
-    1: [0, 2],
-    2: [1, 3],
-    3: [2, 3],
-}
+TEAM_SIZE = 4
 
-def _project_id(index: int) -> str:
+def _project_id(
+    index: int,
+) -> str:
     return f"P{index + 1:03d}"
 
-def _student_id(index: int) -> str:
+def _student_id(
+    index: int,
+) -> str:
     return f"SYN-{index + 1:04d}"
 
-def _cyclic_project(
-    home_project_index: int,
-    offset: int,
+def _generate_background_skill(
+    rng: random.Random,
+) -> int:
+    """
+    Generate general competency before project-specific
+    guarantees are applied.
+
+    Most ratings are 1-2, but some students obtain
+    incidental competency at levels 3-5. Therefore,
+    different dataset seeds produce genuinely different
+    cross-project qualification patterns.
+    """
+
+    roll = rng.random()
+
+    if roll < 0.32:
+        return 1
+
+    if roll < 0.75:
+        return 2
+
+    if roll < 0.92:
+        return 3
+
+    if roll < 0.98:
+        return 4
+
+    return 5
+
+def _build_project_structure(
     project_count: int,
-) -> str:
-    target_index = (
-        home_project_index + offset
-    ) % project_count
-
-    return _project_id(target_index)
-
-def _build_preferences(
-    home_project_index: int,
-    team_position: int,
-    project_count: int,
-    conflict_level: ConflictLevel,
-) -> List[str]:
-    home = _cyclic_project(
-        home_project_index,
-        0,
-        project_count,
-    )
-
-    next_project = _cyclic_project(
-        home_project_index,
-        1,
-        project_count,
-    )
-
-    second_next = _cyclic_project(
-        home_project_index,
-        2,
-        project_count,
-    )
-
-    if conflict_level == "low":
-        return [
-            home,
-            next_project,
-            second_next,
-        ]
-
-    if conflict_level == "medium":
-        if team_position < 2:
-            return [
-                home,
-                next_project,
-                second_next,
-            ]
-
-        return [
-            next_project,
-            home,
-            second_next,
-        ]
-
-    if conflict_level == "high":
-        return [
-            next_project,
-            second_next,
-            home,
-        ]
-
-    raise ValueError(
-        f"Unknown conflict level: "
-        f"{conflict_level}"
-    )
-
-def generate_synthetic_cohort(
-    student_count: int,
-    conflict_level: ConflictLevel,
-    team_size: int = 4,
-    seed: int = 2026,
-) -> CohortImportData:
-    if student_count < 20:
-        raise ValueError(
-            "Scalability datasets should contain "
-            "at least 20 students."
-        )
-
-    if student_count % team_size != 0:
-        raise ValueError(
-            "Student count must be divisible by "
-            "the project team size."
-        )
-
-    if team_size != 4:
-        raise ValueError(
-            "Synthetic generator V1 currently "
-            "supports team_size=4 only."
-        )
-
-    project_count = (
-        student_count // team_size
-    )
-
-    if project_count < 3:
-        raise ValueError(
-            "At least three projects are required."
-        )
-
-    rng = random.Random(seed)
-
-    students = []
-    preferences = []
+    rng: random.Random,
+):
     projects = []
-    project_requirements = []
+    requirements = []
 
     for project_index in range(
         project_count
@@ -148,11 +71,6 @@ def generate_synthetic_cohort(
             project_index
         )
 
-        profile = PROJECT_TECH_PROFILES[
-            project_index
-            % len(PROJECT_TECH_PROFILES)
-        ]
-
         projects.append(
             ProjectInput(
                 project_id=project_id,
@@ -160,88 +78,413 @@ def generate_synthetic_cohort(
                     f"Synthetic Project "
                     f"{project_index + 1}"
                 ),
-                team_size=team_size,
+                team_size=TEAM_SIZE,
                 status="Approved",
             )
         )
 
-        for technology in profile:
-            project_requirements.append(
+        requirement_count = (
+            rng.randint(3, 4)
+        )
+
+        technologies = rng.sample(
+            list(REQUIRED_SKILLS),
+            requirement_count,
+        )
+
+        for technology in technologies:
+            min_level = rng.choice(
+                [3, 3, 4]
+            )
+
+            required_members = (
+                rng.choice(
+                    [1, 2, 2]
+                )
+            )
+
+            requirements.append(
                 ProjectRequirementInput(
                     project_id=project_id,
                     technology=technology,
-                    min_level=3,
-                    required_members=2,
+                    min_level=min_level,
+                    required_members=(
+                        required_members
+                    ),
                 )
             )
 
-        for team_position in range(
-            team_size
-        ):
-            student_index = (
+    return (
+        projects,
+        requirements,
+    )
+
+def _build_student_skills(
+    student_count: int,
+    project_requirements: List[
+        ProjectRequirementInput
+    ],
+    rng: random.Random,
+) -> List[Dict[str, int]]:
+    skill_maps = []
+
+    for _ in range(
+        student_count
+    ):
+        skills = {
+            skill: (
+                _generate_background_skill(
+                    rng
+                )
+            )
+            for skill in REQUIRED_SKILLS
+        }
+
+        skill_maps.append(
+            skills
+        )
+
+    requirements_by_project = {}
+
+    for requirement in (
+        project_requirements
+    ):
+        requirements_by_project.setdefault(
+            requirement.project_id,
+            [],
+        ).append(
+            requirement
+        )
+
+    project_count = (
+        student_count
+        // TEAM_SIZE
+    )
+
+    for project_index in range(
+        project_count
+    ):
+        project_id = _project_id(
+            project_index
+        )
+
+        home_student_indexes = [
+            (
                 project_index
-                * team_size
-                + team_position
+                * TEAM_SIZE
+                + position
+            )
+            for position in range(
+                TEAM_SIZE
+            )
+        ]
+
+        requirements = (
+            requirements_by_project[
+                project_id
+            ]
+        )
+
+        for requirement in requirements:
+            qualified_indexes = (
+                rng.sample(
+                    home_student_indexes,
+                    requirement.required_members,
+                )
             )
 
-            student_id = _student_id(
-                student_index
-            )
-
-            skills = {
-                skill: rng.randint(1, 2)
-                for skill in REQUIRED_SKILLS
-            }
-
-            strong_indexes = (
-                STRONG_SKILL_PATTERN[
-                    team_position
-                ]
-            )
-
-            for profile_index in (
-                strong_indexes
+            for student_index in (
+                qualified_indexes
             ):
-                technology = profile[
-                    profile_index
+                guaranteed_level = (
+                    requirement.min_level
+                    + rng.choice(
+                        [0, 0, 1]
+                    )
+                )
+
+                guaranteed_level = min(
+                    5,
+                    guaranteed_level,
+                )
+
+                current_level = (
+                    skill_maps[
+                        student_index
+                    ][
+                        requirement.technology
+                    ]
+                )
+
+                skill_maps[
+                    student_index
+                ][
+                    requirement.technology
+                ] = max(
+                    current_level,
+                    guaranteed_level,
+                )
+
+    return skill_maps
+
+def _cyclic_project(
+    project_index: int,
+    shift: int,
+    project_count: int,
+) -> str:
+    target_index = (
+        project_index
+        + shift
+    ) % project_count
+
+    return _project_id(
+        target_index
+    )
+
+def _build_preferences(
+    student_count: int,
+    project_count: int,
+    conflict_level: ConflictLevel,
+    seed: int,
+) -> List[PreferenceInput]:
+    """
+    Preferences are generated independently from skills.
+
+    For the same dataset seed:
+    - Low, Medium and High use exactly the same
+      students and technical requirements.
+    - Only preference conflict changes.
+
+    A cyclic target mapping keeps first-choice project
+    capacities balanced.
+    """
+
+    structure_rng = random.Random(
+        seed + 100_003
+    )
+
+    medium_rng = random.Random(
+        seed + 200_003
+    )
+
+    target_shift = (
+        structure_rng.randint(
+            1,
+            project_count - 1,
+        )
+    )
+
+    secondary_options = [
+        shift
+        for shift in range(
+            1,
+            project_count
+        )
+        if shift != target_shift
+    ]
+
+    secondary_shift = (
+        structure_rng.choice(
+            secondary_options
+        )
+    )
+
+    medium_movers = {}
+
+    for project_index in range(
+        project_count
+    ):
+        medium_movers[
+            project_index
+        ] = set(
+            medium_rng.sample(
+                range(TEAM_SIZE),
+                TEAM_SIZE // 2,
+            )
+        )
+
+    preferences = []
+
+    for student_index in range(
+        student_count
+    ):
+        project_index = (
+            student_index
+            // TEAM_SIZE
+        )
+
+        team_position = (
+            student_index
+            % TEAM_SIZE
+        )
+
+        home_project = (
+            _cyclic_project(
+                project_index,
+                0,
+                project_count,
+            )
+        )
+
+        conflict_project = (
+            _cyclic_project(
+                project_index,
+                target_shift,
+                project_count,
+            )
+        )
+
+        secondary_project = (
+            _cyclic_project(
+                project_index,
+                secondary_shift,
+                project_count,
+            )
+        )
+
+        if conflict_level == "low":
+            ranked_projects = [
+                home_project,
+                conflict_project,
+                secondary_project,
+            ]
+
+        elif conflict_level == "medium":
+            if (
+                team_position
+                in medium_movers[
+                    project_index
+                ]
+            ):
+                ranked_projects = [
+                    conflict_project,
+                    home_project,
+                    secondary_project,
+                ]
+            else:
+                ranked_projects = [
+                    home_project,
+                    conflict_project,
+                    secondary_project,
                 ]
 
-                skills[technology] = (
-                    rng.randint(4, 5)
-                )
+        elif conflict_level == "high":
+            ranked_projects = [
+                conflict_project,
+                secondary_project,
+                home_project,
+            ]
 
-            students.append(
-                StudentInput(
-                    student_id=student_id,
-                    skills=skills,
-                )
+        else:
+            raise ValueError(
+                "Conflict level must be "
+                "'low', 'medium', or 'high'."
             )
 
-            ranked_projects = (
-                _build_preferences(
-                    home_project_index=(
-                        project_index
-                    ),
-                    team_position=(
-                        team_position
-                    ),
-                    project_count=(
-                        project_count
-                    ),
-                    conflict_level=(
-                        conflict_level
-                    ),
-                )
+        preferences.append(
+            PreferenceInput(
+                student_id=(
+                    _student_id(
+                        student_index
+                    )
+                ),
+                ranked_projects=(
+                    ranked_projects
+                ),
             )
+        )
 
-            preferences.append(
-                PreferenceInput(
-                    student_id=student_id,
-                    ranked_projects=(
-                        ranked_projects
-                    ),
+    return preferences
+
+def generate_synthetic_cohort(
+    student_count: int,
+    conflict_level: ConflictLevel,
+    team_size: int = TEAM_SIZE,
+    seed: int = 2026,
+) -> CohortImportData:
+    if student_count < 20:
+        raise ValueError(
+            "Scalability datasets should "
+            "contain at least 20 students."
+        )
+
+    if team_size != TEAM_SIZE:
+        raise ValueError(
+            "Synthetic Generator V2 "
+            "currently supports team_size=4 only."
+        )
+
+    if (
+        student_count
+        % team_size
+        != 0
+    ):
+        raise ValueError(
+            "Student count must be divisible "
+            "by the project team size."
+        )
+
+    project_count = (
+        student_count
+        // team_size
+    )
+
+    if project_count < 3:
+        raise ValueError(
+            "At least three projects "
+            "are required."
+        )
+
+    technical_rng = (
+        random.Random(
+            seed
+        )
+    )
+
+    (
+        projects,
+        project_requirements,
+    ) = _build_project_structure(
+        project_count=project_count,
+        rng=technical_rng,
+    )
+
+    skill_maps = (
+        _build_student_skills(
+            student_count=student_count,
+            project_requirements=(
+                project_requirements
+            ),
+            rng=technical_rng,
+        )
+    )
+
+    students = [
+        StudentInput(
+            student_id=(
+                _student_id(
+                    index
                 )
-            )
+            ),
+            skills=skill_maps[
+                index
+            ],
+        )
+        for index in range(
+            student_count
+        )
+    ]
+
+    preferences = (
+        _build_preferences(
+            student_count=student_count,
+            project_count=project_count,
+            conflict_level=(
+                conflict_level
+            ),
+            seed=seed,
+        )
+    )
 
     return CohortImportData(
         students=students,
@@ -300,13 +543,18 @@ def build_first_choice_assignment(
             )
 
         first_choice = (
-            preference.ranked_projects[0]
+            preference.ranked_projects[
+                0
+            ]
         )
 
-        if first_choice not in assignment:
+        if (
+            first_choice
+            not in assignment
+        ):
             raise ValueError(
-                f"Unknown first-choice project "
-                f"'{first_choice}'."
+                f"Unknown first-choice "
+                f"project '{first_choice}'."
             )
 
         assignment[
@@ -327,10 +575,11 @@ def build_first_choice_assignment(
             != project.team_size
         ):
             raise ValueError(
-                f"First-choice assignment for "
-                f"'{project.project_id}' has "
-                f"{actual_size} students instead "
-                f"of {project.team_size}."
+                f"First-choice assignment "
+                f"for '{project.project_id}' "
+                f"has {actual_size} students "
+                f"instead of "
+                f"{project.team_size}."
             )
 
     return assignment
