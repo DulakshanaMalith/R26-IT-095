@@ -1,0 +1,53 @@
+{
+  "experiment": "Multi-Objective Team Formation Evaluation",
+  "output_prefix": "final_team_formation_evaluation",
+  "student_sizes": [
+    20,
+    40,
+    60,
+    100
+  ],
+  "conflict_levels": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "dataset_seeds": [
+    101,
+    202,
+    303,
+    404,
+    505,
+    606,
+    707,
+    808,
+    909,
+    1010
+  ],
+  "optimizer_seeds": [
+    1,
+    2,
+    3
+  ],
+  "population_size": 120,
+  "generations": 150,
+  "evaluation_budget": 16650,
+  "methods": [
+    "Technical Greedy",
+    "Preference Greedy",
+    "Random Search",
+    "Weighted Single-Objective GA",
+    "Unseeded NSGA-II",
+    "Heuristic-Seeded NSGA-II"
+  ],
+  "dataset_count": 120,
+  "stochastic_method_count": 4,
+  "expected_record_count": 1680,
+  "experiment_record_count": 1680,
+  "all_loaded_record_count": 1680,
+  "complete": true,
+  "total_runtime_seconds": 8894.45736120001,
+  "jsonl_file": "test_results\\final_team_formation_evaluation_runs.jsonl",
+  "csv_file": "test_results\\final_team_formation_evaluation_runs.csv",
+  "summary_file": "test_results\\final_team_formation_evaluation_summary.json"
+}

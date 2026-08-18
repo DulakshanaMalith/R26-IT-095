@@ -1,0 +1,31 @@
+{
+  "output_prefix": "evaluation_pilot",
+  "student_sizes": [
+    20
+  ],
+  "conflict_levels": [
+    "medium"
+  ],
+  "dataset_seeds": [
+    101
+  ],
+  "optimizer_seeds": [
+    1,
+    2
+  ],
+  "population_size": 40,
+  "generations": 20,
+  "evaluation_budget": 800,
+  "methods": [
+    "Technical Greedy",
+    "Preference Greedy",
+    "Random Search",
+    "Weighted Single-Objective GA",
+    "Unseeded NSGA-II",
+    "Heuristic-Seeded NSGA-II"
+  ],
+  "record_count": 10,
+  "total_runtime_seconds": 0.7987220999784768,
+  "jsonl_file": "test_results\\evaluation_pilot_runs.jsonl",
+  "csv_file": "test_results\\evaluation_pilot_runs.csv"
+}
