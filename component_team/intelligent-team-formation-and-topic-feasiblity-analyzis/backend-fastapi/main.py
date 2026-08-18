@@ -10,9 +10,12 @@ import os, random, joblib
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 from skill_catalog import SKILL_KEYS, get_skill_column
+from app.routes.cohort_routes import router as cohort_router
 
 app = FastAPI(title="Intelligent Project Management ML API", description="Microservice for Team Formation and Topic Feasibility", version="1.0.0")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_credentials=True, allow_methods=["*"], allow_headers=["*"])
+app.include_router(cohort_router)
+
 custom_students_pool = []
 
 PROCESSED_DIR = "./data/processed"

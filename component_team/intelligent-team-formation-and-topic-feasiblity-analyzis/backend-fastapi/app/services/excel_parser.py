@@ -40,19 +40,51 @@ PROJECT_REQUIREMENT_HEADERS = [
     "RequiredMembers",
 ]
 
+PREFERENCES_SHEET_NAME = "Preferences"
+PREFERENCE_HEADERS = [
+    "StudentID",
+    "Preference1",
+    "Preference2",
+    "Preference3",
+]
+
+DOMAINS_SHEET_NAME = "Domains"
+DOMAIN_HEADERS = [
+    "Domain",
+]
+
+PROJECT_DOMAINS_SHEET_NAME = "ProjectDomains"
+PROJECT_DOMAIN_HEADERS = [
+    "ProjectID",
+    "Domain",
+]
+
+SUPERVISORS_SHEET_NAME = "Supervisors"
+SUPERVISOR_HEADERS = [
+    "SupervisorID",
+    "SupervisorName",
+    "MaximumTeams",
+    "CurrentLoad",
+]
+
+SUPERVISOR_DOMAINS_SHEET_NAME = "SupervisorDomains"
+SUPERVISOR_DOMAIN_HEADERS = [
+    "SupervisorID",
+    "Type",
+    "Domain",
+]
+
 def normalize_header(value) -> str:
     if value is None:
         return ""
     return str(value).strip()
 
-def is_empty_row(row) -> bool:
-    for value in row:
-        if value is None:
-            continue
-        if isinstance(value, str) and value.strip() == "":
-            continue
-        return False
-    return True
+def is_empty_value(value) -> bool:
+    if value is None:
+        return True
+    if isinstance(value, str) and value.strip() == "":
+        return True
+    return False
 
 def _parse_sheet(
     file_path: str | Path,
@@ -116,9 +148,6 @@ def _parse_sheet(
             ),
             start=2,
         ):
-            if is_empty_row(row):
-                continue
-
             values = {}
 
             for header in required_headers:
@@ -128,6 +157,12 @@ def _parse_sheet(
                     if column_index < len(row)
                     else None
                 )
+
+            if all(
+                is_empty_value(value)
+                for value in values.values()
+            ):
+                continue
 
             parsed_rows.append(
                 ParsedRow(
@@ -166,4 +201,49 @@ def parse_project_requirements_sheet(
         file_path=file_path,
         sheet_name=PROJECT_REQUIREMENTS_SHEET_NAME,
         required_headers=PROJECT_REQUIREMENT_HEADERS,
+    )
+
+def parse_preferences_sheet(
+    file_path: str | Path,
+) -> List[ParsedRow]:
+    return _parse_sheet(
+        file_path=file_path,
+        sheet_name=PREFERENCES_SHEET_NAME,
+        required_headers=PREFERENCE_HEADERS,
+    )
+
+def parse_domains_sheet(
+    file_path: str | Path,
+) -> List[ParsedRow]:
+    return _parse_sheet(
+        file_path=file_path,
+        sheet_name=DOMAINS_SHEET_NAME,
+        required_headers=DOMAIN_HEADERS,
+    )
+
+def parse_project_domains_sheet(
+    file_path: str | Path,
+) -> List[ParsedRow]:
+    return _parse_sheet(
+        file_path=file_path,
+        sheet_name=PROJECT_DOMAINS_SHEET_NAME,
+        required_headers=PROJECT_DOMAIN_HEADERS,
+    )
+
+def parse_supervisors_sheet(
+    file_path: str | Path,
+) -> List[ParsedRow]:
+    return _parse_sheet(
+        file_path=file_path,
+        sheet_name=SUPERVISORS_SHEET_NAME,
+        required_headers=SUPERVISOR_HEADERS,
+    )
+
+def parse_supervisor_domains_sheet(
+    file_path: str | Path,
+) -> List[ParsedRow]:
+    return _parse_sheet(
+        file_path=file_path,
+        sheet_name=SUPERVISOR_DOMAINS_SHEET_NAME,
+        required_headers=SUPERVISOR_DOMAIN_HEADERS,
     )
