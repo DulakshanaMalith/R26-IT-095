@@ -1,6 +1,8 @@
 import shutil
 from pathlib import Path
-from tempfile import NamedTemporaryFile
+from tempfile import (
+    NamedTemporaryFile,
+)
 
 from fastapi import (
     APIRouter,
@@ -18,16 +20,23 @@ from app.services.cohort_data_service import (
 from app.services.nsga2_optimizer import (
     optimize_team_formation,
 )
+from app.services.team_formation_response_service import (
+    build_staff_team_formation_response,
+)
 from app.services.workbook_validation_service import (
     validate_workbook,
 )
+
 
 router = APIRouter(
     prefix="/api/cohort",
     tags=["Cohort Import"],
 )
 
-ALLOWED_EXTENSIONS = {".xlsx"}
+
+ALLOWED_EXTENSIONS = {
+    ".xlsx",
+}
 
 
 def _validate_upload(
@@ -36,19 +45,25 @@ def _validate_upload(
     if not file.filename:
         raise HTTPException(
             status_code=400,
-            detail="No file was provided.",
+            detail=(
+                "No file was provided."
+            ),
         )
 
     extension = Path(
         file.filename
     ).suffix.lower()
 
-    if extension not in ALLOWED_EXTENSIONS:
+    if (
+        extension
+        not in ALLOWED_EXTENSIONS
+    ):
         raise HTTPException(
             status_code=400,
             detail=(
                 "Invalid file type. "
-                "Please upload an .xlsx workbook."
+                "Please upload an "
+                ".xlsx workbook."
             ),
         )
 
@@ -92,8 +107,10 @@ async def validate_cohort_workbook(
             )
         )
 
-        report = validate_workbook(
-            temp_path
+        report = (
+            validate_workbook(
+                temp_path
+            )
         )
 
         return report
@@ -156,7 +173,8 @@ async def optimize_cohort_teams(
                         "was not started."
                     ),
                     "validation": (
-                        validation_report.model_dump()
+                        validation_report
+                        .model_dump()
                     ),
                 },
             )
@@ -178,10 +196,20 @@ async def optimize_cohort_teams(
             )
         )
 
+        decision_support = (
+            build_staff_team_formation_response(
+                data=cohort_data,
+                optimization_result=(
+                    optimization_result
+                ),
+            )
+        )
+
         return {
             "success": True,
             "validation": (
-                validation_report.model_dump()
+                validation_report
+                .model_dump()
             ),
             "cohort": {
                 "student_count": len(
@@ -191,11 +219,12 @@ async def optimize_cohort_teams(
                     cohort_data.projects
                 ),
                 "requirement_count": len(
-                    cohort_data.project_requirements
+                    cohort_data
+                    .project_requirements
                 ),
             },
-            "optimization": (
-                optimization_result
+            "team_formation": (
+                decision_support
             ),
         }
 
@@ -212,8 +241,8 @@ async def optimize_cohort_teams(
         raise HTTPException(
             status_code=500,
             detail=(
-                "Team formation could not "
-                "be completed. "
+                "Team formation could "
+                "not be completed. "
                 f"{str(exc)}"
             ),
         )
