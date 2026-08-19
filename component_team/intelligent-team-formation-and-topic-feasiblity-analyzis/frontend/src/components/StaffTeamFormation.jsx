@@ -9,6 +9,7 @@ import {
   XAxis,
   YAxis,
 } from 'recharts';
+import TopicFeasibilityPanel from './TopicFeasibilityPanel';
 
 const API_BASE_URL = 'http://127.0.0.1:8003';
 
@@ -16,12 +17,14 @@ export default function StaffTeamFormation() {
   const [file, setFile] = useState(null);
   const [validation, setValidation] = useState(null);
   const [result, setResult] = useState(null);
-  const [selectedSolutionId, setSelectedSolutionId] = useState(null);
+  const [selectedSolutionId, setSelectedSolutionId] =
+    useState(null);
   const [validating, setValidating] = useState(false);
   const [optimizing, setOptimizing] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
-  const solutions = result?.team_formation?.solutions || [];
+  const solutions =
+    result?.team_formation?.solutions || [];
 
   const selectedSolution = useMemo(() => {
     if (!solutions.length) {
@@ -31,7 +34,8 @@ export default function StaffTeamFormation() {
     return (
       solutions.find(
         (solution) =>
-          solution.solution_id === selectedSolutionId
+          solution.solution_id ===
+          selectedSolutionId
       ) || solutions[0]
     );
   }, [solutions, selectedSolutionId]);
@@ -57,7 +61,8 @@ export default function StaffTeamFormation() {
   };
 
   const handleFileChange = (event) => {
-    const selectedFile = event.target.files?.[0] || null;
+    const selectedFile =
+      event.target.files?.[0] || null;
 
     setFile(selectedFile);
     resetResults();
@@ -65,13 +70,18 @@ export default function StaffTeamFormation() {
 
   const buildFormData = () => {
     const formData = new FormData();
-    formData.append('file', file);
+
+    formData.append(
+      'file',
+      file
+    );
 
     return formData;
   };
 
   const getErrorMessage = (error) => {
-    const detail = error.response?.data?.detail;
+    const detail =
+      error.response?.data?.detail;
 
     if (typeof detail === 'string') {
       return detail;
@@ -112,7 +122,9 @@ export default function StaffTeamFormation() {
         buildFormData()
       );
 
-      setValidation(response.data);
+      setValidation(
+        response.data
+      );
     } catch (error) {
       console.error(
         'Workbook validation failed:',
@@ -144,15 +156,24 @@ export default function StaffTeamFormation() {
         buildFormData()
       );
 
-      setResult(response.data);
-      setValidation(response.data.validation);
+      setResult(
+        response.data
+      );
+
+      setValidation(
+        response.data.validation
+      );
 
       const returnedSolutions =
-        response.data.team_formation?.solutions || [];
+        response.data.team_formation
+          ?.solutions || [];
 
-      if (returnedSolutions.length > 0) {
+      if (
+        returnedSolutions.length > 0
+      ) {
         setSelectedSolutionId(
-          returnedSolutions[0].solution_id
+          returnedSolutions[0]
+            .solution_id
         );
       }
     } catch (error) {
@@ -161,9 +182,12 @@ export default function StaffTeamFormation() {
         error
       );
 
-      const detail = error.response?.data?.detail;
+      const detail =
+        error.response?.data?.detail;
 
-      if (detail?.validation) {
+      if (
+        detail?.validation
+      ) {
         setValidation(
           detail.validation
         );
@@ -208,7 +232,9 @@ export default function StaffTeamFormation() {
   };
 
   const percent = (value) =>
-    `${(Number(value || 0) * 100).toFixed(1)}%`;
+    `${(
+      Number(value || 0) * 100
+    ).toFixed(1)}%`;
 
   return (
     <div className="max-w-7xl mx-auto">
@@ -218,10 +244,12 @@ export default function StaffTeamFormation() {
         </h1>
 
         <p className="text-slate-400 mt-2 max-w-3xl">
-          Staff-side decision support for allocating
-          students to approved projects using technical
-          requirement coverage and student project
-          preference as separate Pareto objectives.
+          Staff-side decision support for
+          allocating students to approved
+          projects using technical
+          requirement coverage and student
+          project preference as separate
+          Pareto objectives.
         </p>
       </div>
 
@@ -235,29 +263,52 @@ export default function StaffTeamFormation() {
             <input
               type="file"
               accept=".xlsx"
-              onChange={handleFileChange}
-              className="block w-full text-sm text-slate-300
-                file:mr-4 file:py-2 file:px-4
-                file:rounded-lg file:border-0
-                file:bg-indigo-600 file:text-white
-                hover:file:bg-indigo-500"
+              onChange={
+                handleFileChange
+              }
+              className="
+                block w-full
+                text-sm
+                text-slate-300
+                file:mr-4
+                file:py-2
+                file:px-4
+                file:rounded-lg
+                file:border-0
+                file:bg-indigo-600
+                file:text-white
+                hover:file:bg-indigo-500
+              "
             />
 
             <p className="text-xs text-slate-500 mt-2">
-              Upload the staff workbook containing
-              Students, Preferences, Projects and
+              Upload the staff workbook
+              containing Students,
+              Preferences, Projects and
               ProjectRequirements.
             </p>
           </div>
 
           <button
             type="button"
-            onClick={validateWorkbook}
-            disabled={!file || validating || optimizing}
-            className="px-5 py-2.5 rounded-lg border
-              border-slate-600 bg-slate-700
-              hover:bg-slate-600 text-white
-              disabled:opacity-40"
+            onClick={
+              validateWorkbook
+            }
+            disabled={
+              !file ||
+              validating ||
+              optimizing
+            }
+            className="
+              px-5 py-2.5
+              rounded-lg
+              border
+              border-slate-600
+              bg-slate-700
+              hover:bg-slate-600
+              text-white
+              disabled:opacity-40
+            "
           >
             {validating
               ? 'Validating...'
@@ -266,18 +317,28 @@ export default function StaffTeamFormation() {
 
           <button
             type="button"
-            onClick={optimizeTeams}
+            onClick={
+              optimizeTeams
+            }
             disabled={
               !file ||
               validating ||
               optimizing ||
-              (validation &&
-                validation.valid === false)
+              (
+                validation &&
+                validation.valid ===
+                  false
+              )
             }
-            className="px-5 py-2.5 rounded-lg
-              bg-indigo-600 hover:bg-indigo-500
-              text-white font-semibold
-              disabled:opacity-40"
+            className="
+              px-5 py-2.5
+              rounded-lg
+              bg-indigo-600
+              hover:bg-indigo-500
+              text-white
+              font-semibold
+              disabled:opacity-40
+            "
           >
             {optimizing
               ? 'Running V3...'
@@ -301,17 +362,24 @@ export default function StaffTeamFormation() {
               </h2>
 
               <p className="text-sm text-slate-400">
-                Input integrity check before
-                optimization.
+                Input integrity check
+                before optimization.
               </p>
             </div>
 
             <span
-              className={`px-3 py-1 rounded-full text-xs font-bold border ${
-                validation.valid
-                  ? 'border-emerald-500/40 bg-emerald-500/10 text-emerald-300'
-                  : 'border-red-500/40 bg-red-500/10 text-red-300'
-              }`}
+              className={`
+                px-3 py-1
+                rounded-full
+                text-xs
+                font-bold
+                border
+                ${
+                  validation.valid
+                    ? 'border-emerald-500/40 bg-emerald-500/10 text-emerald-300'
+                    : 'border-red-500/40 bg-red-500/10 text-red-300'
+                }
+              `}
             >
               {validation.valid
                 ? 'VALID'
@@ -323,54 +391,75 @@ export default function StaffTeamFormation() {
             {[
               [
                 'Students',
-                validation.summary?.students,
+                validation.summary
+                  ?.students,
               ],
               [
                 'Projects',
-                validation.summary?.projects,
+                validation.summary
+                  ?.projects,
               ],
               [
                 'Supervisors',
-                validation.summary?.supervisors,
+                validation.summary
+                  ?.supervisors,
               ],
               [
                 'Errors',
-                validation.summary?.errors,
+                validation.summary
+                  ?.errors,
               ],
               [
                 'Warnings',
-                validation.summary?.warnings,
+                validation.summary
+                  ?.warnings,
               ],
-            ].map(([label, value]) => (
-              <div
-                key={label}
-                className="bg-slate-900/70 border border-slate-700 rounded-lg p-4"
-              >
-                <p className="text-xs uppercase text-slate-500">
-                  {label}
-                </p>
+            ].map(
+              ([
+                label,
+                value,
+              ]) => (
+                <div
+                  key={label}
+                  className="bg-slate-900/70 border border-slate-700 rounded-lg p-4"
+                >
+                  <p className="text-xs uppercase text-slate-500">
+                    {label}
+                  </p>
 
-                <p className="text-2xl font-bold text-white mt-1">
-                  {value ?? 0}
-                </p>
-              </div>
-            ))}
+                  <p className="text-2xl font-bold text-white mt-1">
+                    {value ?? 0}
+                  </p>
+                </div>
+              )
+            )}
           </div>
 
-          {validation.issues?.length > 0 && (
+          {validation.issues
+            ?.length > 0 && (
             <div className="mt-5 space-y-2">
               {validation.issues.map(
-                (issue, index) => (
+                (
+                  issue,
+                  index
+                ) => (
                   <div
-                    key={`${issue.code || 'issue'}-${index}`}
+                    key={`${
+                      issue.code ||
+                      'issue'
+                    }-${index}`}
                     className="bg-slate-900 border border-slate-700 rounded-lg p-3 text-sm"
                   >
                     <span className="font-bold mr-2">
-                      {issue.severity}
+                      {
+                        issue.severity
+                      }
                     </span>
 
                     <span>
-                      {issue.message}
+                      {
+                        issue.message
+                      }
                     </span>
                   </div>
                 )
@@ -386,13 +475,16 @@ export default function StaffTeamFormation() {
             <div className="flex flex-col lg:flex-row lg:justify-between gap-5">
               <div>
                 <h2 className="text-xl font-bold text-white">
-                  Pareto Decision Support
+                  Pareto Decision
+                  Support
                 </h2>
 
                 <p className="text-sm text-slate-400 mt-1">
-                  No solution is automatically selected.
-                  Compare technical coverage against
-                  student preference satisfaction.
+                  No solution is
+                  automatically selected.
+                  Compare technical
+                  coverage against student
+                  preference satisfaction.
                 </p>
               </div>
 
@@ -400,7 +492,9 @@ export default function StaffTeamFormation() {
                 <p>
                   <strong className="text-white">
                     {
-                      result.team_formation.optimizer
+                      result
+                        .team_formation
+                        .optimizer
                         .algorithm
                     }
                   </strong>
@@ -409,7 +503,9 @@ export default function StaffTeamFormation() {
                 <p>
                   Version:{' '}
                   {
-                    result.team_formation.optimizer
+                    result
+                      .team_formation
+                      .optimizer
                       .optimizer_version
                   }
                 </p>
@@ -417,7 +513,8 @@ export default function StaffTeamFormation() {
                 <p>
                   Pareto points:{' '}
                   {
-                    result.team_formation
+                    result
+                      .team_formation
                       .solution_count
                   }
                 </p>
@@ -433,8 +530,8 @@ export default function StaffTeamFormation() {
                   margin={{
                     top: 15,
                     right: 25,
-                    bottom: 20,
-                    left: 10,
+                    bottom: 25,
+                    left: 45,
                   }}
                 >
                   <CartesianGrid
@@ -446,7 +543,10 @@ export default function StaffTeamFormation() {
                     type="number"
                     dataKey="technicalDeficit"
                     name="Technical Deficit"
-                    domain={[0, 'auto']}
+                    domain={[
+                      0,
+                      'auto',
+                    ]}
                     tick={{
                       fill: '#94a3b8',
                       fontSize: 11,
@@ -454,8 +554,9 @@ export default function StaffTeamFormation() {
                     label={{
                       value:
                         'Technical Requirement Deficit',
-                      position: 'insideBottom',
-                      offset: -10,
+                      position:
+                        'insideBottom',
+                      offset: -12,
                       fill: '#94a3b8',
                     }}
                   />
@@ -464,7 +565,10 @@ export default function StaffTeamFormation() {
                     type="number"
                     dataKey="preferenceDissatisfaction"
                     name="Preference Dissatisfaction"
-                    domain={[0, 'auto']}
+                    domain={[
+                      0,
+                      'auto',
+                    ]}
                     tick={{
                       fill: '#94a3b8',
                       fontSize: 11,
@@ -473,7 +577,9 @@ export default function StaffTeamFormation() {
                       value:
                         'Preference Dissatisfaction',
                       angle: -90,
-                      position: 'insideLeft',
+                      position:
+                        'insideLeft',
+                      offset: -30,
                       fill: '#94a3b8',
                     }}
                   />
@@ -495,29 +601,40 @@ export default function StaffTeamFormation() {
                       }
 
                       const point =
-                        payload[0].payload;
+                        payload[0]
+                          .payload;
 
                       return (
                         <div className="bg-slate-950 border border-slate-700 rounded-lg p-3 text-xs shadow-xl">
                           <p className="font-bold text-white">
                             Solution{' '}
-                            {point.solutionId}
+                            {
+                              point.solutionId
+                            }
                           </p>
 
                           <p className="text-slate-400">
-                            {point.role}
+                            {
+                              point.role
+                            }
                           </p>
 
                           <p className="mt-2">
-                            Technical deficit:{' '}
-                            {point.technicalDeficit.toFixed(
+                            Technical
+                            deficit:{' '}
+                            {Number(
+                              point.technicalDeficit
+                            ).toFixed(
                               4
                             )}
                           </p>
 
                           <p>
-                            Preference dissatisfaction:{' '}
-                            {point.preferenceDissatisfaction.toFixed(
+                            Preference
+                            dissatisfaction:{' '}
+                            {Number(
+                              point.preferenceDissatisfaction
+                            ).toFixed(
                               4
                             )}
                           </p>
@@ -527,9 +644,13 @@ export default function StaffTeamFormation() {
                   />
 
                   <Scatter
-                    data={paretoData}
+                    data={
+                      paretoData
+                    }
                     fill="#818cf8"
-                    onClick={(point) =>
+                    onClick={(
+                      point
+                    ) =>
                       setSelectedSolutionId(
                         point.solutionId
                       )
@@ -540,69 +661,93 @@ export default function StaffTeamFormation() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-              {solutions.map((solution) => {
-                const selected =
-                  selectedSolution?.solution_id ===
-                  solution.solution_id;
+              {solutions.map(
+                (solution) => {
+                  const selected =
+                    selectedSolution
+                      ?.solution_id ===
+                    solution
+                      .solution_id;
 
-                return (
-                  <button
-                    key={solution.solution_id}
-                    type="button"
-                    onClick={() =>
-                      setSelectedSolutionId(
-                        solution.solution_id
-                      )
-                    }
-                    className={`text-left rounded-xl border p-4 transition ${
-                      selected
-                        ? 'border-indigo-400 bg-indigo-500/10'
-                        : 'border-slate-700 bg-slate-900/60 hover:border-slate-500'
-                    }`}
-                  >
-                    <div className="flex justify-between gap-2">
-                      <p className="font-bold text-white">
-                        Solution{' '}
-                        {solution.solution_id}
-                      </p>
-
-                      <span
-                        className={`text-[10px] px-2 py-1 rounded-full border ${roleStyle(
-                          solution.role
-                        )}`}
-                      >
-                        {solution.role}
-                      </span>
-                    </div>
-
-                    <div className="grid grid-cols-2 gap-3 mt-4">
-                      <div>
-                        <p className="text-xs text-slate-500">
-                          Technical Coverage
+                  return (
+                    <button
+                      key={
+                        solution
+                          .solution_id
+                      }
+                      type="button"
+                      onClick={() =>
+                        setSelectedSolutionId(
+                          solution
+                            .solution_id
+                        )
+                      }
+                      className={`
+                        text-left
+                        rounded-xl
+                        border
+                        p-4
+                        transition
+                        ${
+                          selected
+                            ? 'border-indigo-400 bg-indigo-500/10'
+                            : 'border-slate-700 bg-slate-900/60 hover:border-slate-500'
+                        }
+                      `}
+                    >
+                      <div className="flex justify-between gap-2">
+                        <p className="font-bold text-white">
+                          Solution{' '}
+                          {
+                            solution
+                              .solution_id
+                          }
                         </p>
 
-                        <p className="text-lg font-bold">
-                          {percent(
-                            solution.technical_requirement_coverage
-                          )}
-                        </p>
+                        <span
+                          className={`text-[10px] px-2 py-1 rounded-full border ${roleStyle(
+                            solution.role
+                          )}`}
+                        >
+                          {
+                            solution.role
+                          }
+                        </span>
                       </div>
 
-                      <div>
-                        <p className="text-xs text-slate-500">
-                          Preference Satisfaction
-                        </p>
+                      <div className="grid grid-cols-2 gap-3 mt-4">
+                        <div>
+                          <p className="text-xs text-slate-500">
+                            Technical
+                            Coverage
+                          </p>
 
-                        <p className="text-lg font-bold">
-                          {percent(
-                            solution.preference_satisfaction
-                          )}
-                        </p>
+                          <p className="text-lg font-bold">
+                            {percent(
+                              solution
+                                .technical_requirement_coverage
+                            )}
+                          </p>
+                        </div>
+
+                        <div>
+                          <p className="text-xs text-slate-500">
+                            Preference
+                            Satisfaction
+                          </p>
+
+                          <p className="text-lg font-bold">
+                            {percent(
+                              solution
+                                .preference_satisfaction
+                            )}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                  </button>
-                );
-              })}
+                    </button>
+                  );
+                }
+              )}
             </div>
           </section>
 
@@ -611,11 +756,17 @@ export default function StaffTeamFormation() {
               <div className="mb-5">
                 <h2 className="text-2xl font-bold text-white">
                   Solution{' '}
-                  {selectedSolution.solution_id}
+                  {
+                    selectedSolution
+                      .solution_id
+                  }
                 </h2>
 
                 <p className="text-slate-400 text-sm mt-1">
-                  {selectedSolution.role}
+                  {
+                    selectedSolution
+                      .role
+                  }
                 </p>
               </div>
 
@@ -623,28 +774,32 @@ export default function StaffTeamFormation() {
                 <MetricCard
                   label="Technical Coverage"
                   value={percent(
-                    selectedSolution.technical_requirement_coverage
+                    selectedSolution
+                      .technical_requirement_coverage
                   )}
                 />
 
                 <MetricCard
                   label="Technical Deficit"
                   value={percent(
-                    selectedSolution.technical_requirement_deficit
+                    selectedSolution
+                      .technical_requirement_deficit
                   )}
                 />
 
                 <MetricCard
                   label="Preference Satisfaction"
                   value={percent(
-                    selectedSolution.preference_satisfaction
+                    selectedSolution
+                      .preference_satisfaction
                   )}
                 />
 
                 <MetricCard
                   label="Preference Dissatisfaction"
                   value={percent(
-                    selectedSolution.preference_dissatisfaction
+                    selectedSolution
+                      .preference_dissatisfaction
                   )}
                 />
               </div>
@@ -653,16 +808,28 @@ export default function StaffTeamFormation() {
                 {selectedSolution.teams.map(
                   (team) => (
                     <TeamCard
-                      key={team.project_id}
+                      key={
+                        team.project_id
+                      }
                       team={team}
                     />
                   )
                 )}
               </div>
 
+              <TopicFeasibilityPanel
+                workbookFile={
+                  file
+                }
+                selectedSolution={
+                  selectedSolution
+                }
+              />
+
               <div className="mt-6 bg-slate-900/60 border border-slate-700 rounded-lg p-4 text-xs text-slate-400">
                 {
-                  result.team_formation
+                  result
+                    .team_formation
                     .interpretation
                     .allocation_count_note
                 }
@@ -701,31 +868,48 @@ function TeamCard({
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
           <div>
             <p className="text-xs text-indigo-400 font-mono">
-              {team.project_id}
+              {
+                team.project_id
+              }
             </p>
 
             <h3 className="text-xl font-bold text-white">
-              {team.project_title}
+              {
+                team.project_title
+              }
             </h3>
 
             <p className="text-sm text-slate-400">
-              Team size: {team.team_size}
+              Team size:{' '}
+              {team.team_size}
             </p>
           </div>
 
-          <div className="flex gap-3">
+          <div className="flex flex-wrap gap-3">
             <span
-              className={`text-xs px-3 py-1 rounded-full border ${
-                team.technical_deficit === 0
-                  ? 'border-emerald-500/40 bg-emerald-500/10 text-emerald-300'
-                  : 'border-amber-500/40 bg-amber-500/10 text-amber-300'
-              }`}
+              className={`
+                text-xs
+                px-3 py-1
+                rounded-full
+                border
+                ${
+                  team.technical_deficit ===
+                  0
+                    ? 'border-emerald-500/40 bg-emerald-500/10 text-emerald-300'
+                    : 'border-amber-500/40 bg-amber-500/10 text-amber-300'
+                }
+              `}
             >
-              {team.technical_status}
+              {
+                team.technical_status
+              }
             </span>
 
             <span className="text-xs px-3 py-1 rounded-full border border-indigo-500/40 bg-indigo-500/10 text-indigo-300">
-              {(team.technical_coverage * 100).toFixed(
+              {(
+                team.technical_coverage *
+                100
+              ).toFixed(
                 1
               )}
               % coverage
@@ -767,48 +951,61 @@ function TeamCard({
 
             <tbody>
               {team.requirements.map(
-                (requirement) => (
+                (
+                  requirement
+                ) => (
                   <tr
                     key={
-                      requirement.technology
+                      requirement
+                        .technology
                     }
                     className="border-b border-slate-800"
                   >
                     <td className="py-3 pr-4 font-semibold">
                       {
-                        requirement.technology
+                        requirement
+                          .technology
                       }
                     </td>
 
                     <td className="py-3 pr-4">
                       {
-                        requirement.min_level
+                        requirement
+                          .min_level
                       }
                     </td>
 
                     <td className="py-3 pr-4">
                       {
-                        requirement.required_members
+                        requirement
+                          .required_members
                       }
                     </td>
 
                     <td className="py-3 pr-4">
                       {
-                        requirement.qualified_members
+                        requirement
+                          .qualified_members
                       }
                     </td>
 
                     <td className="py-3">
                       <span
-                        className={`text-xs px-2 py-1 rounded-full ${
-                          requirement.status ===
-                          'Covered'
-                            ? 'bg-emerald-500/10 text-emerald-300'
-                            : 'bg-red-500/10 text-red-300'
-                        }`}
+                        className={`
+                          text-xs
+                          px-2 py-1
+                          rounded-full
+                          ${
+                            requirement.status ===
+                            'Covered'
+                              ? 'bg-emerald-500/10 text-emerald-300'
+                              : 'bg-red-500/10 text-red-300'
+                          }
+                        `}
                       >
                         {
-                          requirement.status
+                          requirement
+                            .status
                         }
                       </span>
                     </td>
@@ -819,6 +1016,37 @@ function TeamCard({
           </table>
         </div>
 
+        <div className="mt-5 grid grid-cols-1 md:grid-cols-3 gap-3">
+          <PreferenceStat
+            label="First Choices"
+            value={
+              team
+                .preference_summary
+                .first_choice_count
+            }
+          />
+
+          <PreferenceStat
+            label="Ranked Assignments"
+            value={
+              team
+                .preference_summary
+                .ranked_choice_count
+            }
+          />
+
+          <PreferenceStat
+            label="Average Dissatisfaction"
+            value={Number(
+              team
+                .preference_summary
+                .average_dissatisfaction
+            ).toFixed(
+              3
+            )}
+          />
+        </div>
+
         <h4 className="font-semibold text-white mt-7 mb-3">
           Assigned Students
         </h4>
@@ -827,19 +1055,23 @@ function TeamCard({
           {team.students.map(
             (student) => (
               <div
-                key={student.student_id}
+                key={
+                  student.student_id
+                }
                 className="bg-slate-900/70 border border-slate-700 rounded-lg p-4"
               >
                 <div className="flex justify-between gap-4">
                   <div>
                     <p className="font-mono font-bold text-white">
                       {
-                        student.student_id
+                        student
+                          .student_id
                       }
                     </p>
 
                     <p className="text-xs text-slate-500 mt-1">
-                      Preference rank:{' '}
+                      Preference
+                      rank:{' '}
                       {student.preference_rank ??
                         'Unranked'}
                     </p>
@@ -847,34 +1079,94 @@ function TeamCard({
 
                   <span className="text-xs text-indigo-300">
                     Dissatisfaction:{' '}
-                    {student.dissatisfaction.toFixed(
+                    {Number(
+                      student
+                        .dissatisfaction
+                    ).toFixed(
                       3
                     )}
                   </span>
                 </div>
 
-                <div className="flex flex-wrap gap-2 mt-3">
-                  {Object.entries(
-                    student.relevant_skills
-                  ).map(
-                    ([
-                      technology,
-                      level,
-                    ]) => (
-                      <span
-                        key={technology}
-                        className="text-xs px-2 py-1 bg-slate-800 border border-slate-700 rounded"
-                      >
-                        {technology}: {level}
-                      </span>
-                    )
-                  )}
+                <div className="mt-3">
+                  <p className="text-xs text-slate-500 mb-2">
+                    Ranked projects
+                  </p>
+
+                  <div className="flex flex-wrap gap-2">
+                    {student.ranked_projects
+                      ?.map(
+                        (
+                          projectId,
+                          index
+                        ) => (
+                          <span
+                            key={`${student.student_id}-${projectId}`}
+                            className="text-xs px-2 py-1 bg-slate-800 border border-slate-700 rounded"
+                          >
+                            {index +
+                              1}
+                            .{' '}
+                            {
+                              projectId
+                            }
+                          </span>
+                        )
+                      )}
+                  </div>
+                </div>
+
+                <div className="mt-3">
+                  <p className="text-xs text-slate-500 mb-2">
+                    Relevant skills
+                  </p>
+
+                  <div className="flex flex-wrap gap-2">
+                    {Object.entries(
+                      student
+                        .relevant_skills
+                    ).map(
+                      ([
+                        technology,
+                        level,
+                      ]) => (
+                        <span
+                          key={
+                            technology
+                          }
+                          className="text-xs px-2 py-1 bg-slate-800 border border-slate-700 rounded"
+                        >
+                          {
+                            technology
+                          }
+                          : {level}
+                        </span>
+                      )
+                    )}
+                  </div>
                 </div>
               </div>
             )
           )}
         </div>
       </div>
+    </div>
+  );
+}
+
+function PreferenceStat({
+  label,
+  value,
+}) {
+  return (
+    <div className="bg-slate-900/50 border border-slate-700 rounded-lg p-3">
+      <p className="text-xs text-slate-500">
+        {label}
+      </p>
+
+      <p className="text-lg font-semibold text-white mt-1">
+        {value}
+      </p>
     </div>
   );
 }
