@@ -1,11 +1,23 @@
+# Python
 __pycache__/
-*.pdf
-*.docx
-datasets/
-models/t5_wbs_final/
-component_scheduling/models/t5_wbs_final/model.safetensors
-component_scheduling/models/t5_wbs_parser/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+
+# Frontend
 node_modules/
-*.db
-scratch_main.py
-diag_test.py
+dist/
+.vite/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.log
