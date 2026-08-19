@@ -1,2 +1,6 @@
-pip install pandas
-pip install python-multipart
+fastapi
+uvicorn[standard]
+python-multipart
+pydantic
+openpyxl
+deap
