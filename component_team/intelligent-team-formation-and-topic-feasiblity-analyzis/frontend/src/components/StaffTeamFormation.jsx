@@ -525,7 +525,13 @@ export default function StaffTeamFormation() {
               <ResponsiveContainer
                 width="100%"
                 height="100%"
-              >
+                minWidth={0}
+                minHeight={0}
+                initialDimension={{
+                    width: 900,
+                    height: 280,
+                }}
+            >
                 <ScatterChart
                   margin={{
                     top: 15,
