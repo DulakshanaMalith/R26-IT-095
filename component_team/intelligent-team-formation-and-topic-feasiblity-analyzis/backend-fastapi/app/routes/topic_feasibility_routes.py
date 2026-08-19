@@ -1,3 +1,4 @@
+import re
 import shutil
 from pathlib import Path
 from tempfile import (
@@ -7,35 +8,27 @@ from tempfile import (
 from fastapi import (
     APIRouter,
     File,
+    Form,
     HTTPException,
     UploadFile,
 )
 
-from app.models.cohort_import import (
-    ValidationReport,
-)
-from app.routes.topic_feasibility_routes import (
-    router as topic_feasibility_router,
-)
 from app.services.cohort_data_service import (
     build_cohort_import_data,
 )
-from app.services.nsga2_optimizer import (
-    optimize_team_formation,
-)
-from app.services.team_formation_response_service import (
-    build_staff_team_formation_response,
+from app.services.topic_feasibility_service import (
+    analyze_topic_technical_feasibility,
 )
 from app.services.workbook_validation_service import (
     validate_workbook,
 )
 
 
-router = APIRouter()
-
-cohort_router = APIRouter(
-    prefix="/api/cohort",
-    tags=["Cohort Import"],
+router = APIRouter(
+    prefix="/api/topic-feasibility",
+    tags=[
+        "Topic Technical Feasibility"
+    ],
 )
 
 
@@ -92,62 +85,26 @@ def _save_upload_to_temp(
     return temp_path
 
 
-@cohort_router.post(
-    "/validate",
-    response_model=ValidationReport,
+def _parse_team_student_ids(
+    raw_value: str,
+) -> list[str]:
+    return [
+        value.strip()
+        for value in re.split(
+            r"[,;\n]+",
+            raw_value,
+        )
+        if value.strip()
+    ]
+
+
+@router.post(
+    "/analyze",
 )
-async def validate_cohort_workbook(
+async def analyze_topic_feasibility(
     file: UploadFile = File(...),
-):
-    _validate_upload(
-        file
-    )
-
-    temp_path = None
-
-    try:
-        temp_path = (
-            _save_upload_to_temp(
-                file
-            )
-        )
-
-        report = (
-            validate_workbook(
-                temp_path
-            )
-        )
-
-        return report
-
-    except HTTPException:
-        raise
-
-    except Exception as exc:
-        raise HTTPException(
-            status_code=400,
-            detail=(
-                "The workbook could not "
-                "be processed. "
-                f"{str(exc)}"
-            ),
-        )
-
-    finally:
-        await file.close()
-
-        if (
-            temp_path is not None
-            and temp_path.exists()
-        ):
-            temp_path.unlink()
-
-
-@cohort_router.post(
-    "/optimize",
-)
-async def optimize_cohort_teams(
-    file: UploadFile = File(...),
+    project_id: str = Form(...),
+    team_student_ids: str = Form(...),
 ):
     _validate_upload(
         file
@@ -174,8 +131,8 @@ async def optimize_cohort_teams(
                 detail={
                     "message": (
                         "Workbook validation "
-                        "failed. Team formation "
-                        "was not started."
+                        "failed. Topic feasibility "
+                        "analysis was not started."
                     ),
                     "validation": (
                         validation_report
@@ -190,22 +147,18 @@ async def optimize_cohort_teams(
             )
         )
 
-        optimization_result = (
-            optimize_team_formation(
-                data=cohort_data,
-                population_size=120,
-                generations=150,
-                seed=42,
-                seeded_initialization=True,
-                seed_variant_count=12,
+        parsed_student_ids = (
+            _parse_team_student_ids(
+                team_student_ids
             )
         )
 
-        decision_support = (
-            build_staff_team_formation_response(
+        result = (
+            analyze_topic_technical_feasibility(
                 data=cohort_data,
-                optimization_result=(
-                    optimization_result
+                project_id=project_id,
+                team_student_ids=(
+                    parsed_student_ids
                 ),
             )
         )
@@ -228,8 +181,8 @@ async def optimize_cohort_teams(
                     .project_requirements
                 ),
             },
-            "team_formation": (
-                decision_support
+            "topic_feasibility": (
+                result
             ),
         }
 
@@ -246,8 +199,9 @@ async def optimize_cohort_teams(
         raise HTTPException(
             status_code=500,
             detail=(
-                "Team formation could "
-                "not be completed. "
+                "Topic technical feasibility "
+                "analysis could not be "
+                "completed. "
                 f"{str(exc)}"
             ),
         )
@@ -260,12 +214,3 @@ async def optimize_cohort_teams(
             and temp_path.exists()
         ):
             temp_path.unlink()
-
-
-router.include_router(
-    cohort_router
-)
-
-router.include_router(
-    topic_feasibility_router
-)
