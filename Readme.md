@@ -71,31 +71,26 @@ This component handles predictive contribution analytics and real-time risk dete
 
 ---
 
-### 5. Team Formation (Component 4)
-This component handles intelligent clustering and developer allocation.
+### 5. Team Formation & Topic Feasibility (Component 4)
+
+This component provides academic staff with intelligent decision support for
+undergraduate project team formation and topic technical feasibility analysis.
+
+The system validates cohort workbooks, applies a Heuristic-Seeded NSGA-II V3
+multi-objective optimizer to generate Pareto team-allocation alternatives, and
+allows staff to compare technical requirement coverage against student project
+preference satisfaction.
+
+It also provides a deterministic Topic Technical Feasibility module for
+evaluating an existing team against the technical requirements of a selected
+project/topic.
+
 **Start the Backend (FastAPI):**
-1. Open a new terminal:
-   ```bash
-   cd "component_team/intelligent-team-formation-and-topic-feasiblity-analyzis/backend"
-   ```
-2. Run the server on port 8003:
-   ```bash
-   python -m uvicorn main:app --host 127.0.0.1 --port 8003
-   ```
 
-**Start the Frontend (React/Vite):**
 1. Open a new terminal:
-   ```bash
-   cd "component_team/intelligent-team-formation-and-topic-feasiblity-analyzis/frontend"
-   ```
-2. Install dependencies (first time only) and start on port 3001:
-   ```bash
-   npm install
-   npm run dev -- --port 3001
-   ```
-3. **Access:** `http://127.0.0.1:3001`
 
----
+   ```bash
+   cd "component_team/intelligent-team-formation-and-topic-feasiblity-analyzis/backend-fastapi"
 
 ## 🎨 Global UI Theme
 To ensure visual consistency for the final presentation, all React and Flask frontends have been injected with a `global-theme.css` override. This automatically forces all components to adopt the unified dark space theme without modifying their underlying frontend logic.
