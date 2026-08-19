@@ -308,6 +308,38 @@ export default function TopicFeasibilityPanel({
             </span>
           </div>
 
+          {!result.team
+            .team_size_matches_project && (
+            <div className="mb-6 border border-amber-500/40 bg-amber-500/10 rounded-lg p-4">
+              <p className="font-semibold text-amber-300">
+                Team Size Mismatch
+              </p>
+
+              <p className="text-sm text-slate-300 mt-1">
+                This project expects{' '}
+                {
+                  result.team
+                    .expected_team_size
+                }{' '}
+                members, but the selected
+                team currently contains{' '}
+                {
+                  result.team
+                    .actual_team_size
+                }.
+              </p>
+
+              <p className="text-xs text-slate-400 mt-2">
+                Technical coverage is still
+                calculated for the current
+                team. This result does not
+                mean that the project's team
+                size requirement has been
+                satisfied.
+              </p>
+            </div>
+          )}
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-7">
             <MetricCard
               label="Technical Coverage"
