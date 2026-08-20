@@ -10,6 +10,7 @@ import {
   YAxis,
 } from 'recharts';
 import TopicFeasibilityPanel from './TopicFeasibilityPanel';
+import SupervisorAllocationPanel from './SupervisorAllocationPanel';
 
 const API_BASE_URL = 'http://127.0.0.1:8003';
 
@@ -378,6 +379,11 @@ export default function StaffTeamFormation() {
 
               <TopicFeasibilityPanel
                 key={selectedSolution.solution_id}
+                workbookFile={file}
+                selectedSolution={selectedSolution}
+              />
+              <SupervisorAllocationPanel
+                key={`supervisor-${selectedSolution.solution_id}`}
                 workbookFile={file}
                 selectedSolution={selectedSolution}
               />

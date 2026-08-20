@@ -1,15 +1,25 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.routes.cohort_routes import router as cohort_router
+from app.routes.cohort_routes import (
+    router as cohort_router,
+)
+from app.routes.supervisor_allocation_routes import (
+    router as supervisor_allocation_router,
+)
 
 
 app = FastAPI(
-    title="Intelligent Team Formation and Topic Feasibility API",
+    title=(
+        "Intelligent Team Formation "
+        "and Topic Feasibility API"
+    ),
     description=(
-        "Staff-oriented decision-support API for undergraduate "
-        "project team formation and deterministic topic technical "
-        "feasibility analysis."
+        "Staff-oriented decision-support "
+        "API for undergraduate project "
+        "team formation, topic technical "
+        "feasibility analysis, and "
+        "downstream supervisor allocation."
     ),
     version="3.0.0",
 )
@@ -29,22 +39,41 @@ app.add_middleware(
 )
 
 
-app.include_router(cohort_router)
+app.include_router(
+    cohort_router
+)
+
+app.include_router(
+    supervisor_allocation_router
+)
 
 
 @app.get("/")
 def root():
     return {
         "message": (
-            "Intelligent Team Formation and "
-            "Topic Feasibility API"
+            "Intelligent Team Formation "
+            "and Topic Feasibility API"
         ),
         "version": "V3",
         "status": "running",
         "active_workflows": [
-            "Cohort workbook validation",
-            "Heuristic-Seeded NSGA-II team formation",
-            "Topic technical feasibility analysis",
+            (
+                "Cohort workbook "
+                "validation"
+            ),
+            (
+                "Heuristic-Seeded "
+                "NSGA-II team formation"
+            ),
+            (
+                "Topic technical "
+                "feasibility analysis"
+            ),
+            (
+                "Downstream supervisor "
+                "allocation"
+            ),
         ],
     }
 
