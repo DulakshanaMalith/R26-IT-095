@@ -6,15 +6,17 @@ This repository contains the Intelligent Team Formation and Topic Feasibility An
 
 The component provides academic staff with decision support for:
 
-validating cohort and project data,
+validating cohort, project, and supervisor data,
 
 generating alternative project-team allocations,
 
-comparing trade-offs between technical requirement satisfaction and student project preferences, and
+comparing trade-offs between technical requirement satisfaction and student project preferences,
 
-analyzing the technical feasibility of assigning an existing team to a selected project/topic.
+analyzing the technical feasibility of assigning an existing team to a selected approved project/topic, and
 
-The final system uses a Heuristic-Seeded NSGA-II V3 multi-objective optimization approach for team formation and a deterministic requirement-coverage model for topic technical feasibility.
+allocating supervisors to projects as a downstream operational feature.
+
+The final research workflow uses a Heuristic-Seeded NSGA-II V3 multi-objective optimization approach for team formation and a deterministic requirement-coverage model for topic technical feasibility. A separate Global Lexicographic Supervisor Allocation stage supports the end-to-end demonstration workflow without changing the two-objective NSGA-II formulation.
 
 1. Research Motivation
 
@@ -36,7 +38,7 @@ Academic staff can inspect these alternatives and select an allocation based on 
 
 2. Final System Scope
 
-The final implemented component contains two main workflows.
+The final implemented component contains two evaluated research workflows plus one downstream operational feature.
 
 2.1 Intelligent Team Formation
 
@@ -125,6 +127,26 @@ teamwork quality,
 student performance,
 
 or overall project success.
+
+2.3 Downstream Supervisor Allocation
+
+After academic staff select a team/project allocation, the system can allocate supervisors to the selected projects using:
+
+supervisor capacity as a hard constraint,
+
+project-domain expertise as the highest matching priority,
+
+number of expertise-domain matches,
+
+project-domain research-interest matches,
+
+number of interest-domain matches,
+
+lower projected workload as the final tie-break criterion.
+
+The allocation is generated globally so that multiple projects competing for the same supervisor cannot cause a supervisor to exceed MaximumTeams.
+
+This feature is implemented for practical end-to-end system support and demonstration. It is not a third NSGA-II objective and was not included in the experimental evaluation of the team-formation optimizer.
 
 3. Research Questions
 
@@ -436,9 +458,9 @@ SupervisorName
 MaximumTeams
 CurrentLoad
 
-Supervisor information is validated as part of the workbook structure.
+Supervisor information is validated as part of the workbook structure and is also used by the downstream supervisor-allocation feature.
 
-Supervisor assignment is a separate downstream concern and is not part of the active NSGA-II team-formation objective set.
+Supervisor allocation remains separate from the active NSGA-II team-formation objective set.
 
 10.8 SupervisorDomains
 
@@ -530,7 +552,13 @@ topic technical feasibility analysis,
 
 technical-gap reporting,
 
-team-size mismatch warnings.
+team-size mismatch warnings,
+
+downstream supervisor allocation,
+
+supervisor expertise and interest evidence,
+
+supervisor workload and remaining-capacity reporting.
 
 The Pareto chart uses:
 
@@ -594,7 +622,65 @@ A team can technically cover all modeled technology requirements while still fai
 
 The frontend displays a warning when this condition occurs.
 
-15. Technology Stack
+15. Downstream Supervisor Allocation
+
+Supervisor allocation is executed only after a staff member has selected a team/project allocation.
+
+The implemented method is:
+
+Global Lexicographic Supervisor Allocation
+
+For each project, the system considers the domains listed in ProjectDomains and compares them with supervisor entries in SupervisorDomains.
+
+The priority order is:
+
+1. Supervisor capacity (hard constraint)
+2. Project-domain expertise match
+3. Number of expertise domains matched
+4. Project-domain research-interest match
+5. Number of interest domains matched
+6. Lower projected workload
+
+Capacity is calculated from:
+
+Available Slots = MaximumTeams - CurrentLoad
+
+The allocation is solved globally rather than independently for each project. This prevents multiple projects from being assigned to the same supervisor when doing so would exceed available capacity.
+
+The frontend reports:
+
+project and assigned team,
+
+selected supervisor,
+
+match status,
+
+matched expertise domains,
+
+matched research-interest domains,
+
+current load,
+
+maximum teams,
+
+projected load,
+
+remaining capacity,
+
+an explanation of the assignment.
+
+Possible match statuses are:
+
+Strong Expertise Match
+Expertise Match
+Interest Match
+Capacity-Only Assignment
+
+A Capacity-Only Assignment can occur when no expertise or interest domain match is available but a complete allocation is still possible under the capacity constraints.
+
+This supervisor-allocation method is a downstream system/demo feature. It is not claimed as a research contribution of the multi-objective team-formation method and was not part of the reported NSGA-II experimental comparison.
+
+16. Technology Stack
 
 Backend
 
@@ -618,7 +704,7 @@ Data Input
 
 Microsoft Excel (.xlsx)
 
-16. Repository Structure
+17. Repository Structure
 
 intelligent-team-formation-and-topic-feasiblity-analyzis/
 │
@@ -632,6 +718,7 @@ intelligent-team-formation-and-topic-feasiblity-analyzis/
 │   │   ├── routes/
 │   │   │   ├── __init__.py
 │   │   │   ├── cohort_routes.py
+│   │   │   ├── supervisor_allocation_routes.py
 │   │   │   └── topic_feasibility_routes.py
 │   │   │
 │   │   └── services/
@@ -646,6 +733,7 @@ intelligent-team-formation-and-topic-feasiblity-analyzis/
 │   │       ├── nsga2_verification_service.py
 │   │       ├── scalability_experiment_service.py
 │   │       ├── stochastic_baselines.py
+│   │       ├── supervisor_allocation_service.py
 │   │       ├── synthetic_cohort_generator.py
 │   │       ├── team_formation_objectives.py
 │   │       ├── team_formation_response_service.py
@@ -668,6 +756,7 @@ intelligent-team-formation-and-topic-feasiblity-analyzis/
 │   ├── src/
 │   │   ├── components/
 │   │   │   ├── StaffTeamFormation.jsx
+│   │   │   ├── SupervisorAllocationPanel.jsx
 │   │   │   └── TopicFeasibilityPanel.jsx
 │   │   │
 │   │   ├── legacy/
@@ -684,7 +773,7 @@ intelligent-team-formation-and-topic-feasiblity-analyzis/
 ├── .gitignore
 └── README.md
 
-17. Backend Installation
+18. Backend Installation
 
 Open a terminal inside:
 
@@ -724,7 +813,7 @@ Expected response:
   "status": "healthy"
 }
 
-18. Frontend Installation
+19. Frontend Installation
 
 Open another terminal inside:
 
@@ -750,7 +839,7 @@ http://127.0.0.1:5173
 
 The backend CORS configuration must allow the frontend origin being used.
 
-19. Production Build and Code Checks
+20. Production Build and Code Checks
 
 Frontend lint:
 
@@ -766,7 +855,7 @@ python -m compileall app
 
 The final cleaned implementation has been verified with successful linting, production build, and backend compilation.
 
-20. API Endpoints
+21. API Endpoints
 
 20.1 Root
 
@@ -857,7 +946,40 @@ qualified students,
 
 individual competency evidence.
 
-21. Evaluation Methodology
+21.6 Allocate Supervisors
+
+POST /api/supervisor-allocation/allocate
+
+Input:
+
+multipart/form-data
+file = validated .xlsx workbook
+
+Returns:
+
+globally constrained supervisor assignments,
+
+project and supervisor identifiers,
+
+project domains,
+
+expertise-domain matches,
+
+research-interest matches,
+
+match status,
+
+current and projected supervisor load,
+
+remaining capacity,
+
+allocation explanation,
+
+summary counts.
+
+The endpoint does not modify the selected NSGA-II objective values. Supervisor allocation is a downstream stage.
+
+22. Evaluation Methodology
 
 The V3 optimizer was evaluated against:
 
@@ -899,7 +1021,7 @@ The principal multi-objective metric was hypervolume, where higher values indica
 
 Runtime, objective endpoints, and discovered nondominated solution counts were also measured.
 
-22. Exact Verification
+23. Exact Verification
 
 Small 12-student scenarios were evaluated using exhaustive search.
 
@@ -932,7 +1054,7 @@ The High-conflict exact Pareto objective points were:
 
 V3 recovered the complete exact Pareto front in all final repeated Medium- and High-conflict verification runs.
 
-23. Final Experimental Design
+24. Final Experimental Design
 
 The final large-scale evaluation used:
 
@@ -952,7 +1074,7 @@ The final evaluation produced:
 
 across all compared methods.
 
-24. Key Evaluation Findings
+25. Key Evaluation Findings
 
 Across the final evaluation, Heuristic-Seeded NSGA-II V3 achieved the strongest overall hypervolume performance among the compared approaches.
 
@@ -993,7 +1115,7 @@ High conflict    28.78
 
 This illustrates that stronger conflict between technical and preference objectives produces a richer trade-off space.
 
-25. Statistical Evaluation
+26. Statistical Evaluation
 
 Statistical testing was performed on dataset-level medians, where repeated optimizer runs were collapsed per dataset.
 
@@ -1035,7 +1157,7 @@ All were below 0.001.
 
 Some smaller 20-student per-condition comparisons were not significant after correction, indicating that the advantage of heuristic seeding becomes more pronounced as problem size increases.
 
-26. Objective Endpoint Interpretation
+27. Objective Endpoint Interpretation
 
 The preference-oriented endpoint with:
 
@@ -1067,7 +1189,7 @@ These endpoints should not be interpreted as the same allocation.
 
 They represent different parts of the discovered trade-off frontier.
 
-27. Important Interpretation Notes
+28. Important Interpretation Notes
 
 The system should not be interpreted as an automatic decision maker.
 
@@ -1083,9 +1205,11 @@ The topic feasibility module does not predict project success.
 
 The Pareto optimizer presents alternative allocations rather than selecting one mandatory allocation.
 
-Supervisor assignment is not a third NSGA-II objective.
+Supervisor allocation is implemented as a downstream system feature and is not a third NSGA-II objective.
 
-28. Legacy Prototype
+The supervisor-allocation feature was not part of the reported team-formation experimental evaluation.
+
+29. Legacy Prototype
 
 Earlier versions of this research explored:
 
@@ -1115,7 +1239,7 @@ project preferences
 Pareto multi-objective team formation
 deterministic technical feasibility
 
-29. Testing
+30. Testing
 
 The final system has been integration-tested for:
 
@@ -1147,6 +1271,18 @@ frontend/backend integration,
 
 CORS configuration,
 
+normal supervisor-allocation workflow,
+
+insufficient supervisor capacity,
+
+expertise-over-interest priority,
+
+interest-only fallback,
+
+capacity-only fallback,
+
+global supervisor-capacity conflicts,
+
 frontend linting,
 
 production build,
@@ -1155,7 +1291,7 @@ backend compilation.
 
 The intentionally invalid test workbook produces structured validation errors without crashing the application.
 
-30. Demonstration Workflow
+31. Demonstration Workflow
 
 A recommended demonstration sequence is:
 
@@ -1191,7 +1327,19 @@ A recommended demonstration sequence is:
 15. Demonstrate another team/topic combination
     containing technical gaps.
 
-31. Research Contribution
+16. Return to the selected Pareto allocation.
+
+17. Click Allocate Supervisors.
+
+18. Show the supervisor selected for each project.
+
+19. Explain expertise, interest, projected load,
+    remaining capacity, and match status.
+
+20. Confirm that the final demonstration result contains
+    Team + Project + Supervisor.
+
+32. Research Contribution
 
 The contribution of this component is not the invention of NSGA-II itself.
 
@@ -1209,7 +1357,9 @@ This allows academic staff to inspect Pareto trade-offs instead of relying on a 
 
 The system further provides interpretable technical requirement evidence and a separate deterministic topic technical-feasibility stage.
 
-32. Current Final Workflow
+A downstream supervisor-allocation feature is included to support the practical demonstration workflow, but it is not included in the evaluated research contribution.
+
+33. Current Final Workflow
 
 Academic Staff
       |
@@ -1234,13 +1384,17 @@ Staff Decision
       v
 Selected Team / Project Allocation
       |
-      v
-Topic Technical Feasibility
-      |
-      v
-Technical Coverage + Identified Gaps
+      +----------------------+
+      |                      |
+      v                      v
+Topic Technical        Global Supervisor
+Feasibility            Allocation
+      |                      |
+      v                      v
+Technical Coverage     Team + Project +
++ Identified Gaps      Supervisor
 
-33. Component Status
+34. Component Status
 
 Current implementation status:
 
@@ -1256,6 +1410,9 @@ Staff Team-Formation API            COMPLETE
 Staff Team-Formation Frontend       COMPLETE
 Topic Feasibility Backend           COMPLETE
 Topic Feasibility Frontend          COMPLETE
+Supervisor Allocation Backend       COMPLETE
+Supervisor Allocation Frontend      COMPLETE
+Supervisor Edge-Case Testing        PASSED
 Integration Testing                 COMPLETE
 Legacy Isolation                    COMPLETE
 Repository Cleanup                  COMPLETE
@@ -1263,7 +1420,7 @@ Frontend Lint                       PASSED
 Frontend Production Build           PASSED
 Backend Compile Check               PASSED
 
-34. Running the Final System
+35. Running the Final System
 
 Backend
 
@@ -1287,7 +1444,7 @@ npm run dev
 
 Then open the local URL printed by Vite.
 
-35. Reproducing the Frontend Quality Checks
+36. Reproducing the Frontend Quality Checks
 
 cd frontend
 npm run lint
@@ -1295,7 +1452,7 @@ npm run build
 
 A Vite bundle-size warning may appear for the production bundle. This is a performance advisory and does not indicate a failed build.
 
-36. Authors
+37. Authors
 
 This component was developed as part of an undergraduate final-year research project at the Sri Lanka Institute of Information Technology (SLIIT).
 
@@ -1307,8 +1464,8 @@ Parent System:
 
 Intelligent Project Management System for Undergraduate Students
 
-37. Academic Use
+38. Academic Use
 
 This repository was developed for academic research and educational purposes.
 
-Any reuse of the research methodology, experimental results, software implementation, or documentation should provide
+Any reuse of the research methodology, experimental results, software implementation, or documentation should provide appropriate attribution where required.
