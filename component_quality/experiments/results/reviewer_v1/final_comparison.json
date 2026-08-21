@@ -1,0 +1,50 @@
+{
+    "experiment_id": "reviewer_v1",
+    "dataset": {
+        "name": "Exposia Final Proposals",
+        "n_proposals": 10
+    },
+    "systems": {
+        "llm_only": {
+            "weakness_precision": 0.625,
+            "weakness_recall": 0.06711409395973154,
+            "weakness_f1": 0.12121212121212122,
+            "score_mae": null,
+            "score_rmse": null,
+            "unsupported_claims": "NOT EVALUABLE AUTOMATICALLY",
+            "rubric_alignment": "NOT EVALUABLE AUTOMATICALLY"
+        },
+        "rag": {
+            "weakness_precision": 0.6666666666666666,
+            "weakness_recall": 0.07357859531772576,
+            "weakness_f1": 0.13253012048192772,
+            "score_mae": null,
+            "score_rmse": null,
+            "unsupported_claims": "NOT EVALUABLE AUTOMATICALLY",
+            "rubric_alignment": "NOT EVALUABLE AUTOMATICALLY"
+        },
+        "ml": {
+            "weakness_precision": 0.625,
+            "weakness_recall": 0.06666666666666667,
+            "weakness_f1": 0.12048192771084337,
+            "score_mae": 1.5466428937789338,
+            "score_rmse": 1.7536589237154752,
+            "unsupported_claims": "NOT EVALUABLE AUTOMATICALLY",
+            "rubric_alignment": "NOT EVALUABLE AUTOMATICALLY"
+        },
+        "ml_rag": {
+            "weakness_precision": 0.6333333333333333,
+            "weakness_recall": 0.06354515050167224,
+            "weakness_f1": 0.11550151975683892,
+            "score_mae": 1.5466428937789338,
+            "score_rmse": 1.7536589237154752,
+            "unsupported_claims": "NOT EVALUABLE AUTOMATICALLY",
+            "rubric_alignment": "NOT EVALUABLE AUTOMATICALLY"
+        }
+    },
+    "limitations": [
+        "Sample size is only 10 due to manual annotation scarcity.",
+        "Weakness matching uses a 30% Jaccard word overlap threshold which may over/under count slightly.",
+        "Score prediction only evaluated for systems with ML integration."
+    ]
+}

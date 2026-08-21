@@ -1,0 +1,100 @@
+{
+  "evaluation_id": "EVAL_CASSANDRA_BLANKENSHIP",
+  "system": "ml",
+  "review": {
+    "summary": "The proposal presents a study aimed at understanding how anthropomorphic visual representations of AI systems impact user perception and trust. It outlines a clear motivation for the research, identifies relevant theories, and proposes a methodology for evaluating user experiences with different AI representations. However, there are several areas that require further clarification and detail.",
+    "strengths": [
+      {
+        "issue_id": "1",
+        "type": "Strength",
+        "severity": "high",
+        "section": "Motivation",
+        "evidence_span": "Adoption of artificial intelligence (AI) technologies has reached a tipping point across domains.",
+        "reason": "The motivation for the research is well-articulated, highlighting the current relevance and importance of AI technologies in user-focused applications.",
+        "recommendation": "Continue to emphasize the significance of user perception in AI applications."
+      },
+      {
+        "issue_id": "2",
+        "type": "Strength",
+        "severity": "medium",
+        "section": "Research Question",
+        "evidence_span": "How much does providing an anthropomorphic visual representation improve the perceived capabilities of an AI system?",
+        "reason": "The research question is clear and directly addresses a gap in the existing literature regarding user perception of AI.",
+        "recommendation": "Ensure that the research questions are consistently referenced throughout the proposal."
+      },
+      {
+        "issue_id": "3",
+        "type": "Strength",
+        "severity": "medium",
+        "section": "Methodology",
+        "evidence_span": "The study will be conducted as a blind experiment, meaning the participants won't know the actual research questions before they give their answers.",
+        "reason": "The methodology includes a blind experiment design, which is a strong approach to minimize bias in user responses.",
+        "recommendation": "Consider detailing how the blind design will be implemented in practice."
+      }
+    ],
+    "weaknesses": [
+      {
+        "issue_id": "1",
+        "type": "Weakness",
+        "severity": "high",
+        "section": "Dataset/Data",
+        "evidence_span": "the task will be randomly chosen out of a pool of tasks, that represent everyday problems, like knowledge acquisition.",
+        "reason": "The proposal lacks detail on the specific tasks that will be used in the study, which is crucial for understanding the scope and applicability of the research.",
+        "recommendation": "Provide examples of the tasks that will be included in the study."
+      },
+      {
+        "issue_id": "2",
+        "type": "Weakness",
+        "severity": "medium",
+        "section": "Evaluation",
+        "evidence_span": "To evaluate the experiment, the users will rate their experiences for each of the different AI systems.",
+        "reason": "While user ratings are mentioned, the proposal does not specify how these ratings will be analyzed or what specific aspects of the user experience will be measured.",
+        "recommendation": "Include details on the evaluation metrics and analysis methods that will be used."
+      },
+      {
+        "issue_id": "3",
+        "type": "Weakness",
+        "severity": "medium",
+        "section": "Limitations",
+        "evidence_span": "Another limitation will be the avatars used for the advanced AI visualisations, as these technologies are still being developed and are therefore hard to get a hold of.",
+        "reason": "The proposal mentions limitations but does not provide a comprehensive discussion of potential challenges or how they will be addressed.",
+        "recommendation": "Expand the limitations section to include a broader range of potential challenges and mitigation strategies."
+      }
+    ],
+    "recommendations": [
+      "Provide specific examples of tasks to be used in the user study.",
+      "Detail the evaluation metrics and analysis methods for user ratings.",
+      "Expand the limitations section to discuss potential challenges and how they will be addressed."
+    ],
+    "overall_assessment": "The proposal presents a relevant and timely research question with a solid motivation and a clear methodological approach. However, it requires additional detail in several areas, particularly regarding the dataset, evaluation methods, and limitations, to strengthen the overall quality and feasibility of the research."
+  },
+  "ml": {
+    "weakness_predictions": [
+      "{\n\tpdfstandard=a-2b,\n\tpdfversion=1.7,\n}\n[\n    IMRAD=false,\n\tenglish,\n\truledheaders=section,\n\tclass=report,\n\tthesis={type=bachelor},\n\taccentcolor=9c,\n\tcustommargins=false,\n\tmarginpar=false,",
+      "parskip=half-,\n\tfontsize=11pt,",
+      "[german, main=english]{babel}\n[autostyle]{csquotes}",
+      "biblatex\nExposeBibliography.bib",
+      "inf\nUbiquitous Knowledge Processing Lab",
+      "Motivation\nAdoption of artificial intelligence (AI) technologies has reached a tipping point across domains. In many scientific endeavours AI is now a core part, like in natural language processing or computer vision. This, however, cannot be said for user-focused applications. While AI certainly gained in popularity through ChatGPT, Midjourney and the like, AI-based chatbots still frequently fail to meet customer expectations AI-based_chatbots_in_customer_service_and_their_effects_on_user_compliance and AI assistants often can't shake the connection to their impersonal, dry and quite frankly gimmicky predecessors like Alexa and Siri. All this in spite of the massive improvements that the field of AI has seen in the last decade, especially with Large Language Models (LLMs) like GPT-4 or Claude A_Survey_of_Large_Language_Models. \\\\\nSo the question now becomes, how does one realign the user perception with the actual power of these systems?",
+      "The most promising approach to raise perceived capabilities, that isn't improving the AI model outright, has been anthropomorphising AI systems. Giving AI traits usually associated with humans increases trust and loyalty towards them Virtual_Customer_Service_Agents:_Using_Social_Presence_and_Personalization_to_Shape_Online_Service_Encounters. This is already being done in many ways, for example Alexa and Siri both have a female voice and name. \\\\\nWhile human voices as well as avatar pictures do increase perceived sociability Virtual_Customer_Service_Agents:_Using_Social_Presence_and_Personalization_to_Shape_Online_Service_Encounters, the next step forward is for our virtual assistants to come to life through holographic projections.",
+      "In museums and cultural heritage sites there have already been successfully combinations of both chatbots and holographic displaysA_Survey_of_Augmented_Virtual_and_Mixed_Reality_for_Cultural_Heritage. When integrated into their pedagogy, it has been shown that augmented and mixed reality can enhance the sense of presence as well as aid in the learning process Discovering_Leonardo_with_artificial_intelligence_and_holograms:_A_user_study.",
+      "This paper will mostly focus on the first two categories, as they are more suited for AI assistants. This is because personal assistants, as we use them today, need to be accessible at all times and therefore rely on portability.\nBecause of this, wearable solutions are preferred for AI assistants",
+      "To help understand how much the presentation impacts the perceived capabilities of an AI system (RQ1), a participants study will be conducted. In this study users will be given a task, that is to be solved with the help of an AI system. The task will be randomly chosen out of a pool of tasks, that represent everyday problems, like knowledge acquisition. The users will interact with the same underlying AI system using different representations to solve these tasks. The participants of the study will be of mixed age, gender and social background. This is important, as the domain of holographic AI assistants encompasses anywhere from schools to home assistants. \n\\\\\nThe different representations will range from only using text or audio, to using avatars in form of pictures up to 3D holographic avatars and spanning both VR and AR (RQ1.1 \\& RQ1.2). The visualisation as well as task will be randomized, all while using the same underlying LLM to isolate the impact of the different representations.\\\\ \nThe study will be conducted as a blind experiment, meaning the participants won't know the actual research questions before they give their answers.",
+      "To evaluate the experiment, the users will rate their experiences for each of the different AI systems. On top of that they will also give feedback in form of a short interview, to gain both quantitative and qualitative data.",
+      "It has been shownDevelopment_of_Human-Computer_Interaction_for_Holographic_Ais that previous experience with AR, or systems like it, can increase the adoption speed and impact the baseline attitude towards such systems. Because of this, the survey will also contain a section to evaluate the participants prior interaction with systems like Augmented and Virtual Reality as well as AI in general. This will try to minimize the effect of bias for or against AI assistants, but it will not be possible to remove it entirely.\\\\\nAnother limitation will be the avatars used for the advanced AI visualisations, as these technologies are still being developed and are therefore hard to get a hold of. To limit the scope of the project, an already existing LLM with an additional visual representation will be used, instead of a new custom built AI model.",
+      "1 & 1 & Planning & Creating a detailed work plan, coordination \\\\ \n1 & 2-3 & Literature Review & Searching for relevant literature, initial analysis \\\\ \n1 & 4 & Literature Evaluation & Critical review and selection of literature \\\\",
+      "2 & 5 & Concept Development & Drafting qualitative and quantitative questions \\\\\n2 & 6-7 & Scenario Planning & Designing the mock 3D avatars \\\\\n2 & 8 & Study Preparation & Checking test setup for working soft- and hardware\\\\",
+      "3 & 9 & Administration & Acquiring/lending AR and VR headsets\\\\\n3 & 9-10 & Recruitment & Selecting and acquiring participants \\\\\n3 & 11 & Data Collection & Conducting the user study \\\\ \n4 & 12-14 & Qualitative Analysis & Detailed analysis of the free-form texts \\\\ \n4 & 15-16 & Writing Results & Writing the results chapter based on the data \\\\",
+      "5 & 17 & Discussion & Interpretation of results in a scientific context \\\\ \n5 & 18-19 & Methodology Review & Revising and finalizing the methodology \\\\ \n5 & 20 & Full Revision & Editing and reviewing all chapters \\\\"
+    ],
+    "predicted_score": 37.97269913642964
+  },
+  "rag": null,
+  "metadata": {
+    "model": "gpt-4o-mini",
+    "temperature": 0.0,
+    "top_k": 5,
+    "timestamp": "2026-08-13T08:46:11Z",
+    "experiment_id": "reviewer_v1"
+  }
+}

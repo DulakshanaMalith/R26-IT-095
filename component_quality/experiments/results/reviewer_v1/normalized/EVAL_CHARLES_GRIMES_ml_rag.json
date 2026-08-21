@@ -1,0 +1,143 @@
+{
+  "evaluation_id": "EVAL_CHARLES_GRIMES",
+  "system": "ml_rag",
+  "review": {
+    "summary": "The proposal presents a research plan to enhance the StratL algorithm for personalized learning using Large Language Models (LLMs). It addresses the 2 Sigma Problem in education by exploring machine learning techniques to improve the classification of students' states, which is crucial for effective tutoring. The research question and sub-questions are well-defined, and the methodology includes both quantitative and qualitative approaches. However, there are some concerns regarding the clarity of the methodology and potential challenges in implementation.",
+    "strengths": [
+      {
+        "issue_id": "strength_1",
+        "type": "Strength",
+        "severity": "high",
+        "section": "Research Question",
+        "evidence_span": "RQ: How can the classification of the students state of the StratL algorithm be improved?",
+        "reason": "The research question is clear and directly addresses a significant issue in educational technology.",
+        "recommendation": "Continue to refine the research questions as the project progresses."
+      },
+      {
+        "issue_id": "strength_2",
+        "type": "Strength",
+        "severity": "medium",
+        "section": "Motivation",
+        "evidence_span": "Effective tutoring is characterized by the so-called '2 Sigma Problem'...",
+        "reason": "The motivation is well-articulated, linking the research to a recognized educational challenge.",
+        "recommendation": "Maintain this strong connection to educational theory throughout the proposal."
+      },
+      {
+        "issue_id": "strength_3",
+        "type": "Strength",
+        "severity": "medium",
+        "section": "Methodology",
+        "evidence_span": "To enhance the StratL algorithm, access to its source code is required. Fortunately, it is available as open-source software...",
+        "reason": "The methodology is grounded in practical access to necessary resources, which supports feasibility.",
+        "recommendation": "Ensure that the implementation plan remains adaptable to any unforeseen challenges."
+      }
+    ],
+    "weaknesses": [
+      {
+        "issue_id": "weakness_1",
+        "type": "Weakness",
+        "severity": "medium",
+        "section": "Methodology",
+        "evidence_span": "It is to be noted that both of the scores have to be counted manually, which can be time-intensive.",
+        "reason": "The manual counting of scores may introduce significant delays and affect the overall timeline of the project.",
+        "recommendation": "Consider automating the scoring process to improve efficiency."
+      },
+      {
+        "issue_id": "weakness_2",
+        "type": "Weakness",
+        "severity": "medium",
+        "section": "Difficulties",
+        "evidence_span": "The next problem could emerge if no students are found for the study.",
+        "reason": "The reliance on finding participants could jeopardize the study's feasibility.",
+        "recommendation": "Develop a contingency plan for participant recruitment to mitigate this risk."
+      },
+      {
+        "issue_id": "weakness_3",
+        "type": "Weakness",
+        "severity": "medium",
+        "section": "Evaluation",
+        "evidence_span": "Qualitative here means interviews on overall experience with emphasis on how well they felt understood by the tutor.",
+        "reason": "The qualitative evaluation method may not sufficiently capture the complexity of student experiences.",
+        "recommendation": "Consider incorporating additional qualitative measures to enrich the evaluation."
+      }
+    ],
+    "recommendations": [
+      "Automate the scoring process to improve efficiency.",
+      "Develop a contingency plan for participant recruitment to mitigate risks.",
+      "Incorporate additional qualitative measures to enrich the evaluation."
+    ],
+    "overall_assessment": "The proposal is well-structured and addresses a relevant educational issue with a clear research question. However, attention should be given to the methodology and potential challenges to ensure successful implementation."
+  },
+  "ml": {
+    "weakness_predictions": [
+      "{\n\tpdfstandard=a-2b,\n\tpdfversion=1.7,\n}\n[\n    IMRAD=false,\n\tenglish,\n\truledheaders=section,\n\tclass=report,\n\tthesis={type=bachelor},\n\taccentcolor=9c,\n\tcustommargins=false,\n\tmarginpar=false,",
+      "parskip=half-,\n\tfontsize=11pt,",
+      "[german, main=english]{babel}\n[autostyle]{csquotes}",
+      "[sorting=none]{biblatex}\nExposeBibliography.bib",
+      "Effective Personalized Learning With Large Language Models\nImproving Intent Selection of the Stratl Algorithm with Artificial Intelligence Methods\nCharles Grimes",
+      "inf\nUbiquitous Knowledge Processing Lab",
+      "Effective tutoring is characterized by the so-called \"2 Sigma Problem\"~bloom19842. This problem is described by Bloom, who found that the average student performs about two standard deviations better when being tutored one-to-one, in contrast to conventional methods~bloom19842. Obviously, pairing each student worldwide with a one-to-one teacher is not feasible. A classroom in public schools normally consists of a teacher and more than 20 students. Creating personalized learning paths for all students is a very difficult task for teachers. Furthermore, learners benefit greatly from feedback on their work~Schartel_2012. Again, teachers do not have the time to provide feedback on every exercise a student performs.\\\\\nState-of-the-art Large Language Models (LLMs) can solve questions in several subjects~wang2024largelanguagemodelseducation and achieve scores similar to those of students on standardized tests~openai2023gpt. Using them as tutors would offer a solution to the 2 Sigma Problem. However, they are trained with human feedback~ouyang2022training, humans normally prefer fast answers to their queries. This is counterproductive to the object of learning. \\\\\nFor education, LLMs should be adjusted so that they do not give the answer directly, but rather help students find it themselves. The conservative approach to tutoring is called \"Direct Instruction\"~adams2003direct. In contrast, Kapur~kapur2008productive suggests that maximum learning is achieved by Productive Failure (PF). PF describes confronting learners with the problem first, letting them try finding a solution themselves. Only afterwards are they presented with the possible solution.\\\\\nImplementing PF into a LLM tutor should be the objective. A LLM tutor would be accessible to nearly every student. So it could leverage the positive effects of one-to-one tutoring and offer personalization. Combined with the maximized learning from PF, it would optimize learning to a great extend. Puech et. al. attempted to do exactly this and developed \"StratL\", an algorithm to strategically prompt a LLM~puech2024pedagogicalsteeringlargelanguage. This algorithm classifies the current state of the student. Based on this classification it chooses a tutor intent from a transition graph. This way, the prompted LLM can give hints personalized for the user. This personalization follows the goal of maximum learning in a PF manner~puech2024pedagogicalsteeringlargelanguage. StratL showed promising results in terms of students producing Representation and Solution Methods (RSMs). Still, there is room for improvement, as reports of the field study suggest suboptimal classification at times~puech2024pedagogicalsteeringlargelanguage. Intent selection is the key to a PF-based LLM-tutor.\\\\\nIn the proposed thesis, the following research question is going to be addressed:",
+      "RQ: How can the classification of the students state of the StratL algorithm be improved?\\\\\n{}",
+      "sub RQ1: Can a k-Nearest-Neighbor approach improve the StratL classification algorithm?\n     sub RQ2: Can a Decision Tree improve the StratL classification algorithm?\n     sub RQ3: Can a fine-tuned LLM improve the StratL classification algorithm?",
+      "Approach",
+      "State of the Art\\\\\nWang et. al. describe the current state of LLMs in education~wang2024largelanguagemodelseducation. They write about the nearly perfect ability of LLMs to solve questions~openai2023gpt. Other areas, such as error correction, content generation and giving feedback are very advanced as well. In Knowledge Tracing, that is tracking a learners understanding, there are also active developments being made~wang2024largelanguagemodelseducation. LLMs are now able to predict a students' answer based on their knowledge profiles~wang2024largelanguagemodelseducation. The application of LLMs as Intelligent Tutoring Systems (ITS) are explored. A thorough review of the literature revealed no further work on the implementation of PF into LLMs other than the paper on StratL~puech2024pedagogicalsteeringlargelanguage. \\\\\nIntegrating Artificial Intelligence into education is an objective nearly everyone agrees on. That is always paired with the fear of raising plagiarism. Most work~wang2024largelanguagemodelseducation in this area is based on the problem of how to tune LLMs to switch from answering questions to being an effective tutor. Answering questions raises plagiarism concerns, while an effective tutor supports students in finding the answer themselves.",
+      "This thesis work is going to further investigate if the StratL Algorithm~puech2024pedagogicalsteeringlargelanguage can provide a solution to this. Right now, it successfully makes students produce RSMs, which can be seen as a metric for how well it follows the PF approach. However, there are deficits in terms of the classification of the students state. This state is essential, as it forms the basis for selecting the agent’s intent. If students are misunderstood, the agent tries to help them with problems they do not even have. Puech et. al.~puech2024pedagogicalsteeringlargelanguage managed to develop an agent that gives answers in a PF manner. If this agent further achieves to classify all its users correctly, it will be the most efficient learning tool.",
+      "Theoretical Framework\\\\\nThe more conservative approach to learning is called {Direct Instruction} (DI)~adams2003direct. In this approach, teachers show students a way to tackle a specific problem, going through every necessary step to find the solution. Afterwards, the students are presented problems of the same type. They are expected to solve them using the same steps they were presented beforehand. \\\\\nIn order to help students gain maximum knowledge, the concept of {Productive Failure} (PF) plays a key role~kapur2008productive. Learning has shown to be more effective when students are not directly presented with the solution. Confronting students with the problem first, without showing them how to solve it is beneficial. Before revealing the possible solution, they try to find their own way. That is known as PF~kapur2008productive. The aim of this approach is not that students find the right way to the solution themselves, but rather that they fail in the first place. This way, learning is maximized when they are presented with the solution afterwards. It is proven to be superior to DI in terms of learning effects. \\\\\n{StratL} is an algorithm introduced by Puech et. al.~puech2024pedagogicalsteeringlargelanguage that tries to implement PF into a LLM tutor. To what extend the tutor accomplishes this is measured by the number of {Representation and Solution Methods} (RSMs) produced by its student. These RSMs can be seen as partial solutions that the students came up with. They motivate further search for the solution and thereby display participation in PF. Furthermore, a {PF score} is used for evaluation. This PF score is higher if the students find more predefined crucial reasoning steps themselves, which can be associated with their learning. The algorithm returns a student state, that is further used to prompt a LLM. Previously, the same LLM has been prompted with initial PF instructions that for example prohibit giving the answer directly. \\\\\nDeciding on the current state of the student is integral to the effectiveness of tutoring. Providing students with hints that asked for a definition does not enhance their learning or worse, makes them lose confidence in the abilities of the tutor. At the moment, there is no Artificial Intelligence (AI) being used when it comes to the student state tracing in StratL. AI is still an integral part of the tutor as a LLM is prompted in the end. When a field study was run, participants reported problems. Particularly, they described that answers of the tutor did not match their query.\nIt is investigated whether it is possible to reach a better classification with machine learning techniques. There is a dataset provided by the developers of StratL. This dataset can be used to evaluate the performance of an altered version in terms of how good it follows PF.",
+      "Methodology\\\\\nTo enhance the StratL algorithm, access to its source code is required. Fortunately, it is available as open-source software~puech2024pedagogicalsteeringlargelanguage. The same holds for the dataset~puech2024pedagogicalsteeringlargelanguage. This dataset consists of 20 unique problems that require multiple interactions to be solved. Based on these problems, a tutor with a changed StratL algorithm can be evaluated. For evaluation, the rubrics of RSMs and PF score can be used. Students can be simulated with GPT-4. This quantitative approach can be a foundation for further studies. It is to be noted that both of the scores have to be counted manually, which can be time-intensive. Still, this approach is useful as changes can be made and tested simultaneously. The changes themselves will be made using the Hugging Face and PyTorch frameworks. For sub RQ1 and sub RQ2, I will adjust the hyperparameters. Comparing with the results the simulated student and the dataset problems deliver, these will be adjusted more coarse- or fine-grained. To answer sub RQ3, I aim to leverage Low-Rank Adaptation~hu2021lora in order to fine-tune a LLM. The schedule for finding a good solution is the same as for the other parts, although this will probably take more time. Additionally, the resulting algorithm has to be checked in terms of running time. If it manages to classify the students state better, but takes too much time it might be more feasible to use a different approach. Too much time in this context refers to the resulting answer time the whole system needs or the training time.\\\\\nIn order to really address the potential improvements real-world studies have to be done. The classification problems of StratL only became clear with real students in the first place. Ideally, a group of students is recruited that participates in quantitative as well as qualitative studies. Quantitive in a sense that the interactions are evaluated based on the same metrics used with the simulated student interactions. Qualitative here means interviews on overall experience with emphasis on how well they felt understood by the tutor. The qualitative methods should be prioritized, as they more directly address the classification problem. These students can be of any school age, as PF applies across all domains.",
+      "Difficulties\\\\\nThere are some problems that could occur during the implementation of these ideas. First, there could be problems with the code. For example, it could not be complete or the dataset could be too small. As the authors actively promote the idea of others further working with their open source work, these are considered unlikely. As for the dataset, there would have to be more examples produced, which could be done in buffer time. \\\\\nThe next problem could emerge if no students are found for the study. I still keep good relations with many of my school teachers and work at an elementary school, so I hope to find participants there. As I work as a tutor myself, I could also do the study on my tutor students. \\\\\nFor the qualitative method, there is to be considered that students mistake the answers of the LLM tutor as not fitting to their intent. If one is not familiar with PF or awaits a quick answer to the question, the answers in PF manner can cause frustration. This frustration could lead one to the conclusion that the tutor wrongly classifies. However, this can be intercepted and a precise questionnaire can bring differentiation.",
+      "1 & 1 & Gathering Information & Searching for more relevant literature \\\\ \n1 & 2-3 & Code \\& Literature Review & Understanding the code, testing it on the given dataset, thoroughly analyzing the new literature \\\\ \n1 & 4 & Code \\& Literature Writing & Writing the background part, describing the part that is to be changed \\\\",
+      "2 & 5 & Development: KNN & Implementing the k-Nearest-Neighbor approach into the code to answer sub RQ1, testing on the dataset, tracking results\\\\\n2 & 6 & Development: Decision Tree & Implementing a Decision Tree classifier into the code to answer sub RQ2, testing on the dataset, tracking results\\\\\n2 & 7-8 & Development: fine-tuned LLM & Implementing and fine-tuning a LLM to perform classification in the StratL algorithm to answer sub RQ3, testing on the dataset, tracking results \\\\",
+      "3 & 9 & Intermediate Results & Writing the section about the intermediate results the different models achieved on the dataset\\\\\n3 & 10-11 & Interview Design & Formulating questions for the qualitative study, prepare framework for the implementation of the study \\\\ \n3 & 12 & Recruitment & Contacting schools, acquiring students \\\\",
+      "4 & 13-14 & Study Implementation & Implementing the studies in different environments (school classes, tutoring, students doing homework alone)\\\\\n4 & 15-16 & Quantitative Analysis & Evaluating quantitative results from student study, focusing on differences in the results of the models used and relevance in terms  of how much better they perform in comparison to the original algorithm\\\\",
+      "5 & 17 & Qualitative Analysis & Evaluating qualitative results from the student study, focusing on differences of the models again but also the different results of the settings (classroom, working alone), describing how meaningful these results are \\\\ \n5 & 18 & Writing Methodology & Explaining the exact implementation and study process \\\\ \n5 & 19-20 & Writing Main Part & Writing about the results obtained, comparing with original StratL\\\\",
+      "6 & 21 & Writing Discussion & Discussing the relevance of the results, explaining the significance, giving room for future work \\\\ \n6 & 22 & Revision & Proofreading \\& meeting with supervisor \\\\ \n6 & 23-24 & Buffer time & buffer time for unforeseen challenges in coding or studies \\\\"
+    ],
+    "predicted_score": 39.99705566321949
+  },
+  "rag": {
+    "retrieved_items": [
+      {
+        "example_id": "1008",
+        "span_text": "How can the classification of the students state of the StratL algorithm be improved?",
+        "historical_comment": "I personally think the research question and sub-RQs are very strong and technically considered. ",
+        "annotation_tag": "Strength",
+        "similarity_score": 0.5196805596351624
+      },
+      {
+        "example_id": "1008",
+        "span_text": "How can the classification of the students state of the StratL algorithm be improved?",
+        "historical_comment": "I personally think the research question and sub-RQs are very strong and technically considered. ",
+        "annotation_tag": "Strength",
+        "similarity_score": 0.5196805596351624
+      },
+      {
+        "example_id": "1008",
+        "span_text": "How can the classification of the students state of the StratL algorithm be improved?",
+        "historical_comment": "I personally think the research question and sub-RQs are very strong and technically considered. ",
+        "annotation_tag": "Strength",
+        "similarity_score": 0.5196805596351624
+      },
+      {
+        "example_id": "1008",
+        "span_text": "How can the classification of the students state of the StratL algorithm be improved?",
+        "historical_comment": "I personally think the research question and sub-RQs are very strong and technically considered. ",
+        "annotation_tag": "Strength",
+        "similarity_score": 0.5196805596351624
+      },
+      {
+        "example_id": "809",
+        "span_text": "Large Language Models",
+        "historical_comment": "Explicitly note that this can be shortened to LLMs if you want to use the shortened version later.",
+        "annotation_tag": "Weakness",
+        "similarity_score": 0.46569037437438965
+      }
+    ]
+  },
+  "metadata": {
+    "model": "gpt-4o-mini",
+    "temperature": 0.0,
+    "top_k": 5,
+    "timestamp": "2026-08-13T08:47:30Z",
+    "experiment_id": "reviewer_v1"
+  }
+}

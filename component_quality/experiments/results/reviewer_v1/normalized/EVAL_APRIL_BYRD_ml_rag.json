@@ -1,0 +1,153 @@
+{
+  "evaluation_id": "EVAL_APRIL_BYRD",
+  "system": "ml_rag",
+  "review": {
+    "summary": "The proposal outlines a project aimed at developing holographic AI assistants for museums to enhance visitor engagement through immersive interactions with historical personalities. It presents a clear motivation, research questions, and a structured methodology involving literature review, expert interviews, prototype development, and ethical considerations.",
+    "strengths": [
+      {
+        "issue_id": "strength_1",
+        "type": "Strength",
+        "severity": "high",
+        "section": "Motivation",
+        "evidence_span": "highlighting the need for more engaging and innovative approaches to attract audiences.",
+        "reason": "The motivation clearly identifies a pressing issue faced by museums, particularly in the context of declining visitor numbers post-COVID-19.",
+        "recommendation": "Continue to emphasize the relevance of the research in addressing current challenges in museum engagement."
+      },
+      {
+        "issue_id": "strength_2",
+        "type": "Strength",
+        "severity": "high",
+        "section": "Research Questions",
+        "evidence_span": "RQ1 How can holographic AI assistants be trained and implemented in museums to enhance the visitor experience?",
+        "reason": "The research questions are well-defined and directly address the core objectives of the study.",
+        "recommendation": "Ensure that the research questions guide the methodology effectively throughout the project."
+      },
+      {
+        "issue_id": "strength_3",
+        "type": "Strength",
+        "severity": "medium",
+        "section": "Methodology",
+        "evidence_span": "The methodology of this work combines qualitative observations, expert interviews, and technological prototype development.",
+        "reason": "The methodology is comprehensive and incorporates multiple data collection methods, which can provide a well-rounded understanding of the topic.",
+        "recommendation": "Maintain clarity in the methodology to ensure that each component is executed effectively."
+      },
+      {
+        "issue_id": "strength_4",
+        "type": "Strength",
+        "severity": "medium",
+        "section": "Ethics",
+        "evidence_span": "It is especially important to bring our attention to ethical challenges and the use of faulty datasets that arise with the development and use of holographic AI assistants in museums.",
+        "reason": "The proposal acknowledges ethical considerations, which are crucial for the responsible development of AI technologies.",
+        "recommendation": "Continue to develop a robust ethical framework to guide the research and implementation phases."
+      }
+    ],
+    "weaknesses": [
+      {
+        "issue_id": "weakness_1",
+        "type": "Weakness",
+        "severity": "medium",
+        "section": "Dataset/Data",
+        "evidence_span": "training data will be sourced from publicly available historical papers and articles.",
+        "reason": "The proposal lacks detail on the specific datasets that will be used, which is critical for assessing the quality and relevance of the training data.",
+        "recommendation": "Provide more information on the datasets, including their sources, scope, and how they will be validated for accuracy."
+      },
+      {
+        "issue_id": "weakness_2",
+        "type": "Weakness",
+        "severity": "medium",
+        "section": "Evaluation",
+        "evidence_span": "The focus will be to evaluate the holographic AI assistant's natural behavior, the accuracy of its answers and its intuitiveness.",
+        "reason": "While the evaluation criteria are mentioned, they could be more specific in terms of how each aspect will be measured.",
+        "recommendation": "Define clear metrics and methods for evaluating the assistant's performance to ensure a rigorous assessment."
+      },
+      {
+        "issue_id": "weakness_3",
+        "type": "Weakness",
+        "severity": "medium",
+        "section": "Limitations",
+        "evidence_span": "Despite these risks, the combination of research interviews, development and user feedback allows for detailed evaluation of the usage of holographic AI assistants.",
+        "reason": "The proposal does not explicitly address potential limitations of the study, which is important for transparency and understanding the scope of the findings.",
+        "recommendation": "Include a section that discusses potential limitations and how they will be mitigated."
+      }
+    ],
+    "recommendations": [
+      "Provide more detail on the datasets to be used, including their sources and validation methods.",
+      "Define specific metrics for evaluating the performance of the holographic AI assistant.",
+      "Include a discussion of potential limitations and how they will be addressed in the study."
+    ],
+    "overall_assessment": "The proposal presents a promising approach to enhancing museum experiences through holographic AI assistants. While it has several strengths, particularly in motivation and methodology, it would benefit from more detailed information regarding datasets, evaluation metrics, and limitations."
+  },
+  "ml": {
+    "weakness_predictions": [
+      "{\n\tpdfstandard=a-2b,\n\tpdfversion=1.7,\n}\n[\n    IMRAD=false,\n\tenglish,\n\truledheaders=section,\n\tclass=report,\n\tthesis={type=bachelor},\n\taccentcolor=9c,\n\tcustommargins=false,\n\tmarginpar=false,",
+      "parskip=half-,\n\tfontsize=11pt,",
+      "[german, main=english]{babel}\n[autostyle]{csquotes}",
+      "[sorting=none]{biblatex}\nExposeBibliography.bib",
+      "Holographic AI Assistants in Museums: Simulating Historical Personalities\nEnhance museum experiences by providing real-time, immersive interactions with historical personalities\nApril Byrd",
+      "inf\nUbiquitous Knowledge Processing Lab",
+      "While some museums already started using holograms, these typically serve as  representation of objects and animals. Holographic AI assistants, trained to emulate historical personalities and reproduce contextual information, could transform the entire museum experience. These assistants provide new and interactive ways for visitors to engage with them and present information based on their interest.",
+      "RQ1 How can holographic AI assistants be trained and implemented in museums to enhance the visitor experience?",
+      "Sub-RQ1.1 What technical requirements are necessary to model historical personalities in holographic AI assistants, including the use of authentic data sources, large language models and holographic visualization?\n\t Sub-RQ1.2 What ethical and data privacy challenges arise from training holographic AI assistants to accurately represent historical personalities in museums?\n\t Sub-RQ1.3 How do museum visitors respond to the visual representation and interactivity of holographic AI assistants?",
+      "Approach",
+      "Digitalization requires museums to implicate new thought provoking and immersive ways to interact with its content. Holographic AI assistants which allow context based communication, might be the solution for enhancing visitor engagement.  They enable dynamic dialogues between visitors and representations of historical personalities, enriching educational experiences and making history more captivating and accessible. Scientific papers already show the use of cutting edge visualization via holograms pietroni_bringing_2019, caggianese_discovering_2020 with additional gesture control and first attempts at implementing AI in museums by providing heritage chatbots caggianese_discovering_2020. This study will analyze the possibility of synergistically combining both holography and AI assistants to enable immersive and historically accurate interactions between museum visitors and virtual personalities.",
+      "First of all, a literature research will be conducted to identify existing ways of implementing needed functionalities. The focus will be the deployment of holograms in an open space, combining holograms with AI assistants and training large language models in a historical context. Also, it is important to understand the difficulties and capacities of each key objective. This helps both the holographic AI assistant's creator and the user to understand specific needs and challenges of its process and deployment (Sub-RQ1.1).",
+      "Additionally, expert interviews will be conducted to gain futher information about the integration requirements and specifically human interactions. Among these experts are three individuals who have experience with digital museum exhibits and six PhD students from Technische Universität Darmstadt which specialize in either machine learning and artificial intelligence or computer vision and human-computer interaction. The interview will be semi-structured combining open-ended and closed questions. This approach results in more flexibility in responses while still focusing on the specific areas of interest (Sub-RQ1.1 and Sub-RQ1.3).",
+      "Next, a small-scale prototype will be developed and evaluated. AI will rely on a pre-trained natural language model and training data will be sourced from publicly available historical papers and articles. The holographic rendering will take place in Unreal Engine, allowing for an adaptation into a physical holographic setup\ngirish_holographic_nodate (Sub-RQ1.1).",
+      "After that, a testing phase is crucial to gain feedback and evaluate the assistant's performance. Testing will take place in a controlled environment like a classroom in university and it will contain five to ten randomly selected participants who will simulate museum visitors. Each participant has the opportunity to interact with the holographic AI assistant for around ten to fifteen minutes, asking questions within the historical scope and playing different scenarios. The whole scene will be recorded and notes will be taken. The focus will be to evaluate the holographic AI assistant's natural behavior, the accuracy of its answers and its intuitiveness. After this, each participant will be asked to write down new insights they have gained and suggestions for improvement (Sub-RQ1.3).",
+      "It is especially important to bring our attention to ethical challenges and the use of faulty datasets that arise with the development and use of holographic AI assistants in museums. The main key that needs to be fulfilled is to guarantee historical accuracy and cultural awareness. This must be adhered to in order to ensure that no false or biased information is conveyed. Moreover, using AI to simulate historical figures raises ethical questions about representing deceased individuals, especially if their views are misrepresented. To address this, careful research comparing has to be conducted using academic databases. Furthermore, visitors' privacy must be guaranteed by ensuring that data generated during an interaction is anonymized with privacy measures like data anonymization and secure storage (Sub-RQ1.2).",
+      "Despite these risks, the combination of research interviews, development and user feedback allows for detailed evaluation of the usage of holographic AI assistants. Both technical and ethical requirements are considered, which is crucial to ensure that the system is not only functional but also culturally and morally responsible. This lays the foundation for future developments in the domain, promoting a responsible and effective integration of AI and holography in museums, enhancing interactive and immersive learning experiences for visitors.",
+      "1 & 1 & Planning & Creating a detailed work plan and identifying key objectives \\\\ \n1 & 2-3 & Literature Search & Searching for relevant literature in the fields of holographic application and large language models trained in historical contexts \\\\ \n1 & 4 & Literature Evaluation & Critical review of literature by evaluating challenges and focusing on ethical and technical limitations (Sub-RQ1.1 and Sub-RQ1.2) \\\\",
+      "2 & 5-6 & Theoretical Framework & Developing the theoretical framework (Social Presence Theory) and methodology documentation and approach\\\\ \n2 & 7 & Concept Development & Drafting an interview guide with focus on the integration of holography and AI in museums (Sub-RQ1.1) \\\\ \n2 & 8 & Initial Interviews & Conducting interviews with experts (individuals with experience in digital exhibits, human-experience interaction and machine learning) to validate theories \\\\",
+      "3 & 9 & Data Preparation & Preparing and pre-analyzing the collected data \\\\ \n3 & 10-11 & Prototype Setup & Setting up the holographic AI assistant and fine-tuning it with collected data \\\\ \n3 & 12 & Prototype Refinement & Buffer and refining prototype based on initial interview questions \\\\",
+      "4 & 13 & Scenario Planning & Designing simulation scenarios for participants with focus on user interaction and feedback (Sub-RQ1.3) \\\\ \n4 & 14 & Recruitment & Selecting participants for prototype testing \\\\ \n4 & 15& Prototype Testing & Conducting testing phase using the prototype to gather feedback on intuitiveness and usability \\\\ \n4 & 16 & Data Analysis & Reviewing feedback and test results, focus on missing functionalities and ethical principles (Sub-RQ1.2 and Sub-RQ1.3) \\\\",
+      "5 & 17 & Writing Results & Writing the results chapter based on the data \\\\ \n5 & 18 & Discussion & Interpretation of results in a scientific and ethical context \\\\ \n5 & 19 & Methodology Review & Revising and finalizing the methodology \\\\ \n5 & 20 & Full Revision & Editing and reviewing all chapters \\\\"
+    ],
+    "predicted_score": 39.599666127693744
+  },
+  "rag": {
+    "retrieved_items": [
+      {
+        "example_id": "1714",
+        "span_text": " that arise with the development and use of holographic AI assistants in museums. The main key that needs to be fullfilled is to guarantee historical accuracy and cultural awarene",
+        "historical_comment": "sounds reasonable",
+        "annotation_tag": "Strength",
+        "similarity_score": 0.5572502613067627
+      },
+      {
+        "example_id": "1714",
+        "span_text": " that arise with the development and use of holographic AI assistants in museums. The main key that needs to be fullfilled is to guarantee historical accuracy and cultural awarene",
+        "historical_comment": "sounds reasonable",
+        "annotation_tag": "Strength",
+        "similarity_score": 0.5572502613067627
+      },
+      {
+        "example_id": "1714",
+        "span_text": " that arise with the development and use of holographic AI assistants in museums. The main key that needs to be fullfilled is to guarantee historical accuracy and cultural awarene",
+        "historical_comment": "sounds reasonable",
+        "annotation_tag": "Strength",
+        "similarity_score": 0.5572502613067627
+      },
+      {
+        "example_id": "1714",
+        "span_text": " that arise with the development and use of holographic AI assistants in museums. The main key that needs to be fullfilled is to guarantee historical accuracy and cultural awarene",
+        "historical_comment": "sounds reasonable",
+        "annotation_tag": "Strength",
+        "similarity_score": 0.5572502613067627
+      },
+      {
+        "example_id": "1706",
+        "span_text": "storically accurate interactions between museum visitors and virtual personalities. To understand the need for AI assistants to have a physical presence, especially in museums, it is important to look at how ",
+        "historical_comment": "There is no weakness in the existing sota mentioned",
+        "annotation_tag": "Weakness",
+        "similarity_score": 0.5442396402359009
+      }
+    ]
+  },
+  "metadata": {
+    "model": "gpt-4o-mini",
+    "temperature": 0.0,
+    "top_k": 5,
+    "timestamp": "2026-08-13T08:42:45Z",
+    "experiment_id": "reviewer_v1"
+  }
+}

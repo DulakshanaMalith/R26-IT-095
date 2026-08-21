@@ -1,0 +1,30 @@
+{
+    "version": "1.0",
+    "description": "Controlled Reviewer Experiment V1",
+    "dataset": {
+        "path": "experiments/data/reviewer_eval_set.jsonl"
+    },
+    "llm": {
+        "provider": "openai",
+        "model": "gpt-4o-mini",
+        "temperature": 0.0,
+        "max_tokens": 4000
+    },
+    "prompts": {
+        "system_prompt": "backend/prompts/reviewer_system_v1.txt",
+        "user_prompt": "backend/prompts/reviewer_user_v1.txt",
+        "criteria": "backend/src/reviewer/criteria.py"
+    },
+    "rag": {
+        "top_k": 5,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+    },
+    "ml": {
+        "weakness_model": "training/models/weakness_svm_model.pkl",
+        "grading_model": "training/models/semantic_grading_model.pkl"
+    },
+    "seeds": {
+        "numpy": 42,
+        "python": 42
+    }
+}

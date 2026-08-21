@@ -1,0 +1,106 @@
+{
+  "evaluation_id": "EVAL_ALICIA_GATES",
+  "system": "ml",
+  "review": {
+    "summary": "The proposal outlines a study aimed at evaluating the effectiveness of Intelligent Tutoring Systems (ITS) for first-year and advanced programming students. It identifies a gap in existing research regarding the challenges faced by these two groups and proposes a methodology that includes surveys and interviews to gather data on student experiences. The study aims to leverage recent advancements in Large Language Models (LLMs) to enhance programming education.",
+    "strengths": [
+      {
+        "issue_id": "1",
+        "type": "Strength",
+        "severity": "high",
+        "section": "Motivation",
+        "evidence_span": "Programming is an essential skill for many career paths in higher education",
+        "reason": "The proposal clearly articulates the importance of programming education and the challenges faced by students, establishing a strong motivation for the research.",
+        "recommendation": "Continue to emphasize the significance of the research problem in the final proposal."
+      },
+      {
+        "issue_id": "2",
+        "type": "Strength",
+        "severity": "medium",
+        "section": "Methodology",
+        "evidence_span": "For this study, I intend to use surveys as a quantitative method and case studies with follow-up interviews as a qualitative method.",
+        "reason": "The mixed-methods approach is appropriate for capturing both quantitative and qualitative data, which can provide a comprehensive understanding of the research questions.",
+        "recommendation": "Ensure that the integration of quantitative and qualitative data is clearly outlined in the final methodology."
+      }
+    ],
+    "weaknesses": [
+      {
+        "issue_id": "1",
+        "type": "Weakness",
+        "severity": "high",
+        "section": "Dataset/Data",
+        "evidence_span": "The target sample size for students should be at least 30. This number is a rough estimate and should be reevaluated during the student recruitment process.",
+        "reason": "The proposal lacks a clear justification for the sample size and does not provide a detailed plan for how the sample will be recruited or how the sample size will be determined.",
+        "recommendation": "Provide a more detailed recruitment strategy and justification for the sample size in the final proposal."
+      },
+      {
+        "issue_id": "2",
+        "type": "Weakness",
+        "severity": "medium",
+        "section": "Evaluation",
+        "evidence_span": "Students will directly grade the model's responses on a scale of 1--5, with 1 meaning irrelevant and 5 meaning highly helpful.",
+        "reason": "The evaluation metric is somewhat simplistic and may not capture the nuances of student experiences with the ITS agent.",
+        "recommendation": "Consider incorporating additional qualitative metrics or feedback mechanisms to enrich the evaluation process."
+      },
+      {
+        "issue_id": "3",
+        "type": "Weakness",
+        "severity": "medium",
+        "section": "Limitations",
+        "evidence_span": "Many studies highlight concerns that LLMs can generate irrelevant or misleading responses, as they tend to hallucinate.",
+        "reason": "While the proposal acknowledges limitations, it does not provide a clear plan for how these limitations will be addressed or mitigated during the study.",
+        "recommendation": "Develop a more comprehensive strategy for addressing the limitations of LLMs in the context of the study."
+      }
+    ],
+    "recommendations": [
+      "Provide a more detailed recruitment strategy and justification for the sample size in the final proposal.",
+      "Consider incorporating additional qualitative metrics or feedback mechanisms to enrich the evaluation process.",
+      "Develop a more comprehensive strategy for addressing the limitations of LLMs in the context of the study."
+    ],
+    "overall_assessment": "The proposal presents a relevant and timely research question with a solid motivation. However, it requires more detail in the methodology, particularly regarding sample size justification and recruitment strategies, as well as a more nuanced evaluation approach."
+  },
+  "ml": {
+    "weakness_predictions": [
+      "{\n\tpdfstandard=a-2b,\n\tpdfversion=1.7,\n}\n[\n    IMRAD=false,\n\tenglish,\n\truledheaders=section,\n\tclass=report,\n\tthesis={type=bachelor},\n\taccentcolor=9c,\n\tcustommargins=false,\n\tmarginpar=false,",
+      "parskip=half-,\n\tfontsize=11pt,",
+      "[german, main=english]{babel}\n[autostyle]{csquotes}",
+      "biblatex\nExposeBibliography.bib",
+      "Enhancing Programming Education: Evaluating the Effectiveness of ITS Agents for First-Year and Advanced Students",
+      "inf\nUbiquitous Knowledge Processing Lab",
+      "Programming is an essential skill for many career paths in higher education\n~WOS:001289091100374. Despite its importance, many first-year students\nfind learning to program challenging. Universities often claim that prior\nprogramming knowledge is unnecessary for successfully getting a bachelor's\ndegree. However, many students struggle with the steep learning curve, and\nthere is a noticeable gab between those with prior experience and those\nwithout. This presents an additional challenge for\ninstructors~WOS:001289091100374. In addition, the students-to-instructor\nratio is already high and ever-increasing~WOS:001166861800006. This\nmakes it very challenging to provide a good personalized learning experience\nfor all students.",
+      "The recent rise in popularity of Large Language Model (LLM) based solutions has\nrenewed interest in researching learning methods. Intelligent Tutoring Systems\n(ITS) have been widely discussed in resent papers, offering personalized and\nadaptive learning experiences. They provide feedback and assistance in the\nproblem-solving process~WOS:001276257200064, including natural language\nexplanations of code and clarifications for cryptic error messages. The\neffectiveness of ITS has been demonstrated in previous\nstudies~WOS:000345680000001.",
+      "The R programming language shares similarities with python. A study from Lukas\nFrank, Fabian Herth, Paul Stuwe, Marco Klaiber, Felix Gerschner and Andreas\nTheissler~WOS:001289091100374 build upon a Python-centered approach and\nimproved the method~10.1145/3568812.3603476. I intend to base my\nresearch largely on their approach but focus on Python again. A gap in\ntheir study is the lack of experiments conducted with students.",
+      "I intend to build upon these studies by applying their methods to a more\ngeneral computer science programming course with a larger participant sample\nsize. Many studies focus solely on first-year students, but such tools could\nalso benefit more advanced students. To address this, I will explore the\nfollowing research questions:",
+      "RQ1: What are the most common challenges students face when getting introduced\nto their first year programming experience?",
+      "RQ2: How do the challenges for advanced students differ from those of\nfirst-year students?",
+      "Approach",
+      "I plan to build on their methodology by conducting a student-based study and\nincorporating the newer ChatGPT-4o models, which were not available at the time.\nWhile they chose R to explore a niche but important language, I will focus on\nPython, as it is more widely adopted among both beginner and advanced\nprogrammers. This choice will likely provide a larger participant pool.\nAdditionally, most studies, including Phung et\nal~10.1145/3568812.3603476, focus primarily on first-year students. I\nintend to expand on this by including more advanced students.",
+      "Another study focusing on hint generation was conducted by Lianne Roest, Hieke\nKeuning and Johan Jeuring~WOS:001166861800016. They created a dataset of\nstep-by-step sequences students followed when solving programming problems and\ndeveloped the StAP-Tutor (Step Assistant Programming Tutor) based on this data.\nThey used prompt engineering to provide students with mostly helpful hints\nduring problem-solving. While both students and experts generally perceived the\nhints as positive, the models sometimes produced unhelpful or misleading\nresponses. The most notably shortcoming of this study was its small sample\nsize, as it was based on only three students.",
+      "This study gives an opportunity to further explore hint generation with the\naforementioned study. It provides continuous hints to students without\nrevealing the solution too quickly. However, it is also important to take code\nexplanations and hints for possibly error into account. Therefore, I plan to\nuse the first study as a base while incorporating the hint-generation of the\nsecond study.",
+      "The third study I found by Brad Sheese, Mark Liffiton, Jaromir Savelka and Paul\nDenny~WOS:001166861800006, had a large sample size. They developed a\ntutoring system that students could ask during a 12-week period. However, their\nstudy was limited to an introductory data science course. My improvement would\nbe to expand this approach to include more advanced students as well.",
+      "The theory I intend to use involves an ITS agent that students can ask for\nhints during problem-solving. This includes explanation of code, errors, and\ntasks. Additionally, I plan to include student interview at the end to get\ntheir opinions and potential improvement suggestions.",
+      "Intelligent Tutoring Systems (ITS) are designed to imitate human tutors by\nproviding personalized feedback. They allow students to learn at their own pace\nand adapt to individual needs~WOS:001289091100374.",
+      "The usage of ITS is a popular and proven effective for teaching students,\nmaking it a logical choice. This approach needs to be paired with student\ninterview to identify and address the key challenges students face.",
+      "For this study, I intend to use surveys as a quantitative method and case\nstudies with follow-up interviews as a qualitative method. My target population\nincludes first-year students in introductory programming courses and more\nadvanced students, at least in their third semester. The target sample size for\nstudents should be at least 30. This number is a rough estimate and should be\nreevaluated during the student recruitment process. All students should be\nbachelor students.",
+      "In the beginning I intend to conduct a survey to understand student's\nexpectations for such a tool. It is important to ask in which year they are and\nwhether they have prior programming experience. For questions, I intend to use\nthose from the study of Lukas Frank, Fabian Herth, Paul\nStuwe~WOS:001289091100374, as they consist of simple problems suitable\nfor first-year students. For more advanced students, I intend to prepare my own\nquestions. All students should have taken or are in process of visiting an\nintroductory programming course in a computer science related field.",
+      "To conduct this study, I need approval from the university. Especially from the\nuniversity's ethics board. Since AI is a relatively new technology certain\npotential concerns must be assessed by a third party. One such concern are\nbiases. The ITS tutor must provide all student with fair and unbiased feedback.\nAdditionally, students should not become overly reliant on the tutor, and it\nshould serve as a support tool for teachers rather than a replacement. There is\nalso the potential for misuse, such as students attempting to obtain direct\nanswers. Furthermore, students must consent to sharing their prompt logs and\nagree to their prompts being processed by the model's provider, raising privacy\nconcerns.",
+      "This study relies on student participation, so a potential challenge is\nrecruiting enough students. To minimize this risk, I will promote the study\nwithin the university and through university-centered social media.\nAdditionally, I depend on OpenAI to provide access to ChatGPT-4o, which\nrequires funding. While the free plan has usage limits, the cost of accessing\nthe model for the study appears manageable.",
+      "To carry out this project, I will need assistance, as the study is expected to\ngenerate a large amount of data requiring human analysis.",
+      "The main goal of this study is to research how ITS can help both first-year and\nmore advanced students with their learning process.",
+      "1              & 1             & Planning                      & Creating a detailed work plan, coordination                    \\\\ \n\t1              & 2             & Survey planning               & Quick Survey to get an impression what students                \\\\\n\t               &               &                               & expect from such a tool. Different students from actual study. \\\\ \n\t1              & 3             & Starting Survey               & Distributing survey to students around the university          \\\\ \n\t1              & 3             & Planning interview questions  & Plan questions while the survey is running                     \\\\ \n\t1              & 4             & Evaluating survey result      & Review results of survey and sum up data for further steps     \\\\",
+      "2              & 5             & Finish up interview questions & Incorporate findings from the survey into the questions        \\\\ \n\t2              & 6-7           & Theoretical Framework         & Developing the theoretical framework and methodology           \\\\ \n\t2              & 8             & Scenario Planning             & Designing simulation scenarios or experiments                  \\\\",
+      "3              & 9-10          & Recruitment                   & Selecting and acquiring participants                           \\\\ \n\t3              & 11            & Data Collection               & Conducting experiments and interview afterward                 \\\\ \n\t3              & 12            & Data Preparation              & Preparing and pre-analyzing the collected data                 \\\\",
+      "4              & 13-14         & Qualitative Analysis          & Detailed analysis of qualitative data                          \\\\ \n\t4              & 15-16         & Quantitative Analysis         & Analysis of quantitative results                               \\\\",
+      "5              & 17            & Writing Results               & Writing the results chapter based on the data                  \\\\ \n\t5              & 18            & Discussion                    & Interpretation of results in a scientific context              \\\\ \n\t5              & 19            & Methodology Review            & Revising and finalizing the methodology                        \\\\ \n\t5              & 20            & Full Revision                 & Editing and reviewing all chapters                             \\\\"
+    ],
+    "predicted_score": 37.43829057178214
+  },
+  "rag": null,
+  "metadata": {
+    "model": "gpt-4o-mini",
+    "temperature": 0.0,
+    "top_k": 5,
+    "timestamp": "2026-08-13T08:41:57Z",
+    "experiment_id": "reviewer_v1"
+  }
+}

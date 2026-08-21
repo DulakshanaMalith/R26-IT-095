@@ -1,0 +1,28 @@
+{
+  "experiment_id": "reviewer_v1",
+  "date": "2026-08-13T08:47:30Z",
+  "dataset_version": "1.0",
+  "number_of_proposals": 10,
+  "systems": [
+    "llm_only",
+    "rag",
+    "ml",
+    "ml_rag"
+  ],
+  "llm_model": "gpt-4o-mini",
+  "temperature": 0.0,
+  "max_tokens": 4000,
+  "prompt_versions": "v1",
+  "rag_configuration": {
+    "top_k": 5,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+  },
+  "ml_model_versions": {
+    "weakness_model": "training/models/weakness_svm_model.pkl",
+    "grading_model": "training/models/semantic_grading_model.pkl"
+  },
+  "random_seeds": {
+    "numpy": 42,
+    "python": 42
+  }
+}
