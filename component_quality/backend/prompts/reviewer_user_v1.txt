@@ -1,0 +1,12 @@
+Please evaluate the following research proposal.
+
+{context_block}
+
+{criteria_block}
+
+{historical_examples}
+
+### PROPOSAL TEXT TO EVALUATE:
+{proposal_text}
+
+Output your structured JSON response now.
