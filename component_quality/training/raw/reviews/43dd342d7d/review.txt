@@ -1,0 +1,39 @@
+Dear author of this Expose,
+
+I really enjoyed reading your research proposal, thank you! Here is a short summary of what I understood from your research question:
+
+In your research, you want to generate artificial "pandemy outbreaks"-datasets using AI to train current systems in Healthcare Management to be adaptable for the sake of improvement of response to a disease outbreak.
+
+And here are couple of remarks by section:
+
+1.Motivation
+Good: 
+General flow of text is great, good job! Also all aspects of AI application are precise and highlighted.
+Great transition from "usual" application from AI to "systemic" application of AI in medicine.
+Room for improvement:
+You can shorten the whole 1st paragraph to 2-3 sentences, because the importance and function of AI in healthcare nowadays is self-explanatory.
+There was a lot to what AI in systemic medicine could do (e.g. relocate human resources), but very few to the actual research proposal. I understood that in your research you want to generate artificial "pandemy outbreaks"-datasets to be able to "improve the response" of the healthcare system. But how does the reponse look at all? What kind of workflows are used right now to manage the healthcare system? And then maybe in those systems you want to integrate your proposed research solution? Maybe you could explore it a bit more, to be sound with the title of your research proposal. In total, the research question is incomplete.
+
+2.Approach
+Good:
+Explaining basic concepts to respect the variety of backgrounds of your reader.
+Room for improvement:
+If I understood that right, the first paragraph is State of the art. You can try line it out with separate subsection to increase readability and introduce structure.
+Methodology is missing.
+What are limitations of your approach?
+You mentioned evaluation framework. You didn't list neither the aspects of evaluation, nor the methodology how you would implement it. You might want to consider adding those points for completeness of your expose.
+
+3.Schedule
+Your scheduled seemed a little abstract, but it was because your "Approach" chapter was not complete (Methodology, Limitations, Theoretical Framework etc. were missing). When you have a complete "Approach" chapter it is also easy to write the schedule.
+
+In General:
+The reading flow was great! I really enjoyed it.
+The topic is well-thought and very fresh.
+Do not afraid to be precise and use exact definitions.
+Introduce subsections to increase readability (e.g. 2.1 "State of the Art", 2.2 "Theoretical framework", etc. )
+You might want to review the "Bewertungskriterien zum Expose" document [REMOVED] and check if you have everything for the next version of your expose.
+
+Thank you for considering my feedback and good luck with writing the newer version!
+
+Kind regards,
+Your EiWA-fellow

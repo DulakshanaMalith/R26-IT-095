@@ -1,0 +1,436 @@
+[
+  {
+    "id": 5197,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "ChatGBT ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 412,
+              "type": "TextPositionSelector",
+              "start": 404
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "ChatGBT ",
+              "prefix": "tadt1 MotivationJust last month ",
+              "suffix": "had its 2nd anniversary since it"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5198,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "ChatGBT ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 68,
+              "type": "TextPositionSelector",
+              "start": 60
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "ChatGBT ",
+              "prefix": "iquitous KnowledgeProcessing Lab",
+              "suffix": "for the EyesHow can augmented re"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 1
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5199,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": " <LINK>",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 486,
+              "type": "TextPositionSelector",
+              "start": 479
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " <LINK>",
+              "prefix": "elease on the 30th November 2022",
+              "suffix": ". Eversince then the discourse a"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5200,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Eversince then the discourse around Artificial Intelligence has become a much more real and tangible to a lot ofpeople who might not have thought of AI as anything real outside of of Sci-Fi movies with talking humanoidrobots.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 713,
+              "type": "TextPositionSelector",
+              "start": 488
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Eversince then the discourse around Artificial Intelligence has become a much more real and tangible to a lot ofpeople who might not have thought of AI as anything real outside of of Sci-Fi movies with talking humanoidrobots.",
+              "prefix": " the 30th November 2022 <LINK>. ",
+              "suffix": " A lot of teachers and professor"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5201,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "<Example?>",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1011,
+              "type": "TextPositionSelector",
+              "start": 1001
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "<Example?>",
+              "prefix": " Buzz words in their marketing. ",
+              "suffix": " ChatGBTis a powerful tool and c"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5202,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "ChatGBT",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1019,
+              "type": "TextPositionSelector",
+              "start": 1012
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "ChatGBT",
+              "prefix": " in their marketing. <Example?> ",
+              "suffix": "is a powerful tool and consequen"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5203,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": " <Example?> ChatGBTis a powerful tool and consequential one as well. Yet it is merely a text-based tool. Even tho some imagegeneration is supported in the paid version, it remains largely focused on text-based user interactions. Addinga visual element to this can create a whole new dimension of possibilities. Lets take the example of a professorchecking if AI-Tools were used in the work of their students: This professor would have to copy paste the textsmanually or upload the files to their AI-checking-Tools. If AI-Tools however had the ability to \"see\" or takein visual input then you could just \"show\" the assignments to the AI and could make the task less tedious",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1672,
+              "type": "TextPositionSelector",
+              "start": 1000
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " <Example?> ChatGBTis a powerful tool and consequential one as well. Yet it is merely a text-based tool. Even tho some imagegeneration is supported in the paid version, it remains largely focused on text-based user interactions. Addinga visual element to this can create a whole new dimension of possibilities. Lets take the example of a professorchecking if AI-Tools were used in the work of their students: This professor would have to copy paste the textsmanually or upload the files to their AI-checking-Tools. If AI-Tools however had the ability to \"see\" or takein visual input then you could just \"show\" the assignments to the AI and could make the task less tedious",
+              "prefix": "t Buzz words in their marketing.",
+              "suffix": ".An example for this addition of"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5204,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": ", the company formerly known as Facebook",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1855,
+              "type": "TextPositionSelector",
+              "start": 1815
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": ", the company formerly known as Facebook",
+              "prefix": "rion AR Glasses released by META",
+              "suffix": ". It looks regular glasses maybe"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5205,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": " I wonderhow AR-Tech can enhance Large Language Models like ChatGBT and the User Experience on a day to daybasis",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2324,
+              "type": "TextPositionSelector",
+              "start": 2212
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " I wonderhow AR-Tech can enhance Large Language Models like ChatGBT and the User Experience on a day to daybasis",
+              "prefix": "rs already perceived real world.",
+              "suffix": ". I want to specificaly focus on"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5206,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Literature example: [balzertetall2011] https://apnews.com/article/meta-connect-zuckerberg-quest-ai-orion-dc8228049dea6a00b0f818ddb35f0c31",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4506,
+              "type": "TextPositionSelector",
+              "start": 4369
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Literature example: [balzertetall2011] https://apnews.com/article/meta-connect-zuckerberg-quest-ai-orion-dc8228049dea6a00b0f818ddb35f0c31",
+              "prefix": " How good are there math skills?",
+              "suffix": "33 Schedule(Graphic) tabular sch"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5207,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": " I would try ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3123,
+              "type": "TextPositionSelector",
+              "start": 3110
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " I would try ",
+              "prefix": ".22 ApproachIn terms of approach",
+              "suffix": "to work with students who will g"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5208,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "I need to take that bias into account and also asess priorskills of how good are these students at problem solving:E.g. How good are there math skills",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4368,
+              "type": "TextPositionSelector",
+              "start": 4218
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "I need to take that bias into account and also asess priorskills of how good are these students at problem solving:E.g. How good are there math skills",
+              "prefix": "ho find problem solving easier. ",
+              "suffix": "?Literature example: [balzerteta"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5209,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Graphic) tabular schedule from start to completion in chronological orderTips:• Sit down → think what needs to be done• Be realistic and build checkpoints• Go into details (don’t pick headlines “literature review”)• Plan for unexpected events → buffer (sickness, vacation)• Weekly schedule for small projects, monthly for larger ones (several small work steps within these units)• Consult someone experienced",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4926,
+              "type": "TextPositionSelector",
+              "start": 4518
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Graphic) tabular schedule from start to completion in chronological orderTips:• Sit down → think what needs to be done• Be realistic and build checkpoints• Go into details (don’t pick headlines “literature review”)• Plan for unexpected events → buffer (sickness, vacation)• Weekly schedule for small projects, monthly for larger ones (several small work steps within these units)• Consult someone experienced",
+              "prefix": "6a00b0f818ddb35f0c3133 Schedule(",
+              "suffix": "Example:Month Week Task Descript"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5210,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Schedule",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4517,
+              "type": "TextPositionSelector",
+              "start": 4509
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Schedule",
+              "prefix": "228049dea6a00b0f818ddb35f0c3133 ",
+              "suffix": "(Graphic) tabular schedule from "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  }
+]

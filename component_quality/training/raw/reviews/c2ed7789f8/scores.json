@@ -1,0 +1,135 @@
+[
+    {
+        "author": "Erica Middleton",
+        "group": 1,
+        "reviewer": "Jerry Castro",
+        "grader": "Elijah Boone",
+        "role": "expert",
+        "hash": "c2ed7789f8",
+        "type": "review",
+        "scores": {
+            "form": {
+                "structure": 0,
+                "language": 2,
+                "total": 2
+            },
+            "feed_up": {
+                "feed_up": 0,
+                "total": 0
+            },
+            "feed_back": {
+                "feed_back": 1,
+                "total": 1
+            },
+            "feed_forward": {
+                "feed_forward": 0,
+                "total": 0
+            },
+            "content": {
+                "total": 1,
+                "quality": 1,
+                "errors": 0
+            },
+            "others": {
+                "total": -1,
+                "additional": 0,
+                "minus": -1
+            },
+            "total": 3
+        },
+        "criteria": {
+            "Summary available": 0,
+            "Clarity": 0,
+            "Language": 0,
+            "Tone": 2,
+            "Learning Goals": 0,
+            "Success Criteria": 0,
+            "Knowledge of result": 0,
+            "Knowledge of correct response": 0,
+            "Knowledge about task constraints": 0,
+            "Knowledge about concepts": 0,
+            "Knowledge about mistakes": 0,
+            "Self-feedback": 1,
+            "Self-regulation": 0,
+            "Learning Skills": 0,
+            "Correctness": 0,
+            "Actionability": 1,
+            "Argumentation": 0,
+            "Neglect": -1,
+            "Vague Critic": -1,
+            "Out-of-Scope": -1,
+            "Missing Reference": -1,
+            "Contradiction": 0,
+            "Additional points": 0,
+            "Minus points": -1,
+            "Additional infos": "Das Feedback stellt keine Hilfe dar und spricht komplett andere Themengebiete an"
+        }
+    },
+    {
+        "author": "Erica Middleton",
+        "group": 2,
+        "reviewer": "Jerry Castro",
+        "grader": "Noah Frazier",
+        "role": "expert",
+        "hash": "c2ed7789f8",
+        "type": "review",
+        "comment": "Pretty much GPT-generated",
+        "scores": {
+            "form": {
+                "structure": 2,
+                "language": 3,
+                "total": 5
+            },
+            "feed_up": {
+                "feed_up": 0,
+                "total": 0
+            },
+            "feed_back": {
+                "feed_back": 3,
+                "total": 3
+            },
+            "feed_forward": {
+                "feed_forward": 1,
+                "total": 1
+            },
+            "content": {
+                "total": 7,
+                "quality": 3,
+                "errors": 4
+            },
+            "others": {
+                "total": 0,
+                "additional": 0,
+                "minus": 0
+            },
+            "total": 16
+        },
+        "criteria": {
+            "Summary available": 1,
+            "Clarity": 1,
+            "Language": 1,
+            "Tone": 2,
+            "Learning Goals": 0,
+            "Success Criteria": 0,
+            "Knowledge of result": 0,
+            "Knowledge of correct response": 1,
+            "Knowledge about task constraints": 0,
+            "Knowledge about concepts": 1,
+            "Knowledge about mistakes": 1,
+            "Self-feedback": 0,
+            "Self-regulation": 1,
+            "Learning Skills": 0,
+            "Correctness": 1,
+            "Actionability": 1,
+            "Argumentation": 1,
+            "Neglect": 0,
+            "Vague Critic": 0,
+            "Out-of-Scope": 0,
+            "Missing Reference": 0,
+            "Contradiction": 0,
+            "Additional points": 0,
+            "Minus points": 0,
+            "Additional infos": null
+        }
+    }
+]

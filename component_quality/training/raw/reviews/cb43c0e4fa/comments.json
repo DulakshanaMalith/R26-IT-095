@@ -1,0 +1,167 @@
+[
+  {
+    "id": 1772,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "Zu wenige Citations",
+    "annotationId": 1742,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1773,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "\"the\"",
+    "annotationId": 1743,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1774,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "avoid \"we\"",
+    "annotationId": 1744,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1775,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "Cite the claims",
+    "annotationId": 1745,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1776,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "Capitalize the words except \"by\" and \"a\"",
+    "annotationId": 1746,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1777,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "(Sub-RQ 1.2)",
+    "annotationId": 1747,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1778,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "the schedule is not complete 4.month: 13.-16. weeks, 5.month 17.-20. weeks, 6.month 21.-24. weeks",
+    "annotationId": 1748,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1779,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "Already defined",
+    "annotationId": 1749,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1780,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "Define AI first",
+    "annotationId": 1750,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1781,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "use abreaviation after defining it in motivation (already mentioned AI there)",
+    "annotationId": 1751,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1782,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "which ones?",
+    "annotationId": 1752,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1783,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "\".",
+    "annotationId": 1753,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1784,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "whitespace",
+    "annotationId": 1754,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1785,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "cite?",
+    "annotationId": 1755,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1786,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "is it enough?",
+    "annotationId": 1756,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  }
+]

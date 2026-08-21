@@ -1,0 +1,129 @@
+[
+  {
+    "id": 2741,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "First time when using abbreviations, write them out.",
+    "annotationId": 2693,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 2742,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "In what way expensive?",
+    "annotationId": 2694,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 2743,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Is it? Can you cite a source?",
+    "annotationId": 2695,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Travis Guzman",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2744,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "How? Explain your statements or hypothesis",
+    "annotationId": 2696,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 2745,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "How? Explain your statements or hypothesis",
+    "annotationId": 2697,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 2746,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Considering this is a hypothetical  expose for your Thesis at TU Darmstadt, how is unreliable electricity a problem?",
+    "annotationId": 2698,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 2747,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "You normally shouldnt number sub-chapters if they are only a single sub-chapter. Numbering should be for anything => 2 sub-chapters",
+    "annotationId": 2699,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 2748,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "One month is too long for what you are aiming for. This should be done in 1-2 weeks",
+    "annotationId": 2700,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 2749,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "This is far too optimistic, four weeks is not enough for all you are trying to accomplish",
+    "annotationId": 2701,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 2750,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "This is the first time you mention writing something,this should be done far earlier. Writing a Thesis takes time, adjust your schedule so it includes explicit writing of chapters.",
+    "annotationId": 2702,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 2751,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "at TUDa we don't print Thesis.",
+    "annotationId": 2703,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  }
+]

@@ -1,0 +1,386 @@
+[
+  {
+    "id": 2494,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": " facial expressions",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3212,
+              "type": "TextPositionSelector",
+              "start": 3193
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " facial expressions",
+              "prefix": "what influence do theassistant’s",
+              "suffix": " have on the assistant’s trust a"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 2495,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "State of the ArtCurrently, there is no working product with the same feature sets as planned in this paper. All existing workconsidered more general aspects of the visual appearance of AI in AR. The work of Kim et al. used a full-bodyrepresentation in AR and investigated the impact of speech, gestures, and locomotion on the user’s perceptionof the agent [2]. While this is an important base for this research, we will examine a different aspect. Weassume that the face and facial expression are the most important aspects of communication. Therefore,this paper will focus on these aspects and will not use a full body representation as this would increase thepotential risk of falling into the uncanny valley.Multiple researchers have already done artificial generation of facial expressions in different domains. Thereare existing frameworks to generate this facial expression with a facial expression generator using machinelearning and facial expression recognition [6]. While they concentrate on generating facial expressions forphysical robots, we will adopt the approach for using it in AR.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4691,
+              "type": "TextPositionSelector",
+              "start": 3593
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "State of the ArtCurrently, there is no working product with the same feature sets as planned in this paper. All existing workconsidered more general aspects of the visual appearance of AI in AR. The work of Kim et al. used a full-bodyrepresentation in AR and investigated the impact of speech, gestures, and locomotion on the user’s perceptionof the agent [2]. While this is an important base for this research, we will examine a different aspect. Weassume that the face and facial expression are the most important aspects of communication. Therefore,this paper will focus on these aspects and will not use a full body representation as this would increase thepotential risk of falling into the uncanny valley.Multiple researchers have already done artificial generation of facial expressions in different domains. Thereare existing frameworks to generate this facial expression with a facial expression generator using machinelearning and facial expression recognition [6]. While they concentrate on generating facial expressions forphysical robots, we will adopt the approach for using it in AR.",
+              "prefix": "owered bya Large Language Model.",
+              "suffix": "Theoretical FrameworkIn this pap"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 3693,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "https://www.linkedin.com/news/story/chatgpt-hits-100m-weekly-users-5808204/ 4.12.24",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3342,
+              "type": "TextPositionSelector",
+              "start": 3259
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "https://www.linkedin.com/news/story/chatgpt-hits-100m-weekly-users-5808204/ 4.12.24",
+              "prefix": "sistant’s trust and acceptance?1",
+              "suffix": "22 ApproachThe novelty of this p"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 3694,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "AI assistants will also be integrated into ARenvironments.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1659,
+              "type": "TextPositionSelector",
+              "start": 1601
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "AI assistants will also be integrated into ARenvironments.",
+              "prefix": " AR headsets and AI assistants, ",
+              "suffix": " The market and technology of AI"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 3695,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": " [1]",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4941,
+              "type": "TextPositionSelector",
+              "start": 4937
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " [1]",
+              "prefix": "ang and Fridolin Wildproposed in",
+              "suffix": ". With this metric, participants"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 3696,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Another important concept we need to consider is the uncanny valley theory proposed by Masahiro Mori. Theuncanny valley theory assumes that the affinity of a robot does not rise linearly with the degree of humanlikeness but falls into a negative valley if the robot is too human-like but does not react as we would expect[4]. We use this theory to avoid side effects and will consider this aspect in the design of our AI assistant. Wewill design the assistant intentionally with a nonhuman skin color.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5583,
+              "type": "TextPositionSelector",
+              "start": 5082
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Another important concept we need to consider is the uncanny valley theory proposed by Masahiro Mori. Theuncanny valley theory assumes that the affinity of a robot does not rise linearly with the degree of humanlikeness but falls into a negative valley if the robot is too human-like but does not react as we would expect[4]. We use this theory to avoid side effects and will consider this aspect in the design of our AI assistant. Wewill design the assistant intentionally with a nonhuman skin color.",
+              "prefix": "ty, benevolence, and compassion.",
+              "suffix": "The last important concept is th"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 3697,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "neutral butfriendly-looking ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6066,
+              "type": "TextPositionSelector",
+              "start": 6038
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "neutral butfriendly-looking ",
+              "prefix": " The test environment will be a ",
+              "suffix": "room with discreet colors and si"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 3698,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": " [1].",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6718,
+              "type": "TextPositionSelector",
+              "start": 6713
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " [1].",
+              "prefix": "g and Fridolin Wild suggested in",
+              "suffix": "The composition of the participa"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 3699,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "We will devide the participants into the following scenarios:1. Group 1 will interact with an AI assistant with a realistic face and emotional facial expression whilespeaking. We will only use a visual representation from the shoulders up to reduce complexity. Theemotions are as human-like as possible. The voice and facial expressions are coordinated to give thebest possible expression. To avoid the uncanny effect, the assistant will not have a human-like skin color.Instead, we will use a neutral grey color.2. Group 2 will interact with an AI assistant without a detailed face and emotions but with a more abstractrepresentation of a human face.3. Group 3 is the control group and will only interact with a voice assistant and will not see any visualrepresentation of the assistant.All assistants will use the same voice, and AI1 and AI2 will use the same skin color.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7882,
+              "type": "TextPositionSelector",
+              "start": 7009
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "We will devide the participants into the following scenarios:1. Group 1 will interact with an AI assistant with a realistic face and emotional facial expression whilespeaking. We will only use a visual representation from the shoulders up to reduce complexity. Theemotions are as human-like as possible. The voice and facial expressions are coordinated to give thebest possible expression. To avoid the uncanny effect, the assistant will not have a human-like skin color.Instead, we will use a neutral grey color.2. Group 2 will interact with an AI assistant without a detailed face and emotions but with a more abstractrepresentation of a human face.3. Group 3 is the control group and will only interact with a voice assistant and will not see any visualrepresentation of the assistant.All assistants will use the same voice, and AI1 and AI2 will use the same skin color.",
+              "prefix": " interaction with the assistant.",
+              "suffix": "Limitation and potential difficu"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 3700,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Description",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8954,
+              "type": "TextPositionSelector",
+              "start": 8943
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Description",
+              "prefix": "ults.43 ScheduleMonth Week Task ",
+              "suffix": "1 1 Planning Creating a detailed"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 3701,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "24",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 10611,
+              "type": "TextPositionSelector",
+              "start": 10609
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "24",
+              "prefix": "stic and formal adjustments6 22-",
+              "suffix": " Finalization Buffer time and fi"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 3702,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Recruitment",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 9937,
+              "type": "TextPositionSelector",
+              "start": 9926
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Recruitment",
+              "prefix": "opment and test thesystem3 9-10 ",
+              "suffix": " Selecting and acquiring partici"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "review": 2,
+    "group": 1
+  }
+]

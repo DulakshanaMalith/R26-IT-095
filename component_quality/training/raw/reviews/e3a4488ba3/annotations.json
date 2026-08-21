@@ -1,0 +1,498 @@
+[
+  {
+    "id": 5003,
+    "user": "Rhonda Campbell",
+    "role": "student",
+    "text": "ChatGPT",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1013,
+              "type": "TextPositionSelector",
+              "start": 1006
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "ChatGPT",
+              "prefix": "enging. The use of LLMs, such as",
+              "suffix": " and Copilot, not only facilitat"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5004,
+    "user": "Rhonda Campbell",
+    "role": "student",
+    "text": " towar",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2257,
+              "type": "TextPositionSelector",
+              "start": 2251
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " towar",
+              "prefix": "rk.These examples are a big step",
+              "suffix": "d the goal of creating optimal l"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 5005,
+    "user": "Rhonda Campbell",
+    "role": "student",
+    "text": "Large Language Models",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2669,
+              "type": "TextPositionSelector",
+              "start": 2648
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Large Language Models",
+              "prefix": "zed learning.The application of ",
+              "suffix": " (LLMs) in offering personalized"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 5006,
+    "user": "Rhonda Campbell",
+    "role": "student",
+    "text": "Due to this reason, in many years,teaching in a way that ensures all students understand is extremely challenging. ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 982,
+              "type": "TextPositionSelector",
+              "start": 867
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Due to this reason, in many years,teaching in a way that ensures all students understand is extremely challenging. ",
+              "prefix": "fferent subjects are different. ",
+              "suffix": "The use of LLMs, such asChatGPT "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 5007,
+    "user": "Rhonda Campbell",
+    "role": "student",
+    "text": "he use of LLMs, such asChatGPT and Copilot, not only facilitates the synthesis of information from various sources more effortlesslybut also adapts to the learning capabilities of individual users",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1179,
+              "type": "TextPositionSelector",
+              "start": 983
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "he use of LLMs, such asChatGPT and Copilot, not only facilitates the synthesis of information from various sources more effortlesslybut also adapts to the learning capabilities of individual users",
+              "prefix": "tand is extremely challenging. T",
+              "suffix": ". This will cut a huge amount of"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5008,
+    "user": "Rhonda Campbell",
+    "role": "student",
+    "text": "But we can’t deny the potentialfor further development. ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1454,
+              "type": "TextPositionSelector",
+              "start": 1398
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "But we can’t deny the potentialfor further development. ",
+              "prefix": "still has numerous limitations. ",
+              "suffix": "The purpose of this research is "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 5009,
+    "user": "Rhonda Campbell",
+    "role": "student",
+    "text": "A great example is chatbots, a crucial tool for representing interaction between humans andAI technology. Another example is SimClass, a recently developed multi-agent classroom simulation teachingframework.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2222,
+              "type": "TextPositionSelector",
+              "start": 2015
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "A great example is chatbots, a crucial tool for representing interaction between humans andAI technology. Another example is SimClass, a recently developed multi-agent classroom simulation teachingframework.",
+              "prefix": "ing personalizedlearning paths. ",
+              "suffix": "These examples are a big step to"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 5010,
+    "user": "Rhonda Campbell",
+    "role": "student",
+    "text": "demo",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5146,
+              "type": "TextPositionSelector",
+              "start": 5142
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "demo",
+              "prefix": "andmethodology7 Application and ",
+              "suffix": " Prepare LLMs-based applications"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 5011,
+    "user": "Rhonda Campbell",
+    "role": "student",
+    "text": "he purpose of this research is to research deeper into how these agents impactindividual students, thereby establishing specific criteria for designing personalized learning paths tailored toeach student’s needs",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1666,
+              "type": "TextPositionSelector",
+              "start": 1455
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "he purpose of this research is to research deeper into how these agents impactindividual students, thereby establishing specific criteria for designing personalized learning paths tailored toeach student’s needs",
+              "prefix": "entialfor further development. T",
+              "suffix": ".22 ApproachIn the widespread ap"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 5012,
+    "user": "Rhonda Campbell",
+    "role": "student",
+    "text": "Several studies have already explored the use of LLMs to optimize specific aspects of designing personalizedlearning paths",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2013,
+              "type": "TextPositionSelector",
+              "start": 1891
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Several studies have already explored the use of LLMs to optimize specific aspects of designing personalizedlearning paths",
+              "prefix": "onducted rapidly but cautiously.",
+              "suffix": ". A great example is chatbots, a"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5013,
+    "user": "Rhonda Campbell",
+    "role": "student",
+    "text": "Colace, F., De Santo, M., & Vento, M. (2005),Personalized Learning Path Based on Metadata Standards",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3350,
+              "type": "TextPositionSelector",
+              "start": 3251
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Colace, F., De Santo, M., & Vento, M. (2005),Personalized Learning Path Based on Metadata Standards",
+              "prefix": "d is inspired by the article by ",
+              "suffix": ". The elements constituting the "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 5014,
+    "user": "Rhonda Campbell",
+    "role": "student",
+    "text": "The elements constituting the formula remainrelevant to this day. Additionally, new factors will be introduced and integrated through this research. Theuse of LLMs is the backbone of this research. It facilitates the calculation of relevant factors and shapes the",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3615,
+              "type": "TextPositionSelector",
+              "start": 3352
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The elements constituting the formula remainrelevant to this day. Additionally, new factors will be introduced and integrated through this research. Theuse of LLMs is the backbone of this research. It facilitates the calculation of relevant factors and shapes the",
+              "prefix": "th Based on Metadata Standards. ",
+              "suffix": "core components of the personali"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5015,
+    "user": "Rhonda Campbell",
+    "role": "student",
+    "text": "rapidly but cautiously.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1891,
+              "type": "TextPositionSelector",
+              "start": 1868
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "rapidly but cautiously.",
+              "prefix": "ent subjects is being conducted ",
+              "suffix": "Several studies have already exp"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 5016,
+    "user": "Rhonda Campbell",
+    "role": "student",
+    "text": "These examples are a big step toward the goal of creating optimal learning paths for each student. However,they solve only a fraction of the broader challenge.Thus, this research aims to focus on the effective integration of existing technologies and the development ofnew technologies using LLMs as a bridge between these components, creating a cohesive and comprehensivesolution for personalized learning.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2629,
+              "type": "TextPositionSelector",
+              "start": 2222
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "These examples are a big step toward the goal of creating optimal learning paths for each student. However,they solve only a fraction of the broader challenge.Thus, this research aims to focus on the effective integration of existing technologies and the development ofnew technologies using LLMs as a bridge between these components, creating a cohesive and comprehensivesolution for personalized learning.",
+              "prefix": "om simulation teachingframework.",
+              "suffix": "The application of Large Languag"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 5017,
+    "user": "Rhonda Campbell",
+    "role": "student",
+    "text": "Bibiliography",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6397,
+              "type": "TextPositionSelector",
+              "start": 6384
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Bibiliography",
+              "prefix": "rinting, and final submission44 ",
+              "suffix": "[ExposeBibliography1][ExposeBibl"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5018,
+    "user": "Rhonda Campbell",
+    "role": "student",
+    "text": "For factors that are not yet accessible by any existing application, the research will employ custom solutionsdeveloped within this study to collect data as accurately and realistically as possible. With the collected inputdata, a model will be trained to recommend the best learning paths. The group of students will then continueto experiment with the newly designed learning paths. An application will be developed to record every pieceof feedback from students regarding the learning paths, which will then be compiled into a formula to furtheroptimize the paths. This iterative loop will continue until the experimental students are most satisfied withtheir personalized learning paths",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4810,
+              "type": "TextPositionSelector",
+              "start": 4120
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "For factors that are not yet accessible by any existing application, the research will employ custom solutionsdeveloped within this study to collect data as accurately and realistically as possible. With the collected inputdata, a model will be trained to recommend the best learning paths. The group of students will then continueto experiment with the newly designed learning paths. An application will be developed to record every pieceof feedback from students regarding the learning paths, which will then be compiled into a formula to furtheroptimize the paths. This iterative loop will continue until the experimental students are most satisfied withtheir personalized learning paths",
+              "prefix": "o gather themost realistic data.",
+              "suffix": ".33 ScheduleMonth Week Task Desc"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  }
+]

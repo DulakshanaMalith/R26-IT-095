@@ -1,0 +1,684 @@
+[
+  {
+    "id": 5535,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": " situation.[9][3] ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 587,
+              "type": "TextPositionSelector",
+              "start": 569
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " situation.[9][3] ",
+              "prefix": "n helping them during a survival",
+              "suffix": "Using this exercise, research in"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 2
+  },
+  {
+    "id": 5536,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "sing this exercise, research indicated thatintelligent virtual assistants can increase task performance",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 691,
+              "type": "TextPositionSelector",
+              "start": 588
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "sing this exercise, research indicated thatintelligent virtual assistants can increase task performance",
+              "prefix": "ng a survival situation.[9][3] U",
+              "suffix": ". Moreover, providing an embodim"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 5537,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "does so",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 734,
+              "type": "TextPositionSelector",
+              "start": 727
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "does so",
+              "prefix": "reover, providing an embodiment ",
+              "suffix": " bykeeping the perceived task lo"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 2
+  },
+  {
+    "id": 5538,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": ") and ho",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1019,
+              "type": "TextPositionSelector",
+              "start": 1011
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": ") and ho",
+              "prefix": "mented or virtual reality (AR/VR",
+              "suffix": "w.[8][1][15][14] It appears thou"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 2
+  },
+  {
+    "id": 5539,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "t appears though, thateffects of gender on the embodied virtual assistant haven’t been explored to this day",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1144,
+              "type": "TextPositionSelector",
+              "start": 1037
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "t appears though, thateffects of gender on the embodied virtual assistant haven’t been explored to this day",
+              "prefix": "(AR/VR) and how.[8][1][15][14] I",
+              "suffix": ". A literature review from2022 f"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 5540,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "et al. [14]",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4686,
+              "type": "TextPositionSelector",
+              "start": 4675
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "et al. [14]",
+              "prefix": "eeingone, according to Takayama ",
+              "suffix": ".The desert survival situation i"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 2
+  },
+  {
+    "id": 5541,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "2 Approach",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2040,
+              "type": "TextPositionSelector",
+              "start": 2030
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "2 Approach",
+              "prefix": "ess, competence andhelpfulness?2",
+              "suffix": "Current research has studied num"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 2
+  },
+  {
+    "id": 5542,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "T",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5961,
+              "type": "TextPositionSelector",
+              "start": 5960
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "T",
+              "prefix": "ear because ofthese stereotypes.",
+              "suffix": "his study will conduct a within-"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 2
+  },
+  {
+    "id": 5543,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": ".",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5960,
+              "type": "TextPositionSelector",
+              "start": 5959
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": ".",
+              "prefix": "pear because ofthese stereotypes",
+              "suffix": "This study will conduct a within"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 5544,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": " (Same gender) The intelligent virtual assistant will beembodied by a model and voice of the same gender 3. (Opposite gende",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6344,
+              "type": "TextPositionSelector",
+              "start": 6221
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " (Same gender) The intelligent virtual assistant will beembodied by a model and voice of the same gender 3. (Opposite gende",
+              "prefix": "el and no voice (text-output) 2.",
+              "suffix": "r) The intelligent virtual assis"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 5545,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "model",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6407,
+              "type": "TextPositionSelector",
+              "start": 6402
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "model",
+              "prefix": " assistant willbe embodied by a ",
+              "suffix": " and voice of the opposite gende"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 5546,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "as it is being used by the TU Darmstadt",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6717,
+              "type": "TextPositionSelector",
+              "start": 6678
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "as it is being used by the TU Darmstadt",
+              "prefix": "icrosoftHoloLens1 using Unity2, ",
+              "suffix": ".Once the functionality is imple"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 5547,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "a user interface",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6866,
+              "type": "TextPositionSelector",
+              "start": 6850
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "a user interface",
+              "prefix": " desertsurvival problem through ",
+              "suffix": ", 2. input the state, and the so"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 5548,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "\"move XXX higher/lower\"",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7069,
+              "type": "TextPositionSelector",
+              "start": 7046
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "\"move XXX higher/lower\"",
+              "prefix": "h relative position updateslike ",
+              "suffix": ", 4. Convert the text to speech "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 5549,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": " 6 groups, determining the order ofthe conditions they will be participating in (Counterbalanced design",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7433,
+              "type": "TextPositionSelector",
+              "start": 7330
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " 6 groups, determining the order ofthe conditions they will be participating in (Counterbalanced design",
+              "prefix": " will then be assigned to one of",
+              "suffix": "). Each condition will be time-l"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 2
+  },
+  {
+    "id": 5550,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": " time-limited to10 minutes",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7484,
+              "type": "TextPositionSelector",
+              "start": 7458
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " time-limited to10 minutes",
+              "prefix": " design). Each condition will be",
+              "suffix": ". The virtual assistant will giv"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 5551,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "each passed minut",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7548,
+              "type": "TextPositionSelector",
+              "start": 7531
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "each passed minut",
+              "prefix": "ssistant will give a hint after ",
+              "suffix": "e. During the experiment, the cu"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 5552,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "/ ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7906,
+              "type": "TextPositionSelector",
+              "start": 7904
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "/ ",
+              "prefix": "ed, and the participant accepted",
+              "suffix": "followed. After participants con"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 2
+  },
+  {
+    "id": 5553,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "TU Darmstadt",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8839,
+              "type": "TextPositionSelector",
+              "start": 8827
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "TU Darmstadt",
+              "prefix": "pants will focus on students of ",
+              "suffix": ", due to the participants having"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 5554,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "physically attend the experiment. The expected participant count is at least 30",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8953,
+              "type": "TextPositionSelector",
+              "start": 8874
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "physically attend the experiment. The expected participant count is at least 30",
+              "prefix": "ue to the participants havingto ",
+              "suffix": ". Data analysis and questionshav"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 5555,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "the experiment, the HoloLens and OpenAI API is required and should be guaranteed beforehand",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 9522,
+              "type": "TextPositionSelector",
+              "start": 9431
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "the experiment, the HoloLens and OpenAI API is required and should be guaranteed beforehand",
+              "prefix": "com/en/articles/8555505-tts-api4",
+              "suffix": ".Potential difficulties could ar"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 5556,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": " are possibl",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 9683,
+              "type": "TextPositionSelector",
+              "start": 9671
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " are possibl",
+              "prefix": "’t been accounted for beforehand",
+              "suffix": "e. Other difficulties could aris"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "topic": "Generative AI in Healthcare",
+  "author": "Briana Graves",
+  "reviews": {
+    "1": {
+      "review": 1,
+      "hash": "b7f488753f",
+      "reviewer": "Jerry Castro",
+      "role": "student",
+      "size": 3644,
+      "group": 1
+    },
+    "2": {
+      "review": 2,
+      "hash": "b1d03f6453",
+      "reviewer": "Lisa Jones",
+      "role": "assistant",
+      "size": 1417,
+      "group": 1
+    }
+  }
+}

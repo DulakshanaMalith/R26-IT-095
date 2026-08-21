@@ -1,0 +1,41 @@
+[
+  {
+    "retain": 0
+  },
+  {
+    "insert": "Summary",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nYou want to investigate how to combine AI and holographs. For this you want to do literture review. \n\n"
+  },
+  {
+    "insert": "Motivation",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nThe motivation has the goal to catch reader's interest, explain specific problem and in which domain it occurs and also how the problem is currently handled. It should also state research questions explicitly and precisely.\nYour hook is well written and catches the reader's interest. However, you do not write about any problem that will be solved with holographic AI. Try to formulize what the benefit of these systems would be and what problem they would solve.\nYour RQs are very general and also contain some grammar/word order mistakes, which makes them hard to understand. Try to be more precise about what you want to find out with your study and carefully formulate this into well readable RQs.\n\n"
+  },
+  {
+    "insert": "Approach",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nThis section has the goal to explain current State of the Ar research gap that would further improve the existing work. This section could however benefit from explaining the research question more in depth and giving a teaser to how you want to answer the RQ.\nYou mentioned the SOTA but did not explain its current weaknesses. \nYour methods are not explained very detailed. Try to explain more what you want to review for each specific RQ.\n\n"
+  },
+  {
+    "insert": "Other",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nOverall, you write a lot about what has to be done with holographs and what has to happen with the AI. However, since holographs are not an everyday experience of most readers, it could be useful to have a guiding example and explain the necessary properties of the system with this example.\n\nParts of your text contain language mistakes or hard to read sentences. Before submitting, you should carefully read your text and think about if everything is right (grammatically) and well understandable. \n\n"
+  }
+]

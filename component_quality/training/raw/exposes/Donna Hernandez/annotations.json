@@ -1,0 +1,418 @@
+[
+  {
+    "id": 2988,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "When you’re talking to a good friend, does that friend stand in a random corner of the room? The answer isprobably no",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 490,
+              "type": "TextPositionSelector",
+              "start": 373
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "When you’re talking to a good friend, does that friend stand in a random corner of the room? The answer isprobably no",
+              "prefix": "ber 9, 2024Darmstadt1 Motivation",
+              "suffix": ".Holograms of AI assistants aim "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2989,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "For holograms to be accepted, people must be able to interact with them in a natural way. This enables theuse of AI in environments that require a high level of empathy, such as therapists or in elderly care. Therefore,seating analysis becomes a necessary step for natural interactio",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1483,
+              "type": "TextPositionSelector",
+              "start": 1200
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "For holograms to be accepted, people must be able to interact with them in a natural way. This enables theuse of AI in environments that require a high level of empathy, such as therapists or in elderly care. Therefore,seating analysis becomes a necessary step for natural interactio",
+              "prefix": "on with it.Why does this matter?",
+              "suffix": "n.How can we determining the ori"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2990,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "How can we determining the orientation and dimensions of a suitable sitting place",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1566,
+              "type": "TextPositionSelector",
+              "start": 1485
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "How can we determining the orientation and dimensions of a suitable sitting place",
+              "prefix": "ry step for natural interaction.",
+              "suffix": "?This involves extracting key me"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2991,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "How was it dealt with the problem so farCurrent methods can reliable detect objects and its bounding box with a \"You only look once\"-Approach [2].But analyzing the exact parameters of a sitting place, so you can place a virtual character on it, does not seemto be well researched at the moment",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2565,
+              "type": "TextPositionSelector",
+              "start": 2272
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "How was it dealt with the problem so farCurrent methods can reliable detect objects and its bounding box with a \"You only look once\"-Approach [2].But analyzing the exact parameters of a sitting place, so you can place a virtual character on it, does not seemto be well researched at the moment",
+              "prefix": "view analysis, where applicable.",
+              "suffix": ".• AI Agents doesn’t know how to"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2992,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "Research questionCan procedurally generated datasets be effectively used to train deep learning models for detecting andretrieving key parameters of sitting places, such as orien",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2972,
+              "type": "TextPositionSelector",
+              "start": 2794
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Research questionCan procedurally generated datasets be effectively used to train deep learning models for detecting andretrieving key parameters of sitting places, such as orien",
+              "prefix": "e imprecise and labour intensive",
+              "suffix": "tation and dimensions, in real-w"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2993,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "AI Agents doesn’t know how to make use of the surroundings• Sitting places can be occluded or out of view• Sitting places can differ violently in appearance• Hand crafted image annotations can be imprecise and labour intensive",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2794,
+              "type": "TextPositionSelector",
+              "start": 2568
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "AI Agents doesn’t know how to make use of the surroundings• Sitting places can be occluded or out of view• Sitting places can differ violently in appearance• Hand crafted image annotations can be imprecise and labour intensive",
+              "prefix": "well researched at the moment.• ",
+              "suffix": "Research questionCan procedurall"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2994,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "Procedural generation in reinforcement learning shows promising results totrain our model, so we want to use this method as encouraged [3].Generate annotated dataWe procedural generate our annotated data in several steps like in 2.1.1. Annotate: Generate random metrics for the sitting place. These are of interest for the placement of thehologram.2. Compose: Compose the sitting place out of random selected components with different materials.3. Add noise: Add unrelated stuff to our sitting place to improve stability. This step can be skipped at first,to not overwhelm the model.4. Render: Render the sitting place from different angles and environments, with the help of photo realisticrenderers like Blender [1]",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4476,
+              "type": "TextPositionSelector",
+              "start": 3759
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Procedural generation in reinforcement learning shows promising results totrain our model, so we want to use this method as encouraged [3].Generate annotated dataWe procedural generate our annotated data in several steps like in 2.1.1. Annotate: Generate random metrics for the sitting place. These are of interest for the placement of thehologram.2. Compose: Compose the sitting place out of random selected components with different materials.3. Add noise: Add unrelated stuff to our sitting place to improve stability. This step can be skipped at first,to not overwhelm the model.4. Render: Render the sitting place from different angles and environments, with the help of photo realisticrenderers like Blender [1]",
+              "prefix": " atfinding the 3d bounding box. ",
+              "suffix": ".Figure 2.1: Procedural generati"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2995,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "Train a model with reinforcement learning",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4559,
+              "type": "TextPositionSelector",
+              "start": 4518
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Train a model with reinforcement learning",
+              "prefix": "1: Procedural generation process",
+              "suffix": "To guess all parameters exactly "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2996,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "o get exact metrics of the potentially found sitting place",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3696,
+              "type": "TextPositionSelector",
+              "start": 3638
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "o get exact metrics of the potentially found sitting place",
+              "prefix": "ctionality torefine this data, t",
+              "suffix": ", as the current approach stops "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2997,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "Than ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4814,
+              "type": "TextPositionSelector",
+              "start": 4809
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Than ",
+              "prefix": " the direction to the solution. ",
+              "suffix": "we can hopefully converge the pa"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 5655,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Motivation",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 373,
+              "type": "TextPositionSelector",
+              "start": 363
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Motivation",
+              "prefix": "ion: December 9, 2024Darmstadt1 ",
+              "suffix": "When you’re talking to a good fr"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 5656,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Figure 2.1: Procedural generation process",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4518,
+              "type": "TextPositionSelector",
+              "start": 4477
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Figure 2.1: Procedural generation process",
+              "prefix": "isticrenderers like Blender [1].",
+              "suffix": "Train a model with reinforcement"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 5657,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Challenges• This model must be validated with real images, if the procedural generated data can be used in realscenarios.• Trained model could converge unstable• Crafting 3D Parts and Material for composing sitting places can be time consuming• Discrepancy between real world images and digital images could be to great• Algorithm could be to hardware intensive for AR-Devices• Model could be easily confused with unrelated things on the image",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6160,
+              "type": "TextPositionSelector",
+              "start": 5717
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Challenges• This model must be validated with real images, if the procedural generated data can be used in realscenarios.• Trained model could converge unstable• Crafting 3D Parts and Material for composing sitting places can be time consuming• Discrepancy between real world images and digital images could be to great• Algorithm could be to hardware intensive for AR-Devices• Model could be easily confused with unrelated things on the image",
+              "prefix": " is under further investigation.",
+              "suffix": "53 ScheduleMonth Week Task Descr"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 2,
+    "group": 1
+  }
+]

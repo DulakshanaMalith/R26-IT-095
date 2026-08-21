@@ -1,0 +1,50 @@
+[
+  {
+    "retain": 0
+  },
+  {
+    "insert": "Summary:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nThis proposal highlights how Generative AI (GenAI) can revolutionize personalized medicine by addressing the limitations of traditional methods and solutions that enhance diagnosis, treatment planning, and healthcare delivery.\n\n"
+  },
+  {
+    "insert": "Strengths",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nThe proposal follows a logical flow.\nThe details in methodology like the searched terms etc. improves the credibility for the reader\n\n"
+  },
+  {
+    "insert": "Weakness",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\n(Schedule)"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "The schedule is too general and includes another expose draft, which is not required again. To improve the schedule, delete the expose preparation.\n\n"
+  },
+  {
+    "insert": "Others:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nI look forward to seeing how your expose progresses! I recommend having a look at the comments on the expose in CARE and correcting the small spelling/whitespace mistakes. "
+  }
+]

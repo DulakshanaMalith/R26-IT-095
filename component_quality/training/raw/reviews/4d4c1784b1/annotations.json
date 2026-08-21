@@ -1,0 +1,281 @@
+[
+  {
+    "id": 2864,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "Cancer remains one of the most complex and devastating diseases, claiming nearly 10 million lives eachyear globally [8]. ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 507,
+              "type": "TextPositionSelector",
+              "start": 386
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Cancer remains one of the most complex and devastating diseases, claiming nearly 10 million lives eachyear globally [8]. ",
+              "prefix": "ber 9, 2024Darmstadt1 Motivation",
+              "suffix": "As we advance into an era of art"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 2
+  },
+  {
+    "id": 2865,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "computers being smarter thantheir creators",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 611,
+              "type": "TextPositionSelector",
+              "start": 569
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "computers being smarter thantheir creators",
+              "prefix": "rtificial intelligence (AI) and ",
+              "suffix": ", AI has emerged as a transforma"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 2866,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "AI has emerged as a transformative tool for designing individualized cancer treatment plans",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 704,
+              "type": "TextPositionSelector",
+              "start": 613
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "AI has emerged as a transformative tool for designing individualized cancer treatment plans",
+              "prefix": "ing smarter thantheir creators, ",
+              "suffix": ".AI-driven systems analyze genet"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 2867,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": " What if AI’s computational power could extend beyond genomic and clinical data to comprehensivelydecode the TME and adjust treatment plans accordingly?",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1176,
+              "type": "TextPositionSelector",
+              "start": 1024
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " What if AI’s computational power could extend beyond genomic and clinical data to comprehensivelydecode the TME and adjust treatment plans accordingly?",
+              "prefix": " evasion, and treatmentresponse.",
+              "suffix": "The tumor microenvironment is a "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 2868,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "This",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2525,
+              "type": "TextPositionSelector",
+              "start": 2521
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "This",
+              "prefix": "icantly altertreatment efficacy.",
+              "suffix": " research addresses the critical"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 2
+  },
+  {
+    "id": 2869,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "advanced AI techniques",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3004,
+              "type": "TextPositionSelector",
+              "start": 2982
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "advanced AI techniques",
+              "prefix": "tment prediction. By leveraging ",
+              "suffix": " to model the heterogeneity of T"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 2870,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "Key limitations in current methods include:",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3859,
+              "type": "TextPositionSelector",
+              "start": 3816
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Key limitations in current methods include:",
+              "prefix": "mplex, multi-dimensional nature.",
+              "suffix": "• Limited TME Integration: AI mo"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 2
+  },
+  {
+    "id": 2871,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "The AI model from paper [3]",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5960,
+              "type": "TextPositionSelector",
+              "start": 5933
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The AI model from paper [3]",
+              "prefix": " be taken from public databases.",
+              "suffix": " will be used as the basis for p"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 2872,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": " The model willbe enhanced using the datasets retrieved above as training data",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6103,
+              "type": "TextPositionSelector",
+              "start": 6025
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " The model willbe enhanced using the datasets retrieved above as training data",
+              "prefix": "edicting cancer treatment plans.",
+              "suffix": ".2.3.2 Testing and EvaluationThe"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  }
+]

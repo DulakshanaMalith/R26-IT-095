@@ -1,0 +1,1282 @@
+[
+  {
+    "id": 435,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "Personalties",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 130,
+              "type": "TextPositionSelector",
+              "start": 118
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Personalties",
+              "prefix": "inMuseums: SimulatingHistorical ",
+              "suffix": "Enhance museum experiences by pr"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 1
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 436,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "Since theCOVID-19 pandemic, museums worldwide have faced a dramatic decline in visitor numbers, highlighting theneed for more engaging and innovative approaches to attract audiences",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1039,
+              "type": "TextPositionSelector",
+              "start": 858
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Since theCOVID-19 pandemic, museums worldwide have faced a dramatic decline in visitor numbers, highlighting theneed for more engaging and innovative approaches to attract audiences",
+              "prefix": "ic doesn’t hold truth nowadays. ",
+              "suffix": ". Despite their efforts to adapt"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 437,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": " their",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1054,
+              "type": "TextPositionSelector",
+              "start": 1048
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " their",
+              "prefix": "es to attract audiences. Despite",
+              "suffix": " efforts to adapt manyinstitutio"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 438,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "nteraction,",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1138,
+              "type": "TextPositionSelector",
+              "start": 1127
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "nteraction,",
+              "prefix": "rely on traditional methods of i",
+              "suffix": " by simply showcasing an object "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 439,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "usuage",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7335,
+              "type": "TextPositionSelector",
+              "start": 7329
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "usuage",
+              "prefix": "s for detailedevaluation of the ",
+              "suffix": " of holographic AI assistants. B"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 440,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "acurracy",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6370,
+              "type": "TextPositionSelector",
+              "start": 6362
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "acurracy",
+              "prefix": "sistant’s natural behavior, the ",
+              "suffix": " of its answers and its intuitiv"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 441,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "artifical ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5121,
+              "type": "TextPositionSelector",
+              "start": 5111
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "artifical ",
+              "prefix": "e in eithermachine learning and ",
+              "suffix": "intelligence or computer vision "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 442,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "combing ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2935,
+              "type": "TextPositionSelector",
+              "start": 2927
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "combing ",
+              "prefix": " possibility of synergistically ",
+              "suffix": "both holography and AI assistant"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 443,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "combing",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4441,
+              "type": "TextPositionSelector",
+              "start": 4434
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "combing",
+              "prefix": " of holograms in an open space, ",
+              "suffix": " holograms with AIassistants and"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 444,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "ombing o",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5262,
+              "type": "TextPositionSelector",
+              "start": 5254
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "ombing o",
+              "prefix": "erview will be semi-structured c",
+              "suffix": "pen-ended and closed questions. "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 445,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "(Sub-RQ1.1).",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4773,
+              "type": "TextPositionSelector",
+              "start": 4761
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "(Sub-RQ1.1).",
+              "prefix": "s of its process and deployment ",
+              "suffix": "Additionally, expert interviews "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 446,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": " with digitalmuseum exhibits and six PhD students from Technische Universität Darmstadt which specialize in eithermachine learning and artifical intelligence or computer vision and human-computer interaction. ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5185,
+              "type": "TextPositionSelector",
+              "start": 4976
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " with digitalmuseum exhibits and six PhD students from Technische Universität Darmstadt which specialize in eithermachine learning and artifical intelligence or computer vision and human-computer interaction. ",
+              "prefix": " individuals who have experience",
+              "suffix": "These areequally distributed. Th"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 447,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": " Moreover, using AI to simulate historical figures raises ethicalquestions about representing deceased individuals, especially if their views are misrepresented. Furthermore,visitors’ privacy must be guaranteed by ensuring that data generated during an interaction is anonymized",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7189,
+              "type": "TextPositionSelector",
+              "start": 6911
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " Moreover, using AI to simulate historical figures raises ethicalquestions about representing deceased individuals, especially if their views are misrepresented. Furthermore,visitors’ privacy must be guaranteed by ensuring that data generated during an interaction is anonymized",
+              "prefix": " biased information is conveyed.",
+              "suffix": "(Sub-RQ1.2).Despite these risks,"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 448,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": " fullfilled",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6761,
+              "type": "TextPositionSelector",
+              "start": 6750
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " fullfilled",
+              "prefix": "s. The main key that needs to be",
+              "suffix": "is to guarantee historical accur"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 449,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "Schedule",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7758,
+              "type": "TextPositionSelector",
+              "start": 7750
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Schedule",
+              "prefix": "ing experiences for visitors.43 ",
+              "suffix": "Month Week Task Description1 1 P"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1701,
+    "user": "Danny Sweeney",
+    "role": "student",
+    "text": "Since theCOVID-19 pandemic, museums worldwide have faced a dramatic decline in visitor numbers, highlighting theneed for more engaging and innovative approaches to attract audiences",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1039,
+              "type": "TextPositionSelector",
+              "start": 858
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Since theCOVID-19 pandemic, museums worldwide have faced a dramatic decline in visitor numbers, highlighting theneed for more engaging and innovative approaches to attract audiences",
+              "prefix": "ic doesn’t hold truth nowadays. ",
+              "suffix": ". Despite their efforts to adapt"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 1702,
+    "user": "Danny Sweeney",
+    "role": "student",
+    "text": "t ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1072,
+              "type": "TextPositionSelector",
+              "start": 1070
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "t ",
+              "prefix": "s. Despite their efforts to adap",
+              "suffix": "manyinstitutions still rely on t"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 1703,
+    "user": "Danny Sweeney",
+    "role": "student",
+    "text": "present information based on their interest",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1617,
+              "type": "TextPositionSelector",
+              "start": 1574
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "present information based on their interest",
+              "prefix": "isitors to engage with them and ",
+              "suffix": ".Research questions:RQ1 How can "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 1704,
+    "user": "Danny Sweeney",
+    "role": "student",
+    "text": "rely on traditional methods of interaction",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1137,
+              "type": "TextPositionSelector",
+              "start": 1095
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "rely on traditional methods of interaction",
+              "prefix": "to adapt manyinstitutions still ",
+              "suffix": ", by simply showcasing an object"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 1705,
+    "user": "Danny Sweeney",
+    "role": "student",
+    "text": "will be conducted",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4302,
+              "type": "TextPositionSelector",
+              "start": 4285
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "will be conducted",
+              "prefix": "t of all, a literature research ",
+              "suffix": " to identify existing ways of im"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 1706,
+    "user": "Danny Sweeney",
+    "role": "student",
+    "text": ". Thisstudy will analyze the possibility of synergistically combing both holography and AI assistants to enableimmersive and historically accurate interactions between museum visitors and virtual personalitie",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3075,
+              "type": "TextPositionSelector",
+              "start": 2867
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": ". Thisstudy will analyze the possibility of synergistically combing both holography and AI assistants to enableimmersive and historically accurate interactions between museum visitors and virtual personalitie",
+              "prefix": " providing heritage chatbots [3]",
+              "suffix": "s.To understand the need for AI "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 1707,
+    "user": "Danny Sweeney",
+    "role": "student",
+    "text": "social presence theor",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3383,
+              "type": "TextPositionSelector",
+              "start": 3362
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "social presence theor",
+              "prefix": "d Bruce Christie introduced the ",
+              "suffix": "y in 1976 in theirbook ”The Soci"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 1708,
+    "user": "Danny Sweeney",
+    "role": "student",
+    "text": "The holograms might be able to replicate human emotion and behaviorleading to more engaging conversations",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3977,
+              "type": "TextPositionSelector",
+              "start": 3872
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The holograms might be able to replicate human emotion and behaviorleading to more engaging conversations",
+              "prefix": "the visitors’ perception of it. ",
+              "suffix": ". The social presence theory hel"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 1709,
+    "user": "Danny Sweeney",
+    "role": "student",
+    "text": "These areequally distributed",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5213,
+              "type": "TextPositionSelector",
+              "start": 5185
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "These areequally distributed",
+              "prefix": "and human-computer interaction. ",
+              "suffix": ". The interview will be semi-str"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 1710,
+    "user": "Danny Sweeney",
+    "role": "student",
+    "text": "six",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5012,
+              "type": "TextPositionSelector",
+              "start": 5009
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "six",
+              "prefix": "with digitalmuseum exhibits and ",
+              "suffix": " PhD students from Technische Un"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 1711,
+    "user": "Danny Sweeney",
+    "role": "student",
+    "text": "five to ten participant",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5992,
+              "type": "TextPositionSelector",
+              "start": 5969
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "five to ten participant",
+              "prefix": " university and it will contain ",
+              "suffix": "swho will simulate museum visito"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 1712,
+    "user": "Danny Sweeney",
+    "role": "student",
+    "text": "natural behavior",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6356,
+              "type": "TextPositionSelector",
+              "start": 6340
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "natural behavior",
+              "prefix": "e theholographic AI assistant’s ",
+              "suffix": ", the acurracy of its answers an"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 1713,
+    "user": "Danny Sweeney",
+    "role": "student",
+    "text": " intuitivenes",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6406,
+              "type": "TextPositionSelector",
+              "start": 6393
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " intuitivenes",
+              "prefix": " acurracy of its answers and its",
+              "suffix": "s. After this, eachparticipant w"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 1714,
+    "user": "Danny Sweeney",
+    "role": "student",
+    "text": "It is especially important to bring our attention to ethical challenges and the use of faulty datasets that arisewith the development and use of holographic AI assistants in museu",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6717,
+              "type": "TextPositionSelector",
+              "start": 6538
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "It is especially important to bring our attention to ethical challenges and the use of faulty datasets that arisewith the development and use of holographic AI assistants in museu",
+              "prefix": "ions for improvement(Sub-RQ1.3).",
+              "suffix": "ms. The main key that needs to b"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 1715,
+    "user": "Danny Sweeney",
+    "role": "student",
+    "text": "cultural awareness",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6819,
+              "type": "TextPositionSelector",
+              "start": 6801
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "cultural awareness",
+              "prefix": "arantee historical accuracy and ",
+              "suffix": ". This must be adhered to in ord"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 1716,
+    "user": "Danny Sweeney",
+    "role": "student",
+    "text": " This must be adhered to in order to ensure thatno false or biased information is conveyed",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6910,
+              "type": "TextPositionSelector",
+              "start": 6820
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " This must be adhered to in order to ensure thatno false or biased information is conveyed",
+              "prefix": "accuracy and cultural awareness.",
+              "suffix": ". Moreover, using AI to simulate"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 1717,
+    "user": "Danny Sweeney",
+    "role": "student",
+    "text": "down new insights they have gained ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6495,
+              "type": "TextPositionSelector",
+              "start": 6460
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "down new insights they have gained ",
+              "prefix": "ticipant will be asked to write ",
+              "suffix": "and suggestions for improvement("
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 1718,
+    "user": "Danny Sweeney",
+    "role": "student",
+    "text": "might be the solutionfor enhancing visitor engagemen",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2480,
+              "type": "TextPositionSelector",
+              "start": 2428
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "might be the solutionfor enhancing visitor engagemen",
+              "prefix": "ow context based communication, ",
+              "suffix": "t. They enable dynamic dialogues"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 1719,
+    "user": "Danny Sweeney",
+    "role": "student",
+    "text": "semi-structured combing open-ended and closed question",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5291,
+              "type": "TextPositionSelector",
+              "start": 5237
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "semi-structured combing open-ended and closed question",
+              "prefix": "tributed. The interview will be ",
+              "suffix": "s. Thisapproach results in more "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 1720,
+    "user": "Danny Sweeney",
+    "role": "student",
+    "text": " available historical papers and article",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5630,
+              "type": "TextPositionSelector",
+              "start": 5590
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " available historical papers and article",
+              "prefix": "ta will be sourced from publicly",
+              "suffix": "s. The holographic3rendering wil"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 1721,
+    "user": "Danny Sweeney",
+    "role": "student",
+    "text": "Prototype Development ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8661,
+              "type": "TextPositionSelector",
+              "start": 8639
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Prototype Development ",
+              "prefix": "yzing the collected data3 10-11 ",
+              "suffix": "Developing basic version of the "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 1722,
+    "user": "Danny Sweeney",
+    "role": "student",
+    "text": "Personalties",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 130,
+              "type": "TextPositionSelector",
+              "start": 118
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Personalties",
+              "prefix": "inMuseums: SimulatingHistorical ",
+              "suffix": "Enhance museum experiences by pr"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 1
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 2690,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "What technical requirements are necessary to model historical personalities in holographicAI assistants, including the use of authentic data sources, large language models and holographicvisualization?",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1959,
+              "type": "TextPositionSelector",
+              "start": 1758
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "What technical requirements are necessary to model historical personalities in holographicAI assistants, including the use of authentic data sources, large language models and holographicvisualization?",
+              "prefix": "e visitorexperience?• Sub-RQ1.1 ",
+              "suffix": "• Sub-RQ1.2 What ethical and dat"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 2
+  },
+  {
+    "id": 2691,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "What ethical and data privacy challenges arise from training holographic AI assistants toaccurately represent historical personalities in museums?",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2117,
+              "type": "TextPositionSelector",
+              "start": 1971
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "What ethical and data privacy challenges arise from training holographic AI assistants toaccurately represent historical personalities in museums?",
+              "prefix": "raphicvisualization?• Sub-RQ1.2 ",
+              "suffix": "• Sub-RQ1.3 How do museum visito"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 2
+  },
+  {
+    "id": 2692,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "Digitalization requires museums to implicate new thought provoking and immersive ways to interact withits content. Holographic AI assistants which allow context based communication, might be the solutionfor enhancing visitor engagement. They enable dynamic dialogues between visitors and representations ofhistorical personalities, enriching educational experiences and making history more captivating and accessible.Scientific papers already show the use of cutting edge visualization via holograms [2, 3] with additionalgesture control and first attempts at implementing AI in museums by providing heritage chatbots [3]. Thisstudy will analyze the possibility of synergistically combing both holography and AI assistants to enableimmersive and historically accurate interactions between museum visitors and virtual personalities",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3076,
+              "type": "TextPositionSelector",
+              "start": 2246
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Digitalization requires museums to implicate new thought provoking and immersive ways to interact withits content. Holographic AI assistants which allow context based communication, might be the solutionfor enhancing visitor engagement. They enable dynamic dialogues between visitors and representations ofhistorical personalities, enriching educational experiences and making history more captivating and accessible.Scientific papers already show the use of cutting edge visualization via holograms [2, 3] with additionalgesture control and first attempts at implementing AI in museums by providing heritage chatbots [3]. Thisstudy will analyze the possibility of synergistically combing both holography and AI assistants to enableimmersive and historically accurate interactions between museum visitors and virtual personalities",
+              "prefix": "graphicAI assistants?22 Approach",
+              "suffix": ".To understand the need for AI a"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 3,
+    "group": 2
+  }
+]

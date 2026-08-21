@@ -1,0 +1,134 @@
+[
+  {
+    "id": 317,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "word 'also' is missing",
+    "annotationId": 310,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 318,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "Definetly a good hook",
+    "annotationId": 311,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 319,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "good",
+    "annotationId": 312,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 320,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "patient's*",
+    "annotationId": 313,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 321,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "a reference would be good",
+    "annotationId": 314,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 322,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "Could be more detailed, especially regarding the challenges of HCRs, which you explained well",
+    "annotationId": 315,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 323,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "reference to these studies?",
+    "annotationId": 316,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 324,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "Again, references would be good",
+    "annotationId": 317,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 325,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "The SOTA could be more detailed in general",
+    "annotationId": 318,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 326,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "This rather belongs in your motivation, but is well written",
+    "annotationId": 319,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 327,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "This section should explain the theoretical framework, not merely list related work",
+    "annotationId": 320,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 328,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "which systems do you want to compare?",
+    "annotationId": 321,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  }
+]

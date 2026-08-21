@@ -1,0 +1,134 @@
+[
+  {
+    "id": 3514,
+    "user": "Briana Graves",
+    "role": "student",
+    "text": "ideal start, as it shows the importance of the technology, providing the possible ability to alleviate issues for a large amount of people.",
+    "annotationId": 3453,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3515,
+    "user": "Briana Graves",
+    "role": "student",
+    "text": "technology is not too far fetched and already had real world usecases. -> makes this paper more realistic and less of an optimistic play ",
+    "annotationId": 3454,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3516,
+    "user": "Briana Graves",
+    "role": "student",
+    "text": "inconsistency in formatting of subtitles",
+    "annotationId": 3455,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3517,
+    "user": "Briana Graves",
+    "role": "student",
+    "text": "missing space after punctuation",
+    "annotationId": 3456,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3518,
+    "user": "Briana Graves",
+    "role": "student",
+    "text": "inconsistent citing syntax. sometimes after a sence with punctuation after both sometimes without prior punctuation",
+    "annotationId": 3457,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3519,
+    "user": "Briana Graves",
+    "role": "student",
+    "text": "typo, *an/a",
+    "annotationId": 3458,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3520,
+    "user": "Briana Graves",
+    "role": "student",
+    "text": "no technical theory mentioned. Ideally include the the theories you will utilize even if they are part of the technical side.",
+    "annotationId": 3459,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3521,
+    "user": "Briana Graves",
+    "role": "student",
+    "text": "effectiveness is a hard to quantitize word. The mentioned metrics could correlate with different issues, for example the attention span might be influences by a teacher being comedic, or entertaining. This has no innate benefit for the effectiveness of the parameter, it might even negatively influence the learning capabilities of the students. Comparing these issues requires many parameters, with long-term surveilance and approximation of the correlation between these these teaching-styles.",
+    "annotationId": 3460,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3522,
+    "user": "Briana Graves",
+    "role": "student",
+    "text": "human subjects are bound to be biased, especially educators, who have reason to believe they could get replaced by these newer technologies. These results would have to be treated as such, maybe by assigning weights to different groups, depending on possible bias.",
+    "annotationId": 3461,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3523,
+    "user": "Briana Graves",
+    "role": "student",
+    "text": "5 weeks do not equate to one month.",
+    "annotationId": 3462,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3524,
+    "user": "Briana Graves",
+    "role": "student",
+    "text": "3 weeks also do not equate to one month, but <=4 is better than >4 as, for example, 3 weeks might be the the working weeks and one week could serve as a buffer.",
+    "annotationId": 3463,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3525,
+    "user": "Briana Graves",
+    "role": "student",
+    "text": "5 weeks in a month.",
+    "annotationId": 3464,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  }
+]

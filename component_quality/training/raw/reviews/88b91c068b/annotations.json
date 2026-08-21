@@ -1,0 +1,1118 @@
+[
+  {
+    "id": 5310,
+    "user": "Alicia Gates",
+    "role": "student",
+    "text": "No evaluation has been done on the readiness with which these systemswill tell students solutions i",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2155,
+              "type": "TextPositionSelector",
+              "start": 2056
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "No evaluation has been done on the readiness with which these systemswill tell students solutions i",
+              "prefix": "lling them the answer outright. ",
+              "suffix": "f asked directly and if this has"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 5311,
+    "user": "Alicia Gates",
+    "role": "student",
+    "text": "one of them address the issue",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3281,
+              "type": "TextPositionSelector",
+              "start": 3252
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "one of them address the issue",
+              "prefix": "g of new concepts by students. N",
+              "suffix": " of using the system for cheatin"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 5312,
+    "user": "Alicia Gates",
+    "role": "student",
+    "text": "s.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3374,
+              "type": "TextPositionSelector",
+              "start": 3372
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "s.",
+              "prefix": "hort-cutting the learning proces",
+              "suffix": "Large Language Models (LLMs) hav"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 5313,
+    "user": "Alicia Gates",
+    "role": "student",
+    "text": "LLMs like GPT 4.0 have entered our classrooms, and it seems like they are here to stay. Some case studiesalready suggest that approximately 50% of students use these tools [9, 2].",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 553,
+              "type": "TextPositionSelector",
+              "start": 374
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "LLMs like GPT 4.0 have entered our classrooms, and it seems like they are here to stay. Some case studiesalready suggest that approximately 50% of students use these tools [9, 2].",
+              "prefix": "ber 8, 2024Darmstadt1 Motivation",
+              "suffix": "These chatbot LLMs have only rec"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 5314,
+    "user": "Alicia Gates",
+    "role": "student",
+    "text": "These chatbot LLMs have only recently become publicly available. They often provide fitting answers andexplanations to almost any natural language question asked. This has caused concern for many, fearing thatour current methods of testing knowledge might be easily cheatable as these chatbots seem to offer a shortcutfor many forms of graded written submissions. There are tools available that claim to detect the use of LLMs.However, their false positive rate is still too high to rely solely on their output [3]. On the other side, the usageof such tools can also have a positive learning effect, with many students reporting that it helps with learning[2]. This indicates that outright banning any LLM tool for use in education could be the wrong approach.Instead, teachers and professors might need to adapt their teaching to include them to help students learn[10].",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1424,
+              "type": "TextPositionSelector",
+              "start": 553
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "These chatbot LLMs have only recently become publicly available. They often provide fitting answers andexplanations to almost any natural language question asked. This has caused concern for many, fearing thatour current methods of testing knowledge might be easily cheatable as these chatbots seem to offer a shortcutfor many forms of graded written submissions. There are tools available that claim to detect the use of LLMs.However, their false positive rate is still too high to rely solely on their output [3]. On the other side, the usageof such tools can also have a positive learning effect, with many students reporting that it helps with learning[2]. This indicates that outright banning any LLM tool for use in education could be the wrong approach.Instead, teachers and professors might need to adapt their teaching to include them to help students learn[10].",
+              "prefix": "students use these tools [9, 2].",
+              "suffix": "However, as LLMs are often used "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 5315,
+    "user": "Alicia Gates",
+    "role": "student",
+    "text": "However, as LLMs are often used outside of the control of any supervision by teachers, students can be enticedto ask for solutions and only look at the steps provided or accept the answer as correct [5]. Even thoughexamples and solutions can have a positive effect on learning, solving new problems on your own is equallyimportant for long term learning [1]. As this step can be time consuming and difficult, students can potentiallyskip it after already getting the solution they looked for.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1916,
+              "type": "TextPositionSelector",
+              "start": 1424
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "However, as LLMs are often used outside of the control of any supervision by teachers, students can be enticedto ask for solutions and only look at the steps provided or accept the answer as correct [5]. Even thoughexamples and solutions can have a positive effect on learning, solving new problems on your own is equallyimportant for long term learning [1]. As this step can be time consuming and difficult, students can potentiallyskip it after already getting the solution they looked for.",
+              "prefix": "them to help students learn[10].",
+              "suffix": "Considering this, it might be us"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 5316,
+    "user": "Alicia Gates",
+    "role": "student",
+    "text": "Considering this, it might be useful for LLMs to support students in finding solutions to problems withouttelling them the answer outright. No evaluation has been done on the readiness with which these systemswill tell students solutions if asked directly and if this has a negative effect on learning. On the other hand, ifLLMs are capable enough to not tell solutions, they might help supplement teachers and provide individualhelp to many students when no other help is available.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2399,
+              "type": "TextPositionSelector",
+              "start": 1916
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Considering this, it might be useful for LLMs to support students in finding solutions to problems withouttelling them the answer outright. No evaluation has been done on the readiness with which these systemswill tell students solutions if asked directly and if this has a negative effect on learning. On the other hand, ifLLMs are capable enough to not tell solutions, they might help supplement teachers and provide individualhelp to many students when no other help is available.",
+              "prefix": "ng the solution they looked for.",
+              "suffix": "This study will focus on the fol"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 5317,
+    "user": "Alicia Gates",
+    "role": "student",
+    "text": " data, often large parts of the internet,",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3536,
+              "type": "TextPositionSelector",
+              "start": 3495
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " data, often large parts of the internet,",
+              "prefix": "re trained on amassive amount of",
+              "suffix": " and are able to generate human "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 5318,
+    "user": "Alicia Gates",
+    "role": "student",
+    "text": "T",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2787,
+              "type": "TextPositionSelector",
+              "start": 2786
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "T",
+              "prefix": "\" at preventing this?22 Approach",
+              "suffix": "he novelty of many publicly avai"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 5319,
+    "user": "Alicia Gates",
+    "role": "student",
+    "text": "s",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3373,
+              "type": "TextPositionSelector",
+              "start": 3372
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "s",
+              "prefix": "hort-cutting the learning proces",
+              "suffix": ".Large Language Models (LLMs) ha"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 5320,
+    "user": "Alicia Gates",
+    "role": "student",
+    "text": "Large Language Models (LLMs) have shown remarkable abilities in various NLP tasks. They are trained on amassive amount of data, often large parts of the internet, and are able to generate human like responses tonatural language inputs on a level that can rival human answers [6",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3651,
+              "type": "TextPositionSelector",
+              "start": 3374
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Large Language Models (LLMs) have shown remarkable abilities in various NLP tasks. They are trained on amassive amount of data, often large parts of the internet, and are able to generate human like responses tonatural language inputs on a level that can rival human answers [6",
+              "prefix": "rt-cutting the learning process.",
+              "suffix": "]. Especially ChatGPT, an LLM ch"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 5321,
+    "user": "Alicia Gates",
+    "role": "student",
+    "text": "The quality of LLM responses often depends on the use of specific prompting techniques [7]. In this technique,the trained LLMs are provided with specific inputs to act as a guideline for generating the desired output.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4068,
+              "type": "TextPositionSelector",
+              "start": 3851
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The quality of LLM responses often depends on the use of specific prompting techniques [7]. In this technique,the trained LLMs are provided with specific inputs to act as a guideline for generating the desired output.",
+              "prefix": " commonly used amongst students.",
+              "suffix": "Moreover, LLMs can be aligned du"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 5322,
+    "user": "Alicia Gates",
+    "role": "student",
+    "text": "study explores its application in a novel context",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4443,
+              "type": "TextPositionSelector",
+              "start": 4394
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "study explores its application in a novel context",
+              "prefix": "ng has been widely studied, this",
+              "suffix": ".Both of these techniques are us"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 5323,
+    "user": "Alicia Gates",
+    "role": "student",
+    "text": "vulnerable to jailbreak attacks",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4611,
+              "type": "TextPositionSelector",
+              "start": 4580
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "vulnerable to jailbreak attacks",
+              "prefix": "erwiseunwanted. Still, they are ",
+              "suffix": ", where specific user inputs byp"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 5324,
+    "user": "Alicia Gates",
+    "role": "student",
+    "text": "n issue with LLMs are hallucinations",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4716,
+              "type": "TextPositionSelector",
+              "start": 4680
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "n issue with LLMs are hallucinations",
+              "prefix": "he guidelines [15].Another commo",
+              "suffix": ", answers LLMs make up that are "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 5325,
+    "user": "Alicia Gates",
+    "role": "student",
+    "text": "L",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3375,
+              "type": "TextPositionSelector",
+              "start": 3374
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "L",
+              "prefix": "rt-cutting the learning process.",
+              "suffix": "arge Language Models (LLMs) have"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 5326,
+    "user": "Alicia Gates",
+    "role": "student",
+    "text": "e.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5091,
+              "type": "TextPositionSelector",
+              "start": 5089
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "e.",
+              "prefix": "what a student already knewbefor",
+              "suffix": "3This study will evaluate the pu"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 5327,
+    "user": "Alicia Gates",
+    "role": "student",
+    "text": "GPT 4.0,",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5165,
+              "type": "TextPositionSelector",
+              "start": 5157
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "GPT 4.0,",
+              "prefix": "icly available LLM chatbots for ",
+              "suffix": " Gemini 1.5 and a combination of"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 5328,
+    "user": "Alicia Gates",
+    "role": "student",
+    "text": "current computer science students with and without priorexposure using LLM chatbots",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6078,
+              "type": "TextPositionSelector",
+              "start": 5995
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "current computer science students with and without priorexposure using LLM chatbots",
+              "prefix": "study will then be conducted on ",
+              "suffix": ". This target demographic is cho"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 5329,
+    "user": "Alicia Gates",
+    "role": "student",
+    "text": "To evaluate the prompting in a first step, a qualitative study will test the LLMs with predefined queries tosee whether they will provide learning steps but not complete solutions. At least 10 different queries will beused on each LLM. The prompts will also be evaluated for their resistance to jailbreaking, by using commonmethods to try to bypass restrictions. This study can also be repeated, to fine tune the prompting used inlimiting the LLMs output. Data will be collected on the final effectiveness of the prompts, answering RQ1.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5948,
+              "type": "TextPositionSelector",
+              "start": 5412
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "To evaluate the prompting in a first step, a qualitative study will test the LLMs with predefined queries tosee whether they will provide learning steps but not complete solutions. At least 10 different queries will beused on each LLM. The prompts will also be evaluated for their resistance to jailbreaking, by using commonmethods to try to bypass restrictions. This study can also be repeated, to fine tune the prompting used inlimiting the LLMs output. Data will be collected on the final effectiveness of the prompts, answering RQ1.",
+              "prefix": "that these models will generate.",
+              "suffix": "A quantitative study will then b"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 5330,
+    "user": "Alicia Gates",
+    "role": "student",
+    "text": "This study will evaluate the publicly available LLM chatbots for GPT 4.0, Gemini 1.5 and a combination ofLLMs following [16]. These are chosen based on their popularity especially amongst students. Differentexisting and novel prompting strategies will be used to try and limit the output that these models will generate.To evaluate the prompting in a first step, a qualitative study will test the LLMs with predefined queries tosee whether they will provide learning steps but not complete solutions. At least 10 different queries will beused on each LLM. The prompts will also be evaluated for their resistance to jailbreaking, by using commonmethods to try to bypass restrictions. This study can also be repeated, to fine tune the prompting used inlimiting the LLMs output. Data will be collected on the final effectiveness of the prompts, answering RQ1.A quantitative study will then be conducted on current computer science students with and without priorexposure using LLM chatbots. This target demographic is chosen so that all participants should be familiarand experienced with efficiently learning about new topics. They will have access to different versions of LLMchatbots. These will include common LLM use versions of LLM teaching assistants with and without limitedaccess to the solution. The students will then be asked to answer questions about a topic in a domain new tothem, using the tools available. Afterwards, they will then be surveyed on their experience and evaluated onnew questions to test their understanding. This will help answer Sub-RQ1.1, Sub-RQ1.2 and RQ2.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6681,
+              "type": "TextPositionSelector",
+              "start": 5092
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "This study will evaluate the publicly available LLM chatbots for GPT 4.0, Gemini 1.5 and a combination ofLLMs following [16]. These are chosen based on their popularity especially amongst students. Differentexisting and novel prompting strategies will be used to try and limit the output that these models will generate.To evaluate the prompting in a first step, a qualitative study will test the LLMs with predefined queries tosee whether they will provide learning steps but not complete solutions. At least 10 different queries will beused on each LLM. The prompts will also be evaluated for their resistance to jailbreaking, by using commonmethods to try to bypass restrictions. This study can also be repeated, to fine tune the prompting used inlimiting the LLMs output. Data will be collected on the final effectiveness of the prompts, answering RQ1.A quantitative study will then be conducted on current computer science students with and without priorexposure using LLM chatbots. This target demographic is chosen so that all participants should be familiarand experienced with efficiently learning about new topics. They will have access to different versions of LLMchatbots. These will include common LLM use versions of LLM teaching assistants with and without limitedaccess to the solution. The students will then be asked to answer questions about a topic in a domain new tothem, using the tools available. Afterwards, they will then be surveyed on their experience and evaluated onnew questions to test their understanding. This will help answer Sub-RQ1.1, Sub-RQ1.2 and RQ2.",
+              "prefix": "t a student already knewbefore.3",
+              "suffix": "The quantitative study aims for "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 5331,
+    "user": "Alicia Gates",
+    "role": "student",
+    "text": "The quantitative study aims for at least 20 participants that each undergo the trial one at a time in a controlledenvironment with restricted access only to the tested LLM assistant. A control group will learn about the topicusing only conventional means, i.e. a textbook. Each group will consist of 5 participants.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6996,
+              "type": "TextPositionSelector",
+              "start": 6681
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The quantitative study aims for at least 20 participants that each undergo the trial one at a time in a controlledenvironment with restricted access only to the tested LLM assistant. A control group will learn about the topicusing only conventional means, i.e. a textbook. Each group will consist of 5 participants.",
+              "prefix": "er Sub-RQ1.1, Sub-RQ1.2 and RQ2.",
+              "suffix": "Occurrences of hallucinations mi"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 5332,
+    "user": "Alicia Gates",
+    "role": "student",
+    "text": "study aims for at least 20 participants",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6737,
+              "type": "TextPositionSelector",
+              "start": 6698
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "study aims for at least 20 participants",
+              "prefix": "-RQ1.2 and RQ2.The quantitative ",
+              "suffix": " that each undergo the trial one"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 5333,
+    "user": "Alicia Gates",
+    "role": "student",
+    "text": " experimentis rather small",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7120,
+              "type": "TextPositionSelector",
+              "start": 7094
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " experimentis rather small",
+              "prefix": "pecially because the size of the",
+              "suffix": ". For this reason, an analysis w"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 5334,
+    "user": "Alicia Gates",
+    "role": "student",
+    "text": "For this reason, an analysis will be conducted to check for hallucinated answers that LLMsmight provide. It can then be analyzed what impact these hallucinations had, and the data excluded from theevaluation of Sub-RQ1.1 and Sub-RQ1.2 if necessary",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7369,
+              "type": "TextPositionSelector",
+              "start": 7122
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "For this reason, an analysis will be conducted to check for hallucinated answers that LLMsmight provide. It can then be analyzed what impact these hallucinations had, and the data excluded from theevaluation of Sub-RQ1.1 and Sub-RQ1.2 if necessary",
+              "prefix": " the experimentis rather small. ",
+              "suffix": ". The learning topic for the stu"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 5335,
+    "user": "Alicia Gates",
+    "role": "student",
+    "text": " The learning topic for the students will also be pickedin such a way that it should be new for all participants",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7482,
+              "type": "TextPositionSelector",
+              "start": 7370
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " The learning topic for the students will also be pickedin such a way that it should be new for all participants",
+              "prefix": "Q1.1 and Sub-RQ1.2 if necessary.",
+              "suffix": " (i.e. not in their domain of st"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 5336,
+    "user": "Alicia Gates",
+    "role": "student",
+    "text": "This main analysis should provide insight into the learning effect different LLM tools can help with",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7880,
+              "type": "TextPositionSelector",
+              "start": 7780
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "This main analysis should provide insight into the learning effect different LLM tools can help with",
+              "prefix": "e data, if the students succeed.",
+              "suffix": ". As eachgroup consist of 5 peop"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 5337,
+    "user": "Alicia Gates",
+    "role": "student",
+    "text": " GPT 4.0, Gemini 1.5",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5176,
+              "type": "TextPositionSelector",
+              "start": 5156
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " GPT 4.0, Gemini 1.5",
+              "prefix": "licly available LLM chatbots for",
+              "suffix": " and a combination ofLLMs follow"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 5338,
+    "user": "Alicia Gates",
+    "role": "student",
+    "text": "T",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5093,
+              "type": "TextPositionSelector",
+              "start": 5092
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "T",
+              "prefix": "t a student already knewbefore.3",
+              "suffix": "his study will evaluate the publ"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 5339,
+    "user": "Alicia Gates",
+    "role": "student",
+    "text": " 20 participants",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6737,
+              "type": "TextPositionSelector",
+              "start": 6721
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " 20 participants",
+              "prefix": "titative study aims for at least",
+              "suffix": " that each undergo the trial one"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 5340,
+    "user": "Alicia Gates",
+    "role": "student",
+    "text": "Some students might also try to jailbreak the limitations. Occurrences of this will also be analyzed andexcluded from the data, if the students succeed.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7780,
+              "type": "TextPositionSelector",
+              "start": 7628
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Some students might also try to jailbreak the limitations. Occurrences of this will also be analyzed andexcluded from the data, if the students succeed.",
+              "prefix": "ons should be kept to a minimum.",
+              "suffix": "This main analysis should provid"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 5341,
+    "user": "Alicia Gates",
+    "role": "student",
+    "text": "Preparing Study",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8594,
+              "type": "TextPositionSelector",
+              "start": 8579
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Preparing Study",
+              "prefix": "effectiveness of the prompts2 8 ",
+              "suffix": " Selecting research/education ta"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 5342,
+    "user": "Alicia Gates",
+    "role": "student",
+    "text": "Recruitment",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8660,
+              "type": "TextPositionSelector",
+              "start": 8649
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Recruitment",
+              "prefix": "cation task for the study3 9-10 ",
+              "suffix": " Selecting and acquiring partici"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 5343,
+    "user": "Alicia Gates",
+    "role": "student",
+    "text": "Qualitative Analysis ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8532,
+              "type": "TextPositionSelector",
+              "start": 8511
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Qualitative Analysis ",
+              "prefix": "ing them in different LLMs2 6-7 ",
+              "suffix": "Evaluating the effectiveness of "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 5344,
+    "user": "Alicia Gates",
+    "role": "student",
+    "text": "novel prompting strategies",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5338,
+              "type": "TextPositionSelector",
+              "start": 5312
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "novel prompting strategies",
+              "prefix": "students. Differentexisting and ",
+              "suffix": " will be used to try and limit t"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 5345,
+    "user": "Alicia Gates",
+    "role": "student",
+    "text": " to include the variance ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7962,
+              "type": "TextPositionSelector",
+              "start": 7937
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " to include the variance ",
+              "prefix": " 5 people, it should be possible",
+              "suffix": "for each tool. At the very least"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  }
+]

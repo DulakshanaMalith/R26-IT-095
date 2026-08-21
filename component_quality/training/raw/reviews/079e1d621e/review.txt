@@ -1,0 +1,17 @@
+Summary
+The thesis proposes evaluating the robustness of conditional diffusion models for multi-label eye disease classification in fundus images, addressing limitations of state-of-the-art models, particularly in handling out-of-distribution samples.
+
+Strengths
+The methodology is comprehensive, with clear steps for benchmarking, fine-tuning, and evaluating models across multiple datasets.
+The proposal follows a logical flow
+
+Weaknesses
+(Citations)
+The proposal is rich on citations, which gives it more credibility and shows the engagement with the proposed research topic, However, the citations are probably added manually, so that the citation numbers are not in correct order. For example, the very first citation in the hook starts with 8. Ensure that the citation numbers are automatically adjusted based on the document’s structure. If using a citation manager, update the references and check for any misplaced or missing citations.
+
+(Language)- long sentences
+In general, using long sentences or paragraphs could make the ideas harder to understand for readers. It is highly recommended to use short and understandable sentences or paragraphs, since the proposal's topic not easy to understand for a reader without prior knowledge about medical computing. By these improvements, the proposal will be easier for the reader to follow and understand. It will also make your proposal in a way more academical.
+
+Others
+Good job! I look forward to seeing how your expose progresses! I recommend having a look at the comments on the expose in CARE and correcting the small spelling mistakes which are highlighted in red.
+

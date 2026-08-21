@@ -1,0 +1,92 @@
+[
+  {
+    "retain": 0
+  },
+  {
+    "insert": "Summary",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nThe text describes the development and investigation of a holographic AI assistant to improve preoperative planning in surgery. \n\n"
+  },
+  {
+    "insert": "Strengths",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nA good hook is important to motivate readers to read your text. You've done a great job. In particular, the incorporation of statistical data makes your introduction much more interesting."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "\n\n"
+  },
+  {
+    "insert": "Weaknesses",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nAcademic papers are written as continuous text to facilitate a coherent, comprehensible flow of argumentation and to ensure the clear presentation of complex content. Since your text consists of many individual paragraphs and bullet points, it is more difficult to follow it. Read your text carefully again and delete unnecessary paragraphs. Instead, try to find transitions and leave out the bullet points."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "The motivation should explain to the reader why the chosen topic is relevant and which weakness the thesis wants to address. In your text the problem and its relevance are only mentioned, but not described in detail. It would be important to explain in more detail why the topic is important, what general problem is being addressed and what the significance of solving this problem is. You could use examples for this."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "The methodology describes how the individual research questions will be answered. Your methodology already has a good structure, but it should be more detailed. Consider more carefully how you plan to answer your research questions. For example, you should also address the software mentioned more clearly. It can also be helpful to address each research question individually in the methodology."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "\n"
+  },
+  {
+    "insert": "Other",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nSome minor grammatical mistakes. "
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "In academic writing, a formal and objective tone is important. Therefore, personal pronouns such as \"I\" or \"we\" should generally be avoided."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  }
+]

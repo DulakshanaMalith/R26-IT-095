@@ -1,0 +1,18 @@
+
+Summary:
+This project proposal aims to explore how Large Language Models can serve as personalised AI tutors by optimising learning paths across multiple subjects using Sweller’s Cognitive Load Theory, and investigates the ethical requirements through a mixed-methods study comparing LLM-based and human tutoring
+
+Strengths
+1) The structure of the proposal is well done, very smooth between the sentences, paragraphs.
+2) In the methodology, the most difficult part is underlined and points out the possible bias of the results if the variety of student’s backgrounds is not achieved. 
+
+Weaknesses
+1) (Credibility)
+		In scientific writing, one of the most important things is citing the claims and ideas to provide evidence, demonstrate engagement, give credit to the work of other researchers and make your own work more credible for readers. The exposition lacks citations to support the claims made. For instance, in the very beginning of the motivation, where the hook defined, it would strengthen your argument to reference specific studies or examples. Without citations, the points you raise come across as opinions rather than evidence-based insights, which can weaken the academic value of your work. In this proposal, educational studies could validate your points about how student-centered classrooms are effecting students outcomes positively, while articles on AI limitations could support your critiques. Citations must me also done properly. In this proposal they could be in numerical forms to use them in the motivation and approach easily.
+2) (Language)
+		The language in scientific work should be precise, formal, and objective to communicate ideas clearly and credibly, without trying the reader to convince. However, in this proposal there are some areas where the language could be further refined. For example, phrases like "desperately needed" and "too simplistic" can come across as subjective or overly informal. Instead, consider make it more neutral, objective. I recommend reviewing the text to eliminate subjective language. As it is a thesis proposal, avoid terms like “we”, “our”…
+3) (Content in general)
+		The content is well-structured, and the research questions are clear and aligned with the goals of the study. You effectively highlight the challenges of current AI systems and the need for improvements in personalised learning tools.However, while Sweller’s Cognitive Load Theory is a strong theoretical foundation, its application to LLMs could be elaborated further. Similarly, the section discussing feedback loops lacks detail on how these loops will be implemented or evaluated. Additionally, choosing undergraduate students as the primary sample could be clarified, particularly regarding how their diversity will be ensured. For the final expose, try going in more details with more criticizing, giving examples etc.
+
+Others:
+Good job so far, and I look forward to seeing how your expose progresses! I recommend having a look at the expose guideline slides again and of course the comments on the expose in CARE.

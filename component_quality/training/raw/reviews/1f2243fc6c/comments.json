@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1787,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "you did not delete the template?",
+    "annotationId": 1757,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1788,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Good",
+    "annotationId": 1758,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1789,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Not only is this a very generic expression, it is also unclear to me why a citation has been made",
+    "annotationId": 1759,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1790,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "No need to further point out weaknesses from here on, as approach and schedule are entirely missing",
+    "annotationId": 1760,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1791,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Good, but it is not clear what kind of data you want to collect so far. But probably, that would have come in the teaser or RQs",
+    "annotationId": 1761,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  }
+]

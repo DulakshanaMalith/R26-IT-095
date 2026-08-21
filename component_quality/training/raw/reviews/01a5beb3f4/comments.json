@@ -1,0 +1,112 @@
+[
+  {
+    "id": 602,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "You could also mention Qestion Answering as this might be the most relevant task for this use case.",
+    "annotationId": 594,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 603,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "A smother transition would increase readability.",
+    "annotationId": 595,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 604,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Here, it is common to name the author(s) or the source's name.",
+    "annotationId": 596,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 605,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Same as above",
+    "annotationId": 597,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 606,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "None",
+    "annotationId": 598,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 607,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Especially for students at university, this could be hard in a 6-month time frame.",
+    "annotationId": 599,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 608,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Of their current study or in general?",
+    "annotationId": 600,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 609,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "How are you going to handle non-repetitive subjects like in university?",
+    "annotationId": 601,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 610,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Very precise",
+    "annotationId": 602,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 611,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Thesis usually take 26 weeks",
+    "annotationId": 603,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  }
+]

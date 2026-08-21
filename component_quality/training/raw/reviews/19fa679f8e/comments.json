@@ -1,0 +1,206 @@
+[
+  {
+    "id": 2618,
+    "user": "Vincent Nelson",
+    "role": "student",
+    "text": "This effectively sets up the context for the study. It ties the problem of accessibility to the high costs of traditional methods, though adding a brief mention of affected demographics could enhance its relevance.",
+    "annotationId": 2571,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Joseph Luna",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2619,
+    "user": "Vincent Nelson",
+    "role": "student",
+    "text": "A clear summary of why current solutions are inadequate. This lays the groundwork for introducing LLM-based methods but could briefly note examples of these \"isolated approaches.\"",
+    "annotationId": 2572,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Joseph Luna",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2620,
+    "user": "Vincent Nelson",
+    "role": "student",
+    "text": "While engaging, the term \"revolutionize\" is strong without evidence. Consider tempering the language or referencing existing advancements in LLM applications to support the claim.",
+    "annotationId": 2573,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Joseph Luna",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2621,
+    "user": "Vincent Nelson",
+    "role": "student",
+    "text": "This main question is well-structured and relevant, clearly aligning with the study's focus. A brief mention of the types of educational systems being considered would add precision.",
+    "annotationId": 2574,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Joseph Luna",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2622,
+    "user": "Vincent Nelson",
+    "role": "student",
+    "text": "This sub-question is specific and supports the broader research question effectively. It introduces a comparative aspect that makes the research more practical and impactful.",
+    "annotationId": 2575,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Joseph Luna",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2623,
+    "user": "Vincent Nelson",
+    "role": "student",
+    "text": "The claim of \"outperforming\" lacks evidence at this stage. Providing a brief example or referencing existing studies would strengthen this statement.",
+    "annotationId": 2576,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Joseph Luna",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2624,
+    "user": "Vincent Nelson",
+    "role": "student",
+    "text": " A comprehensive and clear summary of the study's goals. It effectively captures the scope, though breaking this into shorter sentences might improve readability.",
+    "annotationId": 2577,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Joseph Luna",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2625,
+    "user": "Vincent Nelson",
+    "role": "student",
+    "text": "A strong statement that connects the proposed solution to the identified problem. Including references to support the claim would enhance credibility.",
+    "annotationId": 2578,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Joseph Luna",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2626,
+    "user": "Vincent Nelson",
+    "role": "student",
+    "text": "While insightful, this statement feels overly broad. Clarifying how these factors directly relate to the study's focus on LLMs would make it more impactful.\n",
+    "annotationId": 2579,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Joseph Luna",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2627,
+    "user": "Vincent Nelson",
+    "role": "student",
+    "text": "This is a concise and clear opening to the methodology section. A brief rationale for combining these methods could add value.",
+    "annotationId": 2580,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Joseph Luna",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2628,
+    "user": "Vincent Nelson",
+    "role": "student",
+    "text": "A thoughtful acknowledgment of risks, which adds depth to the methodology. Including examples of how these risks will be mitigated would make it stronger.",
+    "annotationId": 2581,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Joseph Luna",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2629,
+    "user": "Vincent Nelson",
+    "role": "student",
+    "text": "arXiv is not an accepted source for this context according to the criteria provided. While it can provide useful preliminary insights, it is not peer-reviewed and lacks the academic rigor required for the exposé's bibliography. I recommend replacing this reference with a peer-reviewed source that addresses similar concepts.",
+    "annotationId": 2582,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Joseph Luna",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  }
+]

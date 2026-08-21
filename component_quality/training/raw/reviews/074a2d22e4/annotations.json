@@ -1,0 +1,932 @@
+[
+  {
+    "id": 330,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "his exposé was independently created and was linguistically revised with the assistance of ChatGPT.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 15143,
+              "type": "TextPositionSelector",
+              "start": 15044
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "his exposé was independently created and was linguistically revised with the assistance of ChatGPT.",
+              "prefix": "tps://arxiv.org/abs/2001.08317.T",
+              "suffix": "7HighlightStrengthWeaknessOther"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 7
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 331,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "Over the past few years, I have developed a growing interest in my personal health. To better understand mybody and its responses, I started monitoring health data such as heart rate variability (HRV) and recoverymetrics over two years ago. This practice has given me insights into how my lifestyle, stress levels, and dailyhabits influence my overall well-being",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 770,
+              "type": "TextPositionSelector",
+              "start": 408
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Over the past few years, I have developed a growing interest in my personal health. To better understand mybody and its responses, I started monitoring health data such as heart rate variability (HRV) and recoverymetrics over two years ago. This practice has given me insights into how my lifestyle, stress levels, and dailyhabits influence my overall well-being",
+              "prefix": "ber 9, 2024Darmstadt1 Motivation",
+              "suffix": ".HRV is a measure of the small c"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 332,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": ".A",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 981,
+              "type": "TextPositionSelector",
+              "start": 979
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": ".A",
+              "prefix": "axation, and overall health [10]",
+              "suffix": " recent study reports a sharp in"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 333,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "These findings are deeply concerning and highlight the urgent need forbetter stress management and prevention strategies",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1239,
+              "type": "TextPositionSelector",
+              "start": 1119
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "These findings are deeply concerning and highlight the urgent need forbetter stress management and prevention strategies",
+              "prefix": "duals aged 16–24 in the UK. [3] ",
+              "suffix": ".This raises an important questi"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 334,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "This raises an important question: Could generative artificial intelligence tackle this problem at its roots bydetecting stress early and designing personalized treatment plans to support mental and physical recovery?The problem is in the fields of healthcare and artificial intelligence (AI). It focuses on using generative AI tocreate personalized recovery plans in medicine and stress management.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1639,
+              "type": "TextPositionSelector",
+              "start": 1240
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "This raises an important question: Could generative artificial intelligence tackle this problem at its roots bydetecting stress early and designing personalized treatment plans to support mental and physical recovery?The problem is in the fields of healthcare and artificial intelligence (AI). It focuses on using generative AI tocreate personalized recovery plans in medicine and stress management.",
+              "prefix": "ement and prevention strategies.",
+              "suffix": "Most past research has looked at"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 335,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "This study will use generative AI to create custom recovery plans for people with stress and CMDs. It willcombine HRV and heart data to go beyond detection and provide real solutions to improve recovery andhealth.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2161,
+              "type": "TextPositionSelector",
+              "start": 1948
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "This study will use generative AI to create custom recovery plans for people with stress and CMDs. It willcombine HRV and heart data to go beyond detection and provide real solutions to improve recovery andhealth.",
+              "prefix": " not use advanced generative AI.",
+              "suffix": "Research Questions:Main RQ: How "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 336,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "Sub RQ 1: How can we prepare and combine different heart data (like HRV, heart rate, and bloodpressure) for Generative AI to use?",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2449,
+              "type": "TextPositionSelector",
+              "start": 2320
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Sub RQ 1: How can we prepare and combine different heart data (like HRV, heart rate, and bloodpressure) for Generative AI to use?",
+              "prefix": "alth using HRV and heart data?• ",
+              "suffix": "• Sub RQ 2: Which AI methods wor"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 337,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "Sub RQ 4: What problems, like privacy or fairness, do we need to solve when using Generative AI forpersonal treatment plans?",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2756,
+              "type": "TextPositionSelector",
+              "start": 2632
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Sub RQ 4: What problems, like privacy or fairness, do we need to solve when using Generative AI forpersonal treatment plans?",
+              "prefix": "d improve health for patients?• ",
+              "suffix": "22 ApproachSOTA HRV has long bee"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 338,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "Sub RQ 3: How can we check if the recovery plans are safe, useful, and improve health for patients?",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2630,
+              "type": "TextPositionSelector",
+              "start": 2531
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Sub RQ 3: How can we check if the recovery plans are safe, useful, and improve health for patients?",
+              "prefix": "g personalized recovery plans?• ",
+              "suffix": "• Sub RQ 4: What problems, like "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 339,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "Which AI methods work best ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2488,
+              "type": "TextPositionSelector",
+              "start": 2461
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Which AI methods work best ",
+              "prefix": "enerative AI to use?• Sub RQ 2: ",
+              "suffix": "for creating personalized recove"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 340,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "Bias and Ethics Review Analyzing potential fairness and bias issues within theAI models (Sub RQ 4)",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 10368,
+              "type": "TextPositionSelector",
+              "start": 10270
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Bias and Ethics Review Analyzing potential fairness and bias issues within theAI models (Sub RQ 4)",
+              "prefix": " recovery plans (Sub RQ 3).4 16 ",
+              "suffix": ".5 17-18 Advanced Testing Conduc"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 341,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "Phase 1",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 10027,
+              "type": "TextPositionSelector",
+              "start": 10020
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Phase 1",
+              "prefix": "s (Sub RQ 3).4 13-14 Validation ",
+              "suffix": " Quantitative validation of AI-g"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 342,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": " heart rate variability (HRV)",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 608,
+              "type": "TextPositionSelector",
+              "start": 579
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " heart rate variability (HRV)",
+              "prefix": "d monitoring health data such as",
+              "suffix": " and recoverymetrics over two ye"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 343,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": " Existing literature often highlights the potential for AI toenhance healthcare",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3942,
+              "type": "TextPositionSelector",
+              "start": 3863
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " Existing literature often highlights the potential for AI toenhance healthcare",
+              "prefix": "mic, personalized data like HRV.",
+              "suffix": ", yet few studies integrate real"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 344,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "My",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4215,
+              "type": "TextPositionSelector",
+              "start": 4213
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "My",
+              "prefix": " adaptive treatment strategies. ",
+              "suffix": " research positions itself at th"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 345,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "Integrated Stress-Response Frame-work (ISRF)",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4392,
+              "type": "TextPositionSelector",
+              "start": 4348
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Integrated Stress-Response Frame-work (ISRF)",
+              "prefix": "roduces a new theory called the ",
+              "suffix": ". The main idea behind the ISRF "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 346,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "SOTA",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2771,
+              "type": "TextPositionSelector",
+              "start": 2767
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "SOTA",
+              "prefix": "onal treatment plans?22 Approach",
+              "suffix": " HRV has long been recognized as"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 347,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "we ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4737,
+              "type": "TextPositionSelector",
+              "start": 4734
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "we ",
+              "prefix": "anced measurements like DFA a1, ",
+              "suffix": "can domore than just detect when"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 348,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "This means we could help people address problemsearlier, long before they become severe.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4988,
+              "type": "TextPositionSelector",
+              "start": 4900
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "This means we could help people address problemsearlier, long before they become severe.",
+              "prefix": "ed health issues in the future. ",
+              "suffix": "The ISRF takes these insights on"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 349,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "The ISRF takes these insights one step further by connecting them with powerful new technologies. By usinggenerative AI models, we can turn these early warning signs into personalized recovery plans. These planscould include recommendations for relaxation techniques, exercise routines, or other interventions tailored toa person’s unique physiological responses. In this way, the ISRF links our growing understanding of the body’sstress signals with practical tools to improve health and well-being.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5488,
+              "type": "TextPositionSelector",
+              "start": 4988
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The ISRF takes these insights one step further by connecting them with powerful new technologies. By usinggenerative AI models, we can turn these early warning signs into personalized recovery plans. These planscould include recommendations for relaxation techniques, exercise routines, or other interventions tailored toa person’s unique physiological responses. In this way, the ISRF links our growing understanding of the body’sstress signals with practical tools to improve health and well-being.",
+              "prefix": " long before they become severe.",
+              "suffix": "3Methodology The study will use "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 350,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "To ensure that the AI-generated plans are medically sound, clinical experts will review the models. Theseplans may include suggestions for relaxation techniques, light exercise, or medication adherenc",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7233,
+              "type": "TextPositionSelector",
+              "start": 7033
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "To ensure that the AI-generated plans are medically sound, clinical experts will review the models. Theseplans may include suggestions for relaxation techniques, light exercise, or medication adherenc",
+              "prefix": " dynamically as HRV data evolves",
+              "suffix": "e [15].Validation and difficulti"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 351,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "practicality",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7602,
+              "type": "TextPositionSelector",
+              "start": 7590
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "practicality",
+              "prefix": "nto the safety, usefulness, and ",
+              "suffix": " of the AI-generated plans.There"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 352,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": " ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8000,
+              "type": "TextPositionSelector",
+              "start": 7999
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " ",
+              "prefix": "haring personal data. To address",
+              "suffix": "these problems, the study will i"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 353,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "There may be practical difficulties along the way. For example, technical issues [12] such as sensors notworking correctly or missing data points could make it harder to get a clear picture of the patient’s healthover time. Some patients might find it challenging to follow the suggested recovery plans, or they might haveconcerns about sharing personal data. To address these problems, the study will include backup methods tohandle incomplete data (for instance, using imputation techniques [14]) and maintain transparency aboutdata handling to build trust. Regular check-ins with participants and adjustments to the AI models will helpovercome these hurdles and improve the overall reliability and usefulness of the system.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8355,
+              "type": "TextPositionSelector",
+              "start": 7629
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "There may be practical difficulties along the way. For example, technical issues [12] such as sensors notworking correctly or missing data points could make it harder to get a clear picture of the patient’s healthover time. Some patients might find it challenging to follow the suggested recovery plans, or they might haveconcerns about sharing personal data. To address these problems, the study will include backup methods tohandle incomplete data (for instance, using imputation techniques [14]) and maintain transparency aboutdata handling to build trust. Regular check-ins with participants and adjustments to the AI models will helpovercome these hurdles and improve the overall reliability and usefulness of the system.",
+              "prefix": "ality of the AI-generated plans.",
+              "suffix": "Ethics Ethical considerations wi"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 354,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "Ethics Ethical considerations will be a priority throughout the study. Patient data will be anonymized andsecurely stored to protect privacy. The AI models will be designed to avoid bias, ensuring fair treatment for allparticipants",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8586,
+              "type": "TextPositionSelector",
+              "start": 8355
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Ethics Ethical considerations will be a priority throughout the study. Patient data will be anonymized andsecurely stored to protect privacy. The AI models will be designed to avoid bias, ensuring fair treatment for allparticipants",
+              "prefix": "ty and usefulness of the system.",
+              "suffix": ".Epistemic goal The ultimate goa"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 355,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "arget population ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5709,
+              "type": "TextPositionSelector",
+              "start": 5692
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "arget population ",
+              "prefix": "very plans based on heart data.T",
+              "suffix": "and data source For data collect"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 356,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "Continuous data collection over weeks or months willprovide dynamic insights into HRV and related cardiovascular metrics. Partnerships with heart clinics andhealth data providers will ensure ethical approvals, patient consent, and compliance with data protectionlaws.The raw data will be cleaned and organized to ensure accuracy. Feature extraction techniques, such astime-based HRV analysis and advanced methods like DFA a1, will help to uncover meaningful patterns.Additional contextual information, such as patient demographics, medications, and baseline health metrics,will be integrated to enhance the dataset",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6670,
+              "type": "TextPositionSelector",
+              "start": 6056
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Continuous data collection over weeks or months willprovide dynamic insights into HRV and related cardiovascular metrics. Partnerships with heart clinics andhealth data providers will ensure ethical approvals, patient consent, and compliance with data protectionlaws.The raw data will be cleaned and organized to ensure accuracy. Feature extraction techniques, such astime-based HRV analysis and advanced methods like DFA a1, will help to uncover meaningful patterns.Additional contextual information, such as patient demographics, medications, and baseline health metrics,will be integrated to enhance the dataset",
+              "prefix": " clinical patient records [13]. ",
+              "suffix": ".Generative model For model crea"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 357,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "numbers-based and experience-based methods",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5602,
+              "type": "TextPositionSelector",
+              "start": 5560
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "numbers-based and experience-based methods",
+              "prefix": "y-step approach, combining both ",
+              "suffix": " to explore how generative AI ca"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 358,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "Epistemic goal The ultimate goal of this methodology is to demonstrate how real-time, data-driven AImodels can improve health outcomes. By creating personalized recovery plans, the study aims to provideactionable insights that could inform clinical guidelines for managing stress-induced cardiac conditions.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8894,
+              "type": "TextPositionSelector",
+              "start": 8587
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Epistemic goal The ultimate goal of this methodology is to demonstrate how real-time, data-driven AImodels can improve health outcomes. By creating personalized recovery plans, the study aims to provideactionable insights that could inform clinical guidelines for managing stress-induced cardiac conditions.",
+              "prefix": "r treatment for allparticipants.",
+              "suffix": "43 ScheduleMonth Week Task Descr"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 359,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "cardiovascular metrics",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6176,
+              "type": "TextPositionSelector",
+              "start": 6154
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "cardiovascular metrics",
+              "prefix": "c insights into HRV and related ",
+              "suffix": ". Partnerships with heart clinic"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  }
+]

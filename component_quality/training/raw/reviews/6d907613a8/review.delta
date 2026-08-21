@@ -1,0 +1,41 @@
+[
+  {
+    "retain": 0
+  },
+  {
+    "insert": "Summary",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\n\nThe study wants to check whether design principles can be used to improve holographic human-AI interaction.\n\n"
+  },
+  {
+    "insert": "Strengths",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\n\nThe current state of the art should be mentioned, and weaknesses and flaws should be shown. You nicely illustrated the current state of the field in which you will work.\n\n"
+  },
+  {
+    "insert": "Weaknesses",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\n\nThe research question should be precise. However, yours is very broad, as several design principles could be used. I recommend briefly mentioning which you plan to use and then, later, like you already did, explaining what those are exactly.\nThe theoretical framework should be precise, and the concepts should be explained shortly. You mention the concepts, but your explanations are too broad. It would help the reader if you would extend the explanations of the used concepts.\nYou should explain how you plan to use your methods in the methodology. You did this well for your user studies, but you should also describe how you plan to design the system. I recommend adding a short plan of how you want to design it.\n\n"
+  },
+  {
+    "insert": "Other",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\n\nYou still have a lot of typos and errors."
+  }
+]

@@ -1,0 +1,112 @@
+[
+  {
+    "id": 3759,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "should be a citation",
+    "annotationId": 3693,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3760,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Citation or \"will most likely\"",
+    "annotationId": 3694,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3761,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Add paper name (\\citetitle{}) for better readability",
+    "annotationId": 3695,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3762,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "None",
+    "annotationId": 3696,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3763,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "What is meant by neutral but friendly-looking?\n",
+    "annotationId": 3697,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3764,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "See above\n",
+    "annotationId": 3698,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3765,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Very precise and well thought",
+    "annotationId": 3699,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3766,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Very detailed",
+    "annotationId": 3700,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3767,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Usually 26 weeks",
+    "annotationId": 3701,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3768,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "I suggest starting that a little earlier, as it's like you already did, easily parallelizable.",
+    "annotationId": 3702,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  }
+]

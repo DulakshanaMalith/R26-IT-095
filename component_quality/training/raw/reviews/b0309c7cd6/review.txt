@@ -1,0 +1,19 @@
+Summary:
+This work aims to investigate how different AI programming assistants influence the performance of novice programmers. In addition, it wants to investigate whether an AI programming assistant that provides helpful explanations and guidance improves their learning progress.
+
+Strength:
+A well-structured exposé is essential for ensuring clarity and readability. A consistent structure helps guide the reader smoothly through the content, making complex ideas easier to follow and understand. This exposé has a very good structure.
+It is very important to clarify in an exposé what the aim of the work is in order to give the reader a precise understanding of the objectives. In this work, the research questions are clear and precise. However, it could be helpful to formulate a main research question to provide a clear focus for the entire study.
+
+Weakness:
+An interesting hook is necessary to capture the reader’s interest and encourage him to read this exposé. In this case, the introduction lacks the necessary impact needed to draw the reader in. Consider writing a more compelling introduction that is relevant to your topic. For that, you can orientate yourself on other scientific papers or look at citations and statistics.
+It is also important to establish a good theoretical framework in order to develop a good methodology. Unfortunately, the theoretical framework is completely missing in your exposé. Think about which theories or approaches could be important for your methodology. Additionally, read current literature on your subject area.
+It is important to effectively communicate the problem in the motivation section in order to demonstrate the relevance and significance of the research to the reader. Altough you point out the problem within your exposé, it would benefit from a more detailed explanation. Consider expanding on why this research is important by addressing key questions such as - Why is this topic important in the broader context of the field? -  What are the potential consequences of leaving these issues unresolved? 
+The relevance of the state of the art should be clearly established, demonstrating how existing research ties into the current study and why it is crucial for advancing the research. In this context, it is very important to work out the current weak points. Unfortunately, this is not detailed enough in your work. Take a look at the weak points you have mentioned and go into them in more detail. Additionally, you should differentiate your work more clearly from the state of the art. What gap do you want to address with your work? Name it.
+A detailed methodology is crucial for effectively planning your thesis and addressing the research questions. Your methodology is well-structured and very good. However, you should also mention what practical hurdles could arise and what limitations these methods have. Take a closer look at your methodology and research its limitations.
+The time schedule is used to plan the thesis in advance to see whether it is possible in the short time available. It is therefore very important that all aspects of the thesis are included. The writing of the thesis is missing in your time schedule. Think about which chapters all belong in a thesis and when they should best be written. 
+
+
+Other:
+Minor mistakes (e.g. differ - differs).
+Some formulations can sound more scientific (e.g. tend to).

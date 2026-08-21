@@ -1,0 +1,167 @@
+[
+  {
+    "id": 612,
+    "user": "Vincent Nelson",
+    "role": "student",
+    "text": "The motivation highlights an important research gap but could be articulated more clearly. For instance, the phrasing \"obvious problems\" is vague and requires specification. Providing concrete examples of these problems would strengthen the argument.",
+    "annotationId": 604,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 613,
+    "user": "Vincent Nelson",
+    "role": "student",
+    "text": "This statement effectively identifies the core issue. Including a brief example or scenario where prompt injection was exploited would make it more compelling.",
+    "annotationId": 605,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 614,
+    "user": "Vincent Nelson",
+    "role": "student",
+    "text": "The research question is broad and lacks specificity. It does not sufficiently address the depth required for a comprehensive study. Expanding it to include questions on ethical implications, scalability, or practical applications would improve the scope.",
+    "annotationId": 606,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 615,
+    "user": "Vincent Nelson",
+    "role": "student",
+    "text": "Only one research question is provided. This is insufficient for a study of this complexity. The inclusion of multiple sub-research questions would allow for a more nuanced exploration of the topic, such as analyzing different attack scenarios or evaluating the effectiveness of countermeasures.\n",
+    "annotationId": 607,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 616,
+    "user": "Vincent Nelson",
+    "role": "student",
+    "text": "This sentence provides a clear direction for the study but lacks a connection to state-of-the-art (SOTA) methodologies. Explicitly linking the proposed scenarios to advanced, established techniques in the field would improve the rigor of the approach.",
+    "annotationId": 608,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 617,
+    "user": "Vincent Nelson",
+    "role": "student",
+    "text": " Prevention methods should not be treated as a \"bonus\" but as a central part of the research. This section should outline a structured plan for evaluating countermeasures, including metrics for their success.",
+    "annotationId": 609,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 618,
+    "user": "Vincent Nelson",
+    "role": "student",
+    "text": "A theoretical framework is necessary to ground the study in existing academic research. For example, frameworks from IT security or adaptive systems could provide a strong foundation for analyzing LLM vulnerabilities.",
+    "annotationId": 610,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 619,
+    "user": "Vincent Nelson",
+    "role": "student",
+    "text": "The formatting issue reduces readability and professionalism. Additionally, the schedule does not include contingency plans for delays or unforeseen challenges, which undermines its robustness.",
+    "annotationId": 611,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 620,
+    "user": "Vincent Nelson",
+    "role": "student",
+    "text": "The use of an arXiv preprint is problematic, as it is not peer-reviewed and does not meet the academic standards required for this exposé. This source should be replaced with a peer-reviewed article.\n",
+    "annotationId": 612,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 621,
+    "user": "Vincent Nelson",
+    "role": "student",
+    "text": "Similar to the above, this arXiv preprint does not adhere to academic standards. Replace it with a peer-reviewed publication to maintain the credibility of the research.",
+    "annotationId": 613,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 622,
+    "user": "Vincent Nelson",
+    "role": "student",
+    "text": "\"a LLM\" should be \"an LLM\" because \"LLM\" starts with a vowel sound.",
+    "annotationId": 614,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 623,
+    "user": "Vincent Nelson",
+    "role": "student",
+    "text": "sese\" is a typographical error; it should be \"sense.\" \"to late\" should be \"too late.\"",
+    "annotationId": 615,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 624,
+    "user": "Vincent Nelson",
+    "role": "student",
+    "text": "\"an obvious ways\" is incorrect; \"ways\" is plural and should not follow \"an.\"",
+    "annotationId": 616,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 625,
+    "user": "Vincent Nelson",
+    "role": "student",
+    "text": "Issue 1: \"counter measures\" should be \"countermeasures.\"\nIssue 2: \"to detects\" should be \"to detect.\"",
+    "annotationId": 617,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 626,
+    "user": "Vincent Nelson",
+    "role": "student",
+    "text": "Therefore\n",
+    "annotationId": 618,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  }
+]

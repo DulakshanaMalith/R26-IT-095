@@ -1,0 +1,188 @@
+[
+  {
+    "id": 4754,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Rehabilitation plays a key role in a patient’s medical recovery, especially after major surgeries such as total kneeor shoulder replacements. However, post-surgical rehabilitation often faces challenges that hinder optimaloutcomes. Many rehabilitation programs follow standardized protocols that fail to account for individualdifferences, such as joint stiffness, muscle recovery, pain levels, and variations in physical condition, leading toslower recovery and increased reinjury risks. Traditional approaches also rely heavily on clinician assessments,providing limited real-time feedback to patients, which can result in misjudgments about progress or incorrectexercise execution. Without accurate and continuous monitoring, patients may overexert themselves orunderperform, further increasing the risk of reinjury and unnecessarily prolonging hospital stays.Recent advancements in wearable technology and artificial intelligence (AI) have opened new avenues toaddress these challenges by enabling the real-time monitoring of a patient’s progress. Devices such assmartwatches, sensors and wearable motion capture systems [1] can gather precise data on joint movement,muscle activity and pain levels. These kinds of devices are becoming increasingly affordable, making themmore accessible than ever before. Coupled with AI, this data could be used to create personalized exerciseplans that are adjusted dynamically based on the patient’s needs. If such a system passes clinical trials, itcould help relieve the burden on the healthcare system, which is currently facing ever increasing workforceshortages.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2010,
+              "type": "TextPositionSelector",
+              "start": 403
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Rehabilitation plays a key role in a patient’s medical recovery, especially after major surgeries such as total kneeor shoulder replacements. However, post-surgical rehabilitation often faces challenges that hinder optimaloutcomes. Many rehabilitation programs follow standardized protocols that fail to account for individualdifferences, such as joint stiffness, muscle recovery, pain levels, and variations in physical condition, leading toslower recovery and increased reinjury risks. Traditional approaches also rely heavily on clinician assessments,providing limited real-time feedback to patients, which can result in misjudgments about progress or incorrectexercise execution. Without accurate and continuous monitoring, patients may overexert themselves orunderperform, further increasing the risk of reinjury and unnecessarily prolonging hospital stays.Recent advancements in wearable technology and artificial intelligence (AI) have opened new avenues toaddress these challenges by enabling the real-time monitoring of a patient’s progress. Devices such assmartwatches, sensors and wearable motion capture systems [1] can gather precise data on joint movement,muscle activity and pain levels. These kinds of devices are becoming increasingly affordable, making themmore accessible than ever before. Coupled with AI, this data could be used to create personalized exerciseplans that are adjusted dynamically based on the patient’s needs. If such a system passes clinical trials, itcould help relieve the burden on the healthcare system, which is currently facing ever increasing workforceshortages.",
+              "prefix": "ber 9, 2024Darmstadt1 Motivation",
+              "suffix": "1.1 Research QuestionThe aim of "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 4755,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Generative Artificial Intelligence (AI) refers to algorithms capable of generating new, useful outputs based oninput data. Key subfields relevant to this research include machine learning models, such as decision treesand random forests, which can analyze patient data—such as age, BMI, pain levels, and mobility scores—topredict recovery timelines and determine optimal physical therapy interventions. Additionally, ReinforcementLearning (RL) focuses on optimizing decision-making by learning from patient feedback. In the context ofrehabilitation, RL can dynamically adapt exercise regimens based on real-time patient progress, effectivelyenhancing recovery outcomes.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5237,
+              "type": "TextPositionSelector",
+              "start": 4568
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Generative Artificial Intelligence (AI) refers to algorithms capable of generating new, useful outputs based oninput data. Key subfields relevant to this research include machine learning models, such as decision treesand random forests, which can analyze patient data—such as age, BMI, pain levels, and mobility scores—topredict recovery timelines and determine optimal physical therapy interventions. Additionally, ReinforcementLearning (RL) focuses on optimizing decision-making by learning from patient feedback. In the context ofrehabilitation, RL can dynamically adapt exercise regimens based on real-time patient progress, effectivelyenhancing recovery outcomes.",
+              "prefix": "ry (TotalKnee Replacement, TKR).",
+              "suffix": "The treatment plan developed by "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4756,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Conduct a small-scale clinical trial using wearable devices with AI-driven real-time feedback for rehabili-tation exercises. Patients recovering from TKR surgery will be monitored, and data will be collected onrecovery speed, pain levels, and reinjury rates.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6789,
+              "type": "TextPositionSelector",
+              "start": 6531
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Conduct a small-scale clinical trial using wearable devices with AI-driven real-time feedback for rehabili-tation exercises. Patients recovering from TKR surgery will be monitored, and data will be collected onrecovery speed, pain levels, and reinjury rates.",
+              "prefix": "t on rehabilitation outcomes.4. ",
+              "suffix": "5. Address potential ethical iss"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4757,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "This study will feature both quantitative and qualitative methods.1. Conduct a thorough review of existing research on wearable technology in rehabilitation, AI in healthcare,and personalized rehabilitation systems. This will assess the current state of knowledge, including themost effective AI architectures and the key physiological parameters influencing recovery outcomes.2. Analyze real-world case studies where wearable devices and AI have been used for post-surgical reha-bilitation, particularly in knee or shoulder surgeries. Evaluate the outcomes, challenges, and lessonslearned from these cases.3. Develop an AI model capable of adjusting and analyzing exercise regimens for individual patients inreal time using wearable sensors. The algorithm will be tested in a controlled environment to assess itsaccuracy, reliability, and impact on rehabilitation outcomes.4. Conduct a small-scale clinical trial using wearable devices with AI-driven real-time feedback for rehabili-tation exercises. Patients recovering from TKR surgery will be monitored, and data will be collected onrecovery speed, pain levels, and reinjury rates.5. Address potential ethical issues, such as patient consent, data privacy, and the interpretation of AI-driven recommendations. This analysis will consider how to protect patient data and ensure that AIrecommendations are transparent and understandable to patients and healthcare providers.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7080,
+              "type": "TextPositionSelector",
+              "start": 5654
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "This study will feature both quantitative and qualitative methods.1. Conduct a thorough review of existing research on wearable technology in rehabilitation, AI in healthcare,and personalized rehabilitation systems. This will assess the current state of knowledge, including themost effective AI architectures and the key physiological parameters influencing recovery outcomes.2. Analyze real-world case studies where wearable devices and AI have been used for post-surgical reha-bilitation, particularly in knee or shoulder surgeries. Evaluate the outcomes, challenges, and lessonslearned from these cases.3. Develop an AI model capable of adjusting and analyzing exercise regimens for individual patients inreal time using wearable sensors. The algorithm will be tested in a controlled environment to assess itsaccuracy, reliability, and impact on rehabilitation outcomes.4. Conduct a small-scale clinical trial using wearable devices with AI-driven real-time feedback for rehabili-tation exercises. Patients recovering from TKR surgery will be monitored, and data will be collected onrecovery speed, pain levels, and reinjury rates.5. Address potential ethical issues, such as patient consent, data privacy, and the interpretation of AI-driven recommendations. This analysis will consider how to protect patient data and ensure that AIrecommendations are transparent and understandable to patients and healthcare providers.",
+              "prefix": "ach to recovery.32.3 Methodology",
+              "suffix": "43 ScheduleMonth Week Task Descr"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4758,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "24",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7763,
+              "type": "TextPositionSelector",
+              "start": 7761
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "24",
+              "prefix": "nguistic and formal review.6 21-",
+              "suffix": " Buffer Account for delays. Prin"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4759,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Description",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7118,
+              "type": "TextPositionSelector",
+              "start": 7107
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Description",
+              "prefix": "ders.43 ScheduleMonth Week Task ",
+              "suffix": "1 1 Planning Create a detailed p"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  }
+]

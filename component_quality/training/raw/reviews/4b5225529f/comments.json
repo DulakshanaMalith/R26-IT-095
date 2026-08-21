@@ -1,0 +1,228 @@
+[
+  {
+    "id": 5520,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Check your bibtex entry, this appears when the entry has \"howpublished\".",
+    "annotationId": 5437,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5521,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Citation should be at the end of a sentence e.g. \"this is a sentence [1].\"",
+    "annotationId": 5438,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Lori Green",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 5522,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "You should always mention, if possible, if the data from the US is comparable to EU/DE data.",
+    "annotationId": 5439,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Lori Green",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 5523,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Your research questions are good, but seem very ambitious. ",
+    "annotationId": 5440,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5524,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "In europeans? In the motivation you mentioned a study from the US that mostly shows racial bias in data, is this correlated?",
+    "annotationId": 5441,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Lori Green",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 5525,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Unlikely achievable for a student. ",
+    "annotationId": 5442,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Lori Green",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 5526,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "are those free of bias or how is the quality?",
+    "annotationId": 5443,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Lori Green",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 5527,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "This seems like a list of tools which may be necessary, without knowing what the data looks like. That does not increase the trust of the reader.",
+    "annotationId": 5444,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Lori Green",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 5528,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "How? ",
+    "annotationId": 5445,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Lori Green",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 5529,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "how?",
+    "annotationId": 5446,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Lori Green",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 5530,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Getting that data and confirming that it will have bias, would not be in the best interest of the data owner, so this may be difficult. ",
+    "annotationId": 5447,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Lori Green",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 5531,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "This group needs to be defined! ",
+    "annotationId": 5448,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Lori Green",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 5532,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Very unrealistic schedule for all the things you plan to do, maybe reduce what you want to achieve to a more manageable amount. ",
+    "annotationId": 5449,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Lori Green",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 5533,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "we don't print Thesis at TUDa",
+    "annotationId": 5450,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Lori Green",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  }
+]

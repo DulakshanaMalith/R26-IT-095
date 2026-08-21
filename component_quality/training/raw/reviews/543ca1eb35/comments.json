@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1558,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "cite it like other sources\n",
+    "annotationId": 1530,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 2
+  },
+  {
+    "id": 1559,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "Source?",
+    "annotationId": 1531,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 2
+  },
+  {
+    "id": 1560,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "which?\n",
+    "annotationId": 1532,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 2
+  },
+  {
+    "id": 1561,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "Don't do that. Just write Large Language Models (LLM)\n",
+    "annotationId": 1533,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 2
+  },
+  {
+    "id": 1562,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "Don't do this in RQs",
+    "annotationId": 1534,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 2
+  }
+]

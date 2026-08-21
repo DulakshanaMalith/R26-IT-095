@@ -1,0 +1,167 @@
+[
+  {
+    "id": 1520,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "the colon is usually used to separate title and subtitle. ",
+    "annotationId": 1492,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1521,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "Good hook, but references are needed\n",
+    "annotationId": 1493,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1522,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "the industrial domain seems to be the wrong context when your work is about the domain of education",
+    "annotationId": 1494,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1523,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "what is the problem this solution is for?",
+    "annotationId": 1495,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1524,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "would rather write student's than öearner (in the whole text)",
+    "annotationId": 1496,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1525,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "seems like a repetition of previous paragraph",
+    "annotationId": 1497,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1526,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "Reconsider if you want to find ways of evaluating LLMs or you want to evaluate LLMs",
+    "annotationId": 1498,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1527,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "There is already research about how to use LLMs in education.",
+    "annotationId": 1499,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1528,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "good",
+    "annotationId": 1500,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1529,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "good",
+    "annotationId": 1501,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1530,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "the theories are important but you did not explain them",
+    "annotationId": 1502,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1531,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "this could already lead to a bias",
+    "annotationId": 1503,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1532,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "you never explained what LLM based learning agents actually are",
+    "annotationId": 1504,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1533,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "how do you collect this data?",
+    "annotationId": 1505,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1534,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "and when do you do the full study?",
+    "annotationId": 1506,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  }
+]

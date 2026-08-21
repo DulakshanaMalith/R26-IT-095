@@ -1,0 +1,65 @@
+[
+  {
+    "retain": 0
+  },
+  {
+    "insert": "Feed-Up (Connecting to goals and standards):"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "header": 3
+    }
+  },
+  {
+    "insert": "Your exposé is written in a clear and engaging style, making it easy to read. The research questions are well thought out and demonstrate a solid understanding of the topic.\n\nFeed-Forward (Actionable suggestions for improvement):"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "header": 3
+    }
+  },
+  {
+    "insert": "Adjust Your Schedule",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": ": The timeline you have set is too tight. Conducting all the planned interviews and working with the number of participants you propose will be very difficult within the timeframe of a thesis. Reassess your schedule and reduce the scope to make it more realistic."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "ordered"
+    }
+  },
+  {
+    "insert": "Writing your Thesis",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": ": You don't really mention when you want to write which chapters, be more explicit about this item!"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "ordered"
+    }
+  },
+  {
+    "insert": "\nSummary (Overall assessment):"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "header": 3
+    }
+  },
+  {
+    "insert": "Your exposé is well-written with strong research questions. By refining your schedule and narrowing the scope of your participant work, your project will become much more feasible. Great work so far, keep it up!"
+  }
+]

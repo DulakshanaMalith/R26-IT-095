@@ -1,0 +1,101 @@
+[
+  {
+    "id": 527,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "should be shown using a citation",
+    "annotationId": 520,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 528,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Seems a bit much for a BSc Thesis",
+    "annotationId": 521,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 529,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Make sure the tabular isn't crossing the page bounderies",
+    "annotationId": 522,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 530,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Thesis usual take 26 weeks",
+    "annotationId": 523,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 531,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Where are those planned in your schedule?",
+    "annotationId": 524,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 532,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Could be critical",
+    "annotationId": 525,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 533,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Partly hard to follow what you are really trying to do",
+    "annotationId": 526,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 534,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "remove first period",
+    "annotationId": 527,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 535,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "None",
+    "annotationId": 528,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  }
+]

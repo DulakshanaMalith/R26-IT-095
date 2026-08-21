@@ -1,0 +1,140 @@
+[
+  {
+    "id": 3864,
+    "user": "Claire Baker",
+    "role": "student",
+    "text": "typo",
+    "annotationId": 3798,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Ann Ball",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 3865,
+    "user": "Claire Baker",
+    "role": "student",
+    "text": "more buffer time might be needed",
+    "annotationId": 3799,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Ann Ball",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 3866,
+    "user": "Claire Baker",
+    "role": "student",
+    "text": "good hook, something many people can relate to",
+    "annotationId": 3800,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Ann Ball",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 3867,
+    "user": "Claire Baker",
+    "role": "student",
+    "text": "OOD is never explained",
+    "annotationId": 3801,
+    "parentCommendId": null,
+    "tags": [
+      "ood"
+    ],
+    "votes": [
+      {
+        "user": "Ann Ball",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 3868,
+    "user": "Claire Baker",
+    "role": "student",
+    "text": "good explanation",
+    "annotationId": 3802,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Ann Ball",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 3869,
+    "user": "Claire Baker",
+    "role": "student",
+    "text": "well thought out fallback structure",
+    "annotationId": 3803,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Ann Ball",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 3870,
+    "user": "Claire Baker",
+    "role": "student",
+    "text": "Is this enough time? how are the models trained? On what hardware?",
+    "annotationId": 3804,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Ann Ball",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 3871,
+    "user": "Claire Baker",
+    "role": "student",
+    "text": "well structured",
+    "annotationId": 3805,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Ann Ball",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  }
+]

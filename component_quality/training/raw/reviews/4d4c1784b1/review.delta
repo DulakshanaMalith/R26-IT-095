@@ -1,0 +1,23 @@
+[
+  {
+    "retain": 0
+  },
+  {
+    "insert": "While the motivation starts off strongly, it also uses bold claims like \"computers being smarter than their creators\" without a source. This claim either needs a high-value source, a publication on a well-established conference or journal, for example, or should be avoided entirely. In its current state, it is just an unsupported claim, reminiscent of a clickbait title.\n\nFurther, \"AI has emerged as a transformative tool für designing individualized cancer treatment plans,\" suggests plenty of previous work doing this. However, the paper continues by just presenting one paper. So does this mean AI has emerged as a transformative tool, if just one work did it? I am sure there is more related work out there, which should be included here.\n\nThe Motivation has different levels of detail when explaining the subjects of the paper. For instance, TME is being explained in great detail, while the AI side of the project gets motivated using “advanced AI techniques”. Here, the author should be more precise and at least tease the technique(s) used. \n\nAlso, a major issue is the lack of a distinct research question. The Motivation raises a question right at the end of the first paragraph. However, this question is rather a rhetorical question than a research question. Authors should include at least one sound research question that is answered in the work.\n\nThe most critical issue, however, is the use of related work. Section 2.3.1 states: “The AI model from paper [3] will be used” and “The model will be enhanced using the dataset” [6]. Both papers appear to be review papers and do not propose a single model or dataset. Here, the author needs to be very specific about which model and which dataset are used. Currently, it reads like an LLM wrote this, as it doesn’t have a clue what this means in the end. Also, what is meant by “enhanced”? Fine-tuned? The author should be a bit more precise here.\n\nMinor Things:\nMake sure to include the DOI of your references"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "The references appear quite old. Look for more recent work. I am convident you will find articles"
+  },
+  {
+    "attributes": {
+      "list": "bullet"
+    },
+    "insert": "\n"
+  }
+]

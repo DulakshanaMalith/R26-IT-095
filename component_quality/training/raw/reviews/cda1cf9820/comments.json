@@ -1,0 +1,80 @@
+[
+  {
+    "id": 817,
+    "user": "Regina Reid",
+    "role": "student",
+    "text": "This doesn't really look relevant to our motivation",
+    "annotationId": 806,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Jennifer Olsen",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 818,
+    "user": "Regina Reid",
+    "role": "student",
+    "text": "only RQs, no sub-RQ?",
+    "annotationId": 807,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 819,
+    "user": "Regina Reid",
+    "role": "student",
+    "text": "None",
+    "annotationId": 808,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 820,
+    "user": "Regina Reid",
+    "role": "student",
+    "text": "Explicitly note that this can be shortened to LLMs if you want to use the shortened version later.",
+    "annotationId": 809,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 821,
+    "user": "Regina Reid",
+    "role": "student",
+    "text": "What would be developed here, specifically?\n",
+    "annotationId": 810,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 822,
+    "user": "Regina Reid",
+    "role": "student",
+    "text": "Sorry, what? Why are you developing an existing theoretical framework?",
+    "annotationId": 811,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Jennifer Olsen",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  }
+]

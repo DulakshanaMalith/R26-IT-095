@@ -1,0 +1,30 @@
+{
+  "topic": "Interactive LLM-based teaching agents",
+  "author": "John Mullen",
+  "reviews": {
+    "1": {
+      "review": 1,
+      "hash": "543ca1eb35",
+      "reviewer": "Stephanie Morgan",
+      "role": "expert",
+      "size": 2429,
+      "group": 2
+    },
+    "2": {
+      "review": 2,
+      "hash": "b6125055cf",
+      "reviewer": "Diana Dyer",
+      "role": "student",
+      "size": 3516,
+      "group": 1
+    },
+    "3": {
+      "review": 3,
+      "hash": "7200926268",
+      "reviewer": "Sean Herrera",
+      "role": "assistant",
+      "size": 753,
+      "group": 1
+    }
+  }
+}

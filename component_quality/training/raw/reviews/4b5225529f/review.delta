@@ -1,0 +1,95 @@
+[
+  {
+    "retain": 0
+  },
+  {
+    "insert": "Feed-Up (Connecting to goals and standards):"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "header": 3
+    }
+  },
+  {
+    "insert": "Your exposé is well-researched and demonstrates a strong understanding of the topic. However, there are inconsistencies and feasibility concerns that need to be addressed.\n"
+  },
+  {
+    "attributes": {
+      "header": 3
+    },
+    "insert": "\n"
+  },
+  {
+    "insert": "Feed-Forward (Actionable suggestions for improvement):"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "header": 3
+    }
+  },
+  {
+    "insert": "Refine Methods",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": ": Some aspects of the methodology seem unachievable within the scope of your thesis. Simplify and adapt the approach to make it more feasible."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "ordered"
+    }
+  },
+  {
+    "insert": "Adjust Time Schedule",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": ": The timeline is overly optimistic. Reassess the tasks and allocate realistic timeframes to ensure you can complete everything within the thesis period."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "ordered"
+    }
+  },
+  {
+    "insert": "Create a Cohesive Storyline",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": ": There are inconsistencies in your storyline. For example, the motivation discusses biased data from the US, while the approach shifts focus to biased data from EU citizens. Review the entire exposé to ensure the narrative is cohesive and aligned."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "ordered"
+    }
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "header": 3
+    }
+  },
+  {
+    "insert": "Summary (Overall assessment):"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "header": 3
+    }
+  },
+  {
+    "insert": "Your exposé is thoughtful and well-researched. By simplifying the methods, creating a realistic timeline, and ensuring a cohesive storyline, you can refine it into a stronger, more impactful document. Great work so far!\n"
+  }
+]

@@ -1,0 +1,312 @@
+[
+  {
+    "id": 2200,
+    "user": "Sharon May",
+    "role": "student",
+    "text": "Evaluating theEffectiveness of ITS Agents forFirst-Year and AdvancedStudents",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 168,
+              "type": "TextPositionSelector",
+              "start": 92
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Evaluating theEffectiveness of ITS Agents forFirst-Year and AdvancedStudents",
+              "prefix": "Enhancing ProgrammingEducation: ",
+              "suffix": "Name: AnonymizedMatrikelnummer: "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 1
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2201,
+    "user": "Sharon May",
+    "role": "student",
+    "text": "Programming is an essential skill for many carrier paths in higher education [2]. Despite the importance oflearning to program, it is difficult for many first year students. Universities often depict that you don’t needprior knowledge of programming to successfully get your Bachelors degree. But many first year studentsstruggle with the steep learning curve. There is also a clear gap between these students and students whohave already starting learning programming beforehand. This creates an additional challenge for instructorsto overcome [2]. In addition, the student to instructor ratio is already large and ever-increasing [6]. Thismakes it impossible to provide a good personalized learning experience for students.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1098,
+              "type": "TextPositionSelector",
+              "start": 373
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Programming is an essential skill for many carrier paths in higher education [2]. Despite the importance oflearning to program, it is difficult for many first year students. Universities often depict that you don’t needprior knowledge of programming to successfully get your Bachelors degree. But many first year studentsstruggle with the steep learning curve. There is also a clear gap between these students and students whohave already starting learning programming beforehand. This creates an additional challenge for instructorsto overcome [2]. In addition, the student to instructor ratio is already large and ever-increasing [6]. Thismakes it impossible to provide a good personalized learning experience for students.",
+              "prefix": "ber 9, 2024Darmstadt1 Motivation",
+              "suffix": "The recent rise in popularity of"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 2202,
+    "user": "Sharon May",
+    "role": "student",
+    "text": "there",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1903,
+              "type": "TextPositionSelector",
+              "start": 1898
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "there",
+              "prefix": "s on a data science course with ",
+              "suffix": " programming tasks.This research"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2203,
+    "user": "Sharon May",
+    "role": "student",
+    "text": "provided",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2165,
+              "type": "TextPositionSelector",
+              "start": 2157
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "provided",
+              "prefix": "tudents.An approach to directly ",
+              "suffix": " hints to students are so called"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2204,
+    "user": "Sharon May",
+    "role": "student",
+    "text": "There",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2296,
+              "type": "TextPositionSelector",
+              "start": 2291
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "There",
+              "prefix": " Keuning and Johan Jeuring [5]. ",
+              "suffix": " research showed that generating"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2205,
+    "user": "Sharon May",
+    "role": "student",
+    "text": "there",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2770,
+              "type": "TextPositionSelector",
+              "start": 2765
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "there",
+              "prefix": "and Andreas Theissler [2] based ",
+              "suffix": " research on a python centered o"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2206,
+    "user": "Sharon May",
+    "role": "student",
+    "text": "ant la",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2849,
+              "type": "TextPositionSelector",
+              "start": 2843
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "ant la",
+              "prefix": "roved upon there method [4]. I w",
+              "suffix": "rgely base my paper on there app"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2207,
+    "user": "Sharon May",
+    "role": "student",
+    "text": "there",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2877,
+              "type": "TextPositionSelector",
+              "start": 2872
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "there",
+              "prefix": "I want largely base my paper on ",
+              "suffix": " approach. But base my paper onp"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2208,
+    "user": "Sharon May",
+    "role": "student",
+    "text": "I want to improve upon these papers in a more general computer science course on programming with a largersize of participant. ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3130,
+              "type": "TextPositionSelector",
+              "start": 3003
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "I want to improve upon these papers in a more general computer science course on programming with a largersize of participant. ",
+              "prefix": "ucted experiments with students.",
+              "suffix": "Many papers focus on only first "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 2209,
+    "user": "Sharon May",
+    "role": "student",
+    "text": "SOTA",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3769,
+              "type": "TextPositionSelector",
+              "start": 3765
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "SOTA",
+              "prefix": ". In this study they used three ",
+              "suffix": " models ChatGPT-4, ChatGPT-3.5 a"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  }
+]

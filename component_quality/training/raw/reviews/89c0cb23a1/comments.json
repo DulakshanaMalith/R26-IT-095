@@ -1,0 +1,112 @@
+[
+  {
+    "id": 569,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "Good hook with relevant data",
+    "annotationId": 561,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 570,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "weird sentence structure",
+    "annotationId": 562,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 571,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "leave out comma\n",
+    "annotationId": 563,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 572,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "spelling",
+    "annotationId": 564,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 573,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "Whe RQ could be explained more detailed",
+    "annotationId": 565,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 574,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "Very good identification of a relevant research gap",
+    "annotationId": 566,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 575,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "Good",
+    "annotationId": 567,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 576,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "I would elaborate in a few sentences what they did and how the results are",
+    "annotationId": 568,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 577,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "has",
+    "annotationId": 569,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 578,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "This section is good, but i would think about if some technologies should rather be mentioned in the SOTA",
+    "annotationId": 570,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  }
+]

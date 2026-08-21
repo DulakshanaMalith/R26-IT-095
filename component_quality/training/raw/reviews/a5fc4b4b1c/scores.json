@@ -1,0 +1,200 @@
+[
+    {
+        "author": "Regina Reid",
+        "group": 1,
+        "reviewer": "Calvin Ferguson",
+        "grader": "Willie Cervantes",
+        "role": "assistant",
+        "hash": "a5fc4b4b1c",
+        "type": "review",
+        "scores": {
+            "form": {
+                "structure": 4,
+                "language": 3,
+                "total": 7
+            },
+            "feed_up": {
+                "feed_up": 4,
+                "total": 4
+            },
+            "feed_back": {
+                "feed_back": 4,
+                "total": 4
+            },
+            "feed_forward": {
+                "feed_forward": 2,
+                "total": 2
+            },
+            "content": {
+                "total": 8,
+                "quality": 5,
+                "errors": 3
+            },
+            "others": {
+                "total": 0,
+                "additional": 0,
+                "minus": 0
+            },
+            "total": 25
+        },
+        "criteria": {
+            "Summary available": 2,
+            "Clarity": 2,
+            "Language": 1,
+            "Tone": 2,
+            "Learning Goals": 2,
+            "Success Criteria": 2,
+            "Knowledge of result": 1,
+            "Knowledge of correct response": 1,
+            "Knowledge about task constraints": 1,
+            "Knowledge about concepts": 1,
+            "Knowledge about mistakes": 1,
+            "Self-feedback": 1,
+            "Self-regulation": 1,
+            "Learning Skills": 1,
+            "Correctness": 2,
+            "Actionability": 2,
+            "Argumentation": 1,
+            "Neglect": -1,
+            "Vague Critic": 0,
+            "Out-of-Scope": 0,
+            "Missing Reference": 0,
+            "Contradiction": 0,
+            "Additional points": 0,
+            "Minus points": 0,
+            "Additional infos": null
+        }
+    },
+    {
+        "author": "Regina Reid",
+        "group": 2,
+        "reviewer": "Calvin Ferguson",
+        "grader": "Shane Barnes",
+        "role": "expert",
+        "hash": "a5fc4b4b1c",
+        "type": "review",
+        "scores": {
+            "form": {
+                "structure": 3,
+                "language": 3,
+                "total": 6
+            },
+            "feed_up": {
+                "feed_up": 3,
+                "total": 3
+            },
+            "feed_back": {
+                "feed_back": 4,
+                "total": 4
+            },
+            "feed_forward": {
+                "feed_forward": 2,
+                "total": 2
+            },
+            "content": {
+                "total": 9,
+                "quality": 5,
+                "errors": 4
+            },
+            "others": {
+                "total": 0,
+                "additional": 0,
+                "minus": 0
+            },
+            "total": 24
+        },
+        "criteria": {
+            "Summary available": 1,
+            "Clarity": 2,
+            "Language": 1,
+            "Tone": 2,
+            "Learning Goals": 2,
+            "Success Criteria": 1,
+            "Knowledge of result": 1,
+            "Knowledge of correct response": 1,
+            "Knowledge about task constraints": 1,
+            "Knowledge about concepts": 1,
+            "Knowledge about mistakes": 1,
+            "Self-feedback": 1,
+            "Self-regulation": 1,
+            "Learning Skills": 1,
+            "Correctness": 2,
+            "Actionability": 2,
+            "Argumentation": 1,
+            "Neglect": 0,
+            "Vague Critic": 0,
+            "Out-of-Scope": 0,
+            "Missing Reference": 0,
+            "Contradiction": 0,
+            "Additional points": 0,
+            "Minus points": 0,
+            "Additional infos": null
+        }
+    },
+    {
+        "author": "Regina Reid",
+        "group": 2,
+        "reviewer": "Calvin Ferguson",
+        "grader": "Noah Frazier",
+        "role": "expert",
+        "hash": "a5fc4b4b1c",
+        "type": "review",
+        "scores": {
+            "form": {
+                "structure": 2,
+                "language": 3,
+                "total": 5
+            },
+            "feed_up": {
+                "feed_up": 3,
+                "total": 3
+            },
+            "feed_back": {
+                "feed_back": 4,
+                "total": 4
+            },
+            "feed_forward": {
+                "feed_forward": 2,
+                "total": 2
+            },
+            "content": {
+                "total": 8,
+                "quality": 4,
+                "errors": 4
+            },
+            "others": {
+                "total": 0,
+                "additional": 0,
+                "minus": 0
+            },
+            "total": 22
+        },
+        "criteria": {
+            "Summary available": 1,
+            "Clarity": 1,
+            "Language": 1,
+            "Tone": 2,
+            "Learning Goals": 1,
+            "Success Criteria": 2,
+            "Knowledge of result": 1,
+            "Knowledge of correct response": 1,
+            "Knowledge about task constraints": 1,
+            "Knowledge about concepts": 1,
+            "Knowledge about mistakes": 1,
+            "Self-feedback": 1,
+            "Self-regulation": 1,
+            "Learning Skills": 1,
+            "Correctness": 2,
+            "Actionability": 1,
+            "Argumentation": 1,
+            "Neglect": 0,
+            "Vague Critic": 0,
+            "Out-of-Scope": 0,
+            "Missing Reference": 0,
+            "Contradiction": 0,
+            "Additional points": 0,
+            "Minus points": 0,
+            "Additional infos": null
+        }
+    }
+]

@@ -1,0 +1,1090 @@
+[
+  {
+    "id": 2225,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "EIWA WS 2024/25",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 181,
+              "type": "TextPositionSelector",
+              "start": 166
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "EIWA WS 2024/25",
+              "prefix": "ive LLM-based teaching agents - ",
+              "suffix": "Name: AnonymizedMatrikelnummer: "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 1
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2226,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Germany is facing a significant and growing shortage of teachers across all areas of education. Forecasts showa shortfall of 25,000 teachers by the year 2025, with that number expected to rise to 31,000 by 2035 [1].",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 601,
+              "type": "TextPositionSelector",
+              "start": 386
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Germany is facing a significant and growing shortage of teachers across all areas of education. Forecasts showa shortfall of 25,000 teachers by the year 2025, with that number expected to rise to 31,000 by 2035 [1].",
+              "prefix": "ber 9, 2024Darmstadt1 Motivation",
+              "suffix": "This shortage is a serious conce"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2227,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "This shortage",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 614,
+              "type": "TextPositionSelector",
+              "start": 601
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "This shortage",
+              "prefix": "d to rise to 31,000 by 2035 [1].",
+              "suffix": " is a serious concern for both e"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2228,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": ".",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1607,
+              "type": "TextPositionSelector",
+              "start": 1606
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": ".",
+              "prefix": " supporting classroom management",
+              "suffix": " By freeing up teachers to focus"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2229,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "AI systems",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2437,
+              "type": "TextPositionSelector",
+              "start": 2427
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "AI systems",
+              "prefix": "enges such as teacher shortages.",
+              "suffix": " such as SimClass can support te"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2230,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "This study ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3168,
+              "type": "TextPositionSelector",
+              "start": 3157
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "This study ",
+              "prefix": "r remote learning scenarios [4].",
+              "suffix": "seeks to explore the current sta"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2231,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Specifically, it examines whether AI hasadvanced to the point where it can effectively support teachers. If so, what are the implications for the roleof teachers, the experience of students, the learning atmosphere, and pedagogical outcomes? Additionally,the research addresses economic and geographical factors. ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3540,
+              "type": "TextPositionSelector",
+              "start": 3227
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Specifically, it examines whether AI hasadvanced to the point where it can effectively support teachers. If so, what are the implications for the roleof teachers, the experience of students, the learning atmosphere, and pedagogical outcomes? Additionally,the research addresses economic and geographical factors. ",
+              "prefix": "t state of AI in the classroom. ",
+              "suffix": "To answer these questions, the s"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2232,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": " including",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1426,
+              "type": "TextPositionSelector",
+              "start": 1416
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " including",
+              "prefix": "ew innovative solutions, such as",
+              "suffix": " ArtificialIntelligence (AI) too"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2233,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "teacher shortage in German",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1357,
+              "type": "TextPositionSelector",
+              "start": 1331
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "teacher shortage in German",
+              "prefix": "worsening the situation [2].The ",
+              "suffix": "y highlights the need for new in"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2234,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Motivation",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 386,
+              "type": "TextPositionSelector",
+              "start": 376
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Motivation",
+              "prefix": "ion: December 9, 2024Darmstadt1 ",
+              "suffix": "Germany is facing a significant "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2235,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Zhang (2024) ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4095,
+              "type": "TextPositionSelector",
+              "start": 4082
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Zhang (2024) ",
+              "prefix": "red feedbackand instruction [3].",
+              "suffix": "from the Tsinghua University poi"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2236,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "They also have to create a positive classroom environment and provide emotional support forthe students. ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4305,
+              "type": "TextPositionSelector",
+              "start": 4200
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "They also have to create a positive classroom environment and provide emotional support forthe students. ",
+              "prefix": "e than just to beable to teach. ",
+              "suffix": "To make this happen, the agents "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2237,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Figure 2.1",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4823,
+              "type": "TextPositionSelector",
+              "start": 4813
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Figure 2.1",
+              "prefix": "these fields, as illustrated in ",
+              "suffix": ", is encompassed within the doma"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2238,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "This study",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5411,
+              "type": "TextPositionSelector",
+              "start": 5401
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "This study",
+              "prefix": "al expertise (adapted from [3]).",
+              "suffix": " aims to assess the role of AI i"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2239,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "The study",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5527,
+              "type": "TextPositionSelector",
+              "start": 5518
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The study",
+              "prefix": "tiveness in supporting teachers.",
+              "suffix": " also provides an outlook on how"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2240,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "The combination",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7714,
+              "type": "TextPositionSelector",
+              "start": 7699
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The combination",
+              "prefix": "and encourage critical thinking.",
+              "suffix": " of these analyses will ensure a"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2241,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "thinking.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7699,
+              "type": "TextPositionSelector",
+              "start": 7690
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "thinking.",
+              "prefix": " studentsand encourage critical ",
+              "suffix": "The combination of these analyse"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2242,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "more than just to beable to teach.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4199,
+              "type": "TextPositionSelector",
+              "start": 4165
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "more than just to beable to teach.",
+              "prefix": "ut that these agents need to do ",
+              "suffix": " They also have to create a posi"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2243,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "pproach between ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4632,
+              "type": "TextPositionSelector",
+              "start": 4616
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "pproach between ",
+              "prefix": "n requires a multidisciplinary a",
+              "suffix": "computer science, psychology and"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2244,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "both",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4704,
+              "type": "TextPositionSelector",
+              "start": 4700
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "both",
+              "prefix": "ca-tional expertise, addressing ",
+              "suffix": " the technical, emotional and co"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2245,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Building on this need",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4477,
+              "type": "TextPositionSelector",
+              "start": 4456
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Building on this need",
+              "prefix": "gents even more challenging [4].",
+              "suffix": " for emotionally supportive and "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2246,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "As early as 1990",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3763,
+              "type": "TextPositionSelector",
+              "start": 3747
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "As early as 1990",
+              "prefix": "n education nowadays.22 Approach",
+              "suffix": ", Hyacinth S. Nwana from the Uni"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2247,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": " challenging [4].",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4456,
+              "type": "TextPositionSelector",
+              "start": 4439
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " challenging [4].",
+              "prefix": "f creating such agents even more",
+              "suffix": "Building on this need for emotio"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2248,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "The first phas",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5748,
+              "type": "TextPositionSelector",
+              "start": 5734
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The first phas",
+              "prefix": "enges for students and teachers.",
+              "suffix": "e of the study involves a system"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2249,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "ses ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5918,
+              "type": "TextPositionSelector",
+              "start": 5914
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "ses ",
+              "prefix": "xisting tools and methods that u",
+              "suffix": "AI to support teaching processes"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2250,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Furthermore, geographical factors will be considered toprovide a global perspective on AI adoption in education, identifying regions where AI usage in classrooms iswell-developed and areas facing obstacles, such as insufficient access to electricity or internet infrastructure,which hinder the use of AI.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6416,
+              "type": "TextPositionSelector",
+              "start": 6112
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Furthermore, geographical factors will be considered toprovide a global perspective on AI adoption in education, identifying regions where AI usage in classrooms iswell-developed and areas facing obstacles, such as insufficient access to electricity or internet infrastructure,which hinder the use of AI.",
+              "prefix": "secondary, or higher education. ",
+              "suffix": "Based on this foundational under"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2251,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "environment",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7127,
+              "type": "TextPositionSelector",
+              "start": 7116
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "environment",
+              "prefix": "tcomes and the classroom social ",
+              "suffix": ".In addition to the student surv"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2252,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "2–3 teachers ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7223,
+              "type": "TextPositionSelector",
+              "start": 7210
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "2–3 teachers ",
+              "prefix": "terviews will be conducted with ",
+              "suffix": "from the sameclass. These interv"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2253,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Organizational ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8323,
+              "type": "TextPositionSelector",
+              "start": 8308
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Organizational ",
+              "prefix": "eMonth Week Task Description1 1 ",
+              "suffix": "Meet with supervisor, Setup acco"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2254,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "...",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8393,
+              "type": "TextPositionSelector",
+              "start": 8390
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "...",
+              "prefix": "s/Latex-project, Register Thesis",
+              "suffix": "1 2 Planning Create a schedule f"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2255,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Get a break to start with a fresh mind againor use as buffer if behind timeline",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 9051,
+              "type": "TextPositionSelector",
+              "start": 8972
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Get a break to start with a fresh mind againor use as buffer if behind timeline",
+              "prefix": "g. Plots...)4 15 Break / Buffer ",
+              "suffix": "4-5 16-17 Analysis Compare theor"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2256,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "6",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 9483,
+              "type": "TextPositionSelector",
+              "start": 9482
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "6",
+              "prefix": "4 times and work on it iterative",
+              "suffix": " 24 Buffer One weeks buffer5Bibl"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2257,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Task",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8292,
+              "type": "TextPositionSelector",
+              "start": 8288
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Task",
+              "prefix": " learning.43 ScheduleMonth Week ",
+              "suffix": " Description1 1 Organizational M"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2258,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Bibliography",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 9523,
+              "type": "TextPositionSelector",
+              "start": 9511
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Bibliography",
+              "prefix": "ive6 24 Buffer One weeks buffer5",
+              "suffix": "[1] Kultusministerkonferenz (KMK"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 6
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  }
+]

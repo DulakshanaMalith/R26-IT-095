@@ -1,0 +1,123 @@
+[
+  {
+    "id": 3214,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Which Study? You need to provide a source for such statements.",
+    "annotationId": 3159,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3215,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "says who?",
+    "annotationId": 3160,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3216,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "This reads more like a sales-pitch than a Motivation for a scientific research.",
+    "annotationId": 3161,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3217,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "One whitespace too much",
+    "annotationId": 3162,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3218,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "you already abbreviated this in the motivation, no need to do it again.",
+    "annotationId": 3163,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3219,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "What is synthesizing in this context?",
+    "annotationId": 3164,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3220,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "beginning of a sentence should be capitalized",
+    "annotationId": 3165,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3221,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "too much whitespace for no reason",
+    "annotationId": 3166,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3222,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "This should be done before you try and create a work-plan with milestones.",
+    "annotationId": 3167,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3223,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "This Task for two weeks is too long.",
+    "annotationId": 3168,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3224,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "These are too few weeks, this si too ambitious.",
+    "annotationId": 3169,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  }
+]

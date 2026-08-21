@@ -1,0 +1,219 @@
+[
+  {
+    "id": 3072,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "enhancing augmented reality devices by providing a physical presence",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 156,
+              "type": "TextPositionSelector",
+              "start": 88
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "enhancing augmented reality devices by providing a physical presence",
+              "prefix": " LabThe Holographic AI Assistant",
+              "suffix": "Name: AnonymizedMatrikelnummer: "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 1
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 3073,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Motivation",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 361,
+              "type": "TextPositionSelector",
+              "start": 351
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Motivation",
+              "prefix": "ion: December 9, 2024Darmstadt1 ",
+              "suffix": "1.1 OverviewDuring delicate surg"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 3074,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Insufficient Research",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2951,
+              "type": "TextPositionSelector",
+              "start": 2930
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Insufficient Research",
+              "prefix": " digital and real-world aspects.",
+              "suffix": "Even though holographic aids can"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 3075,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "ssues with User Interfaces in 2D",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2579,
+              "type": "TextPositionSelector",
+              "start": 2547
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "ssues with User Interfaces in 2D",
+              "prefix": "omplex situations like surgery.I",
+              "suffix": "The following challenges are pre"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 3076,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Theoretical Framework",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3209,
+              "type": "TextPositionSelector",
+              "start": 3188
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Theoretical Framework",
+              "prefix": "et unexploredstudy subject.32.2 ",
+              "suffix": "This study is supported by two m"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 3077,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "were allocated",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4349,
+              "type": "TextPositionSelector",
+              "start": 4335
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "were allocated",
+              "prefix": " jobs.Sample SizeThirty experts ",
+              "suffix": " equally into two groups: experi"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 3078,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Research Design using a Mixed Methods Approach",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3815,
+              "type": "TextPositionSelector",
+              "start": 3769
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Research Design using a Mixed Methods Approach",
+              "prefix": "ially in high-stakes situations.",
+              "suffix": "The project will take a mixed-me"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  }
+]

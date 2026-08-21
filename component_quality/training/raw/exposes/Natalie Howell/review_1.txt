@@ -1,0 +1,70 @@
+Review: The Holographic AI Assistant
+
+This exposé proposes research into holographic AI assistants as an alternative to digital assistants on flat screens
+or augmented/virtual reality, specifically in the context of education and healthcare. It argues for this novel
+technology with an enhanced user experience; a study with participants from the sectors mentioned prior shall be
+conducted to verify that claim.
+
+Starting off with the strengths: In the approach, the text profiles its research against the state of the art, noting 
+some deficits like "lack of contextual awareness" in cited papers. The description of the theoretical framework after
+contains a correct use of a cited paper, summarising it and justifying the use of some methods in the project.
+
+Moving on to the weaknesses: in general, the exposé suffers from irritating lines of thought and an unclear research
+proposal. The review you are reading here explains the most significant ones, others are annotated in CARE.
+The motivation should include an engaging hook, illustrating a problem to solve or a vision the research can make
+progress to. Using such rhetorical question and appeal to the reader is not as effective as it may seem at first.
+Because you are describing an unfounded future vision, it does not make for a convincing statement, quite the opposite;
+without any foundation, this part exudes little credibility in your ideas. Missing citations reinforce the problem.
+A total rewrite is necessary with more engaging story telling and statements supported by citing papers or clear
+arguments.
+The aspect of missing citations is something that plagues the entire motivation. Making a factual statement in a 
+scientific paper must either be cited or be clearly argued for in the text. The entire section does neither, which
+makes anything written down sound hollow and non-credible. For example: claiming to have found a research gap upon
+statements without citations, is not sound. Again, proper citations and connecting arguments and thoughts together
+would give your exposé some punch.
+This leads to the research questions (RQs). Those, and thus the entire approach require a clear focus, especially in
+the context of a thesis and its limited time frame of 24 weeks. This includes a feasible and precise goal and defining
+metrics that make evaluation possible. Your "key questions" are pointing in many different research directions and are
+themselves in some parts imprecise; efficiency and usability as metrics are great and all if the paragraph prior
+elaborates on them; this is missing. Answering all of them sufficiently is unrealistic as each one of them needs to
+collect specific kinds of data with empirical methods (RQ1 & 2), technical analysis (RQ3), or ethical assessment (RQ4).
+In short: the approach has to cover multiple and different kinds of research methods. Without regarding your approach
+and schedule in the exposé, this is unlikely to happen in 24 weeks. The sensible solution is the cutting of some RQs
+and a refinement of those left after. The last aspect is necessary with respect to the definition of a clear goal,
+which needs to be stated more precisely, too.
+
+On the topic of the approach: it should contain convincing descriptions of the state of the art and a positioning of
+your research there and a sensible theoretical framework and methodology supporting your research questions. Besides
+the one strength mentioned prior, this is overall insufficient for a future research project, primarily due to two
+points elaborated in the following paragraphs.
+Your theoretical framework must lay the groundwork for your methodology by enabling a path to significant results, be
+it ways of conducting a study or useful metrics. At one point, the theoretical framework mentions theory which is not
+cited nor argued for. This puts a dent into its credibility. Furthermore, you did not connect the theories together and
+with the methodology. It just declares those two theories as the framework without putting it into the research context
+like describing their significance or critiquing aspects. Cite the second theory or cut it out, and explain why the
+theories mentioned matter in your research, like extracting metrics. This may include a reason for the citation of two
+papers specifically (thus implicitly comparing them).
+At last, a critique about the methodology. It should describe a realistic way (with respect to 24 weeks) and sensible
+methods to gain results to answer the RQs. Especially with multiple different RQs, the methodology has to be well
+thought out and contain a collection of methods. Multiple methods are mentioned; neither is their purpose in the
+research argued for nor are they planned out well enough to formulate expectations, e.g. the part "[...] gathering 
+in-depth feedback on the interaction [...]" does not clear the way to answer any RQs. The missing metrics do not help
+that case, even if they are listed in an unrelated sentence after that should have been part of the theoretical 
+framework. In addition, the unrealistic amount of participants, unpleasant transition into describing the other part of
+your research and a statement with missing citations ("Preliminary studies [...]") further reinforce the impression,
+that not much care went into the planning process. A complete revision of this section is necessary in accordance to 
+new RQs if done so as suggested. Put a focus onto bridging the gap between method and RQ and scale down.
+
+Some miscellaneous notes follow, including some about the schedule and formalities. Due to the weaknesses in the text
+itself, the schedule itself must be revised anyway; it should have been a chronology for your potential future work to
+make the process as smooth as possible. Some things to fix are: the listing of tasks which should have been handled in
+this exposé, like identifying research gaps or formulating RQs(!), the vagueness of task description, a result of the
+unclear research proposal, and the submission task being about a exposé, not a thesis.
+Another aspect are wrong citations and, subjectively speaking, awkward language; sentences do not flow, sections are
+tagged in the approach and the line of thought sometimes becomes fuzzy. Some of those issues are marked in CARE.
+The solutions for those problems should be clear.
+
+All in all, the exposé has many glaring issues throughout, with few redeeming qualities. The major problem is the too
+broad research scope, creating a very unclear approach, which itself contains pit falls. This cascades into many
+minor problems; combining that with the formalities and the result is a exposé which needs a lot of work.
+

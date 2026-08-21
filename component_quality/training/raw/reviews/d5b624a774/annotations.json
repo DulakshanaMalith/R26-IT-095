@@ -1,0 +1,870 @@
+[
+  {
+    "id": 4481,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Teaching Mathematics with AI",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 88,
+              "type": "TextPositionSelector",
+              "start": 60
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Teaching Mathematics with AI",
+              "prefix": "iquitous KnowledgeProcessing Lab",
+              "suffix": "Addressing Opportunities and Cha"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 1
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4482,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Trends in Mathematics, Reading, and Science Performance",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1994,
+              "type": "TextPositionSelector",
+              "start": 1939
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Trends in Mathematics, Reading, and Science Performance",
+              "prefix": "60480500520YearPISA Score Points",
+              "suffix": "MathematicsReadingScienceFigure "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4483,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "performance",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 642,
+              "type": "TextPositionSelector",
+              "start": 631
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "performance",
+              "prefix": "icate a clear downward trend in ",
+              "suffix": ". In Germany, one of the keyreas"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4484,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "In Germany, one of the keyreasons behind this decline is a growing shortage of teaching personne",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 740,
+              "type": "TextPositionSelector",
+              "start": 644
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "In Germany, one of the keyreasons behind this decline is a growing shortage of teaching personne",
+              "prefix": " downward trend in performance. ",
+              "suffix": "l. By 2030, it is estimated that"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4485,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "By 2030, it is estimated that 115,000to 175,000 teaching positions in Germany could remain unfilled",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 842,
+              "type": "TextPositionSelector",
+              "start": 743
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "By 2030, it is estimated that 115,000to 175,000 teaching positions in Germany could remain unfilled",
+              "prefix": "shortage of teaching personnel. ",
+              "suffix": ".[1] This alarming situation dem"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 4486,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "This alarming situation demands urgentsolutions",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 894,
+              "type": "TextPositionSelector",
+              "start": 847
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "This alarming situation demands urgentsolutions",
+              "prefix": "rmany could remain unfilled.[1] ",
+              "suffix": " - But artificial intelligence c"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4487,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "much of it focuses on higher education",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1075,
+              "type": "TextPositionSelector",
+              "start": 1037
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "much of it focuses on higher education",
+              "prefix": " on the use of AI in education, ",
+              "suffix": ".This leaves a gap in understand"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4488,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "How can AI benefit both students and teachers in improvingmathematical skills",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1348,
+              "type": "TextPositionSelector",
+              "start": 1271
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "How can AI benefit both students and teachers in improvingmathematical skills",
+              "prefix": "l question I aim to explore is: ",
+              "suffix": "? To answer this, several relate"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4489,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "2.0.1 SOTA",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2299,
+              "type": "TextPositionSelector",
+              "start": 2289
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "2.0.1 SOTA",
+              "prefix": "1787/53f23881-en. [2]22 Approach",
+              "suffix": "There are already several studie"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4490,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "In what ways can AI support teachers in evaluating students’ current levels of understanding?",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1572,
+              "type": "TextPositionSelector",
+              "start": 1479
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "In what ways can AI support teachers in evaluating students’ current levels of understanding?",
+              "prefix": "ividualized learning sessions?• ",
+              "suffix": "• How effective are AI tools in "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 4491,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Most of them, however,either utilize independent chatbots [3] or focus predominantly on theoretical frameworks.[4][5][6] Otherexamples include large-scale classroom implementations, such as the setups demonstrated by Zhang et a",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2613,
+              "type": "TextPositionSelector",
+              "start": 2386
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Most of them, however,either utilize independent chatbots [3] or focus predominantly on theoretical frameworks.[4][5][6] Otherexamples include large-scale classroom implementations, such as the setups demonstrated by Zhang et a",
+              "prefix": "ing the use of AI in education. ",
+              "suffix": "l.[7]The concept of Artificial I"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 4492,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Furthermore, extensive literature exists on this topic.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2826,
+              "type": "TextPositionSelector",
+              "start": 2771
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Furthermore, extensive literature exists on this topic.",
+              "prefix": "a dedicated conference series.a ",
+              "suffix": "[8]However, there seems to be a "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4493,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "\"Abitur\"b",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3018,
+              "type": "TextPositionSelector",
+              "start": 3009
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "\"Abitur\"b",
+              "prefix": "ts - especially AIED for German ",
+              "suffix": " Students.While existing studies"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 4494,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "many focus on either theoretical frame-works or generalized implementations",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3174,
+              "type": "TextPositionSelector",
+              "start": 3099
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "many focus on either theoretical frame-works or generalized implementations",
+              "prefix": " insights into AI in education, ",
+              "suffix": ". To address this gap, I aim to "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4495,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": " create a tailored AI platform that meets the specific needs of studentsand teachers",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3369,
+              "type": "TextPositionSelector",
+              "start": 3285
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " create a tailored AI platform that meets the specific needs of studentsand teachers",
+              "prefix": "ptance and learning processes to",
+              "suffix": ".2.0.2 Theoretical FrameworkAcco"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 4496,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "several related questions emerge:",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1399,
+              "type": "TextPositionSelector",
+              "start": 1366
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "several related questions emerge:",
+              "prefix": "matical skills? To answer this, ",
+              "suffix": "• How receptive are students to "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4497,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "seems to b",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2854,
+              "type": "TextPositionSelector",
+              "start": 2844
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "seems to b",
+              "prefix": "on this topic.[8]However, there ",
+              "suffix": "e a noticeable gap in real-world"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4498,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "\"perceived usefulness\" and \"perceived ease of use.\"[9] Davis emphasizes that these twovariables must align: a system must be both sufficiently useful and easy to use to ensure acceptance andeffective utilization.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3730,
+              "type": "TextPositionSelector",
+              "start": 3518
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "\"perceived usefulness\" and \"perceived ease of use.\"[9] Davis emphasizes that these twovariables must align: a system must be both sufficiently useful and easy to use to ensure acceptance andeffective utilization.",
+              "prefix": "orted learningmodule—depends on ",
+              "suffix": " Jean Piaget, a renowned psychol"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 4499,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "design an environment that meets the needs of both teachers and student",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4613,
+              "type": "TextPositionSelector",
+              "start": 4542
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "design an environment that meets the needs of both teachers and student",
+              "prefix": " involve mathematics teachers to",
+              "suffix": "s. The goal is to get a clear pi"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4500,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": ", the AI system will be configured to maximize its effectiveness.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5012,
+              "type": "TextPositionSelector",
+              "start": 4947
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": ", the AI system will be configured to maximize its effectiveness.",
+              "prefix": "n the feedback from the teachers",
+              "suffix": " TheAI system created will be a "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4501,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Itshould, through an initial test, learn about each student’s strengths and weaknesses, providing personalizedhomework and lessons. This aligns with the ideas of Davis[9] and Piaget[10].",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5313,
+              "type": "TextPositionSelector",
+              "start": 5127
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Itshould, through an initial test, learn about each student’s strengths and weaknesses, providing personalizedhomework and lessons. This aligns with the ideas of Davis[9] and Piaget[10].",
+              "prefix": "e individual needs of students. ",
+              "suffix": "Subsequently, the students will "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 4502,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Platform Choice",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5656,
+              "type": "TextPositionSelector",
+              "start": 5641
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Platform Choice",
+              "prefix": "ted with all participants.2.0.4 ",
+              "suffix": "To implement this methodology ef"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 4503,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "This would increase the \"ease of use.\" In contrast, Microsoft Azure OpenAI Service, integratedwith Azure AI Studioc, provides a highly flexible environment for developing custom AI models tailored tospecific educational requirements, likely enhancing the \"perceived usefulness.\"",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6386,
+              "type": "TextPositionSelector",
+              "start": 6108
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "This would increase the \"ease of use.\" In contrast, Microsoft Azure OpenAI Service, integratedwith Azure AI Studioc, provides a highly flexible environment for developing custom AI models tailored tospecific educational requirements, likely enhancing the \"perceived usefulness.\"",
+              "prefix": "ational learningexperiences.[3] ",
+              "suffix": "Both platforms have their respec"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 4504,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": " If such barriers are encountered, they must beresolved before participants can fully engage with the system",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7744,
+              "type": "TextPositionSelector",
+              "start": 7636
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " If such barriers are encountered, they must beresolved before participants can fully engage with the system",
+              "prefix": "address any acceptance barriers.",
+              "suffix": ".Another challenge is the limite"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4505,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Methodology",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4226,
+              "type": "TextPositionSelector",
+              "start": 4215
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Methodology",
+              "prefix": "l-world educational needs.2.0.3 ",
+              "suffix": "The methodology I propose combin"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4506,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "argues that \"learning is an active, context-basedprocess in which new knowledge is constructed on the foundation of prior experiences.\"",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3904,
+              "type": "TextPositionSelector",
+              "start": 3769
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "argues that \"learning is an active, context-basedprocess in which new knowledge is constructed on the foundation of prior experiences.\"",
+              "prefix": "iaget, a renowned psychologist, ",
+              "suffix": "[10]Guided by Davis’ and Piaget’"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4507,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Configure the AI system.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8659,
+              "type": "TextPositionSelector",
+              "start": 8635
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Configure the AI system.",
+              "prefix": "nd students.Week 2 System Setup ",
+              "suffix": "Week 3-4 Testing Phase 1 Test sy"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4508,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Month 3: Feedback Loop and System Optimization",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8758,
+              "type": "TextPositionSelector",
+              "start": 8712
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Month 3: Feedback Loop and System Optimization",
+              "prefix": "e 1 Test system; refine methods.",
+              "suffix": "Week 1 Exit Interviews Collect f"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  }
+]

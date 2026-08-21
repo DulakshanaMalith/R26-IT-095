@@ -1,0 +1,1149 @@
+[
+  {
+    "id": 4805,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "T",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 938,
+              "type": "TextPositionSelector",
+              "start": 937
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "T",
+              "prefix": "vironmental shifts in real time.",
+              "suffix": "his raises the research question"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4806,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": ". ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1918,
+              "type": "TextPositionSelector",
+              "start": 1916
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": ". ",
+              "prefix": ", or fluctuations in involvement",
+              "suffix": "Current research emphasizes long"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4807,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "the adaptive learning systems in use today",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 872,
+              "type": "TextPositionSelector",
+              "start": 830
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "the adaptive learning systems in use today",
+              "prefix": "ce into comprehension. However, ",
+              "suffix": " frequently don’tadapt to such e"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4808,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "esearch question:",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 971,
+              "type": "TextPositionSelector",
+              "start": 954
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "esearch question:",
+              "prefix": "s in real time.This raises the r",
+              "suffix": " How can Large LanguageModels (L"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 4809,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "previous studie",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2300,
+              "type": "TextPositionSelector",
+              "start": 2285
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "previous studie",
+              "prefix": "sed learningopportunities.While ",
+              "suffix": "s have explored adaptive algorit"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4810,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "urrent research",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1934,
+              "type": "TextPositionSelector",
+              "start": 1919
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "urrent research",
+              "prefix": "r fluctuations in involvement. C",
+              "suffix": " emphasizes long-termpersonaliza"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4811,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Our researchseeks to address this limitation by creating an adaptive framework for teaching agents capable of recognizingand responding to contextual shifts as they occur, thereby improving engagement and learning effectiveness",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2708,
+              "type": "TextPositionSelector",
+              "start": 2481
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Our researchseeks to address this limitation by creating an adaptive framework for teaching agents capable of recognizingand responding to contextual shifts as they occur, thereby improving engagement and learning effectiveness",
+              "prefix": "earning environments with LLMs. ",
+              "suffix": ".22 Approach2.1 State of the Art"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4812,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "frequently",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 883,
+              "type": "TextPositionSelector",
+              "start": 873
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "frequently",
+              "prefix": "e learning systems in use today ",
+              "suffix": " don’tadapt to such environmenta"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4813,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "arge LanguageModels (LLMs)",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1007,
+              "type": "TextPositionSelector",
+              "start": 981
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "arge LanguageModels (LLMs)",
+              "prefix": "the research question: How can L",
+              "suffix": " be enhanced to dynamically dete"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4814,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "The adaptive learning systems are the most important frontier of the integration of AI with education",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2841,
+              "type": "TextPositionSelector",
+              "start": 2740
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The adaptive learning systems are the most important frontier of the integration of AI with education",
+              "prefix": ".22 Approach2.1 State of the Art",
+              "suffix": ",concentrating on the developmen"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4815,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Jovanovic and Voss (2024) researc",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3256,
+              "type": "TextPositionSelector",
+              "start": 3223
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Jovanovic and Voss (2024) researc",
+              "prefix": "phasized by several key studies.",
+              "suffix": "h further underlines the up-to-d"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4816,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": ".S",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3105,
+              "type": "TextPositionSelector",
+              "start": 3103
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": ".S",
+              "prefix": "even engagements of the students",
+              "suffix": "uch gaps have hindered the devel"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4817,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": ".",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3223,
+              "type": "TextPositionSelector",
+              "start": 3222
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": ".",
+              "prefix": "mphasized by several key studies",
+              "suffix": "Jovanovic and Voss (2024) resear"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4818,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "currentadaptive",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2952,
+              "type": "TextPositionSelector",
+              "start": 2937
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "currentadaptive",
+              "prefix": "ional experience. However, most ",
+              "suffix": " systems do not often have provi"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4819,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "sturdy avenues ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3379,
+              "type": "TextPositionSelector",
+              "start": 3364
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "sturdy avenues ",
+              "prefix": " improving adaptive systems via ",
+              "suffix": "of continuous learning. Though s"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 4820,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "hough such approaches enhancelong-term personalization, they still focus on the static nature of the data that goes into them, which includes,for example, past performance measurements, neglecting the change in learners’ emotional and cognitivestates over time",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3664,
+              "type": "TextPositionSelector",
+              "start": 3404
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "hough such approaches enhancelong-term personalization, they still focus on the static nature of the data that goes into them, which includes,for example, past performance measurements, neglecting the change in learners’ emotional and cognitivestates over time",
+              "prefix": "venues of continuous learning. T",
+              "suffix": ". In a face-to-face classroom se"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4821,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Most of these efforts aremore concerned with improving the clarity of responses than with infusing broader emotional or contextualcues into their adaptive strategies [4]. ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4187,
+              "type": "TextPositionSelector",
+              "start": 4016
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Most of these efforts aremore concerned with improving the clarity of responses than with infusing broader emotional or contextualcues into their adaptive strategies [4]. ",
+              "prefix": "anations and aid for confusion. ",
+              "suffix": "The basic abilities of large lan"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 4822,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "who note overwhelming promise but, at the same time, much difficulty",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4345,
+              "type": "TextPositionSelector",
+              "start": 4277
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "who note overwhelming promise but, at the same time, much difficulty",
+              "prefix": " are studiedby Li et al. (2024) ",
+              "suffix": " in the applicabilityof these te"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4823,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": " In other words, existing systems work on treatingemotional and contextual data mostly as an afterthought, and therefore, they lack the capacity to providecustomized interventions tailored to individual learners’ specific needs",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4822,
+              "type": "TextPositionSelector",
+              "start": 4595
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " In other words, existing systems work on treatingemotional and contextual data mostly as an afterthought, and therefore, they lack the capacity to providecustomized interventions tailored to individual learners’ specific needs",
+              "prefix": "s that existing systems work on.",
+              "suffix": ". Further, the existing framewor"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4824,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Unlikemost prior works that have emphasized individual isolated adaptive components or theoretical models",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5314,
+              "type": "TextPositionSelector",
+              "start": 5209
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Unlikemost prior works that have emphasized individual isolated adaptive components or theoretical models",
+              "prefix": "ting and cognitive load theory. ",
+              "suffix": ", thework developed here places "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4825,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "operationalizing Vygotsky’s Zone ofProximal Development (ZPD) and leveraging AI-driven scaffolding,",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5589,
+              "type": "TextPositionSelector",
+              "start": 5490
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "operationalizing Vygotsky’s Zone ofProximal Development (ZPD) and leveraging AI-driven scaffolding,",
+              "prefix": "ntextual states of students. By ",
+              "suffix": " the proposed framework seeks to"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4826,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": ".",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6036,
+              "type": "TextPositionSelector",
+              "start": 6035
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": ".",
+              "prefix": "ing their existing capa-bilities",
+              "suffix": "[1]. The study aims to see how Z"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4827,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "scaffolding ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5972,
+              "type": "TextPositionSelector",
+              "start": 5960
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "scaffolding ",
+              "prefix": "hich instigated the notion that ",
+              "suffix": "can assist a learner in surpassi"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4828,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "puts ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6431,
+              "type": "TextPositionSelector",
+              "start": 6426
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "puts ",
+              "prefix": "arner’s emotional state. It also",
+              "suffix": "into account the cognitive load "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4829,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "cognitive load theory",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6469,
+              "type": "TextPositionSelector",
+              "start": 6448
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "cognitive load theory",
+              "prefix": "e. It alsoputs into account the ",
+              "suffix": " so as to manage the complexity "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4830,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "learning analytics",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7385,
+              "type": "TextPositionSelector",
+              "start": 7367
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "learning analytics",
+              "prefix": "ventions. It utilizes data from ",
+              "suffix": ",webcam-based sentiment analysis"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4831,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "A prototype system, leveraging GPT-4 and multimodalLLMs for real-time emotion and context analysis, is being developed to provide adaptive learning experiences.Reinforcement learning is used to iteratively refine the system’s outputs, ensuring continuous improvementand effectiveness in educational suppor",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8173,
+              "type": "TextPositionSelector",
+              "start": 7868
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "A prototype system, leveraging GPT-4 and multimodalLLMs for real-time emotion and context analysis, is being developed to provide adaptive learning experiences.Reinforcement learning is used to iteratively refine the system’s outputs, ensuring continuous improvementand effectiveness in educational suppor",
+              "prefix": "valuate practical applications. ",
+              "suffix": "t.Validation and TestingThe stud"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4832,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "aditional adaptive systems.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8391,
+              "type": "TextPositionSelector",
+              "start": 8364
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "aditional adaptive systems.",
+              "prefix": " group two will work with the tr",
+              "suffix": " Using this data wewill analyze "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4833,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "The study employs A/B testing where we split our participants in two groups, where group one will experienceour AI driven framework and group two will work with the traditional adaptive systems. Using this data wewill analyze engagement and learning outcomes using statistical tools. This approach provides quantitativeevidence of the framework’s effectiveness and supports data-driven improvements",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8595,
+              "type": "TextPositionSelector",
+              "start": 8197
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The study employs A/B testing where we split our participants in two groups, where group one will experienceour AI driven framework and group two will work with the traditional adaptive systems. Using this data wewill analyze engagement and learning outcomes using statistical tools. This approach provides quantitativeevidence of the framework’s effectiveness and supports data-driven improvements",
+              "prefix": "l support.Validation and Testing",
+              "suffix": ".Practical ConsiderationsThe res"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 4834,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "cost-effective NLP optimization techniques",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8890,
+              "type": "TextPositionSelector",
+              "start": 8848
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "cost-effective NLP optimization techniques",
+              "prefix": "tion laws, informedconsent, and ",
+              "suffix": ". The proposed framework innovat"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4835,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "he existing frameworks havepaid little attention to the necessary synthesis of emotional signals, cognitive states, and learning goals into aunified adaptive strategy",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5000,
+              "type": "TextPositionSelector",
+              "start": 4834
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "he existing frameworks havepaid little attention to the necessary synthesis of emotional signals, cognitive states, and learning goals into aunified adaptive strategy",
+              "prefix": "ners’ specific needs. Further, t",
+              "suffix": ".This research attempts to elimi"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 4836,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Schedule: Real-Time Contextual Adaptation in Adaptive Learning Systems UsingLLMs",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 9284,
+              "type": "TextPositionSelector",
+              "start": 9204
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Schedule: Real-Time Contextual Adaptation in Adaptive Learning Systems UsingLLMs",
+              "prefix": "ucational technology.43 Schedule",
+              "suffix": "Month Week Task Description1 1 P"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 4837,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Schedule",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 9204,
+              "type": "TextPositionSelector",
+              "start": 9196
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Schedule",
+              "prefix": "ts in educational technology.43 ",
+              "suffix": "Schedule: Real-Time Contextual A"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4838,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "State of the Art",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2740,
+              "type": "TextPositionSelector",
+              "start": 2724
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "State of the Art",
+              "prefix": "ng effectiveness.22 Approach2.1 ",
+              "suffix": "The adaptive learning systems ar"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4839,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "The research targets high school students aged 14–18 struggling with mathematics, aiming to enhance theirunderstanding and engagement through AI-driven interventions",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7343,
+              "type": "TextPositionSelector",
+              "start": 7178
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The research targets high school students aged 14–18 struggling with mathematics, aiming to enhance theirunderstanding and engagement through AI-driven interventions",
+              "prefix": "s.2.3 MethodologyData Collection",
+              "suffix": ". It utilizes data from learning"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 4840,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "heoretical Framework",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5706,
+              "type": "TextPositionSelector",
+              "start": 5686
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "heoretical Framework",
+              "prefix": " learning experiences [1].32.2 T",
+              "suffix": "This study is based on construct"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 4841,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "onsider a math class where a student is having trouble with fractions. Despite their repeated attempts,they continue to be disinterested and frustrated. Imagine now that an interactive teaching agent intervenes,recognizes their misunderstanding in real time, and modifies the lesson: clarifying ideas, providing illustrations,and even changing explanations to fit the preferred learning style of the student. This tailored interventionmay turn annoyance into comprehension.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 820,
+              "type": "TextPositionSelector",
+              "start": 347
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "onsider a math class where a student is having trouble with fractions. Despite their repeated attempts,they continue to be disinterested and frustrated. Imagine now that an interactive teaching agent intervenes,recognizes their misunderstanding in real time, and modifies the lesson: clarifying ideas, providing illustrations,and even changing explanations to fit the preferred learning style of the student. This tailored interventionmay turn annoyance into comprehension.",
+              "prefix": "er 9, 2024Darmstadt1 MotivationC",
+              "suffix": " However, the adaptive learning "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  }
+]

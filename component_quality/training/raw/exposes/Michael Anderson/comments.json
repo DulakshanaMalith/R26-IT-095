@@ -1,0 +1,200 @@
+[
+  {
+    "id": 309,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "long and clunky. This can be split into two sentences. What is the engagement learning paths and what is the LLM-based tutoring systems? What is the connection between them?",
+    "annotationId": 302,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 310,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "Lack anker. ",
+    "annotationId": 303,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 311,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "Feed up",
+    "annotationId": 304,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 312,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "this part could be moved to the introduction part\n",
+    "annotationId": 305,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 313,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "Existing work",
+    "annotationId": 306,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 314,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "position of this work\n",
+    "annotationId": 307,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 315,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "clear theoretical framework\n",
+    "annotationId": 308,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 316,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "it is really hard to avoid such bias. It really depends on the game you design. ",
+    "annotationId": 309,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 2344,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Great Job on the motivation!",
+    "annotationId": 2303,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 2,
+    "votes": [
+      {
+        "user": "Michael Anderson",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2345,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Don't include spaces.",
+    "annotationId": 2304,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 2,
+    "votes": [
+      {
+        "user": "Michael Anderson",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2346,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Good, well defined research questions.",
+    "annotationId": 2305,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 2,
+    "votes": [
+      {
+        "user": "Michael Anderson",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2347,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Also very good approach!",
+    "annotationId": 2306,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 2,
+    "votes": [
+      {
+        "user": "Michael Anderson",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2348,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "I only see you referring to IV and DV one more time throughout, if an acronym is not used a lot, you should just write out the term each time. ",
+    "annotationId": 2307,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 2,
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 2349,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "At TUDa we don't print thesis. ",
+    "annotationId": 2308,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 2,
+    "votes": [
+      {
+        "user": "Michael Anderson",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  }
+]

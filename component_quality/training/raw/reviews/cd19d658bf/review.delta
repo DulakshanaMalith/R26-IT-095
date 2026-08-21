@@ -1,0 +1,128 @@
+[
+  {
+    "retain": 0
+  },
+  {
+    "insert": "Summary:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nThis work aims to investigate how filtering rules in generative AI models influence the detection of MDD symptoms and how they should be improved in order to improve the diagnoses.\n\n"
+  },
+  {
+    "insert": "Strength:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nIn scientific papers it is very important to include current studies to strengthen the credibility and relevance of the work. This was done very well in this exposé."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "In scientific papers, it is crucial to create smooth transitions between individual sections to ensure the reader can follow the content effortlessly. You have achieved this very well in your text."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "\n\n"
+  },
+  {
+    "insert": "Weakness:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nIn scientific papers, it is very important to avoid errors in spelling and grammar. Your work contains some grammatical errors (e.g. \"the studies has\" - \"the studies have\"; \"that\" - \"which\"). To improve the linguistic quality of your exposé, you should read through your exposé carefully again. You can also run various spell checkers, e.g. using Word."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "In scientific work it is very important to have a standardised terminology. Abbreviations must always be introduced at the beginning (e.g. ‘AI’) and then used consistently (e.g. ‘MDD’). Unfortunately, you have not achieved this in your text. Go through your text again carefully and adjust the abbreviations."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "The motivation should explain to the reader why the chosen topic is relevant and what consequences the problem may have. Your work does not explain the problem sufficiently to convey its relevance. Think again carefully about why the topic is relevant and add the explanation to the text. You should also go into more detail about the exact consequences of this problem for the healthcare system and/or those affected. "
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "The state of the art should present your work in comparison to existing research. The weak points and the relevance of your SOTA are mentioned, but should be explained more precisely. Read the section again carefully and add further explanations and details."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "The methodology describes how the individual research questions are answered. The methodology in your work should be described in more detail. Read through your work again and supplement it with further explanations and examples. In addition, think about possible difficulties in practical implementation and limitations of the methods. "
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "The time schedule is used to plan the thesis in advance to see whether it is possible in the short time available. It is therefore very important that all aspects of the thesis are included. The writing of the thesis is missing in your time schedule. Think about which chapters all belong in a thesis and when they should best be written. "
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "\n\n\n"
+  },
+  {
+    "insert": "Other:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nIt is very important to make it clear in an exposé what the aim of the work is in order to give the reader a precise understanding of the objectives. A main research question is missing in your text. "
+  },
+  {
+    "attributes": {
+      "list": "bullet"
+    },
+    "insert": "\n"
+  },
+  {
+    "insert": "It would be helpful to link the methodology more clearly to your research questions."
+  },
+  {
+    "retain": 1,
+    "attributes": {
+      "list": "bullet"
+    }
+  }
+]

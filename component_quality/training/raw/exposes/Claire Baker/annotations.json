@@ -1,0 +1,1186 @@
+[
+  {
+    "id": 5764,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "It is no secret that, even in developed countries, teachers of all educational stages are unable to provideindividual teaching for every student in their class.[3]",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 540,
+              "type": "TextPositionSelector",
+              "start": 377
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "It is no secret that, even in developed countries, teachers of all educational stages are unable to provideindividual teaching for every student in their class.[3]",
+              "prefix": "ber 9, 2024Darmstadt1 Motivation",
+              "suffix": "Due to most educational systems "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": null,
+    "group": 2
+  },
+  {
+    "id": 5765,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "How can a LLM be trained on any particular Field of Education?• How does the LLM “learn” new data?• How do we check for correctness of given outputs?• How complex may a topic get?How can the LLM be catered towards individuals?• recognizing individual learning habits• encouraging engagementWhich LLM is the best?• How much does size/complexity of the model matter?• commercial or homebrew solutions?",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2473,
+              "type": "TextPositionSelector",
+              "start": 2074
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "How can a LLM be trained on any particular Field of Education?• How does the LLM “learn” new data?• How do we check for correctness of given outputs?• How complex may a topic get?How can the LLM be catered towards individuals?• recognizing individual learning habits• encouraging engagementWhich LLM is the best?• How much does size/complexity of the model matter?• commercial or homebrew solutions?",
+              "prefix": "lass might be.Research Questions",
+              "suffix": "22 ApproachSOTA - State of the a"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": null,
+    "group": 2
+  },
+  {
+    "id": 5766,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "These groups consist of students with Primary-, Secondary-, and Higher education, where there are twoclasses of each, one provided with the AI teaching assistent, the other without, as a control group. After aappropriate amount of time, or the end of a particular curriculum block, the students will partake in a surveyto quantize the benefits of the AI assistant",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4698,
+              "type": "TextPositionSelector",
+              "start": 4335
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "These groups consist of students with Primary-, Secondary-, and Higher education, where there are twoclasses of each, one provided with the AI teaching assistent, the other without, as a control group. After aappropriate amount of time, or the end of a particular curriculum block, the students will partake in a surveyto quantize the benefits of the AI assistant",
+              "prefix": "the LLMs for real-world testing.",
+              "suffix": ". The results of the surveys wil"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": null,
+    "group": 2
+  },
+  {
+    "id": 5262,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "class.[3]",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 540,
+              "type": "TextPositionSelector",
+              "start": 531
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "class.[3]",
+              "prefix": "hing for every student in their ",
+              "suffix": "Due to most educational systems "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 5263,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "habits.[2, 4]",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1223,
+              "type": "TextPositionSelector",
+              "start": 1210
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "habits.[2, 4]",
+              "prefix": "vidual peopleand their learning ",
+              "suffix": "LLMs could revolutionize the Fie"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 5264,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": " education, leading to bad grades.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 726,
+              "type": "TextPositionSelector",
+              "start": 692
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " education, leading to bad grades.",
+              "prefix": "prehension of a certain field of",
+              "suffix": " While support systems likespeci"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 5265,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": " at no",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 978,
+              "type": "TextPositionSelector",
+              "start": 972
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " at no",
+              "prefix": "certainstudents can be supported",
+              "suffix": " increased cost for the teaching"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 5266,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": " LLMs can learn directly",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1109,
+              "type": "TextPositionSelector",
+              "start": 1085
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " LLMs can learn directly",
+              "prefix": "dels (LLMs) come into play.Since",
+              "suffix": " from the people they interact w"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 5267,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "cannot do this alone, nor without help.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1320,
+              "type": "TextPositionSelector",
+              "start": 1281
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "cannot do this alone, nor without help.",
+              "prefix": "he Field of Education. But they ",
+              "suffix": " While LLMdevelopment has come f"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 5268,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "has come far ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1355,
+              "type": "TextPositionSelector",
+              "start": 1342
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "has come far ",
+              "prefix": "hout help. While LLMdevelopment ",
+              "suffix": "since the late 2010s, they still"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 5269,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": " others. [1]",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1760,
+              "type": "TextPositionSelector",
+              "start": 1748
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " others. [1]",
+              "prefix": "ts developed by Kazemitabaar and",
+              "suffix": "Where does this study fit in?Thi"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 5270,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Educator ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1932,
+              "type": "TextPositionSelector",
+              "start": 1923
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Educator ",
+              "prefix": "grantingthe opportunity for any ",
+              "suffix": "to enhance their curriculum with"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 5271,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "How can a LLM be trained on any particular Field of Education?• How does the LLM “learn” new data?• How do we check for correctness of given outputs?• How complex may a topic get?",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2253,
+              "type": "TextPositionSelector",
+              "start": 2074
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "How can a LLM be trained on any particular Field of Education?• How does the LLM “learn” new data?• How do we check for correctness of given outputs?• How complex may a topic get?",
+              "prefix": "lass might be.Research Questions",
+              "suffix": "How can the LLM be catered towar"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 5272,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Which LLM is the best?• How much does size/complexity of the model matter?• commercial or homebrew solutions?",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2473,
+              "type": "TextPositionSelector",
+              "start": 2364
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Which LLM is the best?• How much does size/complexity of the model matter?• commercial or homebrew solutions?",
+              "prefix": "g habits• encouraging engagement",
+              "suffix": "22 ApproachSOTA - State of the a"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 5273,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "How can the LLM be catered towards individuals?• recognizing individual learning habits• encouraging engagement",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2364,
+              "type": "TextPositionSelector",
+              "start": 2253
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "How can the LLM be catered towards individuals?• recognizing individual learning habits• encouraging engagement",
+              "prefix": "s?• How complex may a topic get?",
+              "suffix": "Which LLM is the best?• How much"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 5274,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "At the moment, AI teaching assistants either specialize on a single task [1] or only aide in rudimentary tasks[2]. This means the teaching assistant is useless for difficult topics, requiring human intervention for any tasknot handled by the LLM.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2779,
+              "type": "TextPositionSelector",
+              "start": 2533
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "At the moment, AI teaching assistants either specialize on a single task [1] or only aide in rudimentary tasks[2]. This means the teaching assistant is useless for difficult topics, requiring human intervention for any tasknot handled by the LLM.",
+              "prefix": "he art in existing relevant work",
+              "suffix": "Theoretical FrameworkThe behavio"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 5275,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": " Promp",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2861,
+              "type": "TextPositionSelector",
+              "start": 2855
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " Promp",
+              "prefix": "an be influenced with the use of",
+              "suffix": "t engineering; feeding it with c"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 5276,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "; feeding it with certain text, tomake it respond differently. ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2937,
+              "type": "TextPositionSelector",
+              "start": 2874
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "; feeding it with certain text, tomake it respond differently. ",
+              "prefix": "th the use of Prompt engineering",
+              "suffix": "If one wishes to teach about e.g"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 5277,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "about e.g.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2970,
+              "type": "TextPositionSelector",
+              "start": 2960
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "about e.g.",
+              "prefix": "erently. If one wishes to teach ",
+              "suffix": " Probabilistic Methods, the LLM "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 5278,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "LLM",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3001,
+              "type": "TextPositionSelector",
+              "start": 2998
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "LLM",
+              "prefix": "e.g. Probabilistic Methods, the ",
+              "suffix": " would need tobe provided with t"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 5279,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Problem-and-Answer-style",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3274,
+              "type": "TextPositionSelector",
+              "start": 3250
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Problem-and-Answer-style",
+              "prefix": "Luckily,there are large sets of ",
+              "suffix": " tests available online, that ca"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 5280,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "roblems and Answers ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3618,
+              "type": "TextPositionSelector",
+              "start": 3598
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "roblems and Answers ",
+              "prefix": "e to no pre-existing data, the P",
+              "suffix": "can be crowdsourced by the teach"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 5281,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": " edit the LLM in real-time.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3711,
+              "type": "TextPositionSelector",
+              "start": 3684
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " edit the LLM in real-time.",
+              "prefix": "sin the given field, as they can",
+              "suffix": "Similarly, a student interacting"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 5282,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Prompts",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3829,
+              "type": "TextPositionSelector",
+              "start": 3822
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Prompts",
+              "prefix": " LLM interacts with themthrough ",
+              "suffix": ", by e.g. asking to provide visu"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 5283,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Model ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4046,
+              "type": "TextPositionSelector",
+              "start": 4040
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Model ",
+              "prefix": "ng studies on how to engineer a ",
+              "suffix": "for a given task and onapplicati"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 5284,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Framework",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4137,
+              "type": "TextPositionSelector",
+              "start": 4128
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Framework",
+              "prefix": "ssrooms to aquire an acceptable ",
+              "suffix": ".Once the LLMs have been created"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 5285,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "The LLMs will be created by referencing existing studies on how to engineer a Model for a given task and onapplications of LLMs in classrooms to aquire an acceptable Framework.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4138,
+              "type": "TextPositionSelector",
+              "start": 3962
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The LLMs will be created by referencing existing studies on how to engineer a Model for a given task and onapplications of LLMs in classrooms to aquire an acceptable Framework.",
+              "prefix": " learning experience.Methodology",
+              "suffix": "Once the LLMs have been created,"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 5286,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Primary-, Secondary-, and Higher",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4405,
+              "type": "TextPositionSelector",
+              "start": 4373
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Primary-, Secondary-, and Higher",
+              "prefix": "groups consist of students with ",
+              "suffix": " education, where there are twoc"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 5287,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "ind ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4773,
+              "type": "TextPositionSelector",
+              "start": 4769
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "ind ",
+              "prefix": "alyzed for significant increases",
+              "suffix": "educational levels due to more i"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 5288,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "McGrundschulface",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4956,
+              "type": "TextPositionSelector",
+              "start": 4940
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "McGrundschulface",
+              "prefix": "ents and teachers of Grundschule",
+              "suffix": " (Primary Education), Viktoriasc"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 5289,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": ")",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5080,
+              "type": "TextPositionSelector",
+              "start": 5079
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": ")",
+              "prefix": "ität Darmstadt (Higher Education",
+              "suffix": "If an agreement with one or more"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 5290,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "(Primary Education)",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4976,
+              "type": "TextPositionSelector",
+              "start": 4957
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "(Primary Education)",
+              "prefix": " of GrundschuleMcGrundschulface ",
+              "suffix": ", [REMOVED] (Seco"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 5291,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "(Secondary Education)",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5024,
+              "type": "TextPositionSelector",
+              "start": 5003
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "(Secondary Education)",
+              "prefix": "tion), [REMOVED] ",
+              "suffix": ", and TechnischeUniversität Darm"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 5292,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "(Higher Education)",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5080,
+              "type": "TextPositionSelector",
+              "start": 5062
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "(Higher Education)",
+              "prefix": "TechnischeUniversität Darmstadt ",
+              "suffix": "If an agreement with one or more"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 5293,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Education",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5222,
+              "type": "TextPositionSelector",
+              "start": 5213
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Education",
+              "prefix": "rowedto the remaining grades of ",
+              "suffix": ".Access to the AI assistant will"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 5294,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Teacher ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5364,
+              "type": "TextPositionSelector",
+              "start": 5356
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Teacher ",
+              "prefix": "ver runningthe LLMs themselves. ",
+              "suffix": "will be provided special access "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 5295,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "24",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6462,
+              "type": "TextPositionSelector",
+              "start": 6460
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "24",
+              "prefix": "stic and formal adjustments6 22-",
+              "suffix": " Finalization Buffer time, print"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  }
+]

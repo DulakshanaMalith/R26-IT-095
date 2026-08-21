@@ -1,0 +1,203 @@
+[
+  {
+    "retain": 0
+  },
+  {
+    "insert": "Dear author of this Expose,\n\nI really enjoyed reading your research proposal, thank you! Here is a short summary of what I understood from your research question:\n\nIn your research, you want to generate artificial \"pandemy outbreaks\"-datasets using AI to train current systems in Healthcare Management to be adaptable for the sake of improvement of response to a disease outbreak.\n\nAnd here are couple of remarks by section:\n\n"
+  },
+  {
+    "insert": "1.Motivation",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nGood: \nGeneral flow of text is great, good job! Also all aspects of AI application are precise and highlighted."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "Great transition from \"usual\" application from AI to \"systemic\" application of AI in medicine."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "Room for improvement:\nYou can shorten the whole 1st paragraph to 2-3 sentences, because the importance and function of AI in healthcare nowadays is self-explanatory."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "There was a lot to what AI in systemic medicine "
+  },
+  {
+    "insert": "could do ",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "(e.g. relocate human resources), but very few to the "
+  },
+  {
+    "insert": "actual",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": " research proposal. I understood that in your research you want to generate artificial \"pandemy outbreaks\"-datasets to be able to \"improve the response\" of the healthcare system. "
+  },
+  {
+    "insert": "But how does the reponse look at all?",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": " What kind of workflows are used right now to manage the healthcare system? And then maybe in those systems you want to integrate your proposed research solution? Maybe you could explore it a bit more, to be sound with the title of your research proposal."
+  },
+  {
+    "insert": " In total, the research question is incomplete.",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "\n"
+  },
+  {
+    "insert": "2.Approach",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nGood:\nExplaining basic concepts to respect the variety of backgrounds of your reader."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "Room for improvement:\nIf I understood that right, the first paragraph is State of the art. You can try line it out with separate subsection to increase readability and introduce structure."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "Methodology is missing."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "What are limitations of your approach?"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "You mentioned evaluation framework. You didn't list neither the aspects of evaluation, nor the methodology how you would implement it. You might want to consider adding those points for completeness of your expose."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "\n"
+  },
+  {
+    "insert": "3.Schedule",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nYour scheduled seemed a little abstract, but it was because your \"Approach\" chapter was not complete (Methodology, Limitations, Theoretical Framework etc. were missing). When you have a complete \"Approach\" chapter it is also easy to write the schedule.\n\nIn General:\nThe reading flow was great! I really enjoyed it."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "The topic is well-thought and very fresh."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "Do not afraid to be precise and use exact definitions."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "Introduce subsections to increase readability (e.g. 2.1 \"State of the Art\", 2.2 \"Theoretical framework\", etc. )"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "You might want to review the \"Bewertungskriterien zum Expose\" document [REMOVED] and check if you have everything for the next version of your expose.",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "\nThank you for considering my feedback and good luck with writing the newer version!\n\nKind regards,\nYour EiWA-fellow"
+  },
+  {
+    "retain": 1,
+    "attributes": {
+      "list": null
+    }
+  }
+]

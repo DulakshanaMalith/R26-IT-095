@@ -1,0 +1,250 @@
+[
+  {
+    "id": 4216,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": ". [1] [2]",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1160,
+              "type": "TextPositionSelector",
+              "start": 1151
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": ". [1] [2]",
+              "prefix": "is not thoroughly researched yet",
+              "suffix": "By providing a \"physicalpresence"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4217,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "In recent years, students have increasingly relied on AI tools to assist with homework and understand coursematerial independently. This shift is driven by several challenges in the education sector, including a shortageof teachers to provide individualized support and the frequent underfunding of public schools.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 622,
+              "type": "TextPositionSelector",
+              "start": 308
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "In recent years, students have increasingly relied on AI tools to assist with homework and understand coursematerial independently. This shift is driven by several challenges in the education sector, including a shortageof teachers to provide individualized support and the frequent underfunding of public schools.",
+              "prefix": " Staff: Elijah Boone1 Motivation",
+              "suffix": " Growingstudent populations make"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 4218,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "This paper explores the potential of aholographic AI assistant to bridge the gap in student support by leveraging augmented reality (AR) technology.Research about the perception of AI TAs is not thoroughly researched ye",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1150,
+              "type": "TextPositionSelector",
+              "start": 931
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "This paper explores the potential of aholographic AI assistant to bridge the gap in student support by leveraging augmented reality (AR) technology.Research about the perception of AI TAs is not thoroughly researched ye",
+              "prefix": "ngagement rate with the AI TAs. ",
+              "suffix": "t. [1] [2]By providing a \"physic"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 4219,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "How can a holographic AI assistant be implemented on mobile devices to create a sense ofphysical presence in augmented reality, and how does this impact user experience compared to non-embodiedAI?",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1753,
+              "type": "TextPositionSelector",
+              "start": 1557
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "How can a holographic AI assistant be implemented on mobile devices to create a sense ofphysical presence in augmented reality, and how does this impact user experience compared to non-embodiedAI?",
+              "prefix": "ional support.Research Question ",
+              "suffix": " RQ 1.1 How can a physical prese"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4220,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "The current state of the art (SOTA) includes AI teaching assistants, such as OpenAI’s ChatGPT, which arealready being deployed, tested, and utilized. [3] However, the aspect of physical presence has not been afocus of these implementations",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2847,
+              "type": "TextPositionSelector",
+              "start": 2608
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The current state of the art (SOTA) includes AI teaching assistants, such as OpenAI’s ChatGPT, which arealready being deployed, tested, and utilized. [3] However, the aspect of physical presence has not been afocus of these implementations",
+              "prefix": "improving outcomes for both.SOTA",
+              "suffix": ".This study aims to identify the"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4221,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": ": - **Theory ofPresence**",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3288,
+              "type": "TextPositionSelector",
+              "start": 3263
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": ": - **Theory ofPresence**",
+              "prefix": "following theoretical frameworks",
+              "suffix": ": Explains how users perceive a "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4222,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "The methodology includes the following steps",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3658,
+              "type": "TextPositionSelector",
+              "start": 3614
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The methodology includes the following steps",
+              "prefix": "ect user adoption.[6]Methodology",
+              "suffix": ":- **Literature Review**: Evalua"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4223,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "Theoretical Framework",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3172,
+              "type": "TextPositionSelector",
+              "start": 3151
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Theoretical Framework",
+              "prefix": " augmented reality environments.",
+              "suffix": "The effects of physical presence"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  }
+]

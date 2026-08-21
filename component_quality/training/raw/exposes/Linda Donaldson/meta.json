@@ -1,0 +1,14 @@
+{
+  "topic": "Generative AI in Healthcare",
+  "author": "Linda Donaldson",
+  "reviews": {
+    "1": {
+      "review": 1,
+      "hash": "e432315137",
+      "reviewer": "Shelly Lawrence",
+      "role": "assistant",
+      "size": 3870,
+      "group": 1
+    }
+  }
+}

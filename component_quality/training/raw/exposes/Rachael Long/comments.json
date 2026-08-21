@@ -1,0 +1,320 @@
+[
+  {
+    "id": 15,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "it is too long to introduce this problem",
+    "annotationId": 5726,
+    "parentCommendId": null,
+    "tags": [],
+    "review": null,
+    "votes": [],
+    "group": 2
+  },
+  {
+    "id": 16,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "There is no evidence to show how the problem was solved by previous work.",
+    "annotationId": 5727,
+    "parentCommendId": null,
+    "tags": [],
+    "review": null,
+    "votes": [],
+    "group": 2
+  },
+  {
+    "id": 17,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "How to measure ? Is there  anything in the methodology?",
+    "annotationId": 5728,
+    "parentCommendId": null,
+    "tags": [],
+    "review": null,
+    "votes": [],
+    "group": 2
+  },
+  {
+    "id": 18,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "what is the relation with the main RQ?",
+    "annotationId": 5729,
+    "parentCommendId": null,
+    "tags": [],
+    "review": null,
+    "votes": [],
+    "group": 2
+  },
+  {
+    "id": 19,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "limitation of the method",
+    "annotationId": 5730,
+    "parentCommendId": null,
+    "tags": [],
+    "review": null,
+    "votes": [],
+    "group": 2
+  },
+  {
+    "id": 20,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "How this method solves the RQs is not elaborated. Where is the theoretical framework",
+    "annotationId": 5731,
+    "parentCommendId": null,
+    "tags": [],
+    "review": null,
+    "votes": [],
+    "group": 2
+  },
+  {
+    "id": 21,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "how to bulid up such groups are not described",
+    "annotationId": 5732,
+    "parentCommendId": null,
+    "tags": [],
+    "review": null,
+    "votes": [],
+    "group": 2
+  },
+  {
+    "id": 1900,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Hook",
+    "annotationId": 1870,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [
+      {
+        "user": "Rachael Long",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 1901,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Too many full stops: Better:\n...not caught up with [1].",
+    "annotationId": 1871,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [
+      {
+        "user": "Rachael Long",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 1902,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Anker",
+    "annotationId": 1872,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [
+      {
+        "user": "Rachael Long",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 1903,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Teaser",
+    "annotationId": 1873,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [
+      {
+        "user": "Rachael Long",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 1904,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Again: The citation belongs to the previous sentence:\n...asynchronous [3].\n\nI won't mark this again, you should also fix it in the other sections.",
+    "annotationId": 1874,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [
+      {
+        "user": "Rachael Long",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 1905,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Nice RQs!",
+    "annotationId": 1875,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [
+      {
+        "user": "Rachael Long",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 1906,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Unusual sentence. Better:\n\"The most commonly used solutions included digital platforms such as Zoom and Moodle,...\"",
+    "annotationId": 1876,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [
+      {
+        "user": "Rachael Long",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 1907,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Nice!",
+    "annotationId": 1877,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [
+      {
+        "user": "Rachael Long",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 1908,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Weird formatting. The separate rows are not neccessarry. An image or table might help.",
+    "annotationId": 1878,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [
+      {
+        "user": "Rachael Long",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 1909,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Good recognition of problems",
+    "annotationId": 1879,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [
+      {
+        "user": "Rachael Long",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 1910,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "What is that?",
+    "annotationId": 1880,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [
+      {
+        "user": "Rachael Long",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 1911,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Upper / Lower case inconsistent",
+    "annotationId": 1881,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [
+      {
+        "user": "Rachael Long",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 1912,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Writing is very late. You should include writing the thesis much earlier",
+    "annotationId": 1882,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [
+      {
+        "user": "Rachael Long",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  }
+]

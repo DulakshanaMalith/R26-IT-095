@@ -1,0 +1,1180 @@
+[
+  {
+    "id": 5147,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": " ChatGPT reached one million usersin only five days [7] and in October of 2024 there where 3.66 billion visits to the platform. [7]",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 760,
+              "type": "TextPositionSelector",
+              "start": 629
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " ChatGPT reached one million usersin only five days [7] and in October of 2024 there where 3.66 billion visits to the platform. [7]",
+              "prefix": "of such platforms is undeniable,",
+              "suffix": " Since thelaunch in 2022 by Open"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5148,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "Giving intelligence a FaceHow augmented reality could make AI more approachable",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 139,
+              "type": "TextPositionSelector",
+              "start": 60
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Giving intelligence a FaceHow augmented reality could make AI more approachable",
+              "prefix": "iquitous KnowledgeProcessing Lab",
+              "suffix": "Name: AnonymizedMatrikelnummer: "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 1
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 5149,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "When we compare this to the beginning of home computing, it seems that the way we interact withthese chatbots could be improved by a GUI that exceeds the largely text based interfaces currently in use",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1824,
+              "type": "TextPositionSelector",
+              "start": 1624
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "When we compare this to the beginning of home computing, it seems that the way we interact withthese chatbots could be improved by a GUI that exceeds the largely text based interfaces currently in use",
+              "prefix": " the UK, and 7% in theUSA”. [8] ",
+              "suffix": ". Inthe early days of home compu"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 5150,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": " (hci)",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2659,
+              "type": "TextPositionSelector",
+              "start": 2653
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " (hci)",
+              "prefix": "ld of human computer interaction",
+              "suffix": " that indicatesGUIs are not nece"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5151,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "such as what the assistant should look and sound like",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3524,
+              "type": "TextPositionSelector",
+              "start": 3471
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "such as what the assistant should look and sound like",
+              "prefix": "will focus on questions in hci, ",
+              "suffix": ". Attemptsof building virtual as"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 5152,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "There are also ethical questions to be considered, for examplethe use of the appearances of (famous) people without consen",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4245,
+              "type": "TextPositionSelector",
+              "start": 4123
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "There are also ethical questions to be considered, for examplethe use of the appearances of (famous) people without consen",
+              "prefix": "o avoid the uncanny valley.[14] ",
+              "suffix": "t. [1] The goal of this work wil"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 5153,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": " The goal of this work will be to come upwith a guideline on choosing a visual representation when developing a VR based AI assistant",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4384,
+              "type": "TextPositionSelector",
+              "start": 4251
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " The goal of this work will be to come upwith a guideline on choosing a visual representation when developing a VR based AI assistant",
+              "prefix": "ous) people without consent. [1]",
+              "suffix": ".22 ApproachThe uncanny valley, "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 5154,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "[14] ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4725,
+              "type": "TextPositionSelector",
+              "start": 4720
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "[14] ",
+              "prefix": " still identifiable as nothuman.",
+              "suffix": "Researchers at the German Resear"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5155,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "While the studies listed here regard topics relevant for thedevelopment of a VR based AI assistant, they are not specifically interested in i",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6210,
+              "type": "TextPositionSelector",
+              "start": 6069
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "While the studies listed here regard topics relevant for thedevelopment of a VR based AI assistant, they are not specifically interested in i",
+              "prefix": "n and the uncanny valley”. [10] ",
+              "suffix": "t. We will aim to narrow thegap "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 5156,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "Motivation",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 344,
+              "type": "TextPositionSelector",
+              "start": 334
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Motivation",
+              "prefix": "ion: December 9, 2024Darmstadt1 ",
+              "suffix": "The idea of an artificial intell"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 5157,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": " Today, imagining a world withoutGUIs is virtually impossible",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2480,
+              "type": "TextPositionSelector",
+              "start": 2419
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " Today, imagining a world withoutGUIs is virtually impossible",
+              "prefix": "tial to successful products.[11]",
+              "suffix": ". While it seems natural that si"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 5158,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "that indicatesGUIs are not necessarily",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2698,
+              "type": "TextPositionSelector",
+              "start": 2660
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "that indicatesGUIs are not necessarily",
+              "prefix": "uman computer interaction (hci) ",
+              "suffix": " better than text based interfac"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 5159,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "These numbers make it seem as if AI-chatbots are already broadly used",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1292,
+              "type": "TextPositionSelector",
+              "start": 1223
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "These numbers make it seem as if AI-chatbots are already broadly used",
+              "prefix": "especially in technical fields. ",
+              "suffix": ". However,while most people know"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 5160,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "The idea of an artificial intelligence (AI) with a physical presence has been explored in science fiction manytimes",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 459,
+              "type": "TextPositionSelector",
+              "start": 344
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The idea of an artificial intelligence (AI) with a physical presence has been explored in science fiction manytimes",
+              "prefix": "ber 9, 2024Darmstadt1 Motivation",
+              "suffix": ". With the rise of text based AI"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5161,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "In this work we will focus on analyzing if a holographic AI assistant is beneficial to users and what appearanceusers prefer",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3113,
+              "type": "TextPositionSelector",
+              "start": 2989
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "In this work we will focus on analyzing if a holographic AI assistant is beneficial to users and what appearanceusers prefer",
+              "prefix": "phones for as little as 20€. [5]",
+              "suffix": ". This task comes with a broad s"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5162,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "trying to reproduce them in the context of virtual assistants",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6411,
+              "type": "TextPositionSelector",
+              "start": 6350
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "trying to reproduce them in the context of virtual assistants",
+              "prefix": " will build upon thesefindings, ",
+              "suffix": ". Specifically, we will build ou"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 5163,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "many participants as possible",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 10785,
+              "type": "TextPositionSelector",
+              "start": 10756
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "many participants as possible",
+              "prefix": "lection Doing the study with as ",
+              "suffix": "4 13-16 Data Collection Doing th"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5164,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "test different levels of engagement, e.g. long and short answers, or adjust the politenessof the given answers",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7684,
+              "type": "TextPositionSelector",
+              "start": 7574
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "test different levels of engagement, e.g. long and short answers, or adjust the politenessof the given answers",
+              "prefix": " helpful tothe user but we will ",
+              "suffix": ". To quantify what participants "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5165,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "data on their perception of the appearance ofthe robot, as well as the way they feel about the interactio",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7934,
+              "type": "TextPositionSelector",
+              "start": 7829
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "data on their perception of the appearance ofthe robot, as well as the way they feel about the interactio",
+              "prefix": "raction. We will aim to collect ",
+              "suffix": "n. Part of the preparation for t"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5166,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": " age, gender and interest to be able to identify biase",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8160,
+              "type": "TextPositionSelector",
+              "start": 8106
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " age, gender and interest to be able to identify biase",
+              "prefix": "ral questions on theparticipants",
+              "suffix": "s. Meaningful questions might be"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 5167,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": " heart rate for further insight into their emotional response tothe AI assistant",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8438,
+              "type": "TextPositionSelector",
+              "start": 8358
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " heart rate for further insight into their emotional response tothe AI assistant",
+              "prefix": "cial to monitor the participants",
+              "suffix": ".[21]3The study could proceed as"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5168,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "find differences in the perception of the different assistant versions",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 9203,
+              "type": "TextPositionSelector",
+              "start": 9133
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "find differences in the perception of the different assistant versions",
+              "prefix": "stical analysis will be used to ",
+              "suffix": ".Using our findings we will aim "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5169,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": " “Versuchspersonen Stunden",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 9459,
+              "type": "TextPositionSelector",
+              "start": 9433
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " “Versuchspersonen Stunden",
+              "prefix": "iving those whobenefit from them",
+              "suffix": "” for taking part in our study. "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5170,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "A survey of the interaction is conducted",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8838,
+              "type": "TextPositionSelector",
+              "start": 8798
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "A survey of the interaction is conducted",
+              "prefix": "themselves with the assistant4. ",
+              "suffix": "5. The participant is then promp"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5171,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "However, a study on stylized 3D animation found that “realism alone is a bad predictor forappeal, eeriness, or attractiveness",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5179,
+              "type": "TextPositionSelector",
+              "start": 5054
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "However, a study on stylized 3D animation found that “realism alone is a bad predictor forappeal, eeriness, or attractiveness",
+              "prefix": "ke a characterrealistic at all. ",
+              "suffix": ".”.[20] This is further solidifi"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 5172,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "addition to realism the behavior ofa virtual character",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5720,
+              "type": "TextPositionSelector",
+              "start": 5666
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "addition to realism the behavior ofa virtual character",
+              "prefix": "8], further solidifying that in ",
+              "suffix": " is important. The theory of the"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 5173,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "Attemptsof building virtual assistants paired with a physical presence have been of mixed results",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3623,
+              "type": "TextPositionSelector",
+              "start": 3526
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Attemptsof building virtual assistants paired with a physical presence have been of mixed results",
+              "prefix": "ant should look and sound like. ",
+              "suffix": ". While people stillremember the"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5174,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "intelligence",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 79,
+              "type": "TextPositionSelector",
+              "start": 67
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "intelligence",
+              "prefix": "s KnowledgeProcessing LabGiving ",
+              "suffix": " a FaceHow augmented reality cou"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 1
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 5175,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "As the time that is needed to build the testing platform isdifficult to narrow down,",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6910,
+              "type": "TextPositionSelector",
+              "start": 6826
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "As the time that is needed to build the testing platform isdifficult to narrow down,",
+              "prefix": " appearances for the assistant. ",
+              "suffix": " there is a range of options for"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5176,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "We will at least test an assistantwith clearly machine like features in comparison to one designed to resemble a human. Additional options aretwo machine like assistants with different levels of realism, e.g. one looking like a cartoon robot and one like arealistic robot, and different humanoid assistants also comparing a stylized look to a realistic one.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7321,
+              "type": "TextPositionSelector",
+              "start": 6964
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "We will at least test an assistantwith clearly machine like features in comparison to one designed to resemble a human. Additional options aretwo machine like assistants with different levels of realism, e.g. one looking like a cartoon robot and one like arealistic robot, and different humanoid assistants also comparing a stylized look to a realistic one.",
+              "prefix": "ptions for the following study. ",
+              "suffix": " Besides thelook of the differen"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5177,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "Another survey is conducted",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8949,
+              "type": "TextPositionSelector",
+              "start": 8922
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Another survey is conducted",
+              "prefix": "tant for help on a given task6. ",
+              "suffix": "7. Data on the participants age,"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5178,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "improving",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 10015,
+              "type": "TextPositionSelector",
+              "start": 10006
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "improving",
+              "prefix": "ding on the prototypeand testing",
+              "suffix": " the prototype through tests, gi"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5179,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "research",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 10393,
+              "type": "TextPositionSelector",
+              "start": 10385
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "research",
+              "prefix": "ch and prepar-ing the experiment",
+              "suffix": " specifically on what 3D models "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5180,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "writing process should also begin as thesoftware and the study are completed",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 10956,
+              "type": "TextPositionSelector",
+              "start": 10880
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "writing process should also begin as thesoftware and the study are completed",
+              "prefix": "ts as possible,in this time the ",
+              "suffix": " and can be describedin the meth"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5181,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "s.[13][12][2][9]",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 967,
+              "type": "TextPositionSelector",
+              "start": 951
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "s.[13][12][2][9]",
+              "prefix": "an existing one in their product",
+              "suffix": " Graphicscard manufacturer Nvidi"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5182,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "literature",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 10346,
+              "type": "TextPositionSelector",
+              "start": 10336
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "literature",
+              "prefix": "r to find/fix potential bugs3 9 ",
+              "suffix": " research and prepar-ing the exp"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5183,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "printing",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 11417,
+              "type": "TextPositionSelector",
+              "start": 11409
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "printing",
+              "prefix": "22-24 Finalization Buffer time, ",
+              "suffix": ", and final submission5Bibliogra"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5184,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "users for feedback",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 10088,
+              "type": "TextPositionSelector",
+              "start": 10070
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "users for feedback",
+              "prefix": "tests, giving the proto-type to ",
+              "suffix": "2 7 Reviewing feedback refining "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  }
+]

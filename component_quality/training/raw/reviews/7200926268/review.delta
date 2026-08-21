@@ -1,0 +1,65 @@
+[
+  {
+    "retain": 0
+  },
+  {
+    "insert": "Feed-Up (Connecting to goals and standards):"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "header": 3
+    }
+  },
+  {
+    "insert": "Your exposé is well-thought-out and comprehensive. The content is strong, and it answers all potential questions, which is a great achievement.\n\n\nFeed-Forward (Actionable suggestions for improvement):"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "header": 3
+    }
+  },
+  {
+    "insert": "Fix Minor Errors",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": ": There are a few small spelling mistakes that should be corrected to polish your work further."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "ordered"
+    }
+  },
+  {
+    "insert": "Refine Your Schedule",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": ": The timeline is slightly too optimistic. Adjust it to ensure that your goals are realistic and manageable within the given timeframe."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "ordered"
+    }
+  },
+  {
+    "insert": "\nSummary (Overall assessment):"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "header": 3
+    }
+  },
+  {
+    "insert": "Your exposé is impressive, with thoughtful content and clear explanations. By addressing the minor spelling mistakes and making your schedule more realistic, you can perfect your work. Excellent job so far!"
+  }
+]

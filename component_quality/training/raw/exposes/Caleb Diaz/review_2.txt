@@ -1,0 +1,9 @@
+The introduction uses an imaginary scene, but doesn’t follow up. The paper states to imagine something, so I imagined something, but the paper does not follow up, but drifts into another direction all of a sudden, trying to introduce the topic. This disrupts the introduction. The introduction uses two approaches to introduce the topic: Imagine a holographic teacher, and AR becomes more accessible. These things get mixed up and disrupt the introduction. Further, some “random facts” are dropped in, like how many children are taught in poor countries. The introduction needs to be cleaned up to work on its motivation. There are some contradictions as well. For example, the introduction first says AI is expensive, but later claims it is a cost-effective solution. Also, it incorrectly describes VR as an AI tool, which it is not. Some sentences, especially in the third paragraph, are difficult to read and need to be rewritten for clarity.
+
+The research question is too broad. Asking about “opportunities and difficulties” leaves it open to too many answers and lacks a clear focus.
+
+In the section about state-of-the-art (SOTA) systems, the paper mentions adaptive AI on online platforms but does not name any specific examples. If such platforms exist, they should be mentioned.
+
+The methodology is quite shallow. It talks about collecting data, but does not explain what kind of data or why it matters. The connection to the research question is missing and needs to be made clearer.
+
+Finally, the timetable is unclear. It’s not obvious how the two studies relate to each other. Is study 2 a follow-up to study 1, or just a different version of it? Also, the term “organizing” data is not quite right. It would be better to say “preparing” or “processing” the data, since the data should already be organized.

@@ -1,0 +1,19 @@
+Summary
+
+The study wants to show how holographic AI can be used in surgical procedures to enhance spatial awareness and immersive interaction.
+
+Strength
+
+The motivation should arouse interest in your topic. You did this well, attracting people's attention and engaging them in reading further.	
+The weaknesses of the current state of the art should be mentioned. You showed precisely what could be improved. This should not be written in bullet points but in plain text.
+
+Weaknesses
+
+Your exposé should be structured around a research question. As yours is completely missing, you should specify one. Additionally, when talking about the current state of the art, it should be clear what you want to add to the current state of your work.
+The methodology should be clear and detailed. Furthermore, it should also cover potential problems that may occur. Your methodology is very imprecise. To adjust that, you should add more details on what exactly you will do, what problems could occur, and how you plan to handle those.	
+Learning how to cite correctly is a key takeaway from our lecture. Proving your statements and showing where you got certain concepts from is essential. As your exposé does not contain any citations, you should definitely add those.
+
+Other
+
+You should formulate clear sentences instead of using bullet points.
+There are some points where your wording is unclear.

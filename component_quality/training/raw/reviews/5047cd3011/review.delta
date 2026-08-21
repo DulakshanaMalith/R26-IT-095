@@ -1,0 +1,105 @@
+[
+  {
+    "retain": 0
+  },
+  {
+    "insert": "Summary:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nThis expose is on the topic of classifying skin cancer images using GANs with Dreambooth to mitigate the issue of not being able to finetune diffusion models. The student aims to categorize images of the three types of cancer: basal cell carcinoma, squamous cell carcinoma and melanoma, and cancer free images.\n\n"
+  },
+  {
+    "insert": "Strengths:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nGood hook, the motivation behind this study is clear."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "When the student talks about what they plan to do to classify these images in their motivation and theoretical framework section, their method is very clear and understandable."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "\n"
+  },
+  {
+    "insert": "Weaknesses:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nMotivation: This expose could benefit from clearly stating what its research questions are. While ‘classifying skin cancer images’ is clear throughout the expose, how physical characteristics such as skin color, age and sex affect the reliability of an ML solution is not given the same attention."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "SOTA: the literature cited here does not inform the reader what its relevance is to the author’s methodology. When citing previous works, you have to ask “What can i build on top of in this work? How does this benefit my interests?” instead of only stating what they have done."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "Methodology: could benefit from mentioning potential setbacks as it lets the reader know you are confident in your study and have thorough understanding of your topic."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "\n"
+  },
+  {
+    "insert": "Others:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nTheoretical framework: The text doesn't necessarily invoke the sense that all of what has been mentioned is directly tied to the research question. I understand what the framework does, but what is its specific relevance to the domain and topic of skin cancer images and how does it effectively address the research question?"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "If i had to boil down my point, the whole section feels like the author is reciting to me what Dreambooth is and how it benefits GANs, but how does it benefit your study specifically?"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet",
+      "indent": 1
+    }
+  },
+  {
+    "insert": "\n"
+  }
+]

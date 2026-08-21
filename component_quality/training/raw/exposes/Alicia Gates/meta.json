@@ -1,0 +1,30 @@
+{
+  "topic": "Interactive LLM-based teaching agents",
+  "author": "Alicia Gates",
+  "reviews": {
+    "1": {
+      "review": 1,
+      "hash": "2f964124f1",
+      "reviewer": "Rachael Long",
+      "role": "student",
+      "size": 6147,
+      "group": 1
+    },
+    "2": {
+      "review": 2,
+      "hash": "c66d8be0ec",
+      "reviewer": "Sharon May",
+      "role": "student",
+      "size": 1977,
+      "group": 1
+    },
+    "3": {
+      "review": 3,
+      "hash": "cd550b30a1",
+      "reviewer": "Lisa Jones",
+      "role": "assistant",
+      "size": 2858,
+      "group": 1
+    }
+  }
+}

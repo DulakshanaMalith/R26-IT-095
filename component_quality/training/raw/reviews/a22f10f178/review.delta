@@ -1,0 +1,98 @@
+[
+  {
+    "retain": 0
+  },
+  {
+    "insert": "Summary:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nThis study addresses the need of more efficient processes for teachers to generate material, with the upcoming teacher shortage in Germany in mind. Specifically, the usefulness of LLMs in streamlining different kinds of study material for students will be investigated and evaluated in a study with teachers and students."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "\n"
+  },
+  {
+    "insert": "Strengths:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nClearly specifying what parts of the methodology address what research questions helps greatly with the overall structure of the expose. You tailored your methods clearly towards answering the research questions."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "A good introduction catches the reader and provides justification for your research interest. You present a very nice introduction, addressing real-world problems and why they are important."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "Your theoretical framework fits well into the setting of your study"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "\n"
+  },
+  {
+    "insert": "Weaknesses:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nThe theoretical framework in an expose is designed as a help to explain and connect the methodology to theoretical foundations. While you came up with a fitting framework, you dont include it well into the overall structure of your expose. Try to explain it more in detail and make sure that the reader will be convinced of why your framework is relevant."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": " The SOTA section should provide a thorough overview over related work so that the reader has a good picture over the current state. However, you present two papers very briefly, without contextualizing them or describing more different studies. When adding more papers to your SOTA section, keep in mind to combine them and condense them to make it easier for a reader to follow"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "A good scientific writing style is very important in academia. You had some quite informal formulations such as \"Here comes LLMs into the game\" and filler sentences such as \""
+  },
+  {
+    "insert": "An approach to feeding the outcomes of the teacher crisis is needed to tackle the problem.\" that lower the professionalism of your expose. Try to be as precise as possible, removing filler sentences and expressions and emphasizing all remaining claims with a reference ",
+    "attributes": {
+      "background": "#ffffff"
+    }
+  },
+  {
+    "retain": 1,
+    "attributes": {
+      "list": "bullet"
+    }
+  }
+]

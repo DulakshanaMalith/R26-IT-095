@@ -1,0 +1,467 @@
+[
+  {
+    "id": 3007,
+    "user": "Cheyenne Kim",
+    "role": "student",
+    "text": "According to F.D. Davis, the acceptance of new technological systems – such as an AI-supported learningmodule—depends on \"perceived usefulness\" and \"perceived ease of use.\"[9] Davis emphasizes that these twovariables must align: a system must be both sufficiently useful and easy to use to ensure acceptance andeffective utilization. Jean Piaget, a renowned psychologist, argues that \"learning is an active, context-basedprocess in which new knowledge is constructed on the foundation of prior experiences.\"[10]Guided by Davis’ and Piaget’s frameworks, my methodology aims to ensure that the proposed AI platform isboth effective and user-friendly. By combining these theoretical insights with practical feedback from teachersand students, I seek to design a system that aligns with real-world educational needs",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4208,
+              "type": "TextPositionSelector",
+              "start": 3397
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "According to F.D. Davis, the acceptance of new technological systems – such as an AI-supported learningmodule—depends on \"perceived usefulness\" and \"perceived ease of use.\"[9] Davis emphasizes that these twovariables must align: a system must be both sufficiently useful and easy to use to ensure acceptance andeffective utilization. Jean Piaget, a renowned psychologist, argues that \"learning is an active, context-basedprocess in which new knowledge is constructed on the foundation of prior experiences.\"[10]Guided by Davis’ and Piaget’s frameworks, my methodology aims to ensure that the proposed AI platform isboth effective and user-friendly. By combining these theoretical insights with practical feedback from teachersand students, I seek to design a system that aligns with real-world educational needs",
+              "prefix": "hers.2.0.2 Theoretical Framework",
+              "suffix": ".2.0.3 MethodologyThe methodolog"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 3008,
+    "user": "Cheyenne Kim",
+    "role": "student",
+    "text": "Since the year 2000, the Programme for International Student Assessment (PISA) has evaluated the reading,writing, and scientific understanding of 15-year-olds worldwide. However, as shown in the graphic below 1.1 ,the results of the PISA study indicate a clear downward trend in performance. In Germany, one of the keyreasons behind this decline is a growing shortage of teaching personnel. By 2030, it is estimated that 115,000to 175,000 teaching positions in Germany could remain unfilled.[1] This alarming situation demands urgentsolutions - But artificial intelligence could help to overcome this obstacle.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 962,
+              "type": "TextPositionSelector",
+              "start": 352
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Since the year 2000, the Programme for International Student Assessment (PISA) has evaluated the reading,writing, and scientific understanding of 15-year-olds worldwide. However, as shown in the graphic below 1.1 ,the results of the PISA study indicate a clear downward trend in performance. In Germany, one of the keyreasons behind this decline is a growing shortage of teaching personnel. By 2030, it is estimated that 115,000to 175,000 teaching positions in Germany could remain unfilled.[1] This alarming situation demands urgentsolutions - But artificial intelligence could help to overcome this obstacle.",
+              "prefix": "ber 5, 2024Darmstadt1 Motivation",
+              "suffix": "While there is already extensive"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 3009,
+    "user": "Cheyenne Kim",
+    "role": "student",
+    "text": "While there is already extensive literature on the use of AI in education, much of it focuses on higher education.This leaves a gap in understanding how AI can be effectively implemented in school settings, particularly toaddress foundational skills like mathematics.The central question I aim to explore is: How can AI benefit both students and teachers in improvingmathematical skills? To answer this, several related questions emerge:• How receptive are students to AI-assisted, individualized learning sessions?• In what ways can AI support teachers in evaluating students’ current levels of understanding?• How effective are AI tools in identifying and addressing specific weaknesses in mathematical skills?• What are the ethical considerations when using AI in personalized learning environments?• How do students’ attitudes and engagement with AI-assisted tools influence their overall learningoutcomes?",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1872,
+              "type": "TextPositionSelector",
+              "start": 962
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "While there is already extensive literature on the use of AI in education, much of it focuses on higher education.This leaves a gap in understanding how AI can be effectively implemented in school settings, particularly toaddress foundational skills like mathematics.The central question I aim to explore is: How can AI benefit both students and teachers in improvingmathematical skills? To answer this, several related questions emerge:• How receptive are students to AI-assisted, individualized learning sessions?• In what ways can AI support teachers in evaluating students’ current levels of understanding?• How effective are AI tools in identifying and addressing specific weaknesses in mathematical skills?• What are the ethical considerations when using AI in personalized learning environments?• How do students’ attitudes and engagement with AI-assisted tools influence their overall learningoutcomes?",
+              "prefix": " help to overcome this obstacle.",
+              "suffix": "2003 2006 2009 2012 2015 2018 20"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 3010,
+    "user": "Cheyenne Kim",
+    "role": "student",
+    "text": "Trends in Mathematics, Reading, and Science PerformanceMathematicsReadingScienceFigure 1.1: Trends in Mathematics, Reading, and Science Performance (Germany, Age 15)Source: OECD (2023), PISA 2022 Results (Volume I): The State of Learning and Equity in Education, PISA, OECD Publishing, Paris, p.418,https://doi.org/10.1787/53f23881-en. [2]",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2278,
+              "type": "TextPositionSelector",
+              "start": 1939
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Trends in Mathematics, Reading, and Science PerformanceMathematicsReadingScienceFigure 1.1: Trends in Mathematics, Reading, and Science Performance (Germany, Age 15)Source: OECD (2023), PISA 2022 Results (Volume I): The State of Learning and Equity in Education, PISA, OECD Publishing, Paris, p.418,https://doi.org/10.1787/53f23881-en. [2]",
+              "prefix": "60480500520YearPISA Score Points",
+              "suffix": "22 Approach2.0.1 SOTAThere are a"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 3011,
+    "user": "Cheyenne Kim",
+    "role": "student",
+    "text": "Week 1 Planning & Setup Create work plan; set milestones.Week 2 Literature Research Review AI research in education.Week 3 Looking for Participants Email schools; recruit participants.Week 4 Literature Evaluation Select and review key sources; Stay in touch withschoolsMonth 2: Interviews, System Development, and Initial TestingWeek 1 Entry Interviews Interview teachers and students.Week 2 System Setup Configure the AI system.Week 3-4 Testing Phase 1 Test system; refine methods.Month 3: Feedback Loop and System OptimizationWeek 1 Exit Interviews Collect feedback from users.Week 2 System Rework Refine system based on feedback.Week 3 Testing Phase 2 Test improved system.Week 4 Final Feedback Conduct final interviews.Month 4: Data Analysis and DocumentationWeek 1-2 Data Analysis Analyze results; find insights.Week 3-4 Writing Results Draft results chapter.Month 5: Discussion and ReviewWeek 1 Buffer Time Resolve pending issues.Week 2 Discussion Interpret results; discuss.Week 3 Methodology Review Revise methods section.Week 4 Full Revision Integrate and revise chapters.Month 6: Finalization and Submission",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 9347,
+              "type": "TextPositionSelector",
+              "start": 8230
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Week 1 Planning & Setup Create work plan; set milestones.Week 2 Literature Research Review AI research in education.Week 3 Looking for Participants Email schools; recruit participants.Week 4 Literature Evaluation Select and review key sources; Stay in touch withschoolsMonth 2: Interviews, System Development, and Initial TestingWeek 1 Entry Interviews Interview teachers and students.Week 2 System Setup Configure the AI system.Week 3-4 Testing Phase 1 Test system; refine methods.Month 3: Feedback Loop and System OptimizationWeek 1 Exit Interviews Collect feedback from users.Week 2 System Rework Refine system based on feedback.Week 3 Testing Phase 2 Test improved system.Week 4 Final Feedback Conduct final interviews.Month 4: Data Analysis and DocumentationWeek 1-2 Data Analysis Analyze results; find insights.Week 3-4 Writing Results Draft results chapter.Month 5: Discussion and ReviewWeek 1 Buffer Time Resolve pending issues.Week 2 Discussion Interpret results; discuss.Week 3 Methodology Review Revise methods section.Week 4 Full Revision Integrate and revise chapters.Month 6: Finalization and Submission",
+              "prefix": ": Planning and Literature Review",
+              "suffix": "Week 1 Final Editing Proofread a"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 3012,
+    "user": "Cheyenne Kim",
+    "role": "student",
+    "text": "Teaching Mathematics with AI",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 88,
+              "type": "TextPositionSelector",
+              "start": 60
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Teaching Mathematics with AI",
+              "prefix": "iquitous KnowledgeProcessing Lab",
+              "suffix": "Addressing Opportunities and Cha"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 1
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 3013,
+    "user": "Cheyenne Kim",
+    "role": "student",
+    "text": "There are already several studies and interviews exploring the use of AI in education. Most of them, however,either utilize independent chatbots [3] or focus predominantly on theoretical frameworks.[4][5][6] Otherexamples include large-scale classroom implementations, such as the setups demonstrated by Zhang et al.[7]",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2618,
+              "type": "TextPositionSelector",
+              "start": 2299
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "There are already several studies and interviews exploring the use of AI in education. Most of them, however,either utilize independent chatbots [3] or focus predominantly on theoretical frameworks.[4][5][6] Otherexamples include large-scale classroom implementations, such as the setups demonstrated by Zhang et al.[7]",
+              "prefix": "881-en. [2]22 Approach2.0.1 SOTA",
+              "suffix": "The concept of Artificial Intell"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 3014,
+    "user": "Cheyenne Kim",
+    "role": "student",
+    "text": "Week 1 Final Editing Proofread and finalize text.Week 2-4 Final Submission Print and submit thesis. Buffer included.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 9463,
+              "type": "TextPositionSelector",
+              "start": 9347
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Week 1 Final Editing Proofread and finalize text.Week 2-4 Final Submission Print and submit thesis. Buffer included.",
+              "prefix": "h 6: Finalization and Submission",
+              "suffix": "5Bibliography[1] Dieter Dohmen. "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 3015,
+    "user": "Cheyenne Kim",
+    "role": "student",
+    "text": "https://doi.org/10.1787/53f23881-en.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 9901,
+              "type": "TextPositionSelector",
+              "start": 9865
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "https://doi.org/10.1787/53f23881-en.",
+              "prefix": ".doi: 10.1787/53f23881-en. url: ",
+              "suffix": "[3] Yu Chen et al. “Artificial I"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 6
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 3016,
+    "user": "Cheyenne Kim",
+    "role": "student",
+    "text": "https://doi.org/10.1007/s10796- 022-10291-4.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 10195,
+              "type": "TextPositionSelector",
+              "start": 10151
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "https://doi.org/10.1007/s10796- 022-10291-4.",
+              "prefix": "007/s10796- 022- 10291- 4. url: ",
+              "suffix": "[4] Helen Crompton and Diane Bur"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 6
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 3017,
+    "user": "Cheyenne Kim",
+    "role": "student",
+    "text": "https ://doi.org/10.1007/s43545-022-00425-5",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 10426,
+              "type": "TextPositionSelector",
+              "start": 10383
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "https ://doi.org/10.1007/s43545-022-00425-5",
+              "prefix": " s43545 - 022 - 00425 - 5. url: ",
+              "suffix": ".[5] Bosede I. Edwards and Adria"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 6
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 3018,
+    "user": "Cheyenne Kim",
+    "role": "student",
+    "text": "https://doi.org/10.1080/08839514.2018.1464286.url: https://doi.org/10.1080/08839514.2018.1464286",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 10756,
+              "type": "TextPositionSelector",
+              "start": 10660
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "https://doi.org/10.1080/08839514.2018.1464286.url: https://doi.org/10.1080/08839514.2018.1464286",
+              "prefix": "/08839514.2018.1464286. eprint: ",
+              "suffix": ".[6] OECD. PISA 2018 Results (Vo"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 6
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 3019,
+    "user": "Cheyenne Kim",
+    "role": "student",
+    "text": "https : / / www . oecd - ilibrary . org / content /publication/d5f68679-en.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 10958,
+              "type": "TextPositionSelector",
+              "start": 10883
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "https : / / www . oecd - ilibrary . org / content /publication/d5f68679-en.",
+              "prefix": "10 . 1787 / d5f68679 - en. url: ",
+              "suffix": "[7] Zheyuan Zhang et al. Simulat"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 6
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 3020,
+    "user": "Cheyenne Kim",
+    "role": "student",
+    "text": "https://dx.doi.org/10.1088/1742-6596/1714/1/012039.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 11985,
+              "type": "TextPositionSelector",
+              "start": 11934
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "https://dx.doi.org/10.1088/1742-6596/1714/1/012039.",
+              "prefix": "8/1742-6596/1714/1/012039. url: ",
+              "suffix": "6HighlightStrengthWeaknessOther"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 6
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 3021,
+    "user": "Cheyenne Kim",
+    "role": "student",
+    "text": "While Juji and Microsoft Azure OpenAI offer promising features, both have strength and weaknesses - be it thecomplexity of configuration and therefore the required technical expertise in Azure’s case, or the limitation ofcustomization in Juji’s case. Both also have ethical and data protection obstacles that need to be addressed.Possible difficulties include the risk of selecting participants with a strong reluctance toward AI. Recent surveysindicate that while most teachers perceive AI as potentially helpful tools, approximately 15% still view AI asdestructive. Students, on the other hand, appear less concerned about the use of AI, with only about 10%considering it potentially harmful.[11]This is an issue that needs to be addressed with the test group. What are their attitudes towards AI, and whatconcerns do they have? To address this, a short questionnaire integrated into the AI system at the beginningis essential to identify and address any acceptance barriers. If such barriers are encountered, they must beresolved before participants can fully engage with the system.Another challenge is the limited time frame. A three-week testing phase provides only a brief snapshot of thesystem’s acceptance and effectiveness. A more in-depth testing period over several months would yield clearerand more precise insights. This should be considered as a follow-up, especially if this study indicates that thetools are likely to be accepted and perceived as usefull.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8132,
+              "type": "TextPositionSelector",
+              "start": 6659
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "While Juji and Microsoft Azure OpenAI offer promising features, both have strength and weaknesses - be it thecomplexity of configuration and therefore the required technical expertise in Azure’s case, or the limitation ofcustomization in Juji’s case. Both also have ethical and data protection obstacles that need to be addressed.Possible difficulties include the risk of selecting participants with a strong reluctance toward AI. Recent surveysindicate that while most teachers perceive AI as potentially helpful tools, approximately 15% still view AI asdestructive. Students, on the other hand, appear less concerned about the use of AI, with only about 10%considering it potentially harmful.[11]This is an issue that needs to be addressed with the test group. What are their attitudes towards AI, and whatconcerns do they have? To address this, a short questionnaire integrated into the AI system at the beginningis essential to identify and address any acceptance barriers. If such barriers are encountered, they must beresolved before participants can fully engage with the system.Another challenge is the limited time frame. A three-week testing phase provides only a brief snapshot of thesystem’s acceptance and effectiveness. A more in-depth testing period over several months would yield clearerand more precise insights. This should be considered as a follow-up, especially if this study indicates that thetools are likely to be accepted and perceived as usefull.",
+              "prefix": " a week later.2.0.5 Difficulties",
+              "suffix": "chttps://azure.microsoft.com/en-"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  }
+]

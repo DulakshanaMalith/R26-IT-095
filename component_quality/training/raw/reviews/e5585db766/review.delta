@@ -1,0 +1,110 @@
+[
+  {
+    "retain": 0
+  },
+  {
+    "insert": "Summary",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\n\nThe goal of the research is to investigate how well the classification of an LLM matches the triage classification of the deciding physician using additional information (detailed clinical notes). These will be collected and analysed within the research and then evaluated using an LLM.\n\n"
+  },
+  {
+    "insert": "Strengths",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\n\nA goal is to give the reader a clear picture of the objective of the planned research, possibly by explaining technical terms. The explanation of what triage in this case is appropriate to make it easier for the reader to get started, which is further explained with an example of the circumstances under which the problem occurs."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "You also give examples at various points in the approach, which makes reading easier to understand."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "\n"
+  },
+  {
+    "insert": "Weaknesses",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\n\nThe motivation should clearly and comprehensibly convey the problem to the reader without going into too much detail. Your motivation is very detailed with information that either belongs in the approach or also appears there. Check again whether all the information in the motivation is necessary to give the reader a clear picture of the problem. Also check whether information would not be better placed in the approach."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "In some cases, terms are not clear enough (e.g., associations) or statements are not sufficiently substantiated with sources. For example, it is also unclear why the shortage of medical staff in Germany is, in particular, combat. It can be helpful to have an external person read over it to get a second view on terms that can be unclear."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "The motivation should already clearly state what is to be analysed, which is sometimes done by precisely describing the metrics to be investigated. The research question leaves room for interpretation as to what is meant by agreement. Try to coordinate this again with the approach and define the question more clearly. It is also unclear why RQ 2 a) is not defined as a separate research question."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "An additional goal of the exposé is to give the work a theoretical framework, which should be done with the help of appropriate theory in order to have a basis for a systematic analysis of the problem. This is completely missing in the exposé. To identify a suitable theoretical framework, consider reviewing foundational theories within your field, analyzing how similar studies approached the topic, and evaluating which framework aligns best with your research question and objectives."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "The planning should also be carried out as realistically as possible with the help of the exposé. Especially with regard to the number of cases that need to be collected, the limited time available is a challenge that should not be underestimated. Think again about whether the schedule makes sense and whether there are tasks that can be carried out in parallel."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "\n"
+  },
+  {
+    "insert": "Other",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\n\nThere are a minor mistakes in terminology (e.g., deciding clinician vs. deciding physician) and spelling (e.g., \"accuracy\" starting with small letter). "
+  },
+  {
+    "retain": 1,
+    "attributes": {
+      "list": "bullet"
+    }
+  }
+]

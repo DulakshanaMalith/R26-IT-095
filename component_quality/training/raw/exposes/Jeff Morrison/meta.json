@@ -1,0 +1,30 @@
+{
+  "topic": "Generative AI in Healthcare",
+  "author": "Jeff Morrison",
+  "reviews": {
+    "1": {
+      "review": 1,
+      "hash": "83189adb14",
+      "reviewer": "Elijah Boone",
+      "role": "expert",
+      "size": 1947,
+      "group": 1
+    },
+    "2": {
+      "review": 2,
+      "hash": "337d4a6a6e",
+      "reviewer": "Stephanie Morgan",
+      "role": "expert",
+      "size": 795,
+      "group": 2
+    },
+    "3": {
+      "review": 3,
+      "hash": "b7e0289c41",
+      "reviewer": "Regina Reid",
+      "role": "student",
+      "size": 3371,
+      "group": 1
+    }
+  }
+}

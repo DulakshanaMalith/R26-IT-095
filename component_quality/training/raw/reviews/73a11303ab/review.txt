@@ -1,0 +1,14 @@
+Summary: 
+The thesis aims to investigate the effectiveness of the generative AI chatbot Woebot in the treatment of Persistent Depressive Disorder (PDD) over a period of six weeks. In a study with 60 participants divided into three groups, progress will be measured using the WHO-5 and CES-D scales, combining qualitative and quantitative methods. The aim is to determine whether the use of Woebot can bring about significant improvements in mental health.
+
+Strength:
+A well-organised exposé is crucial for clarity and readability. Your exposé has a very good structure that is logically organized and guides the reader clearly through the different sections.
+The methodology describes how the individual research questions will be answered. Your methodology is explained in detail and clearly so that the planned research process is presented in a comprehensible manner.
+It is very important to make it clear in an exposé what the aim of the work is in order to give the reader a precise understanding of the objectives. This was achieved very well in this exposé through the well-formulated research questions.
+The time schedule is used to plan the thesis in advance to see whether it is possible in the short time available. Your time schedule is also well thought out and explained, which shows that the work is structured.
+
+Weakness:
+The motivation should explain to the reader why the chosen topic is relevant and which weakness the thesis wants to address. You are missing a detailed description of the underlying problem and its relevance to the research field. It would be important to explain in more detail why the topic is important, what general problem is being addressed and what the significance of solving this problem is. You are also missing a description of the current approach to solving the problem. Think about how attempts have been made to solve the problem so far.
+Scientific language is very important in scientific texts. Some of the wording and phrases in your exposé could be chosen in a more scientific way. Read scientific articles for inspiration and try to familiarize yourself with the writing style. Now revise your text again.
+The state-of-the-art should position your work against existing research. Your section is very well structured, but the weaknesses of the existing approaches and the general relevance of the topic should be highlighted more. To do this, read up on the current research again and try to find out what weaknesses there are. You can use examples and facts to make the general relevance clearer.
+The time schedule is used to plan the thesis in advance to see whether it is possible in the short time available. It is therefore very important that all aspects of the thesis are included. The writing of the thesis is missing in your time schedule. Think about which chapters all belong in a thesis and when they should best be written. 

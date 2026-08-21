@@ -1,0 +1,16 @@
+Summary:
+This study is designed to find out how generative AI tools can enhance the perioperative consultation between patients and medical staff
+
+Strengths:
+The main RQ and the first SRQ are good research questions, openly formulated and specific enough that you can answer them in the scope of a thesis
+The overall structure of your expose is good. It is understandable why your topic is relevant, what you want to find out, and how you want to approach it
+Your schedule looks well thought through, with (to me) realistic study design&execution times and allocated buffer/writing times
+
+Weaknesses:
+A big amount of grammar mistakes for a scientific expose make it very unprofessional. I did not mark all of your mistakes, but the sheer amount of little mistakes makes it hard to read. If you have troubles finding them yourself, let someone else proofread or use grammar tools online (and mention them in case).
+The theoretical framework should consist of some principles or theories that your further research is based on. What you mentioned in the section is no theoretical framework to me. As this section is not always obvious for all kinds of theses, it can also be very technical - either in the direction of explaining LLMs/GenAI, and how you would train/finetune/apply it, or in the direction of how you want to conduct your interviews.
+A good SOTA section combines different material, and presents a relevant overview over related papers or related methodologies. You mention some papers, but they are very general ([4],[6]) or not explained enough in detail ([8]). If you combine them well, provide enough detail and show their limitations, it is much easier to tell a story and justify your research
+
+
+Others:
+You added quite some details in the methodology which is good - however some details seem arbitrary regarding the study design. When specifying, always explain the WHY behind your thoughts and also consider if your methods are suitable for your RQs.

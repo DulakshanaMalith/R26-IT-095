@@ -1,0 +1,16 @@
+Summary
+In your study, you want to investigate if children with ASD could benefit from interacting with a holographic AIs, especially for learning and communication.
+
+
+Motivation
+The motivation has the goal to catch reader's interest, explain specific problem and in which domain it occurs and also how the problem is currently handled. It should also state research questions explicitly and precisely.
+Your hook is good. You also explain the problem well, but this could be more detailed, especially the aspects regarding your research area.
+The RQs are well written, but in general you could state what you want to compare holographic AI to. 
+
+Approach
+In the approach, the goal is to explain current State of the Art and explain the research gap that would further improve the existing work. It should also state your methods, how they relate to your RQs and what their challenges and limitations are. 
+The SOTA and theoretical framework are well written, but i would reconsider which information belongs into which section (see annotations). 
+The methods are explained well and you also mention challenges and limitations. It could however benefit from linking aspects of your methods to specific sub RQs and also linking your methods to the theoretical work.
+
+Other
+You mention the aspect of learning and communication, but often only write about learning. I would either include both or leave out communication completely.

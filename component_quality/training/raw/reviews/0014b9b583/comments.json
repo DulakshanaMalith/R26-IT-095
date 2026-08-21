@@ -1,0 +1,155 @@
+[
+  {
+    "id": 2729,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "What is a qualified LLM?",
+    "annotationId": 2681,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Jonathan Booker",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2730,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Hire isn't the correct word here. Hiring would mean you employ them.",
+    "annotationId": 2682,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Jonathan Booker",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2731,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "This will take a lot of time and be incredibly difficult, maybe only chose one of the target groups.",
+    "annotationId": 2683,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Jonathan Booker",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2732,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "It should be possible to send everyone a survey afterwards that would result in the same - so consider that as an alternative to interviews.",
+    "annotationId": 2684,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Jonathan Booker",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2733,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Good choice.",
+    "annotationId": 2685,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Jonathan Booker",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2734,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Good choice, though you may not have a significant amount of data that way.",
+    "annotationId": 2686,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Jonathan Booker",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2735,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "how?",
+    "annotationId": 2687,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Jonathan Booker",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2736,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Hiring is the wrong wording here, that would imply you pay them. ",
+    "annotationId": 2688,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Jonathan Booker",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2737,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "In this schedule, not once you write that you want to write any Chapters of your thesis. Be more explicit when mentioning that!",
+    "annotationId": 2689,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Jonathan Booker",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  }
+]

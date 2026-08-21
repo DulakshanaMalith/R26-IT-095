@@ -1,0 +1,167 @@
+[
+  {
+    "id": 2251,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "abbreviations 'AI' is more popular. And 'A.I' inconsitent because it should be 'A.I.'",
+    "annotationId": 2210,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 2252,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "better introduce this abbreviation before",
+    "annotationId": 2211,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 2253,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "combination*",
+    "annotationId": 2212,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 2254,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "This seems to not fit to your main research question. Consider rephrasing reseach question and include risks and challenges of AI.",
+    "annotationId": 2213,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 2255,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "Good hook with a good example scenario",
+    "annotationId": 2214,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 2256,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "It's good to go from the broader area of research (the role of AI in AR) to a more specific one (user interactions, expanding AR's capabilities). ",
+    "annotationId": 2215,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 2257,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "From here I would go even deeper and give some examples how AI could improve user experience and AR's capabilities. ",
+    "annotationId": 2216,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 2258,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "Maybe specify which AI systems could be beneficial for AR and in which way. AI is a wide field, so just using the term AI might be to broad.",
+    "annotationId": 2217,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 2259,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "This sounds not coherent: You want to find gaps, but then you know the gaps already from a reference",
+    "annotationId": 2218,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 2260,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "I wouldn't call these points theories, but rather methods, models, algorithms or technologies",
+    "annotationId": 2219,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 2261,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "the bibliography has incorrect references. ",
+    "annotationId": 2220,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 2262,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "How many?",
+    "annotationId": 2221,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 2263,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "which sectors?",
+    "annotationId": 2222,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 2264,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "It's not clear to me what that means? Do you mean to measure user acivity?",
+    "annotationId": 2223,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 2265,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "About which systems is this?",
+    "annotationId": 2224,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  }
+]

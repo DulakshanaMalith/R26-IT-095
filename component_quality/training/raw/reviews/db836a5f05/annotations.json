@@ -1,0 +1,1211 @@
+[
+  {
+    "id": 2873,
+    "user": "Sydney Carlson",
+    "role": "student",
+    "text": "largest",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3877,
+              "type": "TextPositionSelector",
+              "start": 3870
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "largest",
+              "prefix": "e football/soccer is one of the ",
+              "suffix": " sports in the world, the most c"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 2874,
+    "user": "Sydney Carlson",
+    "role": "student",
+    "text": "s (e.g. locality, income, sex, just to name a few",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 677,
+              "type": "TextPositionSelector",
+              "start": 628
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "s (e.g. locality, income, sex, just to name a few",
+              "prefix": " differ based on numerous factor",
+              "suffix": "). However, in astudy conducted "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 2875,
+    "user": "Sydney Carlson",
+    "role": "student",
+    "text": "not enough time/too busy",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 856,
+              "type": "TextPositionSelector",
+              "start": 832
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "not enough time/too busy",
+              "prefix": "he following: Cost is too high, ",
+              "suffix": ", lack of health insurance (all "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 2876,
+    "user": "Sydney Carlson",
+    "role": "student",
+    "text": "This also coincides with the “low perceived need to seek medical care”category, as issues being seen as not worth the money or time investment would, in turn, not receive anymedical attention [4]. ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1144,
+              "type": "TextPositionSelector",
+              "start": 947
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "This also coincides with the “low perceived need to seek medical care”category, as issues being seen as not worth the money or time investment would, in turn, not receive anymedical attention [4]. ",
+              "prefix": "ers to medical care category”). ",
+              "suffix": "Nevertheless, this implies that "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 2877,
+    "user": "Sydney Carlson",
+    "role": "student",
+    "text": "evertheless, this implies that there are numerous medical issues, although maybeperceived as not that important, which are not being cared for properly, leading to overall worse quality ofhealth.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1340,
+              "type": "TextPositionSelector",
+              "start": 1145
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "evertheless, this implies that there are numerous medical issues, although maybeperceived as not that important, which are not being cared for properly, leading to overall worse quality ofhealth.",
+              "prefix": "eive anymedical attention [4]. N",
+              "suffix": " Using a large language model (L"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2878,
+    "user": "Sydney Carlson",
+    "role": "student",
+    "text": "Using a large language model (LLM), which is fine-tuned to help with common, easy to diagnosemedical problems and capable of outputting reliable information and treatment plans could be an easy, fast,and essentially good way to get medical attention, if that would be otherwise hindered by the aforementionedfactors.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1657,
+              "type": "TextPositionSelector",
+              "start": 1341
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Using a large language model (LLM), which is fine-tuned to help with common, easy to diagnosemedical problems and capable of outputting reliable information and treatment plans could be an easy, fast,and essentially good way to get medical attention, if that would be otherwise hindered by the aforementionedfactors.",
+              "prefix": "overall worse quality ofhealth. ",
+              "suffix": " Improving general health, one s"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2879,
+    "user": "Sydney Carlson",
+    "role": "student",
+    "text": "When did you last see a doctor? Do I really have to seek medical advice for this injury?",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 563,
+              "type": "TextPositionSelector",
+              "start": 475
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "When did you last see a doctor? Do I really have to seek medical advice for this injury?",
+              "prefix": "ber 8, 2024Darmstadt1 Motivation",
+              "suffix": " The answer to thesequestions ma"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 2880,
+    "user": "Sydney Carlson",
+    "role": "student",
+    "text": "Improving general health, one small step at a time",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1708,
+              "type": "TextPositionSelector",
+              "start": 1658
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Improving general health, one small step at a time",
+              "prefix": "d by the aforementionedfactors. ",
+              "suffix": ". Wanting to make huge strides b"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2881,
+    "user": "Sydney Carlson",
+    "role": "student",
+    "text": " the be-all and end-all LLM for medical care",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1805,
+              "type": "TextPositionSelector",
+              "start": 1761
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " the be-all and end-all LLM for medical care",
+              "prefix": "e strides by attempting tocreate",
+              "suffix": ", like Google’s Med-PalM 2 [3], "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 2882,
+    "user": "Sydney Carlson",
+    "role": "student",
+    "text": " but tacklingsmall and actionable problems for immediate (or at least quick) improvement tends to be often overlooked",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1970,
+              "type": "TextPositionSelector",
+              "start": 1853
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " but tacklingsmall and actionable problems for immediate (or at least quick) improvement tends to be often overlooked",
+              "prefix": "Med-PalM 2 [3], is a noble goal,",
+              "suffix": ".There also seems to be a focus "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2883,
+    "user": "Sydney Carlson",
+    "role": "student",
+    "text": "whereas this work focusesmore on trying to improve the way patients approach their own medical care directly",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2164,
+              "type": "TextPositionSelector",
+              "start": 2056
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "whereas this work focusesmore on trying to improve the way patients approach their own medical care directly",
+              "prefix": "fessionals with their jobs [1], ",
+              "suffix": ".1.1 Research QuestionsFor the p"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 2884,
+    "user": "Sydney Carlson",
+    "role": "student",
+    "text": " fine-tuning Meta’s LLaMA-3.1",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2265,
+              "type": "TextPositionSelector",
+              "start": 2236
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " fine-tuning Meta’s LLaMA-3.1",
+              "prefix": "f this work, the focus is set on",
+              "suffix": ", so that it may generate anaccu"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 2885,
+    "user": "Sydney Carlson",
+    "role": "student",
+    "text": "accurate and reliable treatment plan for, specifically, a muscle injury described by the promp",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2387,
+              "type": "TextPositionSelector",
+              "start": 2293
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "accurate and reliable treatment plan for, specifically, a muscle injury described by the promp",
+              "prefix": "-3.1, so that it may generate an",
+              "suffix": "t. The focus willfurther be set "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 2886,
+    "user": "Sydney Carlson",
+    "role": "student",
+    "text": " football/soccer",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2470,
+              "type": "TextPositionSelector",
+              "start": 2454
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " football/soccer",
+              "prefix": "injuries sustained while playing",
+              "suffix": ". So the research questions are "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 2887,
+    "user": "Sydney Carlson",
+    "role": "student",
+    "text": "1.1 How well does the fine-tuned LLaMA-3.1 perform in generating treatment plans for muscle injuriescommonly sustained in football/soccer when evaluated against medical guidelines",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2907,
+              "type": "TextPositionSelector",
+              "start": 2728
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "1.1 How well does the fine-tuned LLaMA-3.1 perform in generating treatment plans for muscle injuriescommonly sustained in football/soccer when evaluated against medical guidelines",
+              "prefix": "dressing thosesame injury types?",
+              "suffix": "?1.2 What is the minimum viable "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2888,
+    "user": "Sydney Carlson",
+    "role": "student",
+    "text": "RQ1: How effective is a fine-tuned version of LLaMA-3.1 in generating treatment plans for the mostcommon muscle injuries sustained in football/soccer compared to medical guidelines addressing thosesame injury types?",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2728,
+              "type": "TextPositionSelector",
+              "start": 2513
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "RQ1: How effective is a fine-tuned version of LLaMA-3.1 in generating treatment plans for the mostcommon muscle injuries sustained in football/soccer compared to medical guidelines addressing thosesame injury types?",
+              "prefix": "search questions are as follows:",
+              "suffix": "1.1 How well does the fine-tuned"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 2889,
+    "user": "Sydney Carlson",
+    "role": "student",
+    "text": "Are the resulting treatment recommendations understandable and actionable for a general audience",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3165,
+              "type": "TextPositionSelector",
+              "start": 3069
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Are the resulting treatment recommendations understandable and actionable for a general audience",
+              "prefix": "ustained in football/soccer?1.3 ",
+              "suffix": "?22 ApproachAs already alluded t"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 2890,
+    "user": "Sydney Carlson",
+    "role": "student",
+    "text": "other research has already seen success in fine-tuning the older LLaMA-2 for the purpose ofanswering medical questions [1]. In contrast to those findings, this work will focus on the patient interactingwith the model, instead of a doctor.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3646,
+              "type": "TextPositionSelector",
+              "start": 3408
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "other research has already seen success in fine-tuning the older LLaMA-2 for the purpose ofanswering medical questions [1]. In contrast to those findings, this work will focus on the patient interactingwith the model, instead of a doctor.",
+              "prefix": "al fine-tuning [2].Furthermore, ",
+              "suffix": " This requires that the answers "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 2891,
+    "user": "Sydney Carlson",
+    "role": "student",
+    "text": " Meta’s LLaMA-3.1, becauseit is, as of writing, their latest model, which is freely available and also suited for manual fine-tuning [2]",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3394,
+              "type": "TextPositionSelector",
+              "start": 3258
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " Meta’s LLaMA-3.1, becauseit is, as of writing, their latest model, which is freely available and also suited for manual fine-tuning [2]",
+              "prefix": " model used in this work will be",
+              "suffix": ".Furthermore, other research has"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 2892,
+    "user": "Sydney Carlson",
+    "role": "student",
+    "text": "This requires that the answers given by the model need to be understandableand actionable by a general audience",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3758,
+              "type": "TextPositionSelector",
+              "start": 3647
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "This requires that the answers given by the model need to be understandableand actionable by a general audience",
+              "prefix": "the model, instead of a doctor. ",
+              "suffix": ". The limitation to injuries sus"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 2893,
+    "user": "Sydney Carlson",
+    "role": "student",
+    "text": " football/soccer",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3815,
+              "type": "TextPositionSelector",
+              "start": 3799
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " football/soccer",
+              "prefix": "itation to injuries sustained in",
+              "suffix": " is chosen simplybecause footbal"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 2894,
+    "user": "Sydney Carlson",
+    "role": "student",
+    "text": " The limitation to injuries sustained in football/soccer is chosen simplybecause football/soccer is one of the largest sports in the worl",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3896,
+              "type": "TextPositionSelector",
+              "start": 3759
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " The limitation to injuries sustained in football/soccer is chosen simplybecause football/soccer is one of the largest sports in the worl",
+              "prefix": "ctionable by a general audience.",
+              "suffix": "d, the most common injuries whic"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2895,
+    "user": "Sydney Carlson",
+    "role": "student",
+    "text": "This requires that the answers given by the model need to be understandableand actionable by a general audience. The limitation to injuries sustained in football/soccer is chosen simplybecause football/soccer is one of the largest sports in the world, the most common injuries which come withthat are muscle injuries, and therefore it should be easy to find enough usable data to, on one hand, comparethe output of the LLM with, and on the other hand, to fine-tune the model in the first place",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4140,
+              "type": "TextPositionSelector",
+              "start": 3647
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "This requires that the answers given by the model need to be understandableand actionable by a general audience. The limitation to injuries sustained in football/soccer is chosen simplybecause football/soccer is one of the largest sports in the world, the most common injuries which come withthat are muscle injuries, and therefore it should be easy to find enough usable data to, on one hand, comparethe output of the LLM with, and on the other hand, to fine-tune the model in the first place",
+              "prefix": "the model, instead of a doctor. ",
+              "suffix": ". The model will befine-tuned in"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 2896,
+    "user": "Sydney Carlson",
+    "role": "student",
+    "text": " The model will befine-tuned incrementally to get a grasp on how much data is really required for injuries of the examined type,so that this can be referenced in future expansion of the model and research",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4345,
+              "type": "TextPositionSelector",
+              "start": 4141
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " The model will befine-tuned incrementally to get a grasp on how much data is really required for injuries of the examined type,so that this can be referenced in future expansion of the model and research",
+              "prefix": "ne the model in the first place.",
+              "suffix": ". This has the overarching goal "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2897,
+    "user": "Sydney Carlson",
+    "role": "student",
+    "text": " This has the overarching goal ofactually having a practically usable model at some point in the future.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4450,
+              "type": "TextPositionSelector",
+              "start": 4346
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " This has the overarching goal ofactually having a practically usable model at some point in the future.",
+              "prefix": "nsion of the model and research.",
+              "suffix": " If the model’s answers meet the"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2898,
+    "user": "Sydney Carlson",
+    "role": "student",
+    "text": "If the model’s answers meet the medicalguidelines in quality",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4511,
+              "type": "TextPositionSelector",
+              "start": 4451
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "If the model’s answers meet the medicalguidelines in quality",
+              "prefix": "el at some point in the future. ",
+              "suffix": ", a survey will be conducted to "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2899,
+    "user": "Sydney Carlson",
+    "role": "student",
+    "text": "a survey will be conducted to evaluate the understandability and actionability for ageneral audience",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4613,
+              "type": "TextPositionSelector",
+              "start": 4513
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "a survey will be conducted to evaluate the understandability and actionability for ageneral audience",
+              "prefix": "e medicalguidelines in quality, ",
+              "suffix": ". In this survey, it is imperati"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 2900,
+    "user": "Sydney Carlson",
+    "role": "student",
+    "text": " so that a skew in the results may be interpreted and analysed correctly",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4811,
+              "type": "TextPositionSelector",
+              "start": 4739
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " so that a skew in the results may be interpreted and analysed correctly",
+              "prefix": "the participants be established,",
+              "suffix": ". Thesignificance of this is suc"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 2901,
+    "user": "Sydney Carlson",
+    "role": "student",
+    "text": "such, tha",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4849,
+              "type": "TextPositionSelector",
+              "start": 4840
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "such, tha",
+              "prefix": "tly. Thesignificance of this is ",
+              "suffix": "t understandability and actionab"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 2902,
+    "user": "Sydney Carlson",
+    "role": "student",
+    "text": " Age, country of origin and language proficiencyin English fall under the same category, as these variables may influence the results, so it is best to isolatethem",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5146,
+              "type": "TextPositionSelector",
+              "start": 4983
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " Age, country of origin and language proficiencyin English fall under the same category, as these variables may influence the results, so it is best to isolatethem",
+              "prefix": "ing and prior medical knowledge.",
+              "suffix": ". The tool used for the survey w"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 2903,
+    "user": "Sydney Carlson",
+    "role": "student",
+    "text": " kindly provided",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5216,
+              "type": "TextPositionSelector",
+              "start": 5200
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " kindly provided",
+              "prefix": "e survey will be LimeSurvey [5],",
+              "suffix": " by TU Darmstadt.33 ScheduleMont"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 2904,
+    "user": "Sydney Carlson",
+    "role": "student",
+    "text": " withthat are muscle injuries, and therefore it should be easy to find enough usable data to,",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4027,
+              "type": "TextPositionSelector",
+              "start": 3934
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " withthat are muscle injuries, and therefore it should be easy to find enough usable data to,",
+              "prefix": " most common injuries which come",
+              "suffix": " on one hand, comparethe output "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2905,
+    "user": "Sydney Carlson",
+    "role": "student",
+    "text": " this work will focus on the patient interactingwith the model, instead of a doctor. ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3647,
+              "type": "TextPositionSelector",
+              "start": 3562
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " this work will focus on the patient interactingwith the model, instead of a doctor. ",
+              "prefix": ". In contrast to those findings,",
+              "suffix": "This requires that the answers g"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2906,
+    "user": "Sydney Carlson",
+    "role": "student",
+    "text": "Additional buffer time, printing,and final submission",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6671,
+              "type": "TextPositionSelector",
+              "start": 6618
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Additional buffer time, printing,and final submission",
+              "prefix": "adjustments6 22-24 Finalization ",
+              "suffix": "Should it turn out, that fine-tu"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 2907,
+    "user": "Sydney Carlson",
+    "role": "student",
+    "text": "5-8 Fine-tuning and Evaluation of the mode",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5577,
+              "type": "TextPositionSelector",
+              "start": 5535
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "5-8 Fine-tuning and Evaluation of the mode",
+              "prefix": "ew and selection of literature2 ",
+              "suffix": "l Incrementally fine-tune and ev"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 2908,
+    "user": "Sydney Carlson",
+    "role": "student",
+    "text": "1 1 Planning Creating a detailed work plan, coordination1 2 Literature Review Searching for relevant literature, initial analysis1 3 Collecting Data Searching for relevant data sets and studies1 4 Literature Evaluation Critical review and selection of literature",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5533,
+              "type": "TextPositionSelector",
+              "start": 5271
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "1 1 Planning Creating a detailed work plan, coordination1 2 Literature Review Searching for relevant literature, initial analysis1 3 Collecting Data Searching for relevant data sets and studies1 4 Literature Evaluation Critical review and selection of literature",
+              "prefix": "eduleMonth Week Task Description",
+              "suffix": "2 5-8 Fine-tuning and Evaluation"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 2909,
+    "user": "Sydney Carlson",
+    "role": "student",
+    "text": "3 9 Creation of the survey Creating questions for the survey on theunderstandability and actionabilityof the model’s outputs3 10-12 Conducting the Survey Conducting the survey on as many participantsas possible in the available time frame",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5949,
+              "type": "TextPositionSelector",
+              "start": 5711
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "3 9 Creation of the survey Creating questions for the survey on theunderstandability and actionabilityof the model’s outputs3 10-12 Conducting the Survey Conducting the survey on as many participantsas possible in the available time frame",
+              "prefix": "til the results are satisfactory",
+              "suffix": "4 13 Data Preparation Preparing "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2910,
+    "user": "Sydney Carlson",
+    "role": "student",
+    "text": "5 17-20 Writing process Writing everything down",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6242,
+              "type": "TextPositionSelector",
+              "start": 6195
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "5 17-20 Writing process Writing everything down",
+              "prefix": "ey can be presented meaningfully",
+              "suffix": "5 17 Writing Results Writing the"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2911,
+    "user": "Sydney Carlson",
+    "role": "student",
+    "text": "Incrementally fine-tune and evaluate the model,continuously compare outputs to medicalguidelines, until the results are satisfactory",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5711,
+              "type": "TextPositionSelector",
+              "start": 5579
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Incrementally fine-tune and evaluate the model,continuously compare outputs to medicalguidelines, until the results are satisfactory",
+              "prefix": "ing and Evaluation of the model ",
+              "suffix": "3 9 Creation of the survey Creat"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  }
+]

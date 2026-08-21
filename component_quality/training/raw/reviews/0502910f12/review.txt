@@ -1,0 +1,10 @@
+Feed-Up (Connecting to goals and standards):
+Your exposé is well-researched and features strong research questions. It provides a good foundation for your work, with only a few areas needing refinement to meet academic standards.
+
+Feed-Forward (Actionable suggestions for improvement):
+Revise Research Questions: While the research questions are well-formulated, they are too ambitious for the given timeframe. Narrow the scope to ensure feasibility.
+Correct Citation Formatting: Citation formatting is incorrect. Only include the \cite{XYZ} part in the text. Avoid manually adding book or journal article names.
+Refine Storyline: The storyline has minor inconsistencies. For example, you shift between discussing pupils and teachers and undergraduates without clear transitions. Ensure smoother connections between topics.
+
+Summary (Overall assessment):
+Your exposé is strong overall, with good research and well-crafted questions. By narrowing the research scope, fixing citation formatting, and improving the storyline flow, you can refine it into an excellent submission. Keep up the good work!

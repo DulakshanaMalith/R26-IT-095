@@ -1,0 +1,332 @@
+[
+  {
+    "retain": 0
+  },
+  {
+    "insert": "Summary"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "header": 4
+    }
+  },
+  {
+    "insert": "\nThis thesis investigates the application of AR glasses powered by large language models (LLMs), addressing key questions about technical constraints, potential use cases, and user experience.\n\nStrengths"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "header": 4
+    }
+  },
+  {
+    "insert": "\n"
+  },
+  {
+    "insert": "Relevance:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": " The exposé focuses on a compelling and timely real-world use case for AI technology, showcasing its potential applications in AR devices."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "Accessibility:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": " The use of clear, relatable examples makes the proposed research approachable and helps emphasize its significance and practical relevance."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "header": 4
+    }
+  },
+  {
+    "insert": "Weaknesses"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "header": 4
+    }
+  },
+  {
+    "insert": "Writing Style:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "A scientific exposé should employ formal, concise, and precise language. This draft falls short in several areas:"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet",
+      "indent": 1
+    }
+  },
+  {
+    "insert": "Informality:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": " Phrases such as \"I wonder how...\" and \"Even tho\" are inappropriate for academic writing."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet",
+      "indent": 2
+    }
+  },
+  {
+    "insert": "Errors:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": " There are consistent typos (e.g., \"ChatGBT\" instead of \"ChatGPT,\" \"neeed\"), placeholders (<LINK>, <Example?>), and stylistic inconsistencies."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet",
+      "indent": 2
+    }
+  },
+  {
+    "insert": "A revision to eliminate informal language, correct errors, and refine overall clarity would significantly enhance the quality."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet",
+      "indent": 1
+    }
+  },
+  {
+    "insert": "Scope:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "The research questions lack precision and fail to align with the scope of a typical ~6-month thesis project."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet",
+      "indent": 1
+    }
+  },
+  {
+    "insert": "Refining the scope to focus on 1-3 clear and actionable research questions would improve feasibility and make the exposé more structured and impactful."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet",
+      "indent": 1
+    }
+  },
+  {
+    "insert": "Approach:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "The "
+  },
+  {
+    "insert": "Approach",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": " section is underdeveloped and lacks essential components:"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet",
+      "indent": 1
+    }
+  },
+  {
+    "insert": "State-of-the-Art (SOTA):",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": " There is no discussion of existing research, leaving the exposé disconnected from the current knowledge base."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet",
+      "indent": 2
+    }
+  },
+  {
+    "insert": "Research Gap:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": " The thesis does not clearly identify the gap it aims to address, which weakens its justification."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet",
+      "indent": 2
+    }
+  },
+  {
+    "insert": "Framework & Experiments:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": " The methodological plan is vague and lacks specifics about theoretical foundations or experimental design."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet",
+      "indent": 2
+    }
+  },
+  {
+    "insert": "Citations:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": " The absence of references undermines the credibility of the work."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet",
+      "indent": 2
+    }
+  },
+  {
+    "insert": "This section requires a complete overhaul, incorporating a thorough literature review, a clearly defined research gap, and a detailed methodology with proper citations."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet",
+      "indent": 1
+    }
+  },
+  {
+    "insert": "Schedule and Bibliography:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "The "
+  },
+  {
+    "insert": "Schedule",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": " remains a placeholder and does not outline the timeline or milestones for the thesis."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet",
+      "indent": 1
+    }
+  },
+  {
+    "insert": "The absence of a "
+  },
+  {
+    "insert": "Bibliography",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": " further detracts from the academic rigor of the document."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet",
+      "indent": 1
+    }
+  },
+  {
+    "insert": "Completing these sections with realistic timelines and a comprehensive list of references is essential for a professional and complete exposé."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet",
+      "indent": 1
+    }
+  }
+]

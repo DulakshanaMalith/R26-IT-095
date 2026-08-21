@@ -1,0 +1,95 @@
+[
+  {
+    "id": 591,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "Only 49% of students feel positively challenged by the coursework, and only 11% strongly feels that theircurriculum allows them to target their strengths every day, according to a survey [2]. Interestingly, they alsopoint out that 60% of students are more excited when their teachers motivate them",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 707,
+              "type": "TextPositionSelector",
+              "start": 410
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Only 49% of students feel positively challenged by the coursework, and only 11% strongly feels that theircurriculum allows them to target their strengths every day, according to a survey [2]. Interestingly, they alsopoint out that 60% of students are more excited when their teachers motivate them",
+              "prefix": "ber 9, 2024Darmstadt1 Motivation",
+              "suffix": ".Current education system relies"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 2
+  },
+  {
+    "id": 592,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "How can we accurately evaluate the effectiveness of LLM-based agents?",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2248,
+              "type": "TextPositionSelector",
+              "start": 2179
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "How can we accurately evaluate the effectiveness of LLM-based agents?",
+              "prefix": "odel gives out a wrong answer?• ",
+              "suffix": "– How can we measure and analyze"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 2
+  },
+  {
+    "id": 593,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": " model creation",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4423,
+              "type": "TextPositionSelector",
+              "start": 4408
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " model creation",
+              "prefix": " of qualitative (paper analysis,",
+              "suffix": ") and quantitative methods (user"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 2
+  }
+]

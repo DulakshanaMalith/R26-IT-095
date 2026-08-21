@@ -1,0 +1,110 @@
+[
+  {
+    "id": 5223,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "cite a source to this growth\n",
+    "annotationId": 5143,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [],
+    "group": 2
+  },
+  {
+    "id": 5224,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "such? which? Be more precise\n",
+    "annotationId": 5144,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [],
+    "group": 2
+  },
+  {
+    "id": 5225,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "Or can be total garbage",
+    "annotationId": 5145,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [],
+    "group": 2
+  },
+  {
+    "id": 5226,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "Sure there are. Creating doubles of celebrities is highly debated in these areas.",
+    "annotationId": 5146,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [],
+    "group": 2
+  },
+  {
+    "id": 5322,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "Capitalize the titles",
+    "annotationId": 5239,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 2,
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5323,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "state-of-the-art",
+    "annotationId": 5240,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 2,
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5324,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "\"any\"",
+    "annotationId": 5241,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 2,
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5325,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "synthetic data",
+    "annotationId": 5242,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 2,
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5326,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "\"questionnaires\"",
+    "annotationId": 5243,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 2,
+    "votes": [],
+    "group": 1
+  }
+]

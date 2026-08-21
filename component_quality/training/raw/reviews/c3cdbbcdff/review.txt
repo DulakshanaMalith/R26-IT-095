@@ -1,0 +1,16 @@
+Summary:
+This study is aimed at understanding the social and emotional implications of human/holographic AI interactions through a mixture of interviews and literature research.
+
+Strengths:
+Very creative title and introduction
+Despite only very few citations and many claims without reference (as explained later), the SOTA section clarifies well the distinction between current work and your study
+
+Weaknesses:
+At the end of the 'Motivation' section, the research questions should be clear. In your case, there is only a quite general and superficial introduction with the research questions following in the next section. Rework the motivation section to make it lead towards your research questions.
+In science, claims should be either marked as such or backed with a source. Several claims (e.g. "increasing levels of loneliness and social isolation", "existing research often focuses on spefici aspects like romantic relationship..." ) are made here without a reference. Make sure to make your exposee more scientific and back up some of your claims
+The theoretical framework should be the foundation for your methodology. It seems like there is no connection between your theoretical framework and the methodology. Either use a different theoretical framework or integrate it into your methods
+The goal of the methodology section should be that it is clear how the research questions will be answered and consist of a clear plan. Your methods are very unspecific and it does not become clear to me how the research questions will be answered, and include seemingly arbitrary ideas (e.g. 50-100 participants, why?). When you re-write this section, always keep in mind what the overarching goals are and how you want to answer them 
+Bullet points can be used e.g. for the research questions, but you lack a lot of details in your methodology. Convert that section into an actual text and focus on better transitions and justifications for the methods as well as details
+
+Other:
+Every once in a while, you use capital letters for nouns like in German. Proofread again before the next submission or use a tool to avoid such "easy" mistakes.

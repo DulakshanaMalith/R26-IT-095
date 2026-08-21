@@ -1,0 +1,20 @@
+Summary:
+The proposal aims to investigate how generative AI can assist healthcare workers in creating personalized treatment plans by analyzing direct patient interactions.
+
+Strength 
+The proposal is written in a good academic tone.
+The exposé follows a logical flow.
+
+Weaknesses
+(Citations)
+The proposal is rich on citations, which gives it more credibility and shows the engagement with the proposed research topic. However, the citations are probably added manually, so that the citation numbers are not in correct order. For example, the very first citation in the hook starts with 7. Ensure that the citation numbers are automatically adjusted. If using a citation manager, update the references and check for any misplaced or missing citations.
+(SOTA)
+The SOTA section briefly addresses the role of AI-powered tools in healthcare. While this provides a helpful overview, the SOTA section would benefit from a more detailed review of recent studies and advancements in generative AI technologies applied to direct patient interaction. It is recommended to consider including specific examples of SOTA AI models and their applications in healthcare, with a focus on their performance, limitations, and relevance to healthcare.
+(3. Sub RQ)
+The third research question, "How much of the process can be done by AI alone?" is too general. A more targeted question would allow for more precise evaluation and a better understanding of the capabilities and limitations of the AI in the treatment planning process. Consider revising the third question to focus on a specific part of the process.
+(Methodology)
+The methodology section would benefit from a more detailed discussion of the strengths and weaknesses of the chosen methods. The lack of critical reflection on the methods weakens the methodology section. Add the strengths and weaknesses of the chosen methods to the methodology.
+
+Others:
+I look forward to seeing how your expose progresses! I recommend having a look at the expose guideline slides again and of course the comments on the expose in CARE. 
+

@@ -1,0 +1,860 @@
+[
+  {
+    "id": 2634,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Good Terminology.\n",
+    "annotationId": 2587,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [
+      {
+        "user": "Virginia Warren",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2635,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Comma placement.",
+    "annotationId": 2588,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [
+      {
+        "user": "Virginia Warren",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2636,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Writing style.",
+    "annotationId": 2589,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [
+      {
+        "user": "Virginia Warren",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2637,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Redundant (\"different\").",
+    "annotationId": 2590,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [
+      {
+        "user": "Virginia Warren",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2638,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "\"Consequently\" fits better here.",
+    "annotationId": 2591,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [
+      {
+        "user": "Virginia Warren",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2639,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "An intersting Hook is missing. ",
+    "annotationId": 2592,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [
+      {
+        "user": "Virginia Warren",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2640,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Terminology.",
+    "annotationId": 2593,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [
+      {
+        "user": "Virginia Warren",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2641,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Complex sentence construction - shorter, clearer formulations are preferred",
+    "annotationId": 2594,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [
+      {
+        "user": "Virginia Warren",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2642,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Anker: The problem is explained well, but could be described in more detail.",
+    "annotationId": 2595,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [
+      {
+        "user": "Virginia Warren",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2643,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Repetition: use a different word instead.",
+    "annotationId": 2596,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 2644,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Context (it's just your work).",
+    "annotationId": 2597,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [
+      {
+        "user": "Virginia Warren",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2645,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Good part.",
+    "annotationId": 2598,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [
+      {
+        "user": "Virginia Warren",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2646,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Good example.",
+    "annotationId": 2599,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [
+      {
+        "user": "Virginia Warren",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2647,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Repetition.\n",
+    "annotationId": 2600,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 2648,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "None",
+    "annotationId": 0,
+    "parentCommendId": 2644,
+    "tags": [],
+    "review": 1,
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 2649,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Context",
+    "annotationId": 2601,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 2650,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Repetition",
+    "annotationId": 2602,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 2651,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Grammar.",
+    "annotationId": 2603,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [
+      {
+        "user": "Virginia Warren",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2652,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Sentence structure - too long and too complex.",
+    "annotationId": 2604,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [
+      {
+        "user": "Virginia Warren",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2653,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Wording",
+    "annotationId": 2605,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [
+      {
+        "user": "Virginia Warren",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2654,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "The weak points of SOTA should be explained.",
+    "annotationId": 2606,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [
+      {
+        "user": "Virginia Warren",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2655,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "There are many repeated words in this section (e.g. answer, results, etc.).",
+    "annotationId": 2607,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [
+      {
+        "user": "Virginia Warren",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2656,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Methodology.",
+    "annotationId": 2608,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 2657,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Good explanation of the SOTA.",
+    "annotationId": 2609,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [
+      {
+        "user": "Virginia Warren",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2658,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "The methodology could be too extensive for a thesis. A clearer focus should be preferred.",
+    "annotationId": 2610,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 2659,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Restriction is mentioned. Are there any other restrictions and general difficulties with the implementation? \n",
+    "annotationId": 2611,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 2660,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Very good differentiation of own work.",
+    "annotationId": 2612,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [
+      {
+        "user": "Virginia Warren",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2661,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Good explanation.",
+    "annotationId": 2613,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [
+      {
+        "user": "Virginia Warren",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2662,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Good explanation in general.",
+    "annotationId": 2614,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [
+      {
+        "user": "Virginia Warren",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2663,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "No printing at the TUDa.",
+    "annotationId": 2615,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [
+      {
+        "user": "Virginia Warren",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2664,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Could require more time.\n",
+    "annotationId": 2616,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [
+      {
+        "user": "Virginia Warren",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2665,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Could also require more time.",
+    "annotationId": 2617,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [
+      {
+        "user": "Virginia Warren",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2666,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Could require more time.",
+    "annotationId": 2618,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [
+      {
+        "user": "Virginia Warren",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2667,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "The schedule is very good, but the methods are too extensive for the time available.",
+    "annotationId": 2619,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [
+      {
+        "user": "Virginia Warren",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2668,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Not found.",
+    "annotationId": 2620,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [
+      {
+        "user": "Virginia Warren",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2669,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Good.",
+    "annotationId": 2621,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [
+      {
+        "user": "Virginia Warren",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2670,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "How? Could be more detailed.",
+    "annotationId": 2622,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [
+      {
+        "user": "Virginia Warren",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2892,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "Not really needed, since it is the most generic start to every paper. Consider removing this sentence for better flow",
+    "annotationId": 2844,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 2,
+    "votes": [],
+    "group": 2
+  },
+  {
+    "id": 2893,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "Grammar check",
+    "annotationId": 2845,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 2,
+    "votes": [],
+    "group": 2
+  },
+  {
+    "id": 2894,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "Stay consitent with your wording: LLM, large language model, Large Language Model should have one writing style\n",
+    "annotationId": 2846,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 2,
+    "votes": [],
+    "group": 2
+  },
+  {
+    "id": 2895,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "Is this a correct English sentence? Besides that, it can be rewritten to clearly highlight the issue. \n",
+    "annotationId": 2847,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 2,
+    "votes": [],
+    "group": 2
+  },
+  {
+    "id": 2896,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "Again strange writing style.\n",
+    "annotationId": 2848,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 2,
+    "votes": [],
+    "group": 2
+  },
+  {
+    "id": 2897,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "Good general flow and on point",
+    "annotationId": 2849,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 2,
+    "votes": [],
+    "group": 2
+  },
+  {
+    "id": 2898,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "Outside of healthcare, is it okay? Be precise with your wording. This sounds like it's just for healthcare important",
+    "annotationId": 2850,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 2,
+    "votes": [],
+    "group": 2
+  },
+  {
+    "id": 2899,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "You cite just 9, which is also one of the use cases you mentioned above. Do the others not suffer from this issue? How do they relate",
+    "annotationId": 2851,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 2,
+    "votes": [],
+    "group": 2
+  },
+  {
+    "id": 2900,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "This sentence just pops in with no introduction. How do we, as the reader, come from the previous sentence to this one? E.g. \"While the proposed methods like a, b, and c show potential, they do not fully eliminate the hallucination. One approach not yet explored is generative fusion ....\"\n",
+    "annotationId": 2852,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 2,
+    "votes": [],
+    "group": 2
+  },
+  {
+    "id": 2901,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "If you use \"such an\" the following wording should have already appeared in the text before, which it does not here",
+    "annotationId": 2853,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 2,
+    "votes": [],
+    "group": 2
+  },
+  {
+    "id": 2902,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "Research questions should not be answerable with yes or no.",
+    "annotationId": 2854,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 2,
+    "votes": [],
+    "group": 2
+  },
+  {
+    "id": 2903,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "This requires LLM-Blender to work somewhat in the domain, which we do not know yet. If we know it, the previous section failed to mention that it works in this context.",
+    "annotationId": 2855,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 2,
+    "votes": [],
+    "group": 2
+  },
+  {
+    "id": 2904,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "These are somewhat follow-up questions and less sub-questions. Sub-questions would only consider parts of RQ, but they open new explorations.",
+    "annotationId": 2856,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 2,
+    "votes": [],
+    "group": 2
+  },
+  {
+    "id": 2905,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "To my knowledge, this is false. Or is it? I don't know I didn't invest much time in looking for alternatives. Such phrases express that you are unsure about your own work and try to be as vague as possible to always say \"we didn't say it that way\". Either you know it or you don't.",
+    "annotationId": 2857,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 2,
+    "votes": [],
+    "group": 2
+  },
+  {
+    "id": 2906,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "why later?",
+    "annotationId": 2858,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 2,
+    "votes": [],
+    "group": 2
+  },
+  {
+    "id": 2907,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "You state k as 3 and being very precise while you state \"a scoring mechanism\". Assigning random numbers is also a scoring mechanism. Not a good one but still one",
+    "annotationId": 2859,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 2,
+    "votes": [],
+    "group": 2
+  },
+  {
+    "id": 2908,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "You? Or other authors?",
+    "annotationId": 2860,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 2,
+    "votes": [],
+    "group": 2
+  },
+  {
+    "id": 2909,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "You don't try to do something. You do it. You are not done until it is optimized or have an answer why it can't be done",
+    "annotationId": 2861,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 2,
+    "votes": [],
+    "group": 2
+  },
+  {
+    "id": 2910,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "why should it work than on medical data?",
+    "annotationId": 2862,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 2,
+    "votes": [],
+    "group": 2
+  },
+  {
+    "id": 2911,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "We are confident. Science has nothing to do with hoping something works.",
+    "annotationId": 2863,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 2,
+    "votes": [],
+    "group": 2
+  }
+]

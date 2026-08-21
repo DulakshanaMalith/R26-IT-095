@@ -1,0 +1,376 @@
+[
+  {
+    "id": 879,
+    "user": "Rhonda Campbell",
+    "role": "student",
+    "text": "ChatGPT is not a LLM, it is a product from OpenAI. GPT-4o is a LLM that is used in ChatGPT.",
+    "annotationId": 868,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Isaiah Walker",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 880,
+    "user": "Rhonda Campbell",
+    "role": "student",
+    "text": "Since your model has yet to be trained and evaluated I suggest you rephrase this as a goal.",
+    "annotationId": 869,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Isaiah Walker",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 881,
+    "user": "Rhonda Campbell",
+    "role": "student",
+    "text": "Two weeks seems too short to me",
+    "annotationId": 870,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Isaiah Walker",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 882,
+    "user": "Rhonda Campbell",
+    "role": "student",
+    "text": "I suggest using the present perfect progressive (\"There have been several studies…\") as you write about the time span during the studies were conducted.",
+    "annotationId": 871,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Isaiah Walker",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 883,
+    "user": "Rhonda Campbell",
+    "role": "student",
+    "text": "\"recent\" and \"from 2024\" is redundant",
+    "annotationId": 872,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Isaiah Walker",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 884,
+    "user": "Rhonda Campbell",
+    "role": "student",
+    "text": "This illustrates the relevance of your problem very well.",
+    "annotationId": 873,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Isaiah Walker",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 885,
+    "user": "Rhonda Campbell",
+    "role": "student",
+    "text": "\"model\" is already included in LLM",
+    "annotationId": 874,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Isaiah Walker",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 886,
+    "user": "Rhonda Campbell",
+    "role": "student",
+    "text": "This sentence is nested twice. This makes it difficult to understand during reading.",
+    "annotationId": 875,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Isaiah Walker",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 887,
+    "user": "Rhonda Campbell",
+    "role": "student",
+    "text": "In my opinion \"widely\" sounds better",
+    "annotationId": 876,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Isaiah Walker",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 888,
+    "user": "Rhonda Campbell",
+    "role": "student",
+    "text": "Great identification of a gap in existing research.",
+    "annotationId": 877,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Isaiah Walker",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 889,
+    "user": "Rhonda Campbell",
+    "role": "student",
+    "text": "missing space",
+    "annotationId": 878,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Isaiah Walker",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 890,
+    "user": "Rhonda Campbell",
+    "role": "student",
+    "text": "missing space",
+    "annotationId": 879,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Isaiah Walker",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 891,
+    "user": "Rhonda Campbell",
+    "role": "student",
+    "text": "missing comma",
+    "annotationId": 880,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Isaiah Walker",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 892,
+    "user": "Rhonda Campbell",
+    "role": "student",
+    "text": "The other two RQs are formulated as independent clause. I suggest you do this here as well. This could also improve the sentences comprehensibility (e.g. \"How can the training data of the model be optimized to maximize accuracy and reasoning of the model?\")",
+    "annotationId": 881,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Isaiah Walker",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 893,
+    "user": "Rhonda Campbell",
+    "role": "student",
+    "text": "The style of this sentence does not match with the rest and is very colloquial.",
+    "annotationId": 882,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Isaiah Walker",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 894,
+    "user": "Rhonda Campbell",
+    "role": "student",
+    "text": "This section seems unnecessary to me (until \"… certain degree\"). \n\n(continues on next page, but this tools does not comments over a page break)",
+    "annotationId": 883,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Isaiah Walker",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 895,
+    "user": "Rhonda Campbell",
+    "role": "student",
+    "text": "I find this formulation ambiguous. Do you plan of using the output of a LLM to train and evaluate other LLMs? If so, I highly discourage you from doing so, as this threatens the models expressiveness. ",
+    "annotationId": 884,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Isaiah Walker",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 896,
+    "user": "Rhonda Campbell",
+    "role": "student",
+    "text": "missing comma",
+    "annotationId": 885,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Isaiah Walker",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 897,
+    "user": "Rhonda Campbell",
+    "role": "student",
+    "text": "too colloquial. See written feedback.",
+    "annotationId": 886,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Isaiah Walker",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 898,
+    "user": "Rhonda Campbell",
+    "role": "student",
+    "text": "too colloquial. See written feedback.",
+    "annotationId": 887,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Isaiah Walker",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 899,
+    "user": "Rhonda Campbell",
+    "role": "student",
+    "text": "ambiguous. See written feedback ",
+    "annotationId": 888,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Isaiah Walker",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 900,
+    "user": "Rhonda Campbell",
+    "role": "student",
+    "text": "missing comma",
+    "annotationId": 889,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Isaiah Walker",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  }
+]

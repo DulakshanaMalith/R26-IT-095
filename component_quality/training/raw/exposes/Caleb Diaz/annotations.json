@@ -1,0 +1,3330 @@
+[
+  {
+    "id": 905,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Schedule",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7865,
+              "type": "TextPositionSelector",
+              "start": 7857
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Schedule",
+              "prefix": " technology’s true potential.43 ",
+              "suffix": "Example:Month Week Task Descript"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 906,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "printing ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 9188,
+              "type": "TextPositionSelector",
+              "start": 9179
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "printing ",
+              "prefix": "-24 Final Submission Buffer for ",
+              "suffix": "and submission.5Bibliography[1] "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 907,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Bibliography",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 9216,
+              "type": "TextPositionSelector",
+              "start": 9204
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Bibliography",
+              "prefix": "er for printing and submission.5",
+              "suffix": "[1] UNICEF et al. COVID-19: Scho"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 6
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 908,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": " recorded as an important milestone at the time (BBC 2000.) [2]",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1287,
+              "type": "TextPositionSelector",
+              "start": 1224
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " recorded as an important milestone at the time (BBC 2000.) [2]",
+              "prefix": "verthe internet was feasible and",
+              "suffix": ". Fast forward totoday, advancem"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 909,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "especially in education",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1454,
+              "type": "TextPositionSelector",
+              "start": 1431
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "especially in education",
+              "prefix": " innovationsinto everyday life, ",
+              "suffix": ". The concept of enabling seamle"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 910,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": " artificial intelligence(AI)",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1927,
+              "type": "TextPositionSelector",
+              "start": 1899
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " artificial intelligence(AI)",
+              "prefix": "ational technology (ed-tech) and",
+              "suffix": ". Although tools such as AI-powe"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 911,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": " Engagement and Flexibilit",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2234,
+              "type": "TextPositionSelector",
+              "start": 2208
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " Engagement and Flexibilit",
+              "prefix": "stacles to wider acceptance like",
+              "suffix": "y. With thegrowing costs of AI-t"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 912,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "the study aims to fill a critical gap in current educational practices and technologies, providinga cost-effective approach making high-quality education more accessible to all students.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2939,
+              "type": "TextPositionSelector",
+              "start": 2753
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "the study aims to fill a critical gap in current educational practices and technologies, providinga cost-effective approach making high-quality education more accessible to all students.",
+              "prefix": "nced holographyand adaptive AI, ",
+              "suffix": "Research question:The main resea"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 913,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "-",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3232,
+              "type": "TextPositionSelector",
+              "start": 3231
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "-",
+              "prefix": "stigates some extended questions",
+              "suffix": "• Which aspect of holographic AI"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 914,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "What are the opportunities and difficulties?",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3419,
+              "type": "TextPositionSelector",
+              "start": 3375
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "What are the opportunities and difficulties?",
+              "prefix": "provide personalised learning?• ",
+              "suffix": "22 ApproachThere is growing dema"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 915,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "growing demand in educational institutions across the world to implement technology that improvesstudent engagement, learning results, and equal access to resource",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3602,
+              "type": "TextPositionSelector",
+              "start": 3439
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "growing demand in educational institutions across the world to implement technology that improvesstudent engagement, learning results, and equal access to resource",
+              "prefix": "ifficulties?22 ApproachThere is ",
+              "suffix": "s. By combining the adaptability"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 916,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "nts.[5]",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4290,
+              "type": "TextPositionSelector",
+              "start": 4283
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "nts.[5]",
+              "prefix": "nd emotional engagement of stude",
+              "suffix": ".• Taking into account the limit"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 917,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": " have greatly improved experiential learning for medical students, offering a deeperlevel of understanding of the subject matter. [6",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4645,
+              "type": "TextPositionSelector",
+              "start": 4513
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " have greatly improved experiential learning for medical students, offering a deeperlevel of understanding of the subject matter. [6",
+              "prefix": "aphic models ofhuman ear anatomy",
+              "suffix": "]. Virtual reality(VR) aims to f"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 918,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "The ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4965,
+              "type": "TextPositionSelector",
+              "start": 4961
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The ",
+              "prefix": "t combines best of both worlds, ",
+              "suffix": "interactivity of VR and the adap"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 919,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "y , pe",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5470,
+              "type": "TextPositionSelector",
+              "start": 5464
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "y , pe",
+              "prefix": "e TPACKtheory combines technolog",
+              "suffix": "dagogy, and content knowledge to"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 920,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "It offers a systematic method for the effective establishment of innovative technologies, includingholographic AI , into teaching methodologies.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5676,
+              "type": "TextPositionSelector",
+              "start": 5532
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "It offers a systematic method for the effective establishment of innovative technologies, includingholographic AI , into teaching methodologies.",
+              "prefix": "to improve educational outcomes.",
+              "suffix": " This method supports the custom"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 921,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "In order to address the study’s issue, a mixed methodological approach is used, which combines source,quantitative, and qualitative research approaches to fully answer the research topics",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5971,
+              "type": "TextPositionSelector",
+              "start": 5784
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "In order to address the study’s issue, a mixed methodological approach is used, which combines source,quantitative, and qualitative research approaches to fully answer the research topics",
+              "prefix": "us student needs [9].Methodology",
+              "suffix": ". This enables a in-depthexamina"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 922,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "from more than 200 students and 50 Teaching-assistant",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6242,
+              "type": "TextPositionSelector",
+              "start": 6189
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "from more than 200 students and 50 Teaching-assistant",
+              "prefix": "ent of holographic AIprototypes ",
+              "suffix": ". Classroom experiments will be "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 923,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": " attention span",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6378,
+              "type": "TextPositionSelector",
+              "start": 6363
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " attention span",
+              "prefix": "gainst AI tools. Metrics such as",
+              "suffix": ", and time spenton tasks will be"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 924,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "nt , p",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6522,
+              "type": "TextPositionSelector",
+              "start": 6516
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "nt , p",
+              "prefix": "ographic AI assistanton engageme",
+              "suffix": "ersonalization and accessibility"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 925,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "10–15 semi-structured interviews will be conducted with educators to gather theirviews on challenges",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6793,
+              "type": "TextPositionSelector",
+              "start": 6693
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "10–15 semi-structured interviews will be conducted with educators to gather theirviews on challenges",
+              "prefix": "erviewswill be put in practice. ",
+              "suffix": ", suggestions , perspectives and"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 926,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "A secondary group includesEducators and school administrators,who are responsible for evaluating the usability, integration, and practi-cality of holographic AI tools in educational settings",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7272,
+              "type": "TextPositionSelector",
+              "start": 7082
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "A secondary group includesEducators and school administrators,who are responsible for evaluating the usability, integration, and practi-cality of holographic AI tools in educational settings",
+              "prefix": " students aged between 10 to 18.",
+              "suffix": ". Additionally , Ed-tech stakeho"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 927,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Additionally , Ed-tech stakeholders , including developersplay an important role in exploring the scalability and accessibility of these technologies",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7423,
+              "type": "TextPositionSelector",
+              "start": 7274
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Additionally , Ed-tech stakeholders , including developersplay an important role in exploring the scalability and accessibility of these technologies",
+              "prefix": " tools in educational settings. ",
+              "suffix": ".Despite its strengths such as t"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 928,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Despite its strengths such as the integration of theories from social presence , personalized education andconstructivist learning, this study acknowledges the limitation of implementing holographic AI in underfundedschools that lack the necessary infrastructure. However, a mixed-method approach ensures a thorough anddelicate data collection process,resulting in a comprehensive understanding of the technology’s true potentia",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7852,
+              "type": "TextPositionSelector",
+              "start": 7424
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Despite its strengths such as the integration of theories from social presence , personalized education andconstructivist learning, this study acknowledges the limitation of implementing holographic AI in underfundedschools that lack the necessary infrastructure. However, a mixed-method approach ensures a thorough anddelicate data collection process,resulting in a comprehensive understanding of the technology’s true potentia",
+              "prefix": "ssibility of these technologies.",
+              "suffix": "l.43 ScheduleExample:Month Week "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 929,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Set up and test holographic module and AI assistan",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8425,
+              "type": "TextPositionSelector",
+              "start": 8375
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Set up and test holographic module and AI assistan",
+              "prefix": "on.3 9-10 Prototype development ",
+              "suffix": "t3 11 Data Collection Setup Prep"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 930,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "3 Schedule",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7865,
+              "type": "TextPositionSelector",
+              "start": 7855
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "3 Schedule",
+              "prefix": "he technology’s true potential.4",
+              "suffix": "Example:Month Week Task Descript"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1168,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "a device that could provide realistic lessons to the learner in the comfort of theirown home.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 878,
+              "type": "TextPositionSelector",
+              "start": 785
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "a device that could provide realistic lessons to the learner in the comfort of theirown home.",
+              "prefix": " to aholographic AI assistant - ",
+              "suffix": "In the year 2000, a significant "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 2
+  },
+  {
+    "id": 1169,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "n. [3].",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1810,
+              "type": "TextPositionSelector",
+              "start": 1803
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "n. [3].",
+              "prefix": "ng holography and AI in educatio",
+              "suffix": "The main area of interest reside"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 2,
+    "group": 2
+  },
+  {
+    "id": 1170,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": " to wider acceptance like Engagement and Flexibility",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2235,
+              "type": "TextPositionSelector",
+              "start": 2183
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " to wider acceptance like Engagement and Flexibility",
+              "prefix": "oaches encounter major obstacles",
+              "suffix": ". With thegrowing costs of AI-to"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "review": 2,
+    "group": 2
+  },
+  {
+    "id": 1171,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "of AI-tools like virtual reality (VR) accessibility",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2310,
+              "type": "TextPositionSelector",
+              "start": 2259
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "of AI-tools like virtual reality (VR) accessibility",
+              "prefix": "xibility. With thegrowing costs ",
+              "suffix": " is also an impactful matter in "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 2
+  },
+  {
+    "id": 1172,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "What are the opportunities and difficulties?",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3419,
+              "type": "TextPositionSelector",
+              "start": 3375
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "What are the opportunities and difficulties?",
+              "prefix": "provide personalised learning?• ",
+              "suffix": "22 ApproachThere is growing dema"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 2
+  },
+  {
+    "id": 1173,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": " Online-learning platforms use adaptive algorithms to customizelearning pathways according to one’s individual needs, thus making education more customised",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4078,
+              "type": "TextPositionSelector",
+              "start": 3923
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " Online-learning platforms use adaptive algorithms to customizelearning pathways according to one’s individual needs, thus making education more customised",
+              "prefix": "ucational content. For instance,",
+              "suffix": ". Howeverin distant or hybrid en"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 2
+  },
+  {
+    "id": 1174,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "Data will be gathered through quantitative method on the usability and engagement of holographic AIprototypes from more than 200 students and 50 Teaching-assistant.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6243,
+              "type": "TextPositionSelector",
+              "start": 6079
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Data will be gathered through quantitative method on the usability and engagement of holographic AIprototypes from more than 200 students and 50 Teaching-assistant.",
+              "prefix": "lties of using holographic AI .3",
+              "suffix": " Classroom experiments will be c"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 2
+  },
+  {
+    "id": 1175,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "Review initial results for any methodological adjustmen",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8685,
+              "type": "TextPositionSelector",
+              "start": 8630
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Review initial results for any methodological adjustmen",
+              "prefix": "iments4 14 Preliminary Analysis ",
+              "suffix": "ts4 15-16 Data Collection (Phase"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "review": 2,
+    "group": 2
+  },
+  {
+    "id": 1176,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "Organize",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8791,
+              "type": "TextPositionSelector",
+              "start": 8783
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Organize",
+              "prefix": "tion tasks5 17 Data Preparation ",
+              "suffix": " data for qualitative and quanti"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 2
+  },
+  {
+    "id": 2404,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "More than 168 million students worldwide experienced disruptions in their education due to school closuresresulting from the COVID-19 pandemic [1]. Consider a student in a far-off village who found it difficult tointeract with the teacher using outdated and unreliable online sources. Imagine if the student had access to aholographic AI assistant - a device that could provide realistic lessons to the learner in the comfort of theirown home.In the year 2000, a significant demonstration of holographic technology took place when a hologram ofCatharine Darnton, a Math teacher was successfully beamed into an exhibition centre in a school in southLondon. While the distance of transition was relatively short, it proved that transmitting realistic images overthe internet was feasible and recorded as an important milestone at the time (BBC 2000.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1282,
+              "type": "TextPositionSelector",
+              "start": 435
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "More than 168 million students worldwide experienced disruptions in their education due to school closuresresulting from the COVID-19 pandemic [1]. Consider a student in a far-off village who found it difficult tointeract with the teacher using outdated and unreliable online sources. Imagine if the student had access to aholographic AI assistant - a device that could provide realistic lessons to the learner in the comfort of theirown home.In the year 2000, a significant demonstration of holographic technology took place when a hologram ofCatharine Darnton, a Math teacher was successfully beamed into an exhibition centre in a school in southLondon. While the distance of transition was relatively short, it proved that transmitting realistic images overthe internet was feasible and recorded as an important milestone at the time (BBC 2000.",
+              "prefix": "ber 9, 2024Darmstadt1 Motivation",
+              "suffix": ") [2]. Fast forward totoday, adv"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 2
+  },
+  {
+    "id": 2405,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "especially in education. ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1456,
+              "type": "TextPositionSelector",
+              "start": 1431
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "especially in education. ",
+              "prefix": " innovationsinto everyday life, ",
+              "suffix": "The concept of enabling seamless"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "review": 3,
+    "group": 2
+  },
+  {
+    "id": 2406,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": " holography and AI in education",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1804,
+              "type": "TextPositionSelector",
+              "start": 1773
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " holography and AI in education",
+              "prefix": "ows a vast potential for merging",
+              "suffix": ". [3].The main area of interest "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 2
+  },
+  {
+    "id": 2407,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": " main area of interest",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1835,
+              "type": "TextPositionSelector",
+              "start": 1813
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " main area of interest",
+              "prefix": "phy and AI in education. [3].The",
+              "suffix": " resides at the junction of educ"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "review": 3,
+    "group": 2
+  },
+  {
+    "id": 2408,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": " Engagement and Flexibilit",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2234,
+              "type": "TextPositionSelector",
+              "start": 2208
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " Engagement and Flexibilit",
+              "prefix": "stacles to wider acceptance like",
+              "suffix": "y. With thegrowing costs of AI-t"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "review": 3,
+    "group": 2
+  },
+  {
+    "id": 2409,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": " highlighting the criticaldemand for effective and accessible educational technologies.Holographic AI assistant is a revolutionary solution to these challenges.By combining advanced holographyand adaptive AI, the study aims to fill a critical gap in current educational practices and technologies, providinga cost-effective approach making high-quality education more accessible to all students",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2938,
+              "type": "TextPositionSelector",
+              "start": 2544
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " highlighting the criticaldemand for effective and accessible educational technologies.Holographic AI assistant is a revolutionary solution to these challenges.By combining advanced holographyand adaptive AI, the study aims to fill a critical gap in current educational practices and technologies, providinga cost-effective approach making high-quality education more accessible to all students",
+              "prefix": "e emergency school closures [4],",
+              "suffix": ".Research question:The main rese"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 2
+  },
+  {
+    "id": 2410,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "Which aspect",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3246,
+              "type": "TextPositionSelector",
+              "start": 3234
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Which aspect",
+              "prefix": "gates some extended questions-• ",
+              "suffix": " of holographic AI most successf"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 2
+  },
+  {
+    "id": 2411,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "What are the opportunities and difficulties?",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3419,
+              "type": "TextPositionSelector",
+              "start": 3375
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "What are the opportunities and difficulties?",
+              "prefix": "provide personalised learning?• ",
+              "suffix": "22 ApproachThere is growing dema"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 2
+  },
+  {
+    "id": 2412,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "what ways",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3323,
+              "type": "TextPositionSelector",
+              "start": 3314
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "what ways",
+              "prefix": " boosts student engagement?• In ",
+              "suffix": " can holographic AI provide pers"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 2
+  },
+  {
+    "id": 2413,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "AI-powered tools like learning management systems have highly improved the delivery of personalizededucational content. For instance, Online-learning platforms use adaptive algorithms to customizelearning pathways according to one’s individual needs, thus making education more customised. Howeverin distant or hybrid environments, these tools lack interaction and physical presence. As a result, suchtechnologies regularly fail promoting dynamic interactions and emotional engagement of students.[5]",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4290,
+              "type": "TextPositionSelector",
+              "start": 3790
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "AI-powered tools like learning management systems have highly improved the delivery of personalizededucational content. For instance, Online-learning platforms use adaptive algorithms to customizelearning pathways according to one’s individual needs, thus making education more customised. Howeverin distant or hybrid environments, these tools lack interaction and physical presence. As a result, suchtechnologies regularly fail promoting dynamic interactions and emotional engagement of students.[5]",
+              "prefix": "ddress these challenges.SOTA -• ",
+              "suffix": ".• Taking into account the limit"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 2
+  },
+  {
+    "id": 2414,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "This situation highlights the need for a more cheap andscalable solution that combines best of both worlds, The interactivity of VR and the adaptive intelligenceof AI.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5020,
+              "type": "TextPositionSelector",
+              "start": 4853
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "This situation highlights the need for a more cheap andscalable solution that combines best of both worlds, The interactivity of VR and the adaptive intelligenceof AI.",
+              "prefix": "impractical for mass usage [7]. ",
+              "suffix": "Theoretical Framework• Engagemen"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 2
+  },
+  {
+    "id": 2415,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": " learning experiences [8]",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5341,
+              "type": "TextPositionSelector",
+              "start": 5316
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " learning experiences [8]",
+              "prefix": " by promoting active and genuine",
+              "suffix": ".• Technological Pedagogical Con"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 2
+  },
+  {
+    "id": 2416,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "Technological Pedagogical Content Knowledge Theory (TPACK) follows a similar pattern. The TPACKtheory combines technology , pedagogy, and content knowledge to improve educational outcomes.It offers a systematic method for the effective establishment of innovative technologies, includingholographic AI , into teaching methodologies. This method supports the customisation of learningexperiences to meet various student needs [9]",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5772,
+              "type": "TextPositionSelector",
+              "start": 5344
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Technological Pedagogical Content Knowledge Theory (TPACK) follows a similar pattern. The TPACKtheory combines technology , pedagogy, and content knowledge to improve educational outcomes.It offers a systematic method for the effective establishment of innovative technologies, includingholographic AI , into teaching methodologies. This method supports the customisation of learningexperiences to meet various student needs [9]",
+              "prefix": "uine learning experiences [8].• ",
+              "suffix": ".MethodologyIn order to address "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 2
+  },
+  {
+    "id": 2417,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "Classroom experiments will be conductedto compare the effectiveness of holographic AI against AI tools",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6346,
+              "type": "TextPositionSelector",
+              "start": 6244
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Classroom experiments will be conductedto compare the effectiveness of holographic AI against AI tools",
+              "prefix": "ents and 50 Teaching-assistant. ",
+              "suffix": ". Metrics such as attention span"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 2
+  },
+  {
+    "id": 2418,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "Data will be gathered through quantitative method on the usability and engagement of holographic AIprototypes from more than 200 students and 50 Teaching-assistant. Classroom experiments will be conductedto compare the effectiveness of holographic AI against AI tools. Metrics such as attention span, and time spenton tasks will be analysed. This approach will enable an evaluation of the influence of holographic AI assistanton engagement , personalization and accessibility.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6555,
+              "type": "TextPositionSelector",
+              "start": 6079
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Data will be gathered through quantitative method on the usability and engagement of holographic AIprototypes from more than 200 students and 50 Teaching-assistant. Classroom experiments will be conductedto compare the effectiveness of holographic AI against AI tools. Metrics such as attention span, and time spenton tasks will be analysed. This approach will enable an evaluation of the influence of holographic AI assistanton engagement , personalization and accessibility.",
+              "prefix": "lties of using holographic AI .3",
+              "suffix": "In order to gain a thorough unde"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 2
+  },
+  {
+    "id": 2419,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "Furthermore existing literature on holography will be reviewed in order to establish a strong theoretical basisfor the study.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7003,
+              "type": "TextPositionSelector",
+              "start": 6878
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Furthermore existing literature on holography will be reviewed in order to establish a strong theoretical basisfor the study.",
+              "prefix": "rn on the use of holographic AI.",
+              "suffix": "The target audience for this stu"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 2
+  },
+  {
+    "id": 2420,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "this study ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7038,
+              "type": "TextPositionSelector",
+              "start": 7027
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "this study ",
+              "prefix": "e study.The target audience for ",
+              "suffix": "comprises of students aged betwe"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 2
+  },
+  {
+    "id": 2421,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "The target audience for this study comprises of students aged between 10 to 18.A secondary group includesEducators and school administrators,who are responsible for evaluating the usability, integration, and practi-cality of holographic AI tools in educational settings. Additionally , Ed-tech stakeholders , including developersplay an important role in exploring the scalability and accessibility of these technologies",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7423,
+              "type": "TextPositionSelector",
+              "start": 7003
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The target audience for this study comprises of students aged between 10 to 18.A secondary group includesEducators and school administrators,who are responsible for evaluating the usability, integration, and practi-cality of holographic AI tools in educational settings. Additionally , Ed-tech stakeholders , including developersplay an important role in exploring the scalability and accessibility of these technologies",
+              "prefix": " theoretical basisfor the study.",
+              "suffix": ".Despite its strengths such as t"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 2
+  },
+  {
+    "id": 2422,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "Schedule",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7865,
+              "type": "TextPositionSelector",
+              "start": 7857
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Schedule",
+              "prefix": " technology’s true potential.43 ",
+              "suffix": "Example:Month Week Task Descript"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 2
+  },
+  {
+    "id": 3453,
+    "user": "Briana Graves",
+    "role": "student",
+    "text": "More than 168 million students worldwide experienced disruptions in their education due to school closuresresulting from the COVID-19 pandemic [1]",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 581,
+              "type": "TextPositionSelector",
+              "start": 435
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "More than 168 million students worldwide experienced disruptions in their education due to school closuresresulting from the COVID-19 pandemic [1]",
+              "prefix": "ber 9, 2024Darmstadt1 Motivation",
+              "suffix": ". Consider a student in a far-of"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 4,
+    "group": 1
+  },
+  {
+    "id": 3454,
+    "user": "Briana Graves",
+    "role": "student",
+    "text": "In the year 2000, a significant demonstration of holographic technology took place when a hologram ofCatharine Darnton, a Math teacher was successfully beamed into an exhibition centre in a school in southLondon. While the distance of transition was relatively short, it proved that transmitting realistic images overthe internet was feasible and recorded as an important milestone at the time (BBC 2000.) [2]",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1287,
+              "type": "TextPositionSelector",
+              "start": 878
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "In the year 2000, a significant demonstration of holographic technology took place when a hologram ofCatharine Darnton, a Math teacher was successfully beamed into an exhibition centre in a school in southLondon. While the distance of transition was relatively short, it proved that transmitting realistic images overthe internet was feasible and recorded as an important milestone at the time (BBC 2000.) [2]",
+              "prefix": "in the comfort of theirown home.",
+              "suffix": ". Fast forward totoday, advancem"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 4,
+    "group": 1
+  },
+  {
+    "id": 3455,
+    "user": "Briana Graves",
+    "role": "student",
+    "text": "-",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3788,
+              "type": "TextPositionSelector",
+              "start": 3787
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "-",
+              "prefix": "toaddress these challenges.SOTA ",
+              "suffix": "• AI-powered tools like learning"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 4,
+    "group": 1
+  },
+  {
+    "id": 3456,
+    "user": "Briana Graves",
+    "role": "student",
+    "text": ".B",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2705,
+              "type": "TextPositionSelector",
+              "start": 2703
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": ".B",
+              "prefix": "ary solution to these challenges",
+              "suffix": "y combining advanced holographya"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 4,
+    "group": 1
+  },
+  {
+    "id": 3457,
+    "user": "Briana Graves",
+    "role": "student",
+    "text": "education. [3].",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1810,
+              "type": "TextPositionSelector",
+              "start": 1795
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "education. [3].",
+              "prefix": "or merging holography and AI in ",
+              "suffix": "The main area of interest reside"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 4,
+    "group": 1
+  },
+  {
+    "id": 3458,
+    "user": "Briana Graves",
+    "role": "student",
+    "text": " a in-depth",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5996,
+              "type": "TextPositionSelector",
+              "start": 5985
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " a in-depth",
+              "prefix": "he research topics. This enables",
+              "suffix": "examination of the benefits, dra"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 4,
+    "group": 1
+  },
+  {
+    "id": 3459,
+    "user": "Briana Graves",
+    "role": "student",
+    "text": "Theoretical Framework• Engagement Theory serves as a appropriate basis for this study. It focuses on the importance ofmeaningful activities and technological interaction in the learning process. It states that technologyplays a crucial role in enhancing engagement by promoting active and genuine learning experiences [8].• Technological Pedagogical Content Knowledge Theory (TPACK) follows a similar pattern. The TPACKtheory combines technology , pedagogy, and content knowledge to improve educational outcomes.It offers a systematic method for the effective establishment of innovative technologies, includingholographic AI , into teaching methodologies. This method supports the customisation of learningexperiences to meet various student needs [9].",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5773,
+              "type": "TextPositionSelector",
+              "start": 5020
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Theoretical Framework• Engagement Theory serves as a appropriate basis for this study. It focuses on the importance ofmeaningful activities and technological interaction in the learning process. It states that technologyplays a crucial role in enhancing engagement by promoting active and genuine learning experiences [8].• Technological Pedagogical Content Knowledge Theory (TPACK) follows a similar pattern. The TPACKtheory combines technology , pedagogy, and content knowledge to improve educational outcomes.It offers a systematic method for the effective establishment of innovative technologies, includingholographic AI , into teaching methodologies. This method supports the customisation of learningexperiences to meet various student needs [9].",
+              "prefix": " the adaptive intelligenceof AI.",
+              "suffix": "MethodologyIn order to address t"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 4,
+    "group": 1
+  },
+  {
+    "id": 3460,
+    "user": "Briana Graves",
+    "role": "student",
+    "text": "Classroom experiments will be conductedto compare the effectiveness of holographic AI against AI tools. ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6348,
+              "type": "TextPositionSelector",
+              "start": 6244
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Classroom experiments will be conductedto compare the effectiveness of holographic AI against AI tools. ",
+              "prefix": "ents and 50 Teaching-assistant. ",
+              "suffix": "Metrics such as attention span, "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 4,
+    "group": 1
+  },
+  {
+    "id": 3461,
+    "user": "Briana Graves",
+    "role": "student",
+    "text": "with educators to gather theirviews",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6779,
+              "type": "TextPositionSelector",
+              "start": 6744
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "with educators to gather theirviews",
+              "prefix": "ed interviews will be conducted ",
+              "suffix": " on challenges, suggestions , pe"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "review": 4,
+    "group": 1
+  },
+  {
+    "id": 3462,
+    "user": "Briana Graves",
+    "role": "student",
+    "text": "3 9-10 Prototype development Set up and test holographic module and AI assistant3 11 Data Collection Setup Prepare survey forms, interview scripts, and experiment setups.3 12-13 Data Collection (Phase 1) Conduct surveys, interviews, and classroom experiments",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8604,
+              "type": "TextPositionSelector",
+              "start": 8346
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "3 9-10 Prototype development Set up and test holographic module and AI assistant3 11 Data Collection Setup Prepare survey forms, interview scripts, and experiment setups.3 12-13 Data Collection (Phase 1) Conduct surveys, interviews, and classroom experiments",
+              "prefix": " and students for participation.",
+              "suffix": "4 14 Preliminary Analysis Review"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 4,
+    "group": 1
+  },
+  {
+    "id": 3463,
+    "user": "Briana Graves",
+    "role": "student",
+    "text": "4 14 Preliminary Analysis Review initial results for any methodological adjustments4 15-16 Data Collection (Phase 2) Complete remaining data collection tasks",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8761,
+              "type": "TextPositionSelector",
+              "start": 8604
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "4 14 Preliminary Analysis Review initial results for any methodological adjustments4 15-16 Data Collection (Phase 2) Complete remaining data collection tasks",
+              "prefix": "views, and classroom experiments",
+              "suffix": "5 17 Data Preparation Organize d"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 4,
+    "group": 1
+  },
+  {
+    "id": 3464,
+    "user": "Briana Graves",
+    "role": "student",
+    "text": "5 17 Data Preparation Organize data for qualitative and quantitative assessment5 18-19 Data Analysis Perform detailed qualitative and quantitative analysis.5 20 Results Interpretation Interpret findings theoretical framework and RQ5 21 Revision Revise based on feedback; refine structure, clarity, and flow.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 9068,
+              "type": "TextPositionSelector",
+              "start": 8761
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "5 17 Data Preparation Organize data for qualitative and quantitative assessment5 18-19 Data Analysis Perform detailed qualitative and quantitative analysis.5 20 Results Interpretation Interpret findings theoretical framework and RQ5 21 Revision Revise based on feedback; refine structure, clarity, and flow.",
+              "prefix": " remaining data collection tasks",
+              "suffix": "6 22 Final Editing Conduct proof"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 4,
+    "group": 1
+  },
+  {
+    "id": 5032,
+    "user": "Connie Everett",
+    "role": "student",
+    "text": " (BBC 2000.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1282,
+              "type": "TextPositionSelector",
+              "start": 1271
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " (BBC 2000.",
+              "prefix": " important milestone at the time",
+              "suffix": ") [2]. Fast forward totoday, adv"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 5,
+    "group": 1
+  },
+  {
+    "id": 5033,
+    "user": "Connie Everett",
+    "role": "student",
+    "text": "eamless holographic lessons",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1508,
+              "type": "TextPositionSelector",
+              "start": 1481
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "eamless holographic lessons",
+              "prefix": "ation. The concept of enabling s",
+              "suffix": " is no longer afar distant dream"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 5,
+    "group": 1
+  },
+  {
+    "id": 5034,
+    "user": "Connie Everett",
+    "role": "student",
+    "text": "This shows a vast potential for merging holography and AI in education. [3]",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1809,
+              "type": "TextPositionSelector",
+              "start": 1734
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "This shows a vast potential for merging holography and AI in education. [3]",
+              "prefix": " compund annual growth of 45.6%.",
+              "suffix": ".The main area of interest resid"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 5,
+    "group": 1
+  },
+  {
+    "id": 5035,
+    "user": "Connie Everett",
+    "role": "student",
+    "text": "Although tools such as AI-powered chatbots, virtual assistants,Virtual reality (VR), and learning analytics",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2036,
+              "type": "TextPositionSelector",
+              "start": 1929
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Although tools such as AI-powered chatbots, virtual assistants,Virtual reality (VR), and learning analytics",
+              "prefix": "nd artificial intelligence(AI). ",
+              "suffix": "have become popular, their capac"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 5,
+    "group": 1
+  },
+  {
+    "id": 5036,
+    "user": "Connie Everett",
+    "role": "student",
+    "text": ".B",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2705,
+              "type": "TextPositionSelector",
+              "start": 2703
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": ".B",
+              "prefix": "ary solution to these challenges",
+              "suffix": "y combining advanced holographya"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 5,
+    "group": 1
+  },
+  {
+    "id": 5037,
+    "user": "Connie Everett",
+    "role": "student",
+    "text": ", T",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4962,
+              "type": "TextPositionSelector",
+              "start": 4959
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": ", T",
+              "prefix": "hat combines best of both worlds",
+              "suffix": "he interactivity of VR and the a"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 5,
+    "group": 1
+  },
+  {
+    "id": 5038,
+    "user": "Connie Everett",
+    "role": "student",
+    "text": "assistant.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6243,
+              "type": "TextPositionSelector",
+              "start": 6233
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "assistant.",
+              "prefix": "an 200 students and 50 Teaching-",
+              "suffix": " Classroom experiments will be c"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 5,
+    "group": 1
+  },
+  {
+    "id": 5039,
+    "user": "Connie Everett",
+    "role": "student",
+    "text": "holographic AIprototypes",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6188,
+              "type": "TextPositionSelector",
+              "start": 6164
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "holographic AIprototypes",
+              "prefix": "the usability and engagement of ",
+              "suffix": " from more than 200 students and"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 5,
+    "group": 1
+  },
+  {
+    "id": 5040,
+    "user": "Connie Everett",
+    "role": "student",
+    "text": ".A se",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7086,
+              "type": "TextPositionSelector",
+              "start": 7081
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": ".A se",
+              "prefix": "f students aged between 10 to 18",
+              "suffix": "condary group includesEducators "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 5,
+    "group": 1
+  },
+  {
+    "id": 5041,
+    "user": "Connie Everett",
+    "role": "student",
+    "text": ",",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7144,
+              "type": "TextPositionSelector",
+              "start": 7143
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": ",",
+              "prefix": "cators and school administrators",
+              "suffix": "who are responsible for evaluati"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 5,
+    "group": 1
+  },
+  {
+    "id": 5042,
+    "user": "Connie Everett",
+    "role": "student",
+    "text": ", ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7289,
+              "type": "TextPositionSelector",
+              "start": 7287
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": ", ",
+              "prefix": "cational settings. Additionally ",
+              "suffix": "Ed-tech stakeholders , including"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 5,
+    "group": 1
+  },
+  {
+    "id": 5043,
+    "user": "Connie Everett",
+    "role": "student",
+    "text": ",",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7776,
+              "type": "TextPositionSelector",
+              "start": 7775
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": ",",
+              "prefix": "delicate data collection process",
+              "suffix": "resulting in a comprehensive und"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 5,
+    "group": 1
+  },
+  {
+    "id": 5044,
+    "user": "Connie Everett",
+    "role": "student",
+    "text": "Data",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6083,
+              "type": "TextPositionSelector",
+              "start": 6079
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Data",
+              "prefix": "lties of using holographic AI .3",
+              "suffix": " will be gathered through quanti"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 5,
+    "group": 1
+  },
+  {
+    "id": 5045,
+    "user": "Connie Everett",
+    "role": "student",
+    "text": "students aged between 10 to 18",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7081,
+              "type": "TextPositionSelector",
+              "start": 7051
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "students aged between 10 to 18",
+              "prefix": "nce for this study comprises of ",
+              "suffix": ".A secondary group includesEduca"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 5,
+    "group": 1
+  },
+  {
+    "id": 5046,
+    "user": "Connie Everett",
+    "role": "student",
+    "text": " highlighting the criticaldemand for effective and accessible educational technologies.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2631,
+              "type": "TextPositionSelector",
+              "start": 2544
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " highlighting the criticaldemand for effective and accessible educational technologies.",
+              "prefix": "e emergency school closures [4],",
+              "suffix": "Holographic AI assistant is a re"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 5,
+    "group": 1
+  },
+  {
+    "id": 5047,
+    "user": "Connie Everett",
+    "role": "student",
+    "text": "More than 168 million students worldwide experienced disruptions in their education due to school closuresresulting from the COVID-19 pandemic [1]. Consider a student in a far-off village who found it difficult tointeract with the teacher using outdated and unreliable online sources. Imagine if the student had access to aholographic AI assistant - a device that could provide realistic lessons to the learner in the comfort of theirown home.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 878,
+              "type": "TextPositionSelector",
+              "start": 435
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "More than 168 million students worldwide experienced disruptions in their education due to school closuresresulting from the COVID-19 pandemic [1]. Consider a student in a far-off village who found it difficult tointeract with the teacher using outdated and unreliable online sources. Imagine if the student had access to aholographic AI assistant - a device that could provide realistic lessons to the learner in the comfort of theirown home.",
+              "prefix": "ber 9, 2024Darmstadt1 Motivation",
+              "suffix": "In the year 2000, a significant "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 5,
+    "group": 1
+  },
+  {
+    "id": 5048,
+    "user": "Connie Everett",
+    "role": "student",
+    "text": ",Virtua",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1998,
+              "type": "TextPositionSelector",
+              "start": 1991
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": ",Virtua",
+              "prefix": "red chatbots, virtual assistants",
+              "suffix": "l reality (VR), and learning ana"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 5,
+    "group": 1
+  },
+  {
+    "id": 5049,
+    "user": "Connie Everett",
+    "role": "student",
+    "text": "In what ways can holographic AI provide personalised learning?",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3373,
+              "type": "TextPositionSelector",
+              "start": 3311
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "In what ways can holographic AI provide personalised learning?",
+              "prefix": "lly boosts student engagement?• ",
+              "suffix": "• What are the opportunities and"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 5,
+    "group": 1
+  },
+  {
+    "id": 5050,
+    "user": "Connie Everett",
+    "role": "student",
+    "text": "s ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6807,
+              "type": "TextPositionSelector",
+              "start": 6805
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "s ",
+              "prefix": "rviews on challenges, suggestion",
+              "suffix": ", perspectives and implementatio"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 5,
+    "group": 1
+  },
+  {
+    "id": 5051,
+    "user": "Connie Everett",
+    "role": "student",
+    "text": " implementation concern",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6848,
+              "type": "TextPositionSelector",
+              "start": 6825
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " implementation concern",
+              "prefix": ", suggestions , perspectives and",
+              "suffix": " on the use of holographic AI.Fu"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 5,
+    "group": 1
+  },
+  {
+    "id": 5052,
+    "user": "Connie Everett",
+    "role": "student",
+    "text": "Metrics such as attention span, and time spenton tasks will be analysed. This approach will enable an evaluation of the influence of holographic AI assistanton engagement , personalization and accessibility.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6555,
+              "type": "TextPositionSelector",
+              "start": 6348
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Metrics such as attention span, and time spenton tasks will be analysed. This approach will enable an evaluation of the influence of holographic AI assistanton engagement , personalization and accessibility.",
+              "prefix": "olographic AI against AI tools. ",
+              "suffix": "In order to gain a thorough unde"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 5,
+    "group": 1
+  },
+  {
+    "id": 5053,
+    "user": "Connie Everett",
+    "role": "student",
+    "text": "t ,",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6520,
+              "type": "TextPositionSelector",
+              "start": 6517
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "t ,",
+              "prefix": "graphic AI assistanton engagemen",
+              "suffix": " personalization and accessibili"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 5,
+    "group": 1
+  },
+  {
+    "id": 5054,
+    "user": "Connie Everett",
+    "role": "student",
+    "text": "Educators",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7117,
+              "type": "TextPositionSelector",
+              "start": 7108
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Educators",
+              "prefix": "to 18.A secondary group includes",
+              "suffix": " and school administrators,who a"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 5,
+    "group": 1
+  },
+  {
+    "id": 5055,
+    "user": "Connie Everett",
+    "role": "student",
+    "text": " ,",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7311,
+              "type": "TextPositionSelector",
+              "start": 7309
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " ,",
+              "prefix": "itionally , Ed-tech stakeholders",
+              "suffix": " including developersplay an imp"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 5,
+    "group": 1
+  },
+  {
+    "id": 5056,
+    "user": "Connie Everett",
+    "role": "student",
+    "text": "personalization and accessibility.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6555,
+              "type": "TextPositionSelector",
+              "start": 6521
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "personalization and accessibility.",
+              "prefix": "hic AI assistanton engagement , ",
+              "suffix": "In order to gain a thorough unde"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 5,
+    "group": 1
+  },
+  {
+    "id": 5057,
+    "user": "Connie Everett",
+    "role": "student",
+    "text": "Additionally , Ed-tech stakeholders , including developersplay an important role in exploring the scalability and accessibility of these technologies",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7423,
+              "type": "TextPositionSelector",
+              "start": 7274
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Additionally , Ed-tech stakeholders , including developersplay an important role in exploring the scalability and accessibility of these technologies",
+              "prefix": " tools in educational settings. ",
+              "suffix": ".Despite its strengths such as t"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 5,
+    "group": 1
+  },
+  {
+    "id": 5058,
+    "user": "Connie Everett",
+    "role": "student",
+    "text": "In order to gain a thorough understanding of contextual difficulties and user experiences, qualitative interviewswill be put in practice. 10–15 semi-structured interviews will be conducted with educators to gather theirviews on challenges, suggestions , perspectives and implementation concern on the use of holographic AI.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6878,
+              "type": "TextPositionSelector",
+              "start": 6555
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "In order to gain a thorough understanding of contextual difficulties and user experiences, qualitative interviewswill be put in practice. 10–15 semi-structured interviews will be conducted with educators to gather theirviews on challenges, suggestions , perspectives and implementation concern on the use of holographic AI.",
+              "prefix": "rsonalization and accessibility.",
+              "suffix": "Furthermore existing literature "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 5,
+    "group": 1
+  },
+  {
+    "id": 5059,
+    "user": "Connie Everett",
+    "role": "student",
+    "text": " ,",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7504,
+              "type": "TextPositionSelector",
+              "start": 7502
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " ,",
+              "prefix": "of theories from social presence",
+              "suffix": " personalized education andconst"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 5,
+    "group": 1
+  },
+  {
+    "id": 5060,
+    "user": "Connie Everett",
+    "role": "student",
+    "text": "Despite its strengths such as the integration of theories from social presence , personalized education andconstructivist learning, this study acknowledges the limitation of implementing holographic AI in underfundedschools that lack the necessary infrastructure.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7687,
+              "type": "TextPositionSelector",
+              "start": 7424
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Despite its strengths such as the integration of theories from social presence , personalized education andconstructivist learning, this study acknowledges the limitation of implementing holographic AI in underfundedschools that lack the necessary infrastructure.",
+              "prefix": "ssibility of these technologies.",
+              "suffix": " However, a mixed-method approac"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 5,
+    "group": 1
+  },
+  {
+    "id": 5061,
+    "user": "Connie Everett",
+    "role": "student",
+    "text": "https://www.globalmarketestimates.com/market-report/ai - in - education - market - 3891# : ~ : text = recent % 20market % 20numbers - ,Global %20AI%20in%20Education%20Market%20Size,increasing%20investments%20in%20AI%20technology",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 10000,
+              "type": "TextPositionSelector",
+              "start": 9772
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "https://www.globalmarketestimates.com/market-report/ai - in - education - market - 3891# : ~ : text = recent % 20market % 20numbers - ,Global %20AI%20in%20Education%20Market%20Size,increasing%20investments%20in%20AI%20technology",
+              "prefix": " inEducation”. In: (2024). url: ",
+              "suffix": ".[4] UNICEF et al. “At least 200"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 6
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 5,
+    "group": 1
+  },
+  {
+    "id": 5062,
+    "user": "Connie Everett",
+    "role": "student",
+    "text": "O",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3925,
+              "type": "TextPositionSelector",
+              "start": 3924
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "O",
+              "prefix": "cational content. For instance, ",
+              "suffix": "nline-learning platforms use ada"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 5,
+    "group": 1
+  },
+  {
+    "id": 5063,
+    "user": "Connie Everett",
+    "role": "student",
+    "text": " implement",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3511,
+              "type": "TextPositionSelector",
+              "start": 3501
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " implement",
+              "prefix": "institutions across the world to",
+              "suffix": " technology that improvesstudent"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 5,
+    "group": 1
+  },
+  {
+    "id": 5064,
+    "user": "Connie Everett",
+    "role": "student",
+    "text": "What are the opportunities and difficulties?",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3419,
+              "type": "TextPositionSelector",
+              "start": 3375
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "What are the opportunities and difficulties?",
+              "prefix": "provide personalised learning?• ",
+              "suffix": "22 ApproachThere is growing dema"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 5,
+    "group": 1
+  },
+  {
+    "id": 5065,
+    "user": "Connie Everett",
+    "role": "student",
+    "text": ".A",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2352,
+              "type": "TextPositionSelector",
+              "start": 2350
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": ".A",
+              "prefix": " an impactful matter in question",
+              "suffix": "ccordingto UNICEF report, at lea"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 5,
+    "group": 1
+  },
+  {
+    "id": 5066,
+    "user": "Connie Everett",
+    "role": "student",
+    "text": "For example, holographic models ofhuman ear anatomy have greatly improved experiential learning for medical students, offering a deeperlevel of understanding of the subject matte",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4640,
+              "type": "TextPositionSelector",
+              "start": 4462
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "For example, holographic models ofhuman ear anatomy have greatly improved experiential learning for medical students, offering a deeperlevel of understanding of the subject matte",
+              "prefix": "ds such as medical simulations. ",
+              "suffix": "r. [6]. Virtual reality(VR) aims"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 5,
+    "group": 1
+  },
+  {
+    "id": 5067,
+    "user": "Connie Everett",
+    "role": "student",
+    "text": "AI-powered tools like learning management systems have highly improved the delivery of personalizededucational content. For instance, Online-learning platforms use adaptive algorithms to customizelearning pathways according to one’s individual needs, thus making education more customised. Howeverin distant or hybrid environments, these tools lack interaction and physical presence. As a result, suchtechnologies regularly fail promoting dynamic interactions and emotional engagement of students.[5].",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4291,
+              "type": "TextPositionSelector",
+              "start": 3790
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "AI-powered tools like learning management systems have highly improved the delivery of personalizededucational content. For instance, Online-learning platforms use adaptive algorithms to customizelearning pathways according to one’s individual needs, thus making education more customised. Howeverin distant or hybrid environments, these tools lack interaction and physical presence. As a result, suchtechnologies regularly fail promoting dynamic interactions and emotional engagement of students.[5].",
+              "prefix": "ddress these challenges.SOTA -• ",
+              "suffix": "• Taking into account the limits"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 5,
+    "group": 1
+  },
+  {
+    "id": 5068,
+    "user": "Connie Everett",
+    "role": "student",
+    "text": "for printing ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 9188,
+              "type": "TextPositionSelector",
+              "start": 9175
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "for printing ",
+              "prefix": "6 23-24 Final Submission Buffer ",
+              "suffix": "and submission.5Bibliography[1] "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 5,
+    "group": 1
+  },
+  {
+    "id": 5069,
+    "user": "Connie Everett",
+    "role": "student",
+    "text": "1 1 Planning Create a detailed work plan and timeline.1 2-3 Literature Search Identify relevant studies on AI, holography, and adaptive learning.1 4 Theoretical framework Develop the theoretical framework using existing theories2 5-6 Methodology Design Finalize methods, e.g., surveys, interviews2 7 Scenario Planning Design testing scenarios for the holographic assistant2 8 Recruitment Select schools, educators, and students for participation.3 9-10 Prototype development Set up and test holographic module and AI assistant3 11 Data Collection Setup Prepare survey forms, interview scripts, and experiment setups.3 12-13 Data Collection (Phase 1) Conduct surveys, interviews, and classroom experiments4 14 Preliminary Analysis Review initial results for any methodological adjustments4 15-16 Data Collection (Phase 2) Complete remaining data collection tasks5 17 Data Preparation Organize data for qualitative and quantitative assessment5 18-19 Data Analysis Perform detailed qualitative and quantitative analysis.5 20 Results Interpretation Interpret findings theoretical framework and RQ5 21 Revision Revise based on feedback; refine structure, clarity, and flow.6 22 Final Editing Conduct proofreading for style, grammar, and formatting.6 23-24 Final Submission Buffer for printing and submission.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 9203,
+              "type": "TextPositionSelector",
+              "start": 7900
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "1 1 Planning Create a detailed work plan and timeline.1 2-3 Literature Search Identify relevant studies on AI, holography, and adaptive learning.1 4 Theoretical framework Develop the theoretical framework using existing theories2 5-6 Methodology Design Finalize methods, e.g., surveys, interviews2 7 Scenario Planning Design testing scenarios for the holographic assistant2 8 Recruitment Select schools, educators, and students for participation.3 9-10 Prototype development Set up and test holographic module and AI assistant3 11 Data Collection Setup Prepare survey forms, interview scripts, and experiment setups.3 12-13 Data Collection (Phase 1) Conduct surveys, interviews, and classroom experiments4 14 Preliminary Analysis Review initial results for any methodological adjustments4 15-16 Data Collection (Phase 2) Complete remaining data collection tasks5 17 Data Preparation Organize data for qualitative and quantitative assessment5 18-19 Data Analysis Perform detailed qualitative and quantitative analysis.5 20 Results Interpretation Interpret findings theoretical framework and RQ5 21 Revision Revise based on feedback; refine structure, clarity, and flow.6 22 Final Editing Conduct proofreading for style, grammar, and formatting.6 23-24 Final Submission Buffer for printing and submission.",
+              "prefix": "mple:Month Week Task Description",
+              "suffix": "5Bibliography[1] UNICEF et al. C"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 5,
+    "group": 1
+  }
+]

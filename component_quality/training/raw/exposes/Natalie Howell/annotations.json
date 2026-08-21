@@ -1,0 +1,2498 @@
+[
+  {
+    "id": 1883,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "SOTA",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2447,
+              "type": "TextPositionSelector",
+              "start": 2443
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "SOTA",
+              "prefix": "lographic AI systems?22 Approach",
+              "suffix": ": Today’s holographic AI technol"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1884,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "The Holographic AI Assistantenhancing augmented reality devices by providing a physical presence",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 156,
+              "type": "TextPositionSelector",
+              "start": 60
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The Holographic AI Assistantenhancing augmented reality devices by providing a physical presence",
+              "prefix": "iquitous KnowledgeProcessing Lab",
+              "suffix": "Name: AnonymizedMatrikelnummer: "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 1
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1885,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "AI and AR/VR ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1155,
+              "type": "TextPositionSelector",
+              "start": 1142
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "AI and AR/VR ",
+              "prefix": "sonal and awkward to use. While ",
+              "suffix": "have explored ways to enhance us"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1886,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "Anonymous. Development of Virtual Hologram Assistant Using Artificial Intelligence. Accessed: 2024-12-09.2023. url: https://ijcrt.org/papers/IJCRT2305382.pdf",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 9047,
+              "type": "TextPositionSelector",
+              "start": 8890
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Anonymous. Development of Virtual Hologram Assistant Using Artificial Intelligence. Accessed: 2024-12-09.2023. url: https://ijcrt.org/papers/IJCRT2305382.pdf",
+              "prefix": "l improvements.5Bibliography[1] ",
+              "suffix": ".[2] Lawrence Barsalou. Grounded"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 6
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1887,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "lack contextual awareness and nuanced interactivity",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3143,
+              "type": "TextPositionSelector",
+              "start": 3092
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "lack contextual awareness and nuanced interactivity",
+              "prefix": "in real-world applications.They ",
+              "suffix": ", creating a research gap in dev"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1888,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "combination of primary (interviews, surveys, case studies) and secondary (empirical studies,articles on holography, AI in healthcare and education) dat",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4470,
+              "type": "TextPositionSelector",
+              "start": 4319
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "combination of primary (interviews, surveys, case studies) and secondary (empirical studies,articles on holography, AI in healthcare and education) dat",
+              "prefix": " The data will besourced from a ",
+              "suffix": "a. Declarations of intent will b"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1889,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": " gathering in-depth feedback on the interaction withholographic AI systems",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4982,
+              "type": "TextPositionSelector",
+              "start": 4908
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " gathering in-depth feedback on the interaction withholographic AI systems",
+              "prefix": "derstanding user experiences and",
+              "suffix": ". The study will examine the rel"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1890,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "user engagement, task completionefficiency",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5074,
+              "type": "TextPositionSelector",
+              "start": 5032
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "user engagement, task completionefficiency",
+              "prefix": "xamine the relationship between ",
+              "suffix": ", and system performance in real"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1891,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": " shall argue thatholographic features of AI assistants can immerse and integrate users into an environment that feels naturaland encourages physical actions that synchronize with human cognitive processes",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4093,
+              "type": "TextPositionSelector",
+              "start": 3889
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " shall argue thatholographic features of AI assistants can immerse and integrate users into an environment that feels naturaland encourages physical actions that synchronize with human cognitive processes",
+              "prefix": "h this theoretical framework, we",
+              "suffix": ".Methodology: This study will fo"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1892,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "Submit the exposé for review and addressfeedback for final improvements.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8873,
+              "type": "TextPositionSelector",
+              "start": 8801
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Submit the exposé for review and addressfeedback for final improvements.",
+              "prefix": "4]6 22–24 Submission andFeedback",
+              "suffix": "5Bibliography[1] Anonymous. Deve"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1893,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "50 participants from each sector",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5379,
+              "type": "TextPositionSelector",
+              "start": 5347
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "50 participants from each sector",
+              "prefix": "thod will involve approximately ",
+              "suffix": ", using ARsystems like Microsoft"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1894,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "Preliminary studies and literature reviews on holographic AI and immersive technologieshave identified key challenges such as real-time interaction and system integration",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6008,
+              "type": "TextPositionSelector",
+              "start": 5838
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Preliminary studies and literature reviews on holographic AI and immersive technologieshave identified key challenges such as real-time interaction and system integration",
+              "prefix": "lthcare andeducation providers. ",
+              "suffix": ". The first results will focuson"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1895,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": " an importantresearch gap",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1313,
+              "type": "TextPositionSelector",
+              "start": 1288
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " an importantresearch gap",
+              "prefix": "hy. This brings to the forefront",
+              "suffix": " of developing real-time, practi"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1896,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "combinative application of bothAI and holography to create dynamic, three-dimensional user interfaces",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2830,
+              "type": "TextPositionSelector",
+              "start": 2729
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "combinative application of bothAI and holography to create dynamic, three-dimensional user interfaces",
+              "prefix": "ligence System\"[4] concerns the ",
+              "suffix": ". Works such as \"Holographic AIA"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1897,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "identifying gaps.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6500,
+              "type": "TextPositionSelector",
+              "start": 6483
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "identifying gaps.",
+              "prefix": "\"Holographic AI Assis-tance\"[3] ",
+              "suffix": "1 4 Focused LiteratureStudyDeep "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1898,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "What if your colleague were a hologram instead of a person? I want you to think about an holographicAI assistant by your side, answering your questions with no effort , analyzing data, or guiding you to solvecomplex task",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 581,
+              "type": "TextPositionSelector",
+              "start": 361
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "What if your colleague were a hologram instead of a person? I want you to think about an holographicAI assistant by your side, answering your questions with no effort , analyzing data, or guiding you to solvecomplex task",
+              "prefix": "ber 9, 2024Darmstadt1 Motivation",
+              "suffix": "s—all with a simple projection a"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1899,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "https : / / www . academia . edu / 40268466 / Holographic _ Artificial _ Intelligence _Assistance",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 9390,
+              "type": "TextPositionSelector",
+              "start": 9293
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "https : / / www . academia . edu / 40268466 / Holographic _ Artificial _ Intelligence _Assistance",
+              "prefix": "essed: 2024-12-09. Unknown. url:",
+              "suffix": ".[4] Dhyey Patel and Parth Bhalo"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 6
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1900,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "Prabal Gupta",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 9208,
+              "type": "TextPositionSelector",
+              "start": 9196
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Prabal Gupta",
+              "prefix": "/6133545_Grounded_Cognition.[3] ",
+              "suffix": ". Holographic Artificial Intelli"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 6
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1901,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "Define ResearchQuestions",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6713,
+              "type": "TextPositionSelector",
+              "start": 6689
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Define ResearchQuestions",
+              "prefix": "care and education settings.2 5 ",
+              "suffix": "Use insights from the literature"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1902,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "several keyquestions",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1971,
+              "type": "TextPositionSelector",
+              "start": 1951
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "several keyquestions",
+              "prefix": "mersive, 3D environments raises ",
+              "suffix": ":• How can holographic AI assist"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1903,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "What role does the integration of artificial intelligence with augmented reality (AR) play in enhancingholographic interactions?",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2237,
+              "type": "TextPositionSelector",
+              "start": 2109
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "What role does the integration of artificial intelligence with augmented reality (AR) play in enhancingholographic interactions?",
+              "prefix": "like education and healthcare?• ",
+              "suffix": "• In what ways can real-time con"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1904,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "How can holographic AI assistants improve the efficiency and usability of interactive systems in fieldslike education and healthcare?",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2107,
+              "type": "TextPositionSelector",
+              "start": 1974
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "How can holographic AI assistants improve the efficiency and usability of interactive systems in fieldslike education and healthcare?",
+              "prefix": "s raises several keyquestions:• ",
+              "suffix": "• What role does the integration"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1905,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "In what ways can real-time contextual awareness be improved in holographic AI assistants?",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2328,
+              "type": "TextPositionSelector",
+              "start": 2239
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "In what ways can real-time contextual awareness be improved in holographic AI assistants?",
+              "prefix": "ncingholographic interactions?• ",
+              "suffix": "• What are the potential ethical"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1906,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "What are the potential ethical concerns regarding data privacy and security in holographic AI systems?",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2432,
+              "type": "TextPositionSelector",
+              "start": 2330
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "What are the potential ethical concerns regarding data privacy and security in holographic AI systems?",
+              "prefix": " in holographic AI assistants?• ",
+              "suffix": "22 ApproachSOTA: Today’s hologra"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1907,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "This theory of thought",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3675,
+              "type": "TextPositionSelector",
+              "start": 3653
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "This theory of thought",
+              "prefix": "d, instead of pure abstraction. ",
+              "suffix": " propounds the viewthat vermicul"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1908,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "on the verge",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 907,
+              "type": "TextPositionSelector",
+              "start": 895
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "on the verge",
+              "prefix": "ith a friend. This innovation is",
+              "suffix": " to challenge our technological "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1909,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "human-like interactions with machines are becoming essential,",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 759,
+              "type": "TextPositionSelector",
+              "start": 698
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "human-like interactions with machines are becoming essential,",
+              "prefix": "ence. In aworld where seamless, ",
+              "suffix": " holographic assistantsmight be "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1910,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "closely tied to the physical body and environmental interactions . The theory is relevant tothe holographic AI context since it proposes that real learning and problem-solving are achieved throughphysical engagement in the world",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3622,
+              "type": "TextPositionSelector",
+              "start": 3394
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "closely tied to the physical body and environmental interactions . The theory is relevant tothe holographic AI context since it proposes that real learning and problem-solving are achieved throughphysical engagement in the world",
+              "prefix": " stating that humancognition is ",
+              "suffix": ", instead of pure abstraction. T"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1911,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "how these systems can improve interaction and task completion in healthcare and education, providingfoundational knowledge for their broader implementation",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5659,
+              "type": "TextPositionSelector",
+              "start": 5504
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "how these systems can improve interaction and task completion in healthcare and education, providingfoundational knowledge for their broader implementation",
+              "prefix": "oal is to generate insightsinto ",
+              "suffix": ". The initial preparations are f"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1912,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "vermicular",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3709,
+              "type": "TextPositionSelector",
+              "start": 3699
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "vermicular",
+              "prefix": " thought propounds the viewthat ",
+              "suffix": " AI systems equipped for 3D inte"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1913,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": " Declarations of inten",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4494,
+              "type": "TextPositionSelector",
+              "start": 4472
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " Declarations of inten",
+              "prefix": " healthcare and education) data.",
+              "suffix": "t will be made with partnerinsti"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1914,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "ethical concerns, technical challenges related to hardwarecompatibility (e.g., HoloLens), and data access issues",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4793,
+              "type": "TextPositionSelector",
+              "start": 4681
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "ethical concerns, technical challenges related to hardwarecompatibility (e.g., HoloLens), and data access issues",
+              "prefix": " Potential difficulties include ",
+              "suffix": ". Despite these, the qualitative"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1915,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "Draft practical use cases based on scenariosdiscussed in 3D Holographic and Interac-tive AI System.[4] Develop prototypes forhealthcare and education use.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7201,
+              "type": "TextPositionSelector",
+              "start": 7047
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Draft practical use cases based on scenariosdiscussed in 3D Holographic and Interac-tive AI System.[4] Develop prototypes forhealthcare and education use.",
+              "prefix": "raction.2 7–8 Scenario Planning ",
+              "suffix": "3 9 RecruitmentPlanningPartner w"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1916,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "Process survey data to quantify engage-ment, task completion efficiency, and sys-tem usability metrics",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8061,
+              "type": "TextPositionSelector",
+              "start": 7959
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Process survey data to quantify engage-ment, task completion efficiency, and sys-tem usability metrics",
+              "prefix": " 15–16 Quantitative DataAnalysis",
+              "suffix": ".5 17 Draft Results Sec-tionWrit"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1917,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "Presentation Prepa-ration",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8643,
+              "type": "TextPositionSelector",
+              "start": 8618
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Presentation Prepa-ration",
+              "prefix": " and finalize all sections.6 21 ",
+              "suffix": "Create slides and visuals for pr"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 3621,
+    "user": "Caleb Diaz",
+    "role": "student",
+    "text": "This innovation ison the verge to challenge our technological expectations and redefine what’s possible",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 980,
+              "type": "TextPositionSelector",
+              "start": 877
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "This innovation ison the verge to challenge our technological expectations and redefine what’s possible",
+              "prefix": "g a conversation with a friend. ",
+              "suffix": ".A significant portion of digita"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 3622,
+    "user": "Caleb Diaz",
+    "role": "student",
+    "text": "Embodied Cognition Theory ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3358,
+              "type": "TextPositionSelector",
+              "start": 3332
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Embodied Cognition Theory ",
+              "prefix": "rk: This study will base on the ",
+              "suffix": "[2], stating that humancognition"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 3623,
+    "user": "Caleb Diaz",
+    "role": "student",
+    "text": "ethical concerns, technical challenges related to hardwarecompatibility (e.g., HoloLens), and data access issues",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4793,
+              "type": "TextPositionSelector",
+              "start": 4681
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "ethical concerns, technical challenges related to hardwarecompatibility (e.g., HoloLens), and data access issues",
+              "prefix": " Potential difficulties include ",
+              "suffix": ". Despite these, the qualitative"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 3624,
+    "user": "Caleb Diaz",
+    "role": "student",
+    "text": "questions:",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1972,
+              "type": "TextPositionSelector",
+              "start": 1962
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "questions:",
+              "prefix": " environments raises several key",
+              "suffix": "• How can holographic AI assista"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 3625,
+    "user": "Caleb Diaz",
+    "role": "student",
+    "text": "What are the potential ethical concerns regarding data privacy and security in holographic AI systems?",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2432,
+              "type": "TextPositionSelector",
+              "start": 2330
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "What are the potential ethical concerns regarding data privacy and security in holographic AI systems?",
+              "prefix": " in holographic AI assistants?• ",
+              "suffix": "22 ApproachSOTA: Today’s hologra"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 3626,
+    "user": "Caleb Diaz",
+    "role": "student",
+    "text": "vermicular AI systems",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3720,
+              "type": "TextPositionSelector",
+              "start": 3699
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "vermicular AI systems",
+              "prefix": " thought propounds the viewthat ",
+              "suffix": " equipped for 3D interactivity w"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 3627,
+    "user": "Caleb Diaz",
+    "role": "student",
+    "text": "Bibliography",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8886,
+              "type": "TextPositionSelector",
+              "start": 8874
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Bibliography",
+              "prefix": "eedback for final improvements.5",
+              "suffix": "[1] Anonymous. Development of Vi"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 6
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 3628,
+    "user": "Caleb Diaz",
+    "role": "student",
+    "text": " combination of primary (interviews, surveys, case studies) and secondary",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4391,
+              "type": "TextPositionSelector",
+              "start": 4318
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " combination of primary (interviews, surveys, case studies) and secondary",
+              "prefix": ". The data will besourced from a",
+              "suffix": " (empirical studies,articles on "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 3629,
+    "user": "Caleb Diaz",
+    "role": "student",
+    "text": "necessary hardware and software (e.g., Microsoft HoloLens",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5766,
+              "type": "TextPositionSelector",
+              "start": 5709
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "necessary hardware and software (e.g., Microsoft HoloLens",
+              "prefix": "arations are focused on securing",
+              "suffix": ") and establishing partnerships "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 3630,
+    "user": "Caleb Diaz",
+    "role": "student",
+    "text": " ,",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 529,
+              "type": "TextPositionSelector",
+              "start": 527
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " ,",
+              "prefix": "ng your questions with no effort",
+              "suffix": " analyzing data, or guiding you "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 3631,
+    "user": "Caleb Diaz",
+    "role": "student",
+    "text": "they don’t fully leverage the immersive potential of holography",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1258,
+              "type": "TextPositionSelector",
+              "start": 1195
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "they don’t fully leverage the immersive potential of holography",
+              "prefix": "lored ways to enhance usability,",
+              "suffix": ". This brings to the forefront a"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 3632,
+    "user": "Caleb Diaz",
+    "role": "student",
+    "text": " real-time, practical",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1348,
+              "type": "TextPositionSelector",
+              "start": 1327
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " real-time, practical",
+              "prefix": "ortantresearch gap of developing",
+              "suffix": " systems for sectors like educat"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 3633,
+    "user": "Caleb Diaz",
+    "role": "student",
+    "text": "awkward to use.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1135,
+              "type": "TextPositionSelector",
+              "start": 1120
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "awkward to use.",
+              "prefix": "reens,which feel impersonal and ",
+              "suffix": " While AI and AR/VR have explore"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 3634,
+    "user": "Caleb Diaz",
+    "role": "student",
+    "text": "seamless, human-like interactions ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 722,
+              "type": "TextPositionSelector",
+              "start": 688
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "seamless, human-like interactions ",
+              "prefix": "l intelligence. In aworld where ",
+              "suffix": "with machines are becoming essen"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 3635,
+    "user": "Caleb Diaz",
+    "role": "student",
+    "text": "What if your colleague were a hologram instead of a person?",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 420,
+              "type": "TextPositionSelector",
+              "start": 361
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "What if your colleague were a hologram instead of a person?",
+              "prefix": "ber 9, 2024Darmstadt1 Motivation",
+              "suffix": " I want you to think about an ho"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 3636,
+    "user": "Caleb Diaz",
+    "role": "student",
+    "text": "https://news.stanford.edu/stories/2019/05/augmented- reality-affects-peoples-behavior-real-world",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 9818,
+              "type": "TextPositionSelector",
+              "start": 9722
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "https://news.stanford.edu/stories/2019/05/augmented- reality-affects-peoples-behavior-real-world",
+              "prefix": "ccessed: 2024-12-09. 2019. url: ",
+              "suffix": ".6HighlightStrengthWeaknessOther"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 6
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 3806,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "The Holographic AI Assistant",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 88,
+              "type": "TextPositionSelector",
+              "start": 60
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The Holographic AI Assistant",
+              "prefix": "iquitous KnowledgeProcessing Lab",
+              "suffix": "enhancing augmented reality devi"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 1
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 3807,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "I want you to think about",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 446,
+              "type": "TextPositionSelector",
+              "start": 421
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "I want you to think about",
+              "prefix": "a hologram instead of a person? ",
+              "suffix": " an holographicAI assistant by y"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 3808,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "This innovation ison the verge to challenge our technological expectations and redefine what’s possible",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 980,
+              "type": "TextPositionSelector",
+              "start": 877
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "This innovation ison the verge to challenge our technological expectations and redefine what’s possible",
+              "prefix": "g a conversation with a friend. ",
+              "suffix": ".A significant portion of digita"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 3809,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": " HolographicAI assistants offer potential solutions in that they can provide a type of 3D interaction that resembles workingwith a human partner rather than just an interaction with a machine",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1590,
+              "type": "TextPositionSelector",
+              "start": 1399
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " HolographicAI assistants offer potential solutions in that they can provide a type of 3D interaction that resembles workingwith a human partner rather than just an interaction with a machine",
+              "prefix": "s like education and healthcare.",
+              "suffix": ". The functionality could potent"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 3810,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "lower the threshold on tasks like learning and problem-solving",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1689,
+              "type": "TextPositionSelector",
+              "start": 1627
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "lower the threshold on tasks like learning and problem-solving",
+              "prefix": " functionality could potentially",
+              "suffix": " by placing augmented reality to"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 3811,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "This transition from traditional, flat-screen-based systems to immersive, 3D environments raises several keyquestions:",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1972,
+              "type": "TextPositionSelector",
+              "start": 1854
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "This transition from traditional, flat-screen-based systems to immersive, 3D environments raises several keyquestions:",
+              "prefix": "itive, interactiveand effective.",
+              "suffix": "• How can holographic AI assista"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 3812,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": " integration of artificial intelligence with augmented reality (AR)",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2194,
+              "type": "TextPositionSelector",
+              "start": 2127
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " integration of artificial intelligence with augmented reality (AR)",
+              "prefix": " healthcare?• What role does the",
+              "suffix": " play in enhancingholographic in"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 3813,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "In what ways can real-time contextual awareness be improved in holographic AI assistants?",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2328,
+              "type": "TextPositionSelector",
+              "start": 2239
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "In what ways can real-time contextual awareness be improved in holographic AI assistants?",
+              "prefix": "ncingholographic interactions?• ",
+              "suffix": "• What are the potential ethical"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 3814,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "ow can holographic AI assistants improve the efficiency and usability of interactive systems in fieldslike education and healthcare?",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2107,
+              "type": "TextPositionSelector",
+              "start": 1975
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "ow can holographic AI assistants improve the efficiency and usability of interactive systems in fieldslike education and healthcare?",
+              "prefix": " raises several keyquestions:• H",
+              "suffix": "• What role does the integration"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 3815,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Research like \"Development of Virtual Hologram Assistant Using Artificial Intelligence\" [1] and\"3D Holographic and Interactive Artificial Intelligence System\"[4] concerns the combinative application of bothAI and holography to create dynamic, three-dimensional user interfaces. Works such as \"Holographic AIAssistance\" [3] further investigate integrating these systems into everyday settings for real-time tasks.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2966,
+              "type": "TextPositionSelector",
+              "start": 2554
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Research like \"Development of Virtual Hologram Assistant Using Artificial Intelligence\" [1] and\"3D Holographic and Interactive Artificial Intelligence System\"[4] concerns the combinative application of bothAI and holography to create dynamic, three-dimensional user interfaces. Works such as \"Holographic AIAssistance\" [3] further investigate integrating these systems into everyday settings for real-time tasks.",
+              "prefix": "tate human-computerinteraction. ",
+              "suffix": " However,existing solutions ofte"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 3816,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "fully utilizing holography and AI,",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3048,
+              "type": "TextPositionSelector",
+              "start": 3014
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "fully utilizing holography and AI,",
+              "prefix": "g solutions often fall short in ",
+              "suffix": " especially in real-world applic"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 3817,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "contextual awareness and nuanced interactivity, creating a research gap in developing practical,user-friendly systems for sensitive sectors like healthcare and education as an exampl",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3279,
+              "type": "TextPositionSelector",
+              "start": 3097
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "contextual awareness and nuanced interactivity, creating a research gap in developing practical,user-friendly systems for sensitive sectors like healthcare and education as an exampl",
+              "prefix": "al-world applications.They lack ",
+              "suffix": "e.Theoretical Framework: This st"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 3818,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "vermicular AI system",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3719,
+              "type": "TextPositionSelector",
+              "start": 3699
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "vermicular AI system",
+              "prefix": " thought propounds the viewthat ",
+              "suffix": "s equipped for 3D interactivity "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 3819,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Through this theoretical framework, we shall argue thatholographic features of AI assistants can immerse and integrate users into an environment that feels naturaland encourages physical actions that synchronize with human cognitive processes",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4093,
+              "type": "TextPositionSelector",
+              "start": 3851
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Through this theoretical framework, we shall argue thatholographic features of AI assistants can immerse and integrate users into an environment that feels naturaland encourages physical actions that synchronize with human cognitive processes",
+              "prefix": "task compared to 2D interfaces. ",
+              "suffix": ".Methodology: This study will fo"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 3820,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "his study will focus on healthcare and education professional",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4169,
+              "type": "TextPositionSelector",
+              "start": 4108
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "his study will focus on healthcare and education professional",
+              "prefix": "gnitive processes.Methodology: T",
+              "suffix": "s as the target population,speci"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 3821,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "The data",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4296,
+              "type": "TextPositionSelector",
+              "start": 4288
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The data",
+              "prefix": "riven holographic technologies. ",
+              "suffix": " will besourced from a combinati"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 3822,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Declarations of intent will be made with partnerinstitutions such as hospitals and educational bodies, ensuring ethical considerations such as informed consentand data privacy",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4648,
+              "type": "TextPositionSelector",
+              "start": 4473
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Declarations of intent will be made with partnerinstitutions such as hospitals and educational bodies, ensuring ethical considerations such as informed consentand data privacy",
+              "prefix": "healthcare and education) data. ",
+              "suffix": ". Potential difficulties include"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 3823,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "ifficulties include ethical concerns, technical challenges related to hardwarecompatibility (e.g., HoloLens), and data access issues",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4793,
+              "type": "TextPositionSelector",
+              "start": 4661
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "ifficulties include ethical concerns, technical challenges related to hardwarecompatibility (e.g., HoloLens), and data access issues",
+              "prefix": "entand data privacy. Potential d",
+              "suffix": ". Despite these, the qualitative"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 3824,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "0 participants from each sector,",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5380,
+              "type": "TextPositionSelector",
+              "start": 5348
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "0 participants from each sector,",
+              "prefix": "hod will involve approximately 5",
+              "suffix": " using ARsystems like Microsoft "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 3825,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "such as real-time interaction and system integration",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6008,
+              "type": "TextPositionSelector",
+              "start": 5956
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "such as real-time interaction and system integration",
+              "prefix": "shave identified key challenges ",
+              "suffix": ". The first results will focuson"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 3826,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Methodology",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4105,
+              "type": "TextPositionSelector",
+              "start": 4094
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Methodology",
+              "prefix": " with human cognitive processes.",
+              "suffix": ": This study will focus on healt"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 3827,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Schedule",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6113,
+              "type": "TextPositionSelector",
+              "start": 6105
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Schedule",
+              "prefix": " quality and user acceptance.33 ",
+              "suffix": "Month Week Task Description1 1 P"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 3828,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Develop prototypes forhealthcare and education use",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7200,
+              "type": "TextPositionSelector",
+              "start": 7150
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Develop prototypes forhealthcare and education use",
+              "prefix": " and Interac-tive AI System.[4] ",
+              "suffix": ".3 9 RecruitmentPlanningPartner "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 3829,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Ensure ethical agreements, in-formed consent, and permissions are inplace ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7353,
+              "type": "TextPositionSelector",
+              "start": 7279
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Ensure ethical agreements, in-formed consent, and permissions are inplace ",
+              "prefix": "and schools for datacollection. ",
+              "suffix": "for approximately 50 participant"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 3830,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Secure required hardware like MicrosoftHoloLens, ensure compatibility, andprepare surveys/interview questions forhealthcare and education professionals.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7574,
+              "type": "TextPositionSelector",
+              "start": 7422
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Secure required hardware like MicrosoftHoloLens, ensure compatibility, andprepare surveys/interview questions forhealthcare and education professionals.",
+              "prefix": "0–11 DataCollection Prepara-tion",
+              "suffix": "3 12 Initial DataCollectionCondu"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 3831,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "exposé ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8819,
+              "type": "TextPositionSelector",
+              "start": 8812
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "exposé ",
+              "prefix": "ubmission andFeedbackSubmit the ",
+              "suffix": "for review and addressfeedback f"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 3832,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "3DHolographic and Interactive Artificial Intelli-gence System\"[4] and \"Holographic AI Assis-tance",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6478,
+              "type": "TextPositionSelector",
+              "start": 6381
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "3DHolographic and Interactive Artificial Intelli-gence System\"[4] and \"Holographic AI Assis-tance",
+              "prefix": " foundational works, including \"",
+              "suffix": "\"[3] identifying gaps.1 4 Focuse"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 1
+  }
+]

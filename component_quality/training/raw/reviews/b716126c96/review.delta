@@ -1,0 +1,124 @@
+[
+  {
+    "retain": 0
+  },
+  {
+    "insert": "Summary:",
+    "attributes": {
+      "color": "#292929",
+      "background": "#ffffff"
+    }
+  },
+  {
+    "insert": "\n\n"
+  },
+  {
+    "insert": "This project proposal aims to build a holographic AI assistant that uses 3D imagery, virtual reality and augmented reality to help medical professionals better plan surgical operations in advance.",
+    "attributes": {
+      "color": "#292929",
+      "background": "#ffffff"
+    }
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "\n"
+  },
+  {
+    "insert": "Strengths:",
+    "attributes": {
+      "color": "#292929",
+      "background": "#ffffff"
+    }
+  },
+  {
+    "insert": "\n"
+  },
+  {
+    "insert": "The hook and anchor in the motivation are well stated. I can see why you've chosen this topic and why it's a gap in research.",
+    "attributes": {
+      "color": "#292929",
+      "background": "#ffffff"
+    }
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "\n\n"
+  },
+  {
+    "insert": "Weaknesses:",
+    "attributes": {
+      "color": "#292929",
+      "background": "#ffffff"
+    }
+  },
+  {
+    "insert": "\n\n"
+  },
+  {
+    "insert": "The research questions are those that can be investigated by the outcomes of your proposed study/project. However, I don't really see the feasibility of this project given the effort and the RQs need to be fundamentally refined. RQ 1 has a logical problem (see comments). RQ 2 and 3 are very broad and vague, and simply too much for your stage. I would suggest that you find a smaller cut-off point, such as a particular variable that you can manipulate and observe the corresponding output. But in that case you will need to do more literature analysis and find a related study to work on.",
+    "attributes": {
+      "color": "#292929",
+      "background": "#ffffff"
+    }
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "ordered"
+    }
+  },
+  {
+    "insert": "The schedule/timetable is a concrete guideline for your project and experiments. It seems that the description of each task is quite low effort and doesn't address any of your RQs at the critical steps. Also, there is a fatal mistake you have made for the period when you are collecting data for your prototype. Data Science/AI is about training models on collected data and trying to learn the patterns contained in the data. You put \"prototype development\" before data collection, which is a big mistake, you cannot build an AI assistant without the data you have collected. You need to take a closer look at the basic principles of AI and reschedule your tasks in the timeline.",
+    "attributes": {
+      "color": "#292929",
+      "background": "#ffffff"
+    }
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "ordered"
+    }
+  },
+  {
+    "insert": "The methodological step should be a prototype of how you are going to implement the technologies you mentioned earlier, rather than just listing them without further explanation. I would like to see a more complete workshop in fluent natural language with proper logic and feasibility in your revision.",
+    "attributes": {
+      "color": "#292929",
+      "background": "#ffffff"
+    }
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "ordered"
+    }
+  },
+  {
+    "insert": "\nOther:\n\nLanguage quality is relatively weak. Some of the language errors marked in CARE are critical. Please consider using DeepLWrite to improve your word/phrase choice or sentence structure. (Details can be found in the [REMOVED])."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "ordered"
+    }
+  },
+  {
+    "insert": "The research proposal is meant to be a flowing description of your planned research activities rather than a slide with important bullet points. I would suggest that you reduce the overuse of subtitles and try to streamline the story telling. Whenever you want to include a list (e.g. for your research questions), please elaborate a bit before showing the list to make the paragraph more coherent and fluent."
+  },
+  {
+    "retain": 1,
+    "attributes": {
+      "list": "ordered"
+    }
+  }
+]

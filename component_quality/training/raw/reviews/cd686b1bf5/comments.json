@@ -1,0 +1,68 @@
+[
+  {
+    "id": 5077,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "\"Technical University of Darmstadt\"",
+    "annotationId": 4997,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5078,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "find them more effective than",
+    "annotationId": 4998,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5079,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "tutors or students?",
+    "annotationId": 4999,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5080,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "However is not used at the very beginning of the section. ",
+    "annotationId": 5000,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5081,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "cite them and discuss ",
+    "annotationId": 5001,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5082,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "the model is not understandable to the reader, since there are no information about how the model works.",
+    "annotationId": 5002,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  }
+]

@@ -1,0 +1,278 @@
+[
+  {
+    "id": 267,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": "Interesting title",
+    "annotationId": 263,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 268,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": "the impact",
+    "annotationId": 264,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 269,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": "Great hook",
+    "annotationId": 265,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 270,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": "...superimposing of three...",
+    "annotationId": 266,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 271,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": "between the",
+    "annotationId": 267,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 272,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": "Ties back to the problem at hand",
+    "annotationId": 268,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 273,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": "Highlights how the research question can be derived from state of the art research",
+    "annotationId": 269,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 274,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": "Good, detailed research questions",
+    "annotationId": 270,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 275,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": "You might want to incorporate the research questions into the text, as the transition to a bullet point list at the end of the chapter kills reading flow",
+    "annotationId": 271,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 276,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": "You might want to elaborate on this",
+    "annotationId": 272,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 277,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": "Smart addition",
+    "annotationId": 273,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 278,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": "You might want to plan some more time for literature work",
+    "annotationId": 274,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 279,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": "Overall an original, very realistic schedule",
+    "annotationId": 275,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 280,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": "Good references",
+    "annotationId": 276,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 281,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": "Seems like there is something missing here",
+    "annotationId": 277,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 282,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": "This sentence doesn't make sense",
+    "annotationId": 278,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 283,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": "Good theoretical framework",
+    "annotationId": 279,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 284,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": "Test setup might be a bit expansive, reconsider how realistic its completion is",
+    "annotationId": 280,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Rhonda Campbell",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 285,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": "friend",
+    "annotationId": 281,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 286,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": "Sound test setup",
+    "annotationId": 282,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 287,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": "Jumble of words",
+    "annotationId": 283,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 288,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": "While it is considered here, these concerns might be grounds to reconsider your experiment setup / plan for finding more funding and support in you schedule",
+    "annotationId": 284,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Rhonda Campbell",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 289,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": "statisticaly",
+    "annotationId": 285,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 290,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": "affect",
+    "annotationId": 286,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  }
+]

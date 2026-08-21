@@ -1,0 +1,22 @@
+{
+  "topic": "Interactive LLM-based teaching agents",
+  "author": "Jerry Castro",
+  "reviews": {
+    "1": {
+      "review": 1,
+      "hash": "26669c2085",
+      "reviewer": "Sean Herrera",
+      "role": "assistant",
+      "size": 2127,
+      "group": 1
+    },
+    "2": {
+      "review": 2,
+      "hash": "3460502467",
+      "reviewer": "Cynthia Mills",
+      "role": "expert",
+      "size": 3049,
+      "group": 1
+    }
+  }
+}

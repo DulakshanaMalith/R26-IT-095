@@ -1,0 +1,56 @@
+[
+  {
+    "retain": 0
+  },
+  {
+    "insert": "Summary:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nThis study aims at investigating the use of LLMs as personalized learning assistants in an education environment. However, the expose is incomplete and 80% of the submission is just the template."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "\n"
+  },
+  {
+    "insert": "Strengths:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nYour introduction/motivation would actually be good if it was to lead to a good teaser and good research questions"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "\n"
+  },
+  {
+    "insert": "Weaknesses:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nIt is impossible to give constructive feedback for an exposee that is just incomplete. This will obviously not be enough to pass the course."
+  },
+  {
+    "retain": 1,
+    "attributes": {
+      "list": "bullet"
+    }
+  }
+]

@@ -1,0 +1,18 @@
+Summary
+This proposal aims to investigate how Holographic AI assistant can be used to help students with homework and understand course material independently. The growing student populations make it difficult for educational institutions to address the diverse needs of learners effectively. The proposed Holographic AI assistant could be an effective way to address this issue.
+
+Strengths
+The proposal gives a good hooker in the motivation explained why the Holographic AI assistant is needed.
+The structure and common thread of the proposal is clear.
+
+Weakenss
+Although the research question- How can a holographic AI assistant be implemented on mobile devices to create a sense of physical presence in augmented reality is introduced, the methodology part doesn’t align with the research question well. The author should propose methods to address the proposal research questions.
+The SoTA presented in the methodology part should be related to the Holographic AI assistant rather than LLMs. What is the current existing work on Holographic AI assistants?
+Lack of illustration of how the proposed theoretical framework is connected to the Holographic AI assistants, and the method will be designed in this project.
+LaTeX format errors. The text is not shown correctly. The author needs to improve LaTeX skills. For example, the bibliography is messy.
+The proposal lacks the hook that can awaken the reader’s interest. The author should improve the first sentence by adding citations, numbers or facts to enhance it.
+The current SOTA is misleading and insufficient. The author should find more related literature about holographic AI, which is not only limited to LLMs. 
+Sub research questions are too broad and vague, which cannot be solved by a bachelor’s thesis. The author should narrow down the research questions to more tangible ones.
+The theoretical framework presented in the paper is shallow and not deeply related to the proposed research questions
+No target group of the methodology is mentioned. The authors should decide which target groups they will investigate.
+The schedule table should be more adaptive rather than copying the template

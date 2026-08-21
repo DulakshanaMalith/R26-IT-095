@@ -1,0 +1,12 @@
+Summary:
+In this study, the abilities of secondary school students to spot mistakes in mathematical answers given by ChatGPT are analyzed with respect to the mathematical abilities, ages and their awareness of ChatGPT's flaws of the students
+
+Strengths:
+Your SRQs are very well formulated and you gave them a really good and appropriate scope
+The methodology is fitting and specifically tailored to answer all of your SRQs entirely, while providing a high level of detail
+You show that you dealt with potential difficulties and limitations in depth, and present also non-trivial limitations of your study design, going further than you "would have needed to"
+
+Weaknesses:
+A good scientific writing style facilitates the reader's understanding significantly. In some sentences, your citation style (as highlighted in the text) and sudden jumps from one topic to the other hinders that a bit. While no major weakness, you should still try to unify the citations and focus especially on the transitions when editing your expose
+To justify your research, it is vital to emphasize the differences between current research and your research. While you do that already implicitly, it doesn't harm to "slap the reader in the face" with it. Become more explicit with current similar approaches, their limitations and how what you are doing is different and important.
+The theoretical framework is designed as the base for your research/methodology. The Lazy User Theory seems to justify why students would or wouldn't critically question ChatGPT, but I see no further link to it in your methodology. If you consider it to be important enough to have its own paragraph, show to the reader that it is also relevant to your own research.

@@ -1,0 +1,1090 @@
+[
+  {
+    "id": 164,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": "Konstantinos Liopyris et al. [7], ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1226,
+              "type": "TextPositionSelector",
+              "start": 1192
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Konstantinos Liopyris et al. [7], ",
+              "prefix": "f medicalpractice. According to ",
+              "suffix": "some studies have shown, that th"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 165,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": "data available to train",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2478,
+              "type": "TextPositionSelector",
+              "start": 2455
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "data available to train",
+              "prefix": "s. Apartfrom the pure amount of ",
+              "suffix": ", the representation of differen"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 166,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": "he dermatology is also on therun of researching and integrating the application of artificial intelligence to boost various aspects of medicalpractice.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1178,
+              "type": "TextPositionSelector",
+              "start": 1027
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "he dermatology is also on therun of researching and integrating the application of artificial intelligence to boost various aspects of medicalpractice.",
+              "prefix": " intelligence into healthcare, t",
+              "suffix": " According to Konstantinos Liopy"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 167,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": "diagnostic precision, as screening tests are performed usuallyonly with naked eyes by dermatologists, there are already attempts with very promising result to employedArtificial Intelligence in recognising skin diseases.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1655,
+              "type": "TextPositionSelector",
+              "start": 1435
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "diagnostic precision, as screening tests are performed usuallyonly with naked eyes by dermatologists, there are already attempts with very promising result to employedArtificial Intelligence in recognising skin diseases.",
+              "prefix": "oads and increasing efficiency, ",
+              "suffix": " Some examles models are the Con"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 168,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": " need a lot of data to be trained",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1939,
+              "type": "TextPositionSelector",
+              "start": 1906
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " need a lot of data to be trained",
+              "prefix": "s [6].These AI driven approaches",
+              "suffix": " to reliably detect skin cancer."
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 169,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": ", this amount of training data might still be insufficient to train modern AI models",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2424,
+              "type": "TextPositionSelector",
+              "start": 2340
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": ", this amount of training data might still be insufficient to train modern AI models",
+              "prefix": "images fromthousands of patients",
+              "suffix": ". Apartfrom the pure amount of d"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 170,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": " This entire process is slow, tedious and expensive",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2206,
+              "type": "TextPositionSelector",
+              "start": 2155
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " This entire process is slow, tedious and expensive",
+              "prefix": "rts and subsequently catalogued.",
+              "suffix": ". Whilesome datasets, like the I"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 171,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": "Characteristics like sex, age and skin color are all relevantfactors that might influence the reliability of a machine learning based solution",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2728,
+              "type": "TextPositionSelector",
+              "start": 2586
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Characteristics like sex, age and skin color are all relevantfactors that might influence the reliability of a machine learning based solution",
+              "prefix": "ning dataset has to be ensured. ",
+              "suffix": ".Tai et al. [11] present an appr"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 172,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": " In the first step, the training dataset [9] is used to traintwo Stable Diffusion models with DreamBooth, one model for benign samples and one model for melanomasamples. Subsequently the two models are used to generate a new synthetic training dataset \"Cancer-NetSCa-Synth\" that contains 10000 new images, 5000 images showing benign samples and 5000 images displayingmelanoma samples.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3270,
+              "type": "TextPositionSelector",
+              "start": 2886
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " In the first step, the training dataset [9] is used to traintwo Stable Diffusion models with DreamBooth, one model for benign samples and one model for melanomasamples. Subsequently the two models are used to generate a new synthetic training dataset \"Cancer-NetSCa-Synth\" that contains 10000 new images, 5000 images showing benign samples and 5000 images displayingmelanoma samples.",
+              "prefix": "te a synthetic training dataset.",
+              "suffix": "The detection of melanoma is of "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 173,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": " However, there are other types of skin cancer that are simply grouped into the benign classwithin the scope of Tai et al. [11]. T",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3528,
+              "type": "TextPositionSelector",
+              "start": 3398
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " However, there are other types of skin cancer that are simply grouped into the benign classwithin the scope of Tai et al. [11]. T",
+              "prefix": "kly diagnosedto begin treatment.",
+              "suffix": "he three classes of skin cancer "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 174,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": "sufficient patients",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4161,
+              "type": "TextPositionSelector",
+              "start": 4142
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "sufficient patients",
+              "prefix": "still requires a lot of work and",
+              "suffix": ". This also raises legal issues "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 175,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": "This process might be partially automated, but still requires a lot of work andsufficient patients",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4161,
+              "type": "TextPositionSelector",
+              "start": 4063
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "This process might be partially automated, but still requires a lot of work andsufficient patients",
+              "prefix": "d added to a dataset as in [9]. ",
+              "suffix": ". This also raises legal issues "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 176,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": "The idea of generating a synthetic dataset is not new or unique. Beynek et al. [1] used a generative adverserialnetwork (GAN) for the cancer types of malignant melanoma and basal-cell carcinoma. Kaur et al. [5] traineda conditional generative adversarial network to produce a synthetic training dataset for skin cancer.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4919,
+              "type": "TextPositionSelector",
+              "start": 4600
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The idea of generating a synthetic dataset is not new or unique. Beynek et al. [1] used a generative adverserialnetwork (GAN) for the cancer types of malignant melanoma and basal-cell carcinoma. Kaur et al. [5] traineda conditional generative adversarial network to produce a synthetic training dataset for skin cancer.",
+              "prefix": "e synthetic data isnot an issue.",
+              "suffix": "2.2 Theoretical FrameworkGenerat"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 177,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": " instability training behaviours.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5926,
+              "type": "TextPositionSelector",
+              "start": 5893
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " instability training behaviours.",
+              "prefix": " GANs is their mode-collapse and",
+              "suffix": " Because of thesechallenges, the"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 178,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": "training models to category skin cancer",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6917,
+              "type": "TextPositionSelector",
+              "start": 6878
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "training models to category skin cancer",
+              "prefix": "texts.To enrich the dataset for ",
+              "suffix": ", synthetic 2D skin lesions of d"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 179,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": "the dataset is adjusted accordingly",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7305,
+              "type": "TextPositionSelector",
+              "start": 7270
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "the dataset is adjusted accordingly",
+              "prefix": " analyzed and the models or/and ",
+              "suffix": " for the next phase.After the se"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 180,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": " three MobileNetV2 model",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8749,
+              "type": "TextPositionSelector",
+              "start": 8725
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " three MobileNetV2 model",
+              "prefix": "it is possible to train a set of",
+              "suffix": "s that are trained in the follow"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 181,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": " if it is possible",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7421,
+              "type": "TextPositionSelector",
+              "start": 7403
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " if it is possible",
+              "prefix": "reted to be dicussed and decide,",
+              "suffix": " to adjust thesystem for generat"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 182,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": "State of the art",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3921,
+              "type": "TextPositionSelector",
+              "start": 3905
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "State of the art",
+              "prefix": "ncer-free images.22 Approach2.1 ",
+              "suffix": "Traditionally, skin cancer image"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 183,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": "These issues can be mitigated by creating a synthetic dataset",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4538,
+              "type": "TextPositionSelector",
+              "start": 4477
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "These issues can be mitigated by creating a synthetic dataset",
+              "prefix": "clusion in the training dataset.",
+              "suffix": " as long as the accuracy of the "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 184,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": "be generated, using Stable Diffusion, based on GANs",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7065,
+              "type": "TextPositionSelector",
+              "start": 7014
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "be generated, using Stable Diffusion, based on GANs",
+              "prefix": "resentation of ethnicity should ",
+              "suffix": ", andfine-turning by DreamBooth."
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 185,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": "Methodology",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7112,
+              "type": "TextPositionSelector",
+              "start": 7101
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Methodology",
+              "prefix": "dfine-turning by DreamBooth.2.3 ",
+              "suffix": "The implementation plan consists"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 186,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": " to create synthetic training datasets that contain imagesfor four classes: the three types of skin cancer and cancer-free images.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3890,
+              "type": "TextPositionSelector",
+              "start": 3760
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " to create synthetic training datasets that contain imagesfor four classes: the three types of skin cancer and cancer-free images.",
+              "prefix": "ata presented in Tai et al. [11]",
+              "suffix": "22 Approach2.1 State of the artT"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 187,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": " the three types of skin cancer",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7615,
+              "type": "TextPositionSelector",
+              "start": 7584
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " the three types of skin cancer",
+              "prefix": "contain images for four classes:",
+              "suffix": " and cancer-free images.2.3.1 Sy"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 561,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "At least one-third of the global population of all ages and genders is affected by skin diseases at some pointin their life and it lies in the top 10 of the most common reasons for seeking medical attention as shown byHay et al. in [4]. There is a vast diversity of skin diseases with distinctive presentations and characteristics.They can be caused by various reasons that range from psychological causes to body reactions, from geneticto environmental factors. The precise determination of the cause and the type of disease are some of theimportant keys to treat these diseases effectively.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 942,
+              "type": "TextPositionSelector",
+              "start": 350
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "At least one-third of the global population of all ages and genders is affected by skin diseases at some pointin their life and it lies in the top 10 of the most common reasons for seeking medical attention as shown byHay et al. in [4]. There is a vast diversity of skin diseases with distinctive presentations and characteristics.They can be caused by various reasons that range from psychological causes to body reactions, from geneticto environmental factors. The precise determination of the cause and the type of disease are some of theimportant keys to treat these diseases effectively.",
+              "prefix": "ber 9, 2024Darmstadt1 Motivation",
+              "suffix": "With the growing tendency of ada"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 562,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "the dermatology is also on therun of researching and integrating the application of artificial intelligence t",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1135,
+              "type": "TextPositionSelector",
+              "start": 1026
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "the dermatology is also on therun of researching and integrating the application of artificial intelligence t",
+              "prefix": "l intelligence into healthcare, ",
+              "suffix": "o boost various aspects of medic"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 563,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "wn, ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1251,
+              "type": "TextPositionSelector",
+              "start": 1247
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "wn, ",
+              "prefix": "t al. [7], some studies have sho",
+              "suffix": "that the performance of somealgo"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 564,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "examles",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1668,
+              "type": "TextPositionSelector",
+              "start": 1661
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "examles",
+              "prefix": "recognising skin diseases. Some ",
+              "suffix": " models are the Convolutional Ne"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 565,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": " In this thesis we will explore if it is possible to present the system for generatingsynthetic training data presented in Tai et al. [11] to create synthetic training datasets that contain imagesfor four classes: the three types of skin cancer and cancer-free images",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3889,
+              "type": "TextPositionSelector",
+              "start": 3622
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " In this thesis we will explore if it is possible to present the system for generatingsynthetic training data presented in Tai et al. [11] to create synthetic training datasets that contain imagesfor four classes: the three types of skin cancer and cancer-free images",
+              "prefix": "mous cellcarcinoma and melanoma.",
+              "suffix": ".22 Approach2.1 State of the art"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 566,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "The detection of melanoma is of course an important task as it is dangerous and needs to be quickly diagnosedto begin treatment. However, there are other types of skin cancer that are simply grouped into the benign classwithin the scope of Tai et al. [11]. The three classes of skin cancer are basal cell carcinoma, squamous cellcarcinoma and melanoma",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3621,
+              "type": "TextPositionSelector",
+              "start": 3270
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The detection of melanoma is of course an important task as it is dangerous and needs to be quickly diagnosedto begin treatment. However, there are other types of skin cancer that are simply grouped into the benign classwithin the scope of Tai et al. [11]. The three classes of skin cancer are basal cell carcinoma, squamous cellcarcinoma and melanoma",
+              "prefix": "ages displayingmelanoma samples.",
+              "suffix": ". In this thesis we will explore"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 567,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "Traditionally, skin cancer images are captured manually and individually, then classified by medical expertsand added to a dataset as in [9]. This process might be partially automated, but still requires a lot of work andsufficient patients. This also raises legal issues like anonimization of data to remove the possibility to identifyindividuals from the training data. This kind of data collection also might require additional documentationto prove that all patients have consented to the captured data being used for inclusion in the training dataset.These issues can be mitigated by creating a synthetic dataset as long as the accuracy of the synthetic data isnot an issue",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4599,
+              "type": "TextPositionSelector",
+              "start": 3921
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Traditionally, skin cancer images are captured manually and individually, then classified by medical expertsand added to a dataset as in [9]. This process might be partially automated, but still requires a lot of work andsufficient patients. This also raises legal issues like anonimization of data to remove the possibility to identifyindividuals from the training data. This kind of data collection also might require additional documentationto prove that all patients have consented to the captured data being used for inclusion in the training dataset.These issues can be mitigated by creating a synthetic dataset as long as the accuracy of the synthetic data isnot an issue",
+              "prefix": ".22 Approach2.1 State of the art",
+              "suffix": ".The idea of generating a synthe"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 568,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "The idea of generating a synthetic dataset is not new or unique. Beynek et al. [1] used a generative adverserialnetwork (GAN) for the cancer types of malignant melanoma and basal-cell carcinoma. Kaur et al. [5] traineda conditional generative adversarial network to produce a synthetic training dataset for skin cancer",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4918,
+              "type": "TextPositionSelector",
+              "start": 4600
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The idea of generating a synthetic dataset is not new or unique. Beynek et al. [1] used a generative adverserialnetwork (GAN) for the cancer types of malignant melanoma and basal-cell carcinoma. Kaur et al. [5] traineda conditional generative adversarial network to produce a synthetic training dataset for skin cancer",
+              "prefix": "e synthetic data isnot an issue.",
+              "suffix": ".2.2 Theoretical FrameworkGenera"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 569,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "have",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5776,
+              "type": "TextPositionSelector",
+              "start": 5772
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "have",
+              "prefix": " adversarial learning procedure ",
+              "suffix": " difficulties with scaling to ha"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 570,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "heoretical Framework",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4944,
+              "type": "TextPositionSelector",
+              "start": 4924
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "heoretical Framework",
+              "prefix": "ng dataset for skin cancer.2.2 T",
+              "suffix": "Generative adverserial networks "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 2,
+    "group": 1
+  }
+]

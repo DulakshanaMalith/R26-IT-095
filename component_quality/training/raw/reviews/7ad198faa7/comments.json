@@ -1,0 +1,134 @@
+[
+  {
+    "id": 1210,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "I would suggest you a more generous with the citations in the sentences, 3 sentences followed by 2 citations can be too much - be careful about that. ",
+    "annotationId": 1188,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1211,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Does this imply you have 4 main research questions ? I would suggest making it one main research question with sub research questions instead.",
+    "annotationId": 1189,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1212,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "It is not necessary to provide this information. ",
+    "annotationId": 1190,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1213,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "It is not necessary to provide this information. ",
+    "annotationId": 1191,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1214,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "It is not necessary to provide this information. ",
+    "annotationId": 1192,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1215,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "While this is a good point, it feels worded unnecessarily convoluted.  ",
+    "annotationId": 1193,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1216,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "It's unlikely a student will be able to receive this data. ",
+    "annotationId": 1194,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1217,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Good methods, but seem a bit too out-of-reach for a bachelor thesis. ",
+    "annotationId": 1195,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1218,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "This is sensible, but worded in a too generic way.  Be more explicit how you would want to do this. ",
+    "annotationId": 1196,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1219,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "What are those? will those not have bias?",
+    "annotationId": 1197,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1220,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "This summary feels like it is unnecessary, what is your goal for it?",
+    "annotationId": 1198,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1221,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Timeline is unrealistic, you need to narrow down your research or start earlier on such topics such as identifying the datasets, if these are the main platform you are doing your research on.",
+    "annotationId": 1199,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  }
+]

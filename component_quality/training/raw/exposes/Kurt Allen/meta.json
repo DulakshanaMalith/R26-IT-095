@@ -1,0 +1,30 @@
+{
+  "topic": "Generative AI in Healthcare",
+  "author": "Kurt Allen",
+  "reviews": {
+    "1": {
+      "review": 1,
+      "hash": "78c727cd9f",
+      "reviewer": "Brenda Wagner",
+      "role": "assistant",
+      "size": 1972,
+      "group": 1
+    },
+    "2": {
+      "review": 2,
+      "hash": "ddc74055c2",
+      "reviewer": "Stephanie Morgan",
+      "role": "expert",
+      "size": 3055,
+      "group": 2
+    },
+    "3": {
+      "review": 3,
+      "hash": "a3ae0108d9",
+      "reviewer": "Justin Hood",
+      "role": "student",
+      "size": 3777,
+      "group": 1
+    }
+  }
+}

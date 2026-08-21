@@ -1,0 +1,22 @@
+{
+  "topic": "Generative AI in Healthcare",
+  "author": "Hannah Bass",
+  "reviews": {
+    "1": {
+      "review": 1,
+      "hash": "5047cd3011",
+      "reviewer": "Lauren Lawrence",
+      "role": "assistant",
+      "size": 1849,
+      "group": 2
+    },
+    "2": {
+      "review": 2,
+      "hash": "89c0cb23a1",
+      "reviewer": "Willie Cervantes",
+      "role": "assistant",
+      "size": 1359,
+      "group": 1
+    }
+  }
+}

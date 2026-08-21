@@ -1,0 +1,374 @@
+[
+  {
+    "id": 5185,
+    "user": "Julie Banks",
+    "role": "student",
+    "text": "The Holographic AI Assistant",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 88,
+              "type": "TextPositionSelector",
+              "start": 60
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The Holographic AI Assistant",
+              "prefix": "iquitous KnowledgeProcessing Lab",
+              "suffix": "enhancing augmented reality devi"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 1
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5186,
+    "user": "Julie Banks",
+    "role": "student",
+    "text": "1.2 The Potential of Holographic Assistants",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1336,
+              "type": "TextPositionSelector",
+              "start": 1293
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "1.2 The Potential of Holographic Assistants",
+              "prefix": "red for emergency circumstances.",
+              "suffix": "Using a holographic assistant co"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5187,
+    "user": "Julie Banks",
+    "role": "student",
+    "text": "Theoretical FrameworkThis study is supported by two main theories:• Embodied Cognition: According to this theory, three-dimensional representations serve to improvespatial cognition since physical interactions are necessary for cognitive operations.• Multimodal Interaction: Using both visual and audible input improves user engagement while mini-mizing cognitive burden.The Importance of 3D Graphics: The transition from two-dimensional to three-dimensional interfaces ispredicted to greatly improve user experiences and reduce mental strain, especially in high-stakes situations.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3769,
+              "type": "TextPositionSelector",
+              "start": 3188
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Theoretical FrameworkThis study is supported by two main theories:• Embodied Cognition: According to this theory, three-dimensional representations serve to improvespatial cognition since physical interactions are necessary for cognitive operations.• Multimodal Interaction: Using both visual and audible input improves user engagement while mini-mizing cognitive burden.The Importance of 3D Graphics: The transition from two-dimensional to three-dimensional interfaces ispredicted to greatly improve user experiences and reduce mental strain, especially in high-stakes situations.",
+              "prefix": "et unexploredstudy subject.32.2 ",
+              "suffix": "Research Design using a Mixed Me"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5188,
+    "user": "Julie Banks",
+    "role": "student",
+    "text": "Theoretical Framework",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3209,
+              "type": "TextPositionSelector",
+              "start": 3188
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Theoretical Framework",
+              "prefix": "et unexploredstudy subject.32.2 ",
+              "suffix": "This study is supported by two m"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5189,
+    "user": "Julie Banks",
+    "role": "student",
+    "text": "Research Design using a Mixed Methods Approach",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3815,
+              "type": "TextPositionSelector",
+              "start": 3769
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Research Design using a Mixed Methods Approach",
+              "prefix": "ially in high-stakes situations.",
+              "suffix": "The project will take a mixed-me"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5190,
+    "user": "Julie Banks",
+    "role": "student",
+    "text": "Qualitative Evaluation: Experts will conduct user interviews and case studies to evaluate usability anduser experience",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4155,
+              "type": "TextPositionSelector",
+              "start": 4037
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Qualitative Evaluation: Experts will conduct user interviews and case studies to evaluate usability anduser experience",
+              "prefix": "l all be evaluatedobjectively.• ",
+              "suffix": ".Information Sources and Intende"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 5191,
+    "user": "Julie Banks",
+    "role": "student",
+    "text": "Current Landscape and Challenges",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2282,
+              "type": "TextPositionSelector",
+              "start": 2250
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Current Landscape and Challenges",
+              "prefix": "for Critical Real-Time Tasks2.1 ",
+              "suffix": "Recent developments in augmented"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5192,
+    "user": "Julie Banks",
+    "role": "student",
+    "text": "The project will take a mixed-methods approach to solve the research topics listed below. The cognitiveburden, response times, and task efficiency of the holographic and 2D AR interfaces will all be evaluatedobjectively",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4034,
+              "type": "TextPositionSelector",
+              "start": 3815
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The project will take a mixed-methods approach to solve the research topics listed below. The cognitiveburden, response times, and task efficiency of the holographic and 2D AR interfaces will all be evaluatedobjectively",
+              "prefix": "n using a Mixed Methods Approach",
+              "suffix": ".• Qualitative Evaluation: Exper"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 5193,
+    "user": "Julie Banks",
+    "role": "student",
+    "text": "Literature Review Identify and review relevant academic papers,books, and technical resources. Focus on holo-graphic AI and AR technologies.Annotated bibliog-raphy",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4968,
+              "type": "TextPositionSelector",
+              "start": 4805
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Literature Review Identify and review relevant academic papers,books, and technical resources. Focus on holo-graphic AI and AR technologies.Annotated bibliog-raphy",
+              "prefix": "s.Finalized researchproposal3-4 ",
+              "suffix": "5-6 Concept Development &Framewo"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5194,
+    "user": "Julie Banks",
+    "role": "student",
+    "text": "Motivation",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 361,
+              "type": "TextPositionSelector",
+              "start": 351
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Motivation",
+              "prefix": "ion: December 9, 2024Darmstadt1 ",
+              "suffix": "1.1 OverviewDuring delicate surg"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 5195,
+    "user": "Julie Banks",
+    "role": "student",
+    "text": "2 Approach",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2158,
+              "type": "TextPositionSelector",
+              "start": 2148
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "2 Approach",
+              "prefix": "ional two-dimensional displays.2",
+              "suffix": "Addressing the Challenge: Levera"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 5196,
+    "user": "Julie Banks",
+    "role": "student",
+    "text": "Data Analysis Comple-tionFinalize data analysis. Identify trends and resultsrelevant to research questions.Analysis repor",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6156,
+              "type": "TextPositionSelector",
+              "start": 6035
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Data Analysis Comple-tionFinalize data analysis. Identify trends and resultsrelevant to research questions.Analysis repor",
+              "prefix": "aw data and ini-tial analysis23 ",
+              "suffix": "t24 Final Documentation &Thesis "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  }
+]

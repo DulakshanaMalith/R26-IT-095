@@ -1,0 +1,200 @@
+[
+  {
+    "id": 5543,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Good points, but remember to cite sources for claims like these",
+    "annotationId": 5460,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5544,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "What is the motivation for environmental factors? It comes a bit out of nowhere",
+    "annotationId": 5461,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5545,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Good SQRs! I believe that the scope may be too wide, but they are well formulated",
+    "annotationId": 5462,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5546,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "This RQ is very wide. Your SQRs help narrowing it down, but I would advise to already narrow down the main RQ more. How do you define \"enhance human-computer interaction\"? You could consider a specific use case for example, or maybe you are mainly interested in the design principles and design process. There are many ways to make it more specific :)",
+    "annotationId": 5463,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5547,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Did you use the correct template citation style? Normally, you would like to have xy et al [1] in the text to make it more readable",
+    "annotationId": 5464,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5548,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "What do you mean by \"Emerging studies\"?",
+    "annotationId": 5465,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5549,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "HCI is a broad field per se, so you need to find a way to either cite good sources, or find a subfield of HCI you want to explain",
+    "annotationId": 5466,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5550,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "good",
+    "annotationId": 5467,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5551,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Become more concrete on your SRQs. In the methodology secction, you want to convince the reader of how you will be able to answer all of your SRQs thoroughly, for example by referencing them. A general literature review might not be the most suitable approach to all of your questions",
+    "annotationId": 5468,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5552,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "good limitation",
+    "annotationId": 5469,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5553,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Try to combine different works better. Since you are doing a very broad overview over literature, it should be possible to present different papers and combine them in a more smooth way. Your two sources don't seem to have much in common apart from being linked to holographic AI assistants (which btw you don't explicitly state, so I am unsure whether this paragraph is about Mixed Reality, HCI, Holography or all at once",
+    "annotationId": 5470,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5554,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Good that you mention all of the Sub-RQs, but it is not very distinctive. If you choose to have 4 SRQs, you might have to treat them differently or at least individually",
+    "annotationId": 5471,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5555,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Seems quite good overall, also good how much time you allocate for writing. I believe you don't need to go so much in detail like taking a week for \"refining the RQ\" - I dont think that is plannable. Instead, allocate more time in general for literature search and review, given that is the main work of your thesis",
+    "annotationId": 5472,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5556,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "thesis* The expose is what you are writing now :)",
+    "annotationId": 5473,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5557,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Check your bibliography before submitting next time",
+    "annotationId": 5474,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5558,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "What exactly do you mean by that? Later, you mention adapting to dynamic real-world conditions, but this should be defined already",
+    "annotationId": 5475,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5559,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Good, but do you refer to this weakness even later?",
+    "annotationId": 5476,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5560,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Also good points, but it is not entirely clear what you mean to me - what is \"user perspective\" for example?",
+    "annotationId": 5477,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  }
+]

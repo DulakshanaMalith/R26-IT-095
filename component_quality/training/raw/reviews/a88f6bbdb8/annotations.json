@@ -1,0 +1,126 @@
+[
+  {
+    "id": 5235,
+    "user": "Pamela Downs",
+    "role": "student",
+    "text": " I will investigate the neural rendering approaches used to render realistic AI avatars andcompare them the the state of the art classical approache",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1786,
+              "type": "TextPositionSelector",
+              "start": 1638
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " I will investigate the neural rendering approaches used to render realistic AI avatars andcompare them the the state of the art classical approache",
+              "prefix": "r more natural.In this research,",
+              "suffix": "s. The focus will be on identify"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 5236,
+    "user": "Pamela Downs",
+    "role": "student",
+    "text": " have identified three different metrics, which are important to be evaluated when choosing a renderingapproach for realistic AI avatars.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3398,
+              "type": "TextPositionSelector",
+              "start": 3261
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " have identified three different metrics, which are important to be evaluated when choosing a renderingapproach for realistic AI avatars.",
+              "prefix": "pproaches.Theoretical FrameworkI",
+              "suffix": "The first is efficiency, which e"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 5237,
+    "user": "Pamela Downs",
+    "role": "student",
+    "text": "Once I have an overview I can select comparable methods on both sides",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4825,
+              "type": "TextPositionSelector",
+              "start": 4756
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Once I have an overview I can select comparable methods on both sides",
+              "prefix": "nference will also be relevant. ",
+              "suffix": ".This allows me to apply my theo"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5238,
+    "user": "Pamela Downs",
+    "role": "student",
+    "text": "For the more manual method",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5163,
+              "type": "TextPositionSelector",
+              "start": 5137
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "For the more manual method",
+              "prefix": "scan of a fellowstudent’s head. ",
+              "suffix": "s, I will try to match the look "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  }
+]

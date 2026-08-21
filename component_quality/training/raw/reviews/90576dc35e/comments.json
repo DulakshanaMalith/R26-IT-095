@@ -1,0 +1,79 @@
+[
+  {
+    "id": 394,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "unnecessary abbreviation if not used again ",
+    "annotationId": 387,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 395,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "abbreviation already introduced",
+    "annotationId": 388,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 396,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "Are you really planning to develop a whole LLM or do you want use an existing LLM in your application? The later seems plausible, but then it should be stated here.",
+    "annotationId": 389,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 397,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "The structure of this paragraph is confusing. First you write about possibilities of an LLM, then as an example you mention a statistic about use of online courses and then there is the need for personalized tools without explanation. I would consider reordering this paragraph and making more sense how the sentences are connected. ",
+    "annotationId": 390,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 398,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "This theory seems well suited for your task and the explanation on how an LLM agent can use this is well written",
+    "annotationId": 391,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 399,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "The colon is usually used to separate title and subtitle. In this template, the title is separated by the line from the subtitle",
+    "annotationId": 392,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 400,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "this should be before '.'",
+    "annotationId": 393,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  }
+]

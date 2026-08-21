@@ -1,0 +1,448 @@
+[
+  {
+    "id": 4039,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "Please note the capitalisation of your title. Choose a format and stick to it.  https://capitalizemytitle.com/",
+    "annotationId": 3972,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Antonio White",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 4040,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "claim needs citations",
+    "annotationId": 3973,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4041,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "citations needed ",
+    "annotationId": 3974,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Antonio White",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 4042,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "anchor elaboration, build connection between problem (complex diseases) and solution (LLM for healthcare)",
+    "annotationId": 3975,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Antonio White",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 4043,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "why capitalised?",
+    "annotationId": 3976,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Antonio White",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 4044,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "success rates of what?",
+    "annotationId": 3977,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Antonio White",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 4045,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "Are you sure about this without giving any further conditions? also claim needs sources",
+    "annotationId": 3978,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Antonio White",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 4046,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "You'd rather rephrase that sentence because it's a very vague and bold conclusion for the development of AI.",
+    "annotationId": 3979,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4047,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "For example? you will need to give examples of your arguments without quoting from sources.",
+    "annotationId": 3980,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Antonio White",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 4048,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "explain abbreviation at its first sight",
+    "annotationId": 3981,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Antonio White",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 4049,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "good job to explain what LLM is at the first sight",
+    "annotationId": 3982,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Antonio White",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 4050,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "why capital letter?",
+    "annotationId": 3983,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Antonio White",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 4051,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "Are these application scenarios relevant to our topic at all? If you're going to give examples, it's always a good idea to make sure they help you build your argument.",
+    "annotationId": 3984,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Antonio White",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 4052,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "I am wondering what is this paragraph for? I know it introduce the research questions, but it have connection to the previous paragraph, you need to take care the semantic coherence between paragraphs. If there is causal connection, it's bad idea to start a new paragraph here",
+    "annotationId": 3985,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Antonio White",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 4053,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "I don't really understand this sentence. It seems to be independent of the previous research question and you may need to rephrase it or use a tabular style to list your RQ1 and RQ2.",
+    "annotationId": 3986,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Antonio White",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 4054,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "Be careful with the punctuation, you might need to rephrase that sentence, it's kind of misleading.",
+    "annotationId": 3987,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Antonio White",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 4055,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "why capital letter?",
+    "annotationId": 3988,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Antonio White",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 4056,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "It's a very broad research question, not specific and detailed enough for an undergraduate thesis project.",
+    "annotationId": 3989,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4057,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "Again it's about data privacy and protection. But do you actually think it's possible that you carry out experiments in addition to the other research questions you proposed? Isn't that too much?",
+    "annotationId": 3990,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4058,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "that a subtitle inside of another subtitle",
+    "annotationId": 3991,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Antonio White",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 4059,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "avoid pronoun in scientific writing",
+    "annotationId": 3992,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Antonio White",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 4060,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "grammer error, not a specific patient",
+    "annotationId": 3993,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Antonio White",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 4061,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "natural language processing",
+    "annotationId": 3994,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Antonio White",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 4062,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "trying to identify gaps",
+    "annotationId": 3995,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Antonio White",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 4063,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "address RQ1",
+    "annotationId": 3996,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Antonio White",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 4064,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "bold claim, either delete or put citations",
+    "annotationId": 3997,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Antonio White",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 4065,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "what part are these? theoretical framework? related work? your methodology?",
+    "annotationId": 3998,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4066,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "Usually the project lasts 24-26 weeks, so you will need to extend your schedule significantly",
+    "annotationId": 3999,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Antonio White",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  }
+]

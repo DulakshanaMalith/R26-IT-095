@@ -1,0 +1,36 @@
+Summary
+The project proposal aims to answer the question if students in secondary education can identify wrong answers in mathematics by ChatGPT by conducting a quantitative experiment. It also focuses on how the outcome might be influenced by the knowledge of the participants, both in the topic of questions and the awareness about errors done by ChatGPT.
+
+Strengths
+The title and hook of the proposal should spark the readers' interest and lay the grounds for the general topic of the work.
+Your title is very catchy and simple, combined with the hook, it shows the reader immediately what the paper is about and why it is important. Showing surprising statistical facts about the usage of ChatGPT further adds to the interest of the reader.
+
+The proposal should be realistic for the length of a bachelors thesis and have precise research questions that show the boundaries of what is being done in the work and what isn't.
+Your research question itself is fairly broad and open. However, you clarify the boundaries of your work by providing sub research questions, that not only answer the question in its most general form (Can students identify ChatGPT's errors in mathematics) but also provide valuable insights on changes to this metrics, depending on the students' knowledge. This paints a bigger picture of the topic and enables the reader to get a more profound understanding of the results and how they might change. You also limit the work to a more realistic load by narrowing the number of tasks per test to eight.
+You could improve the benefit of your project even more, by not only answering the first sub research question with "yes" or "no" but also quantifying the accuracy of the students. This would give additional insight into this topic.
+
+The schedule should be realistic, contain all relevant tasks and contain buffer time for unforeseeable delays.
+Your schedule is detailed, contains all relevant tasks and some buffer time. Pointing out which task contributes to which sub research question is also a great way to ensure completeness. You also planned the schedule realistically, limiting the chance of delays and making it possible to stick to it.
+
+The state of the art should show what work has been done before, where a gap lies within past research, and why it is relevant.
+Your proposal cites many current sources and explains the work being done for evaluating ChatGPT in a school context. You also explain, what previous research is lacking and therefore show the existing research gap. You achieve this with simple explanations and relevant detail, orienting your work alongside the current state of the art.
+
+Weaknesses
+Statements in the project proposal should be backed by sources. The sources should clearly support said statements, and it should be obvious which sources are linked to which statements.
+Your proposal backs most of the statements with valid and good sources, however, the statement "primary school students often do not have direct access to tools like ChatGPT" doesn't seem to be citing a source. Furthermore, some statements aren't fully backed by the cited sources, like on page 2 ("nearly 70% of students in secondary education use ChatGPT") where the source finds that 68.4% of questioned participants use ChatGPT but only 94 of 300 participants are in secondary education, making it difficult to prove that the percentage is equally distributed across all education levels. The claim on page 3, that source [7] states that students using ChatGPT to write university essays produced "positive feedback" seems to even contradict the mentioned source. In it, the authors state that "LLMs tend to produce content that is accurate but shallow and not of high quality" and "If the student does not rework the text by unifying it, they might get contradictory paragraphs" while "the use of LLM did not significantly affect [... the] performance [of the students]".
+Please revisit your claims and make sure they match the results of the cited sources. Also find a source for claims that are missing citations. At the beginning of page three, also move the citations [5] and [6] after the subsequent sentence, as it is still based on those sources.
+
+The terminology used in the project proposal should be accurate and correct to prevent misconceptions.
+On page 3, you state that your work "combines quantitative and qualitative methods". However, your methodology seems to be based on surveys (questionnaires) and experiments. As both of these count towards quantitative methods, the statement is incorrect. Furthermore, in your methodology, you claim that "anonymity" is kept during the survey. As you are assigning identification numbers to each student to be able to match the different tests to the same participant later on, this is not anonymous but rather pseudonymous. 
+Please make sure the terminology used in your proposal is correct by revisiting your work and updating the terminology.
+
+The methodology of the project proposal should reflect, how the research questions will be answered and how the research will be conducted.
+In your proposal, you describe the experiment in great detail, going into where participants will be sourced from and how the research questions will be answered. However, it is unclear if all students receive the same set of pre-computed answers from ChatGPT and, if this is not the case, how the comparability of the results can be ensured between the participants. It is also unclear, if the same set of answers will be presented in both task 2 and 3, or if the students receive a mix of correct and incorrect answers in the first place. Furthermore, it should be stated if the students receive the pre-computed answers altogether, or one by one. These inaccuracies could significantly affect the outcome of the experiment and the significance of the results.
+Please revisit your methodology and refactor it to tackle inaccuracies and make sure it is obvious, how the experiments will be conducted and why. 
+
+Others
+Using spell and grammar checking improves the legibility of your work.
+Even though your proposal is in a very legible state and can be easily understood, there are minor spelling mistakes that could hinder the reading flow, for example "the errors made my ChatGPT" (my instead of by) and "the theory differentiate in user need an user state" (differentiate instead of differentiates, an instead of and).
+You could improve your proposal even more by using a spell checker and removing spelling and grammar mistakes.
+
+Note: This work has been created independently and was linguistically revised using DeepL (https://www.deepl.com) and LanguageTool (https://languagetool.org)

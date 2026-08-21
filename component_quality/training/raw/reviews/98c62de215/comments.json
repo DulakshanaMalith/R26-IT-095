@@ -1,0 +1,68 @@
+[
+  {
+    "id": 4830,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "None",
+    "annotationId": 4754,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4831,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Be more precise about exact technologies, if possible.",
+    "annotationId": 4755,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4832,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Be more precise about that.",
+    "annotationId": 4756,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4833,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Be more precise about how you want to do/achieve those things.",
+    "annotationId": 4757,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4834,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "usually 26 weeks",
+    "annotationId": 4758,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4835,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "At some points the descriptions are very broad.",
+    "annotationId": 4759,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  }
+]

@@ -1,0 +1,533 @@
+[
+  {
+    "id": 4239,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "'?' is missing",
+    "annotationId": 4171,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Stephen Macdonald",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 4240,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "This header should not be in the text",
+    "annotationId": 4172,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Stephen Macdonald",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 4241,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "This header should not be in the text",
+    "annotationId": 4173,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4242,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "This header should not be in the text",
+    "annotationId": 4174,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4243,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "missing comma",
+    "annotationId": 4175,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4244,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "too*",
+    "annotationId": 4176,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Stephen Macdonald",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 4245,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "don't",
+    "annotationId": 4177,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Stephen Macdonald",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 4246,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "reference?",
+    "annotationId": 4178,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4247,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "why are they growing",
+    "annotationId": 4179,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Stephen Macdonald",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 4248,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "are*",
+    "annotationId": 4180,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Stephen Macdonald",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 4249,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "make clear what technology you are talking about",
+    "annotationId": 4181,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4250,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "LLMs",
+    "annotationId": 4182,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4251,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "their",
+    "annotationId": 4183,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4252,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "missing whitespace",
+    "annotationId": 4184,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4253,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "Yes, this is important, but must be validated by references",
+    "annotationId": 4185,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4254,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "end of sentence?",
+    "annotationId": 4186,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4255,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "reference to those studies",
+    "annotationId": 4187,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4256,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "In my research, I want to...",
+    "annotationId": 4188,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4257,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "this makes no sense gramatically",
+    "annotationId": 4189,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4258,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "How*",
+    "annotationId": 4190,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4259,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "What*",
+    "annotationId": 4191,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4260,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "Main Question* , why is this written in differetn font",
+    "annotationId": 4192,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4261,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "their",
+    "annotationId": 4193,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4262,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "These should be divided into 2 subquestions",
+    "annotationId": 4194,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4263,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "Overall the subquestion are well chosen and specific enough ",
+    "annotationId": 4195,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4264,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "ChatGPT*",
+    "annotationId": 4196,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4265,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "missing ,",
+    "annotationId": 4197,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4266,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "None",
+    "annotationId": 4198,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4267,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "Is there a reference?",
+    "annotationId": 4199,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4268,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "why is this a limitation?",
+    "annotationId": 4200,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4269,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "and instead of comma",
+    "annotationId": 4201,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4270,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "grammar",
+    "annotationId": 4202,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4271,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "?",
+    "annotationId": 4203,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4272,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "spelling",
+    "annotationId": 4204,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4273,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "fitted by a LLM ?",
+    "annotationId": 4205,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4274,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "cusomized*",
+    "annotationId": 4206,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4275,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "for each?",
+    "annotationId": 4207,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4276,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "how do you measure these?",
+    "annotationId": 4208,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4277,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "Good",
+    "annotationId": 4209,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4278,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "this sounds not scientific",
+    "annotationId": 4210,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4279,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "finished sentence",
+    "annotationId": 4211,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4280,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "This header should not be in the text\n",
+    "annotationId": 4212,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4281,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "This header should not be in the text\n",
+    "annotationId": 4213,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4282,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "This header should not be in the text\n",
+    "annotationId": 4214,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4283,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "It's not clear what the LLM does in this study",
+    "annotationId": 4215,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  }
+]

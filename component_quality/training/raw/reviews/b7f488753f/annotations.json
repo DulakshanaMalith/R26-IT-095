@@ -1,0 +1,343 @@
+[
+  {
+    "id": 1177,
+    "user": "Jerry Castro",
+    "role": "student",
+    "text": "EiwA Exposé",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 71,
+              "type": "TextPositionSelector",
+              "start": 60
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "EiwA Exposé",
+              "prefix": "iquitous KnowledgeProcessing Lab",
+              "suffix": "Name: AnonymizedMatrikelnummer: "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 1
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 1178,
+    "user": "Jerry Castro",
+    "role": "student",
+    "text": "Beyond Human Precision: Ethical Challenges inDeploying AI for Skin Cancer Diagnosis",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 349,
+              "type": "TextPositionSelector",
+              "start": 266
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Beyond Human Precision: Ethical Challenges inDeploying AI for Skin Cancer Diagnosis",
+              "prefix": "ion: December 9, 2024Darmstadt1 ",
+              "suffix": "1.1 Motivation and RelevanceSkin"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 1179,
+    "user": "Jerry Castro",
+    "role": "student",
+    "text": " the potential for bias in training data, and the diminishedrole of human oversight have stymied their adoption.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1060,
+              "type": "TextPositionSelector",
+              "start": 948
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " the potential for bias in training data, and the diminishedrole of human oversight have stymied their adoption.",
+              "prefix": "erns. Questions about liability,",
+              "suffix": " This research seeks to address "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 1180,
+    "user": "Jerry Castro",
+    "role": "student",
+    "text": " Motivation and Relevance",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 377,
+              "type": "TextPositionSelector",
+              "start": 352
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " Motivation and Relevance",
+              "prefix": " AI for Skin Cancer Diagnosis1.1",
+              "suffix": "Skin cancer is one of the most c"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 1181,
+    "user": "Jerry Castro",
+    "role": "student",
+    "text": " To what extent do AI-driven diagnostic systems outperform human dermatologists in identifying skincancer [2]?",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1714,
+              "type": "TextPositionSelector",
+              "start": 1604
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " To what extent do AI-driven diagnostic systems outperform human dermatologists in identifying skincancer [2]?",
+              "prefix": "e implementation?Sub-Questions:•",
+              "suffix": "• What are the primary legal and"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 1182,
+    "user": "Jerry Castro",
+    "role": "student",
+    "text": " What are the primary legal and regulatory challenges preventing the deployment of these systems inclinical practice [3]?• What ethical principles must guide the integration of AI into diagnostic workflows to ensure accountabilityand trust?",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1955,
+              "type": "TextPositionSelector",
+              "start": 1715
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " What are the primary legal and regulatory challenges preventing the deployment of these systems inclinical practice [3]?• What ethical principles must guide the integration of AI into diagnostic workflows to ensure accountabilityand trust?",
+              "prefix": " in identifying skincancer [2]?•",
+              "suffix": "21.3 Approach: Objectives and Ex"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 1183,
+    "user": "Jerry Castro",
+    "role": "student",
+    "text": "Approach: Objectives and Expected OutcomesObjectives:• Investigate the diagnostic accuracy and reliability of computer vision-based AI in skin cancer detectioncompared to human experts [2][1].• Analyze the legal and ethical issues associated with liability, data bias, and the reduction of humaninvolvement in critical decision-making [2][3].• Propose ethical and regulatory guidelines for the safe and effective implementation of AI in dermatology.Expected Outcomes:• Comprehensive insights into the technical and ethical barriers of AI in dermatology.• Recommendations for addressing these barriers, including alternative regulatory models and ethicaloversight mechanisms.• A framework that integrates AI into clinical workflows without undermining patient safety and trust.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2736,
+              "type": "TextPositionSelector",
+              "start": 1960
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Approach: Objectives and Expected OutcomesObjectives:• Investigate the diagnostic accuracy and reliability of computer vision-based AI in skin cancer detectioncompared to human experts [2][1].• Analyze the legal and ethical issues associated with liability, data bias, and the reduction of humaninvolvement in critical decision-making [2][3].• Propose ethical and regulatory guidelines for the safe and effective implementation of AI in dermatology.Expected Outcomes:• Comprehensive insights into the technical and ethical barriers of AI in dermatology.• Recommendations for addressing these barriers, including alternative regulatory models and ethicaloversight mechanisms.• A framework that integrates AI into clinical workflows without undermining patient safety and trust.",
+              "prefix": "re accountabilityand trust?21.3 ",
+              "suffix": "1.4 Approach: State of the Art a"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 1184,
+    "user": "Jerry Castro",
+    "role": "student",
+    "text": "Computer vision AI models, particularly convolutional neural networks (CNNs), have achieved impressiveaccuracy in image-based diagnostics, including skin cancer detection. Studies like Esteva et al. (2017)[2]have shown these models outperforming dermatologists in certain scenarios. However, despite their technicalprowess, the deployment of such systems is limited due to legal ambiguities, including unclear fault attributionin case of errors, and ethical concerns such as data privacy and algorithmic bias [3].The literature also highlights the growing demand for frameworks that ensure both accountability and patienttrust in AI-driven healthcare. Existing studies have examined these issues in other medical domains but rarelyfocus on dermatology, creating a gap this research seeks to address [4][1]",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3593,
+              "type": "TextPositionSelector",
+              "start": 2788
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Computer vision AI models, particularly convolutional neural networks (CNNs), have achieved impressiveaccuracy in image-based diagnostics, including skin cancer detection. Studies like Esteva et al. (2017)[2]have shown these models outperforming dermatologists in certain scenarios. However, despite their technicalprowess, the deployment of such systems is limited due to legal ambiguities, including unclear fault attributionin case of errors, and ethical concerns such as data privacy and algorithmic bias [3].The literature also highlights the growing demand for frameworks that ensure both accountability and patienttrust in AI-driven healthcare. Existing studies have examined these issues in other medical domains but rarelyfocus on dermatology, creating a gap this research seeks to address [4][1]",
+              "prefix": "of the Art and Literature Review",
+              "suffix": ".1.5 Approach: MethodologyQuanti"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 1185,
+    "user": "Jerry Castro",
+    "role": "student",
+    "text": "Approach: Methodology",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3619,
+              "type": "TextPositionSelector",
+              "start": 3598
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Approach: Methodology",
+              "prefix": "rch seeks to address [4][1].1.5 ",
+              "suffix": "Quantitative Analysis: Systemati"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 1186,
+    "user": "Jerry Castro",
+    "role": "student",
+    "text": "Month 1 – Conduct literature review and identify research gaps.Month 2 – Data collection: Interviews and case studies.Month 3 – Analyze collected data and synthesize findings.Month 4 – Draft guidelines and integrate feedback from supervisors.Month 5 – Final revisions, proofreading, and submission.(1 month as buffer for possible sickness/vacation",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5014,
+              "type": "TextPositionSelector",
+              "start": 4667
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Month 1 – Conduct literature review and identify research gaps.Month 2 – Data collection: Interviews and case studies.Month 3 – Analyze collected data and synthesize findings.Month 4 – Draft guidelines and integrate feedback from supervisors.Month 5 – Final revisions, proofreading, and submission.(1 month as buffer for possible sickness/vacation",
+              "prefix": "ology.1.6 Structure and Timeline",
+              "suffix": ")1.7 Ethical ConsiderationsThis "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 1187,
+    "user": "Jerry Castro",
+    "role": "student",
+    "text": "This study will contribute to the responsible integration of AI into dermatological practice, balancing itsdiagnostic potential with ethical accountability. By addressing legal and societal barriers, the research aims tounlock the life-saving capabilities of AI while safeguarding the principles of medical ethics.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5660,
+              "type": "TextPositionSelector",
+              "start": 5346
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "This study will contribute to the responsible integration of AI into dermatological practice, balancing itsdiagnostic potential with ethical accountability. By addressing legal and societal barriers, the research aims tounlock the life-saving capabilities of AI while safeguarding the principles of medical ethics.",
+              "prefix": "ient autonomy [1].1.8 Conclusion",
+              "suffix": "4Bibliography[1] Ahmed Al Kuwait"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  }
+]

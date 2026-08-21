@@ -1,0 +1,219 @@
+[
+  {
+    "id": 291,
+    "user": "Virginia Warren",
+    "role": "student",
+    "text": "some formal mistakes (punctuation, whitespaces missing) make a bit harder to read, not tragic",
+    "annotationId": 0,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 292,
+    "user": "Virginia Warren",
+    "role": "student",
+    "text": "creative title, subtitle explains topic",
+    "annotationId": 287,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 293,
+    "user": "Virginia Warren",
+    "role": "student",
+    "text": "discipline mentioned",
+    "annotationId": 288,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 294,
+    "user": "Virginia Warren",
+    "role": "student",
+    "text": "problems so far have been stated",
+    "annotationId": 289,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 295,
+    "user": "Virginia Warren",
+    "role": "student",
+    "text": "Gaps have been mentioned before but it is not clear what gaps exactly are tackled by the work. By clearly mentioning what the specific gap is and what part your research plays in bridging the gap, the reader could get a clearer picture of your work and what you are trying to accomplish.",
+    "annotationId": 290,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 296,
+    "user": "Virginia Warren",
+    "role": "student",
+    "text": "These could be too much for a Bachelor's thesis. Maybe cut out the last question. Answering the remaining research questions would still propose good progress in research.",
+    "annotationId": 291,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Elijah Boone",
+        "role": "expert",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 297,
+    "user": "Virginia Warren",
+    "role": "student",
+    "text": "None",
+    "annotationId": 0,
+    "parentCommendId": 298,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 299,
+    "user": "Virginia Warren",
+    "role": "student",
+    "text": "good hook, catches reader's interest",
+    "annotationId": 292,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Elijah Boone",
+        "role": "expert",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 300,
+    "user": "Virginia Warren",
+    "role": "student",
+    "text": "To me it's not fully clear whether and if so how these approaches are interconnected. explaining the second method in a little bit more detail or clearly seperating them would help the understanding of the different methods currently used",
+    "annotationId": 293,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Elijah Boone",
+        "role": "expert",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 301,
+    "user": "Virginia Warren",
+    "role": "student",
+    "text": "a bit unclear what this means",
+    "annotationId": 294,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 302,
+    "user": "Virginia Warren",
+    "role": "student",
+    "text": "if you use numeration here you should numerate the research questions when they are presented",
+    "annotationId": 295,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 303,
+    "user": "Virginia Warren",
+    "role": "student",
+    "text": "a bit more detail what LLM should be used or if it will be fine-tuned or trained from scratch or if few-shot prompting will be used would be helpful",
+    "annotationId": 296,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 304,
+    "user": "Virginia Warren",
+    "role": "student",
+    "text": "where do the tests come from?",
+    "annotationId": 297,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 305,
+    "user": "Virginia Warren",
+    "role": "student",
+    "text": "are these the students and teachers from the quantitative part? if yes this could be mentioned, if no the target population should be specified (from which countries, which types of schools, what age, ...)",
+    "annotationId": 298,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Elijah Boone",
+        "role": "expert",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 306,
+    "user": "Virginia Warren",
+    "role": "student",
+    "text": "what is meant by traditional instruction? With a teacher?",
+    "annotationId": 299,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 307,
+    "user": "Virginia Warren",
+    "role": "student",
+    "text": "maybe give details about the age and class and country",
+    "annotationId": 300,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 308,
+    "user": "Virginia Warren",
+    "role": "student",
+    "text": "depending on the number of participants, one week could be very little time if something goes wrong.",
+    "annotationId": 301,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Elijah Boone",
+        "role": "expert",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  }
+]

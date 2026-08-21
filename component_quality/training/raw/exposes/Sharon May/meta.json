@@ -1,0 +1,30 @@
+{
+  "topic": "The Holographic AI Assistant",
+  "author": "Sharon May",
+  "reviews": {
+    "1": {
+      "review": 1,
+      "hash": "16ac5df9b1",
+      "reviewer": "Shelly Lawrence",
+      "role": "assistant",
+      "size": 3145,
+      "group": 1
+    },
+    "2": {
+      "review": 2,
+      "hash": "4b23479508",
+      "reviewer": "Shane Barnes",
+      "role": "expert",
+      "size": 1490,
+      "group": 2
+    },
+    "3": {
+      "review": 3,
+      "hash": "087a7efa40",
+      "reviewer": "Shelby Cummings",
+      "role": "student",
+      "size": 6370,
+      "group": 1
+    }
+  }
+}

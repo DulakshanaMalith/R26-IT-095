@@ -1,0 +1,41 @@
+[
+  {
+    "retain": 0
+  },
+  {
+    "insert": "Summary",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\n\nThe thesis plans to explore how wearable devices and AI can enable personalized, real-time mobility and flexibility exercises for post-surgical rehabilitation patients, optimizing recovery by adjusting to parameters like joint stiffness, muscle recovery, and pain levels. It will investigate the role of wearables, the potential of AI for adaptive programming, and the impact on recovery speed and reinjury prevention.\n\n"
+  },
+  {
+    "insert": "Strengths",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\n\nThe motivation should arouse interest in the topic and motivate the research. You did this nicely; your introduction engages in reading further and enables the use of the research to be seen.\n\n"
+  },
+  {
+    "insert": "Weaknesses",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\n\nThe theoretical framework should describe the concepts used in detail. In some cases, some aspects seem missing. Add further detail to improve the understanding of the concepts you want to use.\nIn the methodology section, you should describe how you want to use the chosen methods to answer your research questions. The chosen methods help answer all your RQs but are only briefly described. I recommend being more precise about what you want to do.\n\n"
+  },
+  {
+    "insert": "Other",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\n\nYou could be more detailed in the description of your schedule."
+  }
+]

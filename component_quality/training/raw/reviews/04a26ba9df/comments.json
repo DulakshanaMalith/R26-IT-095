@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1881,
+    "user": "Jennifer Olsen",
+    "role": "student",
+    "text": "The assertion that patients often perceive AI systems as less capable of understanding their individual needs, despite superior accuracy, should be explored further.",
+    "annotationId": 1851,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1882,
+    "user": "Jennifer Olsen",
+    "role": "student",
+    "text": "I like the way the introduction is structured. It gives me an appetite for further reading.",
+    "annotationId": 1852,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1883,
+    "user": "Jennifer Olsen",
+    "role": "student",
+    "text": "I like this approach, which I think is novel and underexplored.",
+    "annotationId": 1853,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1884,
+    "user": "Jennifer Olsen",
+    "role": "student",
+    "text": "As I said, I think that this claim would benefit from more in-depth research.",
+    "annotationId": 1854,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  }
+]

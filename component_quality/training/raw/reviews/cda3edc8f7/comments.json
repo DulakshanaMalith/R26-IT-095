@@ -1,0 +1,489 @@
+[
+  {
+    "id": 960,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Citation: Reference before dot.",
+    "annotationId": 949,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Sydney Carlson",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 961,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "It is better to include it in the sentence without parentheses.",
+    "annotationId": 950,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 962,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Great Hook.",
+    "annotationId": 951,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 963,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Terminology.\n",
+    "annotationId": 952,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Sydney Carlson",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 964,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Reference?",
+    "annotationId": 953,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Sydney Carlson",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 965,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Reference?",
+    "annotationId": 954,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Sydney Carlson",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 966,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Complex sentence structure.",
+    "annotationId": 955,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 967,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "The current handling of the problem is missing.",
+    "annotationId": 956,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 968,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Good! The sub-questions are clear and precise.\n",
+    "annotationId": 957,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 969,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Overall: good structure and reading flow.",
+    "annotationId": 958,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 970,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Structure - too long and complex.",
+    "annotationId": 959,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Sydney Carlson",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 971,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Should be indirect (e.g. this thesis).",
+    "annotationId": 960,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 972,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Terminology.",
+    "annotationId": 961,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 973,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Spelling.",
+    "annotationId": 962,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Sydney Carlson",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 974,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Spelling.",
+    "annotationId": 963,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Sydney Carlson",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 975,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Repetition.",
+    "annotationId": 964,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Sydney Carlson",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 976,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Spelling.\n",
+    "annotationId": 965,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Sydney Carlson",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 977,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Formulation.",
+    "annotationId": 966,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Sydney Carlson",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 978,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Thesis?",
+    "annotationId": 967,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 979,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Good Example.",
+    "annotationId": 968,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 980,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "How is this feedback conducted?",
+    "annotationId": 969,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Sydney Carlson",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 981,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Grammar.",
+    "annotationId": 970,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Sydney Carlson",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 982,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Good examples.",
+    "annotationId": 971,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 983,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Structure - Sentence too long and complex",
+    "annotationId": 972,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 984,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Good!",
+    "annotationId": 973,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 985,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Formulation.",
+    "annotationId": 974,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Sydney Carlson",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 986,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Generally good, but the methodology for this sub-question should be explained in more detail.",
+    "annotationId": 975,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Sydney Carlson",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 987,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Good explanation.",
+    "annotationId": 976,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Sydney Carlson",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 988,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "The SOTA (State of the Art) can still be improved. Why is it relevant? What are current weaknesses? ",
+    "annotationId": 977,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 989,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Good Structure. Easy to follow. Methodology is very well explained.",
+    "annotationId": 978,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 990,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Also a general theoretical background is missing.",
+    "annotationId": 0,
+    "parentCommendId": 988,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Sydney Carlson",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 991,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "The difficulties/limitations are missing in the methods (2.1 - 2.4).",
+    "annotationId": 979,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Sydney Carlson",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 992,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Good explanation.",
+    "annotationId": 980,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 993,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "What about the other parts?",
+    "annotationId": 981,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 994,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Good explanation.",
+    "annotationId": 982,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  }
+]

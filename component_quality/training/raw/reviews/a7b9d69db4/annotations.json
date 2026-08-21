@@ -1,0 +1,126 @@
+[
+  {
+    "id": 2490,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "n I aim ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1256,
+              "type": "TextPositionSelector",
+              "start": 1248
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "n I aim ",
+              "prefix": " mathematics.The central questio",
+              "suffix": "to explore is: How can AI benefi"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 2491,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "How can AI benefit both students and teachers in improvingmathematical skills",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1348,
+              "type": "TextPositionSelector",
+              "start": 1271
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "How can AI benefit both students and teachers in improvingmathematical skills",
+              "prefix": "l question I aim to explore is: ",
+              "suffix": "? To answer this, several relate"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 2492,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": " several studie",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2331,
+              "type": "TextPositionSelector",
+              "start": 2316
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " several studie",
+              "prefix": "roach2.0.1 SOTAThere are already",
+              "suffix": "s and interviews exploring the u"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 2493,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "The concept of Artificial Intelligence in Education (AIED) is not entirely new; it has even inspired theestablishment of a dedicated conference series.a Furthermore, extensive literature exists on this topic.[8]However, there seems to be a noticeable gap in real-world applications that utilize platforms specificallytailored to the individual needs of students - especially AIED for German \"Abitur\"b Students",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3027,
+              "type": "TextPositionSelector",
+              "start": 2618
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The concept of Artificial Intelligence in Education (AIED) is not entirely new; it has even inspired theestablishment of a dedicated conference series.a Furthermore, extensive literature exists on this topic.[8]However, there seems to be a noticeable gap in real-world applications that utilize platforms specificallytailored to the individual needs of students - especially AIED for German \"Abitur\"b Students",
+              "prefix": " demonstrated by Zhang et al.[7]",
+              "suffix": ".While existing studies provide "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  }
+]

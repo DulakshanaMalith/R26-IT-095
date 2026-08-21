@@ -1,0 +1,68 @@
+[
+  {
+    "retain": 0
+  },
+  {
+    "insert": "Summary:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nThe proposal aims to develop holographic AI assistants, focusing on their potential to enhance education and work environments.\n"
+  },
+  {
+    "insert": "Strength",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nThe proposal follows a logical flow\n"
+  },
+  {
+    "insert": "Weaknesses",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\n(Citations)"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "In scientific writing, one of the most important things is citing the claims and ideas to provide evidence, demonstrate engagement, give credit to the work of other researchers and make your own work more credible for readers. The proposal lacks of citations to support the claims made. Without citations, the points you raise come across as opinions rather than evidence-based insights, which can weaken the academic value of your work. \n(language)- long sentences, tone"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "In general, ensuring academic tone gives the text more credibility. It is highly recommended to avoid subjective tone and to make strong statements. For example avoid subjective phrases like “We’ve also got some great data sources…” or “Our creative approach…” . By these improvements, your proposal becomes in a way more academical.\n(Content) - sections"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "Aim of this lecture is learning how to write the proposal into clear sections, while adding a clear research question and sub-questions to focus the research objectives. However, the proposal lacks structured sections, a clearly defined research question. The theoretical framework is only implicitly referenced and requires explicit discussion. To improve the proposal, restructure it into separate sections for SOTA, Theoretical Framework etc. Introduce a clear research question, supported by sub-questions. Additionally, address potential challenges.\n"
+  },
+  {
+    "insert": "Others:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nI look forward to seeing how your expose progresses! I recommend having a look at the expose guideline slides again and of course the comments on the expose in CARE. You should also have a lokk how to create a Bibliography in LaTex. \n"
+  }
+]

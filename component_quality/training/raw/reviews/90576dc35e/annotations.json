@@ -1,0 +1,219 @@
+[
+  {
+    "id": 387,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "CAGR",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 923,
+              "type": "TextPositionSelector",
+              "start": 919
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "CAGR",
+              "prefix": " a compound annual growth rate (",
+              "suffix": ") of 9.1%. Despite this growth, "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 388,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "LLMs",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2748,
+              "type": "TextPositionSelector",
+              "start": 2744
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "LLMs",
+              "prefix": "icularly large language models (",
+              "suffix": "), to support personalized and a"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 389,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "programming an LLM",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5381,
+              "type": "TextPositionSelector",
+              "start": 5363
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "programming an LLM",
+              "prefix": " particularly the complexity of ",
+              "suffix": " that candynamically adapt to mu"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 390,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "Recent advances in large language models (LLMs) such as GPT-3.5 and GPT-4 have opened up new possibilitiesand enabled the development of interactive teaching agents that dynamically adapt to individual needs.For example, more than 30% of American undergraduates are enrolled in at least one online course, and52% of graduate students in the U.S. say they have a better learning experience with online classes thanwith traditional classes. These findings show the potential of online learning, but also highlight the needfor tools that can provide students with real-time, personalized support. LLMs offer themselves as a solu-tion as they enable the transition from static content distribution to truly interactive learning environments",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1821,
+              "type": "TextPositionSelector",
+              "start": 1085
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Recent advances in large language models (LLMs) such as GPT-3.5 and GPT-4 have opened up new possibilitiesand enabled the development of interactive teaching agents that dynamically adapt to individual needs.For example, more than 30% of American undergraduates are enrolled in at least one online course, and52% of graduate students in the U.S. say they have a better learning experience with online classes thanwith traditional classes. These findings show the potential of online learning, but also highlight the needfor tools that can provide students with real-time, personalized support. LLMs offer themselves as a solu-tion as they enable the transition from static content distribution to truly interactive learning environments",
+              "prefix": "individual needs of learners.[2]",
+              "suffix": ". [3]This exposé seeks to addres"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 391,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "This research is based on Vygotsky’s Zone of Proximal Development (ZPD) theory, which defines the rangebetween what a learner can do independently and what they can achieve with guidance[1]. The LLM-basedteaching agent acts as an adaptive guide that dynamically adjusts its support based on each student’s ZPD.This approach ensures that the agent provides help that is challenging yet achievable to promote effectivelearning progress. Through the application of ZPD, this study aims to position the agent as a responsive,personalized educational tool that bridges the gaps in traditional and static online learning environments.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4057,
+              "type": "TextPositionSelector",
+              "start": 3429
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "This research is based on Vygotsky’s Zone of Proximal Development (ZPD) theory, which defines the rangebetween what a learner can do independently and what they can achieve with guidance[1]. The LLM-basedteaching agent acts as an adaptive guide that dynamically adjusts its support based on each student’s ZPD.This approach ensures that the agent provides help that is challenging yet achievable to promote effectivelearning progress. Through the application of ZPD, this study aims to position the agent as a responsive,personalized educational tool that bridges the gaps in traditional and static online learning environments.",
+              "prefix": "dent’s unique learning pathways.",
+              "suffix": "This study will use a mixed meth"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 392,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "Personalized LearningReimagined: AdvancingEducation with Multi-SubjectLLM Teaching AgentsExploring Adaptive Technologies for Enhanced Educational Outcomes",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 214,
+              "type": "TextPositionSelector",
+              "start": 60
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Personalized LearningReimagined: AdvancingEducation with Multi-SubjectLLM Teaching AgentsExploring Adaptive Technologies for Enhanced Educational Outcomes",
+              "prefix": "iquitous KnowledgeProcessing Lab",
+              "suffix": "Name: AnonymizedMatrikelnummer: "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 1
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 393,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": ".[2",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1084,
+              "type": "TextPositionSelector",
+              "start": 1081
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": ".[2",
+              "prefix": "the individual needs of learners",
+              "suffix": "]Recent advances in large langua"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  }
+]

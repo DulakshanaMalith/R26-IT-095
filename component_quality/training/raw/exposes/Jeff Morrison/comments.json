@@ -1,0 +1,338 @@
+[
+  {
+    "id": 720,
+    "user": "Elijah Boone",
+    "role": "expert",
+    "text": "Please update meta data",
+    "annotationId": 709,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [
+      {
+        "user": "Jeff Morrison",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 721,
+    "user": "Elijah Boone",
+    "role": "expert",
+    "text": "split sentence, seems complicated",
+    "annotationId": 710,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [
+      {
+        "user": "Jeff Morrison",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 722,
+    "user": "Elijah Boone",
+    "role": "expert",
+    "text": "very good",
+    "annotationId": 711,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 723,
+    "user": "Elijah Boone",
+    "role": "expert",
+    "text": "is DBT an AI system?",
+    "annotationId": 712,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 724,
+    "user": "Elijah Boone",
+    "role": "expert",
+    "text": "delimitation of the own work",
+    "annotationId": 713,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 725,
+    "user": "Elijah Boone",
+    "role": "expert",
+    "text": "Gap",
+    "annotationId": 714,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 726,
+    "user": "Elijah Boone",
+    "role": "expert",
+    "text": "what is the difference between quantiative study and quantiative reader study? is this a official term?",
+    "annotationId": 715,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 727,
+    "user": "Elijah Boone",
+    "role": "expert",
+    "text": "very good",
+    "annotationId": 716,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 728,
+    "user": "Elijah Boone",
+    "role": "expert",
+    "text": "Why? If they don't have consensus, it could give additional information about special cases",
+    "annotationId": 717,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [
+      {
+        "user": "Jeff Morrison",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 729,
+    "user": "Elijah Boone",
+    "role": "expert",
+    "text": "good to provide reasons for your decisions",
+    "annotationId": 718,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 730,
+    "user": "Elijah Boone",
+    "role": "expert",
+    "text": "considering ethical issues",
+    "annotationId": 719,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 731,
+    "user": "Elijah Boone",
+    "role": "expert",
+    "text": "is not quite clear how exactly the approach answers RQ1, if you have only one subquestions, you can just formulate one main RQ that is answered directly",
+    "annotationId": 720,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 732,
+    "user": "Elijah Boone",
+    "role": "expert",
+    "text": "This is really vague and not addressed",
+    "annotationId": 721,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 733,
+    "user": "Elijah Boone",
+    "role": "expert",
+    "text": "you should specify which AI system will be used",
+    "annotationId": 722,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [
+      {
+        "user": "Jeff Morrison",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 4849,
+    "user": "Regina Reid",
+    "role": "student",
+    "text": "Make it clearer that it's interval breast cancer",
+    "annotationId": 4773,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 3,
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4850,
+    "user": "Regina Reid",
+    "role": "student",
+    "text": "This may need a separate citation, depending on whether the original source already included and cited that in their publication or not",
+    "annotationId": 4774,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 3,
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4851,
+    "user": "Regina Reid",
+    "role": "student",
+    "text": "Rephrase to make it clearer that it's a definition",
+    "annotationId": 4775,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 3,
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4852,
+    "user": "Regina Reid",
+    "role": "student",
+    "text": "Why are there conflicting information: standalone AI with DM outperforms radiologist, DBT offers more accurate diagnoses, but standalone AI systems for DBT performs worse than radiologists? Then what does \"more accurate\" with DBT mean?",
+    "annotationId": 4776,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 3,
+    "votes": [
+      {
+        "user": "Elijah Boone",
+        "role": "expert",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 4853,
+    "user": "Regina Reid",
+    "role": "student",
+    "text": "Same problem as above: now AI is superior to two radiologists? It's confusing, and should be rewritten and cross-checked with the sources to ensure factual accuracy.",
+    "annotationId": 4777,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 3,
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4854,
+    "user": "Regina Reid",
+    "role": "student",
+    "text": "Another inconsistency with above statements. If no studies attemp to predict ICA with DBT AI system, then how can you claim above that \"standalone AI systems for DBT perform worse than radiologists\"?",
+    "annotationId": 4778,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 3,
+    "votes": [
+      {
+        "user": "Elijah Boone",
+        "role": "expert",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 4855,
+    "user": "Regina Reid",
+    "role": "student",
+    "text": "Nice remark about privacy of medical data",
+    "annotationId": 4779,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 3,
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4856,
+    "user": "Regina Reid",
+    "role": "student",
+    "text": "Could this affect the accuracy of the data then?",
+    "annotationId": 4780,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 3,
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4857,
+    "user": "Regina Reid",
+    "role": "student",
+    "text": "Would this data have inherent biases (age group, race, other biases), and how would you reduce that/ how could that affect results?",
+    "annotationId": 4781,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 3,
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4858,
+    "user": "Regina Reid",
+    "role": "student",
+    "text": "None",
+    "annotationId": 4782,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 3,
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4859,
+    "user": "Regina Reid",
+    "role": "student",
+    "text": "None",
+    "annotationId": 4783,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 3,
+    "votes": [],
+    "group": 1
+  }
+]

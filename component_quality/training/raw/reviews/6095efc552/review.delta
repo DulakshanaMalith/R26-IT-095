@@ -1,0 +1,83 @@
+[
+  {
+    "retain": 0
+  },
+  {
+    "insert": "Summary:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nThis study aims at including tumor microenvironment data in AI models for predicting suitable cancer treatments"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "\n"
+  },
+  {
+    "insert": "Strengths:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nYour level of detail is really good! Both in the motivation and in the methodology, you go more into depth than you would have to, making this a very good expose all in all"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "You present the current limitations (e.g. the lack of TME data in predictive models) very clearly, justifying your research"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "Your scientific writing style is good, you have a very good structure in your expose and it is easy to follow despite going into detail - which can be very difficult to achieve."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "\n\n"
+  },
+  {
+    "insert": "Weaknesses:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nThe SOTA section should give an extensive overview over current work. Due to a lack of citations/references, it is not clear what was your work and what was previous work. Assure to separate that explicitly by referencing everything, and don't hesitate to reference several times (e.g. by just adding [1][3] to the end of a sentence)."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": " Having an explicit, clearly defined research question gives a lot of structure to the overall expose, especially to the methodology section as your methods should tackle all details of all RQs. As you describe your work instead, the exact goals and your main focus are not entirely clear to me. When making your RQ more explicit, also keep in mind to check whether your methodology addresses all relevant sub-parts of your RQ(s)."
+  },
+  {
+    "retain": 1,
+    "attributes": {
+      "list": "bullet"
+    }
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "topic": "Interactive LLM-based teaching agents",
+  "author": "Sydney Carlson",
+  "reviews": {
+    "1": {
+      "review": 1,
+      "hash": "cda3edc8f7",
+      "reviewer": "Shelly Lawrence",
+      "role": "assistant",
+      "size": 3113,
+      "group": 1
+    },
+    "2": {
+      "review": 2,
+      "hash": "4c05e7bdb1",
+      "reviewer": "Philip Thompson",
+      "role": "student",
+      "size": 3340,
+      "group": 1
+    },
+    "3": {
+      "review": 3,
+      "hash": "46dde4f6bd",
+      "reviewer": "Lauren Lawrence",
+      "role": "assistant",
+      "size": 806,
+      "group": 2
+    }
+  }
+}

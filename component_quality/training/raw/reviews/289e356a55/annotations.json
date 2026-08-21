@@ -1,0 +1,250 @@
+[
+  {
+    "id": 529,
+    "user": "Larry Dunn",
+    "role": "student",
+    "text": "I have identified three different metrics, which are important to be evaluated when choosing a renderingapproach for realistic AI avatars.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3398,
+              "type": "TextPositionSelector",
+              "start": 3260
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "I have identified three different metrics, which are important to be evaluated when choosing a renderingapproach for realistic AI avatars.",
+              "prefix": "approaches.Theoretical Framework",
+              "suffix": "The first is efficiency, which e"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 530,
+    "user": "Larry Dunn",
+    "role": "student",
+    "text": "With many different ways in which it is used, from Neural Radiance Fields(NERFS) and GaussianSplatting [5] to more novel approaches like Codec avatars from Meta Platforms, Inc",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2267,
+              "type": "TextPositionSelector",
+              "start": 2092
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "With many different ways in which it is used, from Neural Radiance Fields(NERFS) and GaussianSplatting [5] to more novel approaches like Codec avatars from Meta Platforms, Inc",
+              "prefix": "se progress in recentyears [7]. ",
+              "suffix": ".[3]. In comparison, thedevelopm"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 531,
+    "user": "Larry Dunn",
+    "role": "student",
+    "text": "I will use the Structural Similarity Index measure (SSIM)[8], which measures how similartwo images appear for humans, to get a more accurate evaluation",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3906,
+              "type": "TextPositionSelector",
+              "start": 3755
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "I will use the Structural Similarity Index measure (SSIM)[8], which measures how similartwo images appear for humans, to get a more accurate evaluation",
+              "prefix": "ure of a person,a ground truth. ",
+              "suffix": ".The last one is adaptability, w"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 532,
+    "user": "Larry Dunn",
+    "role": "student",
+    "text": "Month Week Task Description",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7045,
+              "type": "TextPositionSelector",
+              "start": 7018
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Month Week Task Description",
+              "prefix": " somewhat subjective.43 Schedule",
+              "suffix": "1 1 Planning Creating a detailed"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 533,
+    "user": "Larry Dunn",
+    "role": "student",
+    "text": " Another problem is that the metricslaid out in the framework don’t cover everything. An example of this is the amount of data required, which istypically a lot higher on the neural side. I will need to identify issues like these individually as well.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6823,
+              "type": "TextPositionSelector",
+              "start": 6572
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " Another problem is that the metricslaid out in the framework don’t cover everything. An example of this is the amount of data required, which istypically a lot higher on the neural side. I will need to identify issues like these individually as well.",
+              "prefix": "is for the most fair comparison.",
+              "suffix": "Thus, the theoretical framework "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 534,
+    "user": "Larry Dunn",
+    "role": "student",
+    "text": "holographic artificial intelligenceassistants will likely be present in most of our lives",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 531,
+              "type": "TextPositionSelector",
+              "start": 442
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "holographic artificial intelligenceassistants will likely be present in most of our lives",
+              "prefix": "AI and the Metaverse continues, ",
+              "suffix": ". They will need to be very natu"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 535,
+    "user": "Larry Dunn",
+    "role": "student",
+    "text": "Methodology",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4320,
+              "type": "TextPositionSelector",
+              "start": 4309
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Methodology",
+              "prefix": "ods work best for each use case.",
+              "suffix": "The methodology will combine sou"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 536,
+    "user": "Larry Dunn",
+    "role": "student",
+    "text": "This distinctionneeds to be made on a case-by-case basis for the most fair comparison",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6571,
+              "type": "TextPositionSelector",
+              "start": 6486
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "This distinctionneeds to be made on a case-by-case basis for the most fair comparison",
+              "prefix": "e classical scene into account. ",
+              "suffix": ". Another problem is that the me"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  }
+]

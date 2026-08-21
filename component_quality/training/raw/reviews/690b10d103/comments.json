@@ -1,0 +1,145 @@
+[
+  {
+    "id": 92,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Nice title",
+    "annotationId": 89,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 93,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Hook",
+    "annotationId": 90,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 94,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Anker",
+    "annotationId": 91,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 95,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Nice introduction into the topic!",
+    "annotationId": 92,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 96,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "This should contain a reference",
+    "annotationId": 93,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 97,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "It would be better to state specific research questions (with potential subquestions). I understand the topic, but the scope and focus of your unclear is unclear.",
+    "annotationId": 94,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 98,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Teaser? But without RQs...",
+    "annotationId": 95,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 99,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Very good picture fo the current state-of-the-art!",
+    "annotationId": 96,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 100,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Nice",
+    "annotationId": 97,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 101,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "I like that you state specific details of your methodology, but the quite informal speech \"I will use my personal equipment...\" is a bit unusual for a scientific exposé. A more formal wording \"...we will use DSLR cameras to capture...\" would give this exposé a more professional appearance.",
+    "annotationId": 98,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 102,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Stated limitations",
+    "annotationId": 99,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 103,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Good!",
+    "annotationId": 100,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 104,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Good mix of foundational and recent work",
+    "annotationId": 101,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  }
+]

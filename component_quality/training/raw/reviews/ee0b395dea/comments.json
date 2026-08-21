@@ -1,0 +1,112 @@
+[
+  {
+    "id": 734,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "What's graphic about this table?",
+    "annotationId": 723,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 735,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Clinicians are staff from the hospital, how does the accent of the patient fir into this? A Doctor would take notes and he's not the patient.",
+    "annotationId": 724,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 736,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Top performing model in what regard?",
+    "annotationId": 725,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 737,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "not really precise enough, error needs to be defined in more detail.",
+    "annotationId": 726,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 738,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "This isn't really a good research question, as this is a metric and is not an evaluation of the completion time or anything along those lines.",
+    "annotationId": 727,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 739,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "This is too optimistic for you to ask this from the clinicians. They have a lot of extra work and no real benefit and you yourself said they are too busy",
+    "annotationId": 728,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 740,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Too undefined and too much variation. If you ask someone who might have a broken leg, it will go a lot faster than someone who suddenly went blind, can't smell anymore and has a rash etc",
+    "annotationId": 729,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 741,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "what errors?",
+    "annotationId": 730,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 742,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Ethical clearance is clearly missing here and will take a very long time to accomplish",
+    "annotationId": 731,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 743,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "You need to more explicitly write down your timeline for writing the content.",
+    "annotationId": 732,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  }
+]

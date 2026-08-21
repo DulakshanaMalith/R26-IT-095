@@ -1,0 +1,141 @@
+[
+  {
+    "id": 2120,
+    "user": "Sharon May",
+    "role": "student",
+    "text": "Combined twice right after one another. \nJust say deep reinforcement learning",
+    "annotationId": 2084,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Elijah Boone",
+        "role": "expert",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2121,
+    "user": "Sharon May",
+    "role": "student",
+    "text": "explanation -> not a common term in CS",
+    "annotationId": 2085,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Elijah Boone",
+        "role": "expert",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2122,
+    "user": "Sharon May",
+    "role": "student",
+    "text": "None",
+    "annotationId": 2094,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 2123,
+    "user": "Sharon May",
+    "role": "student",
+    "text": "Provide twice in one sentence",
+    "annotationId": 2086,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 2124,
+    "user": "Sharon May",
+    "role": "student",
+    "text": "innovative is implied",
+    "annotationId": 2087,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 2125,
+    "user": "Sharon May",
+    "role": "student",
+    "text": "you havent talked about it before",
+    "annotationId": 2088,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 2126,
+    "user": "Sharon May",
+    "role": "student",
+    "text": "",
+    "annotationId": 2089,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 2127,
+    "user": "Sharon May",
+    "role": "student",
+    "text": "Why is there just a list of questions? \nDoes not fit in the motivation part",
+    "annotationId": 2090,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 2128,
+    "user": "Sharon May",
+    "role": "student",
+    "text": "instead with something like \"DRL-Algorithms have been developed...\" or \"DRL-Models have been trained\"",
+    "annotationId": 2091,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 2129,
+    "user": "Sharon May",
+    "role": "student",
+    "text": "of the data",
+    "annotationId": 2092,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 2130,
+    "user": "Sharon May",
+    "role": "student",
+    "text": "Why is this explained here? \neither explain it when first mentioned or do not explain it at all. \nThe sudden explanation comes out of nowhere",
+    "annotationId": 2093,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Elijah Boone",
+        "role": "expert",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  }
+]

@@ -1,0 +1,839 @@
+[
+  {
+    "id": 2439,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "Evaluating \"do not providesolution\" prompting for LLMs",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 114,
+              "type": "TextPositionSelector",
+              "start": 60
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Evaluating \"do not providesolution\" prompting for LLMs",
+              "prefix": "iquitous KnowledgeProcessing Lab",
+              "suffix": "Do we learn better when the LLM "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 1
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 2440,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "LLMs",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 378,
+              "type": "TextPositionSelector",
+              "start": 374
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "LLMs",
+              "prefix": "ber 8, 2024Darmstadt1 Motivation",
+              "suffix": " like GPT 4.0 have entered our c"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2441,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "These chatbot LLMs have only recently become publicly available",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 616,
+              "type": "TextPositionSelector",
+              "start": 553
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "These chatbot LLMs have only recently become publicly available",
+              "prefix": "students use these tools [9, 2].",
+              "suffix": ". They often provide fitting ans"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2442,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "fitting",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 644,
+              "type": "TextPositionSelector",
+              "start": 637
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "fitting",
+              "prefix": "y available. They often provide ",
+              "suffix": " answers andexplanations to almo"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2443,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": " [9, 2]",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 552,
+              "type": "TextPositionSelector",
+              "start": 545
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " [9, 2]",
+              "prefix": " 50% of students use these tools",
+              "suffix": ".These chatbot LLMs have only re"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 2444,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "our current methods of testing knowledge might be easily cheatable as these chatbots seem to offer a shortcutfor many forms of graded written submissions.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 916,
+              "type": "TextPositionSelector",
+              "start": 762
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "our current methods of testing knowledge might be easily cheatable as these chatbots seem to offer a shortcutfor many forms of graded written submissions.",
+              "prefix": "d concern for many, fearing that",
+              "suffix": " There are tools available that "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 2445,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "However, as LLMs are often used outside of the control of any supervision by teachers, students can be enticedto ask for solutions and only look at the steps provided or accept the answer as correct [5]. Even thoughexamples and solutions can have a positive effect on learning, solving new problems on your own is equallyimportant for long term learning [1]. As this step can be time consuming and difficult, students can potentiallyskip it after already getting the solution they looked for",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1915,
+              "type": "TextPositionSelector",
+              "start": 1424
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "However, as LLMs are often used outside of the control of any supervision by teachers, students can be enticedto ask for solutions and only look at the steps provided or accept the answer as correct [5]. Even thoughexamples and solutions can have a positive effect on learning, solving new problems on your own is equallyimportant for long term learning [1]. As this step can be time consuming and difficult, students can potentiallyskip it after already getting the solution they looked for",
+              "prefix": "them to help students learn[10].",
+              "suffix": ".Considering this, it might be u"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 2446,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "this",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2774,
+              "type": "TextPositionSelector",
+              "start": 2770
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "this",
+              "prefix": "f \"teaching LLMs\" at preventing ",
+              "suffix": "?22 ApproachThe novelty of many "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2447,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "o evaluation has been done on the readiness with which these systemswill tell students solutions if asked directly and if this has a negative effect on learning. On the other hand, ifLLMs are capable enough to not tell solutions, they might help supplement teachers and provide individualhelp to many students when no other help is available",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2398,
+              "type": "TextPositionSelector",
+              "start": 2057
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "o evaluation has been done on the readiness with which these systemswill tell students solutions if asked directly and if this has a negative effect on learning. On the other hand, ifLLMs are capable enough to not tell solutions, they might help supplement teachers and provide individualhelp to many students when no other help is available",
+              "prefix": "ling them the answer outright. N",
+              "suffix": ".This study will focus on the fo"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 2448,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "ub-RQ1.3: Do these system improve learning compared to existing LLM assistants?",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2688,
+              "type": "TextPositionSelector",
+              "start": 2609
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "ub-RQ1.3: Do these system improve learning compared to existing LLM assistants?",
+              "prefix": " or do not provide solutions?– S",
+              "suffix": "• RQ2: How effective are current"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2449,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "Approach",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2786,
+              "type": "TextPositionSelector",
+              "start": 2778
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Approach",
+              "prefix": "ing LLMs\" at preventing this?22 ",
+              "suffix": "The novelty of many publicly ava"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2450,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "Both of these technique",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4467,
+              "type": "TextPositionSelector",
+              "start": 4444
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Both of these technique",
+              "prefix": " application in a novel context.",
+              "suffix": "s are used to limit the output o"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2451,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": ".",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5091,
+              "type": "TextPositionSelector",
+              "start": 5090
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": ".",
+              "prefix": "hat a student already knewbefore",
+              "suffix": "3This study will evaluate the pu"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2452,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "None of them address the issue of using the system for cheatingon graded submissions or short-cutting the learning process.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3374,
+              "type": "TextPositionSelector",
+              "start": 3251
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "None of them address the issue of using the system for cheatingon graded submissions or short-cutting the learning process.",
+              "prefix": "ng of new concepts by students. ",
+              "suffix": "Large Language Models (LLMs) hav"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 2453,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "following [16]. ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5218,
+              "type": "TextPositionSelector",
+              "start": 5202
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "following [16]. ",
+              "prefix": "ni 1.5 and a combination ofLLMs ",
+              "suffix": "These are chosen based on their "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2454,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "answering RQ1",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5947,
+              "type": "TextPositionSelector",
+              "start": 5934
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "answering RQ1",
+              "prefix": "l effectiveness of the prompts, ",
+              "suffix": ".A quantitative study will then "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 2455,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": " without priorexposure using LLM chatbots",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6078,
+              "type": "TextPositionSelector",
+              "start": 6037
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " without priorexposure using LLM chatbots",
+              "prefix": "mputer science students with and",
+              "suffix": ". This target demographic is cho"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 2456,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "Sub-RQ1.1, Sub-RQ1.2 and RQ2.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6681,
+              "type": "TextPositionSelector",
+              "start": 6652
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Sub-RQ1.1, Sub-RQ1.2 and RQ2.",
+              "prefix": "standing. This will help answer ",
+              "suffix": "The quantitative study aims for "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2457,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "Occurrences of hallucinations might impact the quality of data, especially because the size of the experimentis rather small. For this reason, an analysis will be conducted to check for hallucinated answers that LLMsmight provide. It can then be analyzed what impact these hallucinations had, and the data excluded from theevaluation of Sub-RQ1.1 and Sub-RQ1.2 if necessary",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7369,
+              "type": "TextPositionSelector",
+              "start": 6996
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Occurrences of hallucinations might impact the quality of data, especially because the size of the experimentis rather small. For this reason, an analysis will be conducted to check for hallucinated answers that LLMsmight provide. It can then be analyzed what impact these hallucinations had, and the data excluded from theevaluation of Sub-RQ1.1 and Sub-RQ1.2 if necessary",
+              "prefix": " will consist of 5 participants.",
+              "suffix": ". The learning topic for the stu"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2458,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "Schedule",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8122,
+              "type": "TextPositionSelector",
+              "start": 8114
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Schedule",
+              "prefix": "l group using only textbooks.43 ",
+              "suffix": "Month Week Task Description1 1 T"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2459,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "2 5 Building LLM assistants Choosing prompts and incorporating them in different LLMs2 6-7 Qualitative Analysis Evaluating the effectiveness of the prompts2 8 Preparing Study Selecting research/education task for the study",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8642,
+              "type": "TextPositionSelector",
+              "start": 8420
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "2 5 Building LLM assistants Choosing prompts and incorporating them in different LLMs2 6-7 Qualitative Analysis Evaluating the effectiveness of the prompts2 8 Preparing Study Selecting research/education task for the study",
+              "prefix": "pts Designing custom LLM prompts",
+              "suffix": "3 9-10 Recruitment Selecting and"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 2460,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "Large Language Models (LLMs) have shown remarkable abilities in various NLP tasks. They are trained on amassive amount of data, often large parts of the internet, and are able to generate human like responses tonatural language inputs on a level that can rival human answers [6]. Especially ChatGPT, an LLM chatbotmade available to the public, has seen an explosion in usage, passing a 100 million monthly users in just ayear [12]. It is already commonly used amongst students.The quality of LLM responses often depends on the use of specific prompting techniques [7]. In this technique,the trained LLMs are provided with specific inputs to act as a guideline for generating the desired output.Moreover, LLMs can be aligned during training, steering their output in a desired direction [14]. As thisprocess is very involved in the training, this approach is rarely used for achieving specific behaviours and actsas a larger-picture guideline for models to behave human-like. While prompting has been widely studied, thisstudy explores its application in a novel context.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4444,
+              "type": "TextPositionSelector",
+              "start": 3374
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Large Language Models (LLMs) have shown remarkable abilities in various NLP tasks. They are trained on amassive amount of data, often large parts of the internet, and are able to generate human like responses tonatural language inputs on a level that can rival human answers [6]. Especially ChatGPT, an LLM chatbotmade available to the public, has seen an explosion in usage, passing a 100 million monthly users in just ayear [12]. It is already commonly used amongst students.The quality of LLM responses often depends on the use of specific prompting techniques [7]. In this technique,the trained LLMs are provided with specific inputs to act as a guideline for generating the desired output.Moreover, LLMs can be aligned during training, steering their output in a desired direction [14]. As thisprocess is very involved in the training, this approach is rarely used for achieving specific behaviours and actsas a larger-picture guideline for models to behave human-like. While prompting has been widely studied, thisstudy explores its application in a novel context.",
+              "prefix": "rt-cutting the learning process.",
+              "suffix": "Both of these techniques are use"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 2461,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "Do we learn better when the LLM answer is out of reach?",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 169,
+              "type": "TextPositionSelector",
+              "start": 114
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Do we learn better when the LLM answer is out of reach?",
+              "prefix": "videsolution\" prompting for LLMs",
+              "suffix": "Name: AnonymizedMatrikelnummer: "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 1
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2462,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "Writing the results chapter based on the data",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8975,
+              "type": "TextPositionSelector",
+              "start": 8930
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Writing the results chapter based on the data",
+              "prefix": "stant study5 17 Writing Results ",
+              "suffix": "5 18 Discussion Interpretation o"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2463,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "Revising and finalizing the methodology",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 9103,
+              "type": "TextPositionSelector",
+              "start": 9064
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Revising and finalizing the methodology",
+              "prefix": " context5 19 Methodology Review ",
+              "suffix": "5 20 Full Revision Editing and r"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2464,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "Description",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8149,
+              "type": "TextPositionSelector",
+              "start": 8138
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Description",
+              "prefix": "ooks.43 ScheduleMonth Week Task ",
+              "suffix": "1 1 Time planning Creating a det"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2465,
+    "user": "Noah Frazier",
+    "role": "expert",
+    "text": "At the very least, it shouldprovide a good comparison of using LLMs to learn about a topic vs. the control group using only textbooks.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8111,
+              "type": "TextPositionSelector",
+              "start": 7977
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "At the very least, it shouldprovide a good comparison of using LLMs to learn about a topic vs. the control group using only textbooks.",
+              "prefix": "ude the variance for each tool. ",
+              "suffix": "43 ScheduleMonth Week Task Descr"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  }
+]

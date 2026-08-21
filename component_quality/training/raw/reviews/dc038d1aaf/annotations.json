@@ -1,0 +1,64 @@
+[
+  {
+    "id": 2494,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": " facial expressions",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3212,
+              "type": "TextPositionSelector",
+              "start": 3193
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " facial expressions",
+              "prefix": "what influence do theassistant’s",
+              "suffix": " have on the assistant’s trust a"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 2
+  },
+  {
+    "id": 2495,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "State of the ArtCurrently, there is no working product with the same feature sets as planned in this paper. All existing workconsidered more general aspects of the visual appearance of AI in AR. The work of Kim et al. used a full-bodyrepresentation in AR and investigated the impact of speech, gestures, and locomotion on the user’s perceptionof the agent [2]. While this is an important base for this research, we will examine a different aspect. Weassume that the face and facial expression are the most important aspects of communication. Therefore,this paper will focus on these aspects and will not use a full body representation as this would increase thepotential risk of falling into the uncanny valley.Multiple researchers have already done artificial generation of facial expressions in different domains. Thereare existing frameworks to generate this facial expression with a facial expression generator using machinelearning and facial expression recognition [6]. While they concentrate on generating facial expressions forphysical robots, we will adopt the approach for using it in AR.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4691,
+              "type": "TextPositionSelector",
+              "start": 3593
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "State of the ArtCurrently, there is no working product with the same feature sets as planned in this paper. All existing workconsidered more general aspects of the visual appearance of AI in AR. The work of Kim et al. used a full-bodyrepresentation in AR and investigated the impact of speech, gestures, and locomotion on the user’s perceptionof the agent [2]. While this is an important base for this research, we will examine a different aspect. Weassume that the face and facial expression are the most important aspects of communication. Therefore,this paper will focus on these aspects and will not use a full body representation as this would increase thepotential risk of falling into the uncanny valley.Multiple researchers have already done artificial generation of facial expressions in different domains. Thereare existing frameworks to generate this facial expression with a facial expression generator using machinelearning and facial expression recognition [6]. While they concentrate on generating facial expressions forphysical robots, we will adopt the approach for using it in AR.",
+              "prefix": "owered bya Large Language Model.",
+              "suffix": "Theoretical FrameworkIn this pap"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 2
+  }
+]

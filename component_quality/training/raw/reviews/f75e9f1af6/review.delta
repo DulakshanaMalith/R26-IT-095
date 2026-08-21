@@ -1,0 +1,83 @@
+[
+  {
+    "retain": 0
+  },
+  {
+    "insert": "summary\nThe given exposé \"Holographic teachers and therapists - Exposé on the usage of holography with intelligent virtual assistants\" explains the idea of creating guidelines to the usage of 3D virtual assistants in education and therapy. It identifies the current focus on 2D virtual assistants and addresses the advantages of 3D. Hence, the author suggests building 3D assistants in the future and wants to study whether and under which circumstances this is feasible. Therefore, a literature study will be made as well as a prototype built. All of this builds up to the goal of creating guidelines for implementation as well as ethical considerations.\n\nstrengths\nI really like that you always evaluated what would happen if you original plan does not work out. In Section 2.4 for example you explain how difficulties you face only contribute to the recommendations you create. Very good to plan how to react in case of failure. In the same section you also mention a backup plan if you do not have access to resources, in this case the holographic displays. It seems you have thought through parts of the implementation process quite well."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "Both paragraphs concerning the advantages of 3D over 2D caught my interest. In the Motivation, you verify you claims with many citations in the second paragraph. That shows that you researched thoroughly. Section 2.1 is nicely phrased and concisely describes the advantages once again."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "\nweaknesses\nIn the motivation part of the exposé as well as in the approach it is important to explain the state-of-the-art so that a reader can identify what current problems you would solve with your work. You included a lot of references to current work, which is very good. However, a few sentences explaining further what characterises this work you mention are missing. For example, CLOVR and Synthesia is spoken about, but it is not explained what they are doing. Furthermore you mention the uncanny-valley problem several times, but it is not clear to me what it is after reading the exposé. To get a reader to really understand what you are talking about and what problems you would solve, you should include explanations to the references you give and the terms you use."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "Research questions define the focus of the scientific work you do. They identify the specific problems you are going to address. Your first research question lacks a bit of specification. It is not clear, at what point a face is considered \"realistic\". Your second research question is more precise, focussing on the uncanny-valley, and describing what \"realistic\" means with the reactive micro expressions. The problem here is that it can be answered with yes or no. The third research question is on the one hand precise in mentioning the applications with education and therapy, on the other hand it fails to further specify \"artificial intelligence\". To develop your researching skills, try to be as precise as possible when formulating research questions. Go in detail about what exactly you will be focussing on and what answers you hope to find and avoid yes or no questions. Additionally, when reading the whole exposé, I identified creating guidelines as the main focus of your work, I cannot really see that when reading you research questions only. Try to design these questions in a way that they precisely resemble the rest of your exposé."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "The project schedule should give a timetable on the implementation of the bachelor project, being precise while also leaving room for unforeseen problems. Your timetable puts the approach you explain in the earlier sections in order and leaves room for error. However, some aspects of it leave open questions. For example, you speak about building a prototype without specifying the framework or any technique you are going to use. You planned another week for that, I still think it would be favorable to include some information on how you intend to tackle this. On top of that, you plan on having a \"first draft\" of the guidelines within the first 7 weeks. Keeping in mind you describe these guidelines as the main outcome of your work, I think that you should dedicate more time to it, especially as you want to cover different aspects (therapy and education, ethical considerations as well). In the future, try to be more precise in your planning and formulate a more detailed description of not only your ideas, but how you want to implement them."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "The goal of a headline is to concisely describe what the following is about while creating interest. The general topic is described in your headline, I just miss an explicit focus on what your work does. In the following sections of your exposé, you often use the word guidelines, maybe that is something that you can also include in the headline."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "\n\nothers\nThere are some mistakes in citation (for example a dot first and than the [...] in the beginning, often times throughout the document)."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "The formatting leaves me with the impression that you wanted your document to seem longer than it really is. Try to rather include more explaining or connective sentences."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "retain": 1,
+    "attributes": {
+      "list": "bullet"
+    }
+  }
+]

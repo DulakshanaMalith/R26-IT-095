@@ -1,0 +1,79 @@
+[
+  {
+    "id": 3645,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "good hook",
+    "annotationId": 3579,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3646,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "examples and references?",
+    "annotationId": 3580,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3647,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "this sounds like a redundance of the main RQ",
+    "annotationId": 3581,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3648,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "this term should be explained",
+    "annotationId": 3582,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3649,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "at this point it would be useful to also explain what digital twin means in your experiment",
+    "annotationId": 3583,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3650,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "How? wgich data will be analysed",
+    "annotationId": 3584,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3651,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "typo",
+    "annotationId": 3585,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  }
+]

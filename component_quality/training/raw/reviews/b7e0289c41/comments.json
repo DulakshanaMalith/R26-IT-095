@@ -1,0 +1,135 @@
+[
+  {
+    "id": 4849,
+    "user": "Regina Reid",
+    "role": "student",
+    "text": "Make it clearer that it's interval breast cancer",
+    "annotationId": 4773,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4850,
+    "user": "Regina Reid",
+    "role": "student",
+    "text": "This may need a separate citation, depending on whether the original source already included and cited that in their publication or not",
+    "annotationId": 4774,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4851,
+    "user": "Regina Reid",
+    "role": "student",
+    "text": "Rephrase to make it clearer that it's a definition",
+    "annotationId": 4775,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4852,
+    "user": "Regina Reid",
+    "role": "student",
+    "text": "Why are there conflicting information: standalone AI with DM outperforms radiologist, DBT offers more accurate diagnoses, but standalone AI systems for DBT performs worse than radiologists? Then what does \"more accurate\" with DBT mean?",
+    "annotationId": 4776,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Elijah Boone",
+        "role": "expert",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 4853,
+    "user": "Regina Reid",
+    "role": "student",
+    "text": "Same problem as above: now AI is superior to two radiologists? It's confusing, and should be rewritten and cross-checked with the sources to ensure factual accuracy.",
+    "annotationId": 4777,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4854,
+    "user": "Regina Reid",
+    "role": "student",
+    "text": "Another inconsistency with above statements. If no studies attemp to predict ICA with DBT AI system, then how can you claim above that \"standalone AI systems for DBT perform worse than radiologists\"?",
+    "annotationId": 4778,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Elijah Boone",
+        "role": "expert",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 4855,
+    "user": "Regina Reid",
+    "role": "student",
+    "text": "Nice remark about privacy of medical data",
+    "annotationId": 4779,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4856,
+    "user": "Regina Reid",
+    "role": "student",
+    "text": "Could this affect the accuracy of the data then?",
+    "annotationId": 4780,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4857,
+    "user": "Regina Reid",
+    "role": "student",
+    "text": "Would this data have inherent biases (age group, race, other biases), and how would you reduce that/ how could that affect results?",
+    "annotationId": 4781,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4858,
+    "user": "Regina Reid",
+    "role": "student",
+    "text": "None",
+    "annotationId": 4782,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4859,
+    "user": "Regina Reid",
+    "role": "student",
+    "text": "None",
+    "annotationId": 4783,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  }
+]

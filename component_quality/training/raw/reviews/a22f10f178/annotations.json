@@ -1,0 +1,591 @@
+[
+  {
+    "id": 5693,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": " it will have the most impact on the learners with lesssupport from home and a weaker social standpoint.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 894,
+              "type": "TextPositionSelector",
+              "start": 790
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " it will have the most impact on the learners with lesssupport from home and a weaker social standpoint.",
+              "prefix": " to a worse education level, and",
+              "suffix": " Also, the education level is de"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 5694,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "ucation level is deeply connected with theprosperity and democracy of the society and could end in a weaker economy [4].",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1027,
+              "type": "TextPositionSelector",
+              "start": 907
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "ucation level is deeply connected with theprosperity and democracy of the society and could end in a weaker economy [4].",
+              "prefix": " social standpoint. Also, the ed",
+              "suffix": "Currently, the primary short-ter"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 5695,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "hey got criticism ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1192,
+              "type": "TextPositionSelector",
+              "start": 1174
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "hey got criticism ",
+              "prefix": " the gaps in the teacher pool. T",
+              "suffix": "because they may lack the qualif"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5696,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "till, it is unclear if the models can work as teachingassistants in the current state, providing solid, accurate information with minimal bias for the students.Lawyers are also concerned about the models used directly in the school environment. Despite this, manystudents already use LLMs like ChatGPT or Gemini to write their homework or let them explain topics theydid not get in the lessons [1]",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2003,
+              "type": "TextPositionSelector",
+              "start": 1606
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "till, it is unclear if the models can work as teachingassistants in the current state, providing solid, accurate information with minimal bias for the students.Lawyers are also concerned about the models used directly in the school environment. Despite this, manystudents already use LLMs like ChatGPT or Gemini to write their homework or let them explain topics theydid not get in the lessons [1]",
+              "prefix": "ving them chat with the model. S",
+              "suffix": ".Another way to mitigate the con"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5697,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "In which ways can Large Language Models (LLMs) be leveraged to create effective and practical teachingmaterials?",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2799,
+              "type": "TextPositionSelector",
+              "start": 2687
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "In which ways can Large Language Models (LLMs) be leveraged to create effective and practical teachingmaterials?",
+              "prefix": "emore personalized learning.RQ: ",
+              "suffix": "• Sub-RQ 1:How do outputs genera"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 5698,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "An approach to feeding the outcomes of the teacher crisis is needed to tackle the problem.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3392,
+              "type": "TextPositionSelector",
+              "start": 3302
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "An approach to feeding the outcomes of the teacher crisis is needed to tackle the problem.",
+              "prefix": "evel in each subject?22 Approach",
+              "suffix": "Here comes LLMs in the game. The"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5699,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Here comes LLMs in the game",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3419,
+              "type": "TextPositionSelector",
+              "start": 3392
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Here comes LLMs in the game",
+              "prefix": "is needed to tackle the problem.",
+              "suffix": ". They could help the teachers b"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5700,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "xisting studies like [3] [2] do not fully exploit the LLMs’ potential. While addressing the goal ofreducing the workload to some extent",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3934,
+              "type": "TextPositionSelector",
+              "start": 3799
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "xisting studies like [3] [2] do not fully exploit the LLMs’ potential. While addressing the goal ofreducing the workload to some extent",
+              "prefix": " the teacher shortage.However, e",
+              "suffix": ", they could provide better indi"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5701,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Additionally, these approaches oversee the possibility of adjustingoutputs like materials and quizzes to their student’s skill level, learning speed, or styles for various learninggroups",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4237,
+              "type": "TextPositionSelector",
+              "start": 4051
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Additionally, these approaches oversee the possibility of adjustingoutputs like materials and quizzes to their student’s skill level, learning speed, or styles for various learninggroups",
+              "prefix": "ds with personalized materials. ",
+              "suffix": ".This paper investigates a hybri"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 5702,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "paper",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4248,
+              "type": "TextPositionSelector",
+              "start": 4243
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "paper",
+              "prefix": "for various learninggroups.This ",
+              "suffix": " investigates a hybrid approach,"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5703,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Human-centred design (HCD) ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5047,
+              "type": "TextPositionSelector",
+              "start": 5020
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Human-centred design (HCD) ",
+              "prefix": "ds is critical to provide these.",
+              "suffix": "[8] provides a suitable theoreti"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 5704,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "CD describes a designemphasizing the importance of focusing on human needs, experiences, and capabilities. Additional feedbackloops and constant stakeholder exchange are important parts of the design philosophy",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5315,
+              "type": "TextPositionSelector",
+              "start": 5105
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "CD describes a designemphasizing the importance of focusing on human needs, experiences, and capabilities. Additional feedbackloops and constant stakeholder exchange are important parts of the design philosophy",
+              "prefix": "eoretical basis for this work. H",
+              "suffix": ".HCD perfectly fits the educatio"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 5705,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "HCD perfectly fits the education domain; in the learning process, a design based on human needs, experiences,and capabilities is necessary to motivate students and ensure they have fun while learning with the materials",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5534,
+              "type": "TextPositionSelector",
+              "start": 5316
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "HCD perfectly fits the education domain; in the learning process, a design based on human needs, experiences,and capabilities is necessary to motivate students and ensure they have fun while learning with the materials",
+              "prefix": " parts of the design philosophy.",
+              "suffix": ".That is why the lesson material"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5706,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "systematic literature research is carried out to identify what types of teaching materials LLMs cancreate, e.g., worksheets, online quizzes, or lesion planning (Sub-RQ 3)",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6242,
+              "type": "TextPositionSelector",
+              "start": 6072
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "systematic literature research is carried out to identify what types of teaching materials LLMs cancreate, e.g., worksheets, online quizzes, or lesion planning (Sub-RQ 3)",
+              "prefix": "quantitative analyses.At first, ",
+              "suffix": ". As a result, the LLMs could au"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 5707,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "fine-tune the models",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6410,
+              "type": "TextPositionSelector",
+              "start": 6390
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "fine-tune the models",
+              "prefix": "chers. The next step would beto ",
+              "suffix": " and achieve the possibility of "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5708,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Then each teacher gets interviewed with opened and closed questions about their experience with automaticgeneration of teaching materials and how they changed their work flow (Sub-RQ 1). After that, we asked thestudents how they felt working with the learning materials and if they experienced bias or other influences inthe materials (Sub-RQ 2)",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7444,
+              "type": "TextPositionSelector",
+              "start": 7099
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Then each teacher gets interviewed with opened and closed questions about their experience with automaticgeneration of teaching materials and how they changed their work flow (Sub-RQ 1). After that, we asked thestudents how they felt working with the learning materials and if they experienced bias or other influences inthe materials (Sub-RQ 2)",
+              "prefix": "imum age of 16from each teacher.",
+              "suffix": ".Furthermore, the teachers will "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 5709,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "ub-RQ 1).",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7624,
+              "type": "TextPositionSelector",
+              "start": 7615
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "ub-RQ 1).",
+              "prefix": " they can reduce the workload (S",
+              "suffix": " Also, the effectiveness of them"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 5710,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "distortions provided by incorrect training data or other problems in the trainingprocess, which could lead to ethical or other biases in the learning materials",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8077,
+              "type": "TextPositionSelector",
+              "start": 7918
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "distortions provided by incorrect training data or other problems in the trainingprocess, which could lead to ethical or other biases in the learning materials",
+              "prefix": " Forinstance, models could have ",
+              "suffix": ". The bias could influence stude"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 5711,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "paper",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 11069,
+              "type": "TextPositionSelector",
+              "start": 11064
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "paper",
+              "prefix": "oblems or delays6 24 Submit the ",
+              "suffix": " Printing, and final submission5"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  }
+]

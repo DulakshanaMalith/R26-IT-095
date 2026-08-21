@@ -1,0 +1,202 @@
+[
+    {
+        "author": "H\u00fcseyin Emre Isik",
+        "group": 1,
+        "reviewer": "Sydney Carlson",
+        "grader": "Sean Herrera",
+        "role": "assistant",
+        "hash": "72eeca1e5c",
+        "type": "review",
+        "scores": {
+            "form": {
+                "structure": 4,
+                "language": 2,
+                "total": 6
+            },
+            "feed_up": {
+                "feed_up": 2,
+                "total": 2
+            },
+            "feed_back": {
+                "feed_back": 4,
+                "total": 4
+            },
+            "feed_forward": {
+                "feed_forward": 2,
+                "total": 2
+            },
+            "content": {
+                "total": 7,
+                "quality": 3,
+                "errors": 4
+            },
+            "others": {
+                "total": 0,
+                "additional": 0,
+                "minus": 0
+            },
+            "total": 21
+        },
+        "criteria": {
+            "Summary available": 2,
+            "Clarity": 2,
+            "Language": 1,
+            "Tone": 1,
+            "Learning Goals": 1,
+            "Success Criteria": 1,
+            "Knowledge of result": 1,
+            "Knowledge of correct response": 1,
+            "Knowledge about task constraints": 0,
+            "Knowledge about concepts": 0,
+            "Knowledge about mistakes": 1,
+            "Self-feedback": 1,
+            "Self-regulation": 1,
+            "Learning Skills": 1,
+            "Correctness": 1,
+            "Actionability": 1,
+            "Argumentation": 1,
+            "Neglect": 0,
+            "Vague Critic": 0,
+            "Out-of-Scope": 0,
+            "Missing Reference": 0,
+            "Contradiction": 0,
+            "Additional points": 0,
+            "Minus points": 0,
+            "Additional infos": null
+        }
+    },
+    {
+        "author": "H\u00fcseyin Emre Isik",
+        "group": 2,
+        "reviewer": "Sydney Carlson",
+        "grader": "Shane Barnes",
+        "role": "expert",
+        "hash": "72eeca1e5c",
+        "type": "review",
+        "comment": "The proposed suggestions are not solid and effective enough",
+        "scores": {
+            "form": {
+                "structure": 2,
+                "language": 1,
+                "total": 3
+            },
+            "feed_up": {
+                "feed_up": 2,
+                "total": 2
+            },
+            "feed_back": {
+                "feed_back": 4,
+                "total": 4
+            },
+            "feed_forward": {
+                "feed_forward": 2,
+                "total": 2
+            },
+            "content": {
+                "total": 6,
+                "quality": 2,
+                "errors": 4
+            },
+            "others": {
+                "total": 0,
+                "additional": 0,
+                "minus": 0
+            },
+            "total": 17
+        },
+        "criteria": {
+            "Summary available": 1,
+            "Clarity": 1,
+            "Language": 0,
+            "Tone": 1,
+            "Learning Goals": 1,
+            "Success Criteria": 1,
+            "Knowledge of result": 1,
+            "Knowledge of correct response": 0,
+            "Knowledge about task constraints": 1,
+            "Knowledge about concepts": 1,
+            "Knowledge about mistakes": 1,
+            "Self-feedback": 1,
+            "Self-regulation": 1,
+            "Learning Skills": 1,
+            "Correctness": 1,
+            "Actionability": 0,
+            "Argumentation": 1,
+            "Neglect": 0,
+            "Vague Critic": 0,
+            "Out-of-Scope": 0,
+            "Missing Reference": 0,
+            "Contradiction": 0,
+            "Additional points": 0,
+            "Minus points": 0,
+            "Additional infos": null
+        }
+    },
+    {
+        "author": "H\u00fcseyin Emre Isik",
+        "group": 2,
+        "reviewer": "Sydney Carlson",
+        "grader": "Noah Frazier",
+        "role": "expert",
+        "hash": "72eeca1e5c",
+        "type": "review",
+        "comment": "Bad writing, hard to read the review",
+        "scores": {
+            "form": {
+                "structure": 2,
+                "language": 2,
+                "total": 4
+            },
+            "feed_up": {
+                "feed_up": 1,
+                "total": 1
+            },
+            "feed_back": {
+                "feed_back": 4,
+                "total": 4
+            },
+            "feed_forward": {
+                "feed_forward": 1,
+                "total": 1
+            },
+            "content": {
+                "total": 7,
+                "quality": 3,
+                "errors": 4
+            },
+            "others": {
+                "total": 0,
+                "additional": 0,
+                "minus": 0
+            },
+            "total": 17
+        },
+        "criteria": {
+            "Summary available": 1,
+            "Clarity": 1,
+            "Language": 0,
+            "Tone": 2,
+            "Learning Goals": 1,
+            "Success Criteria": 0,
+            "Knowledge of result": 1,
+            "Knowledge of correct response": 1,
+            "Knowledge about task constraints": 0,
+            "Knowledge about concepts": 1,
+            "Knowledge about mistakes": 1,
+            "Self-feedback": 1,
+            "Self-regulation": 1,
+            "Learning Skills": 0,
+            "Correctness": 1,
+            "Actionability": 1,
+            "Argumentation": 1,
+            "Neglect": 0,
+            "Vague Critic": 0,
+            "Out-of-Scope": 0,
+            "Missing Reference": 0,
+            "Contradiction": 0,
+            "Additional points": 0,
+            "Minus points": 0,
+            "Additional infos": null
+        }
+    }
+]

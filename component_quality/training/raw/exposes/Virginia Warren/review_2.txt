@@ -1,0 +1,11 @@
+The text needs a strong grammatical and linguistic overhaul. Many sentences are hard to read because of strange constructions, lack of detail, and sudden jumps between points. Often, the text moves to a new idea without explaining why it is relevant or how it connects to the previous part, which makes the flow difficult to follow.
+
+The motivation feels superficial. It gives only one example and does not clearly separate domain experts, physicians, and doctors from regular people, for example. Is the mistake of falling for hallucinations mentioned in the paper something only regular people fall for, or do experts, too? 
+
+Additionally, the motivation is not complete. It states the issue of hallucinations, but does not follow through with explaining what can happen if the user falls for it. The text only mentions "this can have a negative impact to the user" without explaining which negative effects. Could these range from a bad mood to even immediate death?
+
+The research questions also need work. The "sub-questions" are not really sub-questions but follow-ups. Further, RQ1 is a yes/no question, which is not ideal for research. Good research questions should explore how something works, not just if it works. Also, the focus on "reduce hallucinations" is too broad. It may be better to narrow it down, for example, to hallucinations in anamnesis or medication advice.
+
+The state-of-the-art section is weak. It only lists papers without explaining how they work and why they are not enough to fully address the issue of hallucination. There is also no reasoning why the proposed approach might work better, except that it has not yet been tried.
+
+The explanation of the approach itself is quite good, though there are minor clarity issues. The bigger problem is that using LLM-Blender "has not yet been tested in the context of hallucination reduction". Why should it suddenly work in healthcare? Two issues with that: If we do not know if this works, this should be a new research question in itself, and the previous text needs to be adapted, because right now I thought that this was a well-established method until I read this at the very end. The way the text is written suggests this. Second, the text should explain why healthcare could be a good starting point to investigate this approach.

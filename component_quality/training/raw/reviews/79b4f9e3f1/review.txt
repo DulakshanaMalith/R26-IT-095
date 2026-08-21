@@ -1,0 +1,10 @@
+The goal of your work is to improve the detection of sepsis, therefore a new, combined model should be trained for this purpose. Existing data records should be used for this. Thereby, the exposé should convey the problem to the reader and the current approach in research so that the reader understands why the research is relevant. You have done this well, it is clear why this is a relevant problem and what is currently being done about it with a few examples. 
+
+It is important to delimit your own work, which you have done, but above all a clearly defined research question helps the reader to quickly see what the aim of the work is. Sub RQs should focus on the main research question. This is not recognisable within the exposé. Try again to formulate a main research question that summarises the sub-research questions. Also try to number your other research questions and check whether you are answering all of them with the approach, which is not currently clear. 
+
+A theoretical framework should serve as a scientific basis and orientation aid for the planned research. It seems that you have chosen DRL as a tool or method for problem solving, which in this case is not a theoretical framework. Check again the meaning of a theoretical framework and how it can support your research project. 
+
+The approach should explain your procedure to answering the research questions. This has some weaknesses, so it is not clear how the individual questions are answered. It is also inconsistent, as it is not clear which qualitative methods are used. A clearer alignment would contribute enormously to understanding your approach. Additional there are various weaknesses in the style, such as punctuation errors, abbreviations that are insufficiently explained (e.g. SOFA) or missing paragraph sections (e.g. new lines before term explainations) that would be helpful for further understanding.
+
+
+

@@ -1,0 +1,46 @@
+[
+  {
+    "id": 2630,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "Upper case",
+    "annotationId": 2583,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 2
+  },
+  {
+    "id": 2631,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "no clear research question.",
+    "annotationId": 2584,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 2
+  },
+  {
+    "id": 2632,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "inconsistency citation\n",
+    "annotationId": 2585,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 2
+  },
+  {
+    "id": 2633,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "there is no theoretical framework",
+    "annotationId": 2586,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 2
+  }
+]

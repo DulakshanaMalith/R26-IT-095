@@ -1,0 +1,1273 @@
+[
+  {
+    "id": 1576,
+    "user": "Rachael Long",
+    "role": "student",
+    "text": "[1] Tommaso Calo and Christopher MacLellan. “Towards Educator-Driven Tutor Authoring: GenerativeAI Approaches for Creating Intelligent Tutor Interfaces”. In: PROCEEDINGS OF THE ELEVENTH ACMCONFERENCE ON LEARNING@SCALE, L@S 2024. 11h ACM Conference on Learning@Scale (L@S),Atlanta, GA, JUL 18-20, 2024. 2024, pp. 305–309. isbn: 979-8-4007-0633-2. doi: 10.1145/3657604.3664694.[2] Lukas Frank et al. “Leveraging GenAI for an Intelligent Tutoring System for R: A Quantitative Evalu-ation of Large Language Models”. In: 2024 IEEE GLOBAL ENGINEERING EDUCATION CONFERENCE,EDUCON 2024. IEEE Global Engineering Education Conference. 15th IEEE Global Engineering Educa-tion Conference (IEEE EDUCON), GREECE, MAY 08-11, 2024. IEEE; Univ Piraeus Res Ctr; AristotleUniv Thessaloniki; Univ W Attica; MathWorks; IEEE Educ Soc; Comp Log; Aegean Airlines; AvanceCar Rental; Binarylogic; IEEE Try Engn. 2024. isbn: 979-8-3503-9402-3; 979-8-3503-9403-0. doi:10.1109/EDUCON60312.2024.10578933.[3] Wenting Ma et al. “Intelligent Tutoring Systems and Learning Outcomes: A Meta-Analysis”. In: JOURNALOF EDUCATIONAL PSYCHOLOGY 106.4 (Nov. 2014), pp. 901–918. issn: 0022-0663. doi: 10.1037/a0037123.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 12580,
+              "type": "TextPositionSelector",
+              "start": 11405
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "[1] Tommaso Calo and Christopher MacLellan. “Towards Educator-Driven Tutor Authoring: GenerativeAI Approaches for Creating Intelligent Tutor Interfaces”. In: PROCEEDINGS OF THE ELEVENTH ACMCONFERENCE ON LEARNING@SCALE, L@S 2024. 11h ACM Conference on Learning@Scale (L@S),Atlanta, GA, JUL 18-20, 2024. 2024, pp. 305–309. isbn: 979-8-4007-0633-2. doi: 10.1145/3657604.3664694.[2] Lukas Frank et al. “Leveraging GenAI for an Intelligent Tutoring System for R: A Quantitative Evalu-ation of Large Language Models”. In: 2024 IEEE GLOBAL ENGINEERING EDUCATION CONFERENCE,EDUCON 2024. IEEE Global Engineering Education Conference. 15th IEEE Global Engineering Educa-tion Conference (IEEE EDUCON), GREECE, MAY 08-11, 2024. IEEE; Univ Piraeus Res Ctr; AristotleUniv Thessaloniki; Univ W Attica; MathWorks; IEEE Educ Soc; Comp Log; Aegean Airlines; AvanceCar Rental; Binarylogic; IEEE Try Engn. 2024. isbn: 979-8-3503-9402-3; 979-8-3503-9403-0. doi:10.1109/EDUCON60312.2024.10578933.[3] Wenting Ma et al. “Intelligent Tutoring Systems and Learning Outcomes: A Meta-Analysis”. In: JOURNALOF EDUCATIONAL PSYCHOLOGY 106.4 (Nov. 2014), pp. 901–918. issn: 0022-0663. doi: 10.1037/a0037123.",
+              "prefix": "nd final submission5Bibliography",
+              "suffix": "[4] Tung Phung et al. “Generativ"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 6
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 1577,
+    "user": "Rachael Long",
+    "role": "student",
+    "text": "[5] Lianne Roest, Hieke Keuning, and Johan Jeuring. “Next-Step Hint Generation for Introductory Pro-gramming Using Large Language Models”. In: PROCEEDINGS OF THE 26TH AUSTRALASIAN COM-PUTING EDUCATION CONFERENCE, ACE 2024. 26th Australasian Computing Education Conference(ACE), Sydney, AUSTRALIA, JAN 29-FEB 02, 2024. 2024, pp. 144–153. isbn: 979-8-4007-1619-5. doi:10.1145/3636243.3636259.[6] Brad Sheese et al. “Patterns of Student Help-Seeking When Using a Large Language Model-PoweredProgramming Assistant”. In: PROCEEDINGS OF THE 26TH AUSTRALASIAN COMPUTING EDUCATIONCONFERENCE, ACE 2024. 26th Australasian Computing Education Conference (ACE), Sydney, AUSTRALIA,JAN 29-FEB 02, 2024. 2024, pp. 49–57. isbn: 979-8-4007-1619-5. doi: 10.1145/3636243.3636249.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 13728,
+              "type": "TextPositionSelector",
+              "start": 12968
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "[5] Lianne Roest, Hieke Keuning, and Johan Jeuring. “Next-Step Hint Generation for Introductory Pro-gramming Using Large Language Models”. In: PROCEEDINGS OF THE 26TH AUSTRALASIAN COM-PUTING EDUCATION CONFERENCE, ACE 2024. 26th Australasian Computing Education Conference(ACE), Sydney, AUSTRALIA, JAN 29-FEB 02, 2024. 2024, pp. 144–153. isbn: 979-8-4007-1619-5. doi:10.1145/3636243.3636259.[6] Brad Sheese et al. “Patterns of Student Help-Seeking When Using a Large Language Model-PoweredProgramming Assistant”. In: PROCEEDINGS OF THE 26TH AUSTRALASIAN COMPUTING EDUCATIONCONFERENCE, ACE 2024. 26th Australasian Computing Education Conference (ACE), Sydney, AUSTRALIA,JAN 29-FEB 02, 2024. 2024, pp. 49–57. isbn: 979-8-4007-1619-5. doi: 10.1145/3636243.3636249.",
+              "prefix": "doi.org/10.1145/3568812.3603476.",
+              "suffix": "6HighlightStrengthWeaknessOther"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 6
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 1578,
+    "user": "Rachael Long",
+    "role": "student",
+    "text": "Universities often depict that you don’t needprior knowledge of programming to successfully get your Bachelors degree.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 665,
+              "type": "TextPositionSelector",
+              "start": 547
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Universities often depict that you don’t needprior knowledge of programming to successfully get your Bachelors degree.",
+              "prefix": "t for many first year students. ",
+              "suffix": " But many first year studentsstr"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 1579,
+    "user": "Rachael Long",
+    "role": "student",
+    "text": " But many first year studentsstruggle with the steep learning curve. There is also a clear gap between these students and students whohave already starting learning programming beforehand. This creates an additional challenge for instructorsto overcome [2]. In addition, the student to instructor ratio is already large and ever-increasing [6].",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1009,
+              "type": "TextPositionSelector",
+              "start": 665
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " But many first year studentsstruggle with the steep learning curve. There is also a clear gap between these students and students whohave already starting learning programming beforehand. This creates an additional challenge for instructorsto overcome [2]. In addition, the student to instructor ratio is already large and ever-increasing [6].",
+              "prefix": "fully get your Bachelors degree.",
+              "suffix": " Thismakes it impossible to prov"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 1580,
+    "user": "Rachael Long",
+    "role": "student",
+    "text": "Thismakes it impossible to provide a good personalized learning experience for students",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1097,
+              "type": "TextPositionSelector",
+              "start": 1010
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Thismakes it impossible to provide a good personalized learning experience for students",
+              "prefix": " large and ever-increasing [6]. ",
+              "suffix": ".The recent rise in popularity o"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 1581,
+    "user": "Rachael Long",
+    "role": "student",
+    "text": " Intelligent Tutoring Systems (ITS) has been in the discussion of many papers in recent years",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1310,
+              "type": "TextPositionSelector",
+              "start": 1217
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " Intelligent Tutoring Systems (ITS) has been in the discussion of many papers in recent years",
+              "prefix": "her researching learningmethods.",
+              "suffix": ". Theyprovide a personalized and"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 1582,
+    "user": "Rachael Long",
+    "role": "student",
+    "text": "RQ1: What are the most common challenges students face when getting introduced to their first yearprogramming experience?RQ2: How do the challenges for advanced students differ from those of first-year students?RQ3: How effective is an ITS agent in providing assistance to both groups of students",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3596,
+              "type": "TextPositionSelector",
+              "start": 3300
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "RQ1: What are the most common challenges students face when getting introduced to their first yearprogramming experience?RQ2: How do the challenges for advanced students differ from those of first-year students?RQ3: How effective is an ITS agent in providing assistance to both groups of students",
+              "prefix": "s with these research questions:",
+              "suffix": ".22 ApproachI would like to base"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 1583,
+    "user": "Rachael Long",
+    "role": "student",
+    "text": "here",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2877,
+              "type": "TextPositionSelector",
+              "start": 2873
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "here",
+              "prefix": " want largely base my paper on t",
+              "suffix": " approach. But base my paper onp"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 1584,
+    "user": "Rachael Long",
+    "role": "student",
+    "text": "Python is a great beginner programming language and as such extensively research in the context of teachingit with LLMs [6, 5]. The existing research by Brad Sheese, Mark Liffiton, Jaromir Savelka and Paul Denny [6]focused on a tool to assist undergraduate students on a data science course with there programming tasks.This research goes to a great extent to show the capabilities of their tool. The students they worked with,were first year students. This provided a gap because this tool wasn’t tested on more advanced students.An approach to directly provided hints to students are so called Next-Step Hints from research conductedby Lianne Roest, Hieke Keuning and Johan Jeuring [5]. There research showed that generating hints forstudents can help them. But this research lags a sufficient sample size. Only three students were questioned.Furthermore, there were concerns about the quality of the hint the students got. I also want to look into thatwith a greater sample size on students.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2596,
+              "type": "TextPositionSelector",
+              "start": 1602
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Python is a great beginner programming language and as such extensively research in the context of teachingit with LLMs [6, 5]. The existing research by Brad Sheese, Mark Liffiton, Jaromir Savelka and Paul Denny [6]focused on a tool to assist undergraduate students on a data science course with there programming tasks.This research goes to a great extent to show the capabilities of their tool. The students they worked with,were first year students. This provided a gap because this tool wasn’t tested on more advanced students.An approach to directly provided hints to students are so called Next-Step Hints from research conductedby Lianne Roest, Hieke Keuning and Johan Jeuring [5]. There research showed that generating hints forstudents can help them. But this research lags a sufficient sample size. Only three students were questioned.Furthermore, there were concerns about the quality of the hint the students got. I also want to look into thatwith a greater sample size on students.",
+              "prefix": " has been shown in the past [3].",
+              "suffix": "The R programming language has s"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 1585,
+    "user": "Rachael Long",
+    "role": "student",
+    "text": "The R programming language has similarities to python.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2650,
+              "type": "TextPositionSelector",
+              "start": 2596
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The R programming language has similarities to python.",
+              "prefix": "greater sample size on students.",
+              "suffix": " A paper from Lukas Frank, Fabia"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 1586,
+    "user": "Rachael Long",
+    "role": "student",
+    "text": "A paper from Lukas Frank, Fabian Herth, Paul Stuwe,Marco Klaiber, Felix Gerschner and Andreas Theissler [2] based there research on a python centered one andimproved upon there method [4]. I want largely base my paper on there approach.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2887,
+              "type": "TextPositionSelector",
+              "start": 2651
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "A paper from Lukas Frank, Fabian Herth, Paul Stuwe,Marco Klaiber, Felix Gerschner and Andreas Theissler [2] based there research on a python centered one andimproved upon there method [4]. I want largely base my paper on there approach.",
+              "prefix": "age has similarities to python. ",
+              "suffix": " But base my paper onpython agai"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 1587,
+    "user": "Rachael Long",
+    "role": "student",
+    "text": "I would like to base my work on the study of Lukas Frank, Fabian Herth, Paul Stuwe [2]. This study comescloses to my approach. In this study they used three SOTA models ChatGPT-4, ChatGPT-3.5 and PaLM 2 toevaluate there answers from a set of questions. They questions were taken from a study of Phung et al [4]and translated to R. They tested all models with the questions and the authors evaluated them",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4011,
+              "type": "TextPositionSelector",
+              "start": 3608
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "I would like to base my work on the study of Lukas Frank, Fabian Herth, Paul Stuwe [2]. This study comescloses to my approach. In this study they used three SOTA models ChatGPT-4, ChatGPT-3.5 and PaLM 2 toevaluate there answers from a set of questions. They questions were taken from a study of Phung et al [4]and translated to R. They tested all models with the questions and the authors evaluated them",
+              "prefix": "h groups of students.22 Approach",
+              "suffix": ". So this studydoesn’t involve s"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 1588,
+    "user": "Rachael Long",
+    "role": "student",
+    "text": " Thestudy choose R because they wanted to research a more niche by also important languag",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4324,
+              "type": "TextPositionSelector",
+              "start": 4235
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " Thestudy choose R because they wanted to research a more niche by also important languag",
+              "prefix": "at wasn’t available at the time.",
+              "suffix": "e. But I will usepython as a res"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 1589,
+    "user": "Rachael Long",
+    "role": "student",
+    "text": "also",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4555,
+              "type": "TextPositionSelector",
+              "start": 4551
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "also",
+              "prefix": "ed on first year students. This ",
+              "suffix": "apply to the study from Tung Phu"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 1590,
+    "user": "Rachael Long",
+    "role": "student",
+    "text": "there",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4101,
+              "type": "TextPositionSelector",
+              "start": 4096
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "there",
+              "prefix": "want to improve. I plan to take ",
+              "suffix": " general approach and apply it t"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 1591,
+    "user": "Rachael Long",
+    "role": "student",
+    "text": " So I want to improve upon that",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4625,
+              "type": "TextPositionSelector",
+              "start": 4594
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " So I want to improve upon that",
+              "prefix": "o the study from Tung Phung [4].",
+              "suffix": ".Another study that put a focus "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 1592,
+    "user": "Rachael Long",
+    "role": "student",
+    "text": "and ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5619,
+              "type": "TextPositionSelector",
+              "start": 5615
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "and ",
+              "prefix": "he first mentioned study as base",
+              "suffix": "focus and hint generation as the"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 1593,
+    "user": "Rachael Long",
+    "role": "student",
+    "text": "The usage of ITS is a popular and proven to be effective to teach students.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6985,
+              "type": "TextPositionSelector",
+              "start": 6910
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The usage of ITS is a popular and proven to be effective to teach students.",
+              "prefix": "s is called prompt engineering.3",
+              "suffix": " So it makes sense to use this. "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 1594,
+    "user": "Rachael Long",
+    "role": "student",
+    "text": "And",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4845,
+              "type": "TextPositionSelector",
+              "start": 4842
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "And",
+              "prefix": "en solving programmingproblems. ",
+              "suffix": " derived a so called StAP-tutor "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 1595,
+    "user": "Rachael Long",
+    "role": "student",
+    "text": "As language model I will to useChatGPT-4o. As this model is a current SOTA model",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8152,
+              "type": "TextPositionSelector",
+              "start": 8072
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "As language model I will to useChatGPT-4o. As this model is a current SOTA model",
+              "prefix": " agent with prompt engineering. ",
+              "suffix": ". With this agent I want to cond"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 1596,
+    "user": "Rachael Long",
+    "role": "student",
+    "text": "Another study that put a focus to hint generation is by Lianne Roest, Hieke Keuning and Johan Jeuring [5",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4730,
+              "type": "TextPositionSelector",
+              "start": 4626
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Another study that put a focus to hint generation is by Lianne Roest, Hieke Keuning and Johan Jeuring [5",
+              "prefix": " So I want to improve upon that.",
+              "suffix": "].In this study they created a d"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 1597,
+    "user": "Rachael Long",
+    "role": "student",
+    "text": "My target population are students in their first year introduction toprogramming and more advanced users, so at least in their second year.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7397,
+              "type": "TextPositionSelector",
+              "start": 7258
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "My target population are students in their first year introduction toprogramming and more advanced users, so at least in their second year.",
+              "prefix": "erward as a qualitative method. ",
+              "suffix": "In the beginning I want to condu"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 1598,
+    "user": "Rachael Long",
+    "role": "student",
+    "text": " All the students should visit anintroduction in programming in a computer science related field",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7993,
+              "type": "TextPositionSelector",
+              "start": 7897
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " All the students should visit anintroduction in programming in a computer science related field",
+              "prefix": "th questions up with one myself.",
+              "suffix": ".With this data I would start to"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 1599,
+    "user": "Rachael Long",
+    "role": "student",
+    "text": "or questions, I would use the ones from the study of Lukas Frank, Fabian Herth,Paul Stuwe [2]. These questions are simple problems, so I would use these for the first year students. Forthe more advanced users I need to come with questions up with one mysel",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7895,
+              "type": "TextPositionSelector",
+              "start": 7639
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "or questions, I would use the ones from the study of Lukas Frank, Fabian Herth,Paul Stuwe [2]. These questions are simple problems, so I would use these for the first year students. Forthe more advanced users I need to come with questions up with one mysel",
+              "prefix": "ny priorprogramming knowledge. F",
+              "suffix": "f. All the students should visit"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 1600,
+    "user": "Rachael Long",
+    "role": "student",
+    "text": "With this data I would start to develop an ITS agent with prompt engineering",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8070,
+              "type": "TextPositionSelector",
+              "start": 7994
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "With this data I would start to develop an ITS agent with prompt engineering",
+              "prefix": " computer science related field.",
+              "suffix": ". As language model I will to us"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 1601,
+    "user": "Rachael Long",
+    "role": "student",
+    "text": "With this agent I want to conduct a user study where thetwo groups of students try to solve the problems. Students would be able to directly grade the responses fromthe model with a",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8335,
+              "type": "TextPositionSelector",
+              "start": 8154
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "With this agent I want to conduct a user study where thetwo groups of students try to solve the problems. Students would be able to directly grade the responses fromthe model with a",
+              "prefix": " model is a current SOTA model. ",
+              "suffix": " score of 1-3. 1 for has nothing"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 1602,
+    "user": "Rachael Long",
+    "role": "student",
+    "text": "score of 1-3. 1 for has nothing to do with current problem to 3 for really helpfu",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8417,
+              "type": "TextPositionSelector",
+              "start": 8336
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "score of 1-3. 1 for has nothing to do with current problem to 3 for really helpfu",
+              "prefix": " responses fromthe model with a ",
+              "suffix": "l. After that Iwant to conduct i"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 1603,
+    "user": "Rachael Long",
+    "role": "student",
+    "text": "After that Iwant to conduct interviews to get an impression of the students how the experience felt. With this interviewdata and the prompt log of the students I will analyse this and try to answer my research questions.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8640,
+              "type": "TextPositionSelector",
+              "start": 8420
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "After that Iwant to conduct interviews to get an impression of the students how the experience felt. With this interviewdata and the prompt log of the students I will analyse this and try to answer my research questions.",
+              "prefix": "roblem to 3 for really helpful. ",
+              "suffix": "To be able to conduct this study"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 1604,
+    "user": "Rachael Long",
+    "role": "student",
+    "text": "Especially from the university’s ethics board",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8799,
+              "type": "TextPositionSelector",
+              "start": 8754
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Especially from the university’s ethics board",
+              "prefix": "I want to conduct myexperiment. ",
+              "suffix": ". Furthermore, the students need"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 1605,
+    "user": "Rachael Long",
+    "role": "student",
+    "text": "ther",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8906,
+              "type": "TextPositionSelector",
+              "start": 8902
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "ther",
+              "prefix": "g data and be fine with sharing ",
+              "suffix": "e prompts with the provider of t"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 1606,
+    "user": "Rachael Long",
+    "role": "student",
+    "text": "Furthermore, the students need to consent to handover there prompt log data and be fine with sharing there prompts with the provider of the model used",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8951,
+              "type": "TextPositionSelector",
+              "start": 8801
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Furthermore, the students need to consent to handover there prompt log data and be fine with sharing there prompts with the provider of the model used",
+              "prefix": " the university’s ethics board. ",
+              "suffix": ".This study relies on students t"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 1607,
+    "user": "Rachael Long",
+    "role": "student",
+    "text": "enough students",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 9078,
+              "type": "TextPositionSelector",
+              "start": 9063
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "enough students",
+              "prefix": "lties if I were not able to find",
+              "suffix": ". I try to minimize this risk by"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 1608,
+    "user": "Rachael Long",
+    "role": "student",
+    "text": "I also rely an OpenAI for providing the interface to ChatGPT-4o and I alsoneed money to access it. On the free plan you are only allowed to access ChatGPT-4o a limited number oftimes. But for the duration of the study this doesn’t seam to be too expensive",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 9458,
+              "type": "TextPositionSelector",
+              "start": 9203
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "I also rely an OpenAI for providing the interface to ChatGPT-4o and I alsoneed money to access it. On the free plan you are only allowed to access ChatGPT-4o a limited number oftimes. But for the duration of the study this doesn’t seam to be too expensive",
+              "prefix": "iversity centered social media. ",
+              "suffix": ".But there are also limitations "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 1609,
+    "user": "Rachael Long",
+    "role": "student",
+    "text": "there ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 9688,
+              "type": "TextPositionSelector",
+              "start": 9682
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "there ",
+              "prefix": "hallucinate often. Nevertheless,",
+              "suffix": "have great potential to provide "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 1610,
+    "user": "Rachael Long",
+    "role": "student",
+    "text": "make ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 9797,
+              "type": "TextPositionSelector",
+              "start": 9792
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "make ",
+              "prefix": "tudents. But students need to be",
+              "suffix": "ware of the limitations.To reali"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 1611,
+    "user": "Rachael Long",
+    "role": "student",
+    "text": "ware ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 9802,
+              "type": "TextPositionSelector",
+              "start": 9797
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "ware ",
+              "prefix": "ts. But students need to bemake ",
+              "suffix": "of the limitations.To realize th"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 1612,
+    "user": "Rachael Long",
+    "role": "student",
+    "text": "ots of studies addressed concerns that LLMs deliver answersthat are not relevant to the input or are misleading the students.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 9636,
+              "type": "TextPositionSelector",
+              "start": 9511
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "ots of studies addressed concerns that LLMs deliver answersthat are not relevant to the input or are misleading the students.",
+              "prefix": "imitations with this approach. L",
+              "suffix": " LLMs tent to hallucinate often."
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 1613,
+    "user": "Rachael Long",
+    "role": "student",
+    "text": "evertheless,there have great potential to provide a personalized learning experience for students. But students need to bemake ware of the limitations.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 9821,
+              "type": "TextPositionSelector",
+              "start": 9670
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "evertheless,there have great potential to provide a personalized learning experience for students. But students need to bemake ware of the limitations.",
+              "prefix": "LMs tent to hallucinate often. N",
+              "suffix": "To realize this project I need h"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 1614,
+    "user": "Rachael Long",
+    "role": "student",
+    "text": "Distributing survey to students around the university",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 10294,
+              "type": "TextPositionSelector",
+              "start": 10241
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Distributing survey to students around the university",
+              "prefix": "for students1 3 Starting Survey ",
+              "suffix": "1 3 Planning interview questions"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 1615,
+    "user": "Rachael Long",
+    "role": "student",
+    "text": "Plan questions while the survey is running",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 10369,
+              "type": "TextPositionSelector",
+              "start": 10327
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Plan questions while the survey is running",
+              "prefix": " 3 Planning interview questions ",
+              "suffix": "1 4 Evaluating survey result Rev"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 1616,
+    "user": "Rachael Long",
+    "role": "student",
+    "text": " It would be important to ask the students in which year there are and if they have any priorprogramming knowledge. ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7638,
+              "type": "TextPositionSelector",
+              "start": 7522
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " It would be important to ask the students in which year there are and if they have any priorprogramming knowledge. ",
+              "prefix": "nt would expectfrom such a tool.",
+              "suffix": "For questions, I would use the o"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  }
+]

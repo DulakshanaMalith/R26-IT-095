@@ -1,0 +1,519 @@
+[
+  {
+    "id": 401,
+    "user": "Kaitlin Wright",
+    "role": "student",
+    "text": "Nice introduction",
+    "annotationId": 394,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 402,
+    "user": "Kaitlin Wright",
+    "role": "student",
+    "text": "If it can factually improve, please cite a source, otherwise it \"might\" improve",
+    "annotationId": 395,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 403,
+    "user": "Kaitlin Wright",
+    "role": "student",
+    "text": "The main focus of the research",
+    "annotationId": 396,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 404,
+    "user": "Kaitlin Wright",
+    "role": "student",
+    "text": "The work might benefit from a source here",
+    "annotationId": 397,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 405,
+    "user": "Kaitlin Wright",
+    "role": "student",
+    "text": "This needs a source. Is the consultation time per appointment actually getting lower? Or is it just harder to get an appointment in the first place?",
+    "annotationId": 398,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 406,
+    "user": "Kaitlin Wright",
+    "role": "student",
+    "text": "I think you mean efficiently here",
+    "annotationId": 399,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 407,
+    "user": "Kaitlin Wright",
+    "role": "student",
+    "text": "You want to get large amounts of data without needing to ask a doctor to get it? Please make this sentence more precise",
+    "annotationId": 400,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 408,
+    "user": "Kaitlin Wright",
+    "role": "student",
+    "text": "If this is a fact, then add a source, otherwise change this to \"might\" as would be uncertain then",
+    "annotationId": 401,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Shelly Lawrence",
+        "role": "assistant",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 409,
+    "user": "Kaitlin Wright",
+    "role": "student",
+    "text": "What do you mean by \"meaningful use cases\"? This sentence would benefit from examples and sources to give the reader more context",
+    "annotationId": 402,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Shelly Lawrence",
+        "role": "assistant",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 410,
+    "user": "Kaitlin Wright",
+    "role": "student",
+    "text": "This sentence might be difficult to understand for readers. Try rephrasing it in the direction of \"At the same time, potential risks have to be evaluated to raise awareness of the dangers and shortcomings of these technologies\"",
+    "annotationId": 403,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Shelly Lawrence",
+        "role": "assistant",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 411,
+    "user": "Kaitlin Wright",
+    "role": "student",
+    "text": "Please cite sources for this statement",
+    "annotationId": 404,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 412,
+    "user": "Kaitlin Wright",
+    "role": "student",
+    "text": "This is the key difference of these two types. Nicely highlighted",
+    "annotationId": 405,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 413,
+    "user": "Kaitlin Wright",
+    "role": "student",
+    "text": "Grammar: Remove this",
+    "annotationId": 406,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 414,
+    "user": "Kaitlin Wright",
+    "role": "student",
+    "text": "As the work focuses on the benefits and drawbacks specifically for the patients, the research questions should reflect this",
+    "annotationId": 407,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 415,
+    "user": "Kaitlin Wright",
+    "role": "student",
+    "text": "Please cite a source for this statement. Your source [7] also seems to contradict this statement, as it focuses on the combination of PGHD and EHR directly",
+    "annotationId": 408,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 416,
+    "user": "Kaitlin Wright",
+    "role": "student",
+    "text": "bridged",
+    "annotationId": 409,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 417,
+    "user": "Kaitlin Wright",
+    "role": "student",
+    "text": "As seen in which paper? Cite a source and specify what developments you are referring to or give examples. What might be major developments right now might no longer be in the future or might be different for varying readers",
+    "annotationId": 410,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 418,
+    "user": "Kaitlin Wright",
+    "role": "student",
+    "text": "a",
+    "annotationId": 411,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 419,
+    "user": "Kaitlin Wright",
+    "role": "student",
+    "text": "The work would benefit from formatting headlines like this into bold text to differentiate it from the statements",
+    "annotationId": 412,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 420,
+    "user": "Kaitlin Wright",
+    "role": "student",
+    "text": "Make this headline bold",
+    "annotationId": 413,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 421,
+    "user": "Kaitlin Wright",
+    "role": "student",
+    "text": "analyzable",
+    "annotationId": 414,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 422,
+    "user": "Kaitlin Wright",
+    "role": "student",
+    "text": "On what grounds will the analysis be? The one subjectively liked more by the participant? Will the analysis be blinded or will the participants know what data belongs to the specialist and what to the AI?",
+    "annotationId": 415,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Shelly Lawrence",
+        "role": "assistant",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 423,
+    "user": "Kaitlin Wright",
+    "role": "student",
+    "text": "To enhance comparability, it might be advantageous to search if such questionnaires already exist and to use one of those",
+    "annotationId": 416,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 424,
+    "user": "Kaitlin Wright",
+    "role": "student",
+    "text": "While ethical concerns are definitely a thing, the data privacy part should also be included as it might impose regulations and judicial concerns",
+    "annotationId": 417,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Shelly Lawrence",
+        "role": "assistant",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 425,
+    "user": "Kaitlin Wright",
+    "role": "student",
+    "text": "Shouldn't this be a requirement of conducting a study in the first place? Finding ways to further help addressing this issue may be beneficial",
+    "annotationId": 418,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 426,
+    "user": "Kaitlin Wright",
+    "role": "student",
+    "text": "too",
+    "annotationId": 419,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 427,
+    "user": "Kaitlin Wright",
+    "role": "student",
+    "text": "It is great that you focus on the issues arising from processing and evaluating highly personal data in your interview. You could improve it even more by mentioning, this has to be evaluated and approved by the TU Darmstadt ethics council: [LINK_REMOVED]",
+    "annotationId": 420,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 428,
+    "user": "Kaitlin Wright",
+    "role": "student",
+    "text": "It might be beneficial to first review the literature before deciding on an LLM, as the literature might give more insight in what is being used currently and what shouldn't be",
+    "annotationId": 421,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Shelly Lawrence",
+        "role": "assistant",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 429,
+    "user": "Kaitlin Wright",
+    "role": "student",
+    "text": "As literature review is a very time-consuming process, one week for that many topics might be too little",
+    "annotationId": 422,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 430,
+    "user": "Kaitlin Wright",
+    "role": "student",
+    "text": "At this point, there is no information on the framework and what data is being processed exactly. There wasn't any time scheduled to create consent and data privacy protocols yet. It might be beneficial to first develop the methods used in the interview, take the time to create legal documents and then explain consent and data privacy implications to the participants",
+    "annotationId": 423,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Shelly Lawrence",
+        "role": "assistant",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 431,
+    "user": "Kaitlin Wright",
+    "role": "student",
+    "text": "At this point, have the healthcare professionals already been recruited? Will they be during the recruitment phase? Where are they coming from?",
+    "annotationId": 424,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Shelly Lawrence",
+        "role": "assistant",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 432,
+    "user": "Kaitlin Wright",
+    "role": "student",
+    "text": "Developing an LLM framework that analyses different sources of patient data within a week might be overly ambitious. It might be beneficial to extend this phase another week",
+    "annotationId": 425,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Shelly Lawrence",
+        "role": "assistant",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 433,
+    "user": "Kaitlin Wright",
+    "role": "student",
+    "text": "The visited on date is used to acknowledge the time, the author has visited the source. It is very unlikely, that the author has visited this source in the context of this assignment, before the lecture even existed.",
+    "annotationId": 426,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 434,
+    "user": "Kaitlin Wright",
+    "role": "student",
+    "text": "While the \"state of the art\", mentioned by the author, gives an overview over the difficulties linking patient generated data with electronic health records, it does not explain how the problem is being dealt with so far, nor does it explain \"state of the art\" for the other two research questions",
+    "annotationId": 427,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Shelly Lawrence",
+        "role": "assistant",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 435,
+    "user": "Kaitlin Wright",
+    "role": "student",
+    "text": "It is unclear what the main focus of this paper is - Here, improved diagnostics is mentioned, while the research questions suggest the generation of treatment plans, not diagnostics",
+    "annotationId": 428,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Shelly Lawrence",
+        "role": "assistant",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 436,
+    "user": "Kaitlin Wright",
+    "role": "student",
+    "text": "This statement seems to be contradicted by your source [7], where a key part of the paper is \"describing the various means PGHD are shared with providers and incorporated into electronic health record (EHR) technologies\"",
+    "annotationId": 429,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 437,
+    "user": "Kaitlin Wright",
+    "role": "student",
+    "text": "Sources mentioned in the text should be correctly cited and included in the bibliography",
+    "annotationId": 430,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 438,
+    "user": "Kaitlin Wright",
+    "role": "student",
+    "text": "This seems to be a wrong citation",
+    "annotationId": 431,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 439,
+    "user": "Kaitlin Wright",
+    "role": "student",
+    "text": "It is unclear to what part of the expose this headline is being accounted to as it is after the theoretical framework and before the methodology",
+    "annotationId": 432,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 440,
+    "user": "Kaitlin Wright",
+    "role": "student",
+    "text": "Please provide a source for this",
+    "annotationId": 433,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 441,
+    "user": "Kaitlin Wright",
+    "role": "student",
+    "text": "This is not a target population",
+    "annotationId": 434,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  }
+]

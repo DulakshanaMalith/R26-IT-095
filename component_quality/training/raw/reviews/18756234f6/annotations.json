@@ -1,0 +1,622 @@
+[
+  {
+    "id": 4956,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "Now, imagine this assistant not as a voice or a screen",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 979,
+              "type": "TextPositionSelector",
+              "start": 925
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Now, imagine this assistant not as a voice or a screen",
+              "prefix": "tial to transform everyday life.",
+              "suffix": " but as something that feels phy"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4957,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "And the Word became Flesh",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 85,
+              "type": "TextPositionSelector",
+              "start": 60
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "And the Word became Flesh",
+              "prefix": "iquitous KnowledgeProcessing Lab",
+              "suffix": "The Holographic AI AssistantName"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 1
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4958,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "our daily lives.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1134,
+              "type": "TextPositionSelector",
+              "start": 1118
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "our daily lives.",
+              "prefix": "could redefine how AI fits into ",
+              "suffix": " Holographic AI assistants could"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4959,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "we ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1330,
+              "type": "TextPositionSelector",
+              "start": 1327
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "we ",
+              "prefix": "imitations and transforming how ",
+              "suffix": "engage with digital assistants.T"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4960,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "This research investigates how integrating these assistants into augmented reality (AR) systems can significantly improveuser trust, engagement, and task efficiency across various fields, including education and healthcare.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1584,
+              "type": "TextPositionSelector",
+              "start": 1361
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "This research investigates how integrating these assistants into augmented reality (AR) systems can significantly improveuser trust, engagement, and task efficiency across various fields, including education and healthcare.",
+              "prefix": " engage with digital assistants.",
+              "suffix": "How can holographic AI assistant"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 4961,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "feeling ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 853,
+              "type": "TextPositionSelector",
+              "start": 845
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "feeling ",
+              "prefix": "engagement, leaving these tools ",
+              "suffix": "detachedand underutilized in the"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4962,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": " This limitation reducestheir effectiveness in trust-dependent tasks like education, healthcare, and hands-on guidance",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 722,
+              "type": "TextPositionSelector",
+              "start": 604
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " This limitation reducestheir effectiveness in trust-dependent tasks like education, healthcare, and hands-on guidance",
+              "prefix": "lly prefer when seeking support.",
+              "suffix": ". Efforts to improve AIfocus on "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4963,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "Efforts to improve AIfocus on conversations but neglect the need for physical and visual engagement, leaving these tools feeling detachedand underutilized in their potential to transform everyday life.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 925,
+              "type": "TextPositionSelector",
+              "start": 724
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Efforts to improve AIfocus on conversations but neglect the need for physical and visual engagement, leaving these tools feeling detachedand underutilized in their potential to transform everyday life.",
+              "prefix": "lthcare, and hands-on guidance. ",
+              "suffix": "Now, imagine this assistant not "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4964,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "holographic technologies are being developed for realistic 3D projections",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2590,
+              "type": "TextPositionSelector",
+              "start": 2517
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "holographic technologies are being developed for realistic 3D projections",
+              "prefix": "ersive user experiences [1], and",
+              "suffix": ". Despite these advances, the in"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4965,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": " lack the emotional engagement and trust",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2381,
+              "type": "TextPositionSelector",
+              "start": 2341
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " lack the emotional engagement and trust",
+              "prefix": "d Alexa handle basic tasks, they",
+              "suffix": " required in complexinteractions"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4966,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": ", and other field",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2263,
+              "type": "TextPositionSelector",
+              "start": 2246
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": ", and other field",
+              "prefix": " rising in education, healthcare",
+              "suffix": "s. While traditional AIassistant"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4967,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "Current voice and visual cuesfail to establish trust or emotional connection, limiting their effectiveness in sensitive tasks",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2852,
+              "type": "TextPositionSelector",
+              "start": 2727
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Current voice and visual cuesfail to establish trust or emotional connection, limiting their effectiveness in sensitive tasks",
+              "prefix": "resence remains under-explored. ",
+              "suffix": ".This research will investigate "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4968,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "rust and engagement",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3048,
+              "type": "TextPositionSelector",
+              "start": 3029
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "rust and engagement",
+              "prefix": " user interaction by improving t",
+              "suffix": ".To better understand how hologr"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4969,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "which posits that people interact with media and technology as if they were real social entities, applyingsocial norms and expectations to digital agents.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3452,
+              "type": "TextPositionSelector",
+              "start": 3298
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "which posits that people interact with media and technology as if they were real social entities, applyingsocial norms and expectations to digital agents.",
+              "prefix": "heory (Reeves &Nass, 1996) [2], ",
+              "suffix": " This concept aligns closely wit"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4970,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "could strengthen these socialconnections and improve engagemen",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3797,
+              "type": "TextPositionSelector",
+              "start": 3735
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "could strengthen these socialconnections and improve engagemen",
+              "prefix": " through holographic technology ",
+              "suffix": "t. Holographic AI assistants cou"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4971,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": " creating richer, more intuitive interactions",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3936,
+              "type": "TextPositionSelector",
+              "start": 3891
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " creating richer, more intuitive interactions",
+              "prefix": "ering a more human-likepresence,",
+              "suffix": ". This framework helps identify "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4972,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": " Participants",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4888,
+              "type": "TextPositionSelector",
+              "start": 4875
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " Participants",
+              "prefix": "digital assistants (Sub-RQ 1.2).",
+              "suffix": " will interact with both hologra"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4973,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "controlled scenarios",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4974,
+              "type": "TextPositionSelector",
+              "start": 4954
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "controlled scenarios",
+              "prefix": "ic and voice-basedAI systems in ",
+              "suffix": ". The study will measure user en"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4974,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "et’s face it, long links are a bit too much to handle.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8127,
+              "type": "TextPositionSelector",
+              "start": 8073
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "et’s face it, long links are a bit too much to handle.",
+              "prefix": " to simplify long URLs, becausel",
+              "suffix": "5Bibliography[1] R. T. Azuma. “A"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4975,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "Bibliography",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8140,
+              "type": "TextPositionSelector",
+              "start": 8128
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Bibliography",
+              "prefix": "s are a bit too much to handle.5",
+              "suffix": "[1] R. T. Azuma. “A survey of au"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 6
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  }
+]

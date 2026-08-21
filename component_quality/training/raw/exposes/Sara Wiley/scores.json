@@ -1,0 +1,203 @@
+[
+    {
+        "author": "Sara Wiley",
+        "group": 1,
+        "grader": "Erin Nguyen",
+        "role": "assistant",
+        "scores": {
+            "form": {
+                "structure": 2,
+                "language": 2,
+                "total": 4
+            },
+            "content": {
+                "total": 24,
+                "meta": 3,
+                "motivation": 7,
+                "approach": 6,
+                "schedule": 5,
+                "bibliography": 3
+            },
+            "others": {
+                "total": 0,
+                "additional": 0,
+                "minus": 0
+            },
+            "total": 28
+        },
+        "criteria": {
+            "Template used": 1,
+            "Number of pages": 1,
+            "Language quality": 1,
+            "Common Thread": 1,
+            "Preliminary title": 2,
+            "Metadata available": 1,
+            "Hook existing": 1,
+            "Anker": 1,
+            "Domain": 1,
+            "Problem relevance": 1,
+            "Problem handling": 0,
+            "Teaser (RQ)": 2,
+            "RQ Limitation": 1,
+            "SOTA": 0,
+            "SOTA Relevance": 0,
+            "SOTA Weaknesses": 0,
+            "SOTA Delimitation": 0,
+            "SOTA Combination": 0,
+            "Theoretical Framework": 0,
+            "Relevance of theoretical framework": 0,
+            "Methodology Availability": 1,
+            "Methodology Completeness": 0,
+            "Methodology Relevance": 1,
+            "Methodology Target group": 1,
+            "Methodology Existing Material": 0,
+            "Methodology Difficulties": 1,
+            "Methodology Possibilities/restrictions": 1,
+            "Methodology Details": 1,
+            "Schedule Availability": 1,
+            "Schedule Completeness": 1,
+            "Schedule Block Description": 1,
+            "Schedule Realistic Relevance": 2,
+            "Bibliography Consistency": 1,
+            "Key literature": 2,
+            "Additional points": 0,
+            "Negative points": 0,
+            "Additional infos": ""
+        },
+        "type": "final"
+    },
+    {
+        "author": "Sara Wiley",
+        "group": 1,
+        "grader": "Cynthia Mills",
+        "role": "expert",
+        "scores": {
+            "form": {
+                "structure": 2,
+                "language": 2,
+                "total": 4
+            },
+            "content": {
+                "total": 12,
+                "meta": 3,
+                "motivation": 5,
+                "approach": 4,
+                "schedule": 0,
+                "bibliography": 0
+            },
+            "others": {
+                "total": 0,
+                "additional": 0,
+                "minus": 0
+            },
+            "total": 16
+        },
+        "criteria": {
+            "Template used": 1,
+            "Number of pages": 1,
+            "Language quality": 1,
+            "Common Thread": 1,
+            "Preliminary title": 2,
+            "Metadata available": 1,
+            "Hook existing": 1,
+            "Anker": 1,
+            "Domain": 1,
+            "Problem relevance": 1,
+            "Problem handling": 0,
+            "Teaser (RQ)": 1,
+            "RQ Limitation": 0,
+            "SOTA": 0,
+            "SOTA Relevance": 0,
+            "SOTA Weaknesses": 0,
+            "SOTA Delimitation": 0,
+            "SOTA Combination": 0,
+            "Theoretical Framework": 0,
+            "Relevance of theoretical framework": 0,
+            "Methodology Availability": 1,
+            "Methodology Completeness": 0,
+            "Methodology Relevance": 0,
+            "Methodology Target group": 1,
+            "Methodology Existing Material": 0,
+            "Methodology Difficulties": 1,
+            "Methodology Possibilities/restrictions": 1,
+            "Methodology Details": 0,
+            "Schedule Availability": 0,
+            "Schedule Completeness": 0,
+            "Schedule Block Description": 0,
+            "Schedule Realistic Relevance": 0,
+            "Bibliography Consistency": 0,
+            "Key literature": 0,
+            "Additional points": 0,
+            "Negative points": 0,
+            "Additional infos": ""
+        },
+        "type": "draft"
+    },
+    {
+        "author": "Sara Wiley",
+        "group": 2,
+        "grader": "Sean Herrera",
+        "role": "assistant",
+        "scores": {
+            "form": {
+                "structure": 2,
+                "language": 2,
+                "total": 4
+            },
+            "content": {
+                "total": 5,
+                "meta": 2,
+                "motivation": 2,
+                "approach": 1,
+                "schedule": 0,
+                "bibliography": 0
+            },
+            "others": {
+                "total": 0,
+                "additional": 0,
+                "minus": 0
+            },
+            "total": 9
+        },
+        "criteria": {
+            "Template used": 1,
+            "Number of pages": 1,
+            "Language quality": 1,
+            "Common Thread": 1,
+            "Preliminary title": 1,
+            "Metadata available": 1,
+            "Hook existing": 0,
+            "Anker": 0,
+            "Domain": 1,
+            "Problem relevance": 0,
+            "Problem handling": 0,
+            "Teaser (RQ)": 1,
+            "RQ Limitation": 0,
+            "SOTA": 0,
+            "SOTA Relevance": 0,
+            "SOTA Weaknesses": 0,
+            "SOTA Delimitation": 0,
+            "SOTA Combination": 0,
+            "Theoretical Framework": 0,
+            "Relevance of theoretical framework": 0,
+            "Methodology Availability": 0,
+            "Methodology Completeness": 0,
+            "Methodology Relevance": 0,
+            "Methodology Target group": 1,
+            "Methodology Existing Material": 0,
+            "Methodology Difficulties": 0,
+            "Methodology Possibilities/restrictions": 0,
+            "Methodology Details": 0,
+            "Schedule Availability": 0,
+            "Schedule Completeness": 0,
+            "Schedule Block Description": 0,
+            "Schedule Realistic Relevance": 0,
+            "Bibliography Consistency": 0,
+            "Key literature": 0,
+            "Additional points": 0,
+            "Negative points": 0,
+            "Additional infos": ""
+        },
+        "type": "draft"
+    }
+]

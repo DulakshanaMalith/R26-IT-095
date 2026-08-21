@@ -1,0 +1,13 @@
+Summary:
+
+This study aims at investigating the effectiveness of LLMs in a classroom context, when prompted to assist students in learning without telling the answer directly. This is based on the assumption that LLMs can currently be used for cheating, and a controlled use would assist students in their learning outcomes which will be tested in a qualitative and quantitative study.
+
+Strengths:
+The expose is well written and follows a clear and logical structure. That makes it very easy to follow.
+A high level of detail is presented, and many justifications for design choices are given, helping readability and improving the scientific value of this expose significantly
+The introduction presents the problem domain clearly, setting the scene for the expose. The motivation for this research is clear and reasonable.
+The methodology is tailored towards the well-scoped research questions, leading to a high chance of answering the RQs properly within the scope of a thesis
+
+Weaknesses:
+Presenting the limitations of the State of the Art can further justify the need for your research and presents clearly where you want to position your study. While you mention that there have been no concrete studies on this novel role of LLMs in a classroom context, more details on LLMs in a classroom context would have helped painting a more complete picture. If it is difficult to find related work on your exact specific topic, try to broaden your scope to include relevant related work - in this case including different ways LLMs are already included or studies of the learning impact in combination with LLMs.
+A good title catches the reader of the expose and sparks curiosity. I personally stumbled upon your title, as I did not understand it. Creative titles like yours can be very good, but make it easier understandable for people that haven't read your expose.   

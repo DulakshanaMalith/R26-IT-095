@@ -1,0 +1,374 @@
+[
+  {
+    "id": 3786,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "the coverageon federal level is lacking",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 499,
+              "type": "TextPositionSelector",
+              "start": 460
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "the coverageon federal level is lacking",
+              "prefix": "tion. Taking a look at Germany, ",
+              "suffix": ". [1] CS only becomes a subject "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 3787,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "[1] ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 505,
+              "type": "TextPositionSelector",
+              "start": 501
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "[1] ",
+              "prefix": "ageon federal level is lacking. ",
+              "suffix": "CS only becomes a subject in sec"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 3788,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": " [2]",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2068,
+              "type": "TextPositionSelector",
+              "start": 2064
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " [2]",
+              "prefix": "ons in the scientific community.",
+              "suffix": " UsingLLMs to solve problems dur"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 3789,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "sRQ1: How do students experience the LLM-generated programming exercises? This includes questionsand difficulties related to the task, errors, and general quality.• sRQ2: Are students having any learning success with LLM-generated exercises and how does it compareto a traditional exercise?1https://chatgpt.com/2https://github.com/features/copilot",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3093,
+              "type": "TextPositionSelector",
+              "start": 2746
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "sRQ1: How do students experience the LLM-generated programming exercises? This includes questionsand difficulties related to the task, errors, and general quality.• sRQ2: Are students having any learning success with LLM-generated exercises and how does it compareto a traditional exercise?1https://chatgpt.com/2https://github.com/features/copilot",
+              "prefix": "coming research should answer:• ",
+              "suffix": "22 ApproachUsing LLMs for teachi"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 3790,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "How good of a tool are LLM-generatedexercises relative to hand-made exercises for student",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2649,
+              "type": "TextPositionSelector",
+              "start": 2560
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "How good of a tool are LLM-generatedexercises relative to hand-made exercises for student",
+              "prefix": "overall research question (RQ): ",
+              "suffix": "s? We divide our RQ into the fol"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 3791,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "[3]",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3362,
+              "type": "TextPositionSelector",
+              "start": 3359
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "[3]",
+              "prefix": "he subject of programming, too. ",
+              "suffix": " There, they assume the role of "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 3792,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "with",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3749,
+              "type": "TextPositionSelector",
+              "start": 3745
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "with",
+              "prefix": " about its relative performance ",
+              "suffix": " hand-madeexercises. This resear"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 3793,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "evaluated",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5670,
+              "type": "TextPositionSelector",
+              "start": 5661
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "evaluated",
+              "prefix": "ollowing way: One group will be ",
+              "suffix": " with a general hand-madeexercis"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 3794,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "After a short briefingabout the study, they answer the entrance survey. It contains questions to self-evaluate their programmingexperience, knowledge about the topic in the exercises, and their previous progress in the topic, if it exists",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7316,
+              "type": "TextPositionSelector",
+              "start": 7078
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "After a short briefingabout the study, they answer the entrance survey. It contains questions to self-evaluate their programmingexperience, knowledge about the topic in the exercises, and their previous progress in the topic, if it exists",
+              "prefix": "d have interest in programming. ",
+              "suffix": ".The first will be complemented "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 3795,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "Sorting participants reduces the risk of group A and group B having unbalanced distributions of experience,which threatens comparability between the groups.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7802,
+              "type": "TextPositionSelector",
+              "start": 7646
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Sorting participants reduces the risk of group A and group B having unbalanced distributions of experience,which threatens comparability between the groups.",
+              "prefix": "have to be structured similarly.",
+              "suffix": " The measures mentioned prior al"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 3796,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "With the survey results from recruiting,",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8297,
+              "type": "TextPositionSelector",
+              "start": 8257
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "With the survey results from recruiting,",
+              "prefix": "t each point on the scale means.",
+              "suffix": " the exercise is handed out to p"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 3797,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "Another survey form, sent out with the feedback form together, will collect descriptions abouttheir learning success with the exercise and their confidence in the topic",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8766,
+              "type": "TextPositionSelector",
+              "start": 8598
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Another survey form, sent out with the feedback form together, will collect descriptions abouttheir learning success with the exercise and their confidence in the topic",
+              "prefix": "ach compiled into alist (sRQ1). ",
+              "suffix": " (sRQ2). A significant risk is t"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  }
+]

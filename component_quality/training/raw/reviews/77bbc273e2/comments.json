@@ -1,0 +1,182 @@
+[
+  {
+    "id": 515,
+    "user": "Gina Burns",
+    "role": "student",
+    "text": "Good job explicitly highlighting the differences between your work and existing research. By mentioning a few methologies you'll use, you give a strong transition into the next section.",
+    "annotationId": 508,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 516,
+    "user": "Gina Burns",
+    "role": "student",
+    "text": "Your Motivation section introduces the topic well and effectively highlights the potential of generative AI in personalized medicine. The quote you use serves as a strong hook, but the transition into the challenges feels abrupt and lacks sufficient context. In the RQ section, you could be more specific. Limiting the test group to individuals with chronic diseases in the methodology section is a good start, but it’s not enough. The RQs themselves should explicitly target a narrower scope, such as focusing on specific conditions like diabetes or cancer, to make the research questions more precise and manageable.",
+    "annotationId": 509,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Shelly Lawrence",
+        "role": "assistant",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 517,
+    "user": "Gina Burns",
+    "role": "student",
+    "text": "The State of the Art (SOTA) analysis should critically identify and explain existing weaknesses in the field, clearly delineate how the proposed research addresses these gaps, and highlight its unique contributions. While you do highlight current weaknesses in existing research, it would be wise to list a few examples from the papers you are referencing in order to make the critique more precise and grounded in evidence. For instance, mentioning specific studies that focus solely on categorization tasks or fail to explore generative AI would make the argument more robust. Additionally, the point about interpretability being a criticized aspect in AI models is important, but it would benefit from further explanation. You could discuss why interpretability is crucial for clinical applications - such as its impact on trust, transparency, and regulatory acceptance - and how the lack of it might hinder the practical adoption of AI in personalized medicine. This added depth will strengthen your analysis and clearly position your research as a solution to these challenges.",
+    "annotationId": 510,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Shelly Lawrence",
+        "role": "assistant",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 518,
+    "user": "Gina Burns",
+    "role": "student",
+    "text": "Your approach section is overall well-structured and does a good job of showing how your work will add to the current state of research. I really appreciate how you address each Sub-RQ individually and outline the theoretical frameworks you're utilizing, which makes it clear how your study is grounded. However, there’s room for improvement to make this section even stronger. \nA good approach section should clearly detail how you plan to proceed with your study, and while you’ve outlined the basics, adding more depth would make your methodology feel more robust. For instance, give a brief explanation of the theoretical frameworks you're using and explain why they are relevant to your research. Consider organizing your content with headlines or subsections to enhance clarity and flow. Additionally, try to anticipate potential challenges in your methodology and suggest possible solutions to demonstrate a proactive and thoughtful approach to your work. This would not only add structure but also show the feasibility and adaptability of your study.",
+    "annotationId": 511,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Shelly Lawrence",
+        "role": "assistant",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 519,
+    "user": "Gina Burns",
+    "role": "student",
+    "text": "A theoretical framework should clearly define key concepts, explain their relevance to the research, and demonstrate how they directly support the research objectives. Your framework effectively identifies important components like Explainable AI (XAI) and ethical AI frameworks, but it would benefit from further elaboration on what these concepts are and how they specifically apply to your study. For instance, briefly defining XAI and its role in fostering trust between healthcare personnel and AI systems would clarify its importance. Similarly, explaining how ethical frameworks address issues like bias or data protection would strengthen the connection to your research objectives. By providing these explanations, your theoretical framework will become more comprehensive and aligned with your study's goals.",
+    "annotationId": 512,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Shelly Lawrence",
+        "role": "assistant",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 520,
+    "user": "Gina Burns",
+    "role": "student",
+    "text": "A strong methodology should not only identify potential challenges but also outline ways to address them, even if only at a high level. While you’ve done a good job highlighting key problems like balancing interpretability with accuracy, reducing biases, and tackling ethical dilemmas, the section would be more robust if you briefly explored possible strategies to mitigate these issues. This would demonstrate a proactive and thoughtful approach to your research.",
+    "annotationId": 513,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Shelly Lawrence",
+        "role": "assistant",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 521,
+    "user": "Gina Burns",
+    "role": "student",
+    "text": "Click on the annotation on the next page :). CARE doesn't seem to allow overarching annotations.",
+    "annotationId": 514,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 522,
+    "user": "Gina Burns",
+    "role": "student",
+    "text": "I appreciate how you address each sub-research question (Sub-RQ) separately, clearly outlining both the quantitative and qualitative methodologies. This structured approach not only ensures clarity but also demonstrates a thorough understanding of how each component contributes to answering the overarching research questions. I like the integration of qualitative interviews with doctors in particular, as it adds a real-world perspective and emphasizes the practical applicability of the proposed generative AI model.\nHowever, while the methodology is well-detailed, it would benefit from a bit more depth in explaining how you plan to assess key metrics like clinical relevance and interpretability ratings. Additionally, while the ethical considerations are robust, it would strengthen the section to briefly address how potential biases in training data will be mitigated, given the significance of fairness in healthcare applications. Taking this feedback into consideration should make your methodology even more compelling and comprehensive.",
+    "annotationId": 515,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Shelly Lawrence",
+        "role": "assistant",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 523,
+    "user": "Gina Burns",
+    "role": "student",
+    "text": "I really like this part - it’s concise and gives a clear teaser of your research, which draws the reader in. You mention focusing on interpretability, patient outcomes, and real-world use, which sparks curiosity and sets up the importance of your methodology nicely. You might just want to briefly tie it back to the challenges mentioned earlier to make the connection even stronger.",
+    "annotationId": 516,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 524,
+    "user": "Gina Burns",
+    "role": "student",
+    "text": "A good Motivation section should clearly outline the problem, the domain it belongs to, and its broader significance, providing a strong foundation for the research. While the opening quote does a good job of underlining the potential of generative AI in healthcare, the shift to discussing challenges feels abrupt and lacks enough context. It’s not immediately clear how and what advancements in AI relate to the specific issues within personalized medicine. To make this clearer, you could start by emphasizing the importance of personalized medicine as a whole, and then introduce generative AI as a potential solution to its key challenges. This approach would create a more cohesive narrative and help draw the reader into the significance of your research.",
+    "annotationId": 517,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Shelly Lawrence",
+        "role": "assistant",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 525,
+    "user": "Gina Burns",
+    "role": "student",
+    "text": "A good sub-research question should be focused and actionable, and I do think your RQ is quite fitting. However, it does feel a bit too broad right now, especially for the scope of a bachelors thesis. While you do mention your target group being limited to people with chronic diseases like diabetes or cancer in your methodology section, you should also mention it here. Also, consider being more precise about the type of data the AI will work with, like patient history or genetic data. ",
+    "annotationId": 518,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Shelly Lawrence",
+        "role": "assistant",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 526,
+    "user": "Gina Burns",
+    "role": "student",
+    "text": "This exposé tries to explore how generative AI, particulary NLP models and multi-modal learning, can assist in creating personal treatment plans. Within his thesis, the author will try to research the interpretability of the model's output aswell as investigating the effectiveness of patient-centric treatment plans. The study will lean on theoretical frameworks such as explainable AI.",
+    "annotationId": 519,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  }
+]

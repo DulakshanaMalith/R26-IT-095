@@ -1,0 +1,167 @@
+[
+  {
+    "id": 1222,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "This seems out of place",
+    "annotationId": 1200,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1223,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "Should be the end of a sentence",
+    "annotationId": 1201,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1224,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "this wording makes no sense to me",
+    "annotationId": 1202,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1225,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "Reference?",
+    "annotationId": 1203,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1226,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "This seems a bit like an overstatement. Would rather write 'could be able...'",
+    "annotationId": 1204,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1227,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "I would make clear that its about the use of Gen AI instead of just saying advanced data analysis",
+    "annotationId": 1205,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1228,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "Good division",
+    "annotationId": 1206,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1229,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "Your approach section would benefit from structuring into seperate paragraphs",
+    "annotationId": 1207,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1230,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "This whole paragraph is well written, but it is more an explanation of the problem and possible solution and thus would belong into the beginning of the motivation. In the approach.",
+    "annotationId": 1208,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1231,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "this makes no sense",
+    "annotationId": 1209,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1232,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "This is a good explanation, but it is rather the theoretic backgound and should thus be included before the methodology",
+    "annotationId": 1210,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1233,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "Missing whitespace",
+    "annotationId": 1211,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1234,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "Would rephrase this to a more neutral sentence",
+    "annotationId": 1212,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1235,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "would rephrase this",
+    "annotationId": 1213,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1236,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "It would be beneficial*",
+    "annotationId": 1214,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  }
+]

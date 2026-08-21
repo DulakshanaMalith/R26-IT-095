@@ -1,0 +1,46 @@
+[
+  {
+    "id": 2790,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "The table is unnessarily big, please fix this for the final submission!",
+    "annotationId": 2742,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 2791,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "AT TUDa Thesis are not printed",
+    "annotationId": 2743,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 2792,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Good RQs!\n",
+    "annotationId": 2744,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 2793,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Valuable information to know your reasoning",
+    "annotationId": 2745,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  }
+]

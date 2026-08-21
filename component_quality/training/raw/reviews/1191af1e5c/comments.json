@@ -1,0 +1,136 @@
+[
+  {
+    "id": 467,
+    "user": "Joshua Acosta",
+    "role": "student",
+    "text": "Wikipedia is not a great reference.",
+    "annotationId": 460,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 468,
+    "user": "Joshua Acosta",
+    "role": "student",
+    "text": "This term would benefit from a brief definition.",
+    "annotationId": 461,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Lisa Jones",
+        "role": "assistant",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 469,
+    "user": "Joshua Acosta",
+    "role": "student",
+    "text": "Using a quote is a great introduction into the topic.\nThis quote fits perfectly for this topic.",
+    "annotationId": 462,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 470,
+    "user": "Joshua Acosta",
+    "role": "student",
+    "text": "The Subtitle doesn't tell us much about the content of the paper. The Title is really captivating and would work really well with a stronger subtitle, that indicates the direction of the paper.",
+    "annotationId": 463,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Lisa Jones",
+        "role": "assistant",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 471,
+    "user": "Joshua Acosta",
+    "role": "student",
+    "text": "The SOTA is not really explained. It could use a deeper dive into the topic and maybe some concrete examples.",
+    "annotationId": 464,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Lisa Jones",
+        "role": "assistant",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 472,
+    "user": "Joshua Acosta",
+    "role": "student",
+    "text": "The RQ is very interesting. The sub questions a well formulated and dive into the topic very thoroughly.",
+    "annotationId": 465,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 473,
+    "user": "Joshua Acosta",
+    "role": "student",
+    "text": "This term would benefit from a brief definition.",
+    "annotationId": 466,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Lisa Jones",
+        "role": "assistant",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 474,
+    "user": "Joshua Acosta",
+    "role": "student",
+    "text": "The theoretical framework is well picked and works well with these research questions.",
+    "annotationId": 467,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 475,
+    "user": "Joshua Acosta",
+    "role": "student",
+    "text": "This mixed-methods approach is very feasable for this research, and it describes clearly how they plan to answer each SRQ.\n",
+    "annotationId": 468,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 476,
+    "user": "Joshua Acosta",
+    "role": "student",
+    "text": "The referece used for the SOTA is from 1997. This is too old to reflect the current SOTA.",
+    "annotationId": 469,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  }
+]

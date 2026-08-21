@@ -1,0 +1,461 @@
+[
+  {
+    "id": 1913,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "Semantic structure should be inferred from test. Unecessary tagging in text. Remove tags.",
+    "annotationId": 1883,
+    "parentCommendId": null,
+    "tags": [
+      "Structure",
+      "Style"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1914,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "Title should introduce topic and raise interest. Uninspired, boring title (because it is the given title). Include planned research into title",
+    "annotationId": 1884,
+    "parentCommendId": null,
+    "tags": [
+      "Style"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1915,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "Abbreviations should be introduced by mentioning their meaning. Not done here. Mention their actual name first with abbreviation in brackets",
+    "annotationId": 1885,
+    "parentCommendId": null,
+    "tags": [
+      "Style"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1916,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "Quotations should be consistent and contain relevant information. Author is missing. Add author, they are listed in the paper.",
+    "annotationId": 1886,
+    "parentCommendId": null,
+    "tags": [
+      "Formal"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1917,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "State of the art should position this research into context. It gets to the point",
+    "annotationId": 1887,
+    "parentCommendId": null,
+    "tags": [
+      "Structure"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1918,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "Methodology should describe and convince, how the research questions are to be answered. You list several methods, but do not explain their purpose.",
+    "annotationId": 1888,
+    "parentCommendId": null,
+    "tags": [
+      "Research"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1919,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "Any method must make a step towards answering research questions. You do not mention RQs, thus you do not argue for the necessity of this method.",
+    "annotationId": 1889,
+    "parentCommendId": null,
+    "tags": [
+      "Research"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1920,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "Not fitting here. Move it up into the theoretical framework.",
+    "annotationId": 1890,
+    "parentCommendId": null,
+    "tags": [
+      "Research"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1921,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "The theoretical framwork creates base for the methodoloy, arguing for it. This makes sense, but is not convincing due to the lack of ideas connecting both theories; it is very shallow.",
+    "annotationId": 1891,
+    "parentCommendId": null,
+    "tags": [
+      "Research"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1922,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "A thesis should be submitted , not an exposé.",
+    "annotationId": 1892,
+    "parentCommendId": null,
+    "tags": [
+      "Formal"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1923,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "Methodology sets out a clear scope. Getting 50 participants is hard. Multiplying that by 2 makes the methodolgy unrealisitic.",
+    "annotationId": 1893,
+    "parentCommendId": null,
+    "tags": [
+      "Research"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1924,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "No citation.",
+    "annotationId": 1894,
+    "parentCommendId": null,
+    "tags": [
+      "Formal"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1925,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "Questionable, unsupported statement; citations and arguments missing.",
+    "annotationId": 1895,
+    "parentCommendId": null,
+    "tags": [
+      "Research"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1926,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "SOTA should state key points of related works. This is a very shallow descrption. Go more into detail.",
+    "annotationId": 1896,
+    "parentCommendId": null,
+    "tags": [
+      "Research"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1927,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "The gaps should identified and stated in this exposé.",
+    "annotationId": 1897,
+    "parentCommendId": null,
+    "tags": [
+      "Formal"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1928,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "Hook should demonstrate the extent of the problem or a vision. The vision is unfounded. Add citations.",
+    "annotationId": 1898,
+    "parentCommendId": null,
+    "tags": [
+      "Style"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1929,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "Link is not correctly formatted.",
+    "annotationId": 1899,
+    "parentCommendId": null,
+    "tags": [
+      "Style"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1930,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "Paper has the wrong author.",
+    "annotationId": 1900,
+    "parentCommendId": null,
+    "tags": [
+      "Formal"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1931,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "Reasearch questions (RQs) should be defined in the exposé here. Refining RQs is a legitiimate concern, though.",
+    "annotationId": 1901,
+    "parentCommendId": null,
+    "tags": [
+      "Formal"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1932,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "Too many research questions (RQs). They are also disjunct, requiring multiple different research methods.",
+    "annotationId": 1902,
+    "parentCommendId": null,
+    "tags": [
+      "Research"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1933,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "RQ2: It does not relate to RQ1 due to its technical nature. Questionably related to the other RQs.",
+    "annotationId": 1903,
+    "parentCommendId": null,
+    "tags": [
+      "Research"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1934,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "RQ1: Valid research question in itself. Can be more precise by including sub-RQs.",
+    "annotationId": 1904,
+    "parentCommendId": null,
+    "tags": [
+      "Research"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1935,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "RQ3: Mentioned in the anchor, but not explained sufficiently.",
+    "annotationId": 1905,
+    "parentCommendId": null,
+    "tags": [
+      "Research"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1936,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "RQ4: Valid question, but missing supporting context, making it feel out-of-place here.",
+    "annotationId": 1906,
+    "parentCommendId": null,
+    "tags": [
+      "Research"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1937,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "Any theory must be cited or argued for. This is not the case here. Cut it out or cite it properly.",
+    "annotationId": 1907,
+    "parentCommendId": null,
+    "tags": [
+      "Formal",
+      "Research"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1938,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "Claim without citation or arguments",
+    "annotationId": 1908,
+    "parentCommendId": null,
+    "tags": [
+      "Research"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1939,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "Claim without citation or arguments",
+    "annotationId": 1909,
+    "parentCommendId": null,
+    "tags": [
+      "Research"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1940,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "Relevant theory, which is summarised and put into use.",
+    "annotationId": 1910,
+    "parentCommendId": null,
+    "tags": [
+      "Research"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1941,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "This section is not related to the prior one and \nis very unpleasant to read.",
+    "annotationId": 1911,
+    "parentCommendId": null,
+    "tags": [
+      "Structure",
+      "Style"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1942,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "Use proper scientific language. This word does not exist in the English language. Fix the typo or remove it.",
+    "annotationId": 1912,
+    "parentCommendId": null,
+    "tags": [
+      "Style"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1943,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "Methodology should contain methods and explain their purpose. There is no mention of ethical problems prior, so why is this necessary? Cut it out or get a reason.",
+    "annotationId": 1913,
+    "parentCommendId": null,
+    "tags": [
+      "Research"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1944,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "Listing issues without explaining their origin and effect is not useful.",
+    "annotationId": 1914,
+    "parentCommendId": null,
+    "tags": [
+      "Style"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1945,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "The schedule should put the methodology into a conrete plan. You mention a step not described in the approach. Extend the approach to include this step.",
+    "annotationId": 1915,
+    "parentCommendId": null,
+    "tags": [
+      "Research"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1946,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "Each step in schedule should make progress to answering RQs. It is unclear, to what this step contributes to. Add the relevant RQ.",
+    "annotationId": 1916,
+    "parentCommendId": null,
+    "tags": [
+      "Research",
+      "Structure"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1947,
+    "user": "Shelby Cummings",
+    "role": "student",
+    "text": "Not in the scope of this exposé. Not marked as a weakness as it may be a requirement in other labs.",
+    "annotationId": 1917,
+    "parentCommendId": null,
+    "tags": [
+      "Formal"
+    ],
+    "votes": [],
+    "group": 1
+  }
+]

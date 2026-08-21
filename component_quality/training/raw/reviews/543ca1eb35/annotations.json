@@ -1,0 +1,157 @@
+[
+  {
+    "id": 1530,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": " (2019,Deutches Forschungszentrums für KI)",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1470,
+              "type": "TextPositionSelector",
+              "start": 1428
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " (2019,Deutches Forschungszentrums für KI)",
+              "prefix": " physics school book “Hypermind”",
+              "suffix": " is a dynamic book that adapts t"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 2
+  },
+  {
+    "id": 1531,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "the tend to ignore mistakes by just giving the correct answer",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1805,
+              "type": "TextPositionSelector",
+              "start": 1744
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "the tend to ignore mistakes by just giving the correct answer",
+              "prefix": "teachers to work with errors as ",
+              "suffix": "s. Furthermore,a qualitative or "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 2
+  },
+  {
+    "id": 1532,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "with several applications",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2081,
+              "type": "TextPositionSelector",
+              "start": 2056
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "with several applications",
+              "prefix": " help childrenlearn mathematics ",
+              "suffix": " developed to exercise in the pr"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 2
+  },
+  {
+    "id": 1533,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "(in the future ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2301,
+              "type": "TextPositionSelector",
+              "start": 2286
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "(in the future ",
+              "prefix": "alyse how Large Language Models ",
+              "suffix": "LLMs) can be a usefultool for te"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 2
+  },
+  {
+    "id": 1534,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": " (and why not also for parents)",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2383,
+              "type": "TextPositionSelector",
+              "start": 2352
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " (and why not also for parents)",
+              "prefix": "ultool for teachers and students",
+              "suffix": " to grow out of the mistakes in "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "topic": "Generative AI in Healthcare",
+  "author": "Diana Dyer",
+  "reviews": {
+    "1": {
+      "review": 1,
+      "hash": "db836a5f05",
+      "reviewer": "Sydney Carlson",
+      "role": "student",
+      "size": 4795,
+      "group": 1
+    },
+    "2": {
+      "review": 2,
+      "hash": "35369e0396",
+      "reviewer": "Stephanie Morgan",
+      "role": "expert",
+      "size": 2840,
+      "group": 2
+    },
+    "3": {
+      "review": 3,
+      "hash": "a7589658d5",
+      "reviewer": "Brenda Wagner",
+      "role": "assistant",
+      "size": 1406,
+      "group": 1
+    }
+  }
+}

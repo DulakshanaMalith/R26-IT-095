@@ -1,0 +1,200 @@
+[
+  {
+    "id": 642,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Good hook",
+    "annotationId": 634,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 643,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Partially right. When sticking to the facts, you can only conclude that there is definitely a need for more accurate and effective treatments, and it could be interesting to use Generative AI as part of the solution.",
+    "annotationId": 635,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 644,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "You are repeating yourself here a bit after the following paragraph",
+    "annotationId": 636,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 645,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Good combination and integration of related work",
+    "annotationId": 637,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 646,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Good",
+    "annotationId": 638,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 647,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Be more precise here",
+    "annotationId": 639,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 648,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Formulate them as specific research questions. (\"How can Generative Ai ...?\") - you also have good sub-research questions later, but they should already be defined here and then you can refer to them later (e.g. via \"RQ1.1\")",
+    "annotationId": 640,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 649,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Good",
+    "annotationId": 641,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 650,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Good sub-RQ, but this should have been mentioned in the \"Motivation\" section. ",
+    "annotationId": 642,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 651,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Where do you get metrics from traditional methods?",
+    "annotationId": 643,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 652,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Agreed, good approach",
+    "annotationId": 644,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 653,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "That is very ambitious to create separate surveys and collect enough participants for all these groups",
+    "annotationId": 645,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 654,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Very much, yes",
+    "annotationId": 646,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 655,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Ambitious when accounting for all different target groups",
+    "annotationId": 647,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 656,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Very good",
+    "annotationId": 648,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 657,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "In the motivation section, it seems to me that you are mainly talking about medications and treatments - now you seem to focus mainly on drug development and how GenAI can be used to support/accelerate this",
+    "annotationId": 649,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 658,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "All in all good, but I am missing the case studies, so your \"second step\" and it seems overall a bit optimistic - e.g. one week to prepare the interviews. Good however how much time you allocated for writing",
+    "annotationId": 650,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 659,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "If you mention this source (and the next ones as well), don't just say it \"shows how ...\", but summarize them and combine them into an idea that is easy to understand for the reader. Why is this important, how good are these methods etc instead of just describing the overall paper.",
+    "annotationId": 651,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  }
+]

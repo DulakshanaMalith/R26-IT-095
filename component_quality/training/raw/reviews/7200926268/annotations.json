@@ -1,0 +1,374 @@
+[
+  {
+    "id": 4842,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "]",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 869,
+              "type": "TextPositionSelector",
+              "start": 868
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "]",
+              "prefix": "nking process of the students [8",
+              "suffix": "). In our mostly frontal, teachi"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 4843,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Large Language Models (in the future LLMs)",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2306,
+              "type": "TextPositionSelector",
+              "start": 2264
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Large Language Models (in the future LLMs)",
+              "prefix": "of this study is to analyse how ",
+              "suffix": " can be a usefultool for teacher"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 4844,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": " ́",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5776,
+              "type": "TextPositionSelector",
+              "start": 5774
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " ́",
+              "prefix": "f the tasks so that students won",
+              "suffix": "t fail, expanding the studentnet"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4845,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "chat ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6780,
+              "type": "TextPositionSelector",
+              "start": 6775
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "chat ",
+              "prefix": "ques with technologies, such as ",
+              "suffix": "GPT, in aconstructive way to tea"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4846,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": " Education cannot anymore be understood without technologies, butnew technologies often challenge teachers to reconfigure not only the way they consider technologies, butalso all of the tree components of their knowledge.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7049,
+              "type": "TextPositionSelector",
+              "start": 6828
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " Education cannot anymore be understood without technologies, butnew technologies often challenge teachers to reconfigure not only the way they consider technologies, butalso all of the tree components of their knowledge.",
+              "prefix": "ctive way to teach the contents.",
+              "suffix": "Further, the integration of LLMs"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4847,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "chat GPT",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7835,
+              "type": "TextPositionSelector",
+              "start": 7827
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "chat GPT",
+              "prefix": "ed intelligent assistants, like ",
+              "suffix": ".Three teachers of a Primary Sch"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4848,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "toutorial ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 9241,
+              "type": "TextPositionSelector",
+              "start": 9231
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "toutorial ",
+              "prefix": "icalFrameworkDevelop a Chat GPT ",
+              "suffix": "(one for teachers, one for stu-d"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4849,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Recruitment Contact schools and teachers, coordinate with them the startpoint and an introducing meeting",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 9499,
+              "type": "TextPositionSelector",
+              "start": 9395
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Recruitment Contact schools and teachers, coordinate with them the startpoint and an introducing meeting",
+              "prefix": " and interviews for teachers2 8 ",
+              "suffix": "3 9-11 Implementationin classroo"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4850,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "and",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 9766,
+              "type": "TextPositionSelector",
+              "start": 9763
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "and",
+              "prefix": "ta Preparation Sort the surveys ",
+              "suffix": "4 13 Qualitative Analy-sisEvalua"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4851,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "All chapters will be revised",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 10148,
+              "type": "TextPositionSelector",
+              "start": 10120
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "All chapters will be revised",
+              "prefix": "s chapter.5 19-20 Full Revision ",
+              "suffix": ". Proofreading6 21 Final Revisio"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4852,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "printing",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 10289,
+              "type": "TextPositionSelector",
+              "start": 10281
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "printing",
+              "prefix": "ubmis-sion.Time for unexpected, ",
+              "suffix": ", submitting.5Bibliography[1] La"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4853,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "State of the art",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2986,
+              "type": "TextPositionSelector",
+              "start": 2970
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "State of the art",
+              "prefix": "What are limitations?22 Approach",
+              "suffix": "Mistakes need to be treated very"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  }
+]

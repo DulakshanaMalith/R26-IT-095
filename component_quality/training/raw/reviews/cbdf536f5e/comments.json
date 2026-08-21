@@ -1,0 +1,145 @@
+[
+  {
+    "id": 3746,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "None",
+    "annotationId": 3680,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3747,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "This seems a little much and unstructured, your RQs should be precise.",
+    "annotationId": 3681,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3748,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "You should also motivate your research and not only the topic in general",
+    "annotationId": 3682,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3749,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "This formulation is pretty weird as this is an exposé so the thesis won't follow in this text.",
+    "annotationId": 3683,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3750,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "This opening is lovely as it arouses interest in further reading. The sentences could be connected more neatly, though.",
+    "annotationId": 3684,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3751,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "This doesn't sound well",
+    "annotationId": 3685,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3752,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "This is not enough to cover SOTA, as it should show the current development in that area, and I find it hard to believe that this is the only development. Furthermore, this paragraph should be rewritten to enhance its readability.",
+    "annotationId": 3686,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3753,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "What do you want to achieve exactly? After reading this, it is unclear to me what you want to do and achieve-",
+    "annotationId": 3687,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3754,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "What about the rest of your RQs?",
+    "annotationId": 3688,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3755,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "What methods are mixed?",
+    "annotationId": 3689,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3756,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Thesis usually take 26 weeks.",
+    "annotationId": 3690,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3757,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "This is very broad. Furthermore, it is very unrealistic to conduct a survey only.",
+    "annotationId": 3691,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3758,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Very few about the topic",
+    "annotationId": 3692,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  }
+]

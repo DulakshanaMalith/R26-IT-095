@@ -1,0 +1,591 @@
+[
+  {
+    "id": 4285,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": ", will revolutionize education.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 638,
+              "type": "TextPositionSelector",
+              "start": 607
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": ", will revolutionize education.",
+              "prefix": "ls (LLMs),such as OpenAI’s GPT-4",
+              "suffix": "Advanced models now have the pos"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4286,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Recent studies revealed that more than 60% of students are not satisfied by traditional teaching methods andstruggle in one-size-fits-all classrooms",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 519,
+              "type": "TextPositionSelector",
+              "start": 371
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Recent studies revealed that more than 60% of students are not satisfied by traditional teaching methods andstruggle in one-size-fits-all classrooms",
+              "prefix": "ber 9, 2024Darmstadt1 Motivation",
+              "suffix": ". On the other hand, advancement"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 4287,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "However, there is a lack of robust metrics to evaluate their effectiveness in personalized learning. Currentmeasures often relate to generic performance indicators, leaving a gap in the understanding of how thesesystems contribute to individual learning outcomes, engagement, and satisfaction",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1120,
+              "type": "TextPositionSelector",
+              "start": 828
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "However, there is a lack of robust metrics to evaluate their effectiveness in personalized learning. Currentmeasures often relate to generic performance indicators, leaving a gap in the understanding of how thesesystems contribute to individual learning outcomes, engagement, and satisfaction",
+              "prefix": "he unique needs of each student.",
+              "suffix": ".This research aims to bridge th"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 4288,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "This research aims to bridge this gap by identifying metrics that can reliably measure the impact of LLM-basedlearning agents in creating personalized learning pathways",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1289,
+              "type": "TextPositionSelector",
+              "start": 1121
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "This research aims to bridge this gap by identifying metrics that can reliably measure the impact of LLM-basedlearning agents in creating personalized learning pathways",
+              "prefix": "s, engagement, and satisfaction.",
+              "suffix": ".How can the effectiveness of LL"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 4289,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "How can the effectiveness of LLM-based teaching agents be evaluated in fostering personalized learningexperiences?Main Research Question: How can the effectiveness of LLM-based teaching agents be evaluated in fosteringpersonalized learning experiences?",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1542,
+              "type": "TextPositionSelector",
+              "start": 1290
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "How can the effectiveness of LLM-based teaching agents be evaluated in fostering personalized learningexperiences?Main Research Question: How can the effectiveness of LLM-based teaching agents be evaluated in fosteringpersonalized learning experiences?",
+              "prefix": " personalized learning pathways.",
+              "suffix": "To answer the question mentioned"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4290,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": " ;",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1642,
+              "type": "TextPositionSelector",
+              "start": 1640
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " ;",
+              "prefix": " it to subquestions as following",
+              "suffix": "1. How do students interact with"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4291,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "H",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1869,
+              "type": "TextPositionSelector",
+              "start": 1868
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "H",
+              "prefix": "s, such as skill improvement?3. ",
+              "suffix": "ow do students and educators per"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4292,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "What are the constraints and challenges in deploying LLMs for personalized learning ?",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2074,
+              "type": "TextPositionSelector",
+              "start": 1989
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "What are the constraints and challenges in deploying LLMs for personalized learning ?",
+              "prefix": "ents in aneducational sense ?4. ",
+              "suffix": "22 ApproachSOTAPrevious research"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 4293,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "SOTA",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2089,
+              "type": "TextPositionSelector",
+              "start": 2085
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "SOTA",
+              "prefix": "rsonalized learning ?22 Approach",
+              "suffix": "Previous research like Brusilovs"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4294,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Despite this, existing research often lacks metrics to comprehensively evaluate their effectiveness, particularlyin promoting personalized learning",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2621,
+              "type": "TextPositionSelector",
+              "start": 2474
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Despite this, existing research often lacks metrics to comprehensively evaluate their effectiveness, particularlyin promoting personalized learning",
+              "prefix": "and context-aware responses [4].",
+              "suffix": ".This research aims to address t"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 4295,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Bloom’s Taxonomy (1956) [1],",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3060,
+              "type": "TextPositionSelector",
+              "start": 3032
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Bloom’s Taxonomy (1956) [1],",
+              "prefix": "zed content affect the outcomes.",
+              "suffix": " which categorizes cognitive ski"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 4296,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "LLMs could facilitate this process by providing content tailored to a student’s current cognitive level, offeringexplanations, practice tasks, whilst providing real-time feedback [3]. However, higher-order tasks, such asevaluating and synthesizing, require a deeper understanding of context, which may still necessitate humanguidance.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3711,
+              "type": "TextPositionSelector",
+              "start": 3377
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "LLMs could facilitate this process by providing content tailored to a student’s current cognitive level, offeringexplanations, practice tasks, whilst providing real-time feedback [3]. However, higher-order tasks, such asevaluating and synthesizing, require a deeper understanding of context, which may still necessitate humanguidance.",
+              "prefix": "ethods thatadapt to their needs.",
+              "suffix": "This framework helps define the "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 4297,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Experiments: a scenario where students interact with a teaching agent to gather data on performance andusage",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4257,
+              "type": "TextPositionSelector",
+              "start": 4149
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Experiments: a scenario where students interact with a teaching agent to gather data on performance andusage",
+              "prefix": "estscores), and retention rates.",
+              "suffix": ".3Qualitative Methods:Interviews"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4298,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Source Research:literature review to identify the existing evaluation frameworks and adapt them for LLM teaching agents",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4621,
+              "type": "TextPositionSelector",
+              "start": 4502
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Source Research:literature review to identify the existing evaluation frameworks and adapt them for LLM teaching agents",
+              "prefix": " uniquechallenges and successes.",
+              "suffix": ".Target:The study will focus on "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4299,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Tools: Use software like Python and data analysis platforms (e.g., SPSS or Python libraries) for processingquantitative results.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5049,
+              "type": "TextPositionSelector",
+              "start": 4921
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Tools: Use software like Python and data analysis platforms (e.g., SPSS or Python libraries) for processingquantitative results.",
+              "prefix": "ticipants.Practical realization:",
+              "suffix": "Challenges:Ethical: Address priv"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4300,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Collect data through experiments and case studies",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6047,
+              "type": "TextPositionSelector",
+              "start": 5998
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Collect data through experiments and case studies",
+              "prefix": "lection.4 13-14 Data Collection ",
+              "suffix": ".4 15-16 Data Analysis Analyze d"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4301,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Bibliography",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6426,
+              "type": "TextPositionSelector",
+              "start": 6414
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Bibliography",
+              "prefix": "ssion Submit the final version.5",
+              "suffix": "[1] Helmut Balzert and et al. So"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 6
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4302,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Helmut Balzert and et al. Software-Engineering: Grundlagen, Menschen, Prozesse, Techniken. 2nd. SpringerVieweg, 2011",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6546,
+              "type": "TextPositionSelector",
+              "start": 6430
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Helmut Balzert and et al. Software-Engineering: Grundlagen, Menschen, Prozesse, Techniken. 2nd. SpringerVieweg, 2011",
+              "prefix": " final version.5Bibliography[1] ",
+              "suffix": ".[2] Peter Brusilovsky and Eva M"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 6
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 4303,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Interactive LLM-BasedTeaching Agents",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 96,
+              "type": "TextPositionSelector",
+              "start": 60
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Interactive LLM-BasedTeaching Agents",
+              "prefix": "iquitous KnowledgeProcessing Lab",
+              "suffix": "Learning takes a new form : Metr"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 1
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  }
+]

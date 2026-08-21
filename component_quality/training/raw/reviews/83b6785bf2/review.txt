@@ -1,0 +1,22 @@
+Summary:
+The paper explores how holographic technologies and artificial intelligence (AI) can be combined to create an interactive assistant that fosters a stronger emotional connection with users. Central to the research is examining the impact of holographic interaction on user engagement and comparing user responses to holographic assistants versus conventional augmented reality (AR) systems. Additionally, the paper addresses potential ethical and privacy challenges associated with implementing holographic assistants. 
+
+Strengths:
+A compelling hook is essential for a strong exposé and is crucial in the motivation section. This exposé achieves this by discussing how holographic technologies were often considered things out of science fiction movies, but now the possibility is here that holographic AI assistants are soon to become a reality. This starts the exposé with an engaging hook that captures the reader's attention and simultaneously emphasizes the relevance of the research question, setting the stage for the study's innovative potential and societal impact.
+
+Weaknesses:
+A clear and logical structure is essential for creating a strong exposé. It helps readers better understand your text without jumping back and forth.
+Unfortunately, your exposé lacks a coherent structure. It only presents a motivation, which includes elements that should be part of the approach instead of separating the two sections. Additionally, it does not adhere to the structure outlined in the "Guidelines for Your Exposé" slides or the evaluation criteria sheet. For instance, your research questions (RQs) are placed on page three of your exposé in the middle of the text after SOTA. In contrast, the provided sources position the RQs at the end of the motivation section, which is before the SOTA. To improve the structure, consider reviewing the provided guidelines and following their recommendations more closely. After drafting your exposé, you can use the evaluation criteria sheet as a checklist to ensure all elements are in the correct order. Alternatively, reread your exposé from a reader's perspective without prior background knowledge and check if the current order makes logical sense.
+
+The methodology is a central part of the approach and the whole exposé because it shows how the RQs will be answered and helps to get a sense of the research scale. You provide a short methodology in your exposé, but you describe it briefly on the surface. It misses a detailed description of how you want to carry out your RQs. You wrote, "...finding, analyzing, and evaluating existing literature and data." but what concrete research question do you want to answer with that? You should specifically address the research questions and try to go as detailed as possible to set clear boundaries for your research.
+It could help you to go to every RQ you have and think about how you want to answer it and if the way is still within the range of a bachelor's thesis. To self-check your written methodology, you can return to the RQs and consider whether everything is answered. If not, you can go back to your methodology and fine-tune it further.
+
+Others:
+Your paper contains citation errors, such as "[patil2019holographic]," which results in the absence of a bibliography.
+Also, you often start your sentences with bullet points and then "-" or ":", which makes them really hard to read.
+Furthermore, you changed the template, so there are only two sections, and your schedule table doesn't fit on the page. Maybe you can make sure that next time, you still have the current template and that your table fits on the page. 
+
+
+
+
+This work was created independently and was linguistically revised with the help of Grammarly/ChatGPT.

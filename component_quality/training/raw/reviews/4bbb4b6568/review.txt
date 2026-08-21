@@ -1,0 +1,12 @@
+Summary:
+This study aims at finding out the state of the art, potential improvements, usability and ethical concerns of holographic AI assistants in a healthcare and education context.
+
+Strengths:
+The theoretical framework is embedded well into the approach
+You show a high level of detail when planning your studies, including declarations of intent, ethical considerations, hardware availability etc
+
+Weaknesses:
+At the end of the first section, the problem domain should be clear. Your introduction is very general and only touches on the overall topic of holograms. Try to focus on a more specific sub-problem regarding holographic AI and tailor your introduction towards that sub-problem.
+Research questions are designed to be specific and feasible during your study. You have four different questions that seem quite unrealted and are stated very general. Instead of trying to cover all potential topics of holographic AI assistants, pick and focus on a specific problem, and provide a more detailed, narrowed down RQ.
+SOTA should be presented and contextualized by you to give the reader an overview over the current state in a domain, limitations and strengths. You merely describe three different papers. Since you seem have read them and they may seem clear to you, combine them in a way that the reader is up-to-date and your research stands out at the end of the section.
+The methods chosen should be tailored specifically towards the research questions. While you put a lot of thoughts into the organizational side of planning the studies, there is a lack of detail about how they will aim to help answering the research questions. Both referring to the research questions (e.g. via RQ1.1) and making implicitly more clear how you answer all of the planned RQs will help.

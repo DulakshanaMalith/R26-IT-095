@@ -1,0 +1,262 @@
+[
+  {
+    "id": 3962,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Citation/Source would be useful",
+    "annotationId": 3896,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3963,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "types:\n",
+    "annotationId": 3897,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3964,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Not a good stand-alone sentence",
+    "annotationId": 3898,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3965,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "current handling of the problem missing",
+    "annotationId": 3899,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Gregory Curry",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 3966,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "It's neither creative nor a good title. Furthermore, the subtitle is not a subtitle but a continuation of the title.",
+    "annotationId": 3900,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3967,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Weakness but very broad.",
+    "annotationId": 3901,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3968,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Own work\n",
+    "annotationId": 3902,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3969,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Combination of SOTA Research and own work unclear.",
+    "annotationId": 3903,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3970,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Partly hard to follow",
+    "annotationId": 3904,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3971,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Grammar",
+    "annotationId": 3905,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3972,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Overall, it is fitting and relevant, but at some points, it is hard to follow and poorly structured.",
+    "annotationId": 3906,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3973,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "In total 26 weeks",
+    "annotationId": 3907,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3974,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "No printing is needed.",
+    "annotationId": 3908,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3975,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Cut of, please make sure all content is displayed.",
+    "annotationId": 3909,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3976,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "?",
+    "annotationId": 3910,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3977,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "?\n",
+    "annotationId": 3911,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3978,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "missing article or plural",
+    "annotationId": 3912,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3979,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "same as in RQ1",
+    "annotationId": 3913,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3980,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "I would recommand using full sentences here.",
+    "annotationId": 3914,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3981,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Those are very broad so that I would limit them further.",
+    "annotationId": 3915,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3982,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "missing article",
+    "annotationId": 3916,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Gregory Curry",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 3983,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "missing article",
+    "annotationId": 3917,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Gregory Curry",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "topic": "The Holographic AI Assistant",
+  "author": "Rhonda Campbell",
+  "reviews": {
+    "1": {
+      "review": 1,
+      "hash": "d3badc8d84",
+      "reviewer": "Peter Hebert",
+      "role": "student",
+      "size": 3344,
+      "group": 1
+    },
+    "2": {
+      "review": 2,
+      "hash": "dad893c354",
+      "reviewer": "Willie Cervantes",
+      "role": "assistant",
+      "size": 1207,
+      "group": 1
+    },
+    "3": {
+      "review": 3,
+      "hash": "1bc5caa219",
+      "reviewer": "Shane Barnes",
+      "role": "expert",
+      "size": 1414,
+      "group": 2
+    }
+  }
+}

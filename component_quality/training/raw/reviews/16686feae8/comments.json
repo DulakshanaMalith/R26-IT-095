@@ -1,0 +1,145 @@
+[
+  {
+    "id": 5099,
+    "user": "Sherry Stokes",
+    "role": "student",
+    "text": "The text should be continuous and not be subdiveded",
+    "annotationId": 5019,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5100,
+    "user": "Sherry Stokes",
+    "role": "student",
+    "text": "This gives a very clear picture of the situation",
+    "annotationId": 5020,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5101,
+    "user": "Sherry Stokes",
+    "role": "student",
+    "text": "of data",
+    "annotationId": 5021,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5102,
+    "user": "Sherry Stokes",
+    "role": "student",
+    "text": "I would move this sentence to the beginning of the next paragraph",
+    "annotationId": 5022,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5103,
+    "user": "Sherry Stokes",
+    "role": "student",
+    "text": "This sentence is somewhat incoherent",
+    "annotationId": 5023,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5104,
+    "user": "Sherry Stokes",
+    "role": "student",
+    "text": "very nice",
+    "annotationId": 5024,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5105,
+    "user": "Sherry Stokes",
+    "role": "student",
+    "text": "very good point",
+    "annotationId": 5025,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5106,
+    "user": "Sherry Stokes",
+    "role": "student",
+    "text": "whats that?\n",
+    "annotationId": 5026,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5107,
+    "user": "Sherry Stokes",
+    "role": "student",
+    "text": "For example?",
+    "annotationId": 5027,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5108,
+    "user": "Sherry Stokes",
+    "role": "student",
+    "text": "this should be before",
+    "annotationId": 5028,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5109,
+    "user": "Sherry Stokes",
+    "role": "student",
+    "text": "Very good! Also thought about \"What comes after\"",
+    "annotationId": 5029,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5110,
+    "user": "Sherry Stokes",
+    "role": "student",
+    "text": "whats that?",
+    "annotationId": 5030,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5111,
+    "user": "Sherry Stokes",
+    "role": "student",
+    "text": "which stakeholder?\n",
+    "annotationId": 5031,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  }
+]

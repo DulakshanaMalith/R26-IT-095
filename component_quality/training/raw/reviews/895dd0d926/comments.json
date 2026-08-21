@@ -1,0 +1,186 @@
+[
+  {
+    "id": 3948,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "The citations should be at the end of a sentence e.g.\nThis is a sentence [1].\nYou using the citation in this way, sadly doesn't make it clear if you the source you are citing is for the sentence before and after.",
+    "annotationId": 3882,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Christian Edwards",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 3949,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "The point with the racial bias is interesting, but you should go into more detail as to how the racial bias would affect the training plan. ",
+    "annotationId": 3883,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3950,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Is this your research question? This isn't too obvious and should be stated clearer.",
+    "annotationId": 3884,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3951,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Is this easily done? If this is something which might not be easily achievable, you should mention it.",
+    "annotationId": 3885,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3952,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "For SOTA, you should always use more citations than only one - it's what the current scientific status of your research question is - there should be more citations.",
+    "annotationId": 3886,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3953,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Ai, even if it's a common abbreviation should be written out at least once",
+    "annotationId": 3887,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Christian Edwards",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 3954,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "\"hardle been dealt with\" would mean it has been dealt with, though sparsingly - include more sources!",
+    "annotationId": 3888,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3955,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "How? This feels very subjective to each patient",
+    "annotationId": 3889,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3956,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Here you used the correct citation format.",
+    "annotationId": 3890,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Christian Edwards",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 3957,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "If you use synthetic data, how do you plan to measure the satisfaction or preference of a person?",
+    "annotationId": 3891,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3958,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Interesting approach, good thought!",
+    "annotationId": 3892,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3959,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "This is too pessimistic, while it's good to have the obstacles in mind, this sounds way too pessimistic for you wanting to do it for your thesis",
+    "annotationId": 3893,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 3960,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Only in Month 5 and Week 17/24 you mention writing anything for your Thesis - be more explicit!",
+    "annotationId": 3894,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Christian Edwards",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 3961,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "This is far too late! you shouldn't be done with a draft this late.",
+    "annotationId": 3895,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Christian Edwards",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  }
+]

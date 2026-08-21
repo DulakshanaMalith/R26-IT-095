@@ -1,0 +1,405 @@
+[
+  {
+    "id": 89,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Rendering the Future:Photorealistic AI Avatars",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 106,
+              "type": "TextPositionSelector",
+              "start": 60
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Rendering the Future:Photorealistic AI Avatars",
+              "prefix": "iquitous KnowledgeProcessing Lab",
+              "suffix": "A Metric-driven Analysis of Clas"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 1
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 90,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "If the current development and adoption of AI and the Metaverse continues, holographic artificial intelligenceassistants will likely be present in most of our lives. They will need to be very natural to interact with, whichmeans they also need to look natural for the interaction not to feel artificial",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 669,
+              "type": "TextPositionSelector",
+              "start": 367
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "If the current development and adoption of AI and the Metaverse continues, holographic artificial intelligenceassistants will likely be present in most of our lives. They will need to be very natural to interact with, whichmeans they also need to look natural for the interaction not to feel artificial",
+              "prefix": "ber 9, 2024Darmstadt1 Motivation",
+              "suffix": ".One possible approach to achiev"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 91,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "These are however very difficult to create with current technology. While we havebeen able to create near photorealistic humans for some time, adapting this progress to real-time rendering,necessary for AI assistants, has been a bigger challenge. If realistic avatars are imperfect, communicating withthe assistant may always feel artificial, despite a perfect AI driving the conversation",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1186,
+              "type": "TextPositionSelector",
+              "start": 798
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "These are however very difficult to create with current technology. While we havebeen able to create near photorealistic humans for some time, adapting this progress to real-time rendering,necessary for AI assistants, has been a bigger challenge. If realistic avatars are imperfect, communicating withthe assistant may always feel artificial, despite a perfect AI driving the conversation",
+              "prefix": " like AIwith computer graphics. ",
+              "suffix": ". This is due to the uncannyvall"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 92,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "This is due to the uncannyvalley effect[4], where avatars that resemble humans, but fall short of full realism, can elicit discomfort",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1321,
+              "type": "TextPositionSelector",
+              "start": 1188
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "This is due to the uncannyvalley effect[4], where avatars that resemble humans, but fall short of full realism, can elicit discomfort",
+              "prefix": "ct AI driving the conversation. ",
+              "suffix": ".Currently, there are many class"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 93,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "which can appear more natural",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1620,
+              "type": "TextPositionSelector",
+              "start": 1591
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "which can appear more natural",
+              "prefix": "ural networks to create images, ",
+              "suffix": ".In this research, I will invest"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 94,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": " The focus will be on identifying the specificcases where neural rendering outperforms traditional approaches in terms of efficiency, realism, and ease ofimplementation",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1956,
+              "type": "TextPositionSelector",
+              "start": 1788
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " The focus will be on identifying the specificcases where neural rendering outperforms traditional approaches in terms of efficiency, realism, and ease ofimplementation",
+              "prefix": "of the art classical approaches.",
+              "suffix": ".22 ApproachSOTANeural rendering"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 95,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "In this research, I will investigate the neural rendering approaches used to render realistic AI avatars andcompare them the the state of the art classical approache",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1786,
+              "type": "TextPositionSelector",
+              "start": 1621
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "In this research, I will investigate the neural rendering approaches used to render realistic AI avatars andcompare them the the state of the art classical approache",
+              "prefix": ", which can appear more natural.",
+              "suffix": "s. The focus will be on identify"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 96,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "SOTA",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1972,
+              "type": "TextPositionSelector",
+              "start": 1968
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "SOTA",
+              "prefix": "ase ofimplementation.22 Approach",
+              "suffix": "Neural rendering is a relatively"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 97,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Structural Similarity Index measure",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3805,
+              "type": "TextPositionSelector",
+              "start": 3770
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Structural Similarity Index measure",
+              "prefix": ",a ground truth. I will use the ",
+              "suffix": " (SSIM)[8], which measures how s"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 98,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "I will use my personal DSLR camer",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5077,
+              "type": "TextPositionSelector",
+              "start": 5044
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "I will use my personal DSLR camer",
+              "prefix": "ationis based on real pictures, ",
+              "suffix": "a to capture a high-quality scan"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 99,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Thus, the theoretical framework should only be taken as a basis for the comparison. Because of this, the finalassessment, while based on objective metrics, will be somewhat subjective.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7007,
+              "type": "TextPositionSelector",
+              "start": 6823
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Thus, the theoretical framework should only be taken as a basis for the comparison. Because of this, the finalassessment, while based on objective metrics, will be somewhat subjective.",
+              "prefix": "like these individually as well.",
+              "suffix": "43 ScheduleMonth Week Task Descr"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 100,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Schedule",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7018,
+              "type": "TextPositionSelector",
+              "start": 7010
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Schedule",
+              "prefix": " will be somewhat subjective.43 ",
+              "suffix": "Month Week Task Description1 1 P"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 101,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Bibliography",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8319,
+              "type": "TextPositionSelector",
+              "start": 8307
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Bibliography",
+              "prefix": "printing, and final submis-sion5",
+              "suffix": "[1] Yangdong Deng et al. “Toward"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 6
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  }
+]

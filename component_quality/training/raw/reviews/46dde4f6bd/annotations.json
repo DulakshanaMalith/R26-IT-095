@@ -1,0 +1,343 @@
+[
+  {
+    "id": 3669,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": "The most recent findings from PISA 2022 indicate a concerning trend: educational systems across theglobe are facing challenges, evidenced by a decrease in student performance in literacy, mathematics, andscientific disciplines.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 637,
+              "type": "TextPositionSelector",
+              "start": 410
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The most recent findings from PISA 2022 indicate a concerning trend: educational systems across theglobe are facing challenges, evidenced by a decrease in student performance in literacy, mathematics, andscientific disciplines.",
+              "prefix": "ber 9, 2024Darmstadt1 Motivation",
+              "suffix": "[1] A notable segment of educato"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 2
+  },
+  {
+    "id": 3670,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": "This conventional approachrestricts the teachers from effectively addressing their students’ specific weaknesses while at the same timerequiring a considerable amount of time",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1317,
+              "type": "TextPositionSelector",
+              "start": 1143
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "This conventional approachrestricts the teachers from effectively addressing their students’ specific weaknesses while at the same timerequiring a considerable amount of time",
+              "prefix": "dividual learning requirements. ",
+              "suffix": ".LLMs can support the identifica"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 2
+  },
+  {
+    "id": 3671,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": "following related sub-questions",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2129,
+              "type": "TextPositionSelector",
+              "start": 2098
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "following related sub-questions",
+              "prefix": "er, this study will examine the ",
+              "suffix": ":• How accurate, relevant, and a"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 2
+  },
+  {
+    "id": 3672,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": "completly",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3198,
+              "type": "TextPositionSelector",
+              "start": 3189
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "completly",
+              "prefix": "cational or practical value. It ",
+              "suffix": "overlooked any ethical considera"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 2
+  },
+  {
+    "id": 3673,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": "Using large language models, like ChatGPT, in educational contexts will require comprehensive theoreticaland empirical investigations. This research will combine an in-depth assessment of LLM capabilities with ahands-on study in which we recruit teachers and education students",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3854,
+              "type": "TextPositionSelector",
+              "start": 3577
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Using large language models, like ChatGPT, in educational contexts will require comprehensive theoreticaland empirical investigations. This research will combine an in-depth assessment of LLM capabilities with ahands-on study in which we recruit teachers and education students",
+              "prefix": "data privacy andstudent consent.",
+              "suffix": ".2.1 Understanding and Generatio"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 2
+  },
+  {
+    "id": 3674,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": "answers focusing on student specific weaknesses",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4197,
+              "type": "TextPositionSelector",
+              "start": 4150
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "answers focusing on student specific weaknesses",
+              "prefix": " toassist in creating tasks and ",
+              "suffix": ".This research will evaluate Cha"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 3675,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": "stury",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7307,
+              "type": "TextPositionSelector",
+              "start": 7302
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "stury",
+              "prefix": "ndings in initial phases of the ",
+              "suffix": ", a second empirical study will "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 2
+  },
+  {
+    "id": 3676,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": "ca ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8068,
+              "type": "TextPositionSelector",
+              "start": 8065
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "ca ",
+              "prefix": "e whether more optimizedprompts ",
+              "suffix": "significantly improve efficiency"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 2
+  },
+  {
+    "id": 3677,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": "the ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7773,
+              "type": "TextPositionSelector",
+              "start": 7769
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "the ",
+              "prefix": "raditional methods, the quality ",
+              "suffix": "tasks, and are asked to reevalua"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 2
+  },
+  {
+    "id": 3678,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": "LLMs can support the identification of deficiencies in students’ knowledge in certain subjects and createpersonalized exercise sheets for those student",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1469,
+              "type": "TextPositionSelector",
+              "start": 1318
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "LLMs can support the identification of deficiencies in students’ knowledge in certain subjects and createpersonalized exercise sheets for those student",
+              "prefix": "g a considerable amount of time.",
+              "suffix": "s. It is possible to create new "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 3679,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": "2.2 Empirical Study with Teachers and Education Students",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4724,
+              "type": "TextPositionSelector",
+              "start": 4668
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "2.2 Empirical Study with Teachers and Education Students",
+              "prefix": "students on the generated tasks.",
+              "suffix": "The study will employ surveys an"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 2
+  }
+]

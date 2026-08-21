@@ -1,0 +1,393 @@
+[
+  {
+    "id": 4631,
+    "user": "Anita Wong",
+    "role": "student",
+    "text": "Literature references come before a full stop, like this: ...tailored interventions [3]. You have this error in all literature references, please correct.",
+    "annotationId": 4560,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4632,
+    "user": "Anita Wong",
+    "role": "student",
+    "text": "here the abbreviation is not redundant, because not everyone knows what is an EHR",
+    "annotationId": 4561,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4633,
+    "user": "Anita Wong",
+    "role": "student",
+    "text": "I liked that the limitations are already displayed in the \"Motivation\" part",
+    "annotationId": 4562,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4634,
+    "user": "Anita Wong",
+    "role": "student",
+    "text": "here the space between \"2.\" and \"Model\" is too big",
+    "annotationId": 4563,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4635,
+    "user": "Anita Wong",
+    "role": "student",
+    "text": "redundant definition. You could either remove it completely, because nowadays everyone knows the \"AI\" abbreviation; or use the abbreviation only for the \"Artificial Intelligence\" part, like this: \"Generative Artificial Intelligence (AI)... \"",
+    "annotationId": 4564,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4636,
+    "user": "Anita Wong",
+    "role": "student",
+    "text": "how?",
+    "annotationId": 4565,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4637,
+    "user": "Anita Wong",
+    "role": "student",
+    "text": "Punctuation issue: use spaces before and after a dash \"—\"",
+    "annotationId": 4566,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4638,
+    "user": "Anita Wong",
+    "role": "student",
+    "text": "nice, very important point",
+    "annotationId": 4567,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4639,
+    "user": "Anita Wong",
+    "role": "student",
+    "text": "Punctuation: too much space",
+    "annotationId": 4568,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4640,
+    "user": "Anita Wong",
+    "role": "student",
+    "text": "what is this? definition missing. Define it in the \"Motivation\" section above",
+    "annotationId": 4569,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4641,
+    "user": "Anita Wong",
+    "role": "student",
+    "text": "nice, very important to mention",
+    "annotationId": 4570,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4642,
+    "user": "Anita Wong",
+    "role": "student",
+    "text": "Punctuation: spaces before and after a dash",
+    "annotationId": 4571,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4643,
+    "user": "Anita Wong",
+    "role": "student",
+    "text": "I would explicitly tell the reader what is federated learning and differential privacy, because these are narrow concepts. And also there is no space between the words \"federated\" and \"learning\"",
+    "annotationId": 4572,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4644,
+    "user": "Anita Wong",
+    "role": "student",
+    "text": "what approaches exactly? It would be nice to have them listed shortly. ",
+    "annotationId": 4573,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4645,
+    "user": "Anita Wong",
+    "role": "student",
+    "text": "extend. Example \"... on static predictions, like forecasting or numerical approximation [lit. ref.].\"",
+    "annotationId": 4574,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4646,
+    "user": "Anita Wong",
+    "role": "student",
+    "text": "extend: Example \"..analyze single data modalities, like patient's genome or his health history [lit. ref.].\"",
+    "annotationId": 4575,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4647,
+    "user": "Anita Wong",
+    "role": "student",
+    "text": "what models? Eventual missing literature reference",
+    "annotationId": 4576,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4648,
+    "user": "Anita Wong",
+    "role": "student",
+    "text": "good point",
+    "annotationId": 4577,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4649,
+    "user": "Anita Wong",
+    "role": "student",
+    "text": "what techniques?",
+    "annotationId": 4578,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4650,
+    "user": "Anita Wong",
+    "role": "student",
+    "text": "If you use these terminologies, define them. But I missed how are you going to combine those approaches. In other words, how is your work new?",
+    "annotationId": 4579,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4651,
+    "user": "Anita Wong",
+    "role": "student",
+    "text": "there the extra definition is not needed, because you defined the EHR Abbreviation in the \"Motivation\" section",
+    "annotationId": 4580,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4652,
+    "user": "Anita Wong",
+    "role": "student",
+    "text": "Explaining the privacy-preserving methods also belongs to Theoretical Framework",
+    "annotationId": 4581,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4653,
+    "user": "Anita Wong",
+    "role": "student",
+    "text": "what kind?",
+    "annotationId": 4582,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4654,
+    "user": "Anita Wong",
+    "role": "student",
+    "text": "to what standard?",
+    "annotationId": 4583,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4655,
+    "user": "Anita Wong",
+    "role": "student",
+    "text": "short and concise",
+    "annotationId": 4584,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4656,
+    "user": "Anita Wong",
+    "role": "student",
+    "text": "optional: maybe list those preprocessing steps",
+    "annotationId": 4585,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4657,
+    "user": "Anita Wong",
+    "role": "student",
+    "text": "I also like this part. I would combine the 2.5 and 2.7 together",
+    "annotationId": 4586,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4658,
+    "user": "Anita Wong",
+    "role": "student",
+    "text": "redundant: you listed this already in the \"Motivation\"",
+    "annotationId": 4587,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4659,
+    "user": "Anita Wong",
+    "role": "student",
+    "text": "Redundant: I would include this either in the Schedule or State of the Art (if applicable).",
+    "annotationId": 4588,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Noah Frazier",
+        "role": "expert",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 4660,
+    "user": "Anita Wong",
+    "role": "student",
+    "text": "I would switch those two: You tailor data for the relevant models, and not models for the data, because data can be highly heterogeneous.",
+    "annotationId": 4589,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4661,
+    "user": "Anita Wong",
+    "role": "student",
+    "text": "good, can be even reused in other exposes",
+    "annotationId": 4590,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4662,
+    "user": "Anita Wong",
+    "role": "student",
+    "text": "may be redundant: depending on the model, hyperparameters are adjusted by the model ",
+    "annotationId": 4591,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4663,
+    "user": "Anita Wong",
+    "role": "student",
+    "text": "I would firstly consult with clinicians (direct stakeholders) to understand the requirements and availability of certain clinicians (for them to be able to understand the model output at all. You will not show to a genomics specialist an output of an imaging model). ",
+    "annotationId": 4592,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4664,
+    "user": "Anita Wong",
+    "role": "student",
+    "text": "the team should always be able to give feedback, e.g. during sprints or SCRUM framework, not only in the late-stage development :)",
+    "annotationId": 4593,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4665,
+    "user": "Anita Wong",
+    "role": "student",
+    "text": "maybe include ethical side of the question here",
+    "annotationId": 4594,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  }
+]

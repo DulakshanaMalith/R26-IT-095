@@ -1,0 +1,436 @@
+[
+  {
+    "id": 4897,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "1 MotivationWhen did you last see a doctor? Do I really have to seek medical advice for this injury?",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 563,
+              "type": "TextPositionSelector",
+              "start": 463
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "1 MotivationWhen did you last see a doctor? Do I really have to seek medical advice for this injury?",
+              "prefix": "ssion: December 8, 2024Darmstadt",
+              "suffix": " The answer to thesequestions ma"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 4898,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": " “traditionalbarriers to medical care category",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 943,
+              "type": "TextPositionSelector",
+              "start": 897
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " “traditionalbarriers to medical care category",
+              "prefix": " health insurance (all under the",
+              "suffix": "”). This also coincides with the"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 4899,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "This also coincides with the “low perceived need to seek medical care”category, as issues being seen as not worth the money or time investment would, in turn, not receive anymedical attention [4]. ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1144,
+              "type": "TextPositionSelector",
+              "start": 947
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "This also coincides with the “low perceived need to seek medical care”category, as issues being seen as not worth the money or time investment would, in turn, not receive anymedical attention [4]. ",
+              "prefix": "ers to medical care category”). ",
+              "suffix": "Nevertheless, this implies that "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 4900,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "his implies ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1171,
+              "type": "TextPositionSelector",
+              "start": 1159
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "his implies ",
+              "prefix": "l attention [4]. Nevertheless, t",
+              "suffix": "that there are numerous medical "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 4901,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "Using a large language model (LLM), which is fine-tuned to help with common, easy to diagnosemedical problems and capable of outputting reliable information and treatment plans could be an easy, fast,and essentially good way to get medical attention, if that would be otherwise hindered by the aforementionedfactors.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1657,
+              "type": "TextPositionSelector",
+              "start": 1341
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Using a large language model (LLM), which is fine-tuned to help with common, easy to diagnosemedical problems and capable of outputting reliable information and treatment plans could be an easy, fast,and essentially good way to get medical attention, if that would be otherwise hindered by the aforementionedfactors.",
+              "prefix": "overall worse quality ofhealth. ",
+              "suffix": " Improving general health, one s"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 4902,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "Improving general health, one small step at a time",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1708,
+              "type": "TextPositionSelector",
+              "start": 1658
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Improving general health, one small step at a time",
+              "prefix": "d by the aforementionedfactors. ",
+              "suffix": ". Wanting to make huge strides b"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 4903,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "whereas this work focusesmore on trying to improve the way patients approach their own medical care directly.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2165,
+              "type": "TextPositionSelector",
+              "start": 2056
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "whereas this work focusesmore on trying to improve the way patients approach their own medical care directly.",
+              "prefix": "fessionals with their jobs [1], ",
+              "suffix": "1.1 Research QuestionsFor the pu"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 4904,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "may",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2281,
+              "type": "TextPositionSelector",
+              "start": 2278
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "may",
+              "prefix": "ng Meta’s LLaMA-3.1, so that it ",
+              "suffix": " generate anaccurate and reliabl"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 4905,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": ", specifically, a muscle injur",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2363,
+              "type": "TextPositionSelector",
+              "start": 2333
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": ", specifically, a muscle injur",
+              "prefix": " and reliable treatment plan for",
+              "suffix": "y described by the prompt. The f"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 4906,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "What is the minimum viable dataset ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2947,
+              "type": "TextPositionSelector",
+              "start": 2912
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "What is the minimum viable dataset ",
+              "prefix": " against medical guidelines?1.2 ",
+              "suffix": "needed to fine-tune LLaMA-3.1 fo"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 4907,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "This requires that the answers given by the model need to be understandableand actionable by a general audienc",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3757,
+              "type": "TextPositionSelector",
+              "start": 3647
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "This requires that the answers given by the model need to be understandableand actionable by a general audienc",
+              "prefix": "the model, instead of a doctor. ",
+              "suffix": "e. The limitation to injuries su"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 2
+  },
+  {
+    "id": 4908,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": " the most common injuries which come withthat are muscle injuries, and therefore it should be easy to find enough usable data to, on one hand, comparethe output of the LLM with, and on the other hand, to fine-tune the model in the first place",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4140,
+              "type": "TextPositionSelector",
+              "start": 3898
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " the most common injuries which come withthat are muscle injuries, and therefore it should be easy to find enough usable data to, on one hand, comparethe output of the LLM with, and on the other hand, to fine-tune the model in the first place",
+              "prefix": "the largest sports in the world,",
+              "suffix": ". The model will befine-tuned in"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 2
+  },
+  {
+    "id": 4909,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "expansion",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4319,
+              "type": "TextPositionSelector",
+              "start": 4310
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "expansion",
+              "prefix": "his can be referenced in future ",
+              "suffix": " of the model and research. This"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 4910,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "meet the medicalguidelines in quality,",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4512,
+              "type": "TextPositionSelector",
+              "start": 4474
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "meet the medicalguidelines in quality,",
+              "prefix": " future. If the model’s answers ",
+              "suffix": " a survey will be conducted to e"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  }
+]

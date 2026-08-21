@@ -1,0 +1,22 @@
+{
+  "topic": "The Holographic AI Assistant",
+  "author": "Sara Wiley",
+  "reviews": {
+    "1": {
+      "review": 1,
+      "hash": "1917151f16",
+      "reviewer": "Cynthia Mills",
+      "role": "expert",
+      "size": 2372,
+      "group": 1
+    },
+    "2": {
+      "review": 2,
+      "hash": "c734b6d4fb",
+      "reviewer": "Sean Herrera",
+      "role": "assistant",
+      "size": 1716,
+      "group": 1
+    }
+  }
+}

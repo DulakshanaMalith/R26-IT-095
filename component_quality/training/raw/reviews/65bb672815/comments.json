@@ -1,0 +1,717 @@
+[
+  {
+    "id": 1237,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "You should choose a good title for your exposé since this is the topic as given in the lecture.",
+    "annotationId": 1215,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1238,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "In it's current form, this constitutes plagiarism, taken from [7] ad verbatim. You probably meant to add a quote here, but you should write the hook yourself in order to get better at doing so.\nDirect quotes are considered bad style and integrating their writing with yours can be challenging, so i advise against doing so. Consider writing your own hook and adding your source as a citation if needed.",
+    "annotationId": 1216,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1239,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "This is just reworded from [7], which would be fine if it wasn't for the direct copy of the previous sentence",
+    "annotationId": 1217,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1240,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "Abbreviation introduced twice",
+    "annotationId": 1218,
+    "parentCommendId": null,
+    "tags": [
+      "style"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1241,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "Research questions are crucial for an exposé as they identify which work you intend to do/which areas of research you want to advance. While coming up with good RQs is hard, leaving them out makes it impossible to tell what your goals with this exposé are.",
+    "annotationId": 1219,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Shelly Lawrence",
+        "role": "assistant",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 1242,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "Consider supporting this claim, e.g. using a reference to a scientific work",
+    "annotationId": 1220,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1243,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "Reference needed",
+    "annotationId": 1221,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1244,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "Your teaser is missing a research gap.",
+    "annotationId": 1222,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1245,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "Note (German) -> grade (English)",
+    "annotationId": 1223,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1246,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "Bad style: Name the authors (`\\citeauthor{}` in LaTeX) and put a normal citation at the end of the sentence.",
+    "annotationId": 1224,
+    "parentCommendId": null,
+    "tags": [
+      "style"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1247,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "There is no explanation for the presence of this term and it is never mentioned again. Please don't use buzzwords in scientific writing.",
+    "annotationId": 1225,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1248,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "This sentence does not add any value to the motivation. You want to be specific to your problem domain to motivate your specific research questions.",
+    "annotationId": 1226,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1249,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "How so?\nThe teaser doesn't lead into research question and is too generic to help with identifying what the thesis will focus on. Your teaser needs to be more specific, which also makes pointing out a research gap later on a lot easier.",
+    "annotationId": 1227,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Shelly Lawrence",
+        "role": "assistant",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 1250,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "Use \"and\"",
+    "annotationId": 1228,
+    "parentCommendId": null,
+    "tags": [
+      "grammar",
+      "style"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1251,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "Some entries seem to be incomplete, why are some missing URLs/DOIs?",
+    "annotationId": 1229,
+    "parentCommendId": null,
+    "tags": [
+      "style"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1252,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "shouldn't you know what you're conducting? Why use \"or\" here then?",
+    "annotationId": 1230,
+    "parentCommendId": null,
+    "tags": [
+      "style"
+    ],
+    "votes": [
+      {
+        "user": "Shelly Lawrence",
+        "role": "assistant",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 1253,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "I don't think we do peer reviewed theses. Also, judging by the current state of affairs, you'll have to wait much longer than a week :(\nFurthermore, what if you get a lot of feedback? You want have any time to implement that before your final submission then.",
+    "annotationId": 1231,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1254,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "No buffer space in case something doesn't go to plan is dangerous",
+    "annotationId": 1232,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Shelly Lawrence",
+        "role": "assistant",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 1255,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "Please fit the table to the page. LaTeX probably warned you about \"overfull hboxes\".",
+    "annotationId": 1233,
+    "parentCommendId": null,
+    "tags": [
+      "style"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1256,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "This reference is bad. Please refer to scientific literature on this topic instead.",
+    "annotationId": 1234,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1257,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "This reference is bad. Please refer to scientific literature on this topic instead.",
+    "annotationId": 1235,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1258,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "This sentence doesn't fit here. You should instead summarize the current SOTA when it comes to personalized learning.\nThis paper might help, though I've only read its abstract due to time constraints:\nhttps://link.springer.com/article/10.1007/s10648-021-09615-8\nIt also seems to be highly relevant as it identifies problems you should potentially address.",
+    "annotationId": 1236,
+    "parentCommendId": null,
+    "tags": [
+      "structure"
+    ],
+    "votes": [
+      {
+        "user": "Shelly Lawrence",
+        "role": "assistant",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 1259,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "Write \"perform above average\" instead.",
+    "annotationId": 1237,
+    "parentCommendId": null,
+    "tags": [
+      "style"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1260,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "Which reference comes to this conclusion? Consider adding a citation for it",
+    "annotationId": 1238,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1261,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "Use \"and\" instead.",
+    "annotationId": 1239,
+    "parentCommendId": null,
+    "tags": [
+      "style"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1262,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "This is not how you summarize the SOTA. It's great that Razafinirina et al. discuss this, but you should point out which conclusions they come to. Based on that, you can infer points of criticism and identify the research gap you want to address. This criticism applies to a majority of the papers cited in the SOTA.",
+    "annotationId": 1240,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Shelly Lawrence",
+        "role": "assistant",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 1263,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "well-aligned",
+    "annotationId": 1241,
+    "parentCommendId": null,
+    "tags": [
+      "style"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1264,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "You mean \"teaching supported by LLM-based agents\" here, right?",
+    "annotationId": 1242,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1265,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "\"The theory [...]. This theory\": Please reword this paragraph to avoid this repetition",
+    "annotationId": 1243,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1266,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "This sentence should be replaced by a stronger one pointing out the connection or removed altogether. In it's current form, it breaks the text flow.",
+    "annotationId": 1244,
+    "parentCommendId": null,
+    "tags": [
+      "style"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1267,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "This paragraph uses the past tense a lot but you're writing an expose. You have yet to conduct your study, so using the past tense is incorrect here.",
+    "annotationId": 1245,
+    "parentCommendId": null,
+    "tags": [
+      "style"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1268,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "Add a space to separate the sentences.",
+    "annotationId": 1246,
+    "parentCommendId": null,
+    "tags": [
+      "style"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1269,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "Please elaborate on the number of students you intend to acquire and how you plan on recruiting them.\nA further question to consider:\nHow will you account for differences between your test groups?\nAlso, if the students are too young, there might be ethical concerns.",
+    "annotationId": 1247,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Shelly Lawrence",
+        "role": "assistant",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 1270,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "You should be more specific about the metrics you collect and which analyses you then want to perform on them. You could also mention any hypotheses you might have and which statistical frameworks you might apply.",
+    "annotationId": 1248,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1271,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "You don't have any results yet, since your exposé is about the thesis you want to conduct, not one that's already completed.",
+    "annotationId": 1249,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Shelly Lawrence",
+        "role": "assistant",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 1272,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "What will you do about hallucinations?\nIt's great that you are aware of its dangers, but you should point out how you will mitigate them or consider them in your analysis. ",
+    "annotationId": 1250,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Shelly Lawrence",
+        "role": "assistant",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 1273,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "By which metric? \"performance\" alone is not a sufficient term.\nFor example, if the \"performance\" is student grades, you should also mention other statistical measures. A lower precision could lead to very interesting conclusions here that would need further analysis of the data set or further research.",
+    "annotationId": 1251,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Shelly Lawrence",
+        "role": "assistant",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 1274,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "Anker lacks how is the problem being dealt with so far",
+    "annotationId": 1252,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1275,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "Consider supporting this claim, e.g. using a reference to a scientific work",
+    "annotationId": 1253,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1276,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "\"overly rely\"",
+    "annotationId": 1254,
+    "parentCommendId": null,
+    "tags": [
+      "style"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1277,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "Consider adding a reference to support this claim. Also, are you going to take action to mitigate this risk in your study?",
+    "annotationId": 1255,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1278,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "Kasneci et al. talk about overreliance by teachers, not students, please elaborate on how that is relevant here.",
+    "annotationId": 1256,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1279,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "If your insights are skewed by the issues you mentioned earlier, they might not be valuable. You should elaborate how you deal with issues through study design and/or analysis design.",
+    "annotationId": 1257,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1280,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "This source is misrepresented.\nHowever, this might be a difficulty you should address.",
+    "annotationId": 1258,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1281,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "There are lots of questions about these agents, see my feedback.",
+    "annotationId": 1259,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1282,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "How will they use it?\n- Generate a learning plan?\n- Get answers?\n- ...",
+    "annotationId": 1260,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1283,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "Same plagiarism/quoting issues as your hook.",
+    "annotationId": 1261,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1284,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "Including the information in braces is bad style. Consider changing this, e.g. \"... subjects, such as mathematics, programming, or writing.\"",
+    "annotationId": 1262,
+    "parentCommendId": null,
+    "tags": [
+      "style"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1285,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "Same plagiarism/quoting issues as your hook.",
+    "annotationId": 1263,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1286,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "Why is this link shortened?\nAlso, when referencing a website, you should note when you accessed it.\nFurthermore, this shortened URL is more prone to expiration than a normal link.",
+    "annotationId": 1264,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1287,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "Theses braces are bad style. Please rewrite this sentence to not make use of them.",
+    "annotationId": 1265,
+    "parentCommendId": null,
+    "tags": [
+      "style"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1288,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "It's important for a good evaluation that you are specific about your plans. It is unclear which kind of analyses you intend to perform, please be more specific.",
+    "annotationId": 1266,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1289,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "There is only a preliminary analysis, no proper one to follow. I assume you intend to conduct a full analysis, so you might want to correct that.",
+    "annotationId": 1267,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1290,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "You should explain which metrics you intend to focus on. If there are some specific relevant metrics, they might be closely related to your RQs.",
+    "annotationId": 1268,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Shelly Lawrence",
+        "role": "assistant",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 1291,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "Low-quality reference",
+    "annotationId": 1269,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1292,
+    "user": "Jeff Morrison",
+    "role": "student",
+    "text": "Please refer to scientific literature instead.",
+    "annotationId": 1270,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  }
+]

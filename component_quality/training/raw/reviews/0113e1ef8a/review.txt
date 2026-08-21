@@ -1,0 +1,13 @@
+Summary
+Your want to investigate how Gen AI can help by creating personalized treatment plans.
+
+Motivation
+The motivation has the goal to catch reader's interest, explain the specific problem and in which domain it occurs and also how the problem is currently handled. It should also state research questions explicitly and precisely.
+You start with an interestig fact about the amount of unused data in health care. However, a more in depth description of the current problem and why this problem is relevant would be helpful to strenghten the relevance of your work. You could also give a short teaser about how you want to answer the RQs (e.g. with providing and testing a software)
+
+Approach
+This section has the goal to explain current State of the Art (SOTA) which tackles the problem, which critique the SOTA currently faces and also introduce necesary theoretical work on which your approach is based on. It should then clearly state what you want to do to tackle the problem, including challenges and limitations.
+You did not mention the SOTA, which is important for understanding where your work connects and adds new insights to the field. Try to find existing work where technology and (Gen) AI is used in healthcare. 
+The beginning of your Approach is a really good explenation of the problem. You should think about moving this to the motivation section.
+You mix the theoretical work with your methods. While the explanation of the theoretical work is really good, it sometimes hard to follow because you jump between theory and your own methods. Consider at least structuring this part of the section. You could even go further and writing about the different theoretic topics first and then writing the methodology.
+Your methods should also include possible challenges and limitations of your work. 

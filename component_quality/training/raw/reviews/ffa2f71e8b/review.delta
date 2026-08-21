@@ -1,0 +1,101 @@
+[
+  {
+    "retain": 0
+  },
+  {
+    "insert": "Summary:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nThis study wants to investigate the current performance of generative AI for medical diagnosis, by means of literature research and case studies/interviews with medical professionals"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "\n"
+  },
+  {
+    "insert": "Strengths:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nYou show that you thought a lot about limitations due to biased or low-quality training data."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "It is a good approach to tackle the SRQs separately in the methodology. Also, you address the SRQ1.1 well and fully."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "\n"
+  },
+  {
+    "insert": "Summary:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nThe SOTA section should give a good and comprehensive overview over relevant, related approaches. However, I do not understand the relevance of your SOTA section, and why you go from medical diagnoses to GANs and augmenting medical datasets with synthetic data, to then focus on medical diagnosis again in your methodology. Make sure the SOTA is explicitly relevant to your RQ (and your Sub-RQs)."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "An expose should tell a clear story, and all parts should contribute to it (WHY is the problem important, WHAT is the problem, HOW do other people approach it and how do you etc). Your structure is unclear at times, and there are some inconsistencies (like the mentioned SOTA section, what current models you are referencing in the first place, why you explain ML in general, what is your definition of Generative AI etc.). Make sure you are aware of the correct definitions of all relevant concepts, and keep the big picture in mind in every single section.  "
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "The methodology section should clearly show how your RQ and your SRQs are answered. However, SRQs 1.2 and 1.3 are insufficiently answered (you do not compare the diagnostic accuracy, and your experimental setup for SRQ1.3 is way too imprecise to understand how you will tackle it). As the RQs lend structure to the overall expose, make sure to tailor your methods specifically to answer them fully. "
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "The hook is important to create interest in the reader. Unfortunately, your first sentence is not very understandable, lacks a reference to follow your argumentation and has a grammar mistake. The hook is probably one of the most important parts in an expose to be correct, and to be interesting."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "Proper scientific practices like references are really important to prevent plagiarism, but also to provide more information to the reader. There are several occasions where a reference would be necessary (e.g. the first sentence, \"traditional approaches\", \"Unlike existing studies\" etc. In doubt, citing too much is better than citing too little."
+  },
+  {
+    "retain": 1,
+    "attributes": {
+      "list": "bullet"
+    }
+  }
+]

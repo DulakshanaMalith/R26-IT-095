@@ -1,0 +1,22 @@
+{
+  "topic": "The Holographic AI Assistant",
+  "author": "Danny Sweeney",
+  "reviews": {
+    "1": {
+      "review": 1,
+      "hash": "dc038d1aaf",
+      "reviewer": "Stephanie Morgan",
+      "role": "expert",
+      "size": 722,
+      "group": 2
+    },
+    "2": {
+      "review": 2,
+      "hash": "412eeca625",
+      "reviewer": "Erin Nguyen",
+      "role": "assistant",
+      "size": 739,
+      "group": 1
+    }
+  }
+}

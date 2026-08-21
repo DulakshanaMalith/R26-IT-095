@@ -1,0 +1,30 @@
+{
+  "topic": "The Holographic AI Assistant",
+  "author": "Brett Turner",
+  "reviews": {
+    "1": {
+      "review": 1,
+      "hash": "690b10d103",
+      "reviewer": "Cynthia Mills",
+      "role": "expert",
+      "size": 2854,
+      "group": 1
+    },
+    "2": {
+      "review": 2,
+      "hash": "289e356a55",
+      "reviewer": "Larry Dunn",
+      "role": "student",
+      "size": 2959,
+      "group": 1
+    },
+    "3": {
+      "review": 3,
+      "hash": "a88f6bbdb8",
+      "reviewer": "Pamela Downs",
+      "role": "student",
+      "size": 2733,
+      "group": 1
+    }
+  }
+}

@@ -1,0 +1,2082 @@
+[
+  {
+    "id": 542,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": "be the high prevalence of MDD",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2377,
+              "type": "TextPositionSelector",
+              "start": 2348
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "be the high prevalence of MDD",
+              "prefix": "of symptom identification might ",
+              "suffix": " or the mediafilter rules of the"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 543,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": "Major Depressive Disorder (MDD) is not just a state of fleeting sadness, rather, it is a pervasive and life-alteringcondition that disrupts daily functioning, relationships, and the very essence of one’s identity.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 668,
+              "type": "TextPositionSelector",
+              "start": 455
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Major Depressive Disorder (MDD) is not just a state of fleeting sadness, rather, it is a pervasive and life-alteringcondition that disrupts daily functioning, relationships, and the very essence of one’s identity.",
+              "prefix": "ber 9, 2024Darmstadt1 Motivation",
+              "suffix": " An estimated5% of adults suffer"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 544,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": "An existing research ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2014,
+              "type": "TextPositionSelector",
+              "start": 1993
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "An existing research ",
+              "prefix": "dications of physical violence. ",
+              "suffix": "has shown that LLM models presen"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 545,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": "owever, despite their potential, these models are often restricted by ethicalfiltering rules which filter out some inputs or responses involving sensitive topics, like suicidal thoughts andindications of physical violence.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1992,
+              "type": "TextPositionSelector",
+              "start": 1770
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "owever, despite their potential, these models are often restricted by ethicalfiltering rules which filter out some inputs or responses involving sensitive topics, like suicidal thoughts andindications of physical violence.",
+              "prefix": "mesof textual information [4]. H",
+              "suffix": " An existing research has shown "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 546,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": " LLM models presented lower performancein detecting MDD relative to detecting some other mental diseases such as schizophrenia, autistic spectrumdisorder and attention-deficit hyperactivity disorder [3]. ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2232,
+              "type": "TextPositionSelector",
+              "start": 2028
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " LLM models presented lower performancein detecting MDD relative to detecting some other mental diseases such as schizophrenia, autistic spectrumdisorder and attention-deficit hyperactivity disorder [3]. ",
+              "prefix": "existing research has shown that",
+              "suffix": "This study discusses that one po"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 547,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": "SOTA",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3219,
+              "type": "TextPositionSelector",
+              "start": 3215
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "SOTA",
+              "prefix": "g ethical safeguards?22 Approach",
+              "suffix": "Generative AI has demonstrated i"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 548,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": " anotherresearch has to be don",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4193,
+              "type": "TextPositionSelector",
+              "start": 4163
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " anotherresearch has to be don",
+              "prefix": " current mental health research,",
+              "suffix": "e using models which apply less "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 549,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": " order to determine how these filtering rules impact the current mental health research, anotherresearch has to be done using models which apply less strict filtering policies.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4251,
+              "type": "TextPositionSelector",
+              "start": 4075
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " order to determine how these filtering rules impact the current mental health research, anotherresearch has to be done using models which apply less strict filtering policies.",
+              "prefix": "hical filtering rules[4] [5]. In",
+              "suffix": "Theoretical FrameworkCurrent res"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 550,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": "Theoretical Framework",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4272,
+              "type": "TextPositionSelector",
+              "start": 4251
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Theoretical Framework",
+              "prefix": " less strict filtering policies.",
+              "suffix": "Current research is designed bas"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 551,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": "For confirmation of the findings, collaborations will be formed with either psychology researchers or healthcareinstitutions from which anonymized patient reports will be accessed. These reports will provide a basis fortesting AI models’ ability to detect MDD patterns.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6572,
+              "type": "TextPositionSelector",
+              "start": 6303
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "For confirmation of the findings, collaborations will be formed with either psychology researchers or healthcareinstitutions from which anonymized patient reports will be accessed. These reports will provide a basis fortesting AI models’ ability to detect MDD patterns.",
+              "prefix": "r sensitive content limitations.",
+              "suffix": "Generative AI models with varyin"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 552,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": "Methodology",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5643,
+              "type": "TextPositionSelector",
+              "start": 5632
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Methodology",
+              "prefix": "isted mental health diagnostics.",
+              "suffix": "This research employs a mixed-me"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 553,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": "A comprehensive review of existing research and empirical data in this area will be carried on. Studiesexploring the impact of AI filtering on mental health diagnostics will be examined to identify key patterns andknowledge gaps.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5991,
+              "type": "TextPositionSelector",
+              "start": 5762
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "A comprehensive review of existing research and empirical data in this area will be carried on. Studiesexploring the impact of AI filtering on mental health diagnostics will be examined to identify key patterns andknowledge gaps.",
+              "prefix": "th extensiveliterature analysis.",
+              "suffix": "3Based on the findings from the "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 554,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": "4 Literature Evaluation Reviewing, annotating, and organizing findings criti-cally.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7447,
+              "type": "TextPositionSelector",
+              "start": 7364
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "4 Literature Evaluation Reviewing, annotating, and organizing findings criti-cally.",
+              "prefix": "iltering rules, and AI ethics.1 ",
+              "suffix": "2 5-6 Framework Development Deve"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 555,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": "Developing the health communication theory and com-putational ethics framework",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7553,
+              "type": "TextPositionSelector",
+              "start": 7475
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Developing the health communication theory and com-putational ethics framework",
+              "prefix": "lly.2 5-6 Framework Development ",
+              "suffix": ".2 7 RQ Refinement Finalizing re"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 556,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": "Designing experiments and selecting models/datasetsfor testing.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7717,
+              "type": "TextPositionSelector",
+              "start": 7654
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Designing experiments and selecting models/datasetsfor testing.",
+              "prefix": "in-sights.2 8 Experiment Design ",
+              "suffix": "3 9-10 Data Prep Establishing pa"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 557,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": "5 18 Writing Results Drafting the results chapter, focusing on key findings.5 19 Discussion Draft Linking results to theory and research questions.5 20 Full Review Reviewing all sections for coherence and accuracy.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8419,
+              "type": "TextPositionSelector",
+              "start": 8205
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "5 18 Writing Results Drafting the results chapter, focusing on key findings.5 19 Discussion Draft Linking results to theory and research questions.5 20 Full Review Reviewing all sections for coherence and accuracy.",
+              "prefix": "s with differentfiltering rules.",
+              "suffix": "6 21 Preliminary Revision Editin"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 558,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": "Final Proofreading Ensuring grammar, formatting, and consistency.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8566,
+              "type": "TextPositionSelector",
+              "start": 8501
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Final Proofreading Ensuring grammar, formatting, and consistency.",
+              "prefix": "tent clarity and structure.6 22 ",
+              "suffix": "6 23-24 Submission Buffer time f"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 559,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": "Because it has nuanced andsubjective symptoms, generative AI models must notice the subtle linguistic patterns specifically in the contextof MDD.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4795,
+              "type": "TextPositionSelector",
+              "start": 4650
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Because it has nuanced andsubjective symptoms, generative AI models must notice the subtle linguistic patterns specifically in the contextof MDD.",
+              "prefix": "c and therapeutic outcomes [6]. ",
+              "suffix": " However, filtering rules, desig"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 560,
+    "user": "Lauren Lawrence",
+    "role": "assistant",
+    "text": "they often block discussions of suicidal ideation and hopelessness,which are critical indicators of MDD.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5204,
+              "type": "TextPositionSelector",
+              "start": 5100
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "they often block discussions of suicidal ideation and hopelessness,which are critical indicators of MDD.",
+              "prefix": "crucial for ethical safeguards, ",
+              "suffix": " Especially in contexts requirin"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 806,
+    "user": "Regina Reid",
+    "role": "student",
+    "text": "MDD can manifest itself through a variety of symptoms,including persistent sadness, loss of interest in activities, changes in sleep patterns like insomnia or excessivesleeping, decreased energy, feeling tired or \"slowed down\" almost everyday",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 975,
+              "type": "TextPositionSelector",
+              "start": 733
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "MDD can manifest itself through a variety of symptoms,including persistent sadness, loss of interest in activities, changes in sleep patterns like insomnia or excessivesleeping, decreased energy, feeling tired or \"slowed down\" almost everyday",
+              "prefix": "from major depression disorder. ",
+              "suffix": ". In addition to these symptoms "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 807,
+    "user": "Regina Reid",
+    "role": "student",
+    "text": "answering the research questions below",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3000,
+              "type": "TextPositionSelector",
+              "start": 2962
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "answering the research questions below",
+              "prefix": "reate better treatment plans by ",
+              "suffix": ":• How do filtering rules in Gen"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 808,
+    "user": "Regina Reid",
+    "role": "student",
+    "text": " mixed-method",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5679,
+              "type": "TextPositionSelector",
+              "start": 5666
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " mixed-method",
+              "prefix": "thodologyThis research employs a",
+              "suffix": "s approach, integrating quantita"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 809,
+    "user": "Regina Reid",
+    "role": "student",
+    "text": "Large Language Models",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1499,
+              "type": "TextPositionSelector",
+              "start": 1478
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Large Language Models",
+              "prefix": "ative AI models, especially the ",
+              "suffix": " have proven themselves useful i"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 810,
+    "user": "Regina Reid",
+    "role": "student",
+    "text": "experimental designs ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6056,
+              "type": "TextPositionSelector",
+              "start": 6035
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "experimental designs ",
+              "prefix": "e findings from the literature, ",
+              "suffix": "will be developed to assess the "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 811,
+    "user": "Regina Reid",
+    "role": "student",
+    "text": "Developing the health communication theory and com-putational ethics framework",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7553,
+              "type": "TextPositionSelector",
+              "start": 7475
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Developing the health communication theory and com-putational ethics framework",
+              "prefix": "lly.2 5-6 Framework Development ",
+              "suffix": ".2 7 RQ Refinement Finalizing re"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 4595,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "major depression disorder",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 731,
+              "type": "TextPositionSelector",
+              "start": 706
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "major depression disorder",
+              "prefix": "timated5% of adults suffer from ",
+              "suffix": ". MDD can manifest itself throug"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 4596,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "has",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1021,
+              "type": "TextPositionSelector",
+              "start": 1018
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "has",
+              "prefix": "on to these symptoms thestudies ",
+              "suffix": " shown that mental health disord"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 4597,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "major depressive disorder",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1098,
+              "type": "TextPositionSelector",
+              "start": 1073
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "major depressive disorder",
+              "prefix": "ealth disorders, especially the ",
+              "suffix": " is one of the maincauses of sui"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 4598,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "AI",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1454,
+              "type": "TextPositionSelector",
+              "start": 1452
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "AI",
+              "prefix": "lth problem.Luckily, Generative ",
+              "suffix": " models, especially the Large La"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 4599,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": " models",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2418,
+              "type": "TextPositionSelector",
+              "start": 2411
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " models",
+              "prefix": "r the mediafilter rules of these",
+              "suffix": ". There is also another study th"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 4600,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Major Depressive Disorder",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 480,
+              "type": "TextPositionSelector",
+              "start": 455
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Major Depressive Disorder",
+              "prefix": "ber 9, 2024Darmstadt1 Motivation",
+              "suffix": " (MDD) is not just a state of fl"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 4601,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Current study",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2616,
+              "type": "TextPositionSelector",
+              "start": 2603
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Current study",
+              "prefix": "ation compared to AI models [5].",
+              "suffix": " focuses on the impact of filter"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 4602,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "700.000",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1196,
+              "type": "TextPositionSelector",
+              "start": 1189
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "700.000",
+              "prefix": "d Health Organization more than ",
+              "suffix": " lives were lost throughsuicide "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 4603,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": ",",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1649,
+              "type": "TextPositionSelector",
+              "start": 1648
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": ",",
+              "prefix": "blems [3]. It has beenshown that",
+              "suffix": " LLMs can enhance mental health "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 4604,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": " year olds",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1313,
+              "type": "TextPositionSelector",
+              "start": 1303
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " year olds",
+              "prefix": "ing cause of death among 15 - 29",
+              "suffix": " [2]. Therefore,the extraordinar"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 4605,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "MDD can manifest itself through a variety of symptoms,including persistent sadness, loss of interest in activities, changes in sleep patterns like insomnia or excessivesleeping, decreased energy, feeling tired or \"slowed down\" almost everyday",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 975,
+              "type": "TextPositionSelector",
+              "start": 733
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "MDD can manifest itself through a variety of symptoms,including persistent sadness, loss of interest in activities, changes in sleep patterns like insomnia or excessivesleeping, decreased energy, feeling tired or \"slowed down\" almost everyday",
+              "prefix": "from major depression disorder. ",
+              "suffix": ". In addition to these symptoms "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 4606,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "2",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1316,
+              "type": "TextPositionSelector",
+              "start": 1315
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "2",
+              "prefix": " death among 15 - 29 year olds [",
+              "suffix": "]. Therefore,the extraordinarily"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 4607,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Therefore,the extraordinarily high and over time growing prevalence of MDD is a concerning public health problem",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1431,
+              "type": "TextPositionSelector",
+              "start": 1319
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Therefore,the extraordinarily high and over time growing prevalence of MDD is a concerning public health problem",
+              "prefix": "th among 15 - 29 year olds [2]. ",
+              "suffix": ".Luckily, Generative AI models, "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 4608,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Luckily, ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1441,
+              "type": "TextPositionSelector",
+              "start": 1432
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Luckily, ",
+              "prefix": "oncerning public health problem.",
+              "suffix": "Generative AI models, especially"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 4609,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "nalyze and generate huge volumesof textual information ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1764,
+              "type": "TextPositionSelector",
+              "start": 1709
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "nalyze and generate huge volumesof textual information ",
+              "prefix": "lth care with their ability to a",
+              "suffix": "[4]. However, despite their pote"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 4610,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "owever, despite their potential, these models are often restricted by ethicalfiltering rules which filter out some inputs or responses involving sensitive topics, like suicidal thoughts andindications of physical violence. ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1993,
+              "type": "TextPositionSelector",
+              "start": 1770
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "owever, despite their potential, these models are often restricted by ethicalfiltering rules which filter out some inputs or responses involving sensitive topics, like suicidal thoughts andindications of physical violence. ",
+              "prefix": "mesof textual information [4]. H",
+              "suffix": "An existing research has shown t"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 4611,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": " It is aimed to leverage the efficacy of these models by examining how these restrictions influencethe ability to detect critical symptoms, enabling Generative AI models to diagnose the MDD more accuratelyand create better treatment plans by answering the research questions below",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3000,
+              "type": "TextPositionSelector",
+              "start": 2720
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " It is aimed to leverage the efficacy of these models by examining how these restrictions influencethe ability to detect critical symptoms, enabling Generative AI models to diagnose the MDD more accuratelyand create better treatment plans by answering the research questions below",
+              "prefix": "ility to diagnose MDDaccurately.",
+              "suffix": ":• How do filtering rules in Gen"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 4612,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "esearch questions ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2995,
+              "type": "TextPositionSelector",
+              "start": 2977
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "esearch questions ",
+              "prefix": "eatment plans by answering the r",
+              "suffix": "below:• How do filtering rules i"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 4613,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "SOTA",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3219,
+              "type": "TextPositionSelector",
+              "start": 3215
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "SOTA",
+              "prefix": "g ethical safeguards?22 Approach",
+              "suffix": "Generative AI has demonstrated i"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 4614,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Theoretical Framework",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4272,
+              "type": "TextPositionSelector",
+              "start": 4251
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Theoretical Framework",
+              "prefix": " less strict filtering policies.",
+              "suffix": "Current research is designed bas"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 4615,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Methodology",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5643,
+              "type": "TextPositionSelector",
+              "start": 5632
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Methodology",
+              "prefix": "isted mental health diagnostics.",
+              "suffix": "This research employs a mixed-me"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 4616,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Major Depressive Disorder (MDD",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3567,
+              "type": "TextPositionSelector",
+              "start": 3537
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Major Depressive Disorder (MDD",
+              "prefix": "tems underperform in identifying",
+              "suffix": ") compared to other conditions. "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 4617,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "may stem from",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3617,
+              "type": "TextPositionSelector",
+              "start": 3604
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "may stem from",
+              "prefix": "pared to other conditions. This ",
+              "suffix": " the complex andnuanced nature o"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 4618,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": " which",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4213,
+              "type": "TextPositionSelector",
+              "start": 4207
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " which",
+              "prefix": "arch has to be done using models",
+              "suffix": " apply less strict filtering pol"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 4619,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "urther research is needed ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3991,
+              "type": "TextPositionSelector",
+              "start": 3965
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "urther research is needed ",
+              "prefix": " the extent of thislimitation, f",
+              "suffix": "using AI models that are less co"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 4620,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "n order to determine h",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4096,
+              "type": "TextPositionSelector",
+              "start": 4074
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "n order to determine h",
+              "prefix": "thical filtering rules[4] [5]. I",
+              "suffix": "ow these filtering rules impact "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 4621,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": " is designed based o",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4308,
+              "type": "TextPositionSelector",
+              "start": 4288
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " is designed based o",
+              "prefix": "etical FrameworkCurrent research",
+              "suffix": "n health communication theory an"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 4622,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "AI’s",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5377,
+              "type": "TextPositionSelector",
+              "start": 5373
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "AI’s",
+              "prefix": "tes of MDD symptom detection of ",
+              "suffix": ".Together, these theories unders"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 4623,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "However, filtering rules, designed to block sensitive content, may disrupt this process, potentiallyleading to exclusion of several diagnostic criteria.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4948,
+              "type": "TextPositionSelector",
+              "start": 4796
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "However, filtering rules, designed to block sensitive content, may disrupt this process, potentiallyleading to exclusion of several diagnostic criteria.",
+              "prefix": "cifically in the contextof MDD. ",
+              "suffix": "Computational ethics focuses on "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 4624,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": " thiscompromise between safety and precision may decrease the success rates of MDD symptom detection of",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5372,
+              "type": "TextPositionSelector",
+              "start": 5269
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " thiscompromise between safety and precision may decrease the success rates of MDD symptom detection of",
+              "prefix": " sensitive analysis of language,",
+              "suffix": " AI’s.Together, these theories u"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 4625,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Together,",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5387,
+              "type": "TextPositionSelector",
+              "start": 5378
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Together,",
+              "prefix": "f MDD symptom detection of AI’s.",
+              "suffix": " these theories underscore the n"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 4626,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "identify key patterns andknowledge gaps",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5990,
+              "type": "TextPositionSelector",
+              "start": 5951
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "identify key patterns andknowledge gaps",
+              "prefix": "diagnostics will be examined to ",
+              "suffix": ".3Based on the findings from the"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 4627,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "carried on.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5857,
+              "type": "TextPositionSelector",
+              "start": 5846
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "carried on.",
+              "prefix": "rical data in this area will be ",
+              "suffix": " Studiesexploring the impact of "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 4628,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": " fewer",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6272,
+              "type": "TextPositionSelector",
+              "start": 6266
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " fewer",
+              "prefix": "by using alternative models with",
+              "suffix": " sensitive content limitations.F"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 4629,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "For confirmation of the findings,",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6336,
+              "type": "TextPositionSelector",
+              "start": 6303
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "For confirmation of the findings,",
+              "prefix": "r sensitive content limitations.",
+              "suffix": " collaborations will be formed w"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 4630,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "sychology researchers or healthcareinstitutions ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6428,
+              "type": "TextPositionSelector",
+              "start": 6380
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "sychology researchers or healthcareinstitutions ",
+              "prefix": "ons will be formed with either p",
+              "suffix": "from which anonymized patient re"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 4631,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Quantitative metrics ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6862,
+              "type": "TextPositionSelector",
+              "start": 6841
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Quantitative metrics ",
+              "prefix": "g MDD-related language patterns.",
+              "suffix": "such as sensitivity, specificity"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 4632,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "These reports will provide a basis fortesting AI models’ ability to detect MDD patterns",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6571,
+              "type": "TextPositionSelector",
+              "start": 6484
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "These reports will provide a basis fortesting AI models’ ability to detect MDD patterns",
+              "prefix": "tient reports will be accessed. ",
+              "suffix": ".Generative AI models with varyi"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 4633,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "mile-stones",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7250,
+              "type": "TextPositionSelector",
+              "start": 7239
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "mile-stones",
+              "prefix": "iled research plan and defining ",
+              "suffix": ".1 2-3 Literature Research Ident"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 3,
+    "group": 1
+  },
+  {
+    "id": 4634,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Description",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7179,
+              "type": "TextPositionSelector",
+              "start": 7168
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Description",
+              "prefix": "e.43 ScheduleMonth Week(s) Task ",
+              "suffix": "1 1 Planning Creating a detailed"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 3,
+    "group": 1
+  }
+]

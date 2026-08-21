@@ -1,0 +1,467 @@
+[
+  {
+    "id": 2069,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Some case studiesalready suggest that approximately 50% of students use these tools [9, 2]",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 552,
+              "type": "TextPositionSelector",
+              "start": 462
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Some case studiesalready suggest that approximately 50% of students use these tools [9, 2]",
+              "prefix": "ems like they are here to stay. ",
+              "suffix": ".These chatbot LLMs have only re"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 2070,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": " They often provide fitting answers andexplanations to almost any natural language question asked",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 714,
+              "type": "TextPositionSelector",
+              "start": 617
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " They often provide fitting answers andexplanations to almost any natural language question asked",
+              "prefix": "ently become publicly available.",
+              "suffix": ". This has caused concern for ma"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2071,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "There are tools available that claim to detect the use of LLMs",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 979,
+              "type": "TextPositionSelector",
+              "start": 917
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "There are tools available that claim to detect the use of LLMs",
+              "prefix": " of graded written submissions. ",
+              "suffix": ".However, their false positive r"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2072,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "However, their false positive rate is still too high to rely solely on their output [3]. ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1069,
+              "type": "TextPositionSelector",
+              "start": 980
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "However, their false positive rate is still too high to rely solely on their output [3]. ",
+              "prefix": "claim to detect the use of LLMs.",
+              "suffix": "On the other side, the usageof s"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 2073,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "his indicates that outright banning any LLM tool for use in education could be the wrong approach.Instead, teachers and professors might need to adapt their teaching to include them to help students learn[10].",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1424,
+              "type": "TextPositionSelector",
+              "start": 1215
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "his indicates that outright banning any LLM tool for use in education could be the wrong approach.Instead, teachers and professors might need to adapt their teaching to include them to help students learn[10].",
+              "prefix": "hat it helps with learning[2]. T",
+              "suffix": "However, as LLMs are often used "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 2074,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "ven thoughexamples and solutions can have a positive effect on learning, solving new problems on your own is equallyimportant for long term learning [1]. ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1783,
+              "type": "TextPositionSelector",
+              "start": 1629
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "ven thoughexamples and solutions can have a positive effect on learning, solving new problems on your own is equallyimportant for long term learning [1]. ",
+              "prefix": "ept the answer as correct [5]. E",
+              "suffix": "As this step can be time consumi"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 2075,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "RQ1: How effective is prompting at limiting LLMs from providing solutions?",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2533,
+              "type": "TextPositionSelector",
+              "start": 2459
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "RQ1: How effective is prompting at limiting LLMs from providing solutions?",
+              "prefix": " following research questions:• ",
+              "suffix": "– Sub-RQ1.2: Do students prefer "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 2076,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "these system",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2634,
+              "type": "TextPositionSelector",
+              "start": 2622
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "these system",
+              "prefix": "ovide solutions?– Sub-RQ1.3: Do ",
+              "suffix": " improve learning compared to ex"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2077,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "\"do not providesolution\" prompting",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 105,
+              "type": "TextPositionSelector",
+              "start": 71
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "\"do not providesolution\" prompting",
+              "prefix": "owledgeProcessing LabEvaluating ",
+              "suffix": " for LLMsDo we learn better when"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 1
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2078,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "None ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3256,
+              "type": "TextPositionSelector",
+              "start": 3251
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "None ",
+              "prefix": "ng of new concepts by students. ",
+              "suffix": "of them address the issue of usi"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2079,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Still, they are vulnerable to jailbreak attacks, where specific user inputs bypass the guidelines [15]",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4666,
+              "type": "TextPositionSelector",
+              "start": 4564
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Still, they are vulnerable to jailbreak attacks, where specific user inputs bypass the guidelines [15]",
+              "prefix": "e harmful or otherwiseunwanted. ",
+              "suffix": ".Another common issue with LLMs "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 2080,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": " hallucinations, answers LLMs make up that are factually wrong butlook legitimate [4]. Hallucinations can especially occur when there is only insufficient or low quality dataregarding a topic [11]. ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4899,
+              "type": "TextPositionSelector",
+              "start": 4701
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " hallucinations, answers LLMs make up that are factually wrong butlook legitimate [4]. Hallucinations can especially occur when there is only insufficient or low quality dataregarding a topic [11]. ",
+              "prefix": "other common issue with LLMs are",
+              "suffix": "Such answers can potentially hav"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 2081,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "hese are chosen based on their popularity especially amongst students",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5288,
+              "type": "TextPositionSelector",
+              "start": 5219
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "hese are chosen based on their popularity especially amongst students",
+              "prefix": "ination ofLLMs following [16]. T",
+              "suffix": ". Differentexisting and novel pr"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 2082,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Occurrences of this will also be analyzed andexcluded from the data, if the students succeed",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7779,
+              "type": "TextPositionSelector",
+              "start": 7687
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Occurrences of this will also be analyzed andexcluded from the data, if the students succeed",
+              "prefix": "y to jailbreak the limitations. ",
+              "suffix": ".This main analysis should provi"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 2083,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": " a qualitative study will test the LLMs with predefined queries tosee whether they will provide learning steps but not complete solutions. At least 10 different queries will beused on each LLM. The prompts will also be evaluated for their resistance to jailbreaking, by using commonmethods to try to bypass restrictions. This study can also be repeated, to fine tune the prompting used inlimiting the LLMs output. Data will be collected on the final effectiveness of the prompts, answering RQ1",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5947,
+              "type": "TextPositionSelector",
+              "start": 5454
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " a qualitative study will test the LLMs with predefined queries tosee whether they will provide learning steps but not complete solutions. At least 10 different queries will beused on each LLM. The prompts will also be evaluated for their resistance to jailbreaking, by using commonmethods to try to bypass restrictions. This study can also be repeated, to fine tune the prompting used inlimiting the LLMs output. Data will be collected on the final effectiveness of the prompts, answering RQ1",
+              "prefix": "e the prompting in a first step,",
+              "suffix": ".A quantitative study will then "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  }
+]

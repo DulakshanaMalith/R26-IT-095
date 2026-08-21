@@ -1,0 +1,101 @@
+[
+  {
+    "id": 5150,
+    "user": "April Byrd",
+    "role": "student",
+    "text": "hasn't yet",
+    "annotationId": 5070,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5151,
+    "user": "April Byrd",
+    "role": "student",
+    "text": "Hook could be more exciting: Imagine you are in the desert...",
+    "annotationId": 5071,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5152,
+    "user": "April Byrd",
+    "role": "student",
+    "text": "Theoretical Framework? Way too short.",
+    "annotationId": 5072,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5153,
+    "user": "April Byrd",
+    "role": "student",
+    "text": "Well structured experiment",
+    "annotationId": 5073,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5154,
+    "user": "April Byrd",
+    "role": "student",
+    "text": "bias, limited to same sample, include more diverse sample (age, cultural background)",
+    "annotationId": 5074,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5155,
+    "user": "April Byrd",
+    "role": "student",
+    "text": "Experiment specific and practical",
+    "annotationId": 5075,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5156,
+    "user": "April Byrd",
+    "role": "student",
+    "text": "easy to understand",
+    "annotationId": 5076,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5157,
+    "user": "April Byrd",
+    "role": "student",
+    "text": "SOTA gives clear understanding",
+    "annotationId": 5077,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5158,
+    "user": "April Byrd",
+    "role": "student",
+    "text": "explain these terms",
+    "annotationId": 5078,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  }
+]

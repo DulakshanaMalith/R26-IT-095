@@ -1,0 +1,33 @@
+[
+  {
+    "id": 5570,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "This raises the question whether the impact of parasocial interaction on learning as ithas shown to exist on humans [12] can translate to these virtual assistants once they are used in AR andbecome even more realisti",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1354,
+              "type": "TextPositionSelector",
+              "start": 1138
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "This raises the question whether the impact of parasocial interaction on learning as ithas shown to exist on humans [12] can translate to these virtual assistants once they are used in AR andbecome even more realisti",
+              "prefix": "o existingAI assistants [9, 3]. ",
+              "suffix": "c. Examining this is especially "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  }
+]

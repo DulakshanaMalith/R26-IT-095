@@ -1,0 +1,12 @@
+Summary: The authors propose to further explore improving the StratL algorithm to better identify students' learning state when solving complex problems in educational scenarios.
+
+Strengths:
+The author has done a fairly comprehensive literature review of the core-related work and has a deep enough understanding of the existing approaches to addressing the research gap, what their contribution is, what their limitations are, and what I can potentially do more of in my project. Having completed the motivation part, I can follow the author's logic very well and understand from which aspect his research questions arise.
+The project proposal has a very strong theoretical and methodological foundation. The methods section outlines a concrete workflow for this project and potential challenges that may arise, which enhances the feasibility of the project.
+
+Weaknesses:
+Weak citation: when a statement/claim appears, a citation is needed to support that claim. The citation is not just the authors' publication name, but a brief summary of what their work is about, and should be a further explanation/completion of the claims. I have seen several cited papers in SOTA that say something/X was done by the paper, what, but not how and to what extent, which I call weak citations. You have to make sure that the cited work and the relationship between the literatures is clearly explained to the reader, otherwise, the reader knows what exists but doesn't know what was used to build it and what else needs to be done. (see more in the comments I left)
+The StraL algorithm is the core work for your project and you want to make improvements based on their findings, so it's very important to explicitly introduce their work to the readers. The presentation of the core-related work is not clear enough and there are many contradictions in the description of their methods/algorithms, e.g. how exactly does StraL perform the classification of students' states? What classification method did they use? Why is it later described as a classification method without AI/ML support? These questions need to be answered and a more precise introduction of the StraL algorithm is needed.
+
+Others:
+The author uses too much first-person narration. This is not common in scientific writing, where passive or objective description is usually used. I would recommend that the author use LLM to reformulate the first-person narrative.

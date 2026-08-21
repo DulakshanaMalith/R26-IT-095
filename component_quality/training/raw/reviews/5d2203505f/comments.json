@@ -1,0 +1,83 @@
+[
+  {
+    "id": 4823,
+    "user": "Claire Baker",
+    "role": "student",
+    "text": "don't mention what part of the motivation it is",
+    "annotationId": 4747,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4824,
+    "user": "Claire Baker",
+    "role": "student",
+    "text": "such as",
+    "annotationId": 4748,
+    "parentCommendId": null,
+    "tags": [
+      "typo"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4825,
+    "user": "Claire Baker",
+    "role": "student",
+    "text": "are involved",
+    "annotationId": 4749,
+    "parentCommendId": null,
+    "tags": [
+      "typo"
+    ],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4826,
+    "user": "Claire Baker",
+    "role": "student",
+    "text": "may not be a reliable source of information",
+    "annotationId": 4750,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4827,
+    "user": "Claire Baker",
+    "role": "student",
+    "text": "no buffer time",
+    "annotationId": 4751,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4828,
+    "user": "Claire Baker",
+    "role": "student",
+    "text": "None",
+    "annotationId": 4752,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4829,
+    "user": "Claire Baker",
+    "role": "student",
+    "text": "None",
+    "annotationId": 4753,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  }
+]

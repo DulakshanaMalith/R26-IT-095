@@ -1,0 +1,452 @@
+[
+  {
+    "id": 1805,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "I dont see any challenge here",
+    "annotationId": 1775,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [],
+    "group": 2
+  },
+  {
+    "id": 1806,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "the hook doesnt make sense too me. It is not about the relation between LLM and exercise",
+    "annotationId": 1776,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [],
+    "group": 2
+  },
+  {
+    "id": 1807,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "what is the problem statement, which is unclear to me",
+    "annotationId": 1777,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [],
+    "group": 2
+  },
+  {
+    "id": 1808,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "where is weakness of sota",
+    "annotationId": 1778,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [],
+    "group": 2
+  },
+  {
+    "id": 1809,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "theoretical framework\n",
+    "annotationId": 1779,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [],
+    "group": 2
+  },
+  {
+    "id": 1810,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "answer each question",
+    "annotationId": 1780,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [],
+    "group": 2
+  },
+  {
+    "id": 1811,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "target group",
+    "annotationId": 1781,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [],
+    "group": 2
+  },
+  {
+    "id": 1812,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "limitations of the method",
+    "annotationId": 1782,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 1,
+    "votes": [],
+    "group": 2
+  },
+  {
+    "id": 3852,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "I don't understand this sentence",
+    "annotationId": 3786,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 2,
+    "votes": [
+      {
+        "user": "Shelby Cummings",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 3853,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "this should come before the '.'",
+    "annotationId": 3787,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 2,
+    "votes": [
+      {
+        "user": "Shelby Cummings",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 3854,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "before '.'",
+    "annotationId": 3788,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 2,
+    "votes": [
+      {
+        "user": "Shelby Cummings",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 3855,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "good division",
+    "annotationId": 3789,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 2,
+    "votes": [
+      {
+        "user": "Shelby Cummings",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 3856,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "good RQ",
+    "annotationId": 3790,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 2,
+    "votes": [
+      {
+        "user": "Shelby Cummings",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 3857,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "None",
+    "annotationId": 3791,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 2,
+    "votes": [
+      {
+        "user": "Shelby Cummings",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 3858,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "'compared to' *",
+    "annotationId": 3792,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 2,
+    "votes": [
+      {
+        "user": "Shelby Cummings",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 3859,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "will the group be trained or evaluated with different tasks? ",
+    "annotationId": 3793,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 2,
+    "votes": [
+      {
+        "user": "Shelby Cummings",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 3860,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "This is the baseline performance of all students. You might want to consider if you really want to measure this via self-evaluation or if you want to test it by giving them tasks to solve.",
+    "annotationId": 3794,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 2,
+    "votes": [
+      {
+        "user": "Shelby Cummings",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 3861,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "But there is also a risk of biased grouping",
+    "annotationId": 3795,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 2,
+    "votes": [
+      {
+        "user": "Shelby Cummings",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 3862,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "Do you mean after this? ",
+    "annotationId": 3796,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 2,
+    "votes": [
+      {
+        "user": "Shelby Cummings",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 3863,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "For this, again, you should reconsider if you want to measure the training effect via self-evaluating",
+    "annotationId": 3797,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 2,
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5379,
+    "user": "Brett Turner",
+    "role": "student",
+    "text": "This Sentence should be before the previous for more clarity",
+    "annotationId": 5296,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 3,
+    "votes": [
+      {
+        "user": "Shelby Cummings",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 5380,
+    "user": "Brett Turner",
+    "role": "student",
+    "text": "None",
+    "annotationId": 5297,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 3,
+    "votes": [
+      {
+        "user": "Shelby Cummings",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 5381,
+    "user": "Brett Turner",
+    "role": "student",
+    "text": "wrong grammar",
+    "annotationId": 5298,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 3,
+    "votes": [
+      {
+        "user": "Shelby Cummings",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 5382,
+    "user": "Brett Turner",
+    "role": "student",
+    "text": "not specific enough",
+    "annotationId": 5299,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 3,
+    "votes": [
+      {
+        "user": "Shelby Cummings",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 5383,
+    "user": "Brett Turner",
+    "role": "student",
+    "text": "I don't think this is effective in majorly reducing bad feedback",
+    "annotationId": 5300,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 3,
+    "votes": [
+      {
+        "user": "Shelby Cummings",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 5384,
+    "user": "Brett Turner",
+    "role": "student",
+    "text": "should be more focus on the shortcomings of the approach",
+    "annotationId": 5301,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 3,
+    "votes": [
+      {
+        "user": "Shelby Cummings",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 5385,
+    "user": "Brett Turner",
+    "role": "student",
+    "text": "To little time in my opinion",
+    "annotationId": 5302,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 3,
+    "votes": [
+      {
+        "user": "Shelby Cummings",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 5386,
+    "user": "Brett Turner",
+    "role": "student",
+    "text": "its unclear what exactly is provided by the department",
+    "annotationId": 5303,
+    "parentCommendId": null,
+    "tags": [],
+    "review": 3,
+    "votes": [
+      {
+        "user": "Shelby Cummings",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  }
+]

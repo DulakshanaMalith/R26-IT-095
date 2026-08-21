@@ -1,0 +1,102 @@
+[
+  {
+    "id": 4067,
+    "user": "Julia Newton",
+    "role": "student",
+    "text": "Wiederholung von \"However\" am Satzanfang",
+    "annotationId": 4000,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4068,
+    "user": "Julia Newton",
+    "role": "student",
+    "text": "Vermutlich kein einheitlicher Stil für Referenzen\n",
+    "annotationId": 4001,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4069,
+    "user": "Julia Newton",
+    "role": "student",
+    "text": "Die beschriebenen Ergebnisse scheinen eher quantitative Daten zu sein (solution\ncorrectness, time taken to complete the task, and learning progress as measured by the follow-up exam performance)",
+    "annotationId": 4002,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4070,
+    "user": "Julia Newton",
+    "role": "student",
+    "text": "Geringe Teilnehmerzahl, möglicherweise geringe Aussagekraft und Belastbarkeit der Ergebnisse, vor allem bei Aufteilung und Vergleich von drei Gruppen zu je 10 Teilnehmern",
+    "annotationId": 4003,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Shelly Lawrence",
+        "role": "assistant",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 4071,
+    "user": "Julia Newton",
+    "role": "student",
+    "text": "Hier klarer machen, dass es sich um programming languages handelt",
+    "annotationId": 4004,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4072,
+    "user": "Julia Newton",
+    "role": "student",
+    "text": "Bedeutung erklären",
+    "annotationId": 4005,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4073,
+    "user": "Julia Newton",
+    "role": "student",
+    "text": "Eher schwacher Hook, der sich nicht direkt auf das Thema des Exposés bezieht (also Einsatz von Coding Tools für Lerneffekt)",
+    "annotationId": 4006,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Shelly Lawrence",
+        "role": "assistant",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 4074,
+    "user": "Julia Newton",
+    "role": "student",
+    "text": "SOTA > Schwachpunkte, eher wenige Details, was genau waren die Schwachpunkte in related research? Hier nur oberflächlich genannt, ohne genau auf die Methodik einzugehen",
+    "annotationId": 4007,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  }
+]

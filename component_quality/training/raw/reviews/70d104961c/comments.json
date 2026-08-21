@@ -1,0 +1,134 @@
+[
+  {
+    "id": 997,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "This is no sentence",
+    "annotationId": 985,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 998,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Is there a specific reason why you want to focus on GPT-3?",
+    "annotationId": 986,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 999,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "See Motivation",
+    "annotationId": 987,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1000,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Was this already tried? If yes, what could be done better? If no, why not?",
+    "annotationId": 988,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1001,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Nice opening, which arouses interest in reading further.",
+    "annotationId": 989,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1002,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Explain what that is. Consider adding a citation.",
+    "annotationId": 990,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1003,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "After reading that, I still don't fully understand the current state of the art, its limitations, and its problems. You should clarify that. Furthermore, it's unclear how you want to use the current SOTA for your approach.",
+    "annotationId": 991,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1004,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "This is more of a possible outcome than a problem.",
+    "annotationId": 992,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1005,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "None",
+    "annotationId": 993,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1006,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Usually 26 weeks.",
+    "annotationId": 994,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1007,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "*Built",
+    "annotationId": 995,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1008,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": "Grammarly, DeepL",
+    "annotationId": 996,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  }
+]

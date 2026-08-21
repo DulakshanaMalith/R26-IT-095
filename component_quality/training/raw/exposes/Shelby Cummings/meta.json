@@ -1,0 +1,30 @@
+{
+  "topic": "Interactive LLM-based teaching agents",
+  "author": "Shelby Cummings",
+  "reviews": {
+    "1": {
+      "review": 1,
+      "hash": "ce957d3399",
+      "reviewer": "Shane Barnes",
+      "role": "expert",
+      "size": 1577,
+      "group": 2
+    },
+    "2": {
+      "review": 2,
+      "hash": "186805ae12",
+      "reviewer": "Willie Cervantes",
+      "role": "assistant",
+      "size": 1403,
+      "group": 1
+    },
+    "3": {
+      "review": 3,
+      "hash": "5d0fa420fc",
+      "reviewer": "Brett Turner",
+      "role": "student",
+      "size": 1454,
+      "group": 1
+    }
+  }
+}

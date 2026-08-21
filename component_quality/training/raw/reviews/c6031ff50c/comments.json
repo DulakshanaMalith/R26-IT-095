@@ -1,0 +1,274 @@
+[
+  {
+    "id": 2328,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "ethic?",
+    "annotationId": 2287,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Jeffrey Webb",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2329,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "what are those reasons?",
+    "annotationId": 2288,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Jeffrey Webb",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2330,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "benefit",
+    "annotationId": 2289,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Jeffrey Webb",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2331,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "ethic?",
+    "annotationId": 2290,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Jeffrey Webb",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2332,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "Good example",
+    "annotationId": 2291,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Jeffrey Webb",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2333,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "be adressed",
+    "annotationId": 2292,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Jeffrey Webb",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2334,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "ethic?",
+    "annotationId": 2293,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Jeffrey Webb",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2335,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "which concerns exactly?",
+    "annotationId": 2294,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Jeffrey Webb",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2336,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "introduce abbreviation in the beginning.",
+    "annotationId": 2295,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Jeffrey Webb",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2337,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "grammar",
+    "annotationId": 2296,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Jeffrey Webb",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2338,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "None",
+    "annotationId": 2297,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Jeffrey Webb",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2339,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "double negation?",
+    "annotationId": 2298,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Jeffrey Webb",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2340,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "redundant sentences",
+    "annotationId": 2299,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Jeffrey Webb",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2341,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "Do you mean finding a measurement of how good LLMs are?",
+    "annotationId": 2300,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Jeffrey Webb",
+        "role": "student",
+        "vote": -1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2342,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "a lot is not a concrete measurement",
+    "annotationId": 2301,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Jeffrey Webb",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 2343,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "None",
+    "annotationId": 2302,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Jeffrey Webb",
+        "role": "student",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  }
+]

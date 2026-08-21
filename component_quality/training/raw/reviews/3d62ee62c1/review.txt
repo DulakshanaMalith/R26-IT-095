@@ -1,0 +1,41 @@
+Generative AI is transforming healthcare through advancements in diagnostics, personalized medicine, 
+and drug discovery. However, biases in training data pose significant challenges, particularly 
+in under-representing minority populations and perpetuating disparities in healthcare outcomes. 
+This research focuses on identifying the origins of biases in data collection and annotation, 
+the role of demographic under-representation, and evaluating the effectiveness of current bias mitigation strategies, 
+such as fairness-aware algorithms. Grounded in theories of algorithmic fairness and data governance, 
+the study employs a mixed-methods approach, including quantitative analysis of healthcare datasets, 
+qualitative case studies on annotation practices, and expert interviews. By addressing systemic issues in data pipelines, 
+this work aims to develop ethical and equitable AI systems for healthcare applications, 
+contributing practical solutions informed by robust theoretical and methodological frameworks.
+
+The expose is overall well written, uses comprehensive language or explains 
+terminology where necessary. The focus is clearly set on data collection and 
+curation, where the root causes for the introduction of biases are believed to 
+lie (see second paragraph on p. 1). This positions the research nicely in the gap found in current studies and 
+other works, which are also cited correctly throughout the document. 
+Research questions are mostly chosen appropriately for this goal. Especially 
+the first question, however, may be too broadly phrased, which can cause issues 
+with the overall manageability of the studies, and their results, that are to be conducted over the 
+course of the research. To achieve a more manageable problem space, the categories 
+of biases could be further narrowed down, and also the relevant domains of data 
+sets; in this case the medical domain. This is already done or at least hinted at 
+in the other research questions or in the approach section of the document. It would 
+be beneficial to already clearly state this in the first research question, so that there 
+are no misconceptions about the scope of the research -- for both the reader, and 
+the research conducting party. To meaningfully compare the sort of biases discussed 
+in the document from the medical sector with other domains, the planned research 
+has to be carried out first, so that it can then be put in contrast to biases in 
+more generalized contexts. Especially considering that investigating intersections 
+of multiple biases, as proposed in the second paragraph of the approach section, 
+is already quite an extensive task. Variable isolation is already quite difficult 
+with this goal in mind, which has to be taken into account, to prevent introducing 
+biases into the proposed research. Concrete steps on how to avoid introducing these own 
+biases are missing from "4. Addressing Challenges" in the approach section.
+With all this in mind, the title should also be more tangible; specifically mentioning 
+data collection and curation makes sense, because that is what is referenced in 
+more detail later on in the document.
+
+Overall, the research proposal is mostly well-structured. The schedule may be too tight, 
+depending on whether the research questions are narrowed down as described above.
+

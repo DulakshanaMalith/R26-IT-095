@@ -1,0 +1,22 @@
+{
+  "topic": "Generative AI in Healthcare",
+  "author": "Jamie Hansen",
+  "reviews": {
+    "1": {
+      "review": 1,
+      "hash": "244f5f9029",
+      "reviewer": "Jacob Boyer",
+      "role": "student",
+      "size": 3181,
+      "group": 1
+    },
+    "2": {
+      "review": 2,
+      "hash": "e0f6c0d674",
+      "reviewer": "Willie Cervantes",
+      "role": "assistant",
+      "size": 1373,
+      "group": 1
+    }
+  }
+}

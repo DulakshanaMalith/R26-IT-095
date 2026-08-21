@@ -1,0 +1,312 @@
+[
+  {
+    "id": 561,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "At least one-third of the global population of all ages and genders is affected by skin diseases at some pointin their life and it lies in the top 10 of the most common reasons for seeking medical attention as shown byHay et al. in [4]. There is a vast diversity of skin diseases with distinctive presentations and characteristics.They can be caused by various reasons that range from psychological causes to body reactions, from geneticto environmental factors. The precise determination of the cause and the type of disease are some of theimportant keys to treat these diseases effectively.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 942,
+              "type": "TextPositionSelector",
+              "start": 350
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "At least one-third of the global population of all ages and genders is affected by skin diseases at some pointin their life and it lies in the top 10 of the most common reasons for seeking medical attention as shown byHay et al. in [4]. There is a vast diversity of skin diseases with distinctive presentations and characteristics.They can be caused by various reasons that range from psychological causes to body reactions, from geneticto environmental factors. The precise determination of the cause and the type of disease are some of theimportant keys to treat these diseases effectively.",
+              "prefix": "ber 9, 2024Darmstadt1 Motivation",
+              "suffix": "With the growing tendency of ada"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 562,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "the dermatology is also on therun of researching and integrating the application of artificial intelligence t",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1135,
+              "type": "TextPositionSelector",
+              "start": 1026
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "the dermatology is also on therun of researching and integrating the application of artificial intelligence t",
+              "prefix": "l intelligence into healthcare, ",
+              "suffix": "o boost various aspects of medic"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 563,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "wn, ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1251,
+              "type": "TextPositionSelector",
+              "start": 1247
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "wn, ",
+              "prefix": "t al. [7], some studies have sho",
+              "suffix": "that the performance of somealgo"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 564,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "examles",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1668,
+              "type": "TextPositionSelector",
+              "start": 1661
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "examles",
+              "prefix": "recognising skin diseases. Some ",
+              "suffix": " models are the Convolutional Ne"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 565,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": " In this thesis we will explore if it is possible to present the system for generatingsynthetic training data presented in Tai et al. [11] to create synthetic training datasets that contain imagesfor four classes: the three types of skin cancer and cancer-free images",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3889,
+              "type": "TextPositionSelector",
+              "start": 3622
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " In this thesis we will explore if it is possible to present the system for generatingsynthetic training data presented in Tai et al. [11] to create synthetic training datasets that contain imagesfor four classes: the three types of skin cancer and cancer-free images",
+              "prefix": "mous cellcarcinoma and melanoma.",
+              "suffix": ".22 Approach2.1 State of the art"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 566,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "The detection of melanoma is of course an important task as it is dangerous and needs to be quickly diagnosedto begin treatment. However, there are other types of skin cancer that are simply grouped into the benign classwithin the scope of Tai et al. [11]. The three classes of skin cancer are basal cell carcinoma, squamous cellcarcinoma and melanoma",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3621,
+              "type": "TextPositionSelector",
+              "start": 3270
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The detection of melanoma is of course an important task as it is dangerous and needs to be quickly diagnosedto begin treatment. However, there are other types of skin cancer that are simply grouped into the benign classwithin the scope of Tai et al. [11]. The three classes of skin cancer are basal cell carcinoma, squamous cellcarcinoma and melanoma",
+              "prefix": "ages displayingmelanoma samples.",
+              "suffix": ". In this thesis we will explore"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 567,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "Traditionally, skin cancer images are captured manually and individually, then classified by medical expertsand added to a dataset as in [9]. This process might be partially automated, but still requires a lot of work andsufficient patients. This also raises legal issues like anonimization of data to remove the possibility to identifyindividuals from the training data. This kind of data collection also might require additional documentationto prove that all patients have consented to the captured data being used for inclusion in the training dataset.These issues can be mitigated by creating a synthetic dataset as long as the accuracy of the synthetic data isnot an issue",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4599,
+              "type": "TextPositionSelector",
+              "start": 3921
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Traditionally, skin cancer images are captured manually and individually, then classified by medical expertsand added to a dataset as in [9]. This process might be partially automated, but still requires a lot of work andsufficient patients. This also raises legal issues like anonimization of data to remove the possibility to identifyindividuals from the training data. This kind of data collection also might require additional documentationto prove that all patients have consented to the captured data being used for inclusion in the training dataset.These issues can be mitigated by creating a synthetic dataset as long as the accuracy of the synthetic data isnot an issue",
+              "prefix": ".22 Approach2.1 State of the art",
+              "suffix": ".The idea of generating a synthe"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 568,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "The idea of generating a synthetic dataset is not new or unique. Beynek et al. [1] used a generative adverserialnetwork (GAN) for the cancer types of malignant melanoma and basal-cell carcinoma. Kaur et al. [5] traineda conditional generative adversarial network to produce a synthetic training dataset for skin cancer",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4918,
+              "type": "TextPositionSelector",
+              "start": 4600
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The idea of generating a synthetic dataset is not new or unique. Beynek et al. [1] used a generative adverserialnetwork (GAN) for the cancer types of malignant melanoma and basal-cell carcinoma. Kaur et al. [5] traineda conditional generative adversarial network to produce a synthetic training dataset for skin cancer",
+              "prefix": "e synthetic data isnot an issue.",
+              "suffix": ".2.2 Theoretical FrameworkGenera"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 569,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "have",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5776,
+              "type": "TextPositionSelector",
+              "start": 5772
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "have",
+              "prefix": " adversarial learning procedure ",
+              "suffix": " difficulties with scaling to ha"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 570,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "heoretical Framework",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4944,
+              "type": "TextPositionSelector",
+              "start": 4924
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "heoretical Framework",
+              "prefix": "ng dataset for skin cancer.2.2 T",
+              "suffix": "Generative adverserial networks "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  }
+]

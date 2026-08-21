@@ -1,0 +1,140 @@
+[
+  {
+    "retain": 0
+  },
+  {
+    "insert": "Feed-Up (Connecting to goals and standards):"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "header": 3
+    }
+  },
+  {
+    "insert": "Your exposé demonstrates a well-researched subject, which provides a solid basis for your work. However, there are several key areas that need improvement to meet academic expectations.\n\n\nFeed-Forward (Actionable suggestions for improvement):"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "header": 3
+    }
+  },
+  {
+    "insert": "Avoid Word Repetition",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": ": Repetition of words throughout the text diminishes readability. Rework these areas to improve the flow and variety of your language."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "ordered"
+    }
+  },
+  {
+    "insert": "Correct Citation Format",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": ": Ensure citations are correctly formatted. Use the standard \"This is a sentence [1].\" structure consistently."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "ordered"
+    }
+  },
+  {
+    "insert": "Expand Research Questions",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": ": The research questions lack detail. Add more specificity to make them clearer and more focused."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "ordered"
+    }
+  },
+  {
+    "insert": "Revise Timeline",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": ": The current timeline is too tight for a bachelor thesis. Adjust it to reflect realistic goals and timeframes."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "ordered"
+    }
+  },
+  {
+    "insert": "Clarify Ethics Usage",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": ": Your usage of the term \"ethics\" is unclear or incorrect. Revisit the concept and ensure it is applied accurately in your work."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "ordered"
+    }
+  },
+  {
+    "insert": "Ensure Language Consistency",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": ": While writing the exposé in German is fine, the language in your schedule is inconsistent. Maintain the same language throughout the document."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "ordered"
+    }
+  },
+  {
+    "insert": "Strengthen Sources",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": ": The sources rely too heavily on websites and specific model links. Support your work with more academic papers and credible research."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "ordered"
+    }
+  },
+  {
+    "insert": "\nSummary (Overall assessment):"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "header": 3
+    }
+  },
+  {
+    "insert": "Your exposé starts with a strong subject, but improvements in clarity, formatting, and depth are essential. Focus on avoiding repetition, fixing citations, refining your timeline, and ensuring consistency in language and source credibility. With these adjustments, your work will meet higher academic standards."
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "id": 4065,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": null,
+    "selectors": null,
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 4066,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": null,
+    "selectors": null,
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 4067,
+    "user": "Erin Nguyen",
+    "role": "assistant",
+    "text": null,
+    "selectors": null,
+    "tag": "Weakness",
+    "group": 1
+  }
+]

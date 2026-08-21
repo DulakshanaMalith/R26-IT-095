@@ -1,0 +1,808 @@
+[
+  {
+    "id": 2527,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": " <LINK>",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 486,
+              "type": "TextPositionSelector",
+              "start": 479
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " <LINK>",
+              "prefix": "elease on the 30th November 2022",
+              "suffix": ". Eversince then the discourse a"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2528,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "last month",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 403,
+              "type": "TextPositionSelector",
+              "start": 393
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "last month",
+              "prefix": ", 2024Darmstadt1 MotivationJust ",
+              "suffix": " ChatGBT had its 2nd anniversary"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2529,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "<Example?>",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1011,
+              "type": "TextPositionSelector",
+              "start": 1001
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "<Example?>",
+              "prefix": " Buzz words in their marketing. ",
+              "suffix": " ChatGBTis a powerful tool and c"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2530,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Lots of marketing teams have recognized the\"AI-Hype\" and started incorporating lots of AI-adjacent Buzz words in their marketing",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 999,
+              "type": "TextPositionSelector",
+              "start": 871
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Lots of marketing teams have recognized the\"AI-Hype\" and started incorporating lots of AI-adjacent Buzz words in their marketing",
+              "prefix": "d by using AI-Tools themselves. ",
+              "suffix": ". <Example?> ChatGBTis a powerfu"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 2531,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "ho ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1114,
+              "type": "TextPositionSelector",
+              "start": 1111
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "ho ",
+              "prefix": "merely a text-based tool. Even t",
+              "suffix": "some imagegeneration is supporte"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2532,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Just last month ChatGBT",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 411,
+              "type": "TextPositionSelector",
+              "start": 388
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Just last month ChatGBT",
+              "prefix": "ber 9, 2024Darmstadt1 Motivation",
+              "suffix": " had its 2nd anniversary since i"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2533,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "ets take the example of a professorchecking if AI-Tools were used in the work of their students: This professor would have to copy paste the textsmanually or upload the files to their AI-checking-Tools.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1514,
+              "type": "TextPositionSelector",
+              "start": 1312
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "ets take the example of a professorchecking if AI-Tools were used in the work of their students: This professor would have to copy paste the textsmanually or upload the files to their AI-checking-Tools.",
+              "prefix": "ew dimension of possibilities. L",
+              "suffix": " If AI-Tools however had the abi"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 2534,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Motivation",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 388,
+              "type": "TextPositionSelector",
+              "start": 378
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Motivation",
+              "prefix": "ion: December 9, 2024Darmstadt1 ",
+              "suffix": "Just last month ChatGBT had its "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2535,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "It looks regular glasses maybejust a bit thicker than most.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1916,
+              "type": "TextPositionSelector",
+              "start": 1857
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "It looks regular glasses maybejust a bit thicker than most.",
+              "prefix": "any formerly known as Facebook. ",
+              "suffix": " The glass panels are able to pr"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2536,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "I wonderhow",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2224,
+              "type": "TextPositionSelector",
+              "start": 2213
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "I wonderhow",
+              "prefix": "s already perceived real world. ",
+              "suffix": " AR-Tech can enhance Large Langu"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2537,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "I want",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2332,
+              "type": "TextPositionSelector",
+              "start": 2326
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "I want",
+              "prefix": "xperience on a day to daybasis. ",
+              "suffix": " to specificaly focus on incorpo"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2538,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "thing glasses",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2543,
+              "type": "TextPositionSelector",
+              "start": 2530
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "thing glasses",
+              "prefix": " implementation? For example are",
+              "suffix": " able to detect input and react "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2539,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Could it even be possible to let doctors use these glasses to detect skin cancer ontheir patients? And lastly do users actually report better experiences with AR-assisted LLMs in comparison toregular text-based AI-Tools. AR glasses are not largely available and most of them are still in a experimentalstate.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3079,
+              "type": "TextPositionSelector",
+              "start": 2771
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Could it even be possible to let doctors use these glasses to detect skin cancer ontheir patients? And lastly do users actually report better experiences with AR-assisted LLMs in comparison toregular text-based AI-Tools. AR glasses are not largely available and most of them are still in a experimentalstate.",
+              "prefix": "changehow LLMs can be utilized. ",
+              "suffix": "22 ApproachIn terms of approach "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 2540,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Are there some technical constraints in terms of actual implementation?",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2514,
+              "type": "TextPositionSelector",
+              "start": 2443
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Are there some technical constraints in terms of actual implementation?",
+              "prefix": "ype of META. Aconsideration is: ",
+              "suffix": " For example arething glasses ab"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2541,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Orion AR Glasses released by META, the company formerly known as Facebook",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1855,
+              "type": "TextPositionSelector",
+              "start": 1782
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Orion AR Glasses released by META, the company formerly known as Facebook",
+              "prefix": "lasses like the prototype of the",
+              "suffix": ". It looks regular glasses maybe"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2542,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Approach",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3090,
+              "type": "TextPositionSelector",
+              "start": 3082
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Approach",
+              "prefix": "still in a experimentalstate.22 ",
+              "suffix": "In terms of approach I would try"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2543,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": " I would",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3118,
+              "type": "TextPositionSelector",
+              "start": 3110
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " I would",
+              "prefix": ".22 ApproachIn terms of approach",
+              "suffix": " try to work with students who w"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2544,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "with a given AR glass that includes a LLM-Tool",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3241,
+              "type": "TextPositionSelector",
+              "start": 3195
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "with a given AR glass that includes a LLM-Tool",
+              "prefix": "eedback on their user experience",
+              "suffix": ". It would be important to let t"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2545,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "asks ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3386,
+              "type": "TextPositionSelector",
+              "start": 3381
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "asks ",
+              "prefix": "xperience. They would be given t",
+              "suffix": "to solve with the AR glassesand "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2546,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "neeed",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3643,
+              "type": "TextPositionSelector",
+              "start": 3638
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "neeed",
+              "prefix": "be measured by metricslike time ",
+              "suffix": ", user feedback (scale of 1 to 5"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2547,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "scew",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4170,
+              "type": "TextPositionSelector",
+              "start": 4166
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "scew",
+              "prefix": "verage person and will probably ",
+              "suffix": "towards people who find problem "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 2548,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "asess ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4271,
+              "type": "TextPositionSelector",
+              "start": 4265
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "asess ",
+              "prefix": "that bias into account and also ",
+              "suffix": "priorskills of how good are thes"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 2549,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "[balzertetall2011] https://apnews.com/article/meta-connect-zuckerberg-quest-ai-orion-dc8228049dea6a00b0f818ddb35f0c31",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4506,
+              "type": "TextPositionSelector",
+              "start": 4389
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "[balzertetall2011] https://apnews.com/article/meta-connect-zuckerberg-quest-ai-orion-dc8228049dea6a00b0f818ddb35f0c31",
+              "prefix": "math skills?Literature example: ",
+              "suffix": "33 Schedule(Graphic) tabular sch"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2550,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "(Graphic)",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4526,
+              "type": "TextPositionSelector",
+              "start": 4517
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "(Graphic)",
+              "prefix": "a6a00b0f818ddb35f0c3133 Schedule",
+              "suffix": " tabular schedule from start to "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2551,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Sit down → think what needs to be done• Be realistic and build checkpoints• Go into details (don’t pick headlines “literature review”)• Plan for unexpected events → buffer (sickness, vacation)• Weekly schedule for small projects, monthly for larger ones (several small work steps within these units)• Consult someone experienced",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4926,
+              "type": "TextPositionSelector",
+              "start": 4598
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Sit down → think what needs to be done• Be realistic and build checkpoints• Go into details (don’t pick headlines “literature review”)• Plan for unexpected events → buffer (sickness, vacation)• Weekly schedule for small projects, monthly for larger ones (several small work steps within these units)• Consult someone experienced",
+              "prefix": "on in chronological orderTips:• ",
+              "suffix": "Example:Month Week Task Descript"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2552,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Example:",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4934,
+              "type": "TextPositionSelector",
+              "start": 4926
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Example:",
+              "prefix": "ts)• Consult someone experienced",
+              "suffix": "Month Week Task Description1 1 P"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  }
+]

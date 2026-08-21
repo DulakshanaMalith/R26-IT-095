@@ -1,0 +1,92 @@
+[
+  {
+    "retain": 0
+  },
+  {
+    "insert": "Summary:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nThis exposé examines whether Large Language Models (LLMs) can help computer science teachers in lower secondary education by generating lesson plans that reduce workload and meet content quality standards. \n\n"
+  },
+  {
+    "insert": "Strength:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nA well-organised exposé is crucial for clarity and readability. A consistent structure helps to guide the reader smoothly through the content, making complex ideas easier to follow and understand. You have done this very well in your work."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "An interesting hook is important to get the reader's attention and directly convey the relevance of the research. Your hook is a very good start for motivation."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "A well-defined research question is important to ensure your research is focussed. Your question is clearly stated and broken down into well-defined sub-questions.  This is a major strength as it ensures that the study remains focused and manageable. Furthermore, the alignment of specific methods to each sub-question gives the study a structured approach. "
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "\n\n"
+  },
+  {
+    "insert": "Weakness:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nThe motivation should explain to the reader why the chosen topic is relevant and which weakness the thesis wants to address. The problem is well presented in your motivation, but could be explained more clearly. Read through your text again and add more details to the problems. In particular, think about what the consequences of the problem are. "
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "Within the theoretical framework, the theories used in the work are presented and their relevance justified. Your theoretical framework is very good, but could be a little more detailed.  In particular, the relevance of Gagne's nine teaching events could be explained in more detail. In addition, SOTA could make it clearer where the current weaknesses lie. "
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "In scientific work it is very important to have a standardised terminology. Abbreviations must always be introduced at the beginning and then used consistently (e.g. ‘AI’, ‘LLM’). Unfortunately, you have not achieved this in your text. This problem interrupts the reading flow and could confuse the reader. Go through your text again carefully and adjust the abbreviations."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "The time schedule is used to plan the thesis in advance to see whether it is possible in the available time. Your schedule lacks a clear time frame for writing the introduction, theoretical framework, etc. Including these phases would make the timeline more complete and realistic. Look at how a thesis is structured and think about when you could write these parts."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  }
+]

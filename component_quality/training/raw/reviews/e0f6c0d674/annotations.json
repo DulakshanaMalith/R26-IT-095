@@ -1,0 +1,374 @@
+[
+  {
+    "id": 5478,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "Medi-SPDZAccessible Private Generative AI for healthcare via a fast and intuitive Secure Multi-PartyComputation framework",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 181,
+              "type": "TextPositionSelector",
+              "start": 60
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Medi-SPDZAccessible Private Generative AI for healthcare via a fast and intuitive Secure Multi-PartyComputation framework",
+              "prefix": "iquitous KnowledgeProcessing Lab",
+              "suffix": "Name: AnonymizedMatrikelnummer: "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 1
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5479,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "algorithms",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 967,
+              "type": "TextPositionSelector",
+              "start": 957
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "algorithms",
+              "prefix": "order for these highly advanced ",
+              "suffix": " to work accurately, they need t"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5480,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "Generative AI",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3095,
+              "type": "TextPositionSelector",
+              "start": 3082
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Generative AI",
+              "prefix": " either the benefits providedby ",
+              "suffix": " algorithms or the patients’ dat"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 5481,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "Various methods for data protection have already been proposed such as the use of Homomorphic Encryption(HE), Secure Multi-Party Computation (SMPC), Differential Privacy (DP) or Federated Learning (FL) [9] [6][11] [7]. Using SMPC, the input data is simply masked or secret shared and distributed among differentparties. The computation is then performed collaboratively on the obscured data, thereby ensuring fullconfidentiality of the input. While each party is unable to access the input data, the output of the functioncan still be reconstructed by combining the resulting shares in the end.While SMPC is a very versatile and secure technology, its cryptographic nature requires the engineers who wantto use it to be highly educated about many different cryptographic concepts. Furthermore, there are a varietyof different SMPC algorithms, with changes in security models, protocol structures and most importantly,changes in the tradeoff between security and runtime. The suitability and performance of each protocolvariant depends on the concrete usage-scenario, which introduces further complexity. Widespread adoption ofsecure algorithms is prevented by these obstacles, potentially risking the loss of either the benefits providedby Generative AI algorithms or the patients’ data privacy.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3137,
+              "type": "TextPositionSelector",
+              "start": 1842
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Various methods for data protection have already been proposed such as the use of Homomorphic Encryption(HE), Secure Multi-Party Computation (SMPC), Differential Privacy (DP) or Federated Learning (FL) [9] [6][11] [7]. Using SMPC, the input data is simply masked or secret shared and distributed among differentparties. The computation is then performed collaboratively on the obscured data, thereby ensuring fullconfidentiality of the input. While each party is unable to access the input data, the output of the functioncan still be reconstructed by combining the resulting shares in the end.While SMPC is a very versatile and secure technology, its cryptographic nature requires the engineers who wantto use it to be highly educated about many different cryptographic concepts. Furthermore, there are a varietyof different SMPC algorithms, with changes in security models, protocol structures and most importantly,changes in the tradeoff between security and runtime. The suitability and performance of each protocolvariant depends on the concrete usage-scenario, which introduces further complexity. Widespread adoption ofsecure algorithms is prevented by these obstacles, potentially risking the loss of either the benefits providedby Generative AI algorithms or the patients’ data privacy.",
+              "prefix": "ks or Re-Identification Attacks.",
+              "suffix": "Healthcare companies, engineers "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 5482,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": " Homomorphic Encryption(HE), Secure Multi-Party Computation (SMPC), Differential Privacy (DP) or Federated Learning (FL) [9] [6][11] [7]. ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2061,
+              "type": "TextPositionSelector",
+              "start": 1923
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " Homomorphic Encryption(HE), Secure Multi-Party Computation (SMPC), Differential Privacy (DP) or Federated Learning (FL) [9] [6][11] [7]. ",
+              "prefix": "been proposed such as the use of",
+              "suffix": "Using SMPC, the input data is si"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5483,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "Developerscould simply input their function as well as the desired security guarantees and everything else is handledby the framework. Such an implementation would also deliver concrete answers about tradeoffs betweenefficiency and security. Using these answers, we could also make recommendations for best practices",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3870,
+              "type": "TextPositionSelector",
+              "start": 3554
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Developerscould simply input their function as well as the desired security guarantees and everything else is handledby the framework. Such an implementation would also deliver concrete answers about tradeoffs betweenefficiency and security. Using these answers, we could also make recommendations for best practices",
+              "prefix": " algorithms could achieve this. ",
+              "suffix": ".22 ApproachState of the artHast"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5484,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "hey conclude that although they are all secure, they lack documentation andtherefore usability, their program executions are not always correct and their compiler quality is sufferingfrom no rigorous approach to language design and verification. Additionally, their runtimes are often timesexceedingly high, thereby making the algorithms unusable in practice",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4384,
+              "type": "TextPositionSelector",
+              "start": 4026
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "hey conclude that although they are all secure, they lack documentation andtherefore usability, their program executions are not always correct and their compiler quality is sufferingfrom no rigorous approach to language design and verification. Additionally, their runtimes are often timesexceedingly high, thereby making the algorithms unusable in practice",
+              "prefix": "orksand compilers in 2019 [3]. T",
+              "suffix": ".The newer framework MP-SPDZ doe"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 5485,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "method",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6606,
+              "type": "TextPositionSelector",
+              "start": 6600
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "method",
+              "prefix": "ng the private input.The second ",
+              "suffix": " uses secret sharing, where each"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5486,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "With all of this done",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8225,
+              "type": "TextPositionSelector",
+              "start": 8204
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "With all of this done",
+              "prefix": "elizable graph-based algorithms.",
+              "suffix": ", the resulting variety of algor"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5487,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": " can then be adapted and extended accordingl",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8107,
+              "type": "TextPositionSelector",
+              "start": 8063
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " can then be adapted and extended accordingl",
+              "prefix": "identified. TheMP-SPDZ framework",
+              "suffix": "y, such that it also includes th"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 5488,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "printing",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 9496,
+              "type": "TextPositionSelector",
+              "start": 9488
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "printing",
+              "prefix": "22-24 Finalization Buffer time, ",
+              "suffix": ", and final submission5Bibliogra"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 5489,
+    "user": "Willie Cervantes",
+    "role": "assistant",
+    "text": "Schedule",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8675,
+              "type": "TextPositionSelector",
+              "start": 8667
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Schedule",
+              "prefix": " on security and performance.43 ",
+              "suffix": "Month Week Task Description1 1-2"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  }
+]

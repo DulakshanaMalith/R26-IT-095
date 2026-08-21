@@ -1,0 +1,41 @@
+[
+  {
+    "retain": 0
+  },
+  {
+    "insert": "Summary:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nThis proposal explores how universities can leverage LLM-based tools, such as ChatGPT, to support systems for students with disabilities while addressing ethical, institutional, and educational challenges.\n\n"
+  },
+  {
+    "insert": "Strengths",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nThe proposal follows a logical flow and is rich on citations which increase the credibility of the research.\n\n"
+  },
+  {
+    "insert": "Weaknesses",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nThe schedule includes related weeks and research questions. However, the last month of the schedule is not accurate for TU Darmstadt. There is no need to print the thesis. The last three weeks of the work could be used somewhere else and also for buffer time. Adjust the timeline accordingly, so that the interviews could be taken place in a longer time frame.\n\n"
+  },
+  {
+    "insert": "Others:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nVery good! I look forward to seeing how your expose progresses! I recommend having a look at the comments on the expose in CARE. "
+  }
+]

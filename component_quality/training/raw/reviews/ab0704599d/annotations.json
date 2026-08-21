@@ -1,0 +1,746 @@
+[
+  {
+    "id": 24,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "Consider a math class where a student is having trouble with fractions. Despite their repeated attempts,they continue to be disinterested and frustrated. Imagine now that an interactive teaching agent intervenes,recognizes their misunderstanding in real time, and modifies the lesson: clarifying ideas, providing illustrations,and even changing explanations to fit the preferred learning style of the student",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 754,
+              "type": "TextPositionSelector",
+              "start": 346
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Consider a math class where a student is having trouble with fractions. Despite their repeated attempts,they continue to be disinterested and frustrated. Imagine now that an interactive teaching agent intervenes,recognizes their misunderstanding in real time, and modifies the lesson: clarifying ideas, providing illustrations,and even changing explanations to fit the preferred learning style of the student",
+              "prefix": "ber 9, 2024Darmstadt1 Motivation",
+              "suffix": ". This tailored interventionmay "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 2
+  },
+  {
+    "id": 25,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "emotional and cognitive states oflearners",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1108,
+              "type": "TextPositionSelector",
+              "start": 1067
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "emotional and cognitive states oflearners",
+              "prefix": "detect and respond to real-time ",
+              "suffix": " in an educational setting?This "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 26,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "whether due to emotional challenges, motivation issues, or different cognitive styles—are at risk offalling further behind. ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1374,
+              "type": "TextPositionSelector",
+              "start": 1250
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "whether due to emotional challenges, motivation issues, or different cognitive styles—are at risk offalling further behind. ",
+              "prefix": "dents with unique learningneeds—",
+              "suffix": "The result is not just disengage"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 27,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "more equitable learning opportunities for all students",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1516,
+              "type": "TextPositionSelector",
+              "start": 1462
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "more equitable learning opportunities for all students",
+              "prefix": "t also a missed chance tocreate ",
+              "suffix": ".The field of adaptive learning,"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 28,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "However, a key gap remains: most systemsstruggle to adjust effectively to immediate and evolving contextual changes, such as a student’s emotional state,unexpected understanding issues, or fluctuations in involvement.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1917,
+              "type": "TextPositionSelector",
+              "start": 1700
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "However, a key gap remains: most systemsstruggle to adjust effectively to immediate and evolving contextual changes, such as a student’s emotional state,unexpected understanding issues, or fluctuations in involvement.",
+              "prefix": "sonalised learning experiences. ",
+              "suffix": " Current research emphasizes lon"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 2
+  },
+  {
+    "id": 29,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "Addressing this weaknessis critical, as failure to adjust to changing environments can result in disengagement and missed learningopportunities.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2279,
+              "type": "TextPositionSelector",
+              "start": 2135
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Addressing this weaknessis critical, as failure to adjust to changing environments can result in disengagement and missed learningopportunities.",
+              "prefix": ", moment-to-moment adaptations. ",
+              "suffix": "While previous studies have expl"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 2
+  },
+  {
+    "id": 30,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "a lot of them",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2377,
+              "type": "TextPositionSelector",
+              "start": 2364
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "a lot of them",
+              "prefix": "hms for static personalization, ",
+              "suffix": " don’t focuson real-time, contex"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 2
+  },
+  {
+    "id": 31,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "be enhanced",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1019,
+              "type": "TextPositionSelector",
+              "start": 1008
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "be enhanced",
+              "prefix": "can Large LanguageModels (LLMs) ",
+              "suffix": " to dynamically detect and respo"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 32,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "The adaptive learning systems are the most important frontier of the integration of AI with education,concentrating on the development of a truly personalized educational experience",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2921,
+              "type": "TextPositionSelector",
+              "start": 2740
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The adaptive learning systems are the most important frontier of the integration of AI with education,concentrating on the development of a truly personalized educational experience",
+              "prefix": ".22 Approach2.1 State of the Art",
+              "suffix": ". However, most currentadaptive "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 33,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "However, most currentadaptive systems do not often have provisions for dynamic responses emanating from changes in real-timebehaviors, emotions, or even engagements of the students",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3103,
+              "type": "TextPositionSelector",
+              "start": 2923
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "However, most currentadaptive systems do not often have provisions for dynamic responses emanating from changes in real-timebehaviors, emotions, or even engagements of the students",
+              "prefix": "nalized educational experience. ",
+              "suffix": ".Such gaps have hindered the dev"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 34,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "Jovanovic and Voss (2024",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3247,
+              "type": "TextPositionSelector",
+              "start": 3223
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Jovanovic and Voss (2024",
+              "prefix": "phasized by several key studies.",
+              "suffix": ") research further underlines th"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 2
+  },
+  {
+    "id": 35,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "he basic abilities of large language models for education are studiedby Li et al. (2024) who note overwhelming promise but, at the same time, much difficulty in the applicabilityof these technologies to real-time, context-based adaptation[3].However, with all these developments, a large gap remains in integrating the emotional intelligence and real-time contextual awareness that existing systems work on",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4594,
+              "type": "TextPositionSelector",
+              "start": 4188
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "he basic abilities of large language models for education are studiedby Li et al. (2024) who note overwhelming promise but, at the same time, much difficulty in the applicabilityof these technologies to real-time, context-based adaptation[3].However, with all these developments, a large gap remains in integrating the emotional intelligence and real-time contextual awareness that existing systems work on",
+              "prefix": "their adaptive strategies [4]. T",
+              "suffix": ". In other words, existing syste"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 36,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "frameworks",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4856,
+              "type": "TextPositionSelector",
+              "start": 4846
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "frameworks",
+              "prefix": "ic needs. Further, the existing ",
+              "suffix": " havepaid little attention to th"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 37,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "This research",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5014,
+              "type": "TextPositionSelector",
+              "start": 5001
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "This research",
+              "prefix": "into aunified adaptive strategy.",
+              "suffix": " attempts to eliminate this gap "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 38,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "s.[1]. ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6041,
+              "type": "TextPositionSelector",
+              "start": 6034
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "s.[1]. ",
+              "prefix": "sing their existing capa-bilitie",
+              "suffix": "The study aims to see how ZPD ca"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 2
+  },
+  {
+    "id": 39,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "The",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6044,
+              "type": "TextPositionSelector",
+              "start": 6041
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The",
+              "prefix": "eir existing capa-bilities.[1]. ",
+              "suffix": " study aims to see how ZPD can b"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 2
+  },
+  {
+    "id": 40,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": " It utilizes data from learning analytics,webcam-based sentiment analysis to monitor emotional states, and engagement metrics. Surveys are usedto assess the effectiveness and comprehension of the interventions, providing insights into their impact onstudents’ mathematical skills and overall learning experience. Semi-structured interviews with students andeducators will also be used, to explore perceptions of real-time AI adaptations, complemented by case studiesin classroom settings to evaluate practical applications. A prototype system, leveraging GPT-4 and multimodalLLMs for real-time emotion and context analysis, is being developed to provide adaptive learning experiences",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8027,
+              "type": "TextPositionSelector",
+              "start": 7344
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " It utilizes data from learning analytics,webcam-based sentiment analysis to monitor emotional states, and engagement metrics. Surveys are usedto assess the effectiveness and comprehension of the interventions, providing insights into their impact onstudents’ mathematical skills and overall learning experience. Semi-structured interviews with students andeducators will also be used, to explore perceptions of real-time AI adaptations, complemented by case studiesin classroom settings to evaluate practical applications. A prototype system, leveraging GPT-4 and multimodalLLMs for real-time emotion and context analysis, is being developed to provide adaptive learning experiences",
+              "prefix": "through AI-driven interventions.",
+              "suffix": ".Reinforcement learning is used "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 2
+  },
+  {
+    "id": 41,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "raditional adaptive systems",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8390,
+              "type": "TextPositionSelector",
+              "start": 8363
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "raditional adaptive systems",
+              "prefix": "d group two will work with the t",
+              "suffix": ". Using this data wewill analyze"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 42,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": " statistical tools",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8479,
+              "type": "TextPositionSelector",
+              "start": 8461
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " statistical tools",
+              "prefix": "ment and learning outcomes using",
+              "suffix": ". This approach provides quantit"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 43,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "s privacy concerns, data access limitations, and the computationalcost of real-time AI applications",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8759,
+              "type": "TextPositionSelector",
+              "start": 8660
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "s privacy concerns, data access limitations, and the computationalcost of real-time AI applications",
+              "prefix": "arch addresses challenges such a",
+              "suffix": ". These are mitigated through co"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 44,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "3 ScheduleSchedule: Real-Time Contextual Adaptation in Adaptive Learning Systems UsingLLMsMonth Week Task Description1 1 Planning Develop a detailed work plan, identify key mile-stones, and outline initial objectives related toadaptive learning systems and their gaps.1 2–3 Literature Review Search and critically analyze research on adap-tive learning systems, real-time contextual adap-tation, and applications of LLMs in education.Focus on identifying gaps in how systems adaptdynamically.1 4 Research Question (RQ) Draft Define specific, clear RQs addressing how LLMscan be used to create real-time adaptive frame-works. Ensure they address deficits in currentadaptive systems and align with grading criteria(clarity and feasibility)",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 9931,
+              "type": "TextPositionSelector",
+              "start": 9194
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "3 ScheduleSchedule: Real-Time Contextual Adaptation in Adaptive Learning Systems UsingLLMsMonth Week Task Description1 1 Planning Develop a detailed work plan, identify key mile-stones, and outline initial objectives related toadaptive learning systems and their gaps.1 2–3 Literature Review Search and critically analyze research on adap-tive learning systems, real-time contextual adap-tation, and applications of LLMs in education.Focus on identifying gaps in how systems adaptdynamically.1 4 Research Question (RQ) Draft Define specific, clear RQs addressing how LLMscan be used to create real-time adaptive frame-works. Ensure they address deficits in currentadaptive systems and align with grading criteria(clarity and feasibility)",
+              "prefix": "ents in educational technology.4",
+              "suffix": ".2 5–6 Theoretical Framework Bui"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 45,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "concepts",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 10119,
+              "type": "TextPositionSelector",
+              "start": 10111
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "concepts",
+              "prefix": "s.2 7 Concept Development Draft ",
+              "suffix": " for the adaptive framework (e.g"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 46,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "Identify and prepare datasets for testing the adap-tive framework.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 10625,
+              "type": "TextPositionSelector",
+              "start": 10559
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Identify and prepare datasets for testing the adap-tive framework.",
+              "prefix": "nlevels.3 9–10 Data Preparation ",
+              "suffix": " This includes learning analytic"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 47,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "experiments or simulations",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 11013,
+              "type": "TextPositionSelector",
+              "start": 10987
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "experiments or simulations",
+              "prefix": "ta.3 12 Data Collection Conduct ",
+              "suffix": " where theLLM-driven system adap"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 6
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  }
+]

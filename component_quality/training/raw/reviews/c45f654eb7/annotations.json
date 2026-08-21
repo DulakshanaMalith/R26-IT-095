@@ -1,0 +1,64 @@
+[
+  {
+    "id": 983,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "The integration of Artificial Intelligence (AI) and Augmented Reality (AR) has found applications acrossdiverse professional domains such as education, healthcare, and engineering. For instance, in healthcare, ARtools like Microsoft HoloLens enable surgeons to visualize patient anatomy in real-time during procedures,improving precision and reducing errorscation, AR enhances interactive learning experiences, while AI enablespersonalized learning paths . In engineering, ologies improve design accuracy by allowing professionals tovisualize 3D models overlaid on real-world environments",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3290,
+              "type": "TextPositionSelector",
+              "start": 2702
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The integration of Artificial Intelligence (AI) and Augmented Reality (AR) has found applications acrossdiverse professional domains such as education, healthcare, and engineering. For instance, in healthcare, ARtools like Microsoft HoloLens enable surgeons to visualize patient anatomy in real-time during procedures,improving precision and reducing errorscation, AR enhances interactive learning experiences, while AI enablespersonalized learning paths . In engineering, ologies improve design accuracy by allowing professionals tovisualize 3D models overlaid on real-world environments",
+              "prefix": " designs in new ways?22 Approach",
+              "suffix": " .Despite these successes, chall"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 984,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "his study aims to provide scalable solutions that enhanceoperational efficiency, decision-making, and creativity across industries",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4124,
+              "type": "TextPositionSelector",
+              "start": 3994
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "his study aims to provide scalable solutions that enhanceoperational efficiency, decision-making, and creativity across industries",
+              "prefix": " with AR’s immersive features, t",
+              "suffix": ". In doing so, it positions itse"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  }
+]

@@ -1,0 +1,64 @@
+[
+  {
+    "id": 5103,
+    "user": "Jacob Boyer",
+    "role": "student",
+    "text": "hey are already able tocomplete many tasks faster, cheaper and sometimes even more reliable than their human counterparts.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 922,
+              "type": "TextPositionSelector",
+              "start": 800
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "hey are already able tocomplete many tasks faster, cheaper and sometimes even more reliable than their human counterparts.",
+              "prefix": "idual needs of a patient [10], t",
+              "suffix": "In order for these highly advanc"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 5104,
+    "user": "Jacob Boyer",
+    "role": "student",
+    "text": "he conclusions of thesebenchmarks will lead to important answers about which SMPC protocol ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8482,
+              "type": "TextPositionSelector",
+              "start": 8391
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "he conclusions of thesebenchmarks will lead to important answers about which SMPC protocol ",
+              "prefix": "on of SMPC over LAN and Wi-Fi. T",
+              "suffix": "is feasible to use for each rele"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  }
+]

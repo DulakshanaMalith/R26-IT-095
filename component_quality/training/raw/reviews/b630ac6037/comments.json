@@ -1,0 +1,123 @@
+[
+  {
+    "id": 795,
+    "user": "Joshua Acosta",
+    "role": "student",
+    "text": "A great introduction into the topic and good usage of studies to emphasise the relavance in society.",
+    "annotationId": 784,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 796,
+    "user": "Joshua Acosta",
+    "role": "student",
+    "text": "Nicely chosen RQs. The SRQs devide the question into different aspects and suport the question.",
+    "annotationId": 785,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 797,
+    "user": "Joshua Acosta",
+    "role": "student",
+    "text": "This term would benefit from a brief definition.",
+    "annotationId": 786,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 798,
+    "user": "Joshua Acosta",
+    "role": "student",
+    "text": "This term would benefit from a brief definition.",
+    "annotationId": 787,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 799,
+    "user": "Joshua Acosta",
+    "role": "student",
+    "text": "This term would benefit from a brief definition.",
+    "annotationId": 788,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 800,
+    "user": "Joshua Acosta",
+    "role": "student",
+    "text": "The whole section on SOTA is great, especially this sentence because it highlights a concrete problem and therefore creates the space to place your work into the SOTA.",
+    "annotationId": 789,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 801,
+    "user": "Joshua Acosta",
+    "role": "student",
+    "text": "The focus on explainability and trust directly tackles a significant barrier to AI adoption in healthcare, ensuring the tool is user-friendly for practitioners.",
+    "annotationId": 790,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 802,
+    "user": "Joshua Acosta",
+    "role": "student",
+    "text": "The bibliography is very detailed, and contains only relevant papers from the last 5 years",
+    "annotationId": 791,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 803,
+    "user": "Joshua Acosta",
+    "role": "student",
+    "text": "This concern is not really explained thoroughly.",
+    "annotationId": 792,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 804,
+    "user": "Joshua Acosta",
+    "role": "student",
+    "text": "This concern needs to be further discussed.",
+    "annotationId": 793,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 805,
+    "user": "Joshua Acosta",
+    "role": "student",
+    "text": "This is not a great way to introduce the theoretical framework, because it seems undetermined. The theoretical framework would benefit from an expansion.",
+    "annotationId": 794,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  }
+]

@@ -1,0 +1,1273 @@
+[
+  {
+    "id": 1127,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "The",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 347,
+              "type": "TextPositionSelector",
+              "start": 344
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The",
+              "prefix": "ber 9, 2024Darmstadt1 Motivation",
+              "suffix": " idea of an artificial intellige"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 1128,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": ". [7] ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 761,
+              "type": "TextPositionSelector",
+              "start": 755
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": ". [7] ",
+              "prefix": "6 billion visits to the platform",
+              "suffix": "Since thelaunch in 2022 by OpenA"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 1129,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "The striking impact ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 597,
+              "type": "TextPositionSelector",
+              "start": 577
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The striking impact ",
+              "prefix": "hnology it couldbecome reality. ",
+              "suffix": "of such platforms is undeniable,"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 1130,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "s.[13][12][2][9] ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 968,
+              "type": "TextPositionSelector",
+              "start": 951
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "s.[13][12][2][9] ",
+              "prefix": "an existing one in their product",
+              "suffix": "Graphicscard manufacturer Nvidia"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 1131,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "GUI",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1760,
+              "type": "TextPositionSelector",
+              "start": 1757
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "GUI",
+              "prefix": "chatbots could be improved by a ",
+              "suffix": " that exceeds the largely text b"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 1132,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "When DouglasEngelbart came up with the underlying technology and presented a first demo in the 1960s, “Many of thethings demonstrated [...] seemed to come from decades in the future, and most of the people watching itwere hard pressed to even understand all of what they were seeing.”, as Jeremy Reimer put it in an article forarstechnica in 2005. [16] ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2272,
+              "type": "TextPositionSelector",
+              "start": 1919
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "When DouglasEngelbart came up with the underlying technology and presented a first demo in the 1960s, “Many of thethings demonstrated [...] seemed to come from decades in the future, and most of the people watching itwere hard pressed to even understand all of what they were seeing.”, as Jeremy Reimer put it in an article forarstechnica in 2005. [16] ",
+              "prefix": "ace (GUI) seemed revolutionary. ",
+              "suffix": "When the technology became affor"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 1133,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "In this work ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3002,
+              "type": "TextPositionSelector",
+              "start": 2989
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "In this work ",
+              "prefix": "phones for as little as 20€. [5]",
+              "suffix": "we will focus on analyzing if a "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 1134,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "The goal of this work will be to come upwith a guideline on choosing a visual representation when developing a VR based AI assistant.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4385,
+              "type": "TextPositionSelector",
+              "start": 4252
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The goal of this work will be to come upwith a guideline on choosing a visual representation when developing a VR based AI assistant.",
+              "prefix": "us) people without consent. [1] ",
+              "suffix": "22 ApproachThe uncanny valley, a"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 1135,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": " text based",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 488,
+              "type": "TextPositionSelector",
+              "start": 477
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " text based",
+              "prefix": "tion manytimes. With the rise of",
+              "suffix": " AI platforms and improvement in"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 1136,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": " where",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 719,
+              "type": "TextPositionSelector",
+              "start": 713
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " where",
+              "prefix": "[7] and in October of 2024 there",
+              "suffix": " 3.66 billion visits to the plat"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 1137,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "day today",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1407,
+              "type": "TextPositionSelector",
+              "start": 1398
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "day today",
+              "prefix": "e not become a standard tool in ",
+              "suffix": " online activity. As Fletcher an"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 1138,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "arstechnica",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2257,
+              "type": "TextPositionSelector",
+              "start": 2246
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "arstechnica",
+              "prefix": " Reimer put it in an article for",
+              "suffix": " in 2005. [16] When the technolo"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 1139,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": " (hci)",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2659,
+              "type": "TextPositionSelector",
+              "start": 2653
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " (hci)",
+              "prefix": "ld of human computer interaction",
+              "suffix": " that indicatesGUIs are not nece"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 1140,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "microsoft, ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3714,
+              "type": "TextPositionSelector",
+              "start": 3703
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "microsoft, ",
+              "prefix": "lso known as “clippy”, built by ",
+              "suffix": "its fame comes from its presence"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 1141,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "become reality.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 576,
+              "type": "TextPositionSelector",
+              "start": 561
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "become reality.",
+              "prefix": "reality (VR) technology it could",
+              "suffix": " The striking impact of such pla"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 1142,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "But what about a holographic interface poweredby advancements in VR?",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2806,
+              "type": "TextPositionSelector",
+              "start": 2738
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "But what about a holographic interface poweredby advancements in VR?",
+              "prefix": "than text based interfaces. [6] ",
+              "suffix": " The field has been growing with"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 1143,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "The uncanny valley,",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4415,
+              "type": "TextPositionSelector",
+              "start": 4396
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The uncanny valley,",
+              "prefix": "R based AI assistant.22 Approach",
+              "suffix": " as described by Masahiro Mori o"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 1144,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": " We will aim to narrow thegap",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6241,
+              "type": "TextPositionSelector",
+              "start": 6212
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " We will aim to narrow thegap",
+              "prefix": "t specifically interested in it.",
+              "suffix": " between research on perception "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 1145,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "theory",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4814,
+              "type": "TextPositionSelector",
+              "start": 4808
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "theory",
+              "prefix": " found evidence to support this ",
+              "suffix": "in a study on the perception of "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 1146,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "them ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7762,
+              "type": "TextPositionSelector",
+              "start": 7757
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "them ",
+              "prefix": "e during the study we will have ",
+              "suffix": "answerquestions throughout the i"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 1147,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "reach participants from both technicaland other fields",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 9647,
+              "type": "TextPositionSelector",
+              "start": 9593
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "reach participants from both technicaland other fields",
+              "prefix": "lyers on campus. We will try to ",
+              "suffix": " in order to have a wider variet"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 1148,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "The study could proceed as follows:",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8479,
+              "type": "TextPositionSelector",
+              "start": 8444
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The study could proceed as follows:",
+              "prefix": "esponse tothe AI assistant.[21]3",
+              "suffix": "1. The participant is informed o"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 1149,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": " ground",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4484,
+              "type": "TextPositionSelector",
+              "start": 4477
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " ground",
+              "prefix": " over 40 years ago[14], lays the",
+              "suffix": " for an argumentagainst realisti"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 1150,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": " summarized it",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4566,
+              "type": "TextPositionSelector",
+              "start": 4552
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " summarized it",
+              "prefix": "sign in VR applications. Broadly",
+              "suffix": " states that a vaguely human loo"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 1151,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "human.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4720,
+              "type": "TextPositionSelector",
+              "start": 4714
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "human.",
+              "prefix": "but is still identifiable as not",
+              "suffix": "[14] Researchers at the German R"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 1152,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "tein et al. propose",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5516,
+              "type": "TextPositionSelector",
+              "start": 5497
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "tein et al. propose",
+              "prefix": "ters in virtualreality.”. [22] S",
+              "suffix": " an ““uncanny valley of mind“ th"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 1153,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "gap",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6241,
+              "type": "TextPositionSelector",
+              "start": 6238
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "gap",
+              "prefix": "in it. We will aim to narrow the",
+              "suffix": " between research on perception "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 1154,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "we will ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6324,
+              "type": "TextPositionSelector",
+              "start": 6316
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "we will ",
+              "prefix": " other media and hci. To do so, ",
+              "suffix": "build upon thesefindings, trying"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 1155,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": " we will ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6435,
+              "type": "TextPositionSelector",
+              "start": 6426
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " we will ",
+              "prefix": "irtual assistants. Specifically,",
+              "suffix": "build our own basicassistant usi"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 1156,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": " text to speech/speech to text ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6551,
+              "type": "TextPositionSelector",
+              "start": 6520
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " text to speech/speech to text ",
+              "prefix": "ies such as ChatGPT and existing",
+              "suffix": "ApplicationProgramming Interface"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 1157,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": " virtual reality",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6724,
+              "type": "TextPositionSelector",
+              "start": 6708
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " virtual reality",
+              "prefix": "ick development of augmented and",
+              "suffix": " applications.[19] This will be "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 1158,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Unity b",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6641,
+              "type": "TextPositionSelector",
+              "start": 6634
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Unity b",
+              "prefix": "ine for the project we will use ",
+              "suffix": "ecause of its broad resourcesfor"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 1159,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "e.g. ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7173,
+              "type": "TextPositionSelector",
+              "start": 7168
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "e.g. ",
+              "prefix": "th different levels of realism, ",
+              "suffix": "one looking like a cartoon robot"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 1160,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": " to be able to identify biases.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8162,
+              "type": "TextPositionSelector",
+              "start": 8131
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " to be able to identify biases.",
+              "prefix": "cipants age, gender and interest",
+              "suffix": " Meaningful questions might be t"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 1161,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "As surveys only measure explicit opinions,",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8308,
+              "type": "TextPositionSelector",
+              "start": 8266
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "As surveys only measure explicit opinions,",
+              "prefix": " experience with AI-assistants. ",
+              "suffix": " itcould be beneficial to monito"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 1162,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "we ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8520,
+              "type": "TextPositionSelector",
+              "start": 8517
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "we ",
+              "prefix": " participant is informed on how ",
+              "suffix": "use their data and asked to sign"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 1163,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "survey ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8937,
+              "type": "TextPositionSelector",
+              "start": 8930
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "survey ",
+              "prefix": " help on a given task6. Another ",
+              "suffix": "is conducted7. Data on the parti"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 1164,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "printing,",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 11418,
+              "type": "TextPositionSelector",
+              "start": 11409
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "printing,",
+              "prefix": "22-24 Finalization Buffer time, ",
+              "suffix": " and final submission5Bibliograp"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 1165,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Planning the software develop-ment",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 9782,
+              "type": "TextPositionSelector",
+              "start": 9748
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Planning the software develop-ment",
+              "prefix": "onth Week Task Description1 1-2 ",
+              "suffix": "Becoming familiar with tools, ch"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 1166,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Buffer",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 10184,
+              "type": "TextPositionSelector",
+              "start": 10178
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Buffer",
+              "prefix": "tests from the previousweeks2 8 ",
+              "suffix": " saved for potential complicatio"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 1167,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Buffer for Writing ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 11206,
+              "type": "TextPositionSelector",
+              "start": 11187
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Buffer for Writing ",
+              "prefix": "lts in a scientific context5 20 ",
+              "suffix": "finalizing the methods part or f"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  }
+]

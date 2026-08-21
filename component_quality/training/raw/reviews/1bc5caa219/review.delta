@@ -1,0 +1,93 @@
+[
+  {
+    "retain": 0
+  },
+  {
+    "insert": "Summary",
+    "attributes": {
+      "bold": true,
+      "font": "serif",
+      "size": "large"
+    }
+  },
+  {
+    "insert": "\n\nThe exposé presents a research proposal exploring the effects of parasocial interaction between humans and embodied intelligent virtual agents (IVAs) within augmented reality (AR) environments. It establishes a relevant motivation rooted in current technological trends and prior work, then outlines research questions focused on how social roles of AR agents influence learning, task performance, acceptance, and trust. The approach includes a user study combining quantitative and qualitative methods.\n\n"
+  },
+  {
+    "insert": "Strength",
+    "attributes": {
+      "font": "serif",
+      "size": "large"
+    }
+  },
+  {
+    "insert": "\nThe motivation section effectively links popular culture, emerging technology, and human-computer interaction to justify the study’s relevance."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "The research questions are clearly defined, and the methodology part answers the RQ in a structured way. "
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "Methodology is comprehensive, using established scales (e.g., AI representation scale, trust scales) and combining qualitative insights with quantitative data."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "Weakness",
+    "attributes": {
+      "size": "large",
+      "font": "serif"
+    }
+  },
+  {
+    "insert": "\nThe language quality could be further improved."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "The hooking doesn't exist. To attract people's attention, the author should open the paper with an interesting hook."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "The sample size (30 participants) is quite small for the complexity of variables involved, which the author acknowledges but could affect statistical power significantly."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "The control group’s “simple humanoid representation” is not fully described, which might be important for interpreting results."
+  },
+  {
+    "retain": 1,
+    "attributes": {
+      "list": "bullet"
+    }
+  }
+]

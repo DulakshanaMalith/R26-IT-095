@@ -1,0 +1,126 @@
+[
+  {
+    "id": 864,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "AI voice assistants are used at least weekly by every 5th internet user aged 16 to 64[2].When looking at the interaction with humans, the research domain AI can present critical advancementsregarding the quality of speech, conveyed information and human-like writing. In a recent experiment theAI-model GPT-4 by ChatGPT was indistinguishable to a human for 54% of the participants after texting for 5minutes[3]. With the extent of possible interaction with an AI being limited to voice, 2-dimensional text orimage generation, the potential of holographic visualization of AI assistants, as well as enhanced interactability,has yet to be appropriately realized.AI assistants have been limited in practicality because of the limited ways to interact with them. So far mostAI assistants offer neither interaction using gestures or visual input nor a 3-dimensional visual output.An AI assistant with voice recognition and speech that can additionally visualize content using a holographicprojection as well as allow visual input might just revolutionize the interaction between humans and technology.For this we want to investigate how an AI Assistant, and information it wants to convey, can be visualizedinteractively in 3D (Sub RQ. 1.1), as well as how interactability with the AI assistant can be enriched byadding more ways for the AI assistant to gather input data (Sub RQ 1.2).",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1721,
+              "type": "TextPositionSelector",
+              "start": 341
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "AI voice assistants are used at least weekly by every 5th internet user aged 16 to 64[2].When looking at the interaction with humans, the research domain AI can present critical advancementsregarding the quality of speech, conveyed information and human-like writing. In a recent experiment theAI-model GPT-4 by ChatGPT was indistinguishable to a human for 54% of the participants after texting for 5minutes[3]. With the extent of possible interaction with an AI being limited to voice, 2-dimensional text orimage generation, the potential of holographic visualization of AI assistants, as well as enhanced interactability,has yet to be appropriately realized.AI assistants have been limited in practicality because of the limited ways to interact with them. So far mostAI assistants offer neither interaction using gestures or visual input nor a 3-dimensional visual output.An AI assistant with voice recognition and speech that can additionally visualize content using a holographicprojection as well as allow visual input might just revolutionize the interaction between humans and technology.For this we want to investigate how an AI Assistant, and information it wants to convey, can be visualizedinteractively in 3D (Sub RQ. 1.1), as well as how interactability with the AI assistant can be enriched byadding more ways for the AI assistant to gather input data (Sub RQ 1.2).",
+              "prefix": "ber 9, 2024Darmstadt1 Motivation",
+              "suffix": "22 Approach\"Faceless\" AI assista"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 865,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "visualization",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1863,
+              "type": "TextPositionSelector",
+              "start": 1850
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "visualization",
+              "prefix": "of interactability and alack of ",
+              "suffix": " to be filled.A visualization of"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 866,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "could",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2056,
+              "type": "TextPositionSelector",
+              "start": 2051
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "could",
+              "prefix": " commands. Further visual input ",
+              "suffix": " enhance the usability.Existing "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 2
+  },
+  {
+    "id": 867,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "Special attention must be brought to challenges created by the complexity of combining different com-ponents to work together with each other. It is also unclear how well an existing voice-only AI assistant cantake in and understand additional data provided by the other components of this enhanced AI assistant. Lastlypotential privacy concern like f.e. the camera or microphone being turned on have to be addressed",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6015,
+              "type": "TextPositionSelector",
+              "start": 5599
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Special attention must be brought to challenges created by the complexity of combining different com-ponents to work together with each other. It is also unclear how well an existing voice-only AI assistant cantake in and understand additional data provided by the other components of this enhanced AI assistant. Lastlypotential privacy concern like f.e. the camera or microphone being turned on have to be addressed",
+              "prefix": "duct according to user feedback.",
+              "suffix": ".Nevertheless the risks, a case "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 2
+  }
+]

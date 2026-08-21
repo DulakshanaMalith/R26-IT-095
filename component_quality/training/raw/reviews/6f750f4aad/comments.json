@@ -1,0 +1,57 @@
+[
+  {
+    "id": 545,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Please provide a source, if you provide a statement like this. Considering in the next sentence you speak about resistance, not aversion anymore it's not clear if the [7] quote is for that part as well.",
+    "annotationId": 537,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 546,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "I'm missing how you would define trustworthy.",
+    "annotationId": 538,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 547,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "proper citation would be [5,6]",
+    "annotationId": 539,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 548,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "please explain patterns shortly or provide links, so the reader can look those up",
+    "annotationId": 540,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 549,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "you could argue that you don't start writing until week 17, this is far too late.",
+    "annotationId": 541,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  }
+]

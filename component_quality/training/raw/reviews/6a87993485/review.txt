@@ -1,0 +1,38 @@
+1. Does the exposé include all the important components?
+Yes, the exposé includes all the important components: Motivation, research gap, specific research questions, methodology and a clear timeline. Each of these components is well defined and understandable.
+2. Does the text clearly explain the relevance of the problem?
+It shows how important the topic is. One example is that only a few type 2 diabetes patients take their medication correctly. This makes it clear that research needs to be carried out in this area.
+3. Are the gaps in existing literature identified? 
+Yes, the gaps are clearly described. Research focuses on diagnosis and documentation.
+4. Do  the research questions align with the problem statement and are they well positioned against existing literature?
+The research questions are precise and clearly address the research gap. Each question is well thought out and aligned with existing literature.
+5. Do the research questions avoid ambiguity in terminology?
+Yes, the terminology is clear.
+6. Are theories and concepts introduced in an understandable way?
+Yes, theories and concepts such as the role of LLMs are introduced in an understandable way and linked to practical application.
+7. Is the choice of methodology justified based on the research questions and does the author outline how the methods will provide answers to the research questions?
+The methodology is detailed and understandable. The three phases (data collection, validation and analysis) are clearly described and directly linked to the research questions.
+8. Are potential difficulties, limitations, ethical concerns or other risks adequately addressed?
+No, potential ethical challenges and risks such as data security or bias in the models are not addressed. This is an area that should be added to the exposé.
+9. Is the schedule realistic and achievable, and are all major tasks and milestones accounted for?
+The schedule is realistic and well structured. All important tasks and milestones are included, which provides clear orientation.
+10. Is the overall argumentation convincing and does it clearly state the goals of the research?
+Yes, the argumentation is logical and the aims of the research are clearly formulated. The connection between the problem, research gap and methodology is shown clearly.
+11. Could examples or illustrations enhance understanding?
+Yes, visual aids such as schematic diagrams, for example for the application of LLMs, could make it even better to understand.
+
+Summary
+The exposé impresses with its clear structure, precise research questions and sound methodology. The presentation of the relevance and the identification of the research gap are successful, and the timeline is realistic. However, ethical challenges and limitations should be addressed more strongly, and visual aids could improve understanding.
+
+Feed-Up: Where am I going?
+The exposé has clear goals that are defined by the specific research questions. It aims to close the gap in the personalised application of LLMs while providing practical and theoretical insights.
+Feed-Back: How am I going?
+- Strengths: Clear structure, precise research questions, solid methodology and convincing argumentation.
+- Potential for improvement: Addition of potential ethical challenges and limitations
+Feed-Forward: Where to next?
+- Add ethical considerations such as data security and potential bias in the models.
+- Add visual aids such as schematic diagrams to illustrate the methodology and application of the models.
+- Strengthen the argumentation in the introduction as to why the research is particularly relevant today.
+
+
+Note: DeepL was used for the translation 

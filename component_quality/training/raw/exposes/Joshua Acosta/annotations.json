@@ -1,0 +1,290 @@
+[
+  {
+    "id": 5143,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "The use of artificial intelligence (AI) and machine learning (ML) in healthcare has seen massive growth inrecent years.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 706,
+              "type": "TextPositionSelector",
+              "start": 587
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The use of artificial intelligence (AI) and machine learning (ML) in healthcare has seen massive growth inrecent years.",
+              "prefix": "ve precise and reliable results.",
+              "suffix": " These technologies make more pr"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 5144,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "such datasets",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1026,
+              "type": "TextPositionSelector",
+              "start": 1013
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "such datasets",
+              "prefix": "l as restricted sharing policies",
+              "suffix": " aren’t readily available, which"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 5145,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "ecause synthetic data are not collected or measured like real data, theycan be of much higher quality.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1891,
+              "type": "TextPositionSelector",
+              "start": 1789
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "ecause synthetic data are not collected or measured like real data, theycan be of much higher quality.",
+              "prefix": "ms with real patient data [6]. B",
+              "suffix": " At a conceptual level, syntheti"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 5146,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": ", without regulatory hurdles or data protection delays",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2382,
+              "type": "TextPositionSelector",
+              "start": 2328
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": ", without regulatory hurdles or data protection delays",
+              "prefix": "o extensive and diverse datasets",
+              "suffix": ".This is because synthetic data "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 2
+  },
+  {
+    "id": 5239,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "From simulation to reality:Synthetic data in healthcareAn analysis of the validity of AI-generated data in clinical research",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 184,
+              "type": "TextPositionSelector",
+              "start": 60
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "From simulation to reality:Synthetic data in healthcareAn analysis of the validity of AI-generated data in clinical research",
+              "prefix": "iquitous KnowledgeProcessing Lab",
+              "suffix": "Name: AnonymizedMatrikelnummer: "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 1
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 5240,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "state of the art ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3507,
+              "type": "TextPositionSelector",
+              "start": 3490
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "state of the art ",
+              "prefix": "iagnoses.22 ApproachThe current ",
+              "suffix": "regarding synthetic data in heal"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 5241,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "some",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 12204,
+              "type": "TextPositionSelector",
+              "start": 12200
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "some",
+              "prefix": "s Revising all the data in case ",
+              "suffix": " results were missing5 20 Full R"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 5242,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "They ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2526,
+              "type": "TextPositionSelector",
+              "start": 2521
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "They ",
+              "prefix": "iteamount of unrestricted data. ",
+              "suffix": "create a cost-effective alternat"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 1
+  },
+  {
+    "id": 5243,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "ones",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 10112,
+              "type": "TextPositionSelector",
+              "start": 10108
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "ones",
+              "prefix": "n’t possible, self-administered ",
+              "suffix": " suffice.The goal of this resear"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 1
+  }
+]

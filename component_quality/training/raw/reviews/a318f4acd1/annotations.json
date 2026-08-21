@@ -1,0 +1,38 @@
+[
+  {
+    "id": 2742,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": null,
+    "selectors": null,
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2743,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": null,
+    "selectors": null,
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2744,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": null,
+    "selectors": null,
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 2745,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": null,
+    "selectors": null,
+    "tag": "Strength",
+    "group": 1
+  }
+]

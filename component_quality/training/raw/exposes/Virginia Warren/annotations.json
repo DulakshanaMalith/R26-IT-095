@@ -1,0 +1,1794 @@
+[
+  {
+    "id": 2587,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": " Retrieval Augmented Generation (RAG",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1585,
+              "type": "TextPositionSelector",
+              "start": 1549
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " Retrieval Augmented Generation (RAG",
+              "prefix": " been examined.Used methods were",
+              "suffix": "), different prompting methods, "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2588,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "mong these concerns one problemthat LLMs often struggle with, is hallucination",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 867,
+              "type": "TextPositionSelector",
+              "start": 789
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "mong these concerns one problemthat LLMs often struggle with, is hallucination",
+              "prefix": "o raises a number of concerns. A",
+              "suffix": " [6]. Hallucination in the conte"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2589,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": " still happens ofte",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1912,
+              "type": "TextPositionSelector",
+              "start": 1893
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " still happens ofte",
+              "prefix": "for improvement as hallucination",
+              "suffix": "n [9].Previous studies have not "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2590,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "differentresponses of different LLMs",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2049,
+              "type": "TextPositionSelector",
+              "start": 2013
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "differentresponses of different LLMs",
+              "prefix": "generative fusion to accumulate ",
+              "suffix": " and generate a combination of t"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2591,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Consequentially",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 513,
+              "type": "TextPositionSelector",
+              "start": 498
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Consequentially",
+              "prefix": "ge impact on society as a whole.",
+              "suffix": ", the usefulness of generative A"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2592,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "The rise of ChatGPT and other LLMs (Large Language Models) has had a huge impact on society as a whole.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 498,
+              "type": "TextPositionSelector",
+              "start": 395
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The rise of ChatGPT and other LLMs (Large Language Models) has had a huge impact on society as a whole.",
+              "prefix": "ber 9, 2024Darmstadt1 Motivation",
+              "suffix": "Consequentially, the usefulness "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2593,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "arge languagemodel",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1039,
+              "type": "TextPositionSelector",
+              "start": 1021
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "arge languagemodel",
+              "prefix": "are, e.g. when people prompt a l",
+              "suffix": " like ChatGPT with their symptom"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2594,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "n healthcare, e.g. when people prompt a large languagemodel like ChatGPT with their symptoms, asking for a diagnosis, hallucination and thus the LLM giving wronganswers can have a very negative impact as it often directly influences how the asking person acts afterwards",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1250,
+              "type": "TextPositionSelector",
+              "start": 980
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "n healthcare, e.g. when people prompt a large languagemodel like ChatGPT with their symptoms, asking for a diagnosis, hallucination and thus the LLM giving wronganswers can have a very negative impact as it often directly influences how the asking person acts afterwards",
+              "prefix": "tually inaccurate answers [9]. I",
+              "suffix": "[1]. As Pal et al. stated, reduc"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2595,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Motivation",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 395,
+              "type": "TextPositionSelector",
+              "start": 385
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Motivation",
+              "prefix": "ion: December 9, 2024Darmstadt1 ",
+              "suffix": "The rise of ChatGPT and other LL"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2596,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": " use",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2353,
+              "type": "TextPositionSelector",
+              "start": 2349
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " use",
+              "prefix": "models as used by LLM-Blender be",
+              "suffix": "d in healthcare to reduce halluc"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2597,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Our",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2246,
+              "type": "TextPositionSelector",
+              "start": 2243
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Our",
+              "prefix": "ce hallucinations inhealthcare. ",
+              "suffix": " research question will be the f"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2598,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "RQ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2289,
+              "type": "TextPositionSelector",
+              "start": 2287
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "RQ",
+              "prefix": " question will be the following:",
+              "suffix": ": How can generative fusion mode"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2599,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "e.g. ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 999,
+              "type": "TextPositionSelector",
+              "start": 994
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "e.g. ",
+              "prefix": "ate answers [9]. In healthcare, ",
+              "suffix": "when people prompt a large langu"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2600,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": " We will then",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5829,
+              "type": "TextPositionSelector",
+              "start": 5816
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " We will then",
+              "prefix": "heck the ensemble’s performance.",
+              "suffix": " compare the results to results "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2601,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "We",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5705,
+              "type": "TextPositionSelector",
+              "start": 5703
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "We",
+              "prefix": "domain LLMsthrough LLM-Blender. ",
+              "suffix": " will then perform the Med-HALT "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2602,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "results to results",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5860,
+              "type": "TextPositionSelector",
+              "start": 5842
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "results to results",
+              "prefix": "mance. We will then compare the ",
+              "suffix": " of the benchmark when usingthe "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2603,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": " then giving a",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3278,
+              "type": "TextPositionSelector",
+              "start": 3264
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " then giving a",
+              "prefix": "wise comparison of solutions and",
+              "suffix": " rating which one is better. By "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2604,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "So far, research in the medical domain, such as the research on LLMSynergy, has focused on using ensemblemethods like boosting for medical question answering (QA) in the form of structured QA, i.e. there are multipledifferent answer options to choose from. ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4163,
+              "type": "TextPositionSelector",
+              "start": 3906
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "So far, research in the medical domain, such as the research on LLMSynergy, has focused on using ensemblemethods like boosting for medical question answering (QA) in the form of structured QA, i.e. there are multipledifferent answer options to choose from. ",
+              "prefix": "till was a good alternative [3].",
+              "suffix": "This work will focus on ensemble"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2605,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "an own model",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2805,
+              "type": "TextPositionSelector",
+              "start": 2793
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "an own model",
+              "prefix": "erative fusion models that uses ",
+              "suffix": "that gets generated text of diff"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2606,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "To",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2704,
+              "type": "TextPositionSelector",
+              "start": 2702
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "To",
+              "prefix": "he healthcare domain?22 Approach",
+              "suffix": " our knowledge, LLM-Blender is t"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2607,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Answering",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5921,
+              "type": "TextPositionSelector",
+              "start": 5912
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Answering",
+              "prefix": "en usingthe models individually.",
+              "suffix": " RQ2 will require more research "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2608,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "In order to answer RQ1, different healthcare-LLMs",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5628,
+              "type": "TextPositionSelector",
+              "start": 5579
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "In order to answer RQ1, different healthcare-LLMs",
+              "prefix": "ks for general-purpose LLMs [9].",
+              "suffix": " will be fine-tuned and combined"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2609,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "good alternativ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3900,
+              "type": "TextPositionSelector",
+              "start": 3885
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "good alternativ",
+              "prefix": "an automatic metric still was a ",
+              "suffix": "e [3].So far, research in the me"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2610,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Med-HALT dataset pape",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7247,
+              "type": "TextPositionSelector",
+              "start": 7226
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Med-HALT dataset pape",
+              "prefix": "ts and the results given in the ",
+              "suffix": "r [8].43 ScheduleMonth Week Task"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2611,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "ne problem that can arise when using these datasetsis that they use structured QA which could limit the ensemble model’s capability to handle open-ended QAtasks.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6332,
+              "type": "TextPositionSelector",
+              "start": 6171
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "ne problem that can arise when using these datasetsis that they use structured QA which could limit the ensemble model’s capability to handle open-ended QAtasks.",
+              "prefix": "ll examine in our preparation. O",
+              "suffix": " To address this issue, we will "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2612,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "This work will focus on ensemble methods that combine generatedtext in order to be able to answer to open-ended QA tasks",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4283,
+              "type": "TextPositionSelector",
+              "start": 4163
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "This work will focus on ensemble methods that combine generatedtext in order to be able to answer to open-ended QA tasks",
+              "prefix": " answer options to choose from. ",
+              "suffix": ". These are tasks that don’t pro"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2613,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Generative fusion models likeLLM-Blender [3] have not yet been tested in the healthcare domain. Additionally, they have not been tested inthe context of hallucination reduction. This work will use the Med-HALT [8] dataset to reliably check whetherour approach is suitable for reducing hallucinations in the context of healthcare. Additionally, another focuswill lie on combining domain-specific and open-domain LLMs. Lastly, we will try to enhance the ensemblemodel and try to fit it to the medical domain.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5024,
+              "type": "TextPositionSelector",
+              "start": 4518
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Generative fusion models likeLLM-Blender [3] have not yet been tested in the healthcare domain. Additionally, they have not been tested inthe context of hallucination reduction. This work will use the Med-HALT [8] dataset to reliably check whetherour approach is suitable for reducing hallucinations in the context of healthcare. Additionally, another focuswill lie on combining domain-specific and open-domain LLMs. Lastly, we will try to enhance the ensemblemodel and try to fit it to the medical domain.",
+              "prefix": "nique and provide new insights. ",
+              "suffix": "The key technologies that will b"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2614,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Description",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7291,
+              "type": "TextPositionSelector",
+              "start": 7280
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Description",
+              "prefix": " [8].43 ScheduleMonth Week Task ",
+              "suffix": "1 1 Planning Creating a detailed"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2615,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "printing",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8831,
+              "type": "TextPositionSelector",
+              "start": 8823
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "printing",
+              "prefix": "22-24 Finalization Buffer time, ",
+              "suffix": ", and final submission5Bibliogra"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2616,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Development of ensemble model ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7742,
+              "type": "TextPositionSelector",
+              "start": 7712
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Development of ensemble model ",
+              "prefix": "nd selection of literature2 5-6 ",
+              "suffix": "Developing the ensemble model, i"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2617,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "extractingopen-ended QA from structured QA",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8194,
+              "type": "TextPositionSelector",
+              "start": 8152
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "extractingopen-ended QA from structured QA",
+              "prefix": " Preparing data for finetuning, ",
+              "suffix": "4 13-14 Model finetuning Finetun"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2618,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Finetuning",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8229,
+              "type": "TextPositionSelector",
+              "start": 8219
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Finetuning",
+              "prefix": "ured QA4 13-14 Model finetuning ",
+              "suffix": " the model with the datasets4 15"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2619,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Schedule",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7264,
+              "type": "TextPositionSelector",
+              "start": 7256
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Schedule",
+              "prefix": "e Med-HALT dataset paper [8].43 ",
+              "suffix": "Month Week Task Description1 1 P"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2620,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "https://aclanthology.org/D19- 1259",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 10324,
+              "type": "TextPositionSelector",
+              "start": 10290
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "https://aclanthology.org/D19- 1259",
+              "prefix": "oi: 10.18653/v1/D19- 1259. url: ",
+              "suffix": " (visited on12/08/2024).[6] Khad"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 6
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2621,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "Bibliography",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8866,
+              "type": "TextPositionSelector",
+              "start": 8854
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Bibliography",
+              "prefix": " printing, and final submission5",
+              "suffix": "[1] Vibhor Agarwal et al. MedHal"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 6
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2622,
+    "user": "Shelly Lawrence",
+    "role": "assistant",
+    "text": "combined with open-domain LLMs",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5682,
+              "type": "TextPositionSelector",
+              "start": 5652
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "combined with open-domain LLMs",
+              "prefix": "are-LLMs will be fine-tuned and ",
+              "suffix": "through LLM-Blender. We will the"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 2844,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "The rise of ChatGPT and other LLMs (Large Language Models) has had a huge impact on society as a whole",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 497,
+              "type": "TextPositionSelector",
+              "start": 395
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The rise of ChatGPT and other LLMs (Large Language Models) has had a huge impact on society as a whole",
+              "prefix": "ber 9, 2024Darmstadt1 Motivation",
+              "suffix": ".Consequentially, the usefulness"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 2,
+    "group": 2
+  },
+  {
+    "id": 2845,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "Among these concerns one problemthat LLMs often struggle with",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 849,
+              "type": "TextPositionSelector",
+              "start": 788
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Among these concerns one problemthat LLMs often struggle with",
+              "prefix": "so raises a number of concerns. ",
+              "suffix": ", is hallucination [6]. Hallucin"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 2
+  },
+  {
+    "id": 2846,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "large languagemodel",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1039,
+              "type": "TextPositionSelector",
+              "start": 1020
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "large languagemodel",
+              "prefix": "care, e.g. when people prompt a ",
+              "suffix": " like ChatGPT with their symptom"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 2,
+    "group": 2
+  },
+  {
+    "id": 2847,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": " asking for a diagnosis, hallucination",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1111,
+              "type": "TextPositionSelector",
+              "start": 1073
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " asking for a diagnosis, hallucination",
+              "prefix": "ike ChatGPT with their symptoms,",
+              "suffix": " and thus the LLM giving wrongan"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 2
+  },
+  {
+    "id": 2848,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "how the asking person acts afterwards",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1250,
+              "type": "TextPositionSelector",
+              "start": 1213
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "how the asking person acts afterwards",
+              "prefix": "as it often directly influences ",
+              "suffix": "[1]. As Pal et al. stated, reduc"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 2
+  },
+  {
+    "id": 2849,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "Consequentially, the usefulness of generative AI (Artificial Intelligence) in the healthcare sector is constantlybeing explored and various use cases have already been found [10]. However, the usage of GAI (GenerativeArtificial Intelligence) in healthcare also raises a number of concerns",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 786,
+              "type": "TextPositionSelector",
+              "start": 498
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Consequentially, the usefulness of generative AI (Artificial Intelligence) in the healthcare sector is constantlybeing explored and various use cases have already been found [10]. However, the usage of GAI (GenerativeArtificial Intelligence) in healthcare also raises a number of concerns",
+              "prefix": "ge impact on society as a whole.",
+              "suffix": ". Among these concerns one probl"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 2,
+    "group": 2
+  },
+  {
+    "id": 2850,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "context of healthcare",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1328,
+              "type": "TextPositionSelector",
+              "start": 1307
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "context of healthcare",
+              "prefix": ", reducing hallucination in the ",
+              "suffix": " therefore not only is of scient"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 2
+  },
+  {
+    "id": 2851,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": " happens often [9]",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1917,
+              "type": "TextPositionSelector",
+              "start": 1899
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " happens often [9]",
+              "prefix": "provement as hallucination still",
+              "suffix": ".Previous studies have not yet t"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 2
+  },
+  {
+    "id": 2852,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "Previous studies have not yet tested ensemble methods that use generative fusion to accumulate differentresponses of different LLMs and generate a combination of these responses.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2096,
+              "type": "TextPositionSelector",
+              "start": 1918
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Previous studies have not yet tested ensemble methods that use generative fusion to accumulate differentresponses of different LLMs and generate a combination of these responses.",
+              "prefix": "ination still happens often [9].",
+              "suffix": " LLM-Blender is such an ensemble"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 2
+  },
+  {
+    "id": 2853,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "such an",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2119,
+              "type": "TextPositionSelector",
+              "start": 2112
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "such an",
+              "prefix": "these responses. LLM-Blender is ",
+              "suffix": " ensemblemethod [3]. The focus o"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 2
+  },
+  {
+    "id": 2854,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "Can healthcare specific LLMs like BioMedLM be combined with open domain LLMs like ChatGPT toreduce hallucinations in healthcare?",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2604,
+              "type": "TextPositionSelector",
+              "start": 2476
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Can healthcare specific LLMs like BioMedLM be combined with open domain LLMs like ChatGPT toreduce hallucinations in healthcare?",
+              "prefix": " following sub-questions:• RQ1: ",
+              "suffix": "• RQ2: How can LLM-Blender be im"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 2
+  },
+  {
+    "id": 2855,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": " improve",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2641,
+              "type": "TextPositionSelector",
+              "start": 2633
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " improve",
+              "prefix": "re?• RQ2: How can LLM-Blender be",
+              "suffix": "d and tailored for usage in the "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 2
+  },
+  {
+    "id": 2856,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "sub-questions",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2468,
+              "type": "TextPositionSelector",
+              "start": 2455
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "sub-questions",
+              "prefix": " broken down into the following ",
+              "suffix": ":• RQ1: Can healthcare specific "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 2
+  },
+  {
+    "id": 2857,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "2 ApproachTo our knowledge,",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2719,
+              "type": "TextPositionSelector",
+              "start": 2692
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "2 ApproachTo our knowledge,",
+              "prefix": "usage in the healthcare domain?2",
+              "suffix": " LLM-Blender is the latest appro"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 2
+  },
+  {
+    "id": 2858,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "discussed later",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3016,
+              "type": "TextPositionSelector",
+              "start": 3001
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "discussed later",
+              "prefix": "ecific limitations that will be ",
+              "suffix": ". LLM-Blender which will be buil"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 2,
+    "group": 2
+  },
+  {
+    "id": 2859,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "a scoringmechanism the model gets the top K (in the paper, K=3 is used) ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3393,
+              "type": "TextPositionSelector",
+              "start": 3321
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "a scoringmechanism the model gets the top K (in the paper, K=3 is used) ",
+              "prefix": "ch one is better. By performing ",
+              "suffix": "answers. Then the second compone"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "review": 2,
+    "group": 2
+  },
+  {
+    "id": 2860,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "The authors",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3766,
+              "type": "TextPositionSelector",
+              "start": 3755
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The authors",
+              "prefix": "nerated solutionsby PairRanker. ",
+              "suffix": " state that while human evaluati"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 2
+  },
+  {
+    "id": 2861,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "e try t",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4410,
+              "type": "TextPositionSelector",
+              "start": 4403
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "e try t",
+              "prefix": "d be posed by laypeople, which w",
+              "suffix": "o optimize in this work [11].The"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 2
+  },
+  {
+    "id": 2862,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "hey have not been tested inthe context of hallucination reduction",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4694,
+              "type": "TextPositionSelector",
+              "start": 4629
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "hey have not been tested inthe context of hallucination reduction",
+              "prefix": "althcare domain. Additionally, t",
+              "suffix": ". This work will use the Med-HAL"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 2
+  },
+  {
+    "id": 2863,
+    "user": "Stephanie Morgan",
+    "role": "expert",
+    "text": "Our hope",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5321,
+              "type": "TextPositionSelector",
+              "start": 5313
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Our hope",
+              "prefix": "pen-domain LLMs like GPT-4 [7]. ",
+              "suffix": " is that bycombining these diffe"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 2,
+    "group": 2
+  }
+]

@@ -1,0 +1,336 @@
+[
+    {
+        "author": "Briana Graves",
+        "group": 1,
+        "grader": "Lisa Jones",
+        "role": "assistant",
+        "scores": {
+            "form": {
+                "structure": 2,
+                "language": 4,
+                "total": 6
+            },
+            "content": {
+                "total": 34,
+                "meta": 3,
+                "motivation": 9,
+                "approach": 14,
+                "schedule": 5,
+                "bibliography": 3
+            },
+            "others": {
+                "total": 0,
+                "additional": 0,
+                "minus": 0
+            },
+            "total": 40
+        },
+        "criteria": {
+            "Template used": 1,
+            "Number of pages": 1,
+            "Language quality": 2,
+            "Common Thread": 2,
+            "Preliminary title": 2,
+            "Metadata available": 1,
+            "Hook existing": 1,
+            "Anker": 2,
+            "Domain": 1,
+            "Problem relevance": 1,
+            "Problem handling": 1,
+            "Teaser (RQ)": 2,
+            "RQ Limitation": 1,
+            "SOTA": 1,
+            "SOTA Relevance": 2,
+            "SOTA Weaknesses": 2,
+            "SOTA Delimitation": 1,
+            "SOTA Combination": 1,
+            "Theoretical Framework": 1,
+            "Relevance of theoretical framework": 0,
+            "Methodology Availability": 1,
+            "Methodology Completeness": 1,
+            "Methodology Relevance": 1,
+            "Methodology Target group": 1,
+            "Methodology Existing Material": 1,
+            "Methodology Difficulties": 1,
+            "Methodology Possibilities/restrictions": 1,
+            "Methodology Details": 1,
+            "Schedule Availability": 1,
+            "Schedule Completeness": 1,
+            "Schedule Block Description": 1,
+            "Schedule Realistic Relevance": 2,
+            "Bibliography Consistency": 1,
+            "Key literature": 2,
+            "Additional points": 0,
+            "Negative points": 0,
+            "Additional infos": ""
+        },
+        "type": "final"
+    },
+    {
+        "author": "Briana Graves",
+        "group": 1,
+        "grader": "Lisa Jones",
+        "role": "assistant",
+        "scores": {
+            "form": {
+                "structure": 2,
+                "language": 4,
+                "total": 6
+            },
+            "content": {
+                "total": 32,
+                "meta": 3,
+                "motivation": 9,
+                "approach": 14,
+                "schedule": 3,
+                "bibliography": 3
+            },
+            "others": {
+                "total": 0,
+                "additional": 0,
+                "minus": 0
+            },
+            "total": 38
+        },
+        "criteria": {
+            "Template used": 1,
+            "Number of pages": 1,
+            "Language quality": 2,
+            "Common Thread": 2,
+            "Preliminary title": 2,
+            "Metadata available": 1,
+            "Hook existing": 1,
+            "Anker": 2,
+            "Domain": 1,
+            "Problem relevance": 1,
+            "Problem handling": 1,
+            "Teaser (RQ)": 2,
+            "RQ Limitation": 1,
+            "SOTA": 1,
+            "SOTA Relevance": 2,
+            "SOTA Weaknesses": 2,
+            "SOTA Delimitation": 1,
+            "SOTA Combination": 1,
+            "Theoretical Framework": 1,
+            "Relevance of theoretical framework": 0,
+            "Methodology Availability": 1,
+            "Methodology Completeness": 1,
+            "Methodology Relevance": 1,
+            "Methodology Target group": 1,
+            "Methodology Existing Material": 1,
+            "Methodology Difficulties": 1,
+            "Methodology Possibilities/restrictions": 1,
+            "Methodology Details": 1,
+            "Schedule Availability": 1,
+            "Schedule Completeness": 1,
+            "Schedule Block Description": 1,
+            "Schedule Realistic Relevance": 0,
+            "Bibliography Consistency": 1,
+            "Key literature": 2,
+            "Additional points": 0,
+            "Negative points": 0,
+            "Additional infos": ""
+        },
+        "type": "draft"
+    },
+    {
+        "author": "Briana Graves",
+        "group": 2,
+        "grader": "Shane Barnes",
+        "role": "expert",
+        "scores": {
+            "form": {
+                "structure": 1,
+                "language": 2,
+                "total": 3
+            },
+            "content": {
+                "total": 16,
+                "meta": 1,
+                "motivation": 6,
+                "approach": 8,
+                "schedule": 0,
+                "bibliography": 1
+            },
+            "others": {
+                "total": 0,
+                "additional": 0,
+                "minus": 0
+            },
+            "total": 19
+        },
+        "criteria": {
+            "Template used": 0,
+            "Number of pages": 1,
+            "Language quality": 1,
+            "Common Thread": 1,
+            "Preliminary title": 0,
+            "Metadata available": 1,
+            "Hook existing": 1,
+            "Anker": 1,
+            "Domain": 1,
+            "Problem relevance": 1,
+            "Problem handling": 0,
+            "Teaser (RQ)": 1,
+            "RQ Limitation": 1,
+            "SOTA": 1,
+            "SOTA Relevance": 1,
+            "SOTA Weaknesses": 1,
+            "SOTA Delimitation": 1,
+            "SOTA Combination": 1,
+            "Theoretical Framework": 0,
+            "Relevance of theoretical framework": 0,
+            "Methodology Availability": 1,
+            "Methodology Completeness": 0,
+            "Methodology Relevance": 1,
+            "Methodology Target group": 0,
+            "Methodology Existing Material": 1,
+            "Methodology Difficulties": 0,
+            "Methodology Possibilities/restrictions": 0,
+            "Methodology Details": 0,
+            "Schedule Availability": 0,
+            "Schedule Completeness": 0,
+            "Schedule Block Description": 0,
+            "Schedule Realistic Relevance": 0,
+            "Bibliography Consistency": 1,
+            "Key literature": 0,
+            "Additional points": 0,
+            "Negative points": 0,
+            "Additional infos": ""
+        },
+        "type": "draft"
+    },
+    {
+        "author": "Briana Graves",
+        "group": 1,
+        "reviewer": "Jerry Castro",
+        "grader": "Lisa Jones",
+        "role": "assistant",
+        "hash": "b7f488753f",
+        "type": "review",
+        "scores": {
+            "form": {
+                "structure": 3,
+                "language": 3,
+                "total": 6
+            },
+            "feed_up": {
+                "feed_up": 0,
+                "total": 0
+            },
+            "feed_back": {
+                "feed_back": 4,
+                "total": 4
+            },
+            "feed_forward": {
+                "feed_forward": 2,
+                "total": 2
+            },
+            "content": {
+                "total": 8,
+                "quality": 5,
+                "errors": 3
+            },
+            "others": {
+                "total": 0,
+                "additional": 0,
+                "minus": 0
+            },
+            "total": 20
+        },
+        "criteria": {
+            "Summary available": 2,
+            "Clarity": 1,
+            "Language": 1,
+            "Tone": 2,
+            "Learning Goals": 0,
+            "Success Criteria": 0,
+            "Knowledge of result": 1,
+            "Knowledge of correct response": 1,
+            "Knowledge about task constraints": 1,
+            "Knowledge about concepts": 1,
+            "Knowledge about mistakes": 0,
+            "Self-feedback": 1,
+            "Self-regulation": 1,
+            "Learning Skills": 1,
+            "Correctness": 2,
+            "Actionability": 2,
+            "Argumentation": 1,
+            "Neglect": 0,
+            "Vague Critic": 0,
+            "Out-of-Scope": 0,
+            "Missing Reference": -1,
+            "Contradiction": 0,
+            "Additional points": 0,
+            "Minus points": 0,
+            "Additional infos": null
+        }
+    },
+    {
+        "author": "Briana Graves",
+        "group": 2,
+        "reviewer": "Jerry Castro",
+        "grader": "Noah Frazier",
+        "role": "expert",
+        "hash": "b7f488753f",
+        "type": "review",
+        "comment": "Hybrid LLM-generated review",
+        "scores": {
+            "form": {
+                "structure": 2,
+                "language": 3,
+                "total": 5
+            },
+            "feed_up": {
+                "feed_up": 0,
+                "total": 0
+            },
+            "feed_back": {
+                "feed_back": 4,
+                "total": 4
+            },
+            "feed_forward": {
+                "feed_forward": 1,
+                "total": 1
+            },
+            "content": {
+                "total": 8,
+                "quality": 4,
+                "errors": 4
+            },
+            "others": {
+                "total": 0,
+                "additional": 0,
+                "minus": 0
+            },
+            "total": 18
+        },
+        "criteria": {
+            "Summary available": 1,
+            "Clarity": 1,
+            "Language": 1,
+            "Tone": 2,
+            "Learning Goals": 0,
+            "Success Criteria": 0,
+            "Knowledge of result": 1,
+            "Knowledge of correct response": 1,
+            "Knowledge about task constraints": 0,
+            "Knowledge about concepts": 1,
+            "Knowledge about mistakes": 1,
+            "Self-feedback": 1,
+            "Self-regulation": 1,
+            "Learning Skills": 0,
+            "Correctness": 2,
+            "Actionability": 1,
+            "Argumentation": 1,
+            "Neglect": 0,
+            "Vague Critic": 0,
+            "Out-of-Scope": 0,
+            "Missing Reference": 0,
+            "Contradiction": 0,
+            "Additional points": 0,
+            "Minus points": 0,
+            "Additional infos": null
+        }
+    }
+]

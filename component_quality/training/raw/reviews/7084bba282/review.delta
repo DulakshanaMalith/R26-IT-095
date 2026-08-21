@@ -1,0 +1,132 @@
+[
+  {
+    "retain": 0
+  },
+  {
+    "insert": "Summary",
+    "attributes": {
+      "color": "#0e101a",
+      "background": "transparent"
+    }
+  },
+  {
+    "insert": "\n"
+  },
+  {
+    "insert": "In your expose \"Holographic AI Tutors: Revolutionizing Personalized Education\" you claim that AI tools like ChatGPT are important for asking questions if there are no human experts nearby. These human tutors are often limited by time, and an always-available AI tool would improve the educational experience. While these tools need some skills to work with, children often do not have these skills and, therefore, can not utilize these tools. As a solution, you propose a personal AI assistant in an AR environment. You want to find out what features such an AI tutor needs, how the holographic AI impacts student engagement, and what challenges and limitations these AI tutors have. To answer these questions, you plan to conduct interviews and experiment with an AI tutor with children (ages 8-12). ",
+    "attributes": {
+      "color": "#0e101a",
+      "background": "transparent"
+    }
+  },
+  {
+    "insert": "\n\n\n"
+  },
+  {
+    "insert": "Aspect 1",
+    "attributes": {
+      "color": "#0e101a",
+      "background": "transparent"
+    }
+  },
+  {
+    "insert": "\n"
+  },
+  {
+    "insert": "\"However, for young children, utilizing such tools effectively requires asking smart and specific questions, something they may struggle with due to their limited language skills or knowledge.\"",
+    "attributes": {
+      "color": "#0e101a",
+      "italic": true,
+      "background": "transparent"
+    }
+  },
+  {
+    "insert": "\n"
+  },
+  {
+    "insert": "Here, you want to point out why your work is important and the research question is relevant. Your argumentation should be easy to follow and should not leave questions open. This is important as it helps to show why this research area is fascinating. It is a good idea to select a specific target group and take their perspective to investigate the accessibility of technology. Here, you claim that children may struggle with tools like ChatGPT but do not struggle with an AI-based AR tutor. These AR-AI tutors need to be asked the same intelligent and specific questions as text-based tools. It is unclear why AR and holographic aspects will make it easier to interact with AI. To avoid confusion, you may want to provide more details on how the actual processing and answering differ from text- or speech-based LLM tools like ChatGPT and what makes AR interaction more accessible for children. Explaining your thoughts in more depth will improve your methodical skills, and the reader will better understand the paper. ",
+    "attributes": {
+      "color": "#0e101a",
+      "background": "transparent"
+    }
+  },
+  {
+    "insert": "\n\n\n"
+  },
+  {
+    "insert": "Aspect 2",
+    "attributes": {
+      "color": "#0e101a",
+      "background": "transparent"
+    }
+  },
+  {
+    "insert": "\n"
+  },
+  {
+    "insert": "\"These platforms, including ChatGPT and other AI tutors, have demonstrated their potential to provide personalized support to students\"",
+    "attributes": {
+      "color": "#0e101a",
+      "italic": true,
+      "background": "transparent"
+    }
+  },
+  {
+    "insert": "\n"
+  },
+  {
+    "insert": "You aim to illustrate the fast development and the increased usage of AI tools in learning environments, starting with the COVID-19 pandemic. Your argumentation should be easy to follow and supported by evidence. There should be no unsubstantiated conclusions. It is a good idea to argue with the latest developments in this field. The fact that generative AI has an increased number of users may be common knowledge. However, you claim that these tools \"demonstrated their potential\" without providing any citation or evidence for this claim. One aspect is that these tools provide personalized support to students, but they may be used to do their homework and may negatively influence the learning progress of the students. It would be reasonable to provide more evidence about the influence of AI tools on students. To improve your argumentation skills, you should always try to provide evidence for every claim you make. One targeted challenge would be to rewrite the paragraph to be more precise and not leave any room for open requestions or unproven claims. With a self-critical analysis of your argumentation, you can write better papers if you try to find and fix any unclear sentences. ",
+    "attributes": {
+      "color": "#0e101a",
+      "background": "transparent"
+    }
+  },
+  {
+    "insert": "\n\n"
+  },
+  {
+    "insert": "Aspect 3",
+    "attributes": {
+      "color": "#0e101a",
+      "background": "transparent"
+    }
+  },
+  {
+    "insert": "\n"
+  },
+  {
+    "insert": "\"Surveys and controlled experiments will measure the engagement and learning outcomes of students using the holographic AI tutor versus traditional methods. Metrics such as retention rates, task completion time, and quiz performance will be collected (Sub RQ 2",
+    "attributes": {
+      "color": "#0e101a",
+      "italic": true,
+      "background": "transparent"
+    }
+  },
+  {
+    "insert": ")\"",
+    "attributes": {
+      "color": "#0e101a",
+      "background": "transparent"
+    }
+  },
+  {
+    "insert": "\n"
+  },
+  {
+    "insert": "Your goal is to explain your methods and how you plan to answer your research question. This should provide a specific plan of what you want to do and how you want to achieve the goal. To succeed with your research, the methodology should be clear and understandable. The plan to conduct a survey and additionally controlled experiments is a good idea and a valid method where you may collect the necessary data to answer your research question. However, you did not specify how you wanted to conduct the experiments. You planned one week for \"Designing simulation scenarios or experiments\" in your schedule. In your state-of-the-art, you emphasize that there are no existing studies with functional AI tutors in an AR environment.",
+    "attributes": {
+      "color": "#0e101a",
+      "background": "transparent"
+    }
+  },
+  {
+    "insert": "\n"
+  },
+  {
+    "insert": "Consequently, in just one week, you plan to develop software to visualize the AI assistant in an AR environment. This plan could be possible, but it seems to be an unrealistic timetable. Also, you plan to conduct your experiments in week 11 of your schedule. This may also be an unrealistic time frame to collect data about the engagement and learning outcomes of students, as collecting data about learning progress may need more time. To successfully conduct your experiments, you should check your schedule for feasibility. Providing a realistic schedule avoids running out of time if things need a lot more time than planned. Also, you should check your plan for missing tasks like software development. This will help you to reach your goal and also help to see if the scope of the research questions is doable in the time you have.",
+    "attributes": {
+      "color": "#0e101a",
+      "background": "transparent"
+    }
+  }
+]

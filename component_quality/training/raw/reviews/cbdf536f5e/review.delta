@@ -1,0 +1,41 @@
+[
+  {
+    "retain": 0
+  },
+  {
+    "insert": "Summary",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\n\nThe study wants to investigate how holograms could be implemented into smart devices. Additionally, they wish to examine whether and, if yes, how existing dives could be used.\n\n"
+  },
+  {
+    "insert": "Strengths",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\n\nThe hook should arouse interest and engage readers in further reading. Your opening is charming, introducing the problem and arousing interest.\n\n"
+  },
+  {
+    "insert": "Weaknesses",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\n\nThe research questions should be precise and limited. Your research questions are unstructured, and it seems way too much for the scope of a bachelor's thesis. I recommend restructuring the questions and further limiting them to fit the scope.\nYou should cover the current state of the art and explain its weaknesses and possible improvements. Although you covered this, there are very few, and it seems there is more you can consider. I recommend adding further approaches and sources to cover a wider range of the current SOTA. \nThe approach section of the exposé should cover what you want to do and achieve. However, your paragraph does not make this clear to me. Please provide more information and be more precise.\nThe methodology should explain how you plan to answer your RQs. You did this quite well for some of them, but some are still missing. To clarify your procedure, cover all of your RQs.\n\n"
+  },
+  {
+    "insert": "Other",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\n\nSome of your sentences should be rephrased for clarity and readability."
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "topic": "Interactive LLM-based teaching agents",
+  "author": "Philip Thompson",
+  "reviews": {
+    "1": {
+      "review": 1,
+      "hash": "83b0a54c79",
+      "reviewer": "Cynthia Mills",
+      "role": "expert",
+      "size": 2136,
+      "group": 1
+    },
+    "2": {
+      "review": 2,
+      "hash": "252489b273",
+      "reviewer": "Hannah Bass",
+      "role": "student",
+      "size": 3542,
+      "group": 1
+    },
+    "3": {
+      "review": 3,
+      "hash": "a22f10f178",
+      "reviewer": "Brenda Wagner",
+      "role": "assistant",
+      "size": 2007,
+      "group": 1
+    }
+  }
+}

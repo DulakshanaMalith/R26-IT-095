@@ -1,0 +1,312 @@
+[
+  {
+    "id": 460,
+    "user": "Joshua Acosta",
+    "role": "student",
+    "text": "Wikipedia contributors. Likert scale. Accessed: 2024-12-02. 2024. url: https://en.wikipedia.org/wiki/Likert_scale.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8726,
+              "type": "TextPositionSelector",
+              "start": 8612
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Wikipedia contributors. Likert scale. Accessed: 2024-12-02. 2024. url: https://en.wikipedia.org/wiki/Likert_scale.",
+              "prefix": ": https://shorturl.at/wggUE.[3] ",
+              "suffix": "6HighlightStrengthWeaknessOther"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 6
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 461,
+    "user": "Joshua Acosta",
+    "role": "student",
+    "text": " augmented reality (AR)",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1448,
+              "type": "TextPositionSelector",
+              "start": 1425
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " augmented reality (AR)",
+              "prefix": "ntegrating these assistants into",
+              "suffix": " systems can significantly impro"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 462,
+    "user": "Joshua Acosta",
+    "role": "student",
+    "text": "\"AI agents will become our digital assistants, helping us navigate the complexities of the modern world. They willmake our lives easier and more efficient.\" — Jeff Bezos, Founder of Amazon.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 507,
+              "type": "TextPositionSelector",
+              "start": 318
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "\"AI agents will become our digital assistants, helping us navigate the complexities of the modern world. They willmake our lives easier and more efficient.\" — Jeff Bezos, Founder of Amazon.",
+              "prefix": "ber 9, 2024Darmstadt1 Motivation",
+              "suffix": "Digital assistants today lack th"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 463,
+    "user": "Joshua Acosta",
+    "role": "student",
+    "text": "The Holographic AI Assistant",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 113,
+              "type": "TextPositionSelector",
+              "start": 85
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The Holographic AI Assistant",
+              "prefix": "ing LabAnd the Word became Flesh",
+              "suffix": "Name: AnonymizedMatrikelnummer: "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 1
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 464,
+    "user": "Joshua Acosta",
+    "role": "student",
+    "text": "The demand for engaging digital assistants is rising in education, healthcare, and other fields. While traditional AIassistants like Siri and Alexa handle basic tasks, they lack the emotional engagement and trust required in complexinteractions. ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2415,
+              "type": "TextPositionSelector",
+              "start": 2169
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The demand for engaging digital assistants is rising in education, healthcare, and other fields. While traditional AIassistants like Siri and Alexa handle basic tasks, they lack the emotional engagement and trust required in complexinteractions. ",
+              "prefix": "cation or healthcare?22 Approach",
+              "suffix": "Augmented reality (AR) has demon"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 465,
+    "user": "Joshua Acosta",
+    "role": "student",
+    "text": "How can holographic AI assistants, integrated into augmented reality (AR), enhance user interaction and address thelimitations of current digital assistants?• Sub-RQ 1.1: What technological requirements are necessary to integrate holographic AI assistants into AR systems?• Sub-RQ 1.2: How do users perceive the physical presence of holographic AI assistants compared to traditionaldigital assistants (e.g., voice or screen-based)?• Sub-RQ 1.3: In what ways do holographic AI assistants improve task performance and efficiency in applicationssuch as education or healthcare?",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2158,
+              "type": "TextPositionSelector",
+              "start": 1584
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "How can holographic AI assistants, integrated into augmented reality (AR), enhance user interaction and address thelimitations of current digital assistants?• Sub-RQ 1.1: What technological requirements are necessary to integrate holographic AI assistants into AR systems?• Sub-RQ 1.2: How do users perceive the physical presence of holographic AI assistants compared to traditionaldigital assistants (e.g., voice or screen-based)?• Sub-RQ 1.3: In what ways do holographic AI assistants improve task performance and efficiency in applicationssuch as education or healthcare?",
+              "prefix": "luding education and healthcare.",
+              "suffix": "22 ApproachThe demand for engagi"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 466,
+    "user": "Joshua Acosta",
+    "role": "student",
+    "text": "olographic AI ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1150,
+              "type": "TextPositionSelector",
+              "start": 1136
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "olographic AI ",
+              "prefix": " AI fits into our daily lives. H",
+              "suffix": "assistants couldrevolutionize th"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 467,
+    "user": "Joshua Acosta",
+    "role": "student",
+    "text": "A suitable foundation is provided by Media Equation Theory (Reeves &Nass, 1996) [2], which posits that people interact with media and technology as if they were real social entities, applyingsocial norms and expectations to digital agents. ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3453,
+              "type": "TextPositionSelector",
+              "start": 3213
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "A suitable foundation is provided by Media Equation Theory (Reeves &Nass, 1996) [2], which posits that people interact with media and technology as if they were real social entities, applyingsocial norms and expectations to digital agents. ",
+              "prefix": "ngage with interactive systems. ",
+              "suffix": "This concept aligns closely with"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 468,
+    "user": "Joshua Acosta",
+    "role": "student",
+    "text": "This study employs a mixed-methods approach to answer the research question and its sub-questions by combiningliterature research, user studies, and usability evaluations.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4277,
+              "type": "TextPositionSelector",
+              "start": 4106
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "This study employs a mixed-methods approach to answer the research question and its sub-questions by combiningliterature research, user studies, and usability evaluations.",
+              "prefix": "ants in real-world applications.",
+              "suffix": " The first step involves a syste"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 469,
+    "user": "Joshua Acosta",
+    "role": "student",
+    "text": "1997",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8250,
+              "type": "TextPositionSelector",
+              "start": 8246
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "1997",
+              "prefix": "ors & Virtual Environments 6.4 (",
+              "suffix": "),pp. 355–385. url: http://www.o"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 6
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  }
+]

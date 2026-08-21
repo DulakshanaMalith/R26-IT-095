@@ -1,0 +1,201 @@
+[
+    {
+        "author": "Peter Hebert",
+        "group": 1,
+        "reviewer": "Anita Wong",
+        "grader": "Shelly Lawrence",
+        "role": "assistant",
+        "hash": "43dd342d7d",
+        "type": "review",
+        "scores": {
+            "form": {
+                "structure": 2,
+                "language": 3,
+                "total": 5
+            },
+            "feed_up": {
+                "feed_up": 0,
+                "total": 0
+            },
+            "feed_back": {
+                "feed_back": 4,
+                "total": 4
+            },
+            "feed_forward": {
+                "feed_forward": 1,
+                "total": 1
+            },
+            "content": {
+                "total": 6,
+                "quality": 3,
+                "errors": 3
+            },
+            "others": {
+                "total": -1,
+                "additional": 0,
+                "minus": -1
+            },
+            "total": 15
+        },
+        "criteria": {
+            "Summary available": 1,
+            "Clarity": 1,
+            "Language": 1,
+            "Tone": 2,
+            "Learning Goals": 0,
+            "Success Criteria": 0,
+            "Knowledge of result": 1,
+            "Knowledge of correct response": 1,
+            "Knowledge about task constraints": 0,
+            "Knowledge about concepts": 1,
+            "Knowledge about mistakes": 1,
+            "Self-feedback": 1,
+            "Self-regulation": 1,
+            "Learning Skills": 0,
+            "Correctness": 2,
+            "Actionability": 1,
+            "Argumentation": 0,
+            "Neglect": 0,
+            "Vague Critic": -1,
+            "Out-of-Scope": 0,
+            "Missing Reference": 0,
+            "Contradiction": 0,
+            "Additional points": 0,
+            "Minus points": -1,
+            "Additional infos": null
+        }
+    },
+    {
+        "author": "Peter Hebert",
+        "group": 2,
+        "reviewer": "Anita Wong",
+        "grader": "Shane Barnes",
+        "role": "expert",
+        "hash": "43dd342d7d",
+        "type": "review",
+        "scores": {
+            "form": {
+                "structure": 3,
+                "language": 3,
+                "total": 6
+            },
+            "feed_up": {
+                "feed_up": 4,
+                "total": 4
+            },
+            "feed_back": {
+                "feed_back": 4,
+                "total": 4
+            },
+            "feed_forward": {
+                "feed_forward": 2,
+                "total": 2
+            },
+            "content": {
+                "total": 8,
+                "quality": 4,
+                "errors": 4
+            },
+            "others": {
+                "total": 0,
+                "additional": 0,
+                "minus": 0
+            },
+            "total": 24
+        },
+        "criteria": {
+            "Summary available": 1,
+            "Clarity": 2,
+            "Language": 1,
+            "Tone": 2,
+            "Learning Goals": 2,
+            "Success Criteria": 2,
+            "Knowledge of result": 1,
+            "Knowledge of correct response": 1,
+            "Knowledge about task constraints": 1,
+            "Knowledge about concepts": 1,
+            "Knowledge about mistakes": 1,
+            "Self-feedback": 1,
+            "Self-regulation": 1,
+            "Learning Skills": 1,
+            "Correctness": 1,
+            "Actionability": 2,
+            "Argumentation": 1,
+            "Neglect": 0,
+            "Vague Critic": 0,
+            "Out-of-Scope": 0,
+            "Missing Reference": 0,
+            "Contradiction": 0,
+            "Additional points": 0,
+            "Minus points": 0,
+            "Additional infos": null
+        }
+    },
+    {
+        "author": "Peter Hebert",
+        "group": 2,
+        "reviewer": "Anita Wong",
+        "grader": "Noah Frazier",
+        "role": "expert",
+        "hash": "43dd342d7d",
+        "type": "review",
+        "comment": "Overall great review, missing FU",
+        "scores": {
+            "form": {
+                "structure": 3,
+                "language": 3,
+                "total": 6
+            },
+            "feed_up": {
+                "feed_up": 0,
+                "total": 0
+            },
+            "feed_back": {
+                "feed_back": 4,
+                "total": 4
+            },
+            "feed_forward": {
+                "feed_forward": 2,
+                "total": 2
+            },
+            "content": {
+                "total": 9,
+                "quality": 5,
+                "errors": 4
+            },
+            "others": {
+                "total": 0,
+                "additional": 0,
+                "minus": 0
+            },
+            "total": 21
+        },
+        "criteria": {
+            "Summary available": 1,
+            "Clarity": 2,
+            "Language": 1,
+            "Tone": 2,
+            "Learning Goals": 0,
+            "Success Criteria": 0,
+            "Knowledge of result": 1,
+            "Knowledge of correct response": 1,
+            "Knowledge about task constraints": 0,
+            "Knowledge about concepts": 1,
+            "Knowledge about mistakes": 1,
+            "Self-feedback": 1,
+            "Self-regulation": 1,
+            "Learning Skills": 1,
+            "Correctness": 2,
+            "Actionability": 2,
+            "Argumentation": 1,
+            "Neglect": 0,
+            "Vague Critic": 0,
+            "Out-of-Scope": 0,
+            "Missing Reference": 0,
+            "Contradiction": 0,
+            "Additional points": 0,
+            "Minus points": 0,
+            "Additional infos": null
+        }
+    }
+]

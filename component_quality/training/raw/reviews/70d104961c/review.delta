@@ -1,0 +1,41 @@
+[
+  {
+    "retain": 0
+  },
+  {
+    "insert": "Summary",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\n\nThe study wants to analyze how the use of GPT models can increase the personal treatment of children with anxiety disorder.\n\n"
+  },
+  {
+    "insert": "Strengths",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\n\nThe hook and anchor should arouse interest and engage the reader in reading further. Your introduction is well-written and arouses interest in the topic.\nYour methods should be described, and possible problems and challenges should be mentioned. You have explained in detail how you want to handle possible problems.\n\n"
+  },
+  {
+    "insert": "Weaknesses",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\n\nThe motivation should also include some weaknesses of the current approach. You suggested a pretty basic approach, which led to the question of whether this had been done already. I recommend adding a description of whether it was done or not. If yes, add weaknesses and flaws, and if no, explain why not.\nThe research questions should be precise, and the limitations should be comprehensible. Your research question is exact, which is nice, but it is incomprehensible why you chose GPT3, even though there are already newer ones. Please explain your choice.\nThe current state of the art should be clear. Although you explained it in detail, the current state of research is still unclear. Please rework this section to make the current SOTA aspects more straightforward.\n\n"
+  },
+  {
+    "insert": "Other",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\n\nPlease review your text again; some wording seems off, and there are still some spelling mistakes."
+  }
+]

@@ -1,0 +1,68 @@
+[
+  {
+    "id": 5387,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "You need to be more explicit about writing down what chapter you want to write and at which point. ",
+    "annotationId": 5304,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5388,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "At TUDa we don't print a thesis anymore",
+    "annotationId": 5305,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5389,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "provide a link to explain what this is",
+    "annotationId": 5306,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5390,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "So why isn't this a RQ or part of a RQ?",
+    "annotationId": 5307,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5391,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "That's probably an error, check the names of your bibtex entry.",
+    "annotationId": 5308,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 5392,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "sometimes you write capitalized at the beginning of the description, sometimes you don't. Please be consistent",
+    "annotationId": 5309,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  }
+]

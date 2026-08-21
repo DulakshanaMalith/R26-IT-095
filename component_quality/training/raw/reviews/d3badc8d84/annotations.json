@@ -1,0 +1,746 @@
+[
+  {
+    "id": 263,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": "Measuring impact ofparasocial interaction of AIassistants in augmented reality",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 138,
+              "type": "TextPositionSelector",
+              "start": 60
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Measuring impact ofparasocial interaction of AIassistants in augmented reality",
+              "prefix": "iquitous KnowledgeProcessing Lab",
+              "suffix": "Name: AnonymizedMatrikelnummer: "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 1
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 264,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": "impact",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 76,
+              "type": "TextPositionSelector",
+              "start": 70
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "impact",
+              "prefix": "nowledgeProcessing LabMeasuring ",
+              "suffix": " ofparasocial interaction of AIa"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 1
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 265,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": "Holograms and holographic AI assistants are commonly used in movies and television. With the rise ofintelligent virtual agents (IVAs) [7] and progress in augmented reality (AR) [5], it seems like fiction couldturn into reality.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 570,
+              "type": "TextPositionSelector",
+              "start": 343
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Holograms and holographic AI assistants are commonly used in movies and television. With the rise ofintelligent virtual agents (IVAs) [7] and progress in augmented reality (AR) [5], it seems like fiction couldturn into reality.",
+              "prefix": "ber 9, 2024Darmstadt1 Motivation",
+              "suffix": "Augmented reality describes the "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 266,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": " superimposing thre",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 620,
+              "type": "TextPositionSelector",
+              "start": 601
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " superimposing thre",
+              "prefix": ".Augmented reality describes the",
+              "suffix": "e dimensional virtual objects in"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 267,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": "etween analog",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 774,
+              "type": "TextPositionSelector",
+              "start": 761
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "etween analog",
+              "prefix": " could diminish the boundaries b",
+              "suffix": " anddigital world and revolution"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 268,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": "n this context embodied AR agentsdescribe IVAs that are visualized through some form of this technology (e.g. they could appear as bust thattalks to a user) [6",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1012,
+              "type": "TextPositionSelector",
+              "start": 853
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "n this context embodied AR agentsdescribe IVAs that are visualized through some form of this technology (e.g. they could appear as bust thattalks to a user) [6",
+              "prefix": "interact with computers (HCI). I",
+              "suffix": "].It has already been shown that"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 269,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": "It has already been shown that humans project human-like characteristics and stereotypes onto existingAI assistants [9, 3]. This raises the question whether the impact of parasocial interaction on learning as ithas shown to exist on humans [12] can translate to these virtual assistants once they are used in AR andbecome even more realistic. Examining this is especially interesting, since it has already been shown thatsocial presence spatial relationship of embodied AR agents impacts the human perception of these agents in away not seen before [6, 1, 8]",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1572,
+              "type": "TextPositionSelector",
+              "start": 1014
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "It has already been shown that humans project human-like characteristics and stereotypes onto existingAI assistants [9, 3]. This raises the question whether the impact of parasocial interaction on learning as ithas shown to exist on humans [12] can translate to these virtual assistants once they are used in AR andbecome even more realistic. Examining this is especially interesting, since it has already been shown thatsocial presence spatial relationship of embodied AR agents impacts the human perception of these agents in away not seen before [6, 1, 8]",
+              "prefix": "s bust thattalks to a user) [6].",
+              "suffix": ".Yet, to the best of our knowled"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 270,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": "How does the simulated parasocial interaction of embodied AR agents influence learning andsolving everyday tasks?",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1939,
+              "type": "TextPositionSelector",
+              "start": 1826
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "How does the simulated parasocial interaction of embodied AR agents influence learning andsolving everyday tasks?",
+              "prefix": "wing research questions:1. RQ1: ",
+              "suffix": "• Sub-RQ1.1: How do the differen"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 271,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": "1. RQ1: How does the simulated parasocial interaction of embodied AR agents influence learning andsolving everyday tasks?• Sub-RQ1.1: How do the different roles influence the estimated warmth and competence of theIVAs?• Sub-RQ1.2: Does this coincide with the actual efficiency and quality of solving the task?2. RQ2: How do the different social roles effect the acceptance of the embodied AR agents by humans anddoes this affect the feeling of trustworthiness of humans?",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2288,
+              "type": "TextPositionSelector",
+              "start": 1818
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "1. RQ1: How does the simulated parasocial interaction of embodied AR agents influence learning andsolving everyday tasks?• Sub-RQ1.1: How do the different roles influence the estimated warmth and competence of theIVAs?• Sub-RQ1.2: Does this coincide with the actual efficiency and quality of solving the task?2. RQ2: How do the different social roles effect the acceptance of the embodied AR agents by humans anddoes this affect the feeling of trustworthiness of humans?",
+              "prefix": "thefollowing research questions:",
+              "suffix": "22 ApproachSince the topic lies "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 272,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": "Creating a detailed plan",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7993,
+              "type": "TextPositionSelector",
+              "start": 7969
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Creating a detailed plan",
+              "prefix": " Task Description1 1 Scheduling ",
+              "suffix": "1 2 Literature review Analysis o"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 273,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": "Vacation Visiting friends",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8869,
+              "type": "TextPositionSelector",
+              "start": 8844
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Vacation Visiting friends",
+              "prefix": " finalizing the methodology5 17 ",
+              "suffix": "5 18-20 Complete Revision Editin"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 274,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": "Literature review Analysis of literature on parasocial interaction and AR",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8070,
+              "type": "TextPositionSelector",
+              "start": 7997
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Literature review Analysis of literature on parasocial interaction and AR",
+              "prefix": "ing Creating a detailed plan1 2 ",
+              "suffix": "1 3 Conception of experiment Dev"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 275,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": "onth Week Task Description1 1 Scheduling Creating a detailed plan1 2 Literature review Analysis of literature on parasocial interaction and AR1 3 Conception of experiment Developing specific tasks and roles of agents1 4 Preparation of experiments I Acquiring hardware, finding premises and participants2 5-6 Preparation of experiment II Developing software to represent IVAs in AR with roles2 7-8 Experiment conduction Conducting tests with all participants (2 People/Day)3 9 Postprocessing of experiment Sorting results, pre-analyzing collected data3 10-11 Quantitative Analysis Analyzing metric results and finding factor correlations3 12 Qualitative Analysis Reviewing text answers to find correlation reasoning4 13-14 Writing Results Writing the results chapter based on the data4 15 Discussion Interpretation of results in a scientific context4 16 Methodology Review Revising and finalizing the methodology5 17 Vacation Visiting friends5 18-20 Complete Revision Editing and reviewing all chapters, choosing a title6 21 Final Editing Final proofreading, stylistic and formal adjustments6 22-24 Finalization Buffer time, printing, and final submission",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 9082,
+              "type": "TextPositionSelector",
+              "start": 7928
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "onth Week Task Description1 1 Scheduling Creating a detailed plan1 2 Literature review Analysis of literature on parasocial interaction and AR1 3 Conception of experiment Developing specific tasks and roles of agents1 4 Preparation of experiments I Acquiring hardware, finding premises and participants2 5-6 Preparation of experiment II Developing software to represent IVAs in AR with roles2 7-8 Experiment conduction Conducting tests with all participants (2 People/Day)3 9 Postprocessing of experiment Sorting results, pre-analyzing collected data3 10-11 Quantitative Analysis Analyzing metric results and finding factor correlations3 12 Qualitative Analysis Reviewing text answers to find correlation reasoning4 13-14 Writing Results Writing the results chapter based on the data4 15 Discussion Interpretation of results in a scientific context4 16 Methodology Review Revising and finalizing the methodology5 17 Vacation Visiting friends5 18-20 Complete Revision Editing and reviewing all chapters, choosing a title6 21 Final Editing Final proofreading, stylistic and formal adjustments6 22-24 Finalization Buffer time, printing, and final submission",
+              "prefix": "mans and IVAs in AR.43 ScheduleM",
+              "suffix": "5Bibliography[1] Teresa Hirzle e"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 276,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": "The spread of AR technology is limited, yet there are some interesting approaches to investigate the impact ofvisualized AI assistants on humans. Krop et al. used 2D embodied IVAs and show that both a human-likeappearance of the assistant and framing the expertise of an agent impact the trust, acceptance, perceivedwarmth and competence perceived by the user [2]. They state that using 2D instead of 3D limits the feelingof realism and therefore affect the results. Other research also indicates that social presence in AR has aspositive influence on the users preferences, although this effect seems to be limited [8].Secondly, there is some research that examines the relationship and way of interaction between humans andnon-visualized IVAs. Lee et al. explored the interaction with voice assistants mimicking different social rolesin both functional and social tasks [3]. They point out a correlation between the different roles of the IVA andthe humans feeling of faith, trust and comfort into it. It also seems that the humans trust in differs betweenthe variable types of tasks.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3495,
+              "type": "TextPositionSelector",
+              "start": 2409
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The spread of AR technology is limited, yet there are some interesting approaches to investigate the impact ofvisualized AI assistants on humans. Krop et al. used 2D embodied IVAs and show that both a human-likeappearance of the assistant and framing the expertise of an agent impact the trust, acceptance, perceivedwarmth and competence perceived by the user [2]. They state that using 2D instead of 3D limits the feelingof realism and therefore affect the results. Other research also indicates that social presence in AR has aspositive influence on the users preferences, although this effect seems to be limited [8].Secondly, there is some research that examines the relationship and way of interaction between humans andnon-visualized IVAs. Lee et al. explored the interaction with voice assistants mimicking different social rolesin both functional and social tasks [3]. They point out a correlation between the different roles of the IVA andthe humans feeling of faith, trust and comfort into it. It also seems that the humans trust in differs betweenthe variable types of tasks.",
+              "prefix": "e different ways to approach it.",
+              "suffix": "The novelty of this research con"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 277,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": "in and",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3602,
+              "type": "TextPositionSelector",
+              "start": 3596
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "in and",
+              "prefix": "parasocial relationship of IVAs ",
+              "suffix": " threedimensional space. Through"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 278,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": " Through the use of AR it is expected that the agent is even more perceived like a humanand therefore the participants act upon. ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3755,
+              "type": "TextPositionSelector",
+              "start": 3626
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " Through the use of AR it is expected that the agent is even more perceived like a humanand therefore the participants act upon. ",
+              "prefix": "s in and threedimensional space.",
+              "suffix": "Current research usually only fo"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 279,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": "The trust and animacy of the agent as perceived by the test subjects (Sub-RQ1.1) will be measured using the AIrepresentation scale [10]. The performance of the participants in the tests (e.g. percentage of correct answers,efficiency) are then compared to subjective answers and combined to answer Sub-RQ1.2. In combination bothresults are expected to clearly outline the effects of 3D parasocial interaction on the participants (RQ1)",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4494,
+              "type": "TextPositionSelector",
+              "start": 4061
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The trust and animacy of the agent as perceived by the test subjects (Sub-RQ1.1) will be measured using the AIrepresentation scale [10]. The performance of the participants in the tests (e.g. percentage of correct answers,efficiency) are then compared to subjective answers and combined to answer Sub-RQ1.2. In combination bothresults are expected to clearly outline the effects of 3D parasocial interaction on the participants (RQ1)",
+              "prefix": "applied to related problems [2].",
+              "suffix": ".In addition, the five-point Hum"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 280,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": "Besides ranking the agent using the described scales, the participants will be given the opportunity to formulatethoughts in natural language. These information then will be deployed to discover the rationale of the subjects’actions. Nevertheless, the scope of the applied methods is limited and is unlikely that all all participants willrank their feelings and perception equally.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5154,
+              "type": "TextPositionSelector",
+              "start": 4773
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Besides ranking the agent using the described scales, the participants will be given the opportunity to formulatethoughts in natural language. These information then will be deployed to discover the rationale of the subjects’actions. Nevertheless, the scope of the applied methods is limited and is unlikely that all all participants willrank their feelings and perception equally.",
+              "prefix": "nd Use of Technology [11] (RQ2).",
+              "suffix": "The study will be conducted with"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 281,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": "fried ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5891,
+              "type": "TextPositionSelector",
+              "start": 5885
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "fried ",
+              "prefix": "ent that tries to mimic a close ",
+              "suffix": "of the participant. Theappearanc"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 282,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": "The first group will be interacting with an agent that tries to mimic a close fried of the participant. Theappearance in AR will be altered in a way the participants can relate with.2. The IVA communicating with the second group will be an expert on the topics discussed. It will answerthe question more in depth and appear more senior than the participants (e.g. wearing a suite, havinggrey hairs)3. Group three is a control group to ensure the validity of the test results. This agents communication willnot be altered in any way and a simple humanoid representation will be included in AR.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6399,
+              "type": "TextPositionSelector",
+              "start": 5807
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The first group will be interacting with an agent that tries to mimic a close fried of the participant. Theappearance in AR will be altered in a way the participants can relate with.2. The IVA communicating with the second group will be an expert on the topics discussed. It will answerthe question more in depth and appear more senior than the participants (e.g. wearing a suite, havinggrey hairs)3. Group three is a control group to ensure the validity of the test results. This agents communication willnot be altered in any way and a simple humanoid representation will be included in AR.",
+              "prefix": "of the followingsocial roles:1. ",
+              "suffix": "The small size of participants l"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 283,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": " to the have a somewha",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6919,
+              "type": "TextPositionSelector",
+              "start": 6897
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " to the have a somewha",
+              "prefix": "articipants as they are expected",
+              "suffix": "t similar skill-set for the desi"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 284,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": "The small size of participants limits the quality of the data expressiveness of the study. To prevent priorknowledge of the prospects seriously impacting the test results, only broad concepts and general capabilitieswill be part of the test. Only students of the first or second semester of natural-science majors will be recruitedto participate. Although this limits the generalizability of the results, it is required to ensure comparabilitybetween the different participants as they are expected to the have a somewhat similar skill-set for the desiredpurposes. It might be challenging to acquire enough participants as well as suitable premises and hardware.The software to conduct the study also must be developed. To make up for these challenges, there will be anextensive preparation phase.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7196,
+              "type": "TextPositionSelector",
+              "start": 6399
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The small size of participants limits the quality of the data expressiveness of the study. To prevent priorknowledge of the prospects seriously impacting the test results, only broad concepts and general capabilitieswill be part of the test. Only students of the first or second semester of natural-science majors will be recruitedto participate. Although this limits the generalizability of the results, it is required to ensure comparabilitybetween the different participants as they are expected to the have a somewhat similar skill-set for the desiredpurposes. It might be challenging to acquire enough participants as well as suitable premises and hardware.The software to conduct the study also must be developed. To make up for these challenges, there will be anextensive preparation phase.",
+              "prefix": "entation will be included in AR.",
+              "suffix": "Following the completion of the "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 285,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": "statistical ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7825,
+              "type": "TextPositionSelector",
+              "start": 7813
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "statistical ",
+              "prefix": " isrequired to make the results ",
+              "suffix": "relevant. Yet the findings will "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 286,
+    "user": "Peter Hebert",
+    "role": "student",
+    "text": "effect ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2176,
+              "type": "TextPositionSelector",
+              "start": 2169
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "effect ",
+              "prefix": "w do the different social roles ",
+              "suffix": "the acceptance of the embodied A"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  }
+]

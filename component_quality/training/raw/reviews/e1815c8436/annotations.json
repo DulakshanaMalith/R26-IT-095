@@ -1,0 +1,467 @@
+[
+  {
+    "id": 435,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "Personalties",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 130,
+              "type": "TextPositionSelector",
+              "start": 118
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Personalties",
+              "prefix": "inMuseums: SimulatingHistorical ",
+              "suffix": "Enhance museum experiences by pr"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 1
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 436,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "Since theCOVID-19 pandemic, museums worldwide have faced a dramatic decline in visitor numbers, highlighting theneed for more engaging and innovative approaches to attract audiences",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1039,
+              "type": "TextPositionSelector",
+              "start": 858
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Since theCOVID-19 pandemic, museums worldwide have faced a dramatic decline in visitor numbers, highlighting theneed for more engaging and innovative approaches to attract audiences",
+              "prefix": "ic doesn’t hold truth nowadays. ",
+              "suffix": ". Despite their efforts to adapt"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 437,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": " their",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1054,
+              "type": "TextPositionSelector",
+              "start": 1048
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " their",
+              "prefix": "es to attract audiences. Despite",
+              "suffix": " efforts to adapt manyinstitutio"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 438,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "nteraction,",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1138,
+              "type": "TextPositionSelector",
+              "start": 1127
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "nteraction,",
+              "prefix": "rely on traditional methods of i",
+              "suffix": " by simply showcasing an object "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 439,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "usuage",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7335,
+              "type": "TextPositionSelector",
+              "start": 7329
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "usuage",
+              "prefix": "s for detailedevaluation of the ",
+              "suffix": " of holographic AI assistants. B"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 440,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "acurracy",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6370,
+              "type": "TextPositionSelector",
+              "start": 6362
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "acurracy",
+              "prefix": "sistant’s natural behavior, the ",
+              "suffix": " of its answers and its intuitiv"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 441,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "artifical ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5121,
+              "type": "TextPositionSelector",
+              "start": 5111
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "artifical ",
+              "prefix": "e in eithermachine learning and ",
+              "suffix": "intelligence or computer vision "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 442,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "combing ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2935,
+              "type": "TextPositionSelector",
+              "start": 2927
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "combing ",
+              "prefix": " possibility of synergistically ",
+              "suffix": "both holography and AI assistant"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 443,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "combing",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4441,
+              "type": "TextPositionSelector",
+              "start": 4434
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "combing",
+              "prefix": " of holograms in an open space, ",
+              "suffix": " holograms with AIassistants and"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 444,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "ombing o",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5262,
+              "type": "TextPositionSelector",
+              "start": 5254
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "ombing o",
+              "prefix": "erview will be semi-structured c",
+              "suffix": "pen-ended and closed questions. "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 445,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "(Sub-RQ1.1).",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4773,
+              "type": "TextPositionSelector",
+              "start": 4761
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "(Sub-RQ1.1).",
+              "prefix": "s of its process and deployment ",
+              "suffix": "Additionally, expert interviews "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 446,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": " with digitalmuseum exhibits and six PhD students from Technische Universität Darmstadt which specialize in eithermachine learning and artifical intelligence or computer vision and human-computer interaction. ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5185,
+              "type": "TextPositionSelector",
+              "start": 4976
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " with digitalmuseum exhibits and six PhD students from Technische Universität Darmstadt which specialize in eithermachine learning and artifical intelligence or computer vision and human-computer interaction. ",
+              "prefix": " individuals who have experience",
+              "suffix": "These areequally distributed. Th"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 447,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": " Moreover, using AI to simulate historical figures raises ethicalquestions about representing deceased individuals, especially if their views are misrepresented. Furthermore,visitors’ privacy must be guaranteed by ensuring that data generated during an interaction is anonymized",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7189,
+              "type": "TextPositionSelector",
+              "start": 6911
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " Moreover, using AI to simulate historical figures raises ethicalquestions about representing deceased individuals, especially if their views are misrepresented. Furthermore,visitors’ privacy must be guaranteed by ensuring that data generated during an interaction is anonymized",
+              "prefix": " biased information is conveyed.",
+              "suffix": "(Sub-RQ1.2).Despite these risks,"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 448,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": " fullfilled",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6761,
+              "type": "TextPositionSelector",
+              "start": 6750
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " fullfilled",
+              "prefix": "s. The main key that needs to be",
+              "suffix": "is to guarantee historical accur"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 449,
+    "user": "Lisa Jones",
+    "role": "assistant",
+    "text": "Schedule",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7758,
+              "type": "TextPositionSelector",
+              "start": 7750
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Schedule",
+              "prefix": "ing experiences for visitors.43 ",
+              "suffix": "Month Week Task Description1 1 P"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  }
+]

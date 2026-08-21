@@ -1,0 +1,467 @@
+[
+  {
+    "id": 2666,
+    "user": "Beth Hoover",
+    "role": "student",
+    "text": "Rethinking educationHow large language models enable individual learning experiences",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 144,
+              "type": "TextPositionSelector",
+              "start": 60
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Rethinking educationHow large language models enable individual learning experiences",
+              "prefix": "iquitous KnowledgeProcessing Lab",
+              "suffix": "Name: AnonymizedMatrikelnummer: "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 1
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 2667,
+    "user": "Beth Hoover",
+    "role": "student",
+    "text": "The role of artificial intelligence (AI) in education is becoming increasingly important, especially in promotingcritical thinking and problem-solving skills [3].",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 511,
+              "type": "TextPositionSelector",
+              "start": 349
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The role of artificial intelligence (AI) in education is becoming increasingly important, especially in promotingcritical thinking and problem-solving skills [3].",
+              "prefix": "ber 8, 2024Darmstadt1 Motivation",
+              "suffix": " Large language models (LLMs) of"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 2668,
+    "user": "Beth Hoover",
+    "role": "student",
+    "text": "One example of this is the use of LLMs in real classroom scenarios. 69% of the students surveyed are convincedthat good AI skills are definitely or rather important for achieving their own career goals [3]. ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1313,
+              "type": "TextPositionSelector",
+              "start": 1106
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "One example of this is the use of LLMs in real classroom scenarios. 69% of the students surveyed are convincedthat good AI skills are definitely or rather important for achieving their own career goals [3]. ",
+              "prefix": " be explored in more detail [8].",
+              "suffix": "Studies alsoshows that AI-based "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 2669,
+    "user": "Beth Hoover",
+    "role": "student",
+    "text": "However, despite this promising progress, the ethical implications of integrating AI into schools have notyet been sufficiently researched",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 952,
+              "type": "TextPositionSelector",
+              "start": 814
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "However, despite this promising progress, the ethical implications of integrating AI into schools have notyet been sufficiently researched",
+              "prefix": "ating problem analysis [10] [2].",
+              "suffix": ". Questions about privacy, algor"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2670,
+    "user": "Beth Hoover",
+    "role": "student",
+    "text": "Questions about privacy, algorithmic bias and the long-term impact onrelationships between teachers and students need to be explored in more detail [8].",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1106,
+              "type": "TextPositionSelector",
+              "start": 954
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Questions about privacy, algorithmic bias and the long-term impact onrelationships between teachers and students need to be explored in more detail [8].",
+              "prefix": "t been sufficiently researched. ",
+              "suffix": "One example of this is the use o"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2671,
+    "user": "Beth Hoover",
+    "role": "student",
+    "text": "AI-based systems like GPT 3.5, \"can generate summaries that are preferred by human annotatorswhen compared to reference summaries\" [6]. ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1472,
+              "type": "TextPositionSelector",
+              "start": 1336
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "AI-based systems like GPT 3.5, \"can generate summaries that are preferred by human annotatorswhen compared to reference summaries\" [6]. ",
+              "prefix": "als [3]. Studies alsoshows that ",
+              "suffix": "Nevertheless, the question of ho"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 2672,
+    "user": "Beth Hoover",
+    "role": "student",
+    "text": "The integration of large language models (LLMs) into educational environments has increasinglybecome the focus of research interest in recent years [11].",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2848,
+              "type": "TextPositionSelector",
+              "start": 2695
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The integration of large language models (LLMs) into educational environments has increasinglybecome the focus of research interest in recent years [11].",
+              "prefix": " subject areas?22 ApproachSOTA: ",
+              "suffix": " These models, are increasingly "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 2673,
+    "user": "Beth Hoover",
+    "role": "student",
+    "text": " By tailoring their outputto learners’ specific needs, they also provide personalized feedback that can improve comprehension andretention of information.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3348,
+              "type": "TextPositionSelector",
+              "start": 3194
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " By tailoring their outputto learners’ specific needs, they also provide personalized feedback that can improve comprehension andretention of information.",
+              "prefix": "cing cognitive overload [7] [5].",
+              "suffix": "Despite these promising results,"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 2674,
+    "user": "Beth Hoover",
+    "role": "student",
+    "text": "Despite these promising results, there are still significant gaps in our understanding",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3434,
+              "type": "TextPositionSelector",
+              "start": 3348
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Despite these promising results, there are still significant gaps in our understanding",
+              "prefix": "ion andretention of information.",
+              "suffix": ". In particular, it is unclearto"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 2675,
+    "user": "Beth Hoover",
+    "role": "student",
+    "text": "Metacognitive strategies, such as self-questioning and planning, are particularlyimportant to promote independent learning and critical analysis.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4583,
+              "type": "TextPositionSelector",
+              "start": 4438
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Metacognitive strategies, such as self-questioning and planning, are particularlyimportant to promote independent learning and critical analysis.",
+              "prefix": "netheir own learning processes. ",
+              "suffix": " In addition, theoretical approa"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 2676,
+    "user": "Beth Hoover",
+    "role": "student",
+    "text": "urthermore, their effectiveness compared to traditionalteaching methods based on human interaction and structured curricula remains a subject of ongoing research.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3780,
+              "type": "TextPositionSelector",
+              "start": 3618
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "urthermore, their effectiveness compared to traditionalteaching methods based on human interaction and structured curricula remains a subject of ongoing research.",
+              "prefix": "ng in real-world contexts [9]. F",
+              "suffix": "Understanding these dynamics is "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2677,
+    "user": "Beth Hoover",
+    "role": "student",
+    "text": "n addition, theoretical approaches toAI-enhanced learning will be integrated, with a focus on developing effective digital teaching strategies thatleverage the adaptability and scalability of LLMs [1].",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4786,
+              "type": "TextPositionSelector",
+              "start": 4585
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "n addition, theoretical approaches toAI-enhanced learning will be integrated, with a focus on developing effective digital teaching strategies thatleverage the adaptability and scalability of LLMs [1].",
+              "prefix": "earning and critical analysis. I",
+              "suffix": "These strategies aim to bridge t"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2678,
+    "user": "Beth Hoover",
+    "role": "student",
+    "text": "n order to find out what specific applications LLMs offer for supporting students in analyzing and evaluatingcomplex problems, a comprehensive literature review is conducted",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5583,
+              "type": "TextPositionSelector",
+              "start": 5410
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "n order to find out what specific applications LLMs offer for supporting students in analyzing and evaluatingcomplex problems, a comprehensive literature review is conducted",
+              "prefix": "s) in educational environments.I",
+              "suffix": ". The aim is to identify existin"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 2679,
+    "user": "Beth Hoover",
+    "role": "student",
+    "text": "To determine these, semi-structured interviews are conducted with teachers who already use LLMs in their classes. ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6252,
+              "type": "TextPositionSelector",
+              "start": 6138
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "To determine these, semi-structured interviews are conducted with teachers who already use LLMs in their classes. ",
+              "prefix": "s suitable didactic strategies. ",
+              "suffix": "These interviewscombine open and"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 2680,
+    "user": "Beth Hoover",
+    "role": "student",
+    "text": "To evaluate the effects of LLMs compared to traditional teaching methods on the development of criticalthinking and problem-solving skills, an experimental approach will be chosen. One group of students willwork with LLM-based learning methods, while the control group will use traditional approaches. Both groupswill work on comparable tasks specifically designed to promote critical thinking and problem-solving skills.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7203,
+              "type": "TextPositionSelector",
+              "start": 6782
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "To evaluate the effects of LLMs compared to traditional teaching methods on the development of criticalthinking and problem-solving skills, an experimental approach will be chosen. One group of students willwork with LLM-based learning methods, while the control group will use traditional approaches. Both groupswill work on comparable tasks specifically designed to promote critical thinking and problem-solving skills.",
+              "prefix": "esign (sub-research question 2).",
+              "suffix": "Differences in the effectiveness"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  }
+]

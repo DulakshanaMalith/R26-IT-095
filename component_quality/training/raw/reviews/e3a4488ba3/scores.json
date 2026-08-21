@@ -1,0 +1,200 @@
+[
+    {
+        "author": "Pamela Downs",
+        "group": 1,
+        "reviewer": "Rhonda Campbell",
+        "grader": "Lisa Jones",
+        "role": "assistant",
+        "hash": "e3a4488ba3",
+        "type": "review",
+        "scores": {
+            "form": {
+                "structure": 4,
+                "language": 2,
+                "total": 6
+            },
+            "feed_up": {
+                "feed_up": 2,
+                "total": 2
+            },
+            "feed_back": {
+                "feed_back": 4,
+                "total": 4
+            },
+            "feed_forward": {
+                "feed_forward": 2,
+                "total": 2
+            },
+            "content": {
+                "total": 9,
+                "quality": 5,
+                "errors": 4
+            },
+            "others": {
+                "total": 0,
+                "additional": 0,
+                "minus": 0
+            },
+            "total": 23
+        },
+        "criteria": {
+            "Summary available": 2,
+            "Clarity": 2,
+            "Language": 0,
+            "Tone": 2,
+            "Learning Goals": 1,
+            "Success Criteria": 1,
+            "Knowledge of result": 1,
+            "Knowledge of correct response": 1,
+            "Knowledge about task constraints": 1,
+            "Knowledge about concepts": 1,
+            "Knowledge about mistakes": 1,
+            "Self-feedback": 1,
+            "Self-regulation": 1,
+            "Learning Skills": 1,
+            "Correctness": 2,
+            "Actionability": 2,
+            "Argumentation": 1,
+            "Neglect": 0,
+            "Vague Critic": 0,
+            "Out-of-Scope": 0,
+            "Missing Reference": 0,
+            "Contradiction": 0,
+            "Additional points": 0,
+            "Minus points": 0,
+            "Additional infos": null
+        }
+    },
+    {
+        "author": "Pamela Downs",
+        "group": 2,
+        "reviewer": "Rhonda Campbell",
+        "grader": "Noah Frazier",
+        "role": "expert",
+        "hash": "e3a4488ba3",
+        "type": "review",
+        "scores": {
+            "form": {
+                "structure": 3,
+                "language": 2,
+                "total": 5
+            },
+            "feed_up": {
+                "feed_up": 4,
+                "total": 4
+            },
+            "feed_back": {
+                "feed_back": 4,
+                "total": 4
+            },
+            "feed_forward": {
+                "feed_forward": 2,
+                "total": 2
+            },
+            "content": {
+                "total": 8,
+                "quality": 4,
+                "errors": 4
+            },
+            "others": {
+                "total": 0,
+                "additional": 0,
+                "minus": 0
+            },
+            "total": 23
+        },
+        "criteria": {
+            "Summary available": 2,
+            "Clarity": 1,
+            "Language": 0,
+            "Tone": 2,
+            "Learning Goals": 2,
+            "Success Criteria": 2,
+            "Knowledge of result": 1,
+            "Knowledge of correct response": 1,
+            "Knowledge about task constraints": 0,
+            "Knowledge about concepts": 1,
+            "Knowledge about mistakes": 1,
+            "Self-feedback": 1,
+            "Self-regulation": 1,
+            "Learning Skills": 1,
+            "Correctness": 2,
+            "Actionability": 1,
+            "Argumentation": 1,
+            "Neglect": 0,
+            "Vague Critic": 0,
+            "Out-of-Scope": 0,
+            "Missing Reference": 0,
+            "Contradiction": 0,
+            "Additional points": 0,
+            "Minus points": 0,
+            "Additional infos": null
+        }
+    },
+    {
+        "author": "Pamela Downs",
+        "group": 2,
+        "reviewer": "Rhonda Campbell",
+        "grader": "Shane Barnes",
+        "role": "expert",
+        "hash": "e3a4488ba3",
+        "type": "review",
+        "scores": {
+            "form": {
+                "structure": 2,
+                "language": 3,
+                "total": 5
+            },
+            "feed_up": {
+                "feed_up": 2,
+                "total": 2
+            },
+            "feed_back": {
+                "feed_back": 4,
+                "total": 4
+            },
+            "feed_forward": {
+                "feed_forward": 0,
+                "total": 0
+            },
+            "content": {
+                "total": 8,
+                "quality": 4,
+                "errors": 4
+            },
+            "others": {
+                "total": 0,
+                "additional": 0,
+                "minus": 0
+            },
+            "total": 19
+        },
+        "criteria": {
+            "Summary available": 1,
+            "Clarity": 1,
+            "Language": 1,
+            "Tone": 2,
+            "Learning Goals": 1,
+            "Success Criteria": 1,
+            "Knowledge of result": 1,
+            "Knowledge of correct response": 1,
+            "Knowledge about task constraints": 1,
+            "Knowledge about concepts": 1,
+            "Knowledge about mistakes": 1,
+            "Self-feedback": 1,
+            "Self-regulation": 0,
+            "Learning Skills": 0,
+            "Correctness": 2,
+            "Actionability": 2,
+            "Argumentation": 0,
+            "Neglect": 0,
+            "Vague Critic": 0,
+            "Out-of-Scope": 0,
+            "Missing Reference": 0,
+            "Contradiction": 0,
+            "Additional points": 0,
+            "Minus points": 0,
+            "Additional infos": null
+        }
+    }
+]

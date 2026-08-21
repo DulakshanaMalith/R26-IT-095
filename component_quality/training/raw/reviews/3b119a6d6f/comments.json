@@ -1,0 +1,63 @@
+[
+  {
+    "id": 1515,
+    "user": "Jennifer Olsen",
+    "role": "student",
+    "text": "I think this claim would benefit from more explanation. Simply referring to a single study is not sufficient, and I think it should be clarified what exactly is not well studied. ",
+    "annotationId": 1487,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [
+      {
+        "user": "Shelly Lawrence",
+        "role": "assistant",
+        "vote": 1
+      }
+    ],
+    "group": 1
+  },
+  {
+    "id": 1516,
+    "user": "Jennifer Olsen",
+    "role": "student",
+    "text": "It would be better if an answer to the question \"How will it be simulated\" would given.",
+    "annotationId": 1488,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1517,
+    "user": "Jennifer Olsen",
+    "role": "student",
+    "text": "Here, it would be preferable to refer to some studies",
+    "annotationId": 1489,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1518,
+    "user": "Jennifer Olsen",
+    "role": "student",
+    "text": "The introduction does a good job of outlining the expose.",
+    "annotationId": 1490,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 1519,
+    "user": "Jennifer Olsen",
+    "role": "student",
+    "text": "I would also refer to some studies here",
+    "annotationId": 1491,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  }
+]

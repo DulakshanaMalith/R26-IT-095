@@ -1,0 +1,642 @@
+[
+  {
+    "id": 571,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Interactive LLM-basedteaching agents",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 96,
+              "type": "TextPositionSelector",
+              "start": 60
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Interactive LLM-basedteaching agents",
+              "prefix": "iquitous KnowledgeProcessing Lab",
+              "suffix": "Cross-Cultural Education: Bridgi"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 1
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 572,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": " offer potential solutions",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 864,
+              "type": "TextPositionSelector",
+              "start": 838
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " offer potential solutions",
+              "prefix": "ual Large Language Models (LLMs)",
+              "suffix": ". However,critical questions rem"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 573,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": " limited inscalability",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 693,
+              "type": "TextPositionSelector",
+              "start": 671
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " limited inscalability",
+              "prefix": "d bilingual programs, are either",
+              "suffix": " or fail to adequately address c"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 574,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "fail to adequately address cultural nuances",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 740,
+              "type": "TextPositionSelector",
+              "start": 697
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "fail to adequately address cultural nuances",
+              "prefix": "either limited inscalability or ",
+              "suffix": " critical for effective educatio"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 575,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Over 40% of children worldwide are educated in a language they don’t fully understand or speak at home",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 465,
+              "type": "TextPositionSelector",
+              "start": 363
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Over 40% of children worldwide are educated in a language they don’t fully understand or speak at home",
+              "prefix": "ber 9, 2024Darmstadt1 Motivation",
+              "suffix": ".[1]This linguistic barrier sign"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 576,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": " translation services and bilingual program",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 658,
+              "type": "TextPositionSelector",
+              "start": 615
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " translation services and bilingual program",
+              "prefix": "ion. Existing solutions, such as",
+              "suffix": "s, are either limited inscalabil"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 577,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "SOTA - State of the Art in existing relevant work",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1795,
+              "type": "TextPositionSelector",
+              "start": 1746
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "SOTA - State of the Art in existing relevant work",
+              "prefix": "guis-tically adaptive education.",
+              "suffix": "Multilingual LLMs show promise i"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 578,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Current models struggle with biases when handling less-resourced languages and cultural contexts",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1985,
+              "type": "TextPositionSelector",
+              "start": 1889
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Current models struggle with biases when handling less-resourced languages and cultural contexts",
+              "prefix": "rities, but challenges remain:• ",
+              "suffix": ".[1][4]• Fine-tuning LLMs on cul"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 579,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "s anemerging solutio",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2113,
+              "type": "TextPositionSelector",
+              "start": 2093
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "s anemerging solutio",
+              "prefix": "ro-shot and few-shot learning, i",
+              "suffix": "n.[2][4]• A key gap is the lack "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 580,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Scaffolding: Supporting learners with contextual prompts tailored to their linguistic and cultural needs",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2500,
+              "type": "TextPositionSelector",
+              "start": 2396
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Scaffolding: Supporting learners with contextual prompts tailored to their linguistic and cultural needs",
+              "prefix": " learning theory, emphasizing:• ",
+              "suffix": ".• Cultural Mediation: Adapting "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 581,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "English, Spanish, and otherlanguages",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2900,
+              "type": "TextPositionSelector",
+              "start": 2864
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "English, Spanish, and otherlanguages",
+              "prefix": "gnment, and adaptability across ",
+              "suffix": ".• Qualitative Analysis– Conduct"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 582,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Evaluate LLMs using multilingual educational datasets.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2788,
+              "type": "TextPositionSelector",
+              "start": 2734
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Evaluate LLMs using multilingual educational datasets.",
+              "prefix": "odology• Quantitative Analysis– ",
+              "suffix": "– Metrics: linguistic accuracy, "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 583,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Conduct case studies with multilingual learners",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2972,
+              "type": "TextPositionSelector",
+              "start": 2925
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Conduct case studies with multilingual learners",
+              "prefix": "nguages.• Qualitative Analysis– ",
+              "suffix": " to assess usability and sensiti"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 584,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Address challenges through synthetic dataset augmentation and expert evaluation",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3425,
+              "type": "TextPositionSelector",
+              "start": 3346
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Address challenges through synthetic dataset augmentation and expert evaluation",
+              "prefix": "model training and evaluation.– ",
+              "suffix": ".43 ScheduleMonth Week Task Desc"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 585,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Methodology",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2709,
+              "type": "TextPositionSelector",
+              "start": 2698
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Methodology",
+              "prefix": "th diverse educational settings.",
+              "suffix": "• Quantitative Analysis– Evaluat"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 586,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "3 10 Conceptualization Plan data collection and case studies.3 11-12 Data Collection Collect data from participants.4 13-14 Data Analysis Analyze data and identify insights.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4014,
+              "type": "TextPositionSelector",
+              "start": 3841
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "3 10 Conceptualization Plan data collection and case studies.3 11-12 Data Collection Collect data from participants.4 13-14 Data Analysis Analyze data and identify insights.",
+              "prefix": "Define methods and data sources.",
+              "suffix": "4 15 Discussion Write discussion"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 587,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Can Large Language Models (LLMs) provide scalable, culturally relevant, and linguistically accurate educationalsupport to bridge global education gaps",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1165,
+              "type": "TextPositionSelector",
+              "start": 1015
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Can Large Language Models (LLMs) provide scalable, culturally relevant, and linguistically accurate educationalsupport to bridge global education gaps",
+              "prefix": "ationat scale.Research Question:",
+              "suffix": "?Sub-Questions:• How do multilin"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 588,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Cultural Mediation: Adapting learning material to the cultural background of students.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2589,
+              "type": "TextPositionSelector",
+              "start": 2503
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Cultural Mediation: Adapting learning material to the cultural background of students.",
+              "prefix": "linguistic and cultural needs.• ",
+              "suffix": " These principleswill frame the "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 589,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "inguistic accuracy, cultural alignment, and adaptability ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2857,
+              "type": "TextPositionSelector",
+              "start": 2800
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "inguistic accuracy, cultural alignment, and adaptability ",
+              "prefix": "ducational datasets.– Metrics: l",
+              "suffix": "across English, Spanish, and oth"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 590,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "How do multilingual LLMs handle linguistic diversity in educational content?• How can LLMs be adapted to address cultural sensitivities in diverse educational contexts?• What limitations exist in current LLMs regarding language accuracy and cultural relevance in education",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1454,
+              "type": "TextPositionSelector",
+              "start": 1182
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "How do multilingual LLMs handle linguistic diversity in educational content?• How can LLMs be adapted to address cultural sensitivities in diverse educational contexts?• What limitations exist in current LLMs regarding language accuracy and cultural relevance in education",
+              "prefix": " education gaps?Sub-Questions:• ",
+              "suffix": "?Addressing these questions coul"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 1,
+    "group": 1
+  }
+]

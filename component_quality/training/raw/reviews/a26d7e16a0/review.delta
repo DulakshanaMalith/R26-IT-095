@@ -1,0 +1,59 @@
+[
+  {
+    "retain": 0
+  },
+  {
+    "insert": "Summary:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nThis research explores how generative AI can address privacy concerns in personalized cancer treatment by a framework combining Federated Learning, Differential Privacy, and Homomorphic Encryption.\n\n"
+  },
+  {
+    "insert": "Strength ",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nThe proposal follows a logical flow and has a good academic tone\n\n"
+  },
+  {
+    "insert": "Weaknesses",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\n(Content) - sections"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "Aim of this lecture is learning how to write the proposal into clear sections. However, the proposal lacks structured section names. To improve the proposal, restructure it into separate sections for SOTA, Theoretical Framework, and Methodology.\n(Language) – Abbreviations"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "The use of abbreviations like \"FL,\" \"DP,\" and \"HE\" is ensuring clarity in repeated references. However, the text repeats the definition of these abbreviations, which may confuse readers. To address this, define each abbreviation explicitly when it first appears (e.g., \"Federated Learning (FL)\") and ensure consistency in its usage throughout the document.\n\n"
+  },
+  {
+    "insert": "Others:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nVery good job! I look forward to seeing how your expose progresses! I recommend having a look at the comments on the expose in CARE and correcting small spelling mistakes."
+  }
+]

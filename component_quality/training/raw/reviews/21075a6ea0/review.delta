@@ -1,0 +1,50 @@
+[
+  {
+    "retain": 0
+  },
+  {
+    "insert": "Feed-Up (Connecting to goals and standards):"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "header": 3
+    }
+  },
+  {
+    "insert": "Your exposé is well-researched, with a great variety of papers and a clear, readable storyline. These elements make your work engaging and well-structured.\n\nFeed-Forward (Actionable suggestions for improvement):"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "header": 3
+    }
+  },
+  {
+    "insert": "Revise Time Schedule",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": ": The schedule is very tight, which may make it difficult to complete everything within the given timeframe. Consider reducing or narrowing down your planned tasks to ensure feasibility."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "ordered"
+    }
+  },
+  {
+    "insert": "\nSummary (Overall assessment):"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "header": 3
+    }
+  },
+  {
+    "insert": "Your exposé is strong overall, with excellent research and a well-developed storyline. The only area for improvement is the overly ambitious time schedule. By adjusting this, your exposé will be even more effective. Great job!"
+  }
+]

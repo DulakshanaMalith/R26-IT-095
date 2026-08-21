@@ -1,0 +1,44 @@
+Summary
+
+This expose looks at how large language models (LLMs) can help people learn languages and keep them motivated, focusing on both popular and less-spoken languages. By using surveys, interviews, and reviewing existing research, it will compare how learners feel about using LLMs and how effective they are. The study pays special attention to how motivation and learning outcomes differ across various language groups.
+
+Strengths
+
+Clear Motivation and Relevance
+The exposé clearly explains why the topic is important. It identifies the limitations of current language learning platforms like Duolingo and shows how LLMs can fill the gap, especially for less spoken languages. This makes the research highly relevant and well-grounded.
+
+Practical Benefits
+Partnering with the Language Resource Center means the study will have access to motivated participants. The findings can lead to practical suggestions for schools, universities, and other language programs to improve how they use LLMs for teaching.
+
+Practical Schedule
+The timeline is detailed and realistic, with clear milestones and tasks. Each step is logically connected to the next, showing good planning and feasibility for completing the research within the given timeframe.
+
+Inclusion of Ethical Considerations
+The exposé acknowledges potential biases, such as confirmation bias in surveys and interviews, and outlines measures to minimize them. This shows an awareness of the challenges and a commitment to producing reliable results.
+
+
+Weaknesses
+
+Lack of Depth in Literature Review
+
+One important goal of an exposé is to establish a strong foundation for the research by covering existing work comprehensively (Feed Up). The exposé mentions prior studies on LLMs and their application in education but does not provide enough depth or specific examples of key findings (Feed Back). To strengthen this section, the author should include a more detailed discussion of the most relevant studies, such as specific advancements in using LLMs for language learning, and directly relate them to the research questions. Additionally, a broader review of methods used in these studies would help refine the approach and provide a clearer connection between past research and the planned methodology (Feed Forward).
+
+Limited Clarity on the Evaluation of Less Spoken Languages
+
+A key aspect of the study is evaluating the usefulness of LLMs for less spoken languages (Feed Up). However, the exposé does not clearly define how this evaluation will differ from the analysis of popular languages. It lacks details on how data will be collected and analyzed specifically for less spoken languages, such as whether there will be specific criteria or a comparative framework (Feed Back). To address this, the exposé should outline concrete methods for assessing LLM performance in less spoken languages, perhaps by defining benchmarks or using a comparative case study approach to highlight differences (Feed Forward).
+
+Potential Overreliance on Surveys and Interviews
+
+While surveys and interviews are valuable, they are susceptible to participant bias and may not provide a complete picture of LLM effectiveness (Feed Up). The exposé acknowledges biases but does not suggest alternative methods to triangulate the data or reduce reliance on self-reported feedback (Feed Back). To improve, the author could include additional data sources, such as experiments where participants use LLMs under controlled conditions or performance tracking over time. This would provide more objective evidence to complement the subjective data (Feed Forward).
+
+Detail and Feasibility of Research Questions
+
+Research questions should be clearly defined, feasible, and aligned with measurable outcomes (Feed Up). The current proposal outlines four relevant questions but does not define key terms like "usefulness" or explain how motivation will be measured. Additionally, the feasibility of comparing popular and less-spoken languages might depend on participant availability and LLM language coverage (Feed Back). To address this, the author should specify how "usefulness" will be assessed, such as test scores or task completion rates. Motivation could be measured using validated tools like Dörnyei’s motivation questionnaire. The project should also ensure a suitable sample size for both language categories, using case studies or mixed methods if participant numbers are low for less-spoken languages (Feed Forward).
+
+
+Others
+
+Language and Formatting: The document is written clearly and is easy to follow. Minor proofreading might be helpful for typos (e.g., “lessens” instead of “lessons”), but overall clarity is good.
+
+
+All the mentioned points are clearly marked in the document to help the creator easily locate where each issue can be found.

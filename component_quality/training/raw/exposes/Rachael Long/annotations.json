@@ -1,0 +1,642 @@
+[
+  {
+    "id": 5726,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "Following Covid-19 and the resulting school closures during 2020, most students lost a significant amount ofthe school year. A broader analysis, including 149 studies from the United States and 141 studies around theworld, proved that approximately 35 percent of the 2020 school year were lost and not caught up with.[1].With the American Journal of Economic Perspectives releasing an article in fall 2023, evaluating the testresults from the National Assessment of Educational Progress (NAEP) showing \"[...]that moving a district fromfully in-person to fully remote learning would predict a 13 percentage points larger decline in student passrates in math and an 8 percentage points larger decline in English/Language Arts. Moving to fully hybridlearning for the school year had about half of that effect in the data \"[3].During the school closures, lots of schooling methods were tested and even though most of the time there wassome kind of exchange between students and teacher, a common distinctive feature was that most tasks weredone asynchronous.[3]",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1423,
+              "type": "TextPositionSelector",
+              "start": 366
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Following Covid-19 and the resulting school closures during 2020, most students lost a significant amount ofthe school year. A broader analysis, including 149 studies from the United States and 141 studies around theworld, proved that approximately 35 percent of the 2020 school year were lost and not caught up with.[1].With the American Journal of Economic Perspectives releasing an article in fall 2023, evaluating the testresults from the National Assessment of Educational Progress (NAEP) showing \"[...]that moving a district fromfully in-person to fully remote learning would predict a 13 percentage points larger decline in student passrates in math and an 8 percentage points larger decline in English/Language Arts. Moving to fully hybridlearning for the school year had about half of that effect in the data \"[3].During the school closures, lots of schooling methods were tested and even though most of the time there wassome kind of exchange between students and teacher, a common distinctive feature was that most tasks weredone asynchronous.[3]",
+              "prefix": "ber 9, 2024Darmstadt1 Motivation",
+              "suffix": " An exploratory study from 2021 "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": null,
+    "group": 2
+  },
+  {
+    "id": 5727,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "In this paper we want to explore the option of adding interactive school assignments with the help of a virtualassistant, helping to close possible gaps in the student’s knowledge. The assistant will work as a private tutor,being projected into an augmented reality device at home",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2025,
+              "type": "TextPositionSelector",
+              "start": 1745
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "In this paper we want to explore the option of adding interactive school assignments with the help of a virtualassistant, helping to close possible gaps in the student’s knowledge. The assistant will work as a private tutor,being projected into an augmented reality device at home",
+              "prefix": "e to close thisknowledge gap.[2]",
+              "suffix": ". For the sake of feasibility, w"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": null,
+    "group": 2
+  },
+  {
+    "id": 5728,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "How good compared ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2660,
+              "type": "TextPositionSelector",
+              "start": 2642
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "How good compared ",
+              "prefix": "l private tutors?Sub-RQ 1.1 RQ: ",
+              "suffix": "to private tutors can the AI con"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": null,
+    "group": 2
+  },
+  {
+    "id": 5729,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "Does the combination of lab and online lectures from the teacher increases understanding comparedto worksheets and online lectures",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2914,
+              "type": "TextPositionSelector",
+              "start": 2784
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Does the combination of lab and online lectures from the teacher increases understanding comparedto worksheets and online lectures",
+              "prefix": "the learning experience?1.3 RQ: ",
+              "suffix": "?22 ApproachDuring Covid-19 a va"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": null,
+    "group": 2
+  },
+  {
+    "id": 5730,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "Up-scaling this experiment would mostly be limited to the amountof high school students and financial dedication",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5585,
+              "type": "TextPositionSelector",
+              "start": 5473
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Up-scaling this experiment would mostly be limited to the amountof high school students and financial dedication",
+              "prefix": " the sample size will be small. ",
+              "suffix": ". A similar experiment was alrea"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "review": null,
+    "group": 2
+  },
+  {
+    "id": 5731,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "To answer our research questions we need three test groups. All groups will attend the same build-up class,where a teacher will ensure basic knowledge of chemistry. After that, all groups will take a knowledge test toestimate a baseline.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4650,
+              "type": "TextPositionSelector",
+              "start": 4413
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "To answer our research questions we need three test groups. All groups will attend the same build-up class,where a teacher will ensure basic knowledge of chemistry. After that, all groups will take a knowledge test toestimate a baseline.",
+              "prefix": "a better learning experience [2]",
+              "suffix": "Group one (control group)Group t"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": null,
+    "group": 2
+  },
+  {
+    "id": 5732,
+    "user": "Shane Barnes",
+    "role": "expert",
+    "text": "Group one (control group)Group two (tutor group),Group three (test group",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4722,
+              "type": "TextPositionSelector",
+              "start": 4650
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Group one (control group)Group two (tutor group),Group three (test group",
+              "prefix": "edge test toestimate a baseline.",
+              "suffix": ").All three groups will attend t"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": null,
+    "group": 2
+  },
+  {
+    "id": 1870,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Following Covid-19 and the resulting school closures during 2020, most students lost a significant amount ofthe school year",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 489,
+              "type": "TextPositionSelector",
+              "start": 366
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Following Covid-19 and the resulting school closures during 2020, most students lost a significant amount ofthe school year",
+              "prefix": "ber 9, 2024Darmstadt1 Motivation",
+              "suffix": ". A broader analysis, including "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1871,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "h.[1].",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 687,
+              "type": "TextPositionSelector",
+              "start": 681
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "h.[1].",
+              "prefix": " were lost and not caught up wit",
+              "suffix": "With the American Journal of Eco"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1872,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "With the American Journal of Economic Perspectives releasing an article in fall 2023, evaluating the testresults from the National Assessment of Educational Progress (NAEP) showing \"[...]that moving a district fromfully in-person to fully remote learning would predict a 13 percentage points larger decline in student passrates in math and an 8 percentage points larger decline in English/Language Arts. Moving to fully hybridlearning for the school year had about half of that effect in the data \"[3].",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1189,
+              "type": "TextPositionSelector",
+              "start": 687
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "With the American Journal of Economic Perspectives releasing an article in fall 2023, evaluating the testresults from the National Assessment of Educational Progress (NAEP) showing \"[...]that moving a district fromfully in-person to fully remote learning would predict a 13 percentage points larger decline in student passrates in math and an 8 percentage points larger decline in English/Language Arts. Moving to fully hybridlearning for the school year had about half of that effect in the data \"[3].",
+              "prefix": "lost and not caught up with.[1].",
+              "suffix": "During the school closures, lots"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1873,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "In this paper we want to explore the option of adding interactive school assignments with the help of a virtualassistant, helping to close possible gaps in the student’s knowledge",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1924,
+              "type": "TextPositionSelector",
+              "start": 1745
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "In this paper we want to explore the option of adding interactive school assignments with the help of a virtualassistant, helping to close possible gaps in the student’s knowledge",
+              "prefix": "e to close thisknowledge gap.[2]",
+              "suffix": ". The assistant will work as a p"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1874,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "s.[3]",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1423,
+              "type": "TextPositionSelector",
+              "start": 1418
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "s.[3]",
+              "prefix": " most tasks weredone asynchronou",
+              "suffix": " An exploratory study from 2021 "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1875,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "1 RQ: We want to find out whether an AI in an augmented reality lab can outperform classical private tutors?Sub-RQ 1.1 RQ: How good compared to private tutors can the AI convey information?1.2 RQ: Do interactive virtual labs improve the learning experience?1.3 RQ: Does the combination of lab and online lectures from the teacher increases understanding comparedto worksheets and online lectures?",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2915,
+              "type": "TextPositionSelector",
+              "start": 2519
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "1 RQ: We want to find out whether an AI in an augmented reality lab can outperform classical private tutors?Sub-RQ 1.1 RQ: How good compared to private tutors can the AI convey information?1.2 RQ: Do interactive virtual labs improve the learning experience?1.3 RQ: Does the combination of lab and online lectures from the teacher increases understanding comparedto worksheets and online lectures?",
+              "prefix": "es and the in-person classes.[2]",
+              "suffix": "22 ApproachDuring Covid-19 a var"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1876,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Most used solutions,were digital platforms",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3055,
+              "type": "TextPositionSelector",
+              "start": 3013
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Most used solutions,were digital platforms",
+              "prefix": " suitability of online classes. ",
+              "suffix": ", like Zoom or Moodle, but also "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1877,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Combining the best of both worlds, the explanatory nature of an AI chatbot and a visual and engagingenvironment to learn should boost the outcome of students.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4262,
+              "type": "TextPositionSelector",
+              "start": 4104
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Combining the best of both worlds, the explanatory nature of an AI chatbot and a visual and engagingenvironment to learn should boost the outcome of students.",
+              "prefix": "ncrease the learning effects [5]",
+              "suffix": "This combination should have a p"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1878,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Group one (control group)Group two (tutor group),Group three (test group).",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4724,
+              "type": "TextPositionSelector",
+              "start": 4650
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Group one (control group)Group two (tutor group),Group three (test group).",
+              "prefix": "edge test toestimate a baseline.",
+              "suffix": "All three groups will attend the"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1879,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": " Since it will be hard to convince a school to lendus a lecture and the fact that the equipment needed for the augmented reality (Meta Quest 2 or higher) isexpensive, the sample size will be small",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5471,
+              "type": "TextPositionSelector",
+              "start": 5275
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " Since it will be hard to convince a school to lendus a lecture and the fact that the equipment needed for the augmented reality (Meta Quest 2 or higher) isexpensive, the sample size will be small",
+              "prefix": " at least one high school class.",
+              "suffix": ". Up-scaling this experiment wou"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1880,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "creating intractable items",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7207,
+              "type": "TextPositionSelector",
+              "start": 7181
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "creating intractable items",
+              "prefix": "cal Framework first test level, ",
+              "suffix": "2 8 Theoretical Framework speech"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1881,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "industry standard",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7030,
+              "type": "TextPositionSelector",
+              "start": 7013
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "industry standard",
+              "prefix": "ooperation1 3 Literature Review ",
+              "suffix": " software guidelines for develop"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  },
+  {
+    "id": 1882,
+    "user": "Cynthia Mills",
+    "role": "expert",
+    "text": "Writing the results chapter based on the data",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 7759,
+              "type": "TextPositionSelector",
+              "start": 7714
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Writing the results chapter based on the data",
+              "prefix": "e questions5 17 Writing Results ",
+              "suffix": "5 18 Discussion Interpretation o"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "review": 1,
+    "group": 1
+  }
+]

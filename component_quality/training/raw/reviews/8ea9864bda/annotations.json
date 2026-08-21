@@ -1,0 +1,281 @@
+[
+  {
+    "id": 5070,
+    "user": "April Byrd",
+    "role": "student",
+    "text": "haven’t ye",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1286,
+              "type": "TextPositionSelector",
+              "start": 1276
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "haven’t ye",
+              "prefix": "ugh experimental approaches, but",
+              "suffix": "t.[2] Advances in this field can"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Other",
+    "group": 1
+  },
+  {
+    "id": 5071,
+    "user": "April Byrd",
+    "role": "student",
+    "text": "The desert survival problem is a team building exercise, in which participants rank 15 survival items byrelevance in helping them during a survival situation.[9][3] Using this exercise, research indicated thatintelligent virtual assistants can increase task performance",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 691,
+              "type": "TextPositionSelector",
+              "start": 422
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The desert survival problem is a team building exercise, in which participants rank 15 survival items byrelevance in helping them during a survival situation.[9][3] Using this exercise, research indicated thatintelligent virtual assistants can increase task performance",
+              "prefix": "ber 9, 2024Darmstadt1 Motivation",
+              "suffix": ". Moreover, providing an embodim"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5072,
+    "user": "April Byrd",
+    "role": "student",
+    "text": "Craiut et al. [2] also emphasize on the role of stereotypes when it comes to gender. As the assistantswill not be answering differently depending on their gender, varying scores are expected to appear because ofthese stereotypes",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5959,
+              "type": "TextPositionSelector",
+              "start": 5731
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Craiut et al. [2] also emphasize on the role of stereotypes when it comes to gender. As the assistantswill not be answering differently depending on their gender, varying scores are expected to appear because ofthese stereotypes",
+              "prefix": " to the assistant and agree. [8]",
+              "suffix": ".This study will conduct a withi"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5073,
+    "user": "April Byrd",
+    "role": "student",
+    "text": "This study will conduct a within-subjects-study based on the desert survival problem. Participants willbe placed into one of three conditions: 1. (Control) The intelligent virtual assistant will be embodied by agender-neutral model and no voice (text-output) 2. (Same gender) The intelligent virtual assistant will beembodied by a model and voice of the same gender 3. (Opposite gender) The intelligent virtual assistant willbe embodied by a model and voice of the opposite gender.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6441,
+              "type": "TextPositionSelector",
+              "start": 5960
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "This study will conduct a within-subjects-study based on the desert survival problem. Participants willbe placed into one of three conditions: 1. (Control) The intelligent virtual assistant will be embodied by agender-neutral model and no voice (text-output) 2. (Same gender) The intelligent virtual assistant will beembodied by a model and voice of the same gender 3. (Opposite gender) The intelligent virtual assistant willbe embodied by a model and voice of the opposite gender.",
+              "prefix": "ear because ofthese stereotypes.",
+              "suffix": "First, cards for the desert surv"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 5074,
+    "user": "April Byrd",
+    "role": "student",
+    "text": "The target population of participants will focus on students of TU Darmstadt, due to the participants havingto physically attend the experiment. ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8908,
+              "type": "TextPositionSelector",
+              "start": 8763
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The target population of participants will focus on students of TU Darmstadt, due to the participants havingto physically attend the experiment. ",
+              "prefix": "ects of gender in this scenario.",
+              "suffix": "The expected participant count i"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 5075,
+    "user": "April Byrd",
+    "role": "student",
+    "text": "During the experiment, participants will then be assigned to one of 6 groups, determining the order ofthe conditions they will be participating in (Counterbalanced design). Each condition will be time-limited to10 minutes. The virtual assistant will give a hint after each passed minute. During the experiment, the currentstate of the survival items will be input to the developed software by a human assistant in another room,seeing the current state through a camera mounted facing down on the desert survival problem setup. Theassistant will also note the number of by changes, the Virtual Assistant proposed, and the participant accepted/ followed. After participants concluded a condition, they will answer a survey regarding their experience. Thesurvey will contain questions of the NASA-TLX (Task load) questionnaire [6] (RQ1.1) and questions regardinghelpfulness, friendliness and competence on a scale from one to seven (RQ1.2)",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 8199,
+              "type": "TextPositionSelector",
+              "start": 7263
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "During the experiment, participants will then be assigned to one of 6 groups, determining the order ofthe conditions they will be participating in (Counterbalanced design). Each condition will be time-limited to10 minutes. The virtual assistant will give a hint after each passed minute. During the experiment, the currentstate of the survival items will be input to the developed software by a human assistant in another room,seeing the current state through a camera mounted facing down on the desert survival problem setup. Theassistant will also note the number of by changes, the Virtual Assistant proposed, and the participant accepted/ followed. After participants concluded a condition, they will answer a survey regarding their experience. Thesurvey will contain questions of the NASA-TLX (Task load) questionnaire [6] (RQ1.1) and questions regardinghelpfulness, friendliness and competence on a scale from one to seven (RQ1.2)",
+              "prefix": "oloLens or show the text output.",
+              "suffix": ".After the experiment has conclu"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 5076,
+    "user": "April Byrd",
+    "role": "student",
+    "text": "RQ1: - What effect does the gender of the embodied virtual assistant have on task load and acceptance?• Sub-RQ1.1: - What effect does the gender have regarding perceived task load?• Sub-RQ1.2: - What effect does the gender have regarding accepted change suggestions?• Sub-RQ1.3: - What effect does the gender have regarding perceived friendliness, competence andhelpfulness?",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2029,
+              "type": "TextPositionSelector",
+              "start": 1655
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "RQ1: - What effect does the gender of the embodied virtual assistant have on task load and acceptance?• Sub-RQ1.1: - What effect does the gender have regarding perceived task load?• Sub-RQ1.2: - What effect does the gender have regarding accepted change suggestions?• Sub-RQ1.3: - What effect does the gender have regarding perceived friendliness, competence andhelpfulness?",
+              "prefix": "ing questions:Research Questions",
+              "suffix": "22 ApproachCurrent research has "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 5077,
+    "user": "April Byrd",
+    "role": "student",
+    "text": "Current research has studied numerous variables regarding virtual assistants and how they are perceived.It was discovered by Osmers et al. [11] that human representations seem to have a positive impact on thesocial presence of a virtual assistant. Guo et al. [5] studied the effects of assistants having a similar voiceand appearance to the participant, concluding a higher co-presence and perceived intelligence but also moreeeriness with a self similar appearance. Studying the effect of appearance on robots, Strathearn and Ma [13]concluded that younger participants preferred younger looking robots for interaction and more senior onesolder looking versions. According to the results of Nam et al. [10], perceived usefulness and satisfaction andacceptance of virtual assistants is enhanced with providing expression. It was explicitly stated that genderimplications were not part of the experiment.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2942,
+              "type": "TextPositionSelector",
+              "start": 2040
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Current research has studied numerous variables regarding virtual assistants and how they are perceived.It was discovered by Osmers et al. [11] that human representations seem to have a positive impact on thesocial presence of a virtual assistant. Guo et al. [5] studied the effects of assistants having a similar voiceand appearance to the participant, concluding a higher co-presence and perceived intelligence but also moreeeriness with a self similar appearance. Studying the effect of appearance on robots, Strathearn and Ma [13]concluded that younger participants preferred younger looking robots for interaction and more senior onesolder looking versions. According to the results of Nam et al. [10], perceived usefulness and satisfaction andacceptance of virtual assistants is enhanced with providing expression. It was explicitly stated that genderimplications were not part of the experiment.",
+              "prefix": "tence andhelpfulness?22 Approach",
+              "suffix": "Of course, gender was part of pa"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 5078,
+    "user": "April Byrd",
+    "role": "student",
+    "text": "ocial presence and higher social richness",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4276,
+              "type": "TextPositionSelector",
+              "start": 4235
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "ocial presence and higher social richness",
+              "prefix": "ving abetter task load, higher s",
+              "suffix": ". Bodily cues also seem to have "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  }
+]

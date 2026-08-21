@@ -1,0 +1,12 @@
+Summary
+
+The study wants to analyze the impact of demographic bias in current state-of-the-art medical AI models.
+
+Strengths
+
+The motivation should arouse interest and encourage further reading. Your introduction to the topic engages the reader in further reading.
+The research question should be precise. Due to your additional explanations, the scope of your research is clear and precise.
+
+Weaknesses
+
+The exposé should be easy to follow and understand. Although your approach is well-written and informative, the lack of subsections makes it harder to follow and distinguish the different parts. I recommend adding subsections for better readability.

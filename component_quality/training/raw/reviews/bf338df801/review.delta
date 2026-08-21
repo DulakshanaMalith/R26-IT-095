@@ -1,0 +1,119 @@
+[
+  {
+    "retain": 0
+  },
+  {
+    "insert": "Summary:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nDuring this study, an interactive LLM-based ethics-teaching agent is developed with special focus on neutrality and bias mitigation, and the consequences/results of it will be measured by conducting case studies and interviews."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "\n"
+  },
+  {
+    "insert": "Strengths:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nVery good structure of your expose! It is easy to follow, but not informally written. "
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "The methodology is very well written with a good attention for details, and it is great how you tailor it towards every SRQ (and reference it)"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "The theoretical framework fits in well."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "Good overview over the SOTA"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "\n"
+  },
+  {
+    "insert": "Weaknesses:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nIt is very important in academia to provide correct citations/references, not only in the SOTA section. In your motivation section, you refer to current/recent work without referencing the correct material. When going through your motivation again, think for every sentence whether it refers to existing work or not, and if yes, don't hesitate to use references several times if necessary. "
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "Not only case studies and interviews, but also the development of a prototype is scientific work. Both in the SOTA and in the methodology, this should be reflected by providing more details than right now. Specifically with the bias-mitigation techniques being mentioned as one of the main parts of your research and with your theoretical framework being integrated into the teaching agent, one would expect more in-depth information about the development as well. Note that you don't have to come up with specific ideas, it may suffice to present superficially some current work that you might use, and then explain how you could use it."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "\n"
+  },
+  {
+    "insert": "Others:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nWhile you have a very good structure and coherent arguments, there are some points that lack justification (e.g. the restriction to philosophical dilemmas or the part about \"fostering critical thinking\"). When specifying such "
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "esign choices, make sure to include a WHY - even if not every why needs a perfect explanation, e.g. scoping your thesis would suffice as an argument"
+  },
+  {
+    "retain": 1,
+    "attributes": {
+      "list": "bullet"
+    }
+  }
+]

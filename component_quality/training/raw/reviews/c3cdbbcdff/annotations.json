@@ -1,0 +1,1087 @@
+[
+  {
+    "id": 473,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Holographic Ài Is all you need",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 90,
+              "type": "TextPositionSelector",
+              "start": 60
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Holographic Ài Is all you need",
+              "prefix": "iquitous KnowledgeProcessing Lab",
+              "suffix": "How holographic AI assistants wi"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 1
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 474,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "R",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 729,
+              "type": "TextPositionSelector",
+              "start": 728
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "R",
+              "prefix": "ions mostly doesn’t exist. Some ",
+              "suffix": "esearch has shown that people ca"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 475,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "x",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1241,
+              "type": "TextPositionSelector",
+              "start": 1240
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "x",
+              "prefix": "ey will feel towards them. For E",
+              "suffix": "ample, the Japanese Gatebox [1] "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 476,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "g levels of loneliness and social isolation",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2195,
+              "type": "TextPositionSelector",
+              "start": 2152
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "g levels of loneliness and social isolation",
+              "prefix": "society is also facing increasin",
+              "suffix": ", which could be a potential new"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 477,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "The Word AI short for artificial intelligence shares the same letters like Ài in the Chinese language which isthe Chinese Word for ’love’. This is a just a coincidence but it inspired me to explore the potential of emotionalconnections between AI and human relationships",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 625,
+              "type": "TextPositionSelector",
+              "start": 355
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The Word AI short for artificial intelligence shares the same letters like Ài in the Chinese language which isthe Chinese Word for ’love’. This is a just a coincidence but it inspired me to explore the potential of emotionalconnections between AI and human relationships",
+              "prefix": "ber 9, 2024Darmstadt1 Motivation",
+              "suffix": ". For a lot of people this assoc"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 478,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Acknowledgements: Because I like the title of the very famous \"Attention Is All You Need\" paper I choose mytitle which should be interpreted as a homage to it, and not as plagiarism, I also listed it in Bibliography [3] .",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2864,
+              "type": "TextPositionSelector",
+              "start": 2643
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Acknowledgements: Because I like the title of the very famous \"Attention Is All You Need\" paper I choose mytitle which should be interpreted as a homage to it, and not as plagiarism, I also listed it in Bibliography [3] .",
+              "prefix": "f our human social interactions.",
+              "suffix": "22 ApproachState of the Art (SOT"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 479,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": " these feeling",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1025,
+              "type": "TextPositionSelector",
+              "start": 1011
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " these feeling",
+              "prefix": "The use of holograms can enhance",
+              "suffix": "s and add another layer to this "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 480,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "representing avisual representation",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1104,
+              "type": "TextPositionSelector",
+              "start": 1069
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "representing avisual representation",
+              "prefix": "other layer to this dynamic. By ",
+              "suffix": " of AI maybe in the form of an a"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 481,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "eplacements of AI.",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2014,
+              "type": "TextPositionSelector",
+              "start": 1996
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "eplacements of AI.",
+              "prefix": "ionally react to these kind of r",
+              "suffix": " This is leaving asignificant ga"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 482,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "this ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2103,
+              "type": "TextPositionSelector",
+              "start": 2098
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "this ",
+              "prefix": " and the emotional component of ",
+              "suffix": "advancements.The society is also"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 483,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "The aim of this research is to close this gap and show which kind of human relationships might be partly orcompletely replaced by holographic AI assistants. It is also important to identify the aspects which are mostlikely to be replace in the near future. I want to create a deeper understanding how holographic AI assistantswill influence the future of our human social interactions",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 2642,
+              "type": "TextPositionSelector",
+              "start": 2258
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "The aim of this research is to close this gap and show which kind of human relationships might be partly orcompletely replaced by holographic AI assistants. It is also important to identify the aspects which are mostlikely to be replace in the near future. I want to create a deeper understanding how holographic AI assistantswill influence the future of our human social interactions",
+              "prefix": "wapplication for holographic AI.",
+              "suffix": ".Acknowledgements: Because I lik"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 484,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "xisting research often focuses on specific aspects likeromantic relationship with AI but is missing other kinds of human interactions and relationships with AI",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 1916,
+              "type": "TextPositionSelector",
+              "start": 1757
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "xisting research often focuses on specific aspects likeromantic relationship with AI but is missing other kinds of human interactions and relationships with AI",
+              "prefix": "ersive holographic technology. E",
+              "suffix": ". It isalso not researched how h"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 485,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "So my Research Questions would be:• \"Which type of social interactions will most likely be replaced by holographic AI assistants?\"• \"How do individual people respond emotionally to this topic?\"",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3659,
+              "type": "TextPositionSelector",
+              "start": 3466
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "So my Research Questions would be:• \"Which type of social interactions will most likely be replaced by holographic AI assistants?\"• \"How do individual people respond emotionally to this topic?\"",
+              "prefix": " couldbe possible in the future.",
+              "suffix": "Theoretical FrameworkTo answer t"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 486,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "acceptableto the majority of people aged 18 to 40",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3045,
+              "type": "TextPositionSelector",
+              "start": 2996
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "acceptableto the majority of people aged 18 to 40",
+              "prefix": "e context of holographic AI are ",
+              "suffix": " and whether they are ready to r"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 487,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "More importantly it ignores other kind of relationships or interactions which couldbe possible in the future",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3465,
+              "type": "TextPositionSelector",
+              "start": 3357
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "More importantly it ignores other kind of relationships or interactions which couldbe possible in the future",
+              "prefix": "ed byholographic AI assistants. ",
+              "suffix": ".So my Research Questions would "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 488,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "but itlacks coverage of other types of relationships or interactions with humans that are likely to be replaced byholographic AI assistant",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3354,
+              "type": "TextPositionSelector",
+              "start": 3216
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "but itlacks coverage of other types of relationships or interactions with humans that are likely to be replaced byholographic AI assistant",
+              "prefix": "d romantic feelings for AI [2], ",
+              "suffix": "s. More importantly it ignores o"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 489,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "My Theory is based on human and AI interaction, emotional artificial intelligence which focuses on theemotional intelligence which AI could reach in the future, and the psychological effects on humans",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4110,
+              "type": "TextPositionSelector",
+              "start": 3910
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "My Theory is based on human and AI interaction, emotional artificial intelligence which focuses on theemotional intelligence which AI could reach in the future, and the psychological effects on humans",
+              "prefix": " this complexemotional problems.",
+              "suffix": ".The main concepts like \"emotion"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 490,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Target population: People arround the age of 18 to 40 years, because they are more likely to interact andadapt to new AI technologies",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4371,
+              "type": "TextPositionSelector",
+              "start": 4238
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Target population: People arround the age of 18 to 40 years, because they are more likely to interact andadapt to new AI technologies",
+              "prefix": " be furtherexplained.Methodology",
+              "suffix": ".Data sources:• Interviews with "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 491,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "identify Clear",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5326,
+              "type": "TextPositionSelector",
+              "start": 5312
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "identify Clear",
+              "prefix": " Task Description1 1-2 Planning ",
+              "suffix": " goals, create a detailed workin"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 492,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": " empirical case studie",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4473,
+              "type": "TextPositionSelector",
+              "start": 4451
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " empirical case studie",
+              "prefix": "e target population• Analysis of",
+              "suffix": "s which involve social interacti"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 493,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "c",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4540,
+              "type": "TextPositionSelector",
+              "start": 4539
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "c",
+              "prefix": "s and the AI adoption of these• ",
+              "suffix": "ase studies of already existing "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 494,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Interviews with people out of the target population",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4438,
+              "type": "TextPositionSelector",
+              "start": 4387
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Interviews with people out of the target population",
+              "prefix": " AI technologies.Data sources:• ",
+              "suffix": "• Analysis of empirical case stu"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 495,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "access to qualitative and representative data, because these topics are most likely not highly researched",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4804,
+              "type": "TextPositionSelector",
+              "start": 4699
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "access to qualitative and representative data, because these topics are most likely not highly researched",
+              "prefix": " of the interview participants• ",
+              "suffix": "• finding participants which agr"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 496,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "ethical problems like emotional manipulation",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4667,
+              "type": "TextPositionSelector",
+              "start": 4623
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "ethical problems like emotional manipulation",
+              "prefix": "ox [1]3Potential difficulties:• ",
+              "suffix": " of the interview participants• "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 497,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Find new possible applications for holographic AI assistants• show possible human conflicts which could come up in the future• highlight advantages of emotional artificial intelligence",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5259,
+              "type": "TextPositionSelector",
+              "start": 5075
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Find new possible applications for holographic AI assistants• show possible human conflicts which could come up in the future• highlight advantages of emotional artificial intelligence",
+              "prefix": "s holographic assistanceGoals:• ",
+              "suffix": "43 ScheduleMonth Week Task Descr"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 498,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": " 50 to 100 participants for the interview",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4938,
+              "type": "TextPositionSelector",
+              "start": 4897
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " 50 to 100 participants for the interview",
+              "prefix": "erviewImplementation:• searching",
+              "suffix": "s• research papers which might h"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 499,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "interact ",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5004,
+              "type": "TextPositionSelector",
+              "start": 4995
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "interact ",
+              "prefix": "might have further information• ",
+              "suffix": "with the producer of AI System w"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 4
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 500,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Testing of the research design on a small testgroup",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5774,
+              "type": "TextPositionSelector",
+              "start": 5723
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Testing of the research design on a small testgroup",
+              "prefix": " a first draft2 8 Draft testing ",
+              "suffix": "3 9-10 Recruitment Identify and "
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Strength",
+    "group": 1
+  },
+  {
+    "id": 501,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "redthread",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6436,
+              "type": "TextPositionSelector",
+              "start": 6427
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "redthread",
+              "prefix": " all chapters and check for the ",
+              "suffix": ", also includes extra buffer tim"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Highlight",
+    "group": 1
+  },
+  {
+    "id": 502,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "chedule",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5270,
+              "type": "TextPositionSelector",
+              "start": 5263
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "chedule",
+              "prefix": "onal artificial intelligence43 S",
+              "suffix": "Month Week Task Description1 1-2"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 503,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Methodology",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4238,
+              "type": "TextPositionSelector",
+              "start": 4227
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Methodology",
+              "prefix": "ution\" will be furtherexplained.",
+              "suffix": "Target population: People arroun"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 504,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Bibliography",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 6705,
+              "type": "TextPositionSelector",
+              "start": 6693
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Bibliography",
+              "prefix": "ents, print and finalsubmission5",
+              "suffix": "[1] Sayan Chattopadhyay. ““I thi"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 6
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 505,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": " will be furtherexplained",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 4226,
+              "type": "TextPositionSelector",
+              "start": 4201
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": " will be furtherexplained",
+              "prefix": " and \"relationship substitution\"",
+              "suffix": ".MethodologyTarget population: P"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 506,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "To answer the research questions a mix of empirical case studies and qualitative interviews will be used.This methods are essential to catch a bigger picture of the human responses and to understand this complexemotional problems",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 3909,
+              "type": "TextPositionSelector",
+              "start": 3680
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "To answer the research questions a mix of empirical case studies and qualitative interviews will be used.This methods are essential to catch a bigger picture of the human responses and to understand this complexemotional problems",
+              "prefix": "his topic?\"Theoretical Framework",
+              "suffix": ".My Theory is based on human and"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 3
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  },
+  {
+    "id": 507,
+    "user": "Brenda Wagner",
+    "role": "assistant",
+    "text": "Data",
+    "selectors": {
+      "target": [
+        {
+          "selector": [
+            {
+              "end": 5944,
+              "type": "TextPositionSelector",
+              "start": 5940
+            },
+            {
+              "type": "TextQuoteSelector",
+              "exact": "Data",
+              "prefix": "Organize and clean up the given ",
+              "suffix": ", then digi-tize it for analysis"
+            },
+            {
+              "type": "PagePositionSelector",
+              "number": 5
+            }
+          ]
+        }
+      ]
+    },
+    "tag": "Weakness",
+    "group": 1
+  }
+]

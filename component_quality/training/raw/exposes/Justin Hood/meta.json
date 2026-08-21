@@ -1,0 +1,22 @@
+{
+  "topic": "The Holographic AI Assistant",
+  "author": "Justin Hood",
+  "reviews": {
+    "1": {
+      "review": 1,
+      "hash": "b716126c96",
+      "reviewer": "Noah Frazier",
+      "role": "expert",
+      "size": 2597,
+      "group": 1
+    },
+    "2": {
+      "review": 2,
+      "hash": "3aea10eb37",
+      "reviewer": "Shelly Lawrence",
+      "role": "assistant",
+      "size": 1756,
+      "group": 2
+    }
+  }
+}

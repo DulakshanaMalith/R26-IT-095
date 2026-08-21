@@ -1,0 +1,286 @@
+[
+  {
+    "retain": 0
+  },
+  {
+    "insert": "Dear author of this Expose, \n\nthank you for adressing this research question and I enjoyed reading your work. Here is how I understood your project proposal:\n\nYou want to use existing data from real patients (like imaging data, genomics data, etc.) to be able to construct an AI Model, that will use "
+  },
+  {
+    "insert": "all",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": " types of health data to suggest individualized treatment plans.\n\nAnd here is a selection of highlights by section:\n\n"
+  },
+  {
+    "insert": "1.Motivation",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nGood: \nI liked your anker and abstract explanation of the problem, good job."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "Research Questions are listed nicely and allow to understand the main RQ more."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "Room for improvement: \n"
+  },
+  {
+    "insert": "It would be also nice how the problem is handled now or what is the ",
+    "attributes": {
+      "background": "#ffffff"
+    }
+  },
+  {
+    "insert": "exact gap",
+    "attributes": {
+      "bold": true,
+      "background": "#ffffff"
+    }
+  },
+  {
+    "insert": " in research, i.e. mention the \"State of the Art\" briefly. Your current introduction gives a very broad overview of the current situation and the problem, and for the Research Question to be evaluated properly please be more precise.",
+    "attributes": {
+      "background": "#ffffff"
+    }
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "\n"
+  },
+  {
+    "insert": "2.Approach:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nRoom for improvement:\nGenerally there were too much subsections and a very little information. Better to have 2-3 mandatory sections (state of the art, theoretical framework, etc.) and fill them with meaningful information, not just abstract. Quality over quantity!"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "2.2 Theoretical Framework:",
+    "attributes": {
+      "underline": true
+    }
+  },
+  {
+    "insert": " I missed the definition of privacy preserving methods."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "\n"
+  },
+  {
+    "insert": "3.Schedule:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nAs the schedule is usually a personal thing, I left optional comments there, what I would do if I were you. Generally it is very good written and can be even reused (e.g. when you are writing your real thesis).\n\nFor your Expose to be complete and to have actual scientific value, consider those "
+  },
+  {
+    "insert": "general points:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nI missed a part where you introduce the groundbreak of your research. You mentioned GANs, VAEs, federated learning, but where is the "
+  },
+  {
+    "insert": "exact",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": " approach? An exact (dummy) approach would be: \"To achieve the goal of combining multisourced data, we will use the output of GAN Models for imaging, VAE for Genomic sequence prediction, combine them into one dataset and run our "
+  },
+  {
+    "insert": "newly developed model ",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "(which one is up to you) to retrieve exact chemoterapy with XYZ medicaction treatment plan for adenocarcinoma patients for the timescale over 6 months.\" Several "
+  },
+  {
+    "insert": "exact ",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "definitions here:"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "Data origins: Imaging, Genomics"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet",
+      "indent": 1
+    }
+  },
+  {
+    "insert": "Treatment of "
+  },
+  {
+    "insert": "what: ",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "adenocarcinoma"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet",
+      "indent": 1
+    }
+  },
+  {
+    "insert": "Prediction of "
+  },
+  {
+    "insert": "what: ",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "treatment plan of chemotherapy with XYZ medication"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet",
+      "indent": 1
+    }
+  },
+  {
+    "insert": "Timescale of treatment: 6 months"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet",
+      "indent": 1
+    }
+  },
+  {
+    "insert": "Success criteria is missing. An example success criteria can be \"We will apply our treatment plans in ABC Clinic across 100 adenocarcinoma patients. For 2 years we will conduct a live-survey under adenocarcinoma patients from various stages as well as the clinicians, who made use of our developed model. If healing rate is up to 10% of what it's been before (here may be a reference to an existing literature source), then we consider it a success\". "
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "I missed the ethical part. The ethical part is crucial, if you want to work with real-life data."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "Don't afraid to be "
+  },
+  {
+    "insert": "precise",
+    "attributes": {
+      "underline": true
+    }
+  },
+  {
+    "insert": " in your definitions and gaps identification, because it allows you to receive more constructive critisism and hence improve your writing/problem adressing directly."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "Optional: I would introduce an extra page with all abbreviations, so that the reader could look them up without browsing through text once again (e.g. for EHR, GDPR etc.)."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "Quality over quantity!"
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "Pay attention to punctiation and usage of spaces to ease the readability."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "\nThank you and good luck in writing the final version of your Expose!\n\nKind regards,\nYour EiWA-fellow"
+  },
+  {
+    "retain": 1,
+    "attributes": {
+      "list": null
+    }
+  }
+]

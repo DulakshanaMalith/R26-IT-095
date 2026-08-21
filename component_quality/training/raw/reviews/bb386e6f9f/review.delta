@@ -1,0 +1,153 @@
+[
+  {
+    "retain": 0
+  },
+  {
+    "insert": "The research is about using generative AI to create dietary recommendations for Type 1 Diabetes patients using continuous glucose monitoring. The research uses Quantitative Analysis and Qualitative Interviews to optimize the AI.",
+    "attributes": {
+      "color": "#0e101a",
+      "background": "transparent"
+    }
+  },
+  {
+    "insert": "\n\n\n"
+  },
+  {
+    "insert": "Strengths",
+    "attributes": {
+      "color": "#0e101a",
+      "background": "transparent"
+    }
+  },
+  {
+    "insert": "\n"
+  },
+  {
+    "insert": "The introduction is very good at communicating the motivation for the research. It names a clear positive societal impact the research can have.",
+    "attributes": {
+      "color": "#0e101a",
+      "background": "transparent"
+    }
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "The Schedule is very detailed and seems to be well thought out with realistic milestones.",
+    "attributes": {
+      "color": "#0e101a",
+      "background": "transparent"
+    }
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "There is a clear distinction from previous research. It is obvious that this work's use of real-time CGM data is unique.",
+    "attributes": {
+      "color": "#0e101a",
+      "background": "transparent"
+    }
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "There are concrete details on the implementation and the datasets given.",
+    "attributes": {
+      "color": "#0e101a",
+      "background": "transparent"
+    }
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "Weaknesses",
+    "attributes": {
+      "color": "#0e101a",
+      "background": "transparent"
+    }
+  },
+  {
+    "insert": "\n"
+  },
+  {
+    "insert": "The scope should be realistic for a bachelor's thesis. The scope is too great for a bachelor's thesis. The author should focus the research on one of the sub-questions",
+    "attributes": {
+      "color": "#0e101a",
+      "background": "transparent"
+    }
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "The research should clearly state the strategies for ensuring data privacy. While these concerns are mentioned, the actual way data privacy should be approached is not mentioned. The author should elaborate on his privacy protocols.",
+    "attributes": {
+      "color": "#0e101a",
+      "background": "transparent"
+    }
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "There should be specific metrics which help to precisely answer the research questions. This research lacks such metrics. The author should consider adding these metrics and also specifying the questions to tie in these metrics.",
+    "attributes": {
+      "color": "#0e101a",
+      "background": "transparent"
+    }
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "Other",
+    "attributes": {
+      "color": "#0e101a",
+      "background": "transparent"
+    }
+  },
+  {
+    "insert": "\n"
+  },
+  {
+    "insert": "The language is clear and precise.",
+    "attributes": {
+      "color": "#0e101a",
+      "background": "transparent"
+    }
+  },
+  {
+    "retain": 1,
+    "attributes": {
+      "list": null,
+      "indent": 1
+    }
+  },
+  {
+    "insert": "\n"
+  }
+]

@@ -1,0 +1,38 @@
+{
+  "topic": "Interactive LLM-based teaching agents",
+  "author": "Regina Reid",
+  "reviews": {
+    "1": {
+      "review": 1,
+      "hash": "9da8bd1661",
+      "reviewer": "Stephanie Morgan",
+      "role": "expert",
+      "size": 839,
+      "group": 2
+    },
+    "2": {
+      "review": 2,
+      "hash": "2bb2d3f1e6",
+      "reviewer": "Eric Lewis",
+      "role": "student",
+      "size": 4882,
+      "group": 1
+    },
+    "3": {
+      "review": 3,
+      "hash": "a5fc4b4b1c",
+      "reviewer": "Calvin Ferguson",
+      "role": "student",
+      "size": 4022,
+      "group": 1
+    },
+    "4": {
+      "review": 4,
+      "hash": "2a3c0764b6",
+      "reviewer": "Willie Cervantes",
+      "role": "assistant",
+      "size": 1330,
+      "group": 1
+    }
+  }
+}

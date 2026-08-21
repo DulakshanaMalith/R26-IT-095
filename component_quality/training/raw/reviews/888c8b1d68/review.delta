@@ -1,0 +1,169 @@
+[
+  {
+    "retain": 0
+  },
+  {
+    "insert": "Summary:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nThe work aims to investigate how an anthropomorphic visual representation can influence the perception of an AI system's capabilities. \n\n\n"
+  },
+  {
+    "insert": "Strength:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nIt is very important to make it clear in an exposé what the aim of the work is in order to give the reader a precise understanding of the objectives. Your research questions are well and precisely formulated."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "A well-organised exposé is crucial for clarity and readability. A consistent structure helps to guide the reader smoothly through the content, making complex ideas easier to follow and understand. You have done this very well in your work."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "\n\n"
+  },
+  {
+    "insert": "Weakness:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\nThe motivation should explain to the reader why the chosen topic is relevant and which weakness the thesis wants to address. "
+  },
+  {
+    "insert": "The motivation is very well written and easy to follow. However, the actual problem that this work addresses should be explained in more detail. ",
+    "attributes": {
+      "background": "#ffffff"
+    }
+  },
+  {
+    "insert": "Think about why you find this topic relevant and reread your motivation. "
+  },
+  {
+    "insert": "What consequences does this problem have for certain groups of people or the society?",
+    "attributes": {
+      "background": "#ffffff"
+    }
+  },
+  {
+    "insert": " "
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "The state of the art should present your work in comparison to existing research. The weaknesses and relevance of your SOTA are mentioned, but should be explained in more detail. Read the section again carefully and add further explanations and details."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "In scientific papers, it is very important to avoid errors in spelling and grammar. Your work contains some spelling mistakes (e.g. \"can not\" - \"cannot\") and grammatical errors."
+  },
+  {
+    "insert": " ",
+    "attributes": {
+      "color": "#666666",
+      "background": "#ffffff"
+    }
+  },
+  {
+    "insert": "To improve the linguistic quality of your exposé, you should read through your exposé carefully again. You can also run various spell checkers, e.g. using Word."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "In scientific work it is very important to have a standardised terminology. Abbreviations must always be introduced at the beginning (e.g. ‘AR’) and then used consistently (e.g. ‘AR’). Unfortunately, you have not achieved this in your text. Go through your text again carefully and adjust the abbreviations."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "The title serves to indicate the subject area of the exposé and to encourage the reader to read it. You should come up with a more creative title that differs from the one suggested in the lecture. Think of a better title. To find inspiration, you can look at other works/articles on this topic on the internet."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "The time schedule is used to plan the thesis in advance to see whether it is possible in the short time available. It is therefore very important that all aspects of the thesis are included. The writing of the thesis is missing in your time schedule. Think about which chapters all belong in a thesis and when they should best be written."
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "\n\n"
+  },
+  {
+    "insert": "Other:",
+    "attributes": {
+      "bold": true
+    }
+  },
+  {
+    "insert": "\n"
+  },
+  {
+    "insert": " ",
+    "attributes": {
+      "color": "#666666",
+      "background": "#ffffff"
+    }
+  },
+  {
+    "insert": "You could go into more detail about how you want to reach the diverse group for your study.",
+    "attributes": {
+      "background": "#ffffff"
+    }
+  },
+  {
+    "insert": "\n",
+    "attributes": {
+      "list": "bullet"
+    }
+  },
+  {
+    "insert": "\n"
+  },
+  {
+    "retain": 1,
+    "attributes": {
+      "list": null
+    }
+  }
+]

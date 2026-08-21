@@ -1,0 +1,31 @@
+Summary
+Your exposé addresses the problem that with age it is difficult to learn something new, without guidance. Your approach is to improve existing learning tools to provide guidance with the introduction of a LLM, that can provide a personal learning strategy. The questions are suitable for finding the optimal integration of LLMs in learning platforms and validate its performance. 
+
+Motivation
+Ensure the provisional title aligns with the theme and purpose of the exposé, while being creative and specific. The title should be thematically consistent with the goal of the learning environment to be developed.
+The title accurately describes the proposal's intent to develop a goal-oriented learning environment using LLMs. The acronym is a creative way to capture the reader's interest and combines the technical details directly with its practical application.
+The title can be left in its current form.
+
+Present a compelling and focused introduction to captivate the audience. The hook should highlight why there is such an urgent need for a goal-oriented learning environment.
+The hook contains surprising facts and is a good starting point for research as it addresses a problem that older people want to learn something new but cannot for various reasons.
+
+Provide a detailed description of the problems that arises from learning new things.
+The problems has been identified as prospective students doesn't exactly know what you have to need to learn before you wan't to learn a specific thing.
+
+Define the stakeholders involved in the learning environment.
+The stakeholders are clearly identified for people starting at age 25.
+
+Outline the existing approach for solving the need of a learning environment and identify their limitations. Clearly articulate the gaps of the current approach, you want to solve.
+Gaps of current approaches has been outlined by missing personalized learning paths and a solution with LLMs has been proposed.
+
+Ensure the research questions are clear, focused and actionable. 
+The questions are useful for finding out the optimal conditions for the learning environment. Sub-RQ 2.1 should perhaps be reformulated as in the annotation or phrased in such a way that it is checked beforehand whether positive learning experiences and learning progress need to be weighed against each other at all.
+
+Approach
+Clearly identify and explain SOTA weaknesses highlight the unique contribution of the proposed resarch and present a coherent combination of existing materials to emphasize added value.
+You have identified the key weakness in SOTA that courses are pre-defined and can not adapt to individual goals. Missing domain knowledge leads to learning gaps and meaningful knowledge has been left out that would support the defined goal. The importance of fine tuned balancing of the abstraction level has been explained with the frustation of overwhelming the students.
+Explicitly mention popular learning platforms and demonstrate the research gaps on them. Evaluate the metrics you want to improve against these platforms (As defined in your research questions), so you can use them later in your quantitative methodology.
+
+Develop a methodology that effectively addresses the research questions. Provide clear, detailed explanations of chosen methods, address potential challenges and propose solutions to ensure practical feasibility.
+The methods you have chosen are generally appropriate for conducting the research. However, there has not been a significant amount of discussion about the metrics to be investigated and suggestions for solutions to the challenges of quantitative methodology.
+Think about the criteria you want to use to find the right model. Make it clear what you want to investigate using qualitative and quantitative methods. Make suggestions for how you want to tackle the problem of comparability if you want to mix quantitative and qualitative methods.

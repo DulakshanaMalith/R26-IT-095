@@ -1,0 +1,145 @@
+[
+  {
+    "id": 4513,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "My subjective view on this title is, that it's a bit too long - the subtitle is also missing.",
+    "annotationId": 4442,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4514,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "You should fix this entry.",
+    "annotationId": 4443,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4515,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "at TU Darmstadt Thesis aren't printed",
+    "annotationId": 4444,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4516,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Schedule is far too vague, you should add more detail.",
+    "annotationId": 4445,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4517,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "what is precision medicine?",
+    "annotationId": 4446,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4518,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "You should add citations so they are like this \"[3, 4, 5]\" ",
+    "annotationId": 4447,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4519,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Why only two? ",
+    "annotationId": 4448,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4520,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "you should try and use the same wording, you wrote \"PhD student\", \"Medicine PhD students\" and \"The PhD students\". So either remove the medicine part or add it to the rest (the medicine part sounds unnecessary though). ",
+    "annotationId": 4449,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4521,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Is the opinion of two people really significant? What if both Students have contradictory opinions?",
+    "annotationId": 4450,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4522,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "This will be very difficult, this can not be understimated.",
+    "annotationId": 4451,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4523,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "What other options are there?",
+    "annotationId": 4452,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4524,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Very good system, good choice!\n",
+    "annotationId": 4453,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  },
+  {
+    "id": 4525,
+    "user": "Sean Herrera",
+    "role": "assistant",
+    "text": "Asking other universities should be an obvious solution for this problem.",
+    "annotationId": 4454,
+    "parentCommendId": null,
+    "tags": [],
+    "votes": [],
+    "group": 1
+  }
+]
