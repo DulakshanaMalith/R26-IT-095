@@ -1,0 +1,28 @@
+{
+    "weakness_records": 2227,
+    "grading_records": 165,
+    "feedback_records": 2226,
+    "weakness_label_distribution": {
+        "Weakness": 1332,
+        "Strength": 405,
+        "Other": 312,
+        "Highlight": 178
+    },
+    "grading_score_distribution": {
+        "count": 165.0,
+        "mean": 32.75151515151515,
+        "std": 7.483645632885786,
+        "min": 9.0,
+        "25%": 29.0,
+        "50%": 34.0,
+        "75%": 39.0,
+        "max": 42.0
+    },
+    "stats": {
+        "authors_processed": 55,
+        "annotations_extracted": 2227,
+        "scores_extracted": 165,
+        "failed_extractions": 0,
+        "empty_text_records": 1
+    }
+}
