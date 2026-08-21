@@ -1,0 +1,341 @@
+import json
+import sys
+from pathlib import Path
+
+from fastapi import FastAPI
+from fastapi.testclient import TestClient
+import pytest
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+from src.api.database import get_db_connection
+from src.api.routers import supervisor
+from src.api.services import core_logic
+from src.core import knowledge_graph
+from src.db.connection import connect
+from src.db.repositories import create_analysis, create_proposal, create_proposal_version, create_student
+from src.db.schema import create_schema
+
+
+@pytest.fixture()
+def improvement_client(tmp_path, monkeypatch):
+    database_path = tmp_path / "phase4.sqlite"
+    history_dir = tmp_path / "history"
+    history_dir.mkdir()
+    analysis_history_path = history_dir / "analysis_history.json"
+    grading_history_path = history_dir / "grading_history.json"
+    graph_history_path = history_dir / "knowledge_graph_history.json"
+    analysis_history_path.write_text("[]", encoding="utf-8")
+    grading_history_path.write_text("[]", encoding="utf-8")
+    graph_history_path.write_text("[]", encoding="utf-8")
+
+    monkeypatch.setattr(core_logic, "DATA_DIR", history_dir)
+    monkeypatch.setattr(core_logic, "HISTORY_PATH", analysis_history_path)
+    monkeypatch.setattr(core_logic, "GRADING_HISTORY_PATH", grading_history_path)
+    monkeypatch.setattr(knowledge_graph, "DATA_DIR", history_dir)
+    monkeypatch.setattr(knowledge_graph, "HISTORY_PATH", graph_history_path)
+
+    setup_connection = connect(database_path)
+    create_schema(setup_connection)
+    setup_connection.close()
+
+    app = FastAPI()
+    app.include_router(supervisor.router)
+
+    def override_connection():
+        return connect(database_path)
+
+    app.dependency_overrides[get_db_connection] = override_connection
+    return TestClient(app), database_path, history_dir
+
+
+def write_history(history_dir, analysis_ids, grading_records):
+    analysis_records = [
+        {
+            "id": analysis_id,
+            "analysis_id": analysis_id,
+            "request_id": analysis_id,
+            "timestamp": f"2026-01-01T00:00:{index:02d}+00:00",
+            "predicted_tag": "Weakness" if index == 1 else "Strength",
+            "input_text": f"Text for {analysis_id}",
+        }
+        for index, analysis_id in enumerate(analysis_ids, start=1)
+    ]
+    (history_dir / "analysis_history.json").write_text(json.dumps(analysis_records), encoding="utf-8")
+    (history_dir / "grading_history.json").write_text(json.dumps(grading_records), encoding="utf-8")
+
+
+def grading(
+    analysis_id,
+    *,
+    completeness,
+    readiness,
+    missing=None,
+    status="Needs Revision",
+    section_scores=None,
+):
+    return {
+        "id": f"grading-{analysis_id}",
+        "analysis_id": analysis_id,
+        "timestamp": "2026-01-01T00:00:00+00:00",
+        "semantic_percentage": 70,
+        "percentage_score": 70,
+        "proposal_completeness": {
+            "percentage": completeness,
+            "missing_sections": missing or [],
+        },
+        "completeness_percentage": completeness,
+        "final_readiness": {"percentage": readiness, "label": status},
+        "final_readiness_percentage": readiness,
+        "final_readiness_label": status,
+        "missing_sections": missing or [],
+        "submission_status": status,
+        "submission_readiness": {"status": status},
+        "section_scores": section_scores or {},
+    }
+
+
+def create_proposal_with_versions(database_path, version_count=2, proposal_title="Proposal"):
+    connection = connect(database_path)
+    try:
+        student = create_student(connection, academic_student_id=f"IT{proposal_title}", full_name=f"{proposal_title} Student")
+        proposal = create_proposal(connection, student_id=student["student_id"], title=proposal_title)
+        versions = [
+            create_proposal_version(
+                connection,
+                proposal_id=proposal["proposal_id"],
+                version_number=index,
+                original_filename="proposal.pdf",
+                source_type="pdf",
+                extracted_text=f"Version {index}",
+            )
+            for index in range(1, version_count + 1)
+        ]
+        return proposal, versions
+    finally:
+        connection.close()
+
+
+def link_analysis(database_path, proposal_id, version_id, analysis_id):
+    connection = connect(database_path)
+    try:
+        return create_analysis(
+            connection,
+            proposal_id=proposal_id,
+            version_id=version_id,
+            analysis_id=analysis_id,
+            request_id=analysis_id,
+            source="pdf",
+            input_text_snapshot=f"Snapshot {analysis_id}",
+        )
+    finally:
+        connection.close()
+
+
+def test_one_version_proposal_returns_snapshot_without_comparison(improvement_client):
+    client, database_path, history_dir = improvement_client
+    proposal, versions = create_proposal_with_versions(database_path, version_count=1)
+    link_analysis(database_path, proposal["proposal_id"], versions[0]["version_id"], "A1")
+    write_history(history_dir, ["A1"], [grading("A1", completeness=80, readiness=70, missing=["References"])])
+
+    payload = client.get(f"/proposals/{proposal['proposal_id']}/improvement").json()
+
+    assert len(payload["versions"]) == 1
+    assert payload["versions"][0]["analysis_id"] == "A1"
+    assert payload["comparisons"] == []
+
+
+def test_improved_comparison_same_filename_and_section_deltas(improvement_client):
+    client, database_path, history_dir = improvement_client
+    proposal, versions = create_proposal_with_versions(database_path)
+    link_analysis(database_path, proposal["proposal_id"], versions[0]["version_id"], "A1")
+    link_analysis(database_path, proposal["proposal_id"], versions[1]["version_id"], "A2")
+    write_history(
+        history_dir,
+        ["A1", "A2"],
+        [
+            grading("A1", completeness=60, readiness=50, missing=["Evaluation", "References"], section_scores={"Methodology": 61}),
+            grading("A2", completeness=90, readiness=75, missing=["References"], status="Developing", section_scores={"Methodology": 76}),
+        ],
+    )
+
+    comparison = client.get(f"/proposals/{proposal['proposal_id']}/improvement").json()["comparisons"][0]
+
+    assert comparison["from_analysis_id"] == "A1"
+    assert comparison["to_analysis_id"] == "A2"
+    assert comparison["completeness_delta"] == 30
+    assert comparison["readiness_delta"] == 25
+    assert comparison["resolved_missing_sections"] == ["Evaluation"]
+    assert comparison["still_missing_sections"] == ["References"]
+    assert comparison["section_score_changes"] == [{"section": "Methodology", "from_score": 61.0, "to_score": 76.0, "delta": 15.0}]
+    assert comparison["status_change"]["changed"] is True
+    assert comparison["overall_direction"] == "IMPROVED"
+
+
+def test_regressed_comparison_with_newly_missing_section(improvement_client):
+    client, database_path, history_dir = improvement_client
+    proposal, versions = create_proposal_with_versions(database_path)
+    link_analysis(database_path, proposal["proposal_id"], versions[0]["version_id"], "A1")
+    link_analysis(database_path, proposal["proposal_id"], versions[1]["version_id"], "A2")
+    write_history(
+        history_dir,
+        ["A1", "A2"],
+        [
+            grading("A1", completeness=90, readiness=80, missing=[], status="Ready", section_scores={"Evaluation": 80}),
+            grading("A2", completeness=70, readiness=60, missing=["Evaluation"], status="Needs Revision", section_scores={"Evaluation": 55}),
+        ],
+    )
+
+    comparison = client.get(f"/proposals/{proposal['proposal_id']}/improvement").json()["comparisons"][0]
+
+    assert comparison["completeness_delta"] == -20
+    assert comparison["readiness_delta"] == -20
+    assert comparison["newly_missing_sections"] == ["Evaluation"]
+    assert comparison["overall_direction"] == "REGRESSED"
+
+
+def test_mixed_and_unchanged_direction_rules(improvement_client):
+    client, database_path, history_dir = improvement_client
+    mixed_proposal, mixed_versions = create_proposal_with_versions(database_path, proposal_title="Mixed")
+    unchanged_proposal, unchanged_versions = create_proposal_with_versions(database_path, proposal_title="Unchanged")
+    for proposal, versions, ids in [
+        (mixed_proposal, mixed_versions, ("M1", "M2")),
+        (unchanged_proposal, unchanged_versions, ("U1", "U2")),
+    ]:
+        link_analysis(database_path, proposal["proposal_id"], versions[0]["version_id"], ids[0])
+        link_analysis(database_path, proposal["proposal_id"], versions[1]["version_id"], ids[1])
+    write_history(
+        history_dir,
+        ["M1", "M2", "U1", "U2"],
+        [
+            grading("M1", completeness=60, readiness=80, missing=["Evaluation"]),
+            grading("M2", completeness=80, readiness=60, missing=[]),
+            grading("U1", completeness=80, readiness=70, missing=["References"]),
+            grading("U2", completeness=80, readiness=70, missing=["References"]),
+        ],
+    )
+
+    mixed = client.get(f"/proposals/{mixed_proposal['proposal_id']}/improvement").json()["comparisons"][0]
+    unchanged = client.get(f"/proposals/{unchanged_proposal['proposal_id']}/improvement").json()["comparisons"][0]
+
+    assert mixed["overall_direction"] == "MIXED"
+    assert unchanged["overall_direction"] == "UNCHANGED"
+
+
+def test_missing_analysis_and_missing_grading_are_unavailable_not_zero(improvement_client):
+    client, database_path, history_dir = improvement_client
+    proposal, versions = create_proposal_with_versions(database_path)
+    link_analysis(database_path, proposal["proposal_id"], versions[0]["version_id"], "A1")
+    write_history(history_dir, ["A1"], [])
+
+    payload = client.get(f"/proposals/{proposal['proposal_id']}/improvement").json()
+
+    assert payload["versions"][0]["analyzed"] is True
+    assert payload["versions"][0]["grading_history_available"] is False
+    assert payload["versions"][0]["completeness_percentage"] is None
+    assert payload["versions"][1]["analyzed"] is False
+    assert payload["versions"][1]["analysis_id"] is None
+    assert payload["comparisons"][0]["overall_direction"] == "INSUFFICIENT_DATA"
+
+
+def test_v1_analyzed_v2_waiting_keeps_comparison_unavailable(improvement_client):
+    client, database_path, history_dir = improvement_client
+    proposal, versions = create_proposal_with_versions(database_path)
+    link_analysis(database_path, proposal["proposal_id"], versions[0]["version_id"], "A1")
+    write_history(history_dir, ["A1"], [grading("A1", completeness=85, readiness=75, missing=["References"])])
+
+    payload = client.get(f"/proposals/{proposal['proposal_id']}/improvement").json()
+
+    assert payload["versions"][0]["version_id"] == versions[0]["version_id"]
+    assert payload["versions"][0]["analyzed"] is True
+    assert payload["versions"][0]["analysis_id"] == "A1"
+    assert payload["versions"][0]["grading_history_available"] is True
+    assert payload["versions"][0]["completeness_percentage"] == 85.0
+    assert payload["versions"][1]["version_id"] == versions[1]["version_id"]
+    assert payload["versions"][1]["analyzed"] is False
+    assert payload["versions"][1]["analysis_id"] is None
+    assert payload["versions"][1]["grading_history_available"] is False
+    assert payload["comparisons"][0]["from_analysis_id"] == "A1"
+    assert payload["comparisons"][0]["to_analysis_id"] is None
+    assert payload["comparisons"][0]["completeness_delta"] is None
+    assert payload["comparisons"][0]["readiness_delta"] is None
+    assert payload["comparisons"][0]["overall_direction"] == "INSUFFICIENT_DATA"
+
+
+def test_latest_analysis_per_version_is_selected_deterministically(improvement_client):
+    client, database_path, history_dir = improvement_client
+    proposal, versions = create_proposal_with_versions(database_path)
+    for analysis_id, version in [("A1", versions[0]), ("A3", versions[0]), ("A2", versions[1]), ("A4", versions[1])]:
+        link_analysis(database_path, proposal["proposal_id"], version["version_id"], analysis_id)
+    write_history(
+        history_dir,
+        ["A1", "A2", "A3", "A4"],
+        [
+            grading("A1", completeness=50, readiness=40),
+            grading("A2", completeness=60, readiness=50),
+            grading("A3", completeness=70, readiness=60),
+            grading("A4", completeness=90, readiness=80),
+        ],
+    )
+
+    payload = client.get(f"/proposals/{proposal['proposal_id']}/improvement").json()
+
+    assert [version["analysis_id"] for version in payload["versions"]] == ["A3", "A4"]
+    assert payload["comparisons"][0]["from_analysis_id"] == "A3"
+    assert payload["comparisons"][0]["to_analysis_id"] == "A4"
+
+
+def test_three_versions_return_sequential_adjacent_comparisons(improvement_client):
+    client, database_path, history_dir = improvement_client
+    proposal, versions = create_proposal_with_versions(database_path, version_count=3, proposal_title="Sequential")
+    for analysis_id, version in zip(["A1", "A2", "A3"], versions):
+        link_analysis(database_path, proposal["proposal_id"], version["version_id"], analysis_id)
+    write_history(
+        history_dir,
+        ["A1", "A2", "A3"],
+        [
+            grading("A1", completeness=50, readiness=40, missing=["Abstract", "Objectives"]),
+            grading("A2", completeness=75, readiness=65, missing=["Objectives"]),
+            grading("A3", completeness=100, readiness=90, missing=[]),
+        ],
+    )
+
+    payload = client.get(f"/proposals/{proposal['proposal_id']}/improvement").json()
+
+    assert [version["version_number"] for version in payload["versions"]] == [1, 2, 3]
+    assert [(item["from_version"], item["to_version"]) for item in payload["comparisons"]] == [(1, 2), (2, 3)]
+    assert payload["comparisons"][0]["resolved_missing_sections"] == ["Abstract"]
+    assert payload["comparisons"][0]["still_missing_sections"] == ["Objectives"]
+    assert payload["comparisons"][1]["resolved_missing_sections"] == ["Objectives"]
+    assert payload["comparisons"][1]["still_missing_sections"] == []
+
+
+def test_cross_proposal_isolation(improvement_client):
+    client, database_path, history_dir = improvement_client
+    p1, p1_versions = create_proposal_with_versions(database_path, proposal_title="P1")
+    p2, p2_versions = create_proposal_with_versions(database_path, version_count=1, proposal_title="P2")
+    link_analysis(database_path, p1["proposal_id"], p1_versions[0]["version_id"], "A1")
+    link_analysis(database_path, p1["proposal_id"], p1_versions[1]["version_id"], "A2")
+    link_analysis(database_path, p2["proposal_id"], p2_versions[0]["version_id"], "A3")
+    write_history(
+        history_dir,
+        ["A1", "A2", "A3"],
+        [
+            grading("A1", completeness=60, readiness=50),
+            grading("A2", completeness=80, readiness=70),
+            grading("A3", completeness=100, readiness=95),
+        ],
+    )
+
+    payload = client.get(f"/proposals/{p1['proposal_id']}/improvement").json()
+
+    assert [version["analysis_id"] for version in payload["versions"]] == ["A1", "A2"]
+    assert "A3" not in json.dumps(payload)
+
+
+def test_unknown_proposal_improvement_returns_404(improvement_client):
+    client, _, _ = improvement_client
+
+    response = client.get("/proposals/missing/improvement")
+
+    assert response.status_code == 404
