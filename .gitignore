@@ -1,0 +1,12 @@
+__pycache__/
+*.pdf
+*.docx
+datasets/
+models/t5_wbs_final/
+component_scheduling/models/t5_wbs_final/model.safetensors
+component_scheduling/models/t5_wbs_parser/
+node_modules/
+*.db
+scratch_main.py
+diag_test.py
+component_team/intelligent-team-formation-and-topic-feasiblity-analyzis/backend-fastapi/models/feasibility_model.pkl

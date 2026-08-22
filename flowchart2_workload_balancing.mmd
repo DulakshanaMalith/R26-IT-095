@@ -1,0 +1,41 @@
+flowchart TD
+    START([Auto-Balance Workload\nButton Clicked]) --> RECV[Receive: tasks list\nteam members list]
+
+    RECV --> SEP{For each task:\nIs it Collaborative?}
+
+    SEP -- YES\nliterature review\nintegration testing\npilot study\nreport writing\nviva etc. --> CALL[Assign to ALL Members]
+    CALL --> SPLIT[per_member_effort =\ntask.effort divided by team_size]
+    SPLIT --> WUP1[Update W_m for\nevery member]
+    WUP1 --> MORE1{More tasks?}
+    MORE1 -- Yes --> SEP
+
+    SEP -- NO\nComponent-specific\ndev work --> POOL[Add to Individual\nTask Pool]
+    POOL --> MORE1
+    MORE1 -- No --> SORT
+
+    SORT[Sort Individual Tasks\nby effort DESCENDING\nLongest Processing Time First\nHeaviest tasks assigned first\nwhen all loads are equal] --> LOOP
+
+    LOOP([Process Next\nIndividual Task]) --> FEAT[Build 7-Feature Vector\nfor each member:\n1 task_effort_estimate\n2 task_category backend=1 other=0\n3 task_complexity high=3 mid=2 low=1\n4 member_completion_rate from DB\n5 member_current_workload task count\n6 member_avg_effort from DB\n7 is_collaborative = 0]
+
+    FEAT --> RFCHK{RF Model\nLoaded?}
+
+    RFCHK -- YES\nML Path --> SCORE[Score EVERY member\nwith Random Forest\nRF.predict_proba features]
+    SCORE --> PROB[Get P_on_time for each member\nProbability task completed on time]
+    PROB --> BEST[Select member with\nhighest P_on_time\nas best_member]
+
+    BEST --> GUARD{FAIRNESS CONSTRAINT\nOverload Guard:\nW_best_member greater than\nW_least_loaded x 1.40?}
+    GUARD -- YES\nOverload detected --> OVER[Override:\nAssign to least-loaded member\nconfidence = 0.60]
+    GUARD -- NO\nRF choice is fair --> ASSIGN
+
+    OVER --> ASSIGN
+
+    RFCHK -- NO\nLPT Fallback --> LPT[Greedy LPT:\nAssign to member with\nminimum W_m]
+    LPT --> ASSIGN
+
+    ASSIGN[Assign task to best_member] --> WUPD[W_best_member += task.effort_hours]
+    WUPD --> DBSAVE[INSERT INTO task_assignments\nstatus = NOT_STARTED\nON CONFLICT UPDATE]
+    DBSAVE --> NXTCHK{More individual\ntasks remaining?}
+    NXTCHK -- Yes --> LOOP
+    NXTCHK -- No --> SUM
+
+    SUM[Compute Workload Summary\nper member: total hours\nindividual task count\ncollaborative task count] --> END([Return assignments\nwith confidence scores\nDisplayed in UI])

@@ -1,126 +1,104 @@
-```markdown
-# Intelligent Project Management System for Undergraduate Students
+# IPMS (Integrated Project Management System) - Unified Workspace
 
-A comprehensive MERN and FastAPI stack application for managing undergraduate research projects, featuring intelligent team formation, feasibility analysis, and progress tracking.
+Welcome to the **IPMS Master Monorepo**. This repository seamlessly integrates all four core components developed by the team into a single, unified microservices architecture. 
 
-## Features
+All four components have been visually unified under a premium, dark-mode glassmorphism aesthetic. They operate as independent microservices to prevent dependency conflicts between different AI models.
 
-- Intelligent Team Formation & Student Vector Profiling
-- Topic Feasibility Analysis & Predictive Modeling
-- Solution to the Academic "Cold Start" Problem
-- Multi-Objective Optimization Engine
-- Automated Progress Tracking & Risk Assessment
-- Role-based Access Control (Admin, Supervisor, Student)
-- Multi-service Architecture (Node.js Core + FastAPI Algorithms)
+---
 
-## Prerequisites
+## 🚀 How to Launch the Full System
 
-- Node.js (v18 or higher)
-- Python (v3.9 or higher)
-- MongoDB
-- npm or yarn
-- pip
+Because this is a microservices architecture, you will need to open **multiple terminal windows** to start the various backends and frontends.
 
-## Installation
+### 1. Master Dashboard (The Hub)
+Once all subsystems are running, you can access the main dashboard by opening the root `index.html` file in your browser. This dashboard provides links to launch all four components.
 
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd intelligent-project-management
-```
+---
 
-2. Install Node.js backend dependencies:
-```bash
-cd backend-node
-npm install
-```
+### 2. Adaptive Scheduling (Component 1)
+This component handles generative WBS planning and schedule risk analysis.
+**Start the Backend & Frontend (FastAPI):**
+1. Open a terminal and navigate to the project root:
+   ```bash
+   cd component_scheduling
+   ```
+2. Run the FastAPI server:
+   ```bash
+   python -m uvicorn main:app --host 127.0.0.1 --port 8000
+   ```
+3. **Access:** `http://127.0.0.1:8000/app`
 
-3. Install FastAPI microservice dependencies:
-```bash
-cd ../backend-fastapi
-pip install -r requirements.txt
-```
+---
 
-4. Install frontend dependencies:
-```bash
-cd ../frontend
-npm install
-```
+### 3. Quality Assessment (Component 2)
+This component handles automated semantic rubric matching and document grading.
+**Start the Backend (FastAPI):**
+1. Open a new terminal:
+   ```bash
+   cd component_quality/src/api
+   ```
+2. Run the server on port 8001:
+   ```bash
+   python -m uvicorn app:app --host 127.0.0.1 --port 8001
+   ```
 
-5. Create `.env` files:
+**Start the Frontend (React):**
+1. Open a new terminal:
+   ```bash
+   cd component_quality/frontend
+   ```
+2. Install dependencies (first time only) and start:
+   ```bash
+   npm install
+   npm start
+   ```
+3. **Access:** `http://127.0.0.1:3000`
 
-In `backend-node/.env`:
-```
-PORT=5000
-MONGODB_URI=your_mongodb_uri
-JWT_SECRET=your_jwt_secret
-FASTAPI_URL=http://localhost:8000
-```
+---
 
-In `backend-fastapi/.env`:
-```
-PORT=8000
-MODEL_PATH=./models/feasibility_model.pkl
-```
+### 4. Risk Monitoring (Component 3)
+This component handles predictive contribution analytics and real-time risk detection.
+**Start the Backend & Frontend (Flask):**
+1. Open a new terminal:
+   ```bash
+   cd component_risk/ipms-risk-app
+   ```
+2. Run the Flask application on port 5000:
+   ```bash
+   python main.py
+   ```
+3. **Access:** `http://127.0.0.1:5000`
 
-## Running the Application
+---
 
-1. Start the Node.js backend server:
-```bash
-# From the backend-node directory
-npm run dev
-```
+### 5. Team Formation (Component 4)
+This component handles intelligent clustering and developer allocation.
+**Start the Backend (FastAPI):**
+1. Open a new terminal:
+   ```bash
+   cd "component_team/intelligent-team-formation-and-topic-feasiblity-analyzis/backend"
+   ```
+2. Run the server on port 8003:
+   ```bash
+   python -m uvicorn main:app --host 127.0.0.1 --port 8003
+   ```
 
-2. Start the FastAPI microservice:
-```bash
-# From the backend-fastapi directory
-uvicorn main:app --reload
-```
+**Start the Frontend (React/Vite):**
+1. Open a new terminal:
+   ```bash
+   cd "component_team/intelligent-team-formation-and-topic-feasiblity-analyzis/frontend"
+   ```
+2. Install dependencies (first time only) and start on port 3001:
+   ```bash
+   npm install
+   npm run dev -- --port 3001
+   ```
+3. **Access:** `http://127.0.0.1:3001`
 
-3. Start the frontend development server:
-```bash
-# From the frontend directory
-npm run dev
-```
+---
 
-The application will be available at:
-- Frontend: http://localhost:5173
-- Node API: http://localhost:5000
-- FastAPI Docs: http://localhost:8000/docs
+## 🎨 Global UI Theme
+To ensure visual consistency for the final presentation, all React and Flask frontends have been injected with a `global-theme.css` override. This automatically forces all components to adopt the unified dark space theme without modifying their underlying frontend logic.
 
-## Default Admin Account
-
-Username: admin
-Password: admin123
-
-## API Documentation
-
-### Authentication & Core (Node.js)
-- POST /api/auth/login - Login user
-- GET /api/auth/me - Get current user
-- POST /api/students/profile - Update student skills and academic history
-- GET /api/projects/status - Get current project timeline
-
-### Intelligent Algorithms (FastAPI)
-- POST /api/ml/vector-profile - Generate student vector representations
-- POST /api/ml/optimize-teams - Run multi-objective team formation engine
-- POST /api/ml/feasibility-score - Calculate success probability for a topic
-
-## Team Formation & Topic Selection Process
-
-1. **Student Vector Profiling**
-   - Students register and input their academic history, technical skills (e.g., MERN, FastAPI), and research interests.
-   - The system generates a multi-dimensional vector profile for each student.
-
-2. **Topic Proposal & Feasibility Analysis**
-   - Students or supervisors submit proposed research topics.
-   - The FastAPI engine analyzes the required skills against the available student pool and historical success metrics to generate a Feasibility Score.
-
-3. **Intelligent Matching**
-   - The optimization engine groups students into balanced teams.
-   - It ensures each team has the collective vector profile necessary to meet the technical demands of their assigned or chosen topic, bypassing the "Cold Start" problem.
-
-## License
-
-MIT
-```
+## ⚠️ Important Networking Note for Windows Users
+If you experience database connection issues or `404 Not Found` errors between the React frontends and Python backends, ensure you are running the backends strictly on `--host 127.0.0.1` rather than `localhost`. This prevents IPv6 loopback collisions on Windows machines.

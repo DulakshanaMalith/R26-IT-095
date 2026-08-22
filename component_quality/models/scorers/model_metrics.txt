@@ -1,0 +1,21 @@
+Model: XGBoost Regressor
+Pipeline: TF-IDF + XGBoost
+Dataset: ASAP 2.0
+Train size: 19782
+Test size: 4946
+Vocabulary size: 25000
+MAE: 0.5061
+RMSE: 0.6463
+R2 Score: 0.6079
+Consistency within +/-0.5: 58.33%
+Consistency within +/-1.0: 88.35%
+CV Mean MAE: 0.5101
+CV Mean R2: 0.6069
+Train MAE: 0.3166
+Train R2: 0.8492
+Overfitting warning: True
+MAE improvement vs previous baseline: 0.0053
+RMSE improvement vs previous baseline: 0.0077
+R2 improvement vs previous baseline: 0.0094
++/-0.5 consistency delta vs previous baseline: 0.69%
+Recommended final model: TF-IDF + XGBoost

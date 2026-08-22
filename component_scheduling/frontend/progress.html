@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Unified Progress Tracking</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --surface: #1e293b;
+            --primary: #3b82f6;
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+        }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); padding: 2rem; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        .card { background: var(--surface); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); }
+        .task-list { list-style: none; padding: 0; margin: 0; }
+        .task-item { background: rgba(0,0,0,0.2); margin-bottom: 1rem; padding: 1rem; border-radius: 8px; border-left: 4px solid var(--primary); }
+        .task-item.document { border-left-color: var(--warning); }
+        .task-item.code { border-left-color: var(--primary); }
+        
+        .task-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
+        .task-title { font-weight: bold; font-size: 1.1rem; }
+        .badge { padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem; font-weight: bold; }
+        .badge.pending { background: rgba(148, 163, 184, 0.2); color: var(--text-muted); }
+        .badge.on-time { background: rgba(16, 185, 129, 0.2); color: var(--success); }
+        .badge.late { background: rgba(239, 68, 68, 0.2); color: var(--danger); }
+
+        .progress-container { width: 100%; background: rgba(255,255,255,0.1); border-radius: 10px; height: 12px; margin-top: 0.5rem; overflow: hidden; }
+        .progress-bar { height: 100%; background: var(--primary); width: 0%; transition: width 0.5s; }
+        .progress-bar.doc-bar { background: var(--warning); }
+
+        .upload-form { margin-top: 1rem; display: flex; gap: 0.5rem; }
+        input[type="file"] { font-size: 0.8rem; }
+        button { background: var(--primary); color: white; border: none; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; font-weight: bold; }
+        button:hover { opacity: 0.9; }
+        
+        h2 { border-bottom: 2px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem; margin-top: 0; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Project Progress Tracker</h1>
+    <p style="color: var(--text-muted); margin-bottom: 2rem;">Real-time automated tracking for R26-IT-095.</p>
+
+    <div class="grid">
+        <!-- DOCUMENT TASKS -->
+        <div class="card">
+            <h2>📄 Document Submissions</h2>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Tasks requiring file uploads (auto-marked on submission).</p>
+            <ul class="task-list" id="doc-tasks-list">
+                <!-- Populated by JS -->
+            </ul>
+        </div>
+
+        <!-- CODE TASKS -->
+        <div class="card">
+            <h2>💻 Development Tasks</h2>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Tracked automatically via GitHub webhooks.</p>
+            <ul class="task-list" id="code-tasks-list">
+                <!-- Populated by JS -->
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    async function fetchProgress() {
+        try {
+            const res = await fetch('/api/progress/full');
+            const data = await res.json();
+
+            if (data.status !== 'success') {
+                console.error("Error fetching progress:", data.message);
+                return;
+            }
+
+            renderDocTasks(data.doc_tasks);
+            renderCodeTasks(data.code_tasks);
+        } catch (e) {
+            console.error("Failed to fetch progress", e);
+        }
+    }
+
+    function renderDocTasks(tasks) {
+        const list = document.getElementById('doc-tasks-list');
+        list.innerHTML = '';
+        tasks.forEach(task => {
+            let badgeClass = 'pending';
+            let badgeText = task.submission_status;
+            if (badgeText === 'On Time') badgeClass = 'on-time';
+            if (badgeText === 'Late') badgeClass = 'late';
+
+            let uploadHtml = '';
+            if (task.progress_pct < 100) {
+                uploadHtml = `
+                    <form class="upload-form" onsubmit="submitDoc(event, ${task.task_id})">
+                        <input type="file" id="file-${task.task_id}" required>
+                        <button type="submit">Submit</button>
+                    </form>
+                `;
+            }
+
+            list.innerHTML += `
+                <li class="task-item document">
+                    <div class="task-header">
+                        <span class="task-title">${task.task_name}</span>
+                        <span class="badge ${badgeClass}">${badgeText}</span>
+                    </div>
+                    <div style="font-size: 0.8rem; color: var(--text-muted);">Deadline: ${task.end_date}</div>
+                    <div class="progress-container">
+                        <div class="progress-bar doc-bar" style="width: ${task.progress_pct}%"></div>
+                    </div>
+                    ${uploadHtml}
+                </li>
+            `;
+        });
+    }
+
+    function renderCodeTasks(tasks) {
+        const list = document.getElementById('code-tasks-list');
+        list.innerHTML = '';
+        tasks.forEach(task => {
+            let statusText = task.progress_pct === 100 ? "Completed" : "In Progress";
+            let badgeClass = task.progress_pct === 100 ? "on-time" : "pending";
+
+            list.innerHTML += `
+                <li class="task-item code">
+                    <div class="task-header">
+                        <span class="task-title">${task.task_name}</span>
+                        <span class="badge ${badgeClass}">${statusText} (${task.progress_pct}%)</span>
+                    </div>
+                    <div style="font-size: 0.8rem; color: var(--text-muted);">Deadline: ${task.end_date} | Risk: ${task.risk_status}</div>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: ${task.progress_pct}%"></div>
+                    </div>
+                </li>
+            `;
+        });
+    }
+
+    async function submitDoc(e, taskId) {
+        e.preventDefault();
+        const fileInput = document.getElementById(`file-${taskId}`);
+        if (!fileInput.files[0]) return;
+
+        const formData = new FormData();
+        formData.append("task_id", taskId);
+        formData.append("file", fileInput.files[0]);
+
+        try {
+            const res = await fetch('/api/progress/submit-document', {
+                method: 'POST',
+                body: formData
+            });
+            const data = await res.json();
+            if (data.status === 'success') {
+                alert(`Successfully submitted! Status: ${data.submission_status}`);
+                fetchProgress(); // Refresh UI
+            } else {
+                alert(`Error: ${data.message}`);
+            }
+        } catch (err) {
+            console.error("Submission failed", err);
+        }
+    }
+
+    fetchProgress();
+</script>
+
+</body>
+</html>

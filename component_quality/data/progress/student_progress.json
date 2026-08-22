@@ -1,0 +1,535 @@
+[
+  {
+    "student_id": "IT22101624",
+    "version": "Version 1",
+    "final_score": 52.31,
+    "timestamp": "2026-05-01T04:04:58.871162Z"
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 1",
+    "final_score": 52.31,
+    "timestamp": "2026-05-01T04:08:11.868498Z"
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 1",
+    "final_score": 19.32,
+    "timestamp": "2026-05-01T04:11:31.084910Z"
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 1",
+    "final_score": 19.32,
+    "timestamp": "2026-05-01T04:11:34.795867Z"
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 1",
+    "final_score": 19.32,
+    "timestamp": "2026-05-01T04:11:35.506901Z"
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 1",
+    "final_score": 19.46,
+    "timestamp": "2026-05-01T04:12:02.121177Z"
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 1",
+    "final_score": 19.46,
+    "timestamp": "2026-05-01T04:12:05.553614Z"
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 1",
+    "final_score": 19.46,
+    "timestamp": "2026-05-01T04:12:06.767714Z"
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 1",
+    "final_score": 29.65,
+    "timestamp": "2026-05-01T04:14:36.933237Z"
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 1",
+    "final_score": 52.31,
+    "timestamp": "2026-05-04T02:21:56.362601Z"
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 1",
+    "final_score": 52.31,
+    "timestamp": "2026-05-04T02:27:08.391183Z"
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 1",
+    "final_score": 52.31,
+    "timestamp": "2026-05-05T03:01:38.510410Z"
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 1",
+    "final_score": 19.32,
+    "timestamp": "2026-05-05T03:31:57.332059Z"
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 2",
+    "final_score": 19.46,
+    "timestamp": "2026-05-05T03:32:09.695560Z"
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 2",
+    "final_score": 59.12,
+    "timestamp": "2026-05-05T03:33:28.820322Z"
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 1",
+    "final_score": 59.12,
+    "timestamp": "2026-05-05T03:33:54.900131Z"
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 1",
+    "final_score": 40.09,
+    "timestamp": "2026-05-05T03:35:38.454671Z"
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 2",
+    "final_score": 59.12,
+    "timestamp": "2026-05-05T03:35:55.744391Z"
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 1",
+    "final_score": 40.09,
+    "timestamp": "2026-05-05T04:05:35.273974Z"
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 1",
+    "final_score": 59.12,
+    "timestamp": "2026-05-05T04:06:00.093877Z"
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 1",
+    "final_score": 27.5,
+    "timestamp": "2026-05-05T16:19:06.032962Z"
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 2",
+    "final_score": 52.31,
+    "timestamp": "2026-05-05T16:19:33.447229Z"
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 1",
+    "final_score": 40.09,
+    "timestamp": "2026-05-05T16:31:04.258445Z"
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 2",
+    "final_score": 59.12,
+    "timestamp": "2026-05-05T16:31:28.072533Z"
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 1",
+    "final_score": 12.42,
+    "timestamp": "2026-05-07T10:44:09.331085Z"
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 1",
+    "final_score": 49.31,
+    "timestamp": "2026-05-07T10:45:49.531178Z"
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 1",
+    "final_score": 70.19,
+    "timestamp": "2026-05-07T10:46:04.150316Z"
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 1",
+    "final_score": 49.31,
+    "timestamp": "2026-05-07T10:46:30.292933Z"
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 2",
+    "final_score": 70.19,
+    "timestamp": "2026-05-07T10:46:52.908557Z"
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 2",
+    "final_score": 63.44,
+    "timestamp": "2026-05-07T10:47:07.112620Z"
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 1",
+    "final_score": 70.19,
+    "timestamp": "2026-05-07T10:47:23.407803Z"
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 1",
+    "final_score": 49.31,
+    "timestamp": "2026-05-08T13:13:28.533069Z"
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 2",
+    "final_score": 70.19,
+    "timestamp": "2026-05-08T13:13:58.054233Z"
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 2",
+    "final_score": 62.46,
+    "timestamp": "2026-05-08T13:19:38.852296Z"
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 1",
+    "final_score": 46.72,
+    "timestamp": "2026-05-08T13:20:01.530031Z"
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 1",
+    "final_score": 46.72,
+    "timestamp": "2026-05-08T13:20:04.329806Z"
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 1",
+    "final_score": 46.72,
+    "timestamp": "2026-05-08T13:20:05.906616Z"
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 2",
+    "final_score": 62.46,
+    "timestamp": "2026-05-08T13:20:22.005882Z"
+  },
+  {
+    "student_id": "TEST",
+    "version": "Version 1",
+    "final_score": 57.72,
+    "semantic_score": 45.73,
+    "ml_score": 80.0,
+    "grade": "C",
+    "status": "Satisfactory",
+    "strongest_section": "Methodology",
+    "weakest_section": "Research Gap",
+    "weaknesses": [
+      "Literature Review",
+      "Research Gap",
+      "Academic Writing and References"
+    ],
+    "improvement": 0,
+    "timestamp": "2026-05-11T11:14:06.884104Z",
+    "improvement_percentage": 0
+  },
+  {
+    "student_id": "IT22114662",
+    "version": "Version 1",
+    "final_score": 57.72,
+    "semantic_score": 45.73,
+    "ml_score": 80.0,
+    "grade": "C",
+    "status": "Satisfactory",
+    "strongest_section": "Methodology",
+    "weakest_section": "Research Gap",
+    "weaknesses": [
+      "Literature Review",
+      "Research Gap",
+      "Academic Writing and References"
+    ],
+    "improvement": 0,
+    "timestamp": "2026-05-11T11:15:31.776429Z",
+    "improvement_percentage": 0
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 1",
+    "final_score": 46.58,
+    "semantic_score": 28.59,
+    "ml_score": 80.0,
+    "grade": "D",
+    "status": "Needs Improvement",
+    "strongest_section": "Methodology",
+    "weakest_section": "SMART Objectives",
+    "weaknesses": [
+      "Introduction and Problem Statement",
+      "Literature Review",
+      "Research Gap",
+      "Methodology",
+      "SMART Objectives",
+      "Academic Writing and References"
+    ],
+    "improvement": 0,
+    "timestamp": "2026-05-11T11:38:43.983885Z",
+    "improvement_percentage": 0
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 2",
+    "final_score": 60.71,
+    "semantic_score": 50.32,
+    "ml_score": 80.0,
+    "grade": "C",
+    "status": "Satisfactory",
+    "strongest_section": "Methodology",
+    "weakest_section": "SMART Objectives",
+    "weaknesses": [
+      "Literature Review",
+      "Academic Writing and References"
+    ],
+    "improvement": 14.13,
+    "timestamp": "2026-05-11T11:39:12.226536Z",
+    "improvement_percentage": 30.33
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 1",
+    "final_score": 46.58,
+    "semantic_score": 28.59,
+    "ml_score": 80.0,
+    "grade": "D",
+    "status": "Needs Improvement",
+    "strongest_section": "Methodology",
+    "weakest_section": "SMART Objectives",
+    "weaknesses": [
+      "Introduction and Problem Statement",
+      "Literature Review",
+      "Research Gap",
+      "Methodology",
+      "SMART Objectives",
+      "Academic Writing and References"
+    ],
+    "improvement": 0,
+    "timestamp": "2026-05-11T11:42:40.133060Z",
+    "improvement_percentage": 0
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 1",
+    "final_score": 46.58,
+    "semantic_score": 28.59,
+    "ml_score": 80.0,
+    "grade": "D",
+    "status": "Needs Improvement",
+    "strongest_section": "Methodology",
+    "weakest_section": "SMART Objectives",
+    "weaknesses": [
+      "Introduction and Problem Statement",
+      "Literature Review",
+      "Research Gap",
+      "Methodology",
+      "SMART Objectives",
+      "Academic Writing and References"
+    ],
+    "improvement": 0,
+    "timestamp": "2026-05-11T11:45:45.558971Z",
+    "improvement_percentage": 0
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 1",
+    "final_score": 46.58,
+    "semantic_score": 28.59,
+    "ml_score": 80.0,
+    "grade": "D",
+    "status": "Needs Improvement",
+    "strongest_section": "Methodology",
+    "weakest_section": "SMART Objectives",
+    "weaknesses": [
+      "Introduction and Problem Statement",
+      "Literature Review",
+      "Research Gap",
+      "Methodology",
+      "SMART Objectives",
+      "Academic Writing and References"
+    ],
+    "improvement": 0,
+    "timestamp": "2026-05-11T11:49:33.318229Z",
+    "improvement_percentage": 0
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 2",
+    "final_score": 60.71,
+    "semantic_score": 50.32,
+    "ml_score": 80.0,
+    "grade": "C",
+    "status": "Satisfactory",
+    "strongest_section": "Methodology",
+    "weakest_section": "SMART Objectives",
+    "weaknesses": [
+      "Literature Review",
+      "Academic Writing and References"
+    ],
+    "improvement": 14.13,
+    "timestamp": "2026-05-11T11:50:29.258630Z",
+    "improvement_percentage": 30.33
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 1",
+    "final_score": 46.58,
+    "semantic_score": 28.59,
+    "ml_score": 80.0,
+    "grade": "D",
+    "status": "Needs Improvement",
+    "strongest_section": "Methodology",
+    "weakest_section": "SMART Objectives",
+    "weaknesses": [
+      "Introduction and Problem Statement",
+      "Literature Review",
+      "Research Gap",
+      "Methodology",
+      "SMART Objectives",
+      "Academic Writing and References"
+    ],
+    "improvement": 0,
+    "timestamp": "2026-05-11T13:07:52.467210Z",
+    "improvement_percentage": 0
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 1",
+    "final_score": 46.58,
+    "semantic_score": 28.59,
+    "ml_score": 80.0,
+    "grade": "D",
+    "status": "Needs Improvement",
+    "strongest_section": "Methodology",
+    "weakest_section": "SMART Objectives",
+    "weaknesses": [
+      "Introduction and Problem Statement",
+      "Literature Review",
+      "Research Gap",
+      "Methodology",
+      "SMART Objectives",
+      "Academic Writing and References"
+    ],
+    "improvement": 0,
+    "timestamp": "2026-05-11T13:31:38.226152Z",
+    "improvement_percentage": 0
+  },
+  {
+    "student_id": "IT22114662",
+    "version": "Version 1",
+    "final_score": 57.72,
+    "semantic_score": 45.73,
+    "ml_score": 80.0,
+    "grade": "C",
+    "status": "Satisfactory",
+    "strongest_section": "Methodology",
+    "weakest_section": "Research Gap",
+    "weaknesses": [
+      "Literature Review",
+      "Research Gap",
+      "Academic Writing and References"
+    ],
+    "improvement": 0,
+    "timestamp": "2026-05-12T02:31:43.998460Z",
+    "improvement_percentage": 0
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 1",
+    "final_score": 46.58,
+    "semantic_score": 28.59,
+    "ml_score": 80.0,
+    "grade": "D",
+    "status": "Needs Improvement",
+    "strongest_section": "Methodology",
+    "weakest_section": "SMART Objectives",
+    "weaknesses": [
+      "Introduction and Problem Statement",
+      "Literature Review",
+      "Research Gap",
+      "Methodology",
+      "SMART Objectives",
+      "Academic Writing and References"
+    ],
+    "improvement": 0,
+    "timestamp": "2026-05-12T05:47:49.883039Z",
+    "improvement_percentage": 0
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 2",
+    "final_score": 60.71,
+    "semantic_score": 50.32,
+    "ml_score": 80.0,
+    "grade": "C",
+    "status": "Satisfactory",
+    "strongest_section": "Methodology",
+    "weakest_section": "SMART Objectives",
+    "weaknesses": [
+      "Literature Review",
+      "Academic Writing and References"
+    ],
+    "improvement": 14.13,
+    "timestamp": "2026-05-12T05:48:10.002893Z",
+    "improvement_percentage": 30.33
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 1",
+    "final_score": 46.58,
+    "semantic_score": 28.59,
+    "ml_score": 80.0,
+    "grade": "D",
+    "status": "Needs Improvement",
+    "strongest_section": "Methodology",
+    "weakest_section": "SMART Objectives",
+    "weaknesses": [
+      "Introduction and Problem Statement",
+      "Literature Review",
+      "Research Gap",
+      "Methodology",
+      "SMART Objectives",
+      "Academic Writing and References"
+    ],
+    "improvement": 0,
+    "timestamp": "2026-05-12T07:10:33.703629Z",
+    "improvement_percentage": 0
+  },
+  {
+    "student_id": "IT22101624",
+    "version": "Version 2",
+    "final_score": 60.71,
+    "semantic_score": 50.32,
+    "ml_score": 80.0,
+    "grade": "C",
+    "status": "Satisfactory",
+    "strongest_section": "Methodology",
+    "weakest_section": "SMART Objectives",
+    "weaknesses": [
+      "Literature Review",
+      "Academic Writing and References"
+    ],
+    "improvement": 14.13,
+    "timestamp": "2026-05-12T07:11:28.906189Z",
+    "improvement_percentage": 30.33
+  }
+]

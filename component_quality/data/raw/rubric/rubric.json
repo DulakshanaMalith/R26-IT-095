@@ -1,0 +1,40 @@
+{
+  "criteria": [
+    {
+      "name": "Introduction and Problem Statement",
+      "weight": 0.15,
+      "expected_section": "introduction",
+      "description": "The introduction should clearly explain the background, problem statement, and context of the research."
+    },
+    {
+      "name": "Literature Review",
+      "weight": 0.20,
+      "expected_section": "literature_review",
+      "description": "The literature review should critically discuss relevant prior work and identify key findings."
+    },
+    {
+      "name": "Research Gap",
+      "weight": 0.15,
+      "expected_section": "research_gap",
+      "description": "The report should clearly identify the research gap and justify the need for the proposed work."
+    },
+    {
+      "name": "Methodology",
+      "weight": 0.20,
+      "expected_section": "methodology",
+      "description": "The methodology should describe the methods, models, tools, and procedures in sufficient detail."
+    },
+    {
+      "name": "SMART Objectives",
+      "weight": 0.10,
+      "expected_section": "objectives",
+      "description": "The objectives should be specific, measurable, achievable, realistic, and time-bound."
+    },
+    {
+      "name": "Academic Writing and References",
+      "weight": 0.20,
+      "expected_section": "references",
+      "description": "The report should use clear academic writing, proper structure, and sufficient references."
+    }
+  ]
+}
