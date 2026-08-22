@@ -43,6 +43,7 @@ def _schema_error(message: str) -> ValidationIssue:
 
 def validate_workbook(
     file_path: str | Path,
+    students_per_team: int | None = None,
 ) -> ValidationReport:
     issues: List[ValidationIssue] = []
 
@@ -77,13 +78,17 @@ def validate_workbook(
     )
 
     issues.extend(
-        validate_projects(projects)
+        validate_projects(
+            projects,
+            students_per_team=students_per_team,
+        )
     )
 
     issues.extend(
         validate_project_requirements(
             requirements,
             projects,
+            students_per_team=students_per_team,
         )
     )
 
@@ -125,6 +130,7 @@ def validate_workbook(
         validate_cohort_slots(
             students,
             projects,
+            students_per_team=students_per_team,
         )
     )
 

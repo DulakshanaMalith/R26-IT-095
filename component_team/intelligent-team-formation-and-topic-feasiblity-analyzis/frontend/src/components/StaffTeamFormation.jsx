@@ -36,12 +36,16 @@ function roleStyle(role) {
 
 export default function StaffTeamFormation() {
   const [file, setFile] = useState(null);
+  const [studentsPerTeam, setStudentsPerTeam] = useState('4');
   const [validation, setValidation] = useState(null);
   const [result, setResult] = useState(null);
   const [selectedSolutionId, setSelectedSolutionId] = useState(null);
   const [validating, setValidating] = useState(false);
   const [optimizing, setOptimizing] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+
+  const teamSizeValue = Number(studentsPerTeam);
+  const teamSizeValid = Number.isInteger(teamSizeValue) && teamSizeValue >= 2;
 
   const solutions = useMemo(
     () => result?.team_formation?.solutions ?? [],
@@ -83,12 +87,17 @@ export default function StaffTeamFormation() {
   const buildFormData = () => {
     const formData = new FormData();
     formData.append('file', file);
+    formData.append('students_per_team', String(teamSizeValue));
     return formData;
   };
 
   const validateWorkbook = async () => {
     if (!file) {
       setErrorMessage('Please select an Excel workbook first.');
+      return;
+    }
+    if (!teamSizeValid) {
+      setErrorMessage('Students per team must be a whole number of at least 2.');
       return;
     }
 
@@ -114,6 +123,10 @@ export default function StaffTeamFormation() {
   const optimizeTeams = async () => {
     if (!file) {
       setErrorMessage('Please select an Excel workbook first.');
+      return;
+    }
+    if (!teamSizeValid) {
+      setErrorMessage('Students per team must be a whole number of at least 2.');
       return;
     }
 
@@ -170,10 +183,30 @@ export default function StaffTeamFormation() {
             </p>
           </div>
 
+          <div className="w-full lg:w-48">
+            <label className="block text-sm font-semibold text-slate-300 mb-2">
+              Students per Team
+            </label>
+            <input
+              type="number"
+              min="2"
+              step="1"
+              value={studentsPerTeam}
+              onChange={(event) => {
+                setStudentsPerTeam(event.target.value);
+                resetResults();
+              }}
+              className="w-full bg-slate-900 border border-slate-600 rounded-lg px-4 py-2.5 text-white"
+            />
+            <p className="text-xs text-slate-500 mt-2">
+              Applied uniformly to the cohort.
+            </p>
+          </div>
+
           <button
             type="button"
             onClick={validateWorkbook}
-            disabled={!file || validating || optimizing}
+            disabled={!file || !teamSizeValid || validating || optimizing}
             className="px-5 py-2.5 rounded-lg border border-slate-600 bg-slate-700 hover:bg-slate-600 text-white disabled:opacity-40"
           >
             {validating ? 'Validating...' : 'Validate Workbook'}
@@ -184,6 +217,7 @@ export default function StaffTeamFormation() {
             onClick={optimizeTeams}
             disabled={
               !file ||
+              !teamSizeValid ||
               validating ||
               optimizing ||
               (validation && validation.valid === false)
@@ -201,7 +235,9 @@ export default function StaffTeamFormation() {
         )}
       </section>
 
-      {validation && <ValidationPanel validation={validation} />}
+      {validation && (
+        <ValidationPanel validation={validation} studentsPerTeam={teamSizeValue} />
+      )}
 
       {result && (
         <>
@@ -223,6 +259,10 @@ export default function StaffTeamFormation() {
                 </p>
                 <p>Version: {result.team_formation.optimizer.optimizer_version}</p>
                 <p>Pareto points: {result.team_formation.solution_count}</p>
+                <p>Target team size: {result.team_formation.team_configuration?.target_team_size}</p>
+                {result.team_formation.team_configuration?.has_remainder_team && (
+                  <p>Remainder team: {result.team_formation.team_configuration.remainder_students} student(s)</p>
+                )}
               </div>
             </div>
 
@@ -381,11 +421,13 @@ export default function StaffTeamFormation() {
                 key={selectedSolution.solution_id}
                 workbookFile={file}
                 selectedSolution={selectedSolution}
+                studentsPerTeam={teamSizeValue}
               />
               <SupervisorAllocationPanel
                 key={`supervisor-${selectedSolution.solution_id}`}
                 workbookFile={file}
                 selectedSolution={selectedSolution}
+                studentsPerTeam={teamSizeValue}
               />
 
               <div className="mt-6 bg-slate-900/60 border border-slate-700 rounded-lg p-4 text-xs text-slate-400">
@@ -399,7 +441,7 @@ export default function StaffTeamFormation() {
   );
 }
 
-function ValidationPanel({ validation }) {
+function ValidationPanel({ validation, studentsPerTeam }) {
   const summaryItems = [
     ['Students', validation.summary?.students],
     ['Projects', validation.summary?.projects],
@@ -438,6 +480,10 @@ function ValidationPanel({ validation }) {
         ))}
       </div>
 
+      {validation.summary?.students > 0 && Number.isInteger(studentsPerTeam) && studentsPerTeam >= 2 && (
+        <TeamPlan studentCount={validation.summary.students} studentsPerTeam={studentsPerTeam} />
+      )}
+
       {validation.issues?.length > 0 && (
         <div className="mt-5 space-y-2">
           {validation.issues.map((issue, index) => (
@@ -452,6 +498,30 @@ function ValidationPanel({ validation }) {
         </div>
       )}
     </section>
+  );
+}
+
+function TeamPlan({ studentCount, studentsPerTeam }) {
+  const fullTeams = Math.floor(studentCount / studentsPerTeam);
+  const remainder = studentCount % studentsPerTeam;
+  const totalTeams = fullTeams + (remainder > 0 ? 1 : 0);
+  return (
+    <div className={`mt-5 rounded-lg border p-4 ${
+      remainder > 0
+        ? 'border-amber-500/40 bg-amber-500/10'
+        : 'border-emerald-500/40 bg-emerald-500/10'
+    }`}>
+      <p className="font-semibold text-white">Team Formation Plan</p>
+      <p className="text-sm text-slate-300 mt-1">
+        {studentCount} students → {fullTeams} full team(s) of {studentsPerTeam}
+        {remainder > 0 ? ` + 1 remainder team of ${remainder}` : ''} → {totalTeams} total team(s).
+      </p>
+      {remainder === 1 && (
+        <p className="text-xs text-amber-300 mt-2">
+          The remainder team contains only one student. Staff should confirm that this exception is acceptable.
+        </p>
+      )}
+    </div>
   );
 }
 

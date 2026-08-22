@@ -14,6 +14,7 @@ def analyze_topic_technical_feasibility(
     data: CohortImportData,
     project_id: str,
     team_student_ids: List[str],
+    students_per_team: int | None = None,
 ) -> Dict:
     normalized_project_id = project_id.strip()
 
@@ -64,6 +65,11 @@ def analyze_topic_technical_feasibility(
     project = project_lookup[
         normalized_project_id
     ]
+    target_team_size = students_per_team or project.team_size
+    remainder_size = len(data.students) % target_team_size
+    actual_team_size = len(cleaned_team)
+    is_remainder_team = remainder_size > 0 and actual_team_size == remainder_size
+    team_size_is_valid = actual_team_size == target_team_size or is_remainder_team
 
     technical_result = (
         calculate_project_technical_coverage(
@@ -219,7 +225,7 @@ def analyze_topic_technical_feasibility(
                 project.project_title
             ),
             "expected_team_size": (
-                project.team_size
+                target_team_size
             ),
             "status": (
                 project.status
@@ -230,14 +236,26 @@ def analyze_topic_technical_feasibility(
                 cleaned_team
             ),
             "actual_team_size": (
-                len(cleaned_team)
+                actual_team_size
             ),
             "expected_team_size": (
-                project.team_size
+                target_team_size
+            ),
+            "remainder_team_size": (
+                remainder_size
+            ),
+            "is_remainder_team": (
+                is_remainder_team
             ),
             "team_size_matches_project": (
-                len(cleaned_team)
-                == project.team_size
+                team_size_is_valid
+            ),
+            "team_size_status": (
+                "Target Team Size"
+                if actual_team_size == target_team_size
+                else "Approved Remainder Team"
+                if is_remainder_team
+                else "Team Size Mismatch"
             ),
         },
         "technical_coverage": (

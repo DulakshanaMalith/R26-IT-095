@@ -23,7 +23,7 @@ function statusStyle(status) {
   return 'border-amber-500/40 bg-amber-500/10 text-amber-300';
 }
 
-export default function SupervisorAllocationPanel({ workbookFile, selectedSolution }) {
+export default function SupervisorAllocationPanel({ workbookFile, selectedSolution, studentsPerTeam }) {
   const [result, setResult] = useState(null);
   const [allocating, setAllocating] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
@@ -36,6 +36,7 @@ export default function SupervisorAllocationPanel({ workbookFile, selectedSoluti
     }
     const formData = new FormData();
     formData.append('file', workbookFile);
+    formData.append('students_per_team', String(studentsPerTeam));
     setAllocating(true);
     setErrorMessage('');
     setResult(null);

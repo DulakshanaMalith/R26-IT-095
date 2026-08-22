@@ -30,8 +30,13 @@ from app.services.workbook_validation_service import validate_workbook
 
 def build_cohort_import_data(
     file_path: str | Path,
+    students_per_team: int | None = None,
+    remainder_project_id: str | None = None,
 ) -> CohortImportData:
-    report = validate_workbook(file_path)
+    report = validate_workbook(
+        file_path,
+        students_per_team=students_per_team,
+    )
 
     if not report.valid:
         raise ValueError(
@@ -106,8 +111,10 @@ def build_cohort_import_data(
                 project_title=str(
                     row.values.get("ProjectTitle")
                 ).strip(),
-                team_size=int(
-                    row.values.get("TeamSize")
+                team_size=(
+                    students_per_team
+                    if students_per_team is not None
+                    else int(row.values.get("TeamSize"))
                 ),
                 status=str(
                     row.values.get("Status")
@@ -212,7 +219,7 @@ def build_cohort_import_data(
         for row in domain_rows
     ]
 
-    return CohortImportData(
+    data = CohortImportData(
         students=students,
         preferences=preferences,
         projects=projects,
@@ -222,3 +229,11 @@ def build_cohort_import_data(
         supervisor_domains=supervisor_domains,
         domains=domains,
     )
+    if students_per_team is not None:
+        from app.services.team_size_configuration_service import apply_team_size_configuration
+        data = apply_team_size_configuration(
+            data=data,
+            students_per_team=students_per_team,
+            remainder_project_id=remainder_project_id,
+        )
+    return data

@@ -105,6 +105,7 @@ async def analyze_topic_feasibility(
     file: UploadFile = File(...),
     project_id: str = Form(...),
     team_student_ids: str = Form(...),
+    students_per_team: int = Form(...),
 ):
     _validate_upload(
         file
@@ -121,7 +122,8 @@ async def analyze_topic_feasibility(
 
         validation_report = (
             validate_workbook(
-                temp_path
+                temp_path,
+                students_per_team=students_per_team,
             )
         )
 
@@ -143,7 +145,8 @@ async def analyze_topic_feasibility(
 
         cohort_data = (
             build_cohort_import_data(
-                temp_path
+                temp_path,
+                students_per_team=students_per_team,
             )
         )
 
@@ -159,6 +162,9 @@ async def analyze_topic_feasibility(
                 project_id=project_id,
                 team_student_ids=(
                     parsed_student_ids
+                ),
+                students_per_team=(
+                    students_per_team
                 ),
             )
         )

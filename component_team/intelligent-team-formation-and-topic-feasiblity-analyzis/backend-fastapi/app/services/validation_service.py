@@ -134,85 +134,40 @@ def validate_students(rows: List[ParsedRow]) -> List[ValidationIssue]:
 
     return issues
 
-def validate_projects(rows: List[ParsedRow]) -> List[ValidationIssue]:
+def validate_projects(
+    rows: List[ParsedRow],
+    students_per_team: int | None = None,
+) -> List[ValidationIssue]:
     issues: List[ValidationIssue] = []
     seen_project_ids = {}
-
     for row in rows:
         values = row.values
         project_id = normalize_project_id(values.get("ProjectID"))
         title = values.get("ProjectTitle")
         team_size = values.get("TeamSize")
-
         if not project_id:
-            issues.append(
-                ValidationIssue(
-                    severity="ERROR",
-                    code="PROJECT_ID_REQUIRED",
-                    sheet=row.sheet,
-                    row=row.row_number,
-                    field="ProjectID",
-                    message="ProjectID must not be blank.",
-                )
-            )
+            issues.append(ValidationIssue(severity="ERROR", code="PROJECT_ID_REQUIRED", sheet=row.sheet, row=row.row_number, field="ProjectID", message="ProjectID must not be blank."))
         elif project_id in seen_project_ids:
             first_row = seen_project_ids[project_id]
-            issues.append(
-                ValidationIssue(
-                    severity="ERROR",
-                    code="PROJECT_DUPLICATE_ID",
-                    sheet=row.sheet,
-                    row=row.row_number,
-                    field="ProjectID",
-                    message=(
-                        f"ProjectID '{project_id}' is duplicated. "
-                        f"It already appears in row {first_row}."
-                    ),
-                )
-            )
+            issues.append(ValidationIssue(severity="ERROR", code="PROJECT_DUPLICATE_ID", sheet=row.sheet, row=row.row_number, field="ProjectID", message=f"ProjectID '{project_id}' is duplicated. It already appears in row {first_row}."))
         else:
             seen_project_ids[project_id] = row.row_number
-
         if title is None or str(title).strip() == "":
-            issues.append(
-                ValidationIssue(
-                    severity="ERROR",
-                    code="PROJECT_TITLE_REQUIRED",
-                    sheet=row.sheet,
-                    row=row.row_number,
-                    field="ProjectTitle",
-                    message="ProjectTitle must not be blank.",
-                )
-            )
-
-        if (
-            isinstance(team_size, bool)
-            or not isinstance(team_size, int)
-            or team_size <= 0
-        ):
-            issues.append(
-                ValidationIssue(
-                    severity="ERROR",
-                    code="PROJECT_TEAM_SIZE_INVALID",
-                    sheet=row.sheet,
-                    row=row.row_number,
-                    field="TeamSize",
-                    message="TeamSize must be a positive integer.",
-                )
-            )
-
+            issues.append(ValidationIssue(severity="ERROR", code="PROJECT_TITLE_REQUIRED", sheet=row.sheet, row=row.row_number, field="ProjectTitle", message="ProjectTitle must not be blank."))
+        if students_per_team is None and (isinstance(team_size, bool) or not isinstance(team_size, int) or team_size <= 0):
+            issues.append(ValidationIssue(severity="ERROR", code="PROJECT_TEAM_SIZE_INVALID", sheet=row.sheet, row=row.row_number, field="TeamSize", message="TeamSize must be a positive integer."))
     return issues
 
 def validate_project_requirements(
     requirement_rows: List[ParsedRow],
     project_rows: List[ParsedRow],
+    students_per_team: int | None = None,
 ) -> List[ValidationIssue]:
     issues: List[ValidationIssue] = []
     project_team_sizes = {}
-
     for row in project_rows:
         project_id = normalize_project_id(row.values.get("ProjectID"))
-        team_size = row.values.get("TeamSize")
+        team_size = students_per_team if students_per_team is not None else row.values.get("TeamSize")
         if project_id:
             project_team_sizes[project_id] = team_size
 
@@ -892,45 +847,34 @@ def validate_supervisor_domains(
 def validate_cohort_slots(
     student_rows: List[ParsedRow],
     project_rows: List[ParsedRow],
+    students_per_team: int | None = None,
 ) -> List[ValidationIssue]:
     issues: List[ValidationIssue] = []
-
-    valid_student_ids = {
-        normalize_student_id(row.values.get("StudentID"))
-        for row in student_rows
-        if normalize_student_id(row.values.get("StudentID"))
-    }
-
+    valid_student_ids = {normalize_student_id(row.values.get("StudentID")) for row in student_rows if normalize_student_id(row.values.get("StudentID"))}
     total_students = len(valid_student_ids)
+    if students_per_team is not None:
+        if isinstance(students_per_team, bool) or not isinstance(students_per_team, int) or students_per_team < 2:
+            issues.append(ValidationIssue(severity="ERROR", code="TEAM_SIZE_CONFIGURATION_INVALID", sheet=None, row=None, field="students_per_team", message="Students per team must be an integer of at least 2."))
+            return issues
+        full_team_count = total_students // students_per_team
+        remainder_students = total_students % students_per_team
+        required_team_count = full_team_count + (1 if remainder_students else 0)
+        project_count = len({normalize_project_id(row.values.get("ProjectID")) for row in project_rows if normalize_project_id(row.values.get("ProjectID"))})
+        if project_count != required_team_count:
+            issues.append(ValidationIssue(severity="ERROR", code="PROJECT_TEAM_COUNT_MISMATCH", sheet="Projects", row=None, field="ProjectID", message=f"The cohort contains {total_students} students and the target team size is {students_per_team}, so {required_team_count} project teams are required. The workbook contains {project_count} approved projects."))
+        if remainder_students:
+            message = f"The cohort is not exactly divisible by the target team size. {full_team_count} full team(s) of {students_per_team} and one remainder team of {remainder_students} student(s) will be formed."
+            if remainder_students == 1:
+                message += " The final team will contain only one student, so staff should confirm that this exception is acceptable."
+            issues.append(ValidationIssue(severity="WARNING", code="COHORT_REMAINDER_TEAM", sheet=None, row=None, field="students_per_team", message=message))
+        return issues
     total_team_slots = 0
-
     for row in project_rows:
         team_size = row.values.get("TeamSize")
-
-        if (
-            isinstance(team_size, int)
-            and not isinstance(team_size, bool)
-            and team_size > 0
-        ):
+        if isinstance(team_size, int) and not isinstance(team_size, bool) and team_size > 0:
             total_team_slots += team_size
-
     if total_team_slots != total_students:
-        issues.append(
-            ValidationIssue(
-                severity="ERROR",
-                code="COHORT_SLOT_MISMATCH",
-                sheet="Projects",
-                row=None,
-                field="TeamSize",
-                message=(
-                    f"The cohort contains {total_students} unique students, "
-                    f"but the projects provide {total_team_slots} team slots. "
-                    "The total number of team slots must equal the number "
-                    "of students being allocated."
-                ),
-            )
-        )
-
+        issues.append(ValidationIssue(severity="ERROR", code="COHORT_SLOT_MISMATCH", sheet="Projects", row=None, field="TeamSize", message=f"The cohort contains {total_students} unique students, but the projects provide {total_team_slots} team slots. The total number of team slots must equal the number of students being allocated."))
     return issues
 
 def validate_technical_feasibility(

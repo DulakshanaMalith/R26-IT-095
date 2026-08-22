@@ -11,7 +11,7 @@ function getErrorMessage(error) {
   return error.message || 'Topic feasibility analysis failed.';
 }
 
-export default function TopicFeasibilityPanel({ workbookFile, selectedSolution }) {
+export default function TopicFeasibilityPanel({ workbookFile, selectedSolution, studentsPerTeam }) {
   const teams = useMemo(() => selectedSolution?.teams ?? [], [selectedSolution]);
   const defaultProjectId = teams[0]?.project_id ?? '';
 
@@ -42,6 +42,7 @@ export default function TopicFeasibilityPanel({ workbookFile, selectedSolution }
     formData.append('file', workbookFile);
     formData.append('project_id', targetProject.project_id);
     formData.append('team_student_ids', studentIds.join(','));
+    formData.append('students_per_team', String(studentsPerTeam));
 
     setAnalyzing(true);
     setErrorMessage('');
@@ -181,6 +182,15 @@ function FeasibilityResult({ result }) {
           {result.status}
         </span>
       </div>
+
+      {result.team.is_remainder_team && (
+        <div className="mb-6 border border-indigo-500/40 bg-indigo-500/10 rounded-lg p-4">
+          <p className="font-semibold text-indigo-300">Approved Remainder Team</p>
+          <p className="text-sm text-slate-300 mt-1">
+            The cohort target is {result.team.expected_team_size} students per team, and this is the permitted remainder team containing {result.team.actual_team_size} student(s).
+          </p>
+        </div>
+      )}
 
       {!result.team.team_size_matches_project && (
         <div className="mb-6 border border-amber-500/40 bg-amber-500/10 rounded-lg p-4">
