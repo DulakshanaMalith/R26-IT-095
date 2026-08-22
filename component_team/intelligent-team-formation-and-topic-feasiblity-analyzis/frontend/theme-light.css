@@ -1,0 +1,300 @@
+/**
+ * IPMS Light Mode — Global Overrides
+ * Applied when <html data-theme="light"> is set by theme-toggle.js.
+ * Covers: index page, scheduling, risk, quality, and team component pages.
+ */
+
+/* ============================================================
+   LIGHT MODE — Root variable overrides
+   ============================================================ */
+html[data-theme="light"] {
+    /* Scheduling component variables */
+    --bg-dark: #f0f4f8 !important;
+    --panel-bg: rgba(255, 255, 255, 0.92) !important;
+    --panel-border: rgba(0, 0, 0, 0.1) !important;
+    --text-main: #1e293b !important;
+    --text-muted: #64748b !important;
+    --brand-primary: #2563eb !important;
+    --brand-hover: #1d4ed8 !important;
+    --brand-glow: rgba(37, 99, 235, 0.35) !important;
+
+    /* Index page variables */
+    --bg-color: #f0f4f8 !important;
+    --surface: #ffffff !important;
+    --primary: #2563eb !important;
+    --text-main: #1e293b !important;
+    --text-muted: #64748b !important;
+}
+
+/* ============================================================
+   BODY — Background & text
+   ============================================================ */
+html[data-theme="light"] body {
+    background: #f0f4f8 !important;
+    background-image: none !important;
+    color: #1e293b !important;
+}
+
+/* Radial gradient backgrounds (risk component) */
+html[data-theme="light"] body,
+html[data-theme="light"] html {
+    background: #f0f4f8 !important;
+}
+
+/* ============================================================
+   CARDS & PANELS
+   ============================================================ */
+html[data-theme="light"] .card,
+html[data-theme="light"] .panel,
+html[data-theme="light"] .metric-card,
+html[data-theme="light"] .glass-card,
+html[data-theme="light"] .upload-area,
+html[data-theme="light"] .schedule-output,
+html[data-theme="light"] .stat-card,
+html[data-theme="light"] .notif-panel,
+html[data-theme="light"] .modal-content,
+html[data-theme="light"] .ms-panel,
+html[data-theme="light"] .result-summary > div {
+    background: #ffffff !important;
+    border-color: rgba(0, 0, 0, 0.1) !important;
+    color: #1e293b !important;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* ============================================================
+   TEXT COLORS
+   ============================================================ */
+html[data-theme="light"] h1,
+html[data-theme="light"] h2,
+html[data-theme="light"] h3,
+html[data-theme="light"] h4,
+html[data-theme="light"] h5,
+html[data-theme="light"] h6 {
+    color: #1e293b !important;
+    -webkit-text-fill-color: unset !important;
+}
+
+/* Keep gradient text on index h1 */
+html[data-theme="light"] header h1 {
+    background: linear-gradient(to right, #2563eb, #7c3aed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text;
+}
+
+html[data-theme="light"] label,
+html[data-theme="light"] p,
+html[data-theme="light"] span,
+html[data-theme="light"] li,
+html[data-theme="light"] td,
+html[data-theme="light"] th {
+    color: #1e293b !important;
+}
+
+html[data-theme="light"] .text-muted,
+html[data-theme="light"] .task-meta,
+html[data-theme="light"] .shap-explanation,
+html[data-theme="light"] .summary-label,
+html[data-theme="light"] .stat-label,
+html[data-theme="light"] .notif-time,
+html[data-theme="light"] .metric-card span {
+    color: #64748b !important;
+}
+
+/* ============================================================
+   NAVIGATION / TOP BAR
+   ============================================================ */
+html[data-theme="light"] .top-bar,
+html[data-theme="light"] nav,
+html[data-theme="light"] header.top-bar {
+    background: rgba(255, 255, 255, 0.92) !important;
+    border-bottom-color: rgba(0, 0, 0, 0.1) !important;
+    backdrop-filter: blur(12px) !important;
+}
+
+/* ============================================================
+   FORMS & INPUTS
+   ============================================================ */
+html[data-theme="light"] input,
+html[data-theme="light"] select,
+html[data-theme="light"] textarea {
+    background: #f8fafc !important;
+    border-color: rgba(0, 0, 0, 0.15) !important;
+    color: #1e293b !important;
+}
+
+html[data-theme="light"] input::placeholder,
+html[data-theme="light"] textarea::placeholder {
+    color: #94a3b8 !important;
+}
+
+html[data-theme="light"] input:focus,
+html[data-theme="light"] select:focus,
+html[data-theme="light"] textarea:focus {
+    border-color: #2563eb !important;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15) !important;
+}
+
+/* ============================================================
+   GANTT CHART
+   ============================================================ */
+html[data-theme="light"] .gantt-row {
+    background: #ffffff !important;
+    border-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+html[data-theme="light"] .gantt-row:hover {
+    background: #f8fafc !important;
+}
+
+html[data-theme="light"] .task-track {
+    background: #f1f5f9 !important;
+}
+
+html[data-theme="light"] .task-name {
+    color: #1e293b !important;
+}
+
+html[data-theme="light"] .timeline-mark {
+    color: #64748b !important;
+}
+
+html[data-theme="light"] .gantt-timeline-header {
+    border-color: rgba(0,0,0,0.08) !important;
+}
+
+/* ============================================================
+   ASSIGN TABLE
+   ============================================================ */
+html[data-theme="light"] .assign-row {
+    background: #ffffff !important;
+    border-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+html[data-theme="light"] .assign-task-name {
+    color: #1e293b !important;
+}
+
+html[data-theme="light"] .assign-effort {
+    color: #2563eb !important;
+}
+
+html[data-theme="light"] .ms-wrapper .ms-display {
+    background: #f8fafc !important;
+    border-color: rgba(0,0,0,0.12) !important;
+    color: #1e293b !important;
+}
+
+html[data-theme="light"] .ms-panel {
+    background: #ffffff !important;
+    border-color: rgba(0,0,0,0.12) !important;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12) !important;
+}
+
+html[data-theme="light"] .ms-option {
+    color: #1e293b !important;
+}
+
+html[data-theme="light"] .ms-option:hover {
+    background: rgba(37, 99, 235, 0.06) !important;
+}
+
+/* ============================================================
+   PROGRESS & MEMBER CARDS
+   ============================================================ */
+html[data-theme="light"] .member-card {
+    background: #ffffff !important;
+    border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+html[data-theme="light"] .member-name {
+    color: #1e293b !important;
+}
+
+html[data-theme="light"] .progress-track {
+    background: #e2e8f0 !important;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+html[data-theme="light"] .btn-secondary,
+html[data-theme="light"] .icon-btn {
+    background: #e2e8f0 !important;
+    color: #1e293b !important;
+    border-color: rgba(0,0,0,0.1) !important;
+}
+
+html[data-theme="light"] .btn-secondary:hover,
+html[data-theme="light"] .icon-btn:hover {
+    background: #cbd5e1 !important;
+}
+
+html[data-theme="light"] .completed-badge {
+    background: rgba(16,185,129,0.12) !important;
+    color: #059669 !important;
+}
+
+/* ============================================================
+   RISK COMPONENT SPECIFIC
+   ============================================================ */
+html[data-theme="light"] .risk-badge.high {
+    background: rgba(239, 68, 68, 0.12) !important;
+    color: #dc2626 !important;
+}
+
+html[data-theme="light"] .risk-badge.low {
+    background: rgba(16, 185, 129, 0.12) !important;
+    color: #059669 !important;
+}
+
+html[data-theme="light"] .task-bar.risk-high {
+    background: linear-gradient(90deg, #ef4444, #f87171) !important;
+}
+
+html[data-theme="light"] .task-bar.risk-low {
+    background: linear-gradient(90deg, #3b82f6, #60a5fa) !important;
+}
+
+/* ============================================================
+   INDEX PAGE CARDS
+   ============================================================ */
+html[data-theme="light"] .card {
+    border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+html[data-theme="light"] .card:hover {
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.15) !important;
+    border-color: rgba(37, 99, 235, 0.4) !important;
+}
+
+html[data-theme="light"] p.subtitle {
+    color: #64748b !important;
+}
+
+/* ============================================================
+   SCROLLBAR (light mode)
+   ============================================================ */
+html[data-theme="light"] ::-webkit-scrollbar-track {
+    background: #f1f5f9 !important;
+}
+
+html[data-theme="light"] ::-webkit-scrollbar-thumb {
+    background: #cbd5e1 !important;
+}
+
+html[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8 !important;
+}
+
+/* ============================================================
+   TRANSITION — smooth mode switch
+   ============================================================ */
+body,
+body *,
+body *::before,
+body *::after {
+    transition-property: background-color, color, border-color, box-shadow;
+    transition-duration: 0.25s;
+    transition-timing-function: ease;
+}
