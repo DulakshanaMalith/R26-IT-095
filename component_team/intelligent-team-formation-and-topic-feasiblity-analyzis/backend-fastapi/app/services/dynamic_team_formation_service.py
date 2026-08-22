@@ -1,6 +1,11 @@
+from time import perf_counter
 from typing import Dict, List, Tuple
 from app.models.cohort_import import CohortImportData
 from app.services.nsga2_optimizer import optimize_team_formation
+from app.services.solution_integrity_service import (
+    summarize_solution_integrity,
+    verify_solution_integrity,
+)
 from app.services.team_formation_response_service import build_staff_team_formation_response
 from app.services.team_size_configuration_service import (
     apply_team_size_configuration,
@@ -25,6 +30,9 @@ def _allocation_key(solution: Dict) -> Tuple:
         for team in sorted(solution["teams"], key=lambda item: item["project_id"])
     )
 
+def _seconds(start: float) -> float:
+    return round(perf_counter() - start, 4)
+
 def optimize_with_staff_team_size(
     data: CohortImportData,
     students_per_team: int,
@@ -34,6 +42,7 @@ def optimize_with_staff_team_size(
     seeded_initialization: bool = True,
     seed_variant_count: int = 12,
 ) -> Dict:
+    pipeline_start = perf_counter()
     configuration = calculate_team_configuration(
         student_count=len(data.students),
         project_count=len(data.projects),
@@ -49,12 +58,21 @@ def optimize_with_staff_team_size(
     total_evaluations = 0
     total_archive_chromosomes = 0
     seeded_individual_count = 0
+    optimizer_seconds = 0.0
+    response_build_seconds = 0.0
+    configuration_seconds = 0.0
+    candidate_timings = []
     for candidate_index, remainder_project_id in enumerate(candidate_project_ids):
+        candidate_start = perf_counter()
+        configuration_start = perf_counter()
         configured_data = apply_team_size_configuration(
             data=data,
             students_per_team=students_per_team,
             remainder_project_id=remainder_project_id,
         )
+        candidate_configuration_seconds = _seconds(configuration_start)
+        configuration_seconds += candidate_configuration_seconds
+        optimizer_start = perf_counter()
         optimization_result = optimize_team_formation(
             data=configured_data,
             population_size=population_size,
@@ -63,10 +81,15 @@ def optimize_with_staff_team_size(
             seeded_initialization=seeded_initialization,
             seed_variant_count=seed_variant_count,
         )
+        candidate_optimizer_seconds = _seconds(optimizer_start)
+        optimizer_seconds += candidate_optimizer_seconds
+        response_start = perf_counter()
         response = build_staff_team_formation_response(
             data=configured_data,
             optimization_result=optimization_result,
         )
+        candidate_response_seconds = _seconds(response_start)
+        response_build_seconds += candidate_response_seconds
         total_evaluations += int(optimization_result.get("evaluations", 0))
         total_archive_chromosomes += int(optimization_result.get("archive_chromosome_count", 0))
         seeded_individual_count += int(optimization_result.get("seeded_individual_count", 0))
@@ -74,6 +97,14 @@ def optimize_with_staff_team_size(
             enriched = dict(solution)
             enriched["remainder_project_id"] = remainder_project_id
             all_solutions.append(enriched)
+        candidate_timings.append({
+            "remainder_project_id": remainder_project_id,
+            "configuration_seconds": candidate_configuration_seconds,
+            "optimizer_seconds": candidate_optimizer_seconds,
+            "response_build_seconds": candidate_response_seconds,
+            "total_candidate_seconds": _seconds(candidate_start),
+        })
+    postprocess_start = perf_counter()
     point_examples: Dict[Tuple[float, float], Dict] = {}
     point_allocations: Dict[Tuple[float, float], set] = {}
     point_discovered_counts: Dict[Tuple[float, float], int] = {}
@@ -104,6 +135,12 @@ def optimize_with_staff_team_size(
             point_discovered_counts[point],
         )
         solutions.append(solution)
+    postprocessing_seconds = _seconds(postprocess_start)
+    integrity_start = perf_counter()
+    for solution in solutions:
+        solution["integrity"] = verify_solution_integrity(data=data, solution=solution)
+    integrity_summary = summarize_solution_integrity(solutions)
+    integrity_seconds = _seconds(integrity_start)
     optimizer_metadata = {
         "algorithm": "Heuristic-Seeded NSGA-II" if seeded_initialization else "NSGA-II",
         "optimizer_version": "V3",
@@ -123,10 +160,22 @@ def optimize_with_staff_team_size(
         "dynamic_team_size_wrapper": True,
         "remainder_candidate_runs": len(candidate_project_ids),
     }
+    runtime = {
+        "configuration_seconds": round(configuration_seconds, 4),
+        "optimizer_seconds": round(optimizer_seconds, 4),
+        "response_build_seconds": round(response_build_seconds, 4),
+        "global_postprocessing_seconds": postprocessing_seconds,
+        "integrity_check_seconds": integrity_seconds,
+        "total_pipeline_seconds": _seconds(pipeline_start),
+        "candidate_run_count": len(candidate_project_ids),
+        "candidate_timings": candidate_timings,
+    }
     return {
         "optimizer": optimizer_metadata,
         "solution_count": len(solutions),
         "solutions": solutions,
+        "integrity_summary": integrity_summary,
+        "runtime": runtime,
         "team_configuration": {
             **configuration,
             "remainder_strategy": (
@@ -146,5 +195,6 @@ def optimize_with_staff_team_size(
                 if remainder > 0
                 else f"All teams contain the staff-configured target size of {students_per_team} students."
             ),
+            "integrity_note": "Every returned solution is automatically checked for complete student coverage, uniqueness, project coverage, and team-size consistency.",
         },
     }
