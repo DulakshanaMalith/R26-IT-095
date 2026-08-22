@@ -103,6 +103,7 @@ def optimize_with_staff_team_size(
             "optimizer_seconds": candidate_optimizer_seconds,
             "response_build_seconds": candidate_response_seconds,
             "total_candidate_seconds": _seconds(candidate_start),
+            "optimizer_internal_runtime": optimization_result.get("runtime", {}),
         })
     postprocess_start = perf_counter()
     point_examples: Dict[Tuple[float, float], Dict] = {}
@@ -159,6 +160,7 @@ def optimize_with_staff_team_size(
         "pareto_point_count": len(solutions),
         "dynamic_team_size_wrapper": True,
         "remainder_candidate_runs": len(candidate_project_ids),
+        "performance_optimization": "Precomputed objective evaluation and optimized technical-greedy seeding; NSGA-II objectives, operators, population, generations, and constraints are unchanged.",
     }
     runtime = {
         "configuration_seconds": round(configuration_seconds, 4),
