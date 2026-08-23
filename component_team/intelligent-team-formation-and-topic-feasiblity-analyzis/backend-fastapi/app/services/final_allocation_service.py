@@ -200,3 +200,48 @@ def _serialize_allocation(allocation: FinalAllocation) -> dict:
         "integrity_valid": allocation.integrity_valid,
         "teams": teams,
     }
+
+def get_supervisor_groups(db: Session, allocation_id: str, supervisor_id: str) -> dict | None:
+    allocation_exists = db.scalar(select(FinalAllocation.id).where(FinalAllocation.id == allocation_id))
+    if allocation_exists is None:
+        return None
+    statement = (
+        select(FinalTeam)
+        .join(FinalTeamSupervisor, FinalTeamSupervisor.team_id == FinalTeam.id)
+        .where(
+            FinalTeam.allocation_id == allocation_id,
+            FinalTeamSupervisor.supervisor_id == supervisor_id,
+        )
+        .options(
+            selectinload(FinalTeam.members),
+            selectinload(FinalTeam.supervisor),
+        )
+        .order_by(FinalTeam.team_number)
+    )
+    teams = list(db.scalars(statement).all())
+    if not teams:
+        return {
+            "allocation_id": allocation_id,
+            "supervisor": {
+                "supervisor_id": supervisor_id,
+                "supervisor_name": None,
+            },
+            "group_count": 0,
+            "groups": [],
+        }
+    supervisor = teams[0].supervisor
+    return {
+        "allocation_id": allocation_id,
+        "supervisor": {
+            "supervisor_id": supervisor.supervisor_id,
+            "supervisor_name": supervisor.supervisor_name,
+        },
+        "group_count": len(teams),
+        "groups": [{
+            "group_key": f"{allocation_id}-T{team.team_number:03d}",
+            "team_number": team.team_number,
+            "project_id": team.project_id,
+            "project_title": team.project_title,
+            "members": [member.student_id for member in team.members],
+        } for team in teams],
+    }

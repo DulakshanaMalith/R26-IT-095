@@ -4,7 +4,7 @@ from sqlalchemy.orm import Session
 from app.database import get_db
 from app.models.final_allocation import FinalAllocationCreateRequest
 from app.services.final_allocation_export_service import build_excel_export, build_pdf_export
-from app.services.final_allocation_service import create_final_allocation, get_final_allocation
+from app.services.final_allocation_service import create_final_allocation, get_final_allocation, get_supervisor_groups
 
 router = APIRouter(prefix="/api/final-allocations", tags=["Final Allocations"])
 
@@ -24,6 +24,14 @@ def read_final_allocation(allocation_id: str, db: Session = Depends(get_db)):
     if allocation is None:
         raise HTTPException(status_code=404, detail="Final allocation was not found.")
     return {"success": True, "allocation": allocation}
+
+
+@router.get("/{allocation_id}/supervisors/{supervisor_id}/groups")
+def read_supervisor_groups(allocation_id: str, supervisor_id: str, db: Session = Depends(get_db)):
+    groups = get_supervisor_groups(db, allocation_id, supervisor_id)
+    if groups is None:
+        raise HTTPException(status_code=404, detail="Final allocation was not found.")
+    return {"success": True, **groups}
 
 @router.get("/{allocation_id}/export.xlsx")
 def export_final_allocation_excel(allocation_id: str, db: Session = Depends(get_db)):
