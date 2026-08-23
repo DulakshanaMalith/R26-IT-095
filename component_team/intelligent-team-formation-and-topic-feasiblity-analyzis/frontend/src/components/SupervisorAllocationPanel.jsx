@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
+import FinalAllocationPanel from './FinalAllocationPanel';
 
 const API_BASE_URL = 'http://127.0.0.1:8003';
 
@@ -173,6 +174,12 @@ export default function SupervisorAllocationPanel({ workbookFile, selectedSoluti
             <p className="text-xs text-slate-400 mt-2">{result.interpretation}</p>
             <p className="text-xs text-slate-500 mt-2">{result.research_scope}</p>
           </div>
+          <FinalAllocationPanel
+            workbookFile={workbookFile}
+            selectedSolution={selectedSolution}
+            supervisorAllocation={result}
+            studentsPerTeam={studentsPerTeam}
+          />
         </div>
       )}
     </section>
