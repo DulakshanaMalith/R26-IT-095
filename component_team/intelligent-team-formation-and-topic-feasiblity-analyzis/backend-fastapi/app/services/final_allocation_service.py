@@ -1,6 +1,6 @@
 from datetime import datetime
 from uuid import uuid4
-from sqlalchemy import select
+from sqlalchemy import select, update
 from sqlalchemy.orm import Session, selectinload
 from app.db_models.final_allocation import FinalAllocation, FinalTeam, FinalTeamMember, FinalTeamRequirement, FinalTeamSupervisor
 from app.models.final_allocation import FinalAllocationCreateRequest
@@ -57,9 +57,16 @@ def create_final_allocation(db: Session, request: FinalAllocationCreateRequest) 
         preference_dissatisfaction=float(solution.get("preference_dissatisfaction", 0.0)),
         preference_satisfaction=float(solution.get("preference_satisfaction", 0.0)),
         integrity_valid=bool(solution.get("integrity", {}).get("valid", True)),
+        status="ACTIVE",
     )
-    db.add(allocation)
     try:
+        db.execute(
+            update(FinalAllocation)
+            .where(FinalAllocation.status == "ACTIVE")
+            .values(status="ARCHIVED")
+        )
+        db.flush()
+        db.add(allocation)
         for team_number, team_data in enumerate(teams, start=1):
             preference = team_data.get("preference_summary") or {}
             team = FinalTeam(
@@ -198,6 +205,7 @@ def _serialize_allocation(allocation: FinalAllocation) -> dict:
         "preference_dissatisfaction": allocation.preference_dissatisfaction,
         "preference_satisfaction": allocation.preference_satisfaction,
         "integrity_valid": allocation.integrity_valid,
+        "status": allocation.status,
         "teams": teams,
     }
 
@@ -245,3 +253,26 @@ def get_supervisor_groups(db: Session, allocation_id: str, supervisor_id: str) -
             "members": [member.student_id for member in team.members],
         } for team in teams],
     }
+
+def get_active_final_allocation(db: Session) -> dict | None:
+    statement = (
+        select(FinalAllocation)
+        .where(FinalAllocation.status == "ACTIVE")
+        .options(
+            selectinload(FinalAllocation.teams).selectinload(FinalTeam.members),
+            selectinload(FinalAllocation.teams).selectinload(FinalTeam.requirements),
+            selectinload(FinalAllocation.teams).selectinload(FinalTeam.supervisor),
+        )
+    )
+    allocation = db.scalar(statement)
+    if allocation is None:
+        return None
+    return _serialize_allocation(allocation)
+
+def get_active_supervisor_groups(db: Session, supervisor_id: str) -> dict | None:
+    allocation_id = db.scalar(
+        select(FinalAllocation.id).where(FinalAllocation.status == "ACTIVE")
+    )
+    if allocation_id is None:
+        return None
+    return get_supervisor_groups(db, allocation_id, supervisor_id)

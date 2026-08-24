@@ -4,7 +4,13 @@ from sqlalchemy.orm import Session
 from app.database import get_db
 from app.models.final_allocation import FinalAllocationCreateRequest
 from app.services.final_allocation_export_service import build_excel_export, build_pdf_export
-from app.services.final_allocation_service import create_final_allocation, get_final_allocation, get_supervisor_groups
+from app.services.final_allocation_service import (
+    create_final_allocation,
+    get_active_final_allocation,
+    get_active_supervisor_groups,
+    get_final_allocation,
+    get_supervisor_groups,
+)
 
 router = APIRouter(prefix="/api/final-allocations", tags=["Final Allocations"])
 
@@ -12,11 +18,29 @@ router = APIRouter(prefix="/api/final-allocations", tags=["Final Allocations"])
 def save_final_allocation(request: FinalAllocationCreateRequest, db: Session = Depends(get_db)):
     try:
         allocation = create_final_allocation(db, request)
-        return {"success": True, "message": "Final allocation saved successfully.", "allocation": allocation}
+        return {
+            "success": True,
+            "message": "Final allocation saved successfully and marked ACTIVE. Any previously ACTIVE allocation was archived.",
+            "allocation": allocation,
+        }
     except ValueError as exc:
         raise HTTPException(status_code=422, detail=str(exc))
     except Exception as exc:
         raise HTTPException(status_code=500, detail=f"Final allocation could not be saved. {str(exc)}")
+
+@router.get("/active")
+def read_active_final_allocation(db: Session = Depends(get_db)):
+    allocation = get_active_final_allocation(db)
+    if allocation is None:
+        raise HTTPException(status_code=404, detail="No ACTIVE final allocation was found.")
+    return {"success": True, "allocation": allocation}
+
+@router.get("/active/supervisors/{supervisor_id}/groups")
+def read_active_supervisor_groups(supervisor_id: str, db: Session = Depends(get_db)):
+    groups = get_active_supervisor_groups(db, supervisor_id)
+    if groups is None:
+        raise HTTPException(status_code=404, detail="No ACTIVE final allocation was found.")
+    return {"success": True, "allocation_status": "ACTIVE", **groups}
 
 @router.get("/{allocation_id}")
 def read_final_allocation(allocation_id: str, db: Session = Depends(get_db)):
@@ -24,7 +48,6 @@ def read_final_allocation(allocation_id: str, db: Session = Depends(get_db)):
     if allocation is None:
         raise HTTPException(status_code=404, detail="Final allocation was not found.")
     return {"success": True, "allocation": allocation}
-
 
 @router.get("/{allocation_id}/supervisors/{supervisor_id}/groups")
 def read_supervisor_groups(allocation_id: str, supervisor_id: str, db: Session = Depends(get_db)):
@@ -40,7 +63,11 @@ def export_final_allocation_excel(allocation_id: str, db: Session = Depends(get_
         raise HTTPException(status_code=404, detail="Final allocation was not found.")
     output = build_excel_export(allocation)
     filename = f"{allocation_id}_final_team_allocation.xlsx"
-    return StreamingResponse(output, media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", headers={"Content-Disposition": f'attachment; filename="{filename}"'})
+    return StreamingResponse(
+        output,
+        media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        headers={"Content-Disposition": f'attachment; filename="{filename}"'},
+    )
 
 @router.get("/{allocation_id}/export.pdf")
 def export_final_allocation_pdf(allocation_id: str, db: Session = Depends(get_db)):
@@ -49,4 +76,8 @@ def export_final_allocation_pdf(allocation_id: str, db: Session = Depends(get_db
         raise HTTPException(status_code=404, detail="Final allocation was not found.")
     output = build_pdf_export(allocation)
     filename = f"{allocation_id}_final_team_allocation.pdf"
-    return StreamingResponse(output, media_type="application/pdf", headers={"Content-Disposition": f'attachment; filename="{filename}"'})
+    return StreamingResponse(
+        output,
+        media_type="application/pdf",
+        headers={"Content-Disposition": f'attachment; filename="{filename}"'},
+    )

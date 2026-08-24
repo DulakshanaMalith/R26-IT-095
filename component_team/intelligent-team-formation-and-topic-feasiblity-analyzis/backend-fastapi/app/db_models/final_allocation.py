@@ -22,6 +22,7 @@ class FinalAllocation(Base):
     preference_dissatisfaction: Mapped[float] = mapped_column(Float, nullable=False)
     preference_satisfaction: Mapped[float] = mapped_column(Float, nullable=False)
     integrity_valid: Mapped[bool] = mapped_column(Boolean, nullable=False, default=True)
+    status: Mapped[str] = mapped_column(String(20), nullable=False, default="ACTIVE", index=True)
     teams: Mapped[list["FinalTeam"]] = relationship(back_populates="allocation", cascade="all, delete-orphan", order_by="FinalTeam.team_number")
 
 class FinalTeam(Base):
