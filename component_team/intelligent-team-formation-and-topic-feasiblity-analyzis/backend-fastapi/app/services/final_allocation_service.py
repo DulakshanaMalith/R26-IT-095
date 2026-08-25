@@ -37,19 +37,46 @@ def _validate_payload(request: FinalAllocationCreateRequest) -> tuple[list[dict]
         raise ValueError(f"Supervisor allocation must cover exactly the selected projects. Missing={missing}, unexpected={extra}.")
     return teams, supervisor_by_project
 
-def create_final_allocation(db: Session, request: FinalAllocationCreateRequest) -> dict:
-    teams, supervisor_by_project = _validate_payload(request)
-    solution = request.selected_solution
-    optimizer = request.optimizer
+def _validate_reference_matches_solution(reference_data: dict | None, teams: list[dict]) -> None:
+    if not reference_data:
+        return
+    reference_students = {str(item.get("student_id") or "").strip().upper() for item in reference_data.get("students") or []}
+    reference_projects = {str(item.get("project_id") or "").strip().upper() for item in reference_data.get("projects") or []}
+    solution_students = {str(member.get("student_id") or "").strip().upper() for team in teams for member in team.get("students") or []}
+    solution_projects = {str(team.get("project_id") or "").strip().upper() for team in teams}
+    if reference_students != solution_students:
+        raise ValueError("The uploaded source workbook student set does not match the selected final allocation.")
+    if reference_projects != solution_projects:
+        raise ValueError("The uploaded source workbook project set does not match the selected final allocation.")
+
+def persist_final_allocation(
+    db: Session,
+    *,
+    source_file_name: str | None,
+    students_per_team: int,
+    algorithm: str,
+    optimizer_version: str,
+    solution: dict,
+    supervisor_assignments: list[dict],
+    reference_data: dict | None,
+    allocation_source: str,
+    revision_number: int,
+    parent_allocation_id: str | None = None,
+    change_reason: str | None = None,
+) -> dict:
+    teams = solution.get("teams") or []
+    supervisor_by_project = {str(item.get("project_id")): item for item in supervisor_assignments}
+    if not teams:
+        raise ValueError("No teams were supplied for persistence.")
     student_count = sum(len(team.get("students") or []) for team in teams)
     allocation = FinalAllocation(
         id=_allocation_id(),
-        source_file_name=request.source_file_name,
-        algorithm=str(optimizer.get("algorithm") or "Heuristic-Seeded NSGA-II"),
-        optimizer_version=str(optimizer.get("optimizer_version") or "V3"),
+        source_file_name=source_file_name,
+        algorithm=algorithm,
+        optimizer_version=optimizer_version,
         solution_id=int(solution.get("solution_id", 0)),
-        solution_role=str(solution.get("role") or "Selected Pareto alternative"),
-        students_per_team=request.students_per_team,
+        solution_role=str(solution.get("role") or "Selected allocation"),
+        students_per_team=students_per_team,
         student_count=student_count,
         project_count=len(teams),
         technical_requirement_deficit=float(solution.get("technical_requirement_deficit", 0.0)),
@@ -58,21 +85,26 @@ def create_final_allocation(db: Session, request: FinalAllocationCreateRequest) 
         preference_satisfaction=float(solution.get("preference_satisfaction", 0.0)),
         integrity_valid=bool(solution.get("integrity", {}).get("valid", True)),
         status="ACTIVE",
+        revision_number=revision_number,
+        parent_allocation_id=parent_allocation_id,
+        allocation_source=allocation_source,
+        change_reason=change_reason,
+        reference_data=reference_data,
     )
     try:
-        db.execute(
-            update(FinalAllocation)
-            .where(FinalAllocation.status == "ACTIVE")
-            .values(status="ARCHIVED")
-        )
+        db.execute(update(FinalAllocation).where(FinalAllocation.status == "ACTIVE").values(status="ARCHIVED"))
         db.flush()
         db.add(allocation)
-        for team_number, team_data in enumerate(teams, start=1):
+        db.flush()
+        for default_number, team_data in enumerate(teams, start=1):
+            project_id = str(team_data.get("project_id") or "")
+            if project_id not in supervisor_by_project:
+                raise ValueError(f"No supervisor assignment was supplied for project {project_id}.")
             preference = team_data.get("preference_summary") or {}
             team = FinalTeam(
                 allocation_id=allocation.id,
-                team_number=team_number,
-                project_id=str(team_data.get("project_id")),
+                team_number=int(team_data.get("team_number") or default_number),
+                project_id=project_id,
                 project_title=str(team_data.get("project_title") or ""),
                 team_size=int(team_data.get("team_size", len(team_data.get("students") or []))),
                 technical_coverage=float(team_data.get("technical_coverage", 0.0)),
@@ -105,7 +137,7 @@ def create_final_allocation(db: Session, request: FinalAllocationCreateRequest) 
                     coverage=float(requirement.get("coverage", 0.0)),
                     status=str(requirement.get("status") or ""),
                 ))
-            assignment = supervisor_by_project[team.project_id]
+            assignment = supervisor_by_project[project_id]
             db.add(FinalTeamSupervisor(
                 team_id=team.id,
                 supervisor_id=str(assignment.get("supervisor_id") or ""),
@@ -126,20 +158,42 @@ def create_final_allocation(db: Session, request: FinalAllocationCreateRequest) 
         raise
     return get_final_allocation(db, allocation.id)
 
+def create_final_allocation(db: Session, request: FinalAllocationCreateRequest, reference_data: dict | None = None) -> dict:
+    teams, supervisor_by_project = _validate_payload(request)
+    _validate_reference_matches_solution(reference_data, teams)
+    solution = request.selected_solution
+    optimizer = request.optimizer
+    return persist_final_allocation(
+        db,
+        source_file_name=request.source_file_name,
+        students_per_team=request.students_per_team,
+        algorithm=str(optimizer.get("algorithm") or "Heuristic-Seeded NSGA-II"),
+        optimizer_version=str(optimizer.get("optimizer_version") or "V3"),
+        solution=solution,
+        supervisor_assignments=list(supervisor_by_project.values()),
+        reference_data=reference_data,
+        allocation_source="OPTIMIZER",
+        revision_number=1,
+    )
+
+def attach_reference_data(db: Session, allocation_id: str, reference_data: dict) -> dict:
+    allocation = db.get(FinalAllocation, allocation_id)
+    if allocation is None:
+        raise ValueError("Final allocation was not found.")
+    existing = get_final_allocation(db, allocation_id)
+    _validate_reference_matches_solution(reference_data, existing.get("teams") or [])
+    allocation.reference_data = reference_data
+    db.commit()
+    return get_final_allocation(db, allocation_id)
+
 def get_final_allocation(db: Session, allocation_id: str) -> dict | None:
-    statement = (
-        select(FinalAllocation)
-        .where(FinalAllocation.id == allocation_id)
-        .options(
-            selectinload(FinalAllocation.teams).selectinload(FinalTeam.members),
-            selectinload(FinalAllocation.teams).selectinload(FinalTeam.requirements),
-            selectinload(FinalAllocation.teams).selectinload(FinalTeam.supervisor),
-        )
+    statement = select(FinalAllocation).where(FinalAllocation.id == allocation_id).options(
+        selectinload(FinalAllocation.teams).selectinload(FinalTeam.members),
+        selectinload(FinalAllocation.teams).selectinload(FinalTeam.requirements),
+        selectinload(FinalAllocation.teams).selectinload(FinalTeam.supervisor),
     )
     allocation = db.scalar(statement)
-    if allocation is None:
-        return None
-    return _serialize_allocation(allocation)
+    return None if allocation is None else _serialize_allocation(allocation)
 
 def _serialize_allocation(allocation: FinalAllocation) -> dict:
     teams = []
@@ -206,44 +260,38 @@ def _serialize_allocation(allocation: FinalAllocation) -> dict:
         "preference_satisfaction": allocation.preference_satisfaction,
         "integrity_valid": allocation.integrity_valid,
         "status": allocation.status,
+        "revision_number": allocation.revision_number,
+        "parent_allocation_id": allocation.parent_allocation_id,
+        "allocation_source": allocation.allocation_source,
+        "change_reason": allocation.change_reason,
+        "revision_enabled": allocation.reference_data is not None,
         "teams": teams,
     }
 
 def get_supervisor_groups(db: Session, allocation_id: str, supervisor_id: str) -> dict | None:
-    allocation_exists = db.scalar(select(FinalAllocation.id).where(FinalAllocation.id == allocation_id))
-    if allocation_exists is None:
+    allocation = db.scalar(select(FinalAllocation).where(FinalAllocation.id == allocation_id))
+    if allocation is None:
         return None
-    statement = (
-        select(FinalTeam)
-        .join(FinalTeamSupervisor, FinalTeamSupervisor.team_id == FinalTeam.id)
-        .where(
-            FinalTeam.allocation_id == allocation_id,
-            FinalTeamSupervisor.supervisor_id == supervisor_id,
-        )
-        .options(
-            selectinload(FinalTeam.members),
-            selectinload(FinalTeam.supervisor),
-        )
-        .order_by(FinalTeam.team_number)
-    )
+    statement = select(FinalTeam).join(FinalTeamSupervisor, FinalTeamSupervisor.team_id == FinalTeam.id).where(
+        FinalTeam.allocation_id == allocation_id,
+        FinalTeamSupervisor.supervisor_id == supervisor_id,
+    ).options(selectinload(FinalTeam.members), selectinload(FinalTeam.supervisor)).order_by(FinalTeam.team_number)
     teams = list(db.scalars(statement).all())
     if not teams:
         return {
             "allocation_id": allocation_id,
-            "supervisor": {
-                "supervisor_id": supervisor_id,
-                "supervisor_name": None,
-            },
+            "revision_number": allocation.revision_number,
+            "allocation_source": allocation.allocation_source,
+            "supervisor": {"supervisor_id": supervisor_id, "supervisor_name": None},
             "group_count": 0,
             "groups": [],
         }
     supervisor = teams[0].supervisor
     return {
         "allocation_id": allocation_id,
-        "supervisor": {
-            "supervisor_id": supervisor.supervisor_id,
-            "supervisor_name": supervisor.supervisor_name,
-        },
+        "revision_number": allocation.revision_number,
+        "allocation_source": allocation.allocation_source,
+        "supervisor": {"supervisor_id": supervisor.supervisor_id, "supervisor_name": supervisor.supervisor_name},
         "group_count": len(teams),
         "groups": [{
             "group_key": f"{allocation_id}-T{team.team_number:03d}",
@@ -255,24 +303,38 @@ def get_supervisor_groups(db: Session, allocation_id: str, supervisor_id: str) -
     }
 
 def get_active_final_allocation(db: Session) -> dict | None:
-    statement = (
-        select(FinalAllocation)
-        .where(FinalAllocation.status == "ACTIVE")
-        .options(
-            selectinload(FinalAllocation.teams).selectinload(FinalTeam.members),
-            selectinload(FinalAllocation.teams).selectinload(FinalTeam.requirements),
-            selectinload(FinalAllocation.teams).selectinload(FinalTeam.supervisor),
-        )
+    statement = select(FinalAllocation).where(FinalAllocation.status == "ACTIVE").options(
+        selectinload(FinalAllocation.teams).selectinload(FinalTeam.members),
+        selectinload(FinalAllocation.teams).selectinload(FinalTeam.requirements),
+        selectinload(FinalAllocation.teams).selectinload(FinalTeam.supervisor),
     )
     allocation = db.scalar(statement)
-    if allocation is None:
-        return None
-    return _serialize_allocation(allocation)
+    return None if allocation is None else _serialize_allocation(allocation)
 
 def get_active_supervisor_groups(db: Session, supervisor_id: str) -> dict | None:
-    allocation_id = db.scalar(
-        select(FinalAllocation.id).where(FinalAllocation.status == "ACTIVE")
-    )
-    if allocation_id is None:
+    allocation_id = db.scalar(select(FinalAllocation.id).where(FinalAllocation.status == "ACTIVE"))
+    return None if allocation_id is None else get_supervisor_groups(db, allocation_id, supervisor_id)
+
+def get_active_team_data(db: Session) -> dict | None:
+    allocation = get_active_final_allocation(db)
+    if allocation is None:
         return None
-    return get_supervisor_groups(db, allocation_id, supervisor_id)
+    return {
+        "allocation_id": allocation["allocation_id"],
+        "allocation_status": allocation["status"],
+        "revision_number": allocation["revision_number"],
+        "allocation_source": allocation["allocation_source"],
+        "student_count": allocation["student_count"],
+        "team_count": allocation["project_count"],
+        "teams": [{
+            "group_key": f"{allocation['allocation_id']}-T{team['team_number']:03d}",
+            "team_number": team["team_number"],
+            "project_id": team["project_id"],
+            "project_title": team["project_title"],
+            "members": [student["student_id"] for student in team["students"]],
+            "supervisor": None if not team.get("supervisor") else {
+                "supervisor_id": team["supervisor"]["supervisor_id"],
+                "supervisor_name": team["supervisor"]["supervisor_name"],
+            },
+        } for team in allocation["teams"]],
+    }

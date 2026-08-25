@@ -32,6 +32,11 @@ def build_excel_export(allocation: dict) -> BytesIO:
     summary_rows = [
         ("Allocation ID", allocation["allocation_id"]),
         ("Created At", allocation["created_at"]),
+        ("Status", allocation.get("status") or ""),
+        ("Revision Number", allocation.get("revision_number", 1)),
+        ("Allocation Source", allocation.get("allocation_source") or ""),
+        ("Parent Allocation ID", allocation.get("parent_allocation_id") or ""),
+        ("Change Reason", allocation.get("change_reason") or ""),
         ("Source Workbook", allocation.get("source_file_name") or ""),
         ("Algorithm", allocation["algorithm"]),
         ("Optimizer Version", allocation["optimizer_version"]),
@@ -99,19 +104,22 @@ def build_pdf_export(allocation: dict) -> BytesIO:
     title_style = ParagraphStyle("AllocationTitle", parent=styles["Title"], alignment=TA_CENTER, fontSize=18, leading=22)
     body_style = ParagraphStyle("AllocationBody", parent=styles["BodyText"], fontSize=8, leading=10)
     header_style = ParagraphStyle("AllocationHeader", parent=body_style, textColor=colors.white, fontName="Helvetica-Bold")
+    source_label = "Staff-revised allocation" if allocation.get("allocation_source") == "MANUAL_REVISION" else "Optimizer-selected allocation"
     story = [
         Paragraph("Final Team Allocation Report", title_style),
         Spacer(1, 4 * mm),
         Paragraph(
-            f"Allocation ID: <b>{allocation['allocation_id']}</b> | Students: <b>{allocation['student_count']}</b> | Teams: <b>{allocation['project_count']}</b> | Target team size: <b>{allocation['students_per_team']}</b>",
+            f"Allocation ID: <b>{allocation['allocation_id']}</b> | Status: <b>{allocation.get('status', '')}</b> | Revision: <b>{allocation.get('revision_number', 1)}</b> | Source: <b>{source_label}</b>",
             styles["BodyText"],
         ),
         Paragraph(
-            f"Selected Pareto solution: <b>{allocation['solution_id']}</b> ({allocation['solution_role']}) | Technical coverage: <b>{_percent(allocation['technical_requirement_coverage'])}</b> | Preference satisfaction: <b>{_percent(allocation['preference_satisfaction'])}</b>",
+            f"Students: <b>{allocation['student_count']}</b> | Teams: <b>{allocation['project_count']}</b> | Target team size: <b>{allocation['students_per_team']}</b> | Technical coverage: <b>{_percent(allocation['technical_requirement_coverage'])}</b> | Preference satisfaction: <b>{_percent(allocation['preference_satisfaction'])}</b>",
             styles["BodyText"],
         ),
-        Spacer(1, 5 * mm),
     ]
+    if allocation.get("parent_allocation_id"):
+        story.append(Paragraph(f"Parent allocation: <b>{allocation['parent_allocation_id']}</b> | Change reason: {allocation.get('change_reason') or ''}", styles["BodyText"]))
+    story.append(Spacer(1, 5 * mm))
     table_data = [[
         Paragraph("Team", header_style), Paragraph("Project", header_style), Paragraph("Students", header_style),
         Paragraph("Supervisor", header_style), Paragraph("Match", header_style), Paragraph("Tech Coverage", header_style),

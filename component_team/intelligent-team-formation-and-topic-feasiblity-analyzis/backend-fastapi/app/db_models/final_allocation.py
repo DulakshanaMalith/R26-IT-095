@@ -13,7 +13,7 @@ class FinalAllocation(Base):
     algorithm: Mapped[str] = mapped_column(String(120), nullable=False)
     optimizer_version: Mapped[str] = mapped_column(String(30), nullable=False)
     solution_id: Mapped[int] = mapped_column(Integer, nullable=False)
-    solution_role: Mapped[str] = mapped_column(String(120), nullable=False)
+    solution_role: Mapped[str] = mapped_column(String(160), nullable=False)
     students_per_team: Mapped[int] = mapped_column(Integer, nullable=False)
     student_count: Mapped[int] = mapped_column(Integer, nullable=False)
     project_count: Mapped[int] = mapped_column(Integer, nullable=False)
@@ -23,6 +23,11 @@ class FinalAllocation(Base):
     preference_satisfaction: Mapped[float] = mapped_column(Float, nullable=False)
     integrity_valid: Mapped[bool] = mapped_column(Boolean, nullable=False, default=True)
     status: Mapped[str] = mapped_column(String(20), nullable=False, default="ACTIVE", index=True)
+    revision_number: Mapped[int] = mapped_column(Integer, nullable=False, default=1)
+    parent_allocation_id: Mapped[Optional[str]] = mapped_column(String(40), nullable=True, index=True)
+    allocation_source: Mapped[str] = mapped_column(String(40), nullable=False, default="OPTIMIZER")
+    change_reason: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
+    reference_data: Mapped[Optional[dict]] = mapped_column(JSON, nullable=True)
     teams: Mapped[list["FinalTeam"]] = relationship(back_populates="allocation", cascade="all, delete-orphan", order_by="FinalTeam.team_number")
 
 class FinalTeam(Base):
