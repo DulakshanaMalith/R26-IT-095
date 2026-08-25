@@ -21,7 +21,7 @@ function downloadBlob(response, fallbackName) {
   link.remove();
   window.URL.revokeObjectURL(url);
 }
-export default function FinalAllocationPanel({ workbookFile, selectedSolution, supervisorAllocation, studentsPerTeam }) {
+export default function FinalAllocationPanel({ workbookFile, selectedSolution, supervisorAllocation, studentsPerTeam, onFinalized }) {
   const [savedAllocation, setSavedAllocation] = useState(null);
   const [saving, setSaving] = useState(false);
   const [downloading, setDownloading] = useState('');
@@ -32,20 +32,11 @@ export default function FinalAllocationPanel({ workbookFile, selectedSolution, s
   const [validatingRevision, setValidatingRevision] = useState(false);
   const [confirmingRevision, setConfirmingRevision] = useState(false);
   const saveFinalAllocation = async () => {
-    if (!selectedSolution || !supervisorAllocation) {
-      setErrorMessage('Select a Pareto solution and complete supervisor allocation first.');
-      return;
-    }
+    if (!selectedSolution || !supervisorAllocation) return setErrorMessage('Select an allocation and complete supervisor allocation first.');
     setSaving(true);
     setErrorMessage('');
     try {
-      const payload = {
-        source_file_name: workbookFile?.name || null,
-        students_per_team: Number(studentsPerTeam),
-        optimizer: { algorithm: 'Heuristic-Seeded NSGA-II', optimizer_version: 'V3' },
-        selected_solution: selectedSolution,
-        supervisor_allocation: supervisorAllocation,
-      };
+      const payload = { source_file_name: workbookFile?.name || null, students_per_team: Number(studentsPerTeam), optimizer: { algorithm: 'Heuristic-Seeded NSGA-II', optimizer_version: 'V3' }, selected_solution: selectedSolution, supervisor_allocation: supervisorAllocation };
       let response;
       if (workbookFile) {
         const formData = new FormData();
@@ -56,6 +47,7 @@ export default function FinalAllocationPanel({ workbookFile, selectedSolution, s
         response = await axios.post(`${API_BASE_URL}/api/final-allocations`, payload);
       }
       setSavedAllocation(response.data.allocation);
+      onFinalized?.(response.data.allocation);
       setRevisionPreview(null);
       setRevisionFile(null);
       setChangeReason('');
@@ -95,10 +87,7 @@ export default function FinalAllocationPanel({ workbookFile, selectedSolution, s
     }
   };
   const validateRevision = async () => {
-    if (!savedAllocation?.allocation_id || !revisionFile) {
-      setErrorMessage('Choose the edited allocation revision workbook first.');
-      return;
-    }
+    if (!savedAllocation?.allocation_id || !revisionFile) return setErrorMessage('Choose the edited allocation revision workbook first.');
     setValidatingRevision(true);
     setErrorMessage('');
     setRevisionPreview(null);
@@ -126,6 +115,7 @@ export default function FinalAllocationPanel({ workbookFile, selectedSolution, s
       formData.append('file', revisionFile);
       const response = await axios.post(`${API_BASE_URL}/api/final-allocations/revisions/confirm`, formData);
       setSavedAllocation(response.data.allocation);
+      onFinalized?.(response.data.allocation);
       setRevisionFile(null);
       setRevisionPreview(null);
       setChangeReason('');
@@ -137,81 +127,45 @@ export default function FinalAllocationPanel({ workbookFile, selectedSolution, s
     }
   };
   return (
-    <div className="mt-7 border border-emerald-500/30 bg-emerald-500/5 rounded-xl p-5">
-      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
-        <div>
-          <h3 className="text-xl font-bold text-white">Confirm Final Allocation</h3>
-          <p className="text-sm text-slate-400 mt-1 max-w-3xl">Save the selected team-project allocation and supervisor assignments as the official ACTIVE allocation. The source workbook is stored as normalized reference data so later staff revisions can be safely recalculated and validated.</p>
-        </div>
-        {!savedAllocation && (
-          <button type="button" onClick={saveFinalAllocation} disabled={saving} className="px-5 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-semibold disabled:opacity-40">
-            {saving ? 'Saving...' : 'Save Final Allocation'}
-          </button>
-        )}
+    <div className="mt-6 rounded-xl border border-slate-200 bg-white">
+      <div className="flex flex-col gap-4 p-5 lg:flex-row lg:items-start lg:justify-between">
+        <div className="flex gap-3"><span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-blue-700 text-sm font-bold text-white">6</span><div><h3 className="text-lg font-bold text-slate-900">Finalization & Revision</h3><p className="mt-1 max-w-3xl text-sm text-slate-600">Save the staff-confirmed allocation as the official ACTIVE record. Previous official allocations remain archived for traceability.</p></div></div>
+        {!savedAllocation && <button type="button" onClick={saveFinalAllocation} disabled={saving} className="rounded-lg bg-emerald-700 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-emerald-800 disabled:opacity-40">{saving ? 'Saving...' : 'Save Final Allocation'}</button>}
       </div>
-      {errorMessage && <div className="mt-4 border border-red-500/40 bg-red-500/10 rounded-lg p-4 text-red-300">{errorMessage}</div>}
+      {errorMessage && <div className="mx-5 mb-5 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">{errorMessage}</div>}
       {savedAllocation && (
-        <div className="mt-5 space-y-5">
-          <div className="border border-emerald-500/40 bg-emerald-500/10 rounded-lg p-4">
-            <p className="font-semibold text-emerald-300">Official allocation is ACTIVE.</p>
-            <p className="text-sm text-slate-300 mt-1">Allocation ID: <span className="font-mono font-bold text-white">{savedAllocation.allocation_id}</span></p>
-            <p className="text-xs text-slate-400 mt-2">Revision {savedAllocation.revision_number || 1} · {savedAllocation.allocation_source === 'MANUAL_REVISION' ? 'Staff-revised allocation' : 'Optimizer-selected allocation'} · {savedAllocation.student_count} students · {savedAllocation.project_count} teams</p>
-            {savedAllocation.parent_allocation_id && <p className="text-xs text-slate-500 mt-1">Parent allocation: {savedAllocation.parent_allocation_id}</p>}
-            <div className="flex flex-wrap gap-3 mt-4">
-              <button type="button" onClick={() => downloadExport('pdf')} disabled={Boolean(downloading)} className="px-4 py-2 rounded-lg border border-slate-600 bg-slate-800 hover:bg-slate-700 text-white text-sm font-semibold disabled:opacity-40">{downloading === 'pdf' ? 'Preparing PDF...' : 'Download PDF Report'}</button>
-              <button type="button" onClick={() => downloadExport('xlsx')} disabled={Boolean(downloading)} className="px-4 py-2 rounded-lg border border-slate-600 bg-slate-800 hover:bg-slate-700 text-white text-sm font-semibold disabled:opacity-40">{downloading === 'xlsx' ? 'Preparing Excel...' : 'Download Excel Report'}</button>
-              <button type="button" onClick={downloadEditableAllocation} disabled={Boolean(downloading) || savedAllocation.revision_enabled === false} className="px-4 py-2 rounded-lg border border-amber-500/50 bg-amber-500/10 hover:bg-amber-500/20 text-amber-200 text-sm font-semibold disabled:opacity-40">{downloading === 'editable' ? 'Preparing Editable Workbook...' : 'Download Editable Allocation'}</button>
-            </div>
-            <p className="text-xs text-slate-500 mt-3">PDF and Excel Report are read-only reporting outputs. Use only <span className="text-amber-300 font-semibold">Download Editable Allocation</span> when staff need to make a controlled manual revision.</p>
+        <div className="border-t border-slate-100 p-5">
+          <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-4">
+            <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between"><div><div className="flex flex-wrap items-center gap-2"><span className="rounded-full border border-emerald-300 bg-white px-2.5 py-1 text-xs font-bold text-emerald-800">ACTIVE</span><span className="text-xs font-semibold text-emerald-900">Current official allocation</span></div><p className="mt-3 font-mono text-sm font-bold text-slate-900">{savedAllocation.allocation_id}</p><p className="mt-1 text-xs text-slate-600">Revision {savedAllocation.revision_number || 1} · {savedAllocation.allocation_source === 'MANUAL_REVISION' ? 'Staff-revised allocation' : 'Optimizer-selected allocation'} · {savedAllocation.student_count} students · {savedAllocation.project_count} teams</p>{savedAllocation.parent_allocation_id && <p className="mt-1 text-xs text-slate-500">Parent allocation: {savedAllocation.parent_allocation_id}</p>}</div></div>
+            <div className="mt-4 flex flex-wrap gap-2"><button type="button" onClick={() => downloadExport('pdf')} disabled={Boolean(downloading)} className="rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50 disabled:opacity-40">{downloading === 'pdf' ? 'Preparing PDF...' : 'PDF Report'}</button><button type="button" onClick={() => downloadExport('xlsx')} disabled={Boolean(downloading)} className="rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50 disabled:opacity-40">{downloading === 'xlsx' ? 'Preparing Excel...' : 'Excel Report'}</button><button type="button" onClick={downloadEditableAllocation} disabled={Boolean(downloading) || savedAllocation.revision_enabled === false} className="rounded-lg border border-amber-300 bg-amber-50 px-3 py-2 text-sm font-semibold text-amber-900 hover:bg-amber-100 disabled:opacity-40">{downloading === 'editable' ? 'Preparing Workbook...' : 'Editable Allocation'}</button></div>
+            <p className="mt-3 text-xs text-slate-600">PDF and Excel are reporting outputs. Use <span className="font-semibold text-amber-900">Editable Allocation</span> only for controlled staff revisions.</p>
           </div>
           {savedAllocation.revision_enabled !== false && (
-            <div className="border border-amber-500/30 bg-amber-500/5 rounded-xl p-5">
-              <h4 className="text-lg font-bold text-white">Upload Revised Allocation</h4>
-              <p className="text-sm text-slate-400 mt-1 max-w-3xl">Edit only the permitted fields in the downloaded editable workbook, then upload it here. The backend validates every student, project, team size and supervisor capacity and recalculates technical and preference metrics before anything is saved.</p>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
-                <div>
-                  <label className="block text-sm font-semibold text-slate-300 mb-2">Edited Allocation Workbook</label>
-                  <input type="file" accept=".xlsx" onChange={(event) => { setRevisionFile(event.target.files?.[0] || null); setRevisionPreview(null); }} className="block w-full text-sm text-slate-300 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-slate-700 file:text-white hover:file:bg-slate-600" />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-slate-300 mb-2">Reason for Change</label>
-                  <input type="text" value={changeReason} onChange={(event) => setChangeReason(event.target.value)} placeholder="Example: coordinator-approved student swap" className="w-full bg-slate-900 border border-slate-600 rounded-lg px-4 py-2.5 text-white" />
-                </div>
+            <div className="mt-5 rounded-xl border border-slate-200 bg-white">
+              <div className="border-b border-slate-100 px-5 py-4"><h4 className="text-base font-bold text-slate-900">Revise Existing Allocation</h4><p className="mt-1 text-sm text-slate-600">Upload the edited allocation workbook. The backend validates structure and recalculates technical, preference and supervisor information before any new record is saved.</p></div>
+              <div className="p-5"><div className="grid gap-4 lg:grid-cols-2"><div><label className="mb-2 block text-sm font-semibold text-slate-700">Edited allocation workbook</label><input type="file" accept=".xlsx" onChange={(event) => { setRevisionFile(event.target.files?.[0] || null); setRevisionPreview(null); }} className="block w-full rounded-lg border border-slate-300 bg-white text-sm text-slate-700 file:mr-4 file:border-0 file:border-r file:border-slate-200 file:bg-slate-50 file:px-4 file:py-2.5 file:font-semibold file:text-slate-700 hover:file:bg-slate-100" /></div><div><label className="mb-2 block text-sm font-semibold text-slate-700">Reason for change</label><input type="text" value={changeReason} onChange={(event) => setChangeReason(event.target.value)} placeholder="Example: coordinator-approved student swap" className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-slate-900 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100" /></div></div>
+                <button type="button" onClick={validateRevision} disabled={!revisionFile || validatingRevision || confirmingRevision} className="mt-4 rounded-lg border border-amber-500 bg-white px-4 py-2.5 text-sm font-semibold text-amber-800 hover:bg-amber-50 disabled:opacity-40">{validatingRevision ? 'Validating...' : 'Validate Revised Allocation'}</button>
+                {revisionPreview?.valid && <RevisionPreview preview={revisionPreview} confirmRevision={confirmRevision} confirmingRevision={confirmingRevision} />}
               </div>
-              <button type="button" onClick={validateRevision} disabled={!revisionFile || validatingRevision || confirmingRevision} className="mt-4 px-5 py-2.5 rounded-lg bg-amber-600 hover:bg-amber-500 text-white font-semibold disabled:opacity-40">{validatingRevision ? 'Validating Revision...' : 'Validate Revised Allocation'}</button>
-              {revisionPreview?.valid && (
-                <div className="mt-5 border border-sky-500/30 bg-sky-500/5 rounded-lg p-4">
-                  <div className="flex flex-wrap items-center justify-between gap-3">
-                    <div>
-                      <p className="font-semibold text-sky-300">Revision validation passed.</p>
-                      <p className="text-xs text-slate-400 mt-1">If confirmed, this becomes Revision {revisionPreview.next_revision_number} and the current allocation becomes ARCHIVED.</p>
-                    </div>
-                    <button type="button" onClick={confirmRevision} disabled={confirmingRevision} className="px-5 py-2.5 rounded-lg bg-sky-600 hover:bg-sky-500 text-white font-semibold disabled:opacity-40">{confirmingRevision ? 'Saving Revision...' : 'Confirm Revised Allocation'}</button>
-                  </div>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-4">
-                    <Metric label="Moved Students" value={revisionPreview.changes?.moved_student_count ?? 0} />
-                    <Metric label="Supervisor Changes" value={revisionPreview.changes?.changed_supervisor_count ?? 0} />
-                    <Metric label="Technical Coverage" value={percent(revisionPreview.candidate?.technical_requirement_coverage)} />
-                    <Metric label="Preference Satisfaction" value={percent(revisionPreview.candidate?.preference_satisfaction)} />
-                  </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-3 text-xs text-slate-400">
-                    <div className="bg-slate-900/60 rounded-lg p-3">Original: Technical {percent(revisionPreview.changes?.original_metrics?.technical_requirement_coverage)} · Preference {percent(revisionPreview.changes?.original_metrics?.preference_satisfaction)}</div>
-                    <div className="bg-slate-900/60 rounded-lg p-3">Revised: Technical {percent(revisionPreview.changes?.revised_metrics?.technical_requirement_coverage)} · Preference {percent(revisionPreview.changes?.revised_metrics?.preference_satisfaction)}</div>
-                  </div>
-                  {(revisionPreview.warnings || []).map((warning) => <p key={warning} className="text-xs text-amber-300 mt-3">Warning: {warning}</p>)}
-                </div>
-              )}
             </div>
           )}
-          <div className="border border-slate-700 bg-slate-900/60 rounded-lg p-4">
-            <p className="text-sm font-semibold text-slate-200">Integration guarantee</p>
-            <p className="text-xs text-slate-400 mt-1">Other components should retrieve current official teams from <span className="font-mono text-sky-300">GET /api/final-allocations/active/teams</span> or supervisor-specific groups from <span className="font-mono text-sky-300">GET /api/final-allocations/active/supervisors/{'{supervisor_id}'}/groups</span>. After a revision is confirmed, these endpoints automatically return the new ACTIVE revision.</p>
-          </div>
         </div>
       )}
     </div>
   );
 }
-function Metric({ label, value }) {
-  return <div className="bg-slate-900/70 border border-slate-700 rounded-lg p-3"><p className="text-xs text-slate-500">{label}</p><p className="text-lg font-bold text-white mt-1">{value}</p></div>;
+function RevisionPreview({ preview, confirmRevision, confirmingRevision }) {
+  const original = preview.changes?.original_metrics || {};
+  const revised = preview.changes?.revised_metrics || {};
+  return (
+    <div className="mt-5 overflow-hidden rounded-xl border border-blue-200">
+      <div className="flex flex-col gap-3 bg-blue-50 px-4 py-3 sm:flex-row sm:items-center sm:justify-between"><div><p className="text-sm font-bold text-blue-900">Revision validation passed</p><p className="mt-1 text-xs text-blue-800">If confirmed, this becomes Revision {preview.next_revision_number} and the current allocation becomes ARCHIVED.</p></div><button type="button" onClick={confirmRevision} disabled={confirmingRevision} className="rounded-lg bg-blue-700 px-4 py-2.5 text-sm font-semibold text-white hover:bg-blue-800 disabled:opacity-40">{confirmingRevision ? 'Saving Revision...' : 'Confirm Revised Allocation'}</button></div>
+      <div className="p-4"><dl className="grid grid-cols-2 overflow-hidden rounded-lg border border-slate-200 lg:grid-cols-4"><Metric label="Moved Students" value={preview.changes?.moved_student_count ?? 0} /><Metric label="Supervisor Changes" value={preview.changes?.changed_supervisor_count ?? 0} bordered /><Metric label="Technical Coverage" value={percent(preview.candidate?.technical_requirement_coverage)} bordered /><Metric label="Preference Satisfaction" value={percent(preview.candidate?.preference_satisfaction)} bordered /></dl>
+        <div className="mt-4 overflow-x-auto rounded-lg border border-slate-200"><table className="w-full text-sm"><thead className="bg-slate-50 text-left text-xs text-slate-600"><tr><th className="px-3 py-2">Measure</th><th className="px-3 py-2">Original</th><th className="px-3 py-2">Revised</th></tr></thead><tbody><ComparisonRow label="Technical coverage" original={percent(original.technical_requirement_coverage)} revised={percent(revised.technical_requirement_coverage)} /><ComparisonRow label="Preference satisfaction" original={percent(original.preference_satisfaction)} revised={percent(revised.preference_satisfaction)} /></tbody></table></div>
+        {(preview.warnings || []).map((warning) => <p key={warning} className="mt-3 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-900">Warning: {warning}</p>)}
+      </div>
+    </div>
+  );
 }
+function Metric({ label, value, bordered }) { return <div className={`px-3 py-3 ${bordered ? 'border-l border-slate-100' : ''}`}><dt className="text-xs text-slate-500">{label}</dt><dd className="mt-1 text-lg font-bold text-slate-900">{value}</dd></div>; }
+function ComparisonRow({ label, original, revised }) { return <tr className="border-t border-slate-100"><td className="px-3 py-2 font-semibold text-slate-800">{label}</td><td className="px-3 py-2 text-slate-700">{original}</td><td className="px-3 py-2 font-semibold text-slate-900">{revised}</td></tr>; }

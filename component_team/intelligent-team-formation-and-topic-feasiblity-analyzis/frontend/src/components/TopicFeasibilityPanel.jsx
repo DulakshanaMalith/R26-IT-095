@@ -19,19 +19,12 @@ export default function TopicFeasibilityPanel({ workbookFile, selectedSolution, 
   const sourceTeam = teams.find((team) => team.project_id === sourceProjectId) || teams[0] || null;
   const targetProject = teams.find((team) => team.project_id === targetProjectId) || teams[0] || null;
   const inspectTechnicalCoverage = async () => {
-    if (!workbookFile) {
-      setErrorMessage('The cohort workbook is not available.');
-      return;
-    }
-    if (!sourceTeam || !targetProject) {
-      setErrorMessage('Please select a team and project.');
-      return;
-    }
-    const studentIds = sourceTeam.students.map((student) => student.student_id);
+    if (!workbookFile) return setErrorMessage('The cohort workbook is not available.');
+    if (!sourceTeam || !targetProject) return setErrorMessage('Please select a team and project.');
     const formData = new FormData();
     formData.append('file', workbookFile);
     formData.append('project_id', targetProject.project_id);
-    formData.append('team_student_ids', studentIds.join(','));
+    formData.append('team_student_ids', sourceTeam.students.map((student) => student.student_id).join(','));
     formData.append('students_per_team', String(studentsPerTeam));
     setAnalyzing(true);
     setErrorMessage('');
@@ -48,228 +41,35 @@ export default function TopicFeasibilityPanel({ workbookFile, selectedSolution, 
   };
   if (!selectedSolution || !teams.length) return null;
   return (
-    <section className="mt-8 bg-slate-800/80 border border-slate-700 rounded-xl p-6">
-      <div className="mb-6">
-        <div className="flex flex-wrap items-center gap-3">
-          <h2 className="text-2xl font-bold text-white">Technical Coverage Inspection</h2>
-          <span className="px-2.5 py-1 rounded-full text-xs font-semibold border border-indigo-500/40 bg-indigo-500/10 text-indigo-300">
-            Optional
-          </span>
-        </div>
-        <p className="text-sm text-slate-400 mt-2 max-w-3xl">
-          Inspect the requirement-level technical coverage of an existing team against an approved project or topic. Technical requirement coverage has already been considered during team formation, so this inspection provides a detailed explanation of that technical fit.
-        </p>
-        <div className="mt-4 border border-slate-600 bg-slate-900/60 rounded-lg p-4">
-          <p className="text-sm font-semibold text-slate-200">Decision-support inspection only</p>
-          <p className="text-xs text-slate-400 mt-1">
-            This step is optional. It does not change the selected team allocation, rerun NSGA-II, block supervisor allocation, or predict overall project success. Supervisor allocation can be performed independently.
-          </p>
-        </div>
+    <div className="border-t border-slate-100 p-6">
+      <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+        <div className="flex gap-3"><span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-blue-200 bg-blue-50 text-sm font-bold text-blue-700">4A</span><div><div className="flex flex-wrap items-center gap-2"><h2 className="text-lg font-bold text-slate-900">Technical Coverage Inspection</h2><span className="rounded-full border border-slate-200 bg-slate-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-slate-600">Optional</span></div><p className="mt-1 max-w-3xl text-sm text-slate-600">Inspect requirement-level technical coverage for an existing team and approved project. Technical coverage was already considered during team formation; this view explains the result in detail.</p></div></div>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-        <div>
-          <label className="block text-sm font-semibold text-slate-300 mb-2">
-            Team to Inspect
-          </label>
-          <select
-            value={sourceTeam?.project_id ?? ''}
-            onChange={(event) => {
-              setSourceProjectId(event.target.value);
-              setResult(null);
-              setErrorMessage('');
-            }}
-            className="w-full bg-slate-900 border border-slate-600 rounded-lg px-4 py-3 text-white"
-          >
-            {teams.map((team) => (
-              <option key={team.project_id} value={team.project_id}>
-                Team assigned to {team.project_id} — {team.project_title}
-              </option>
-            ))}
-          </select>
-          {sourceTeam && (
-            <div className="mt-3 flex flex-wrap gap-2">
-              {sourceTeam.students.map((student) => (
-                <span
-                  key={student.student_id}
-                  className="text-xs px-2 py-1 rounded bg-slate-900 border border-slate-700 text-slate-300"
-                >
-                  {student.student_id}
-                </span>
-              ))}
-            </div>
-          )}
-        </div>
-        <div>
-          <label className="block text-sm font-semibold text-slate-300 mb-2">
-            Project Requirements to Compare
-          </label>
-          <select
-            value={targetProject?.project_id ?? ''}
-            onChange={(event) => {
-              setTargetProjectId(event.target.value);
-              setResult(null);
-              setErrorMessage('');
-            }}
-            className="w-full bg-slate-900 border border-slate-600 rounded-lg px-4 py-3 text-white"
-          >
-            {teams.map((team) => (
-              <option key={team.project_id} value={team.project_id}>
-                {team.project_id} — {team.project_title}
-              </option>
-            ))}
-          </select>
-        </div>
+      <div className="mt-5 rounded-lg border border-blue-100 bg-blue-50 px-4 py-3 text-xs text-blue-900"><span className="font-semibold">Decision-support inspection only.</span> It does not change the selected allocation, rerun NSGA-II, block supervisor allocation, or predict overall project success.</div>
+      <div className="mt-5 grid gap-4 lg:grid-cols-2">
+        <div><label className="mb-2 block text-sm font-semibold text-slate-700">Team to inspect</label><select value={sourceTeam?.project_id ?? ''} onChange={(event) => { setSourceProjectId(event.target.value); setResult(null); setErrorMessage(''); }} className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-slate-900 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100">{teams.map((team) => <option key={team.project_id} value={team.project_id}>Team assigned to {team.project_id} — {team.project_title}</option>)}</select>{sourceTeam && <p className="mt-2 text-xs text-slate-500">Members: {sourceTeam.students.map((student) => student.student_id).join(', ')}</p>}</div>
+        <div><label className="mb-2 block text-sm font-semibold text-slate-700">Project requirements to compare</label><select value={targetProject?.project_id ?? ''} onChange={(event) => { setTargetProjectId(event.target.value); setResult(null); setErrorMessage(''); }} className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-slate-900 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100">{teams.map((team) => <option key={team.project_id} value={team.project_id}>{team.project_id} — {team.project_title}</option>)}</select></div>
       </div>
-      <div className="mt-6 flex flex-wrap items-center gap-4">
-        <button
-          type="button"
-          onClick={inspectTechnicalCoverage}
-          disabled={analyzing}
-          className="px-5 py-2.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-semibold disabled:opacity-40"
-        >
-          {analyzing ? 'Inspecting...' : 'Inspect Technical Coverage'}
-        </button>
-        {sourceTeam?.project_id === targetProject?.project_id && (
-          <p className="text-xs text-slate-500">
-            Inspecting this team against its currently assigned project.
-          </p>
-        )}
-      </div>
-      {errorMessage && (
-        <div className="mt-5 border border-red-500/40 bg-red-500/10 rounded-lg p-4 text-red-300">
-          {errorMessage}
-        </div>
-      )}
+      <div className="mt-4 flex flex-wrap items-center gap-3"><button type="button" onClick={inspectTechnicalCoverage} disabled={analyzing} className="rounded-lg border border-blue-700 bg-white px-4 py-2.5 text-sm font-semibold text-blue-700 hover:bg-blue-50 disabled:opacity-40">{analyzing ? 'Inspecting...' : 'Inspect Technical Coverage'}</button>{sourceTeam?.project_id === targetProject?.project_id && <p className="text-xs text-slate-500">Inspecting this team against its currently assigned project.</p>}</div>
+      {errorMessage && <div className="mt-4 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">{errorMessage}</div>}
       {result && <FeasibilityResult result={result} />}
-    </section>
+    </div>
   );
 }
 function FeasibilityResult({ result }) {
-  const gapRequirements = result.requirements.filter((requirement) => requirement.status === 'Gap');
+  const gaps = result.requirements.filter((requirement) => requirement.status === 'Gap');
   return (
-    <div className="mt-8">
-      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-6">
-        <div>
-          <p className="text-xs font-mono text-indigo-400">{result.project.project_id}</p>
-          <h3 className="text-xl font-bold text-white">{result.project.project_title}</h3>
-          <p className="text-xs text-slate-500 mt-1">Detailed technical requirement coverage</p>
-        </div>
-        <span
-          className={`px-3 py-1.5 rounded-full text-xs font-bold border ${
-            result.technical_deficit === 0
-              ? 'border-emerald-500/40 bg-emerald-500/10 text-emerald-300'
-              : 'border-amber-500/40 bg-amber-500/10 text-amber-300'
-          }`}
-        >
-          {result.status}
-        </span>
-      </div>
-      {result.team.is_remainder_team && (
-        <div className="mb-6 border border-indigo-500/40 bg-indigo-500/10 rounded-lg p-4">
-          <p className="font-semibold text-indigo-300">Approved Remainder Team</p>
-          <p className="text-sm text-slate-300 mt-1">
-            The cohort target is {result.team.expected_team_size} students per team, and this is the permitted remainder team containing {result.team.actual_team_size} student(s).
-          </p>
-        </div>
-      )}
-      {!result.team.team_size_matches_project && (
-        <div className="mb-6 border border-amber-500/40 bg-amber-500/10 rounded-lg p-4">
-          <p className="font-semibold text-amber-300">Team Size Mismatch</p>
-          <p className="text-sm text-slate-300 mt-1">
-            This project expects {result.team.expected_team_size} members, but the selected team currently contains {result.team.actual_team_size}.
-          </p>
-          <p className="text-xs text-slate-400 mt-2">
-            Technical coverage is still calculated for the current team. This result does not mean that the project's team size requirement has been satisfied.
-          </p>
-        </div>
-      )}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-7">
-        <MetricCard label="Technical Coverage" value={percent(result.technical_coverage)} />
-        <MetricCard label="Technical Deficit" value={percent(result.technical_deficit)} />
-        <MetricCard
-          label="Requirements Covered"
-          value={`${result.requirement_summary.covered_requirements} / ${result.requirement_summary.total_requirements}`}
-        />
-        <MetricCard
-          label="Technical Gaps"
-          value={result.requirement_summary.gap_requirements}
-        />
-      </div>
-      <div className="overflow-x-auto">
-        <table className="w-full text-sm">
-          <thead>
-            <tr className="border-b border-slate-700 text-left text-slate-400">
-              <th className="py-3 pr-4">Technology</th>
-              <th className="py-3 pr-4">Min Level</th>
-              <th className="py-3 pr-4">Required</th>
-              <th className="py-3 pr-4">Qualified</th>
-              <th className="py-3 pr-4">Coverage</th>
-              <th className="py-3">Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            {result.requirements.map((requirement) => (
-              <tr key={requirement.technology} className="border-b border-slate-800">
-                <td className="py-3 pr-4 font-semibold text-white">
-                  {requirement.technology}
-                </td>
-                <td className="py-3 pr-4">{requirement.min_level}</td>
-                <td className="py-3 pr-4">{requirement.required_members}</td>
-                <td className="py-3 pr-4">{requirement.qualified_members}</td>
-                <td className="py-3 pr-4">{percent(requirement.coverage)}</td>
-                <td className="py-3">
-                  <span
-                    className={`text-xs px-2 py-1 rounded-full ${
-                      requirement.status === 'Covered'
-                        ? 'bg-emerald-500/10 text-emerald-300'
-                        : 'bg-red-500/10 text-red-300'
-                    }`}
-                  >
-                    {requirement.status}
-                  </span>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      {gapRequirements.length > 0 && (
-        <div className="mt-7">
-          <h4 className="font-bold text-white mb-3">Identified Technical Gaps</h4>
-          <div className="space-y-3">
-            {gapRequirements.map((requirement) => (
-              <div
-                key={requirement.technology}
-                className="border border-red-500/30 bg-red-500/5 rounded-lg p-4"
-              >
-                <p className="font-semibold text-red-300">{requirement.technology}</p>
-                <p className="text-sm text-slate-400 mt-1">
-                  Requires {requirement.required_members} member(s) at level{' '}
-                  {requirement.min_level} or above, but only{' '}
-                  {requirement.qualified_members} currently qualify.
-                </p>
-                <p className="text-xs text-slate-500 mt-2">
-                  Additional qualified members needed: {requirement.gap_members}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-      <div className="mt-7 border border-slate-700 bg-slate-900/60 rounded-lg p-4 text-xs text-slate-400">
-        <p>{result.interpretation.scope_note}</p>
-        <p className="mt-2">
-          This inspection is explanatory only. It does not modify the selected allocation or control whether supervisor allocation can proceed.
-        </p>
+    <div className="mt-6 overflow-hidden rounded-xl border border-slate-200">
+      <div className="flex flex-col gap-3 bg-slate-50 px-5 py-4 sm:flex-row sm:items-center sm:justify-between"><div><p className="text-xs font-mono text-blue-700">{result.project.project_id}</p><h3 className="text-base font-bold text-slate-900">{result.project.project_title}</h3></div><span className={`w-fit rounded-full border px-3 py-1 text-xs font-semibold ${result.technical_deficit === 0 ? 'border-emerald-200 bg-emerald-50 text-emerald-800' : 'border-amber-200 bg-amber-50 text-amber-800'}`}>{result.status}</span></div>
+      <div className="p-5">
+        {result.team.is_remainder_team && <div className="mb-4 rounded-lg border border-blue-200 bg-blue-50 px-4 py-3 text-sm text-blue-900"><span className="font-semibold">Approved remainder team.</span> Target size is {result.team.expected_team_size}; this team contains {result.team.actual_team_size} student(s).</div>}
+        {!result.team.team_size_matches_project && <div className="mb-4 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900"><span className="font-semibold">Team size mismatch.</span> Project expects {result.team.expected_team_size} members but this team contains {result.team.actual_team_size}. Technical coverage is still shown for the current team.</div>}
+        <dl className="grid grid-cols-2 overflow-hidden rounded-lg border border-slate-200 lg:grid-cols-4"><Metric label="Technical Coverage" value={percent(result.technical_coverage)} /><Metric label="Technical Deficit" value={percent(result.technical_deficit)} bordered /><Metric label="Requirements Covered" value={`${result.requirement_summary.covered_requirements} / ${result.requirement_summary.total_requirements}`} bordered /><Metric label="Technical Gaps" value={result.requirement_summary.gap_requirements} bordered /></dl>
+        <div className="mt-5 overflow-x-auto rounded-lg border border-slate-200"><table className="w-full text-sm"><thead className="bg-slate-50 text-left text-xs text-slate-600"><tr><th className="px-3 py-2">Technology</th><th className="px-3 py-2">Min level</th><th className="px-3 py-2">Required</th><th className="px-3 py-2">Qualified</th><th className="px-3 py-2">Coverage</th><th className="px-3 py-2">Status</th></tr></thead><tbody>{result.requirements.map((requirement) => <tr key={requirement.technology} className="border-t border-slate-100"><td className="px-3 py-2 font-semibold text-slate-900">{requirement.technology}</td><td className="px-3 py-2 text-slate-700">{requirement.min_level}</td><td className="px-3 py-2 text-slate-700">{requirement.required_members}</td><td className="px-3 py-2 text-slate-700">{requirement.qualified_members}</td><td className="px-3 py-2 text-slate-700">{percent(requirement.coverage)}</td><td className="px-3 py-2"><span className={`rounded-full border px-2 py-0.5 text-xs font-semibold ${requirement.status === 'Covered' ? 'border-emerald-200 bg-emerald-50 text-emerald-800' : 'border-red-200 bg-red-50 text-red-800'}`}>{requirement.status}</span></td></tr>)}</tbody></table></div>
+        {gaps.length > 0 && <div className="mt-5 rounded-lg border border-red-200 bg-red-50 p-4"><h4 className="text-sm font-bold text-red-900">Identified technical gaps</h4><ul className="mt-2 space-y-2 text-sm text-red-800">{gaps.map((requirement) => <li key={requirement.technology}><span className="font-semibold">{requirement.technology}:</span> requires {requirement.required_members} member(s) at level {requirement.min_level}+, but {requirement.qualified_members} qualify. Additional qualified members needed: {requirement.gap_members}.</li>)}</ul></div>}
+        <p className="mt-5 text-xs text-slate-500">{result.interpretation.scope_note}</p>
       </div>
     </div>
   );
 }
-function MetricCard({ label, value }) {
-  return (
-    <div className="bg-slate-900/70 border border-slate-700 rounded-xl p-4">
-      <p className="text-xs uppercase text-slate-500">{label}</p>
-      <p className="text-2xl font-bold text-white mt-2">{value}</p>
-    </div>
-  );
-}
+function Metric({ label, value, bordered }) { return <div className={`px-4 py-3 ${bordered ? 'border-l border-slate-100' : ''}`}><dt className="text-xs text-slate-500">{label}</dt><dd className="mt-1 text-lg font-bold text-slate-900">{value}</dd></div>; }
