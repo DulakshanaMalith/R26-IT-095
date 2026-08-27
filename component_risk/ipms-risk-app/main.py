@@ -1,4 +1,5 @@
 from fastapi import FastAPI, Request, Form
+from fastapi.responses import RedirectResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 import joblib
@@ -6,7 +7,9 @@ import pandas as pd
 import requests
 from datetime import datetime, timedelta
 from pathlib import Path
+import os
 import re
+import threading
 import time
 
 from dotenv import load_dotenv
@@ -19,8 +22,15 @@ load_dotenv(BASE_DIR / ".env")
 
 from contribution import build_headers, compute_contribution_index
 from jira_client import compute_project_metrics, fetch_project_issues, get_jira_analytics
+import auth
+import database
+import emailer
+import risk_monitor
 
 app = FastAPI()
+
+# Create the SQLite tables on first run.
+database.init_db()
 
 templates = Jinja2Templates(directory=str(BASE_DIR / "templates"))
 app.mount("/static", StaticFiles(directory=str(BASE_DIR / "static")), name="static")
@@ -232,27 +242,76 @@ def get_github_metrics(github_url):
     }
 
 
+def resolve_analysis_target(user, project_id, github_url, jira_project_key):
+    """Decides which repo / Jira project this user is allowed to analyse.
+
+    Returns (github_url, jira_project_key, project, error). Students are
+    restricted to projects they belong to; supervisors may also analyse an
+    arbitrary repository they type in.
+    """
+    project = auth.resolve_project(user, project_id)
+
+    if project:
+        return project["github_url"], project["jira_project_key"], project, None
+
+    if user["role"] == "supervisor":
+        return github_url.strip(), jira_project_key.strip(), None, None
+
+    return "", "", None, (
+        "Students can only view their own assigned project. "
+        "Pick a project from My Projects."
+    )
+
+
 @app.get("/")
-def home(request: Request):
+def home(request: Request, project_id: int = 0):
+    user = auth.current_user(request)
+    if user is None:
+        return RedirectResponse("/login", status_code=303)
+
+    form_data = dict(DEFAULT_FORM_DATA)
+    project = auth.resolve_project(user, project_id)
+
+    if project:
+        form_data.update({
+            "sample_profile": "",
+            "project_name": project["name"],
+            "team_id": project["team_id"],
+            "github_url": project["github_url"],
+            "jira_project_key": project["jira_project_key"]
+        })
+
     return templates.TemplateResponse(
         request=request,
         name="index.html",
         context={
             "result": None,
-            "form_data": DEFAULT_FORM_DATA
+            "form_data": form_data,
+            "user": user,
+            "project": project,
+            "projects": auth.visible_projects(user)
         }
     )
 
 
 @app.get("/contribution")
-def contribution_page(request: Request):
+def contribution_page(request: Request, project_id: int = 0):
+    user = auth.current_user(request)
+    if user is None:
+        return RedirectResponse("/login", status_code=303)
+
+    project = auth.resolve_project(user, project_id)
+
     return templates.TemplateResponse(
         request=request,
         name="contribution.html",
         context={
             "analysis": None,
-            "github_url": "",
-            "jira_project_key": ""
+            "github_url": project["github_url"] if project else "",
+            "jira_project_key": project["jira_project_key"] if project else "",
+            "user": user,
+            "project": project,
+            "projects": auth.visible_projects(user)
         }
     )
 
@@ -260,13 +319,23 @@ def contribution_page(request: Request):
 @app.post("/contribution")
 def analyze_contribution(
     request: Request,
-    github_url: str = Form(...),
-    jira_project_key: str = Form("")
+    github_url: str = Form(""),
+    jira_project_key: str = Form(""),
+    project_id: int = Form(0)
 ):
-    analysis = compute_contribution_index(github_url)
+    user = auth.current_user(request)
+    if user is None:
+        return RedirectResponse("/login", status_code=303)
 
-    jira_project_key = jira_project_key.strip()
-    analysis["jira"] = get_jira_analytics(jira_project_key) if jira_project_key else None
+    github_url, jira_project_key, project, error = resolve_analysis_target(
+        user, project_id, github_url, jira_project_key
+    )
+
+    if error:
+        analysis = {"error": error, "members": [], "warnings": [], "jira": None}
+    else:
+        analysis = compute_contribution_index(github_url)
+        analysis["jira"] = get_jira_analytics(jira_project_key) if jira_project_key else None
 
     return templates.TemplateResponse(
         request=request,
@@ -274,7 +343,10 @@ def analyze_contribution(
         context={
             "analysis": analysis,
             "github_url": github_url,
-            "jira_project_key": jira_project_key
+            "jira_project_key": jira_project_key,
+            "user": user,
+            "project": project,
+            "projects": auth.visible_projects(user)
         }
     )
 
@@ -424,6 +496,12 @@ def build_dashboard_data(github_url, jira_project_key):
     else:
         warnings.append("No Jira project key provided — delivery metrics default to 0.")
 
+    if not emailer.is_configured():
+        warnings.append(
+            "Automatic risk emails are disabled — set SMTP_HOST, SMTP_USERNAME and "
+            "SMTP_PASSWORD in .env to enable them."
+        )
+
     delivery = jira_metrics or {
         "total_tasks": 0,
         "completed_tasks": 0,
@@ -491,19 +569,53 @@ DASHBOARD_CACHE_TTL_SECONDS = 120
 
 
 @app.get("/dashboard")
-def dashboard_page(request: Request, github_url: str = "", jira_project_key: str = ""):
+def dashboard_page(
+    request: Request,
+    github_url: str = "",
+    jira_project_key: str = "",
+    project_id: int = 0
+):
+    user = auth.current_user(request)
+    if user is None:
+        return RedirectResponse("/login", status_code=303)
+
+    github_url, jira_project_key, project, error = resolve_analysis_target(
+        user, project_id, github_url, jira_project_key
+    )
+
     return templates.TemplateResponse(
         request=request,
         name="dashboard.html",
         context={
-            "github_url": github_url.strip(),
-            "jira_project_key": jira_project_key.strip()
+            "github_url": github_url,
+            "jira_project_key": jira_project_key,
+            "access_error": error,
+            "project_id": project_id,
+            "user": user,
+            "project": project,
+            "projects": auth.visible_projects(user)
         }
     )
 
 
 @app.get("/api/dashboard-data")
-def dashboard_data(github_url: str, jira_project_key: str = "", force: int = 0):
+def dashboard_data(
+    request: Request,
+    github_url: str = "",
+    jira_project_key: str = "",
+    force: int = 0,
+    project_id: int = 0
+):
+    user = auth.current_user(request)
+    if user is None:
+        return {"error": "Not signed in.", "alerts": [], "warnings": ["Please sign in again."]}
+
+    github_url, jira_project_key, _project, access_error = resolve_analysis_target(
+        user, project_id, github_url, jira_project_key
+    )
+    if access_error:
+        return {"error": access_error, "alerts": [], "warnings": [access_error]}
+
     cache_key = (github_url.strip(), jira_project_key.strip())
     now = time.time()
 
@@ -516,11 +628,23 @@ def dashboard_data(github_url: str, jira_project_key: str = "", force: int = 0):
     data = build_dashboard_data(*cache_key)
     data["cached"] = False
     DASHBOARD_CACHE[cache_key] = (now, data)
+
+    # Automatic risk email when a registered project becomes at-risk.
+    if _project is not None:
+        try:
+            risk_monitor.evaluate_project_risk(_project, data.get("risk_status"), data)
+        except Exception:
+            pass
+
     return data
 
 
 @app.get("/api/jira-metrics")
-def jira_metrics(project_key: str):
+def jira_metrics(request: Request, project_key: str):
+    user = auth.current_user(request)
+    if user is None:
+        return {"error": "Not signed in.", "metrics": None}
+
     issues, error = fetch_project_issues(project_key.strip())
 
     if error:
@@ -537,8 +661,9 @@ def predict_risk(
     request: Request,
     project_name: str = Form(...),
     team_id: str = Form(...),
-    github_url: str = Form(...),
+    github_url: str = Form(""),
     jira_project_key: str = Form(""),
+    project_id: int = Form(0),
     sample_profile: str = Form(""),
     overdue_tasks: int = Form(...),
     task_completion_rate: float = Form(...),
@@ -548,6 +673,27 @@ def predict_risk(
     progress_percentage: float = Form(...),
     delay_count: int = Form(...)
 ):
+    user = auth.current_user(request)
+    if user is None:
+        return RedirectResponse("/login", status_code=303)
+
+    github_url, jira_project_key, project, access_error = resolve_analysis_target(
+        user, project_id, github_url, jira_project_key
+    )
+    if access_error:
+        return templates.TemplateResponse(
+            request=request,
+            name="index.html",
+            context={
+                "result": None,
+                "form_data": dict(DEFAULT_FORM_DATA),
+                "access_error": access_error,
+                "user": user,
+                "project": None,
+                "projects": auth.visible_projects(user)
+            }
+        )
+
     github_metrics = SAMPLE_GITHUB_METRICS.get(sample_profile) or get_github_metrics(github_url)
 
     # When a Jira project key is provided, delivery metrics come from Jira
@@ -609,10 +755,20 @@ def predict_risk(
 
     risk_status = LABEL_MAP.get(prediction, str(prediction))
 
+    # Automatic risk email when a registered project becomes at-risk.
+    if project is not None:
+        try:
+            risk_monitor.evaluate_project_risk(project, risk_status, None)
+        except Exception:
+            pass
+
     return templates.TemplateResponse(
         request=request,
         name="index.html",
         context={
+            "user": user,
+            "project": project,
+            "projects": auth.visible_projects(user),
             "form_data": form_data,
             "result": {
                 "project_name": project_name,
@@ -625,3 +781,282 @@ def predict_risk(
             }
         }
     )
+
+
+# =========================================================================
+# Authentication: register, login, logout
+# =========================================================================
+
+@app.get("/register")
+def register_page(request: Request):
+    if auth.current_user(request):
+        return RedirectResponse("/projects", status_code=303)
+
+    return templates.TemplateResponse(
+        request=request,
+        name="register.html",
+        context={"error": None, "form": {}}
+    )
+
+
+@app.post("/register")
+def register_submit(
+    request: Request,
+    full_name: str = Form(...),
+    email: str = Form(...),
+    password: str = Form(...),
+    role: str = Form(...)
+):
+    error = auth.validate_registration(email, full_name, password, role)
+
+    if error:
+        return templates.TemplateResponse(
+            request=request,
+            name="register.html",
+            context={
+                "error": error,
+                "form": {"full_name": full_name, "email": email, "role": role}
+            }
+        )
+
+    auth.register_user(email, full_name, password, role)
+    token, login_error = auth.login(email, password)
+
+    if login_error:
+        return RedirectResponse("/login", status_code=303)
+
+    response = RedirectResponse("/projects", status_code=303)
+    auth.set_session_cookie(response, token)
+    return response
+
+
+@app.get("/login")
+def login_page(request: Request):
+    if auth.current_user(request):
+        return RedirectResponse("/projects", status_code=303)
+
+    return templates.TemplateResponse(
+        request=request,
+        name="login.html",
+        context={"error": None, "email": ""}
+    )
+
+
+@app.post("/login")
+def login_submit(request: Request, email: str = Form(...), password: str = Form(...)):
+    token, error = auth.login(email, password)
+
+    if error:
+        return templates.TemplateResponse(
+            request=request,
+            name="login.html",
+            context={"error": error, "email": email}
+        )
+
+    response = RedirectResponse("/projects", status_code=303)
+    auth.set_session_cookie(response, token)
+    return response
+
+
+@app.get("/logout")
+def logout(request: Request):
+    auth.logout(request.cookies.get(auth.SESSION_COOKIE))
+    response = RedirectResponse("/login", status_code=303)
+    auth.clear_session_cookie(response)
+    return response
+
+
+# =========================================================================
+# Projects: the role-aware landing page
+# =========================================================================
+
+@app.get("/projects")
+def projects_page(request: Request, message: str = ""):
+    user = auth.current_user(request)
+    if user is None:
+        return RedirectResponse("/login", status_code=303)
+
+    return templates.TemplateResponse(
+        request=request,
+        name="projects.html",
+        context={
+            "user": user,
+            "projects": auth.visible_projects(user),
+            "message": message
+        }
+    )
+
+
+@app.post("/projects/new")
+def create_project(
+    request: Request,
+    name: str = Form(...),
+    team_id: str = Form(...),
+    github_url: str = Form(""),
+    jira_project_key: str = Form("")
+):
+    user = auth.current_user(request)
+    if user is None:
+        return RedirectResponse("/login", status_code=303)
+
+    # Only supervisors may create projects.
+    if user["role"] != "supervisor":
+        return RedirectResponse(
+            "/projects?message=Only+supervisors+can+create+projects.", status_code=303
+        )
+
+    database.create_project(name, team_id, github_url, jira_project_key, user["id"])
+    return RedirectResponse("/projects?message=Project+created.", status_code=303)
+
+
+@app.get("/projects/{project_id}")
+def project_detail(request: Request, project_id: int, message: str = ""):
+    user = auth.current_user(request)
+    if user is None:
+        return RedirectResponse("/login", status_code=303)
+
+    project = auth.resolve_project(user, project_id)
+    if project is None:
+        return RedirectResponse(
+            "/projects?message=You+do+not+have+access+to+that+project.", status_code=303
+        )
+
+    supervisor = database.get_user_by_id(project["supervisor_id"])
+    assigned = database.list_members(project_id)
+    assigned_ids = {member["id"] for member in assigned}
+
+    return templates.TemplateResponse(
+        request=request,
+        name="project_detail.html",
+        context={
+            "user": user,
+            "project": project,
+            "projects": auth.visible_projects(user),
+            "supervisor": supervisor,
+            "members": assigned,
+            "available_students": [
+                student for student in database.list_students()
+                if student["id"] not in assigned_ids
+            ],
+            "message": message
+        }
+    )
+
+
+@app.post("/projects/{project_id}/edit")
+def edit_project(
+    request: Request,
+    project_id: int,
+    name: str = Form(...),
+    team_id: str = Form(...),
+    github_url: str = Form(""),
+    jira_project_key: str = Form("")
+):
+    user = auth.current_user(request)
+    if user is None:
+        return RedirectResponse("/login", status_code=303)
+
+    project = auth.resolve_project(user, project_id)
+    if project is None or user["role"] != "supervisor":
+        return RedirectResponse(
+            "/projects?message=Only+the+supervisor+can+edit+this+project.", status_code=303
+        )
+
+    database.update_project(project_id, name, team_id, github_url, jira_project_key)
+    return RedirectResponse(f"/projects/{project_id}?message=Project+updated.", status_code=303)
+
+
+@app.post("/projects/{project_id}/members")
+def add_project_member(
+    request: Request,
+    project_id: int,
+    user_id: int = Form(...),
+    github_login: str = Form(""),
+    jira_name: str = Form("")
+):
+    user = auth.current_user(request)
+    if user is None:
+        return RedirectResponse("/login", status_code=303)
+
+    project = auth.resolve_project(user, project_id)
+    if project is None or user["role"] != "supervisor":
+        return RedirectResponse(
+            "/projects?message=Only+the+supervisor+can+manage+members.", status_code=303
+        )
+
+    database.add_member(project_id, user_id, github_login, jira_name)
+    return RedirectResponse(f"/projects/{project_id}?message=Member+added.", status_code=303)
+
+
+@app.post("/projects/{project_id}/members/remove")
+def remove_project_member(request: Request, project_id: int, user_id: int = Form(...)):
+    user = auth.current_user(request)
+    if user is None:
+        return RedirectResponse("/login", status_code=303)
+
+    project = auth.resolve_project(user, project_id)
+    if project is None or user["role"] != "supervisor":
+        return RedirectResponse(
+            "/projects?message=Only+the+supervisor+can+manage+members.", status_code=303
+        )
+
+    database.remove_member(project_id, user_id)
+    return RedirectResponse(f"/projects/{project_id}?message=Member+removed.", status_code=303)
+
+
+# =========================================================================
+# Background risk monitor: checks every registered project on an interval
+# and emails the team when one becomes at-risk (even if nobody is watching).
+# =========================================================================
+
+def risk_monitor_loop():
+    try:
+        interval_minutes = max(int(os.environ.get("RISK_CHECK_INTERVAL_MINUTES", "60")), 5)
+    except ValueError:
+        interval_minutes = 60
+
+    # Small delay so restarts don't immediately spend API rate limit.
+    time.sleep(120)
+
+    while True:
+        for project in database.list_projects_with_repo():
+            try:
+                data = build_dashboard_data(
+                    project["github_url"], project["jira_project_key"]
+                )
+                risk_monitor.evaluate_project_risk(
+                    project, data.get("risk_status"), data
+                )
+            except Exception:
+                pass
+
+        time.sleep(interval_minutes * 60)
+
+
+@app.on_event("startup")
+def start_risk_monitor():
+    if emailer.is_configured() and os.environ.get("RISK_MONITOR_ENABLED", "1") != "0":
+        threading.Thread(target=risk_monitor_loop, daemon=True).start()
+
+
+@app.post("/api/test-email")
+def send_test_email(request: Request):
+    """Lets a supervisor confirm the SMTP settings by emailing themselves."""
+    user = auth.current_user(request)
+    if user is None or user["role"] != "supervisor":
+        return {"error": "Only signed-in supervisors can send a test email.", "sent_to": None}
+
+    if not emailer.is_configured():
+        return {
+            "error": "Email is not configured. Set SMTP_HOST, SMTP_USERNAME and "
+                     "SMTP_PASSWORD in .env, then restart the server.",
+            "sent_to": None
+        }
+
+    error = emailer.send_email(
+        [user["email"]],
+        "[IPMS] Test email",
+        "This is a test email from the Intelligent Project Management System.\n"
+        "If you received this, automatic risk alerts are working."
+    )
+    return {"error": error, "sent_to": None if error else user["email"]}

@@ -9,19 +9,15 @@
 <body>
 
 <div class="app-shell">
-    <header class="app-header">
-        <div>
-            <p class="eyebrow">Intelligent Project Management System</p>
-            <h1>Risk Prediction</h1>
-        </div>
-        <nav class="page-nav">
-            <a href="/" class="active">Risk Prediction</a>
-            <a href="/contribution">Contribution Index</a>
-            <a href="/dashboard">Dashboard</a>
-        </nav>
-    </header>
+    {% with page_title = 'Risk Prediction', active_page = 'risk' %}
+        {% include '_nav.html' %}
+    {% endwith %}
 
     <main class="workspace">
+        {% if access_error %}
+        <div class="warning-box error">{{ access_error }}</div>
+        {% endif %}
+
         <section class="panel input-panel">
             <div class="panel-heading">
                 <div>
@@ -37,6 +33,7 @@
             </div>
 
             <form action="/predict" method="post">
+                <input type="hidden" name="project_id" value="{{ project.id if project else 0 }}">
                 <input type="hidden" name="sample_profile" value="{{ form_data.sample_profile }}">
 
                 <div class="form-section">
@@ -65,7 +62,13 @@
                             </label>
                             <button type="button" class="secondary" id="jira-fetch">Fetch from Jira</button>
                         </div>
-                        <p class="field-note" id="jira-status">Delivery metrics are fetched from Jira automatically when a key is set.</p>
+                        {% if user and user.role == 'student' %}
+                <p class="field-note">
+                    You are viewing your assigned project. The repository and Jira key
+                    are set by your supervisor and cannot be changed here.
+                </p>
+                {% endif %}
+                <p class="field-note" id="jira-status">Delivery metrics are fetched from Jira automatically when a key is set.</p>
                 </div>
 
                 <div class="form-section">

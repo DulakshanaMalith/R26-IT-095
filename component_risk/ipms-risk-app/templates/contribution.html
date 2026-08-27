@@ -9,17 +9,9 @@
 <body>
 
 <div class="app-shell">
-    <header class="app-header">
-        <div>
-            <p class="eyebrow">Intelligent Project Management System</p>
-            <h1>Contribution Index</h1>
-        </div>
-        <nav class="page-nav">
-            <a href="/">Risk Prediction</a>
-            <a href="/contribution" class="active">Contribution Index</a>
-            <a href="/dashboard">Dashboard</a>
-        </nav>
-    </header>
+    {% with page_title = 'Contribution Index', active_page = 'contribution' %}
+        {% include '_nav.html' %}
+    {% endwith %}
 
     <main class="workspace single-column">
         <section class="panel input-panel">
@@ -31,6 +23,7 @@
             </div>
 
             <form action="/contribution" method="post">
+                <input type="hidden" name="project_id" value="{{ project.id if project else 0 }}">
                 <div class="field-grid">
                     <label>
                         <span>GitHub Repository URL</span>
@@ -41,6 +34,12 @@
                         <input type="text" name="jira_project_key" value="{{ jira_project_key }}" placeholder="e.g. IPMS">
                     </label>
                 </div>
+                {% if user and user.role == 'student' %}
+                <p class="field-note">
+                    You are viewing your assigned project. The repository and Jira key
+                    are set by your supervisor and cannot be changed here.
+                </p>
+                {% endif %}
                 <button type="submit">Calculate Contribution Index</button>
             </form>
         </section>

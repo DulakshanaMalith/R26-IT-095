@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPMS Project</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="app-shell">
+    {% with page_title = project.name, active_page = 'projects' %}
+        {% include '_nav.html' %}
+    {% endwith %}
+
+    <main class="workspace single-column">
+        {% if message %}
+        <div class="info-box">{{ message }}</div>
+        {% endif %}
+
+        <section class="panel input-panel">
+            <div class="panel-heading">
+                <div>
+                    <p class="eyebrow">Project</p>
+                    <h2>{{ project.name }}</h2>
+                </div>
+                <div class="project-actions">
+                    <a href="/dashboard?project_id={{ project.id }}" class="pill-link primary">Dashboard</a>
+                    <a href="/contribution?project_id={{ project.id }}" class="pill-link">Contributions</a>
+                    <a href="/?project_id={{ project.id }}" class="pill-link">Risk</a>
+                </div>
+            </div>
+
+            <div class="metrics-grid team-summary">
+                <div class="metric-card">
+                    <span>Team ID</span>
+                    <strong>{{ project.team_id }}</strong>
+                </div>
+                <div class="metric-card">
+                    <span>Supervisor</span>
+                    <strong>{{ supervisor.full_name if supervisor else 'Unknown' }}</strong>
+                </div>
+                <div class="metric-card">
+                    <span>Jira Project</span>
+                    <strong>{{ project.jira_project_key or '—' }}</strong>
+                </div>
+            </div>
+
+            <p class="field-note">
+                Repository:
+                {% if project.github_url %}{{ project.github_url }}{% else %}not set{% endif %}
+            </p>
+        </section>
+
+        <section class="panel input-panel">
+            <div class="panel-heading">
+                <div>
+                    <p class="eyebrow">Team</p>
+                    <h2>Members ({{ members|length }})</h2>
+                </div>
+            </div>
+
+            {% if members %}
+            <div class="member-table">
+                {% for m in members %}
+                <div class="member-line">
+                    <div>
+                        <strong>{{ m.full_name }}</strong>
+                        <span class="project-meta">{{ m.email }}</span>
+                        <span class="project-meta">
+                            GitHub: {{ m.github_login or '—' }} &middot; Jira: {{ m.jira_name or '—' }}
+                        </span>
+                    </div>
+                    {% if user.role == 'supervisor' %}
+                    <form action="/projects/{{ project.id }}/members/remove" method="post">
+                        <input type="hidden" name="user_id" value="{{ m.id }}">
+                        <button type="submit" class="secondary danger">Remove</button>
+                    </form>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <p class="chart-note">No students assigned to this project yet.</p>
+            {% endif %}
+        </section>
+
+        {% if user.role == 'supervisor' %}
+        <section class="panel input-panel">
+            <div class="panel-heading">
+                <div>
+                    <p class="eyebrow">Supervisor Only</p>
+                    <h2>Add a Student</h2>
+                </div>
+            </div>
+
+            {% if available_students %}
+            <form action="/projects/{{ project.id }}/members" method="post">
+                <div class="field-grid">
+                    <label>
+                        <span>Student</span>
+                        <select name="user_id" required>
+                            {% for s in available_students %}
+                            <option value="{{ s.id }}">{{ s.full_name }} ({{ s.email }})</option>
+                            {% endfor %}
+                        </select>
+                    </label>
+                    <label>
+                        <span>GitHub Username (optional)</span>
+                        <input type="text" name="github_login" placeholder="octocat">
+                    </label>
+                    <label>
+                        <span>Jira Display Name (optional)</span>
+                        <input type="text" name="jira_name" placeholder="Jane Perera">
+                    </label>
+                </div>
+                <p class="field-note">
+                    Linking GitHub and Jira names lets the system match this student
+                    to their activity in the analytics.
+                </p>
+                <button type="submit">Add Student</button>
+            </form>
+            {% else %}
+            <p class="chart-note">
+                Every registered student is already on this project. New students must
+                register an account first.
+            </p>
+            {% endif %}
+        </section>
+
+        <section class="panel input-panel">
+            <div class="panel-heading">
+                <div>
+                    <p class="eyebrow">Supervisor Only</p>
+                    <h2>Edit Project</h2>
+                </div>
+            </div>
+
+            <form action="/projects/{{ project.id }}/edit" method="post">
+                <div class="field-grid">
+                    <label>
+                        <span>Project Name</span>
+                        <input type="text" name="name" value="{{ project.name }}" required>
+                    </label>
+                    <label>
+                        <span>Team ID</span>
+                        <input type="text" name="team_id" value="{{ project.team_id }}" required>
+                    </label>
+                    <label>
+                        <span>GitHub Repository URL</span>
+                        <input type="url" name="github_url" value="{{ project.github_url }}">
+                    </label>
+                    <label>
+                        <span>Jira Project Key</span>
+                        <input type="text" name="jira_project_key" value="{{ project.jira_project_key }}">
+                    </label>
+                </div>
+                <button type="submit">Save Changes</button>
+            </form>
+        </section>
+        {% endif %}
+    </main>
+</div>
+
+</body>
+</html>

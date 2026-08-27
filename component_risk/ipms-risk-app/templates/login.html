@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPMS Sign In</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="auth-shell">
+    <div class="panel auth-panel">
+        <p class="eyebrow">Intelligent Project Management System</p>
+        <h1 class="auth-title">Sign In</h1>
+
+        {% if error %}
+        <div class="warning-box error">{{ error }}</div>
+        {% endif %}
+
+        <form action="/login" method="post">
+            <label>
+                <span>Email</span>
+                <input type="email" name="email" value="{{ email }}" required autofocus>
+            </label>
+            <label>
+                <span>Password</span>
+                <input type="password" name="password" required>
+            </label>
+            <button type="submit">Sign In</button>
+        </form>
+
+        <p class="auth-alt">No account yet? <a href="/register">Create one</a></p>
+    </div>
+</div>
+
+</body>
+</html>

@@ -9,19 +9,15 @@
 <body>
 
 <div class="app-shell">
-    <header class="app-header">
-        <div>
-            <p class="eyebrow">Intelligent Project Management System</p>
-            <h1>Analytics Dashboard</h1>
-        </div>
-        <nav class="page-nav">
-            <a href="/">Risk Prediction</a>
-            <a href="/contribution">Contribution Index</a>
-            <a href="/dashboard" class="active">Dashboard</a>
-        </nav>
-    </header>
+    {% with page_title = 'Analytics Dashboard', active_page = 'dashboard' %}
+        {% include '_nav.html' %}
+    {% endwith %}
 
     <main class="workspace single-column">
+        {% if access_error %}
+        <div class="warning-box error">{{ access_error }}</div>
+        {% endif %}
+
         <section class="panel input-panel">
             <div class="panel-heading">
                 <div>
@@ -31,6 +27,7 @@
             </div>
 
             <form action="/dashboard" method="get">
+                <input type="hidden" name="project_id" value="{{ project.id if project else 0 }}">
                 <div class="field-grid">
                     <label>
                         <span>GitHub Repository URL</span>
@@ -41,6 +38,12 @@
                         <input type="text" name="jira_project_key" value="{{ jira_project_key }}" placeholder="e.g. IPMS">
                     </label>
                 </div>
+                {% if user and user.role == 'student' %}
+                <p class="field-note">
+                    You are viewing your assigned project. The repository and Jira key
+                    are set by your supervisor and cannot be changed here.
+                </p>
+                {% endif %}
                 <button type="submit">Load Dashboard</button>
             </form>
         </section>
@@ -110,6 +113,7 @@
 <script>
     const GITHUB_URL = {{ github_url|tojson }};
     const JIRA_KEY = {{ jira_project_key|tojson }};
+    const PROJECT_ID = {{ (project.id if project else 0)|tojson }};
     const REFRESH_SECONDS = 60;
 
     function esc(value) {
@@ -281,7 +285,8 @@
     async function loadDashboard(force) {
         const params = new URLSearchParams({
             github_url: GITHUB_URL,
-            jira_project_key: JIRA_KEY
+            jira_project_key: JIRA_KEY,
+            project_id: PROJECT_ID
         });
         if (force) {
             params.set("force", "1");

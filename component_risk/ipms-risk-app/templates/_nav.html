@@ -1,0 +1,21 @@
+<header class="app-header">
+    <div>
+        <p class="eyebrow">Intelligent Project Management System</p>
+        <h1>{{ page_title }}</h1>
+    </div>
+    <div class="header-right">
+        <nav class="page-nav">
+            <a href="/projects" {% if active_page == 'projects' %}class="active"{% endif %}>My Projects</a>
+            <a href="/{% if project %}?project_id={{ project.id }}{% endif %}" {% if active_page == 'risk' %}class="active"{% endif %}>Risk Prediction</a>
+            <a href="/contribution{% if project %}?project_id={{ project.id }}{% endif %}" {% if active_page == 'contribution' %}class="active"{% endif %}>Contribution Index</a>
+            <a href="/dashboard{% if project %}?project_id={{ project.id }}{% endif %}" {% if active_page == 'dashboard' %}class="active"{% endif %}>Dashboard</a>
+        </nav>
+        {% if user %}
+        <div class="user-chip">
+            <span class="user-name">{{ user.full_name }}</span>
+            <span class="role-badge {{ user.role }}">{{ user.role|title }}</span>
+            <a href="/logout" class="logout-link">Sign out</a>
+        </div>
+        {% endif %}
+    </div>
+</header>

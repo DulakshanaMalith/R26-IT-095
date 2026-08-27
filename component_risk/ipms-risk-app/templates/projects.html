@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPMS My Projects</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="app-shell">
+    {% with page_title = 'My Projects', active_page = 'projects', project = None %}
+        {% include '_nav.html' %}
+    {% endwith %}
+
+    <main class="workspace single-column">
+        {% if message %}
+        <div class="info-box">{{ message }}</div>
+        {% endif %}
+
+        <section class="panel input-panel">
+            <div class="panel-heading">
+                <div>
+                    <p class="eyebrow">{{ user.role|title }} View</p>
+                    <h2>
+                        {% if user.role == 'supervisor' %}Projects You Supervise
+                        {% else %}Your Project Team{% endif %}
+                    </h2>
+                </div>
+            </div>
+
+            {% if projects %}
+            <div class="project-list">
+                {% for p in projects %}
+                <article class="project-card">
+                    <div class="project-main">
+                        <a href="/projects/{{ p.id }}" class="project-name">{{ p.name }}</a>
+                        <span class="project-meta">
+                            Team {{ p.team_id }} &middot; {{ p.member_count }} member(s)
+                            {% if p.jira_project_key %} &middot; Jira {{ p.jira_project_key }}{% endif %}
+                        </span>
+                        <span class="project-meta">
+                            {% if p.github_url %}{{ p.github_url }}{% else %}<em>No GitHub repository set</em>{% endif %}
+                        </span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="/dashboard?project_id={{ p.id }}" class="pill-link primary">Dashboard</a>
+                        <a href="/contribution?project_id={{ p.id }}" class="pill-link">Contributions</a>
+                        <a href="/?project_id={{ p.id }}" class="pill-link">Risk</a>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="empty-state">
+                <span class="empty-mark"></span>
+                <h3>No Projects Yet</h3>
+                <p>
+                    {% if user.role == 'supervisor' %}
+                        Create your first project below to start monitoring a team.
+                    {% else %}
+                        You have not been added to a project team yet. Your supervisor
+                        needs to assign you to one.
+                    {% endif %}
+                </p>
+            </div>
+            {% endif %}
+        </section>
+
+        {% if user.role == 'supervisor' %}
+        <section class="panel input-panel">
+            <div class="panel-heading">
+                <div>
+                    <p class="eyebrow">Supervisor Only</p>
+                    <h2>Create a Project</h2>
+                </div>
+            </div>
+
+            <form action="/projects/new" method="post">
+                <div class="field-grid">
+                    <label>
+                        <span>Project Name</span>
+                        <input type="text" name="name" placeholder="Student Portal Upgrade" required>
+                    </label>
+                    <label>
+                        <span>Team ID</span>
+                        <input type="text" name="team_id" placeholder="TEAM-101" required>
+                    </label>
+                    <label>
+                        <span>GitHub Repository URL</span>
+                        <input type="url" name="github_url" placeholder="https://github.com/user/repo">
+                    </label>
+                    <label>
+                        <span>Jira Project Key</span>
+                        <input type="text" name="jira_project_key" placeholder="IPMS">
+                    </label>
+                </div>
+                <button type="submit">Create Project</button>
+            </form>
+        </section>
+        {% endif %}
+    </main>
+</div>
+
+</body>
+</html>
