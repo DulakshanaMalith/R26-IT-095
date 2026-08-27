@@ -10,3 +10,4 @@ requests
 jinja2
 python-multipart
 python-dotenv
+openpyxl

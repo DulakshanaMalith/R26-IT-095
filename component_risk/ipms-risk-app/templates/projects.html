@@ -18,6 +18,67 @@
         <div class="info-box">{{ message }}</div>
         {% endif %}
 
+        {% if upload_report %}
+        <section class="panel input-panel">
+            <div class="panel-heading">
+                <div>
+                    <p class="eyebrow">Excel Upload</p>
+                    <h2>Upload Result</h2>
+                </div>
+            </div>
+
+            <div class="metrics-grid team-summary">
+                <div class="metric-card">
+                    <span>Projects Created</span>
+                    <strong>{{ upload_report.projects_created }}</strong>
+                </div>
+                <div class="metric-card">
+                    <span>Projects Updated</span>
+                    <strong>{{ upload_report.projects_updated }}</strong>
+                </div>
+                <div class="metric-card">
+                    <span>Members Added</span>
+                    <strong>{{ upload_report.members_added }}</strong>
+                </div>
+                <div class="metric-card">
+                    <span>Accounts Created</span>
+                    <strong>{{ upload_report.accounts_created }}</strong>
+                </div>
+            </div>
+
+            {% if upload_report.accounts_created %}
+            <div class="info-box">
+                New student accounts sign in with their <strong>IT email</strong> and their
+                <strong>IT number</strong> as the password.
+            </div>
+            {% endif %}
+
+            {% for error in upload_report.errors %}
+            <div class="warning-box error">{{ error }}</div>
+            {% endfor %}
+
+            <div class="member-table">
+                {% for entry in upload_report.entries %}
+                <div class="member-line">
+                    <div>
+                        <strong>{{ entry.name }} ({{ entry.team_id }}) — {{ entry.status }}</strong>
+                        <span class="project-meta">
+                            {{ entry.members_added }} member(s) linked
+                            {% if entry.accounts_created %}
+                                &middot; new accounts: {{ entry.accounts_created|join(', ') }}
+                            {% endif %}
+                        </span>
+                        {% for problem in entry.problems %}
+                        <span class="project-meta">&#9888; {{ problem }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+
+
         <section class="panel input-panel">
             <div class="panel-heading">
                 <div>
@@ -68,6 +129,32 @@
         </section>
 
         {% if user.role == 'supervisor' %}
+        <section class="panel input-panel">
+            <div class="panel-heading">
+                <div>
+                    <p class="eyebrow">Supervisor Only</p>
+                    <h2>Bulk Upload Teams (Excel)</h2>
+                </div>
+                <div class="project-actions">
+                    <a href="/team-template.xlsx" class="pill-link">Download Template</a>
+                </div>
+            </div>
+
+            <form action="/projects/upload" method="post" enctype="multipart/form-data">
+                <label>
+                    <span>Excel File (.xlsx) — one row per member</span>
+                    <input type="file" name="file" accept=".xlsx" required>
+                </label>
+                <p class="field-note">
+                    Columns: Project ID, Project Name, Team Leader (Yes on the leader's row),
+                    Member Name, IT Number, IT Email, GitHub Username, GitHub Repo URL,
+                    Jira Project Key. Student accounts are created automatically —
+                    first password = IT number. Re-uploading the same Project ID updates it.
+                </p>
+                <button type="submit">Upload &amp; Create Teams</button>
+            </form>
+        </section>
+
         <section class="panel input-panel">
             <div class="panel-heading">
                 <div>

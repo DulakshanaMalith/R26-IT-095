@@ -65,8 +65,11 @@
                 {% for m in members %}
                 <div class="member-line">
                     <div>
-                        <strong>{{ m.full_name }}</strong>
-                        <span class="project-meta">{{ m.email }}</span>
+                        <strong>
+                            {{ m.full_name }}
+                            {% if m.is_leader %}<span class="role-badge supervisor">Leader</span>{% endif %}
+                        </strong>
+                        <span class="project-meta">{{ m.email }}{% if m.it_number %} &middot; {{ m.it_number }}{% endif %}</span>
                         <span class="project-meta">
                             GitHub: {{ m.github_login or '—' }} &middot; Jira: {{ m.jira_name or '—' }}
                         </span>
@@ -112,6 +115,10 @@
                     <label>
                         <span>Jira Display Name (optional)</span>
                         <input type="text" name="jira_name" placeholder="Jane Perera">
+                    </label>
+                    <label class="check-label">
+                        <input type="checkbox" name="is_leader" value="1">
+                        <span>Team leader</span>
                     </label>
                 </div>
                 <p class="field-note">

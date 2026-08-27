@@ -62,13 +62,16 @@ def init_db():
     with connect() as connection:
         connection.executescript(SCHEMA)
 
-        # Migration for databases created before automatic risk emails.
-        try:
-            connection.execute(
-                "ALTER TABLE projects ADD COLUMN last_risk_status TEXT NOT NULL DEFAULT ''"
-            )
-        except sqlite3.OperationalError:
-            pass  # column already exists
+        # Migrations for databases created by earlier versions.
+        for statement in (
+            "ALTER TABLE projects ADD COLUMN last_risk_status TEXT NOT NULL DEFAULT ''",
+            "ALTER TABLE users ADD COLUMN it_number TEXT NOT NULL DEFAULT ''",
+            "ALTER TABLE project_members ADD COLUMN is_leader INTEGER NOT NULL DEFAULT 0",
+        ):
+            try:
+                connection.execute(statement)
+            except sqlite3.OperationalError:
+                pass  # column already exists
 
 
 def now_iso():
@@ -77,14 +80,23 @@ def now_iso():
 
 # ---------------------------------------------------------------- users
 
-def create_user(email, full_name, password_hash, salt, role):
+def create_user(email, full_name, password_hash, salt, role, it_number=""):
     with connect() as connection:
         cursor = connection.execute(
-            """INSERT INTO users (email, full_name, password_hash, salt, role, created_at)
-               VALUES (?, ?, ?, ?, ?, ?)""",
-            (email.strip().lower(), full_name.strip(), password_hash, salt, role, now_iso())
+            """INSERT INTO users
+               (email, full_name, password_hash, salt, role, created_at, it_number)
+               VALUES (?, ?, ?, ?, ?, ?, ?)""",
+            (email.strip().lower(), full_name.strip(), password_hash, salt, role,
+             now_iso(), it_number.strip())
         )
         return cursor.lastrowid
+
+
+def set_user_it_number(user_id, it_number):
+    with connect() as connection:
+        connection.execute(
+            "UPDATE users SET it_number = ? WHERE id = ?", (it_number.strip(), user_id)
+        )
 
 
 def get_user_by_email(email):
@@ -167,6 +179,13 @@ def get_project(project_id):
         ).fetchone()
 
 
+def get_project_by_team_id(team_id):
+    with connect() as connection:
+        return connection.execute(
+            "SELECT * FROM projects WHERE team_id = ?", (team_id.strip(),)
+        ).fetchone()
+
+
 def update_project(project_id, name, team_id, github_url, jira_project_key):
     with connect() as connection:
         connection.execute(
@@ -204,12 +223,13 @@ def list_projects_for_student(user_id):
 
 # -------------------------------------------------------- team membership
 
-def add_member(project_id, user_id, github_login="", jira_name=""):
+def add_member(project_id, user_id, github_login="", jira_name="", is_leader=0):
     with connect() as connection:
         connection.execute(
             """INSERT OR REPLACE INTO project_members
-               (project_id, user_id, github_login, jira_name) VALUES (?, ?, ?, ?)""",
-            (project_id, user_id, github_login.strip(), jira_name.strip())
+               (project_id, user_id, github_login, jira_name, is_leader)
+               VALUES (?, ?, ?, ?, ?)""",
+            (project_id, user_id, github_login.strip(), jira_name.strip(), int(is_leader))
         )
 
 
@@ -224,10 +244,12 @@ def remove_member(project_id, user_id):
 def list_members(project_id):
     with connect() as connection:
         return connection.execute(
-            """SELECT users.id, users.full_name, users.email,
-                      project_members.github_login, project_members.jira_name
+            """SELECT users.id, users.full_name, users.email, users.it_number,
+                      project_members.github_login, project_members.jira_name,
+                      project_members.is_leader
                  FROM project_members JOIN users ON users.id = project_members.user_id
-                WHERE project_members.project_id = ? ORDER BY users.full_name""",
+                WHERE project_members.project_id = ?
+                ORDER BY project_members.is_leader DESC, users.full_name""",
             (project_id,)
         ).fetchall()
 

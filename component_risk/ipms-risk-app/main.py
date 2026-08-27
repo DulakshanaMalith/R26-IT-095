@@ -1,5 +1,6 @@
-from fastapi import FastAPI, Request, Form
-from fastapi.responses import RedirectResponse
+from fastapi import FastAPI, Request, Form, UploadFile, File, Body
+from fastapi.responses import JSONResponse, RedirectResponse, Response
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 import joblib
@@ -23,11 +24,21 @@ load_dotenv(BASE_DIR / ".env")
 from contribution import build_headers, compute_contribution_index
 from jira_client import compute_project_metrics, fetch_project_issues, get_jira_analytics
 import auth
+import bulk_upload
 import database
 import emailer
 import risk_monitor
 
 app = FastAPI()
+
+# Allow the React dev server (Vite) to call the JSON API with cookies.
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"]
+)
 
 # Create the SQLite tables on first run.
 database.init_db()
@@ -882,7 +893,8 @@ def projects_page(request: Request, message: str = ""):
         context={
             "user": user,
             "projects": auth.visible_projects(user),
-            "message": message
+            "message": message,
+            "upload_report": None
         }
     )
 
@@ -972,7 +984,8 @@ def add_project_member(
     project_id: int,
     user_id: int = Form(...),
     github_login: str = Form(""),
-    jira_name: str = Form("")
+    jira_name: str = Form(""),
+    is_leader: str = Form("")
 ):
     user = auth.current_user(request)
     if user is None:
@@ -984,7 +997,8 @@ def add_project_member(
             "/projects?message=Only+the+supervisor+can+manage+members.", status_code=303
         )
 
-    database.add_member(project_id, user_id, github_login, jira_name)
+    database.add_member(project_id, user_id, github_login, jira_name,
+                        is_leader=1 if is_leader else 0)
     return RedirectResponse(f"/projects/{project_id}?message=Member+added.", status_code=303)
 
 
@@ -1060,3 +1074,224 @@ def send_test_email(request: Request):
         "If you received this, automatic risk alerts are working."
     )
     return {"error": error, "sent_to": None if error else user["email"]}
+
+
+# =========================================================================
+# Bulk team creation from an Excel file (supervisors only)
+# =========================================================================
+
+@app.get("/team-template.xlsx")
+def download_team_template(request: Request):
+    user = auth.current_user(request)
+    if user is None or user["role"] != "supervisor":
+        return RedirectResponse("/projects", status_code=303)
+
+    return Response(
+        content=bulk_upload.build_template(),
+        media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        headers={"Content-Disposition": 'attachment; filename="ipms_team_template.xlsx"'}
+    )
+
+
+@app.post("/projects/upload")
+async def upload_projects(request: Request, file: UploadFile = File(...)):
+    user = auth.current_user(request)
+    if user is None:
+        return RedirectResponse("/login", status_code=303)
+
+    if user["role"] != "supervisor":
+        return RedirectResponse(
+            "/projects?message=Only+supervisors+can+upload+team+files.", status_code=303
+        )
+
+    content = await file.read()
+    report = bulk_upload.process_upload(content, user["id"])
+
+    return templates.TemplateResponse(
+        request=request,
+        name="projects.html",
+        context={
+            "user": user,
+            "projects": auth.visible_projects(user),
+            "message": "",
+            "upload_report": report
+        }
+    )
+
+
+# =========================================================================
+# JSON API for the React frontend (component_risk/frontend)
+# =========================================================================
+
+def user_json(user):
+    return {
+        "id": user["id"],
+        "email": user["email"],
+        "full_name": user["full_name"],
+        "role": user["role"]
+    }
+
+
+def project_json(project):
+    data = {
+        "id": project["id"],
+        "name": project["name"],
+        "team_id": project["team_id"],
+        "github_url": project["github_url"],
+        "jira_project_key": project["jira_project_key"],
+        "last_risk_status": ""
+    }
+    try:
+        data["last_risk_status"] = project["last_risk_status"] or ""
+    except (KeyError, IndexError):
+        pass
+    try:
+        data["member_count"] = project["member_count"]
+    except (KeyError, IndexError):
+        data["member_count"] = None
+    return data
+
+
+@app.post("/api/login")
+def api_login(payload: dict = Body(...)):
+    token, error = auth.login(payload.get("email", ""), payload.get("password", ""))
+
+    if error:
+        return JSONResponse({"error": error}, status_code=401)
+
+    user = database.get_session_user(token)
+    response = JSONResponse({"error": None, "user": user_json(user)})
+    auth.set_session_cookie(response, token)
+    return response
+
+
+@app.post("/api/register")
+def api_register(payload: dict = Body(...)):
+    email = payload.get("email", "")
+    full_name = payload.get("full_name", "")
+    password = payload.get("password", "")
+    role = payload.get("role", "student")
+
+    error = auth.validate_registration(email, full_name, password, role)
+    if error:
+        return JSONResponse({"error": error}, status_code=400)
+
+    auth.register_user(email, full_name, password, role)
+    token, login_error = auth.login(email, password)
+    if login_error:
+        return JSONResponse({"error": login_error}, status_code=400)
+
+    user = database.get_session_user(token)
+    response = JSONResponse({"error": None, "user": user_json(user)})
+    auth.set_session_cookie(response, token)
+    return response
+
+
+@app.post("/api/logout")
+def api_logout(request: Request):
+    auth.logout(request.cookies.get(auth.SESSION_COOKIE))
+    response = JSONResponse({"error": None})
+    auth.clear_session_cookie(response)
+    return response
+
+
+@app.get("/api/me")
+def api_me(request: Request):
+    user = auth.current_user(request)
+    return {"user": user_json(user) if user else None}
+
+
+@app.get("/api/projects")
+def api_projects(request: Request):
+    user = auth.current_user(request)
+    if user is None:
+        return JSONResponse({"error": "Not signed in."}, status_code=401)
+
+    return {
+        "user": user_json(user),
+        "projects": [project_json(p) for p in auth.visible_projects(user)]
+    }
+
+
+@app.get("/api/projects/{project_id}")
+def api_project_detail(request: Request, project_id: int):
+    user = auth.current_user(request)
+    if user is None:
+        return JSONResponse({"error": "Not signed in."}, status_code=401)
+
+    project = auth.resolve_project(user, project_id)
+    if project is None:
+        return JSONResponse({"error": "You do not have access to that project."}, status_code=403)
+
+    supervisor = database.get_user_by_id(project["supervisor_id"])
+    members = database.list_members(project_id)
+
+    return {
+        "project": project_json(project),
+        "supervisor": supervisor["full_name"] if supervisor else "",
+        "members": [
+            {
+                "id": m["id"],
+                "full_name": m["full_name"],
+                "email": m["email"],
+                "it_number": m["it_number"],
+                "github_login": m["github_login"],
+                "is_leader": bool(m["is_leader"])
+            }
+            for m in members
+        ]
+    }
+
+
+@app.post("/api/projects")
+def api_create_project(request: Request, payload: dict = Body(...)):
+    user = auth.current_user(request)
+    if user is None:
+        return JSONResponse({"error": "Not signed in."}, status_code=401)
+    if user["role"] != "supervisor":
+        return JSONResponse({"error": "Only supervisors can create projects."}, status_code=403)
+
+    name = str(payload.get("name", "")).strip()
+    team_id = str(payload.get("team_id", "")).strip()
+    if not name or not team_id:
+        return JSONResponse({"error": "Project Name and Team ID are required."}, status_code=400)
+
+    if database.get_project_by_team_id(team_id):
+        return JSONResponse({"error": f"A project with Team ID '{team_id}' already exists."},
+                            status_code=400)
+
+    project_id = database.create_project(
+        name, team_id,
+        str(payload.get("github_url", "")).strip(),
+        str(payload.get("jira_project_key", "")).strip(),
+        user["id"]
+    )
+    return {"error": None, "project": project_json(database.get_project(project_id))}
+
+
+@app.post("/api/projects/upload")
+async def api_upload_projects(request: Request, file: UploadFile = File(...)):
+    user = auth.current_user(request)
+    if user is None:
+        return JSONResponse({"error": "Not signed in."}, status_code=401)
+    if user["role"] != "supervisor":
+        return JSONResponse({"error": "Only supervisors can upload team files."}, status_code=403)
+
+    content = await file.read()
+    report = bulk_upload.process_upload(content, user["id"])
+    report["error"] = None
+    return report
+
+
+@app.get("/api/team-template")
+def api_team_template(request: Request):
+    user = auth.current_user(request)
+    if user is None or user["role"] != "supervisor":
+        return JSONResponse({"error": "Only supervisors can download the template."},
+                            status_code=403)
+
+    return Response(
+        content=bulk_upload.build_template(),
+        media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        headers={"Content-Disposition": 'attachment; filename="ipms_team_template.xlsx"'}
+    )
