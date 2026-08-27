@@ -7,5 +7,6 @@ joblib
 fastapi 
 uvicorn
 requests 
-jinja2 
+jinja2
 python-multipart
+python-dotenv

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPMS Contribution Index</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="app-shell">
+    <header class="app-header">
+        <div>
+            <p class="eyebrow">Intelligent Project Management System</p>
+            <h1>Contribution Index</h1>
+        </div>
+        <nav class="page-nav">
+            <a href="/">Risk Prediction</a>
+            <a href="/contribution" class="active">Contribution Index</a>
+            <a href="/dashboard">Dashboard</a>
+        </nav>
+    </header>
+
+    <main class="workspace single-column">
+        <section class="panel input-panel">
+            <div class="panel-heading">
+                <div>
+                    <p class="eyebrow">Repository</p>
+                    <h2>Analyze Team Contributions</h2>
+                </div>
+            </div>
+
+            <form action="/contribution" method="post">
+                <div class="field-grid">
+                    <label>
+                        <span>GitHub Repository URL</span>
+                        <input type="url" name="github_url" value="{{ github_url }}" placeholder="https://github.com/user/repo" required>
+                    </label>
+                    <label>
+                        <span>Jira Project Key (optional)</span>
+                        <input type="text" name="jira_project_key" value="{{ jira_project_key }}" placeholder="e.g. IPMS">
+                    </label>
+                </div>
+                <button type="submit">Calculate Contribution Index</button>
+            </form>
+        </section>
+
+        {% if analysis %}
+        <section class="panel result-panel">
+            <div class="panel-heading">
+                <div>
+                    <p class="eyebrow">Output</p>
+                    <h2>Contribution Analysis{% if analysis.repo %} — {{ analysis.repo }}{% endif %}</h2>
+                </div>
+            </div>
+
+            {% if analysis.error %}
+            <div class="warning-box error">{{ analysis.error }}</div>
+            {% endif %}
+
+            {% for warning in analysis.warnings %}
+            <div class="warning-box">{{ warning }}</div>
+            {% endfor %}
+
+            {% if analysis.members %}
+            <div class="metrics-grid team-summary">
+                <div class="metric-card">
+                    <span>Team Average CI</span>
+                    <strong>{{ analysis.team.average_ci }}</strong>
+                </div>
+                <div class="metric-card">
+                    <span>Members</span>
+                    <strong>{{ analysis.team.member_count }}</strong>
+                </div>
+                <div class="metric-card">
+                    <span>Total Commits</span>
+                    <strong>{{ analysis.team.total_commits }}</strong>
+                </div>
+                <div class="metric-card">
+                    <span>Merged PRs</span>
+                    <strong>{{ analysis.team.total_prs_merged }}</strong>
+                </div>
+                <div class="metric-card">
+                    <span>Issues Resolved</span>
+                    <strong>{{ analysis.team.total_issues_resolved }}</strong>
+                </div>
+                <div class="metric-card">
+                    <span>Comments</span>
+                    <strong>{{ analysis.team.total_comments }}</strong>
+                </div>
+            </div>
+
+            <div class="member-list">
+                {% for member in analysis.members %}
+                <article class="member-card">
+                    <div class="member-header">
+                        <div class="member-identity">
+                            <span class="member-rank">#{{ loop.index }}</span>
+                            <div>
+                                <strong class="member-login">{{ member.login }}</strong>
+                                <span class="member-share">{{ member.share }}% of team contribution</span>
+                            </div>
+                        </div>
+                        <div class="ci-value">
+                            <span>CI Score</span>
+                            <strong>{{ member.ci }}</strong>
+                        </div>
+                    </div>
+
+                    <div class="ci-bar-track main">
+                        <div class="ci-bar-fill" style="width: {{ member.ci }}%;"></div>
+                    </div>
+
+                    <div class="component-grid">
+                        {% for key, label in analysis.component_labels.items() %}
+                        <div class="component-item">
+                            <div class="component-label">
+                                <span>{{ label }}</span>
+                                <span>{{ member.scores[key] }} <em>(w {{ analysis.weights[key] }})</em></span>
+                            </div>
+                            <div class="ci-bar-track">
+                                <div class="ci-bar-fill" style="width: {{ member.scores[key] }}%;"></div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                    <div class="raw-stats">
+                        <span>{{ member.stats.commits }} commits</span>
+                        <span>{{ member.stats.prs_merged }}/{{ member.stats.prs_opened }} PRs merged</span>
+                        <span>{{ member.stats.issues_resolved }} issues resolved</span>
+                        <span>{{ member.stats.issues_opened }} issues opened</span>
+                        <span>{{ member.stats.comments }} comments</span>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </section>
+
+        {% if analysis.jira %}
+        <section class="panel result-panel">
+            <div class="panel-heading">
+                <div>
+                    <p class="eyebrow">Issue Tracking System</p>
+                    <h2>Task Contribution (Jira{% if analysis.jira.project_key %} — {{ analysis.jira.project_key }}{% endif %})</h2>
+                </div>
+            </div>
+
+            {% if analysis.jira.error %}
+            <div class="warning-box error">{{ analysis.jira.error }}</div>
+            {% else %}
+            <div class="metrics-grid team-summary">
+                <div class="metric-card">
+                    <span>Total Tasks</span>
+                    <strong>{{ analysis.jira.metrics.total_tasks }}</strong>
+                </div>
+                <div class="metric-card">
+                    <span>Completion Rate</span>
+                    <strong>{{ analysis.jira.metrics.task_completion_rate }}%</strong>
+                </div>
+                <div class="metric-card">
+                    <span>Progress</span>
+                    <strong>{{ analysis.jira.metrics.progress_percentage }}%</strong>
+                </div>
+                <div class="metric-card">
+                    <span>Overdue Tasks</span>
+                    <strong>{{ analysis.jira.metrics.overdue_tasks }}</strong>
+                </div>
+                <div class="metric-card">
+                    <span>Delays</span>
+                    <strong>{{ analysis.jira.metrics.delay_count }}</strong>
+                </div>
+                <div class="metric-card">
+                    <span>In Progress</span>
+                    <strong>{{ analysis.jira.metrics.in_progress_tasks }}</strong>
+                </div>
+            </div>
+
+            <div class="member-list">
+                {% for member in analysis.jira.members %}
+                <article class="member-card">
+                    <div class="member-header">
+                        <div class="member-identity">
+                            <span class="member-rank">#{{ loop.index }}</span>
+                            <div>
+                                <strong class="member-login">{{ member.name }}</strong>
+                                <span class="member-share">{{ member.on_time_rate }}% completed on time</span>
+                            </div>
+                        </div>
+                        <div class="ci-value">
+                            <span>Task Score</span>
+                            <strong>{{ member.task_score }}</strong>
+                        </div>
+                    </div>
+
+                    <div class="ci-bar-track main">
+                        <div class="ci-bar-fill" style="width: {{ member.task_score }}%;"></div>
+                    </div>
+
+                    <div class="raw-stats">
+                        <span>{{ member.stats.assigned }} assigned</span>
+                        <span>{{ member.stats.completed }} completed</span>
+                        <span>{{ member.stats.in_progress }} in progress</span>
+                        <span>{{ member.stats.overdue }} overdue</span>
+                        <span>{{ member.stats.completed_late }} completed late</span>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </section>
+        {% endif %}
+        {% else %}
+        <section class="panel result-panel">
+            <div class="empty-state">
+                <span class="empty-mark"></span>
+                <h3>No Analysis Yet</h3>
+                <p>Enter a GitHub repository URL to calculate each member's Contribution Index.</p>
+            </div>
+        </section>
+        {% endif %}
+    </main>
+</div>
+
+</body>
+</html>
