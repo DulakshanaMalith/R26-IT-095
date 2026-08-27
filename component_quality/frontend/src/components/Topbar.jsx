@@ -4,8 +4,6 @@ import { NavLink } from "react-router-dom";
 const navItems = [
   { to: "/dashboard", label: "Dashboard" },
   { to: "/students", label: "My Students" },
-  { to: "/analytics", label: "Analytics" },
-  { to: "/history", label: "History" },
 ];
 
 export default function Topbar({ currentSupervisor, onLogout, onRetry }) {

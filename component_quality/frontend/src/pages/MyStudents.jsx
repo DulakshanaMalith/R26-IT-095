@@ -31,6 +31,7 @@ function formatDate(value) {
 }
 
 function sortByVersionNumber(versions) {
+  if (!versions || !Array.isArray(versions)) return [];
   return [...versions].sort((first, second) => (first.version_number || 0) - (second.version_number || 0));
 }
 
@@ -71,6 +72,7 @@ export default function MyStudents({ backendOnline, backendChecked, notify }) {
       const reviews = currentVersion ? await getVersionSupervisorReviews(currentVersion.version_id) : [];
       const latestReview = [...(reviews || [])]
         .sort((first, second) => new Date(second.updated_at || second.created_at || 0) - new Date(first.updated_at || first.created_at || 0))[0] || null;
+
       let proposalStatus = currentVersion ? "Ready for Analysis" : "No Proposal";
       if (latestReview?.decision === "REQUEST_REVISION" || latestReview?.decision === "REVISION_REQUESTED") {
         proposalStatus = "Revision Requested";

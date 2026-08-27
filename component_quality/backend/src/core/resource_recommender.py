@@ -6,11 +6,67 @@ import re
 from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse
+import os
+import concurrent.futures
 
+try:
+    from tavily import TavilyClient
+except ImportError:
+    TavilyClient = None
 
 ROOT_DIR = Path(__file__).resolve().parent
 RESULTS_DIR = ROOT_DIR / "results"
 DEMO_PATH = RESULTS_DIR / "resource_recommendation_demo.txt"
+
+
+def get_tavily_client() -> Any:
+    api_key = os.getenv("TAVILY_API_KEY")
+    is_enabled = os.getenv("TAVILY_ENABLED", "false").lower() == "true"
+    if is_enabled and api_key and TavilyClient:
+        try:
+            return TavilyClient(api_key=api_key)
+        except Exception:
+            return None
+    return None
+
+
+def fetch_tavily_for_need(client: Any, need: dict[str, Any]) -> list[dict[str, Any]]:
+    area = need.get("area", "")
+    status = need.get("status", "missing")
+    if status == "insufficient":
+        query = f"how to improve a short research proposal {area} academic writing guide"
+    else:
+        query = f"how to write a strong research proposal {area} academic writing guide"
+    try:
+        response = client.search(
+            query=query,
+            search_depth="basic",
+            max_results=2,
+            include_domains=["edu", "ac.uk", "writingcenter"]
+        )
+        results = []
+        for res in response.get("results", []):
+            sec_lower = area.lower().replace("_", " ")
+            category = MISSING_SECTION_MAPPING.get(sec_lower, area)
+            results.append({
+                "category": category,
+                "area": category,
+                "status": need.get("status", "insufficient"),
+                "reason": need.get("reason", ""),
+                "title": res.get("title", "External Resource"),
+                "description": res.get("content", "")[:200] + "...",
+                "url": res.get("url", ""),
+                "source": "Tavily Web Search",
+                "resource_type": "Academic Guide",
+                "provider": "tavily",
+                "score": res.get("score", 0.9),
+                "keyword_score": 0,
+                "matched_keywords": []
+            })
+        return results
+    except Exception as e:
+        print(f"Tavily search failed for query '{query}': {e}")
+        return []
 
 
 def is_valid_resource_url(value: Any) -> bool:
@@ -359,6 +415,7 @@ def recommend_resources(
     weakness_text: str,
     feedback_text: str = "",
     missing_sections: list[str] | None = None,
+    learning_needs: list[dict[str, Any]] | None = None,
     top_k: int = 3,
 ) -> list[dict[str, Any]]:
     """Return the highest-ranked resources for weakness, feedback text, and missing structural sections."""
@@ -369,6 +426,33 @@ def recommend_resources(
     if not isinstance(top_k, int) or top_k < 1:
         raise ValueError("top_k must be a positive integer.")
 
+    final_recommendations = []
+    
+    # Process explicit learning_needs
+    needs_to_process = learning_needs or []
+    if missing_sections and not learning_needs:
+        for section in missing_sections:
+            needs_to_process.append({"area": section, "status": "missing", "reason": f"Missing {section} section"})
+
+    # Prioritize top_k needs
+    needs_to_process = needs_to_process[:top_k]
+
+    tavily_client = get_tavily_client()
+    if tavily_client and needs_to_process:
+        with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
+            future_to_need = {
+                executor.submit(fetch_tavily_for_need, tavily_client, need): need
+                for need in needs_to_process
+            }
+            for future in concurrent.futures.as_completed(future_to_need):
+                results = future.result()
+                if results:
+                    final_recommendations.append(results[0])
+
+    if len(final_recommendations) >= top_k:
+        return final_recommendations[:top_k]
+
+    # Fallback to local RESOURCE_LIBRARY
     combined_text = normalize_text(f"{weakness_text} {feedback_text}")
     all_scored = []
 
@@ -384,9 +468,15 @@ def recommend_resources(
             all_scored.append(
                 {
                     "category": category,
+                    "area": category,
+                    "status": "",
+                    "reason": "",
                     "title": resource["title"],
                     "description": resource["description"],
                     "url": url,
+                    "source": "Local Library",
+                    "resource_type": "Academic Guide",
+                    "provider": "local",
                     "score": score,
                     "keyword_score": score,
                     "matched_keywords": matched_keywords,
@@ -394,38 +484,57 @@ def recommend_resources(
             )
 
     missing_categories = []
-    if missing_sections:
-        for section in missing_sections:
-            sec_lower = section.lower().replace("_", " ")
-            mapped = MISSING_SECTION_MAPPING.get(sec_lower)
-            if mapped and mapped not in missing_categories:
-                missing_categories.append(mapped)
+    for need in needs_to_process:
+        sec_lower = need.get("area", "").lower().replace("_", " ")
+        mapped = MISSING_SECTION_MAPPING.get(sec_lower)
+        if mapped and mapped not in missing_categories:
+            missing_categories.append(mapped)
 
-    final_recommendations = []
-    used_categories = set()
+    used_categories = {r.get("category") for r in final_recommendations}
 
-    for category in missing_categories:
-        cat_resources = [r for r in all_scored if r["category"] == category]
-        if cat_resources:
-            cat_resources.sort(key=lambda r: -r["score"])
-            best = dict(cat_resources[0])
-            best["matched_keywords"] = best["matched_keywords"] + [f"Missing Section: {category}"]
-            final_recommendations.append(best)
-            used_categories.add(category)
-
-    if len(final_recommendations) < top_k:
-        generic_pool = [r for r in all_scored if r["category"] not in used_categories]
-        generic_pool.sort(
-            key=lambda item: (
-                -item["score"],
-                item["category"] not in {"Academic Writing", "Structure"},
-                item["category"],
+    if needs_to_process:
+        # Fulfill structural needs strictly without padding with generic resources
+        for category in missing_categories:
+            if category in used_categories:
+                continue
+            cat_resources = [r for r in all_scored if r["category"] == category]
+            if cat_resources:
+                cat_resources.sort(key=lambda r: -r["score"])
+                best = dict(cat_resources[0])
+                best["matched_keywords"] = best["matched_keywords"] + [f"Missing Section: {category}"]
+                matching_need = next((n for n in needs_to_process if MISSING_SECTION_MAPPING.get(n.get("area", "").lower().replace("_", " ")) == category), None)
+                if matching_need:
+                    best["status"] = matching_need.get("status", "missing")
+                    best["reason"] = matching_need.get("reason", "")
+                    best["area"] = matching_need.get("area", category)
+                final_recommendations.append(best)
+                used_categories.add(category)
+    else:
+        # Preserve generic weakness semantic recommendation behavior if no needs provided
+        if len(final_recommendations) < top_k:
+            generic_pool = [r for r in all_scored if r["category"] not in used_categories]
+            generic_pool.sort(
+                key=lambda item: (
+                    -item["score"],
+                    item["category"] not in {"Academic Writing", "Structure"},
+                    item["category"],
+                )
             )
-        )
-        needed = top_k - len(final_recommendations)
-        final_recommendations.extend(generic_pool[:needed])
+            needed = top_k - len(final_recommendations)
+            final_recommendations.extend(generic_pool[:needed])
 
-    return final_recommendations[:top_k]
+    # Deduplicate URLs while preserving multiple areas
+    deduped = []
+    seen_urls = set()
+    for rec in final_recommendations:
+        url = rec.get("url", "")
+        if url in seen_urls:
+            # Optionally merge reasons or matched_keywords here
+            continue
+        seen_urls.add(url)
+        deduped.append(rec)
+
+    return deduped[:top_k]
 
 
 def format_recommendations(

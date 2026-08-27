@@ -1,12 +1,12 @@
-import sqlite3
 import sys
 from pathlib import Path
 
 import pytest
+from sqlalchemy.exc import IntegrityError
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from src.db.connection import connect
+from tests.postgres_fixtures import connect
 from src.db.repositories import (
     assign_supervisor_to_student,
     create_analysis,
@@ -28,12 +28,12 @@ from src.db.repositories import (
     get_version_notifications,
     get_version_reviews,
 )
-from src.db.schema import create_schema
+from tests.postgres_fixtures import create_schema
 
 
 @pytest.fixture()
 def db(tmp_path):
-    database_path = tmp_path / "researchpilot_phase1.sqlite"
+    database_path = tmp_path / "researchpilot_phase1.postgresql"
     connection = connect(database_path)
     create_schema(connection)
     try:
@@ -52,8 +52,12 @@ def test_schema_creates_expected_tables_with_foreign_keys_enabled(db):
     tables = {
         row["name"]
         for row in db.execute(
-            "SELECT name FROM sqlite_master WHERE type = ? AND name NOT LIKE ?",
-            ("table", "sqlite_%"),
+            """
+            SELECT table_name AS name
+            FROM information_schema.tables
+            WHERE table_schema = 'public'
+              AND table_type = 'BASE TABLE'
+            """,
         )
     }
 
@@ -70,26 +74,31 @@ def test_schema_creates_expected_tables_with_foreign_keys_enabled(db):
         "supervisor_review_drafts",
         "notification_logs",
     }.issubset(tables)
-    assert db.execute("PRAGMA foreign_keys").fetchone()[0] == 1
+    foreign_keys = db.execute(
+        """
+        SELECT constraint_name AS name
+        FROM information_schema.table_constraints
+        WHERE table_schema = 'public'
+          AND constraint_type = 'FOREIGN KEY'
+        """
+    ).fetchall()
+    assert foreign_keys
 
 
-def test_schema_adds_review_draft_tables_to_existing_database(tmp_path):
-    database_path = tmp_path / "existing.sqlite"
-    connection = connect(database_path)
-    create_schema(connection)
-    connection.execute("DROP TABLE supervisor_review_drafts")
-    connection.execute("DROP TABLE ai_supervisor_review_drafts")
-    connection.commit()
-    connection.close()
-
-    migrated = connect(database_path)
-    create_schema(migrated)
+def test_schema_setup_can_rebuild_review_draft_tables_from_zero(tmp_path):
+    create_schema()
+    create_schema()
+    migrated = connect(tmp_path / "rebuilt.postgresql")
     try:
         tables = {
             row["name"]
             for row in migrated.execute(
-                "SELECT name FROM sqlite_master WHERE type = ? AND name NOT LIKE ?",
-                ("table", "sqlite_%"),
+                """
+                SELECT table_name AS name
+                FROM information_schema.tables
+                WHERE table_schema = 'public'
+                  AND table_type = 'BASE TABLE'
+                """,
             )
         }
         assert "ai_supervisor_review_drafts" in tables
@@ -167,7 +176,7 @@ def test_duplicate_active_primary_supervisor_is_rejected(db):
         assignment_role="primary_supervisor",
     )
 
-    with pytest.raises(sqlite3.IntegrityError):
+    with pytest.raises(IntegrityError):
         assign_supervisor_to_student(
             db,
             supervisor_id=supervisor_b["supervisor_id"],

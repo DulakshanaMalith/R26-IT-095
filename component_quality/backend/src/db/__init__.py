@@ -1,6 +1,5 @@
-"""SQLite storage foundation for future supervisor-centric workflows."""
+"""PostgreSQL storage foundation for ResearchPilot runtime persistence."""
 
-from src.db.connection import connect
-from src.db.schema import create_schema
+from src.db.session import DatabaseSessionAdapter, get_session, session_scope
 
-__all__ = ["connect", "create_schema"]
+__all__ = ["DatabaseSessionAdapter", "get_session", "session_scope"]

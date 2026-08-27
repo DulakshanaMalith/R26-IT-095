@@ -104,8 +104,8 @@ graph TD
     end
     
     subgraph Storage
-        TextProcessing --> History[data/analysis_history.json]
-        GradingService --> GradingHist[data/grading_history.json]
+        TextProcessing --> History[(PostgreSQL analysis_history_records)]
+        GradingService --> GradingHist[(PostgreSQL grading_records)]
         GraphExtractor --> GraphHist[data/graph_history.json]
     end
     
@@ -125,7 +125,7 @@ graph TD
 
 ```
 backend/
-├── data/                    # JSON data stores (database alternative)
+├── data/                    # legacy migration sources and generated reports
 ├── docs/                    # Architecture and developer documentation
 ├── logs/                    # Application and error logs
 ├── models/                  # ML models (.pkl files) - mapped via .env MODEL_DIR
@@ -156,7 +156,9 @@ Configuration is managed via `.env` files and `Pydantic` Settings.
 | `APP_HOST` | `127.0.0.1` | Binding interface for Uvicorn. |
 | `APP_PORT` | `9000` | Port for the backend API. |
 | `MODEL_DIR` | `../training/models` | Absolute or relative path to ML `.pkl` artifacts. |
-| `DATA_DIR` | `data` | Directory to store JSON history databases. |
+| `DATA_DIR` | `data` | Legacy migration source and backup/report directory. |
+| `DATABASE_URL` | required | PostgreSQL runtime database URL. |
+| `TEST_DATABASE_URL` | required for tests | Separate PostgreSQL database URL for destructive tests. |
 | `ALLOWED_ORIGINS` | `http://localhost:5173` | CORS allowed origins for frontend connections. |
 
 **Dependency Management:**
@@ -166,15 +168,15 @@ Dependencies are locked using `requirements.txt`. The project also features a `p
 
 ## 6. Database Documentation
 
-The system currently relies on flat-file JSON stores located in the `DATA_DIR` instead of a relational database. This is a deliberate choice for portability in early versions.
+Runtime persistence is PostgreSQL-backed. SQLAlchemy models define metadata and Alembic owns schema creation.
 
 ### Entities
 
-1. **Analysis History (`analysis_history.json`)**
+1. **Analysis History (`analysis_history_records`)**
    - Stores raw text, student metadata, predicted tags, and RAG feedback.
-2. **Grading History (`grading_history.json`)**
+2. **Grading History (`grading_records`)**
    - Stores numeric scores, readiness percentages, and completeness breakdowns.
-3. **Graph History (`graph_history.json`)**
+3. **Graph History (`knowledge_graph_records`)**
    - Stores extracted knowledge graph nodes and edges.
 
 ### ER Diagram
@@ -311,7 +313,7 @@ The core logic resides in `src/api/services/core_logic.py` and `src/core/`.
 4. **Embedding**: Text is vectorized via `SentenceTransformers`.
 5. **RAG**: Vector is compared to `feedback_embeddings.pkl` using Cosine Similarity.
 6. **Inference**: Text is passed to the SVM model for tagging.
-7. **Persistence**: The combined output is saved to `analysis_history.json`.
+7. **Persistence**: The combined output is saved to PostgreSQL `analysis_history_records`.
 8. **Response**: FastAPI serializes data to JSON and returns to the client.
 
 ---
@@ -394,10 +396,9 @@ The backend is built for simple Docker or Bare-metal deployment.
 
 ## 22. Future Improvements
 
-1. **Database Migration**: Migrate from JSON files to PostgreSQL for transactional safety.
-2. **Vector Database**: Migrate the NumPy cosine similarity logic to ChromaDB or Pinecone for scalable RAG retrieval.
-3. **Authentication Setup**: Introduce JWT Middleware to isolate student data.
-4. **Async ML Inference**: Offload heavy inference tasks to a Celery/Redis queue instead of blocking the FastAPI thread.
+1. **Vector Database**: Migrate the NumPy cosine similarity logic to ChromaDB or Pinecone for scalable RAG retrieval.
+2. **Authentication Hardening**: Add production cookie/session secret management and role policy tests.
+3. **Async ML Inference**: Offload heavy inference tasks to a Celery/Redis queue instead of blocking the FastAPI thread.
 
 ---
 
@@ -502,3 +503,5 @@ classDiagram
 ## 30. Conclusion
 
 The Exposia AI Backend is a powerful synthesis of standard web API architecture and advanced applied Machine Learning. It processes complex academic documents through rigorous deterministic validation gates before passing them into a suite of statistical and neural models. By orchestrating everything through a robust FastAPI layer, the system remains fast, strongly typed, and easily extensible for future iterations of autonomous mentorship capabilities.
+
+

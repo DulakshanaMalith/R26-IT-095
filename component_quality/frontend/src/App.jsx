@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import Footer from "./components/Footer";
 import Sidebar from "./components/Sidebar";
 import Topbar from "./components/Topbar";
@@ -29,9 +29,10 @@ import {
 } from "./api";
 
 const TEMP_DEV_LOGIN_BYPASS = true;
-const TEMP_FRONTEND_AUTH_DISABLED = true;
+const REQUIRE_AUTH = import.meta.env.VITE_REQUIRE_AUTH === "true";
 
 export default function App() {
+  const location = useLocation();
   const [backendOnline, setBackendOnline] = useState(false);
   const [backendChecked, setBackendChecked] = useState(false);
   const [backendChecking, setBackendChecking] = useState(true);
@@ -74,12 +75,18 @@ export default function App() {
     }
 
     try {
-      try {
-        const supervisor = await getCurrentSupervisor();
-        setCurrentSupervisor(supervisor);
-      } catch {
+      if (REQUIRE_AUTH) {
+        try {
+          const supervisor = await getCurrentSupervisor();
+          setCurrentSupervisor(supervisor);
+        } catch {
+          setCurrentSupervisor(null);
+        } finally {
+          setAuthChecked(true);
+          setAuthLoading(false);
+        }
+      } else {
         setCurrentSupervisor(null);
-      } finally {
         setAuthChecked(true);
         setAuthLoading(false);
       }
@@ -156,6 +163,7 @@ export default function App() {
       backendChecked,
       backendChecking,
       currentSupervisor,
+      requireAuth: REQUIRE_AUTH,
       loadingData,
       refreshData,
       notify,
@@ -163,7 +171,7 @@ export default function App() {
     [analytics, history, graphHistory, gradingAnalytics, gradingHistory, backendOnline, backendChecked, backendChecking, currentSupervisor, loadingData, refreshData, notify],
   );
 
-  if (!TEMP_FRONTEND_AUTH_DISABLED && (authLoading || !authChecked)) {
+  if (REQUIRE_AUTH && (authLoading || !authChecked)) {
     return (
       <main className="login-page">
         <section className="loader-card">Loading supervisor session...</section>
@@ -171,7 +179,9 @@ export default function App() {
     );
   }
 
-  if (!TEMP_FRONTEND_AUTH_DISABLED && !currentSupervisor) {
+  const publicAuthRoute = location.pathname === "/login" || location.pathname === "/signup";
+
+  if (REQUIRE_AUTH && !currentSupervisor && !publicAuthRoute) {
     return <Navigate to="/login" replace />;
   }
 

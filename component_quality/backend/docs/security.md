@@ -71,7 +71,7 @@ Recommended improvements:
 
 | Risk | Current mitigation | Gaps |
 | --- | --- | --- |
-| SQL injection | No SQL database exists. | Future DB code must use parameterized queries/ORM safely. |
+| SQL injection | PostgreSQL is accessed through SQLAlchemy parameterized statements/ORM metadata. | Keep all DB access parameterized; do not build SQL from user input. |
 | XSS | React escapes text by default. | Avoid `dangerouslySetInnerHTML`; sanitize any future HTML rendering. |
 | CSRF | No cookie auth exists. | If sessions/cookies are added, add CSRF protection. |
 | CORS abuse | Origin allowlist. | No authentication means CORS is not sufficient protection. |
@@ -81,7 +81,7 @@ Recommended improvements:
 ## Recommended Security Roadmap
 
 1. Add authentication and role-based authorization for students/supervisors/admins.
-2. Replace JSON history with a database and per-user ownership checks.
+2. Add per-user ownership checks around PostgreSQL-backed histories.
 3. Add request size limits and server-side file upload validation if uploads move to backend.
 4. Add rate limiting and abuse monitoring.
 5. Add model artifact signing/checksum verification.

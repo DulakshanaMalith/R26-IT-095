@@ -188,6 +188,21 @@ class ProposalValidationResult:
         return payload
 
 
+def normalize_extracted_document_text(text: str) -> str:
+    """Strip common PDF extraction artifacts like page markers and spaced headings."""
+    normalized = str(text or "")
+    
+    # Remove inline page markers that often prefix headings in PDF extraction
+    normalized = re.sub(r"(?im)(?:^|\s)\d+\s*(?:\|\s*)?(?:p\s*a\s*g\s*e|page)\s+", " ", normalized)
+    
+    # Collapse spaced headings: 'A B S T R A C T' -> 'ABSTRACT'
+    for term in ["ABSTRACT", "INTRODUCTION", "METHODOLOGY", "EVALUATION", "CONCLUSION", "REFERENCES"]:
+        spaced_term = " ".join(term)
+        normalized = re.sub(rf"(?i)\b{spaced_term}\b", term, normalized)
+        
+    return normalized
+
+
 def normalize_text(text: str) -> str:
     """Normalize text for deterministic rule matching."""
     lowered = str(text or "").lower()
@@ -210,7 +225,7 @@ def contains_phrase(normalized_text: str, phrase: str) -> bool:
     return re.search(rf"\b{re.escape(normalized_phrase)}\b", normalized_text) is not None
 
 
-def heading_term_present(normalized_text: str, term: str) -> bool:
+def is_section_heading(normalized_text: str, term: str) -> bool:
     """Return True when a proposal section term appears like a heading."""
     term_words = re.findall(r"[a-z0-9]+", term.lower())
     if not term_words:
@@ -253,7 +268,7 @@ def detect_sections(normalized_text: str) -> list[str]:
     """Detect proposal sections from heading-like labels, not casual mentions."""
     detected: list[str] = []
     for section, terms in SECTION_HEADING_TERMS.items():
-        if any(heading_term_present(normalized_text, term) for term in terms):
+        if any(is_section_heading(normalized_text, term) for term in terms):
             detected.append(section)
     return detected
 
@@ -321,6 +336,7 @@ def detect_keyword_groups(normalized_text: str) -> dict[str, list[str]]:
 
 def validate_proposal_document(text: str) -> ProposalValidationResult:
     """Score whether text looks like an academic research proposal/exposé."""
+    text = normalize_extracted_document_text(text)
     normalized_text = normalize_text(text)
     section_text = re.sub(r"[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]", " ", str(text or "").lower())
     section_text = re.sub(r"[ \t]+", " ", section_text)

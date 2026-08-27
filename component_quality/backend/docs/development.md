@@ -7,6 +7,7 @@ Because the backend and machine learning pipelines are fully isolated, you will 
 ## Prerequisites
 * Python 3.10+
 * Bash/Terminal access
+* PostgreSQL 14+ with separate development and test databases
 
 ## 1. Setup the Virtual Environment
 Navigate to the root of the repository and create a virtual environment specifically inside the `backend/` directory:
@@ -29,6 +30,13 @@ Copy the template `.env` file and fill in any necessary API keys (like OpenAI fo
 cp backend/.env.example backend/.env
 ```
 
+Set `DATABASE_URL` and `TEST_DATABASE_URL`, then create the runtime schema:
+
+```bash
+cd backend
+alembic upgrade head
+```
+
 ## 3. Running the Server
 You can start the backend using the provided bash script. This script automatically routes output logs and binds to port `9000`.
 
@@ -49,3 +57,4 @@ The API is structured modularly:
 * **To add a new endpoint**: Create or edit the relevant domain file in `backend/src/api/routers/`.
 * **To add a new data payload**: Define the Pydantic schema in `backend/src/api/schemas.py`.
 * **To update business logic**: Modify the shared service helpers in `backend/src/api/services/core_logic.py`.
+* **To update persistence**: Change SQLAlchemy models in `backend/src/db/models/` and add an Alembic revision. Do not create production tables with `Base.metadata.create_all()`.

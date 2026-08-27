@@ -30,6 +30,7 @@ class AnalyzeRequest(TextRequest):
     student_name: str | None = Field(default=None, description="Optional student name")
     student_id: str | None = Field(default=None, description="Optional student identifier")
     proposal_title: str | None = Field(default=None, description="Optional proposal title")
+    learning_needs: list[dict[str, Any]] = Field(default_factory=list, description="Optional explicit structural or length deficiencies to target resources for")
 
 
 class ResourceRequest(TextRequest):
@@ -37,6 +38,7 @@ class ResourceRequest(TextRequest):
 
     feedback: str = Field(default="", description="Optional retrieved feedback")
     analysis_id: str | None = Field(default=None, description="Optional linked analysis record ID")
+    learning_needs: list[dict[str, Any]] = Field(default_factory=list, description="Optional explicit structural or length deficiencies to target resources for")
 
 
 class KnowledgeGraphRequest(TextRequest):
@@ -84,9 +86,11 @@ class ProposalCompletenessPayload(BaseModel):
     detected_sections: list[str] = Field(default_factory=list)
     missing_sections: list[str] = Field(default_factory=list)
     deductions: dict[str, int] = Field(default_factory=dict)
+    sections_evidence: dict[str, Any] = Field(default_factory=dict)
     validation_confidence: float | None = None
     warnings: list[str] = Field(default_factory=list)
     status: str | None = None
+
 
 
 class SubmissionReadinessPayload(BaseModel):
@@ -232,6 +236,10 @@ class CreateStudentRequest(BaseModel):
     cohort: str | None = None
 
 
+class UpdateStudentEmailRequest(BaseModel):
+    email: str | None = None
+
+
 class StudentResponse(BaseModel):
     student_id: str
     academic_student_id: str
@@ -353,6 +361,9 @@ class FeedbackDeliveryResponse(BaseModel):
     created_at: str | None = None
     sent_at: str | None = None
     error_message: str | None = None
+    provider_name: str | None = None
+    provider_message_id: str | None = None
+    report_reference: str | None = None
 
 
 class ReviewOutcomeRequest(BaseModel):

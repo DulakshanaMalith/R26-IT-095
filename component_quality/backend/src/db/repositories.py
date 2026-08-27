@@ -1,9 +1,8 @@
-"""Small sqlite3 repository helpers for Phase 1 supervisor workflow storage."""
+"""Repository helpers for PostgreSQL-backed supervisor workflow storage."""
 
 from __future__ import annotations
 
 import json
-import sqlite3
 from datetime import datetime, timezone
 from typing import Any
 from uuid import uuid4
@@ -17,19 +16,19 @@ def _new_id() -> str:
     return str(uuid4())
 
 
-def _row_to_dict(row: sqlite3.Row | None) -> dict[str, Any] | None:
+def _row_to_dict(row: dict[str, Any] | None) -> dict[str, Any] | None:
     return dict(row) if row is not None else None
 
 
-def _fetch_one(connection: sqlite3.Connection, query: str, params: tuple[Any, ...]) -> dict[str, Any] | None:
+def _fetch_one(connection: Any, query: str, params: tuple[Any, ...]) -> dict[str, Any] | None:
     return _row_to_dict(connection.execute(query, params).fetchone())
 
 
-def _fetch_all(connection: sqlite3.Connection, query: str, params: tuple[Any, ...]) -> list[dict[str, Any]]:
+def _fetch_all(connection: Any, query: str, params: tuple[Any, ...]) -> list[dict[str, Any]]:
     return [dict(row) for row in connection.execute(query, params).fetchall()]
 
 
-def _version_belongs_to_proposal(connection: sqlite3.Connection, proposal_id: str, version_id: str) -> bool:
+def _version_belongs_to_proposal(connection: Any, proposal_id: str, version_id: str) -> bool:
     row = connection.execute(
         "SELECT 1 FROM proposal_versions WHERE proposal_id = ? AND version_id = ?",
         (proposal_id, version_id),
@@ -38,7 +37,7 @@ def _version_belongs_to_proposal(connection: sqlite3.Connection, proposal_id: st
 
 
 def create_user(
-    connection: sqlite3.Connection,
+    connection: Any,
     *,
     email: str,
     role: str,
@@ -60,15 +59,15 @@ def create_user(
     return get_user(connection, resolved_id)
 
 
-def get_user(connection: sqlite3.Connection, user_id: str) -> dict[str, Any] | None:
+def get_user(connection: Any, user_id: str) -> dict[str, Any] | None:
     return _fetch_one(connection, "SELECT * FROM users WHERE user_id = ?", (user_id,))
 
 
-def get_user_by_email(connection: sqlite3.Connection, email: str) -> dict[str, Any] | None:
+def get_user_by_email(connection: Any, email: str) -> dict[str, Any] | None:
     return _fetch_one(connection, "SELECT * FROM users WHERE email = ?", (email,))
 
 
-def update_user_password_hash(connection: sqlite3.Connection, *, user_id: str, password_hash: str) -> dict[str, Any]:
+def update_user_password_hash(connection: Any, *, user_id: str, password_hash: str) -> dict[str, Any]:
     connection.execute(
         "UPDATE users SET password_hash = ?, updated_at = ? WHERE user_id = ?",
         (password_hash, _utc_now(), user_id),
@@ -78,7 +77,7 @@ def update_user_password_hash(connection: sqlite3.Connection, *, user_id: str, p
 
 
 def create_supervisor_account(
-    connection: sqlite3.Connection,
+    connection: Any,
     *,
     email: str,
     display_name: str,
@@ -111,7 +110,7 @@ def create_supervisor_account(
 
 
 def create_supervisor_profile(
-    connection: sqlite3.Connection,
+    connection: Any,
     *,
     user_id: str,
     department: str | None = None,
@@ -130,15 +129,15 @@ def create_supervisor_profile(
     return get_supervisor_profile(connection, resolved_id)
 
 
-def get_supervisor_profile(connection: sqlite3.Connection, supervisor_id: str) -> dict[str, Any] | None:
+def get_supervisor_profile(connection: Any, supervisor_id: str) -> dict[str, Any] | None:
     return _fetch_one(connection, "SELECT * FROM supervisor_profiles WHERE supervisor_id = ?", (supervisor_id,))
 
 
-def get_supervisor_profile_by_user_id(connection: sqlite3.Connection, user_id: str) -> dict[str, Any] | None:
+def get_supervisor_profile_by_user_id(connection: Any, user_id: str) -> dict[str, Any] | None:
     return _fetch_one(connection, "SELECT * FROM supervisor_profiles WHERE user_id = ?", (user_id,))
 
 
-def get_supervisor_identity_by_user_id(connection: sqlite3.Connection, user_id: str) -> dict[str, Any] | None:
+def get_supervisor_identity_by_user_id(connection: Any, user_id: str) -> dict[str, Any] | None:
     return _fetch_one(
         connection,
         """
@@ -154,7 +153,7 @@ def get_supervisor_identity_by_user_id(connection: sqlite3.Connection, user_id: 
     )
 
 
-def get_supervisor_identity_by_email(connection: sqlite3.Connection, email: str) -> dict[str, Any] | None:
+def get_supervisor_identity_by_email(connection: Any, email: str) -> dict[str, Any] | None:
     return _fetch_one(
         connection,
         """
@@ -171,7 +170,7 @@ def get_supervisor_identity_by_email(connection: sqlite3.Connection, email: str)
 
 
 def create_student(
-    connection: sqlite3.Connection,
+    connection: Any,
     *,
     academic_student_id: str,
     full_name: str,
@@ -196,11 +195,20 @@ def create_student(
     return get_student(connection, resolved_id)
 
 
-def get_student(connection: sqlite3.Connection, student_id: str) -> dict[str, Any] | None:
+def get_student(connection: Any, student_id: str) -> dict[str, Any] | None:
     return _fetch_one(connection, "SELECT * FROM students WHERE student_id = ?", (student_id,))
 
 
-def get_student_by_academic_id(connection: sqlite3.Connection, academic_student_id: str) -> dict[str, Any] | None:
+def update_student_email(connection: Any, student_id: str, email: str | None) -> dict[str, Any] | None:
+    connection.execute(
+        "UPDATE students SET email = ?, updated_at = ? WHERE student_id = ?",
+        (email, _utc_now(), student_id),
+    )
+    connection.commit()
+    return get_student(connection, student_id)
+
+
+def get_student_by_academic_id(connection: Any, academic_student_id: str) -> dict[str, Any] | None:
     return _fetch_one(
         connection,
         "SELECT * FROM students WHERE academic_student_id = ?",
@@ -209,7 +217,7 @@ def get_student_by_academic_id(connection: sqlite3.Connection, academic_student_
 
 
 def assign_supervisor_to_student(
-    connection: sqlite3.Connection,
+    connection: Any,
     *,
     supervisor_id: str,
     student_id: str,
@@ -235,7 +243,7 @@ def assign_supervisor_to_student(
     )
 
 
-def get_supervisor_students(connection: sqlite3.Connection, supervisor_id: str) -> list[dict[str, Any]]:
+def get_supervisor_students(connection: Any, supervisor_id: str) -> list[dict[str, Any]]:
     return _fetch_all(
         connection,
         """
@@ -253,78 +261,88 @@ def get_supervisor_students(connection: sqlite3.Connection, supervisor_id: str) 
     )
 
 
-def get_supervisor_dashboard_summary(connection: sqlite3.Connection, supervisor_id: str) -> dict[str, Any]:
-    students = get_supervisor_students(connection, supervisor_id)
-    recent_proposals: list[dict[str, Any]] = []
-    students_with_proposals = set()
-    analyzed_current_versions = 0
-    waiting_for_analysis = 0
-    revision_requested = 0
-    reviewed = 0
-
-    for student in students:
-        proposals = get_student_proposals(connection, student["student_id"])
-        if proposals:
-            students_with_proposals.add(student["student_id"])
-        for proposal in proposals:
-            current_version = None
-            current_version_id = proposal.get("current_version_id")
-            if current_version_id:
-                current_version = get_proposal_version(connection, current_version_id)
-            analyses = get_version_analyses(connection, current_version["version_id"]) if current_version else []
-            latest_review = (
-                get_latest_supervisor_review(
-                    connection,
-                    version_id=current_version["version_id"],
-                    supervisor_id=supervisor_id,
-                )
-                if current_version
-                else None
+def get_supervisor_dashboard_summary(connection: Any, supervisor_id: str) -> dict[str, Any]:
+    # Single SQL query to calculate all counts efficiently
+    stats = _fetch_one(
+        connection,
+        """
+        SELECT 
+            COUNT(DISTINCT s.student_id) as assigned_students,
+            COUNT(DISTINCT CASE WHEN p.proposal_id IS NOT NULL THEN s.student_id END) as with_proposals,
+            COUNT(CASE WHEN pv.version_id IS NOT NULL AND a.analysis_id IS NOT NULL THEN 1 END) as analyzed_current_versions,
+            COUNT(CASE WHEN pv.version_id IS NOT NULL AND a.analysis_id IS NULL THEN 1 END) as waiting_for_analysis,
+            COUNT(CASE WHEN sr.decision IN ('REQUEST_REVISION', 'REVISION_REQUESTED') THEN 1 END) as revision_requested,
+            COUNT(CASE WHEN sr.review_id IS NOT NULL THEN 1 END) as reviewed
+        FROM supervisor_student_assignments ssa
+        JOIN students s ON s.student_id = ssa.student_id
+        LEFT JOIN proposals p ON p.student_id = s.student_id
+        LEFT JOIN proposal_versions pv ON pv.version_id = p.current_version_id
+        LEFT JOIN (
+            SELECT version_id, MAX(analysis_id) as analysis_id 
+            FROM analyses 
+            GROUP BY version_id
+        ) a ON a.version_id = pv.version_id
+        LEFT JOIN (
+            SELECT version_id, supervisor_id, decision, review_id
+            FROM supervisor_reviews sr1
+            WHERE updated_at = (
+                SELECT MAX(updated_at) 
+                FROM supervisor_reviews sr2 
+                WHERE sr1.version_id = sr2.version_id AND sr1.supervisor_id = sr2.supervisor_id
             )
-            if current_version:
-                if analyses:
-                    analyzed_current_versions += 1
-                else:
-                    waiting_for_analysis += 1
-            if latest_review:
-                reviewed += 1
-                if latest_review.get("decision") in {"REQUEST_REVISION", "REVISION_REQUESTED"}:
-                    revision_requested += 1
+        ) sr ON sr.version_id = pv.version_id AND sr.supervisor_id = ssa.supervisor_id
+        WHERE ssa.supervisor_id = ? AND ssa.active = 1
+        """,
+        (supervisor_id,)
+    )
 
-            review_decision = latest_review.get("decision") if latest_review else None
-            recent_proposals.append(
-                {
-                    "student_id": student["student_id"],
-                    "student_name": student["full_name"],
-                    "academic_student_id": student["academic_student_id"],
-                    "proposal_id": proposal["proposal_id"],
-                    "proposal_title": proposal["title"],
-                    "current_version_id": current_version["version_id"] if current_version else None,
-                    "current_version_number": current_version["version_number"] if current_version else None,
-                    "last_upload": (
-                        current_version.get("submitted_at")
-                        or current_version.get("created_at")
-                        if current_version
-                        else proposal.get("updated_at")
-                    ),
-                    "analysis_state": "Analyzed" if analyses else ("Waiting for analysis" if current_version else "No version"),
-                    "supervisor_review_state": review_decision or "Not reviewed",
-                }
+    # For recent activity, just fetch the most recent ones updated
+    recent_proposals = _fetch_all(
+        connection,
+        """
+        SELECT 
+            p.proposal_id, p.title as proposal_title,
+            s.student_id, s.academic_student_id, s.full_name as student_name,
+            pv.version_id as current_version_id, pv.version_number as current_version_number,
+            pv.created_at as last_upload,
+            CASE WHEN a.analysis_id IS NOT NULL THEN 'Analyzed' ELSE 'Waiting for analysis' END as analysis_state,
+            COALESCE(sr.decision, 'AWAITING_SUPERVISOR_DECISION') as supervisor_review_state
+        FROM proposals p
+        JOIN students s ON s.student_id = p.student_id
+        JOIN supervisor_student_assignments ssa ON ssa.student_id = s.student_id
+        LEFT JOIN proposal_versions pv ON pv.version_id = p.current_version_id
+        LEFT JOIN (
+            SELECT version_id, MAX(analysis_id) as analysis_id 
+            FROM analyses 
+            GROUP BY version_id
+        ) a ON a.version_id = pv.version_id
+        LEFT JOIN (
+            SELECT version_id, supervisor_id, decision 
+            FROM supervisor_reviews sr1
+            WHERE updated_at = (
+                SELECT MAX(updated_at) FROM supervisor_reviews sr2 
+                WHERE sr1.version_id = sr2.version_id AND sr1.supervisor_id = sr2.supervisor_id
             )
+        ) sr ON sr.version_id = pv.version_id AND sr.supervisor_id = ssa.supervisor_id
+        WHERE ssa.supervisor_id = ? AND ssa.active = 1
+        ORDER BY p.updated_at DESC
+        LIMIT 5
+        """,
+        (supervisor_id,)
+    )
 
-    recent_proposals.sort(key=lambda item: item.get("last_upload") or "", reverse=True)
     return {
-        "assigned_students": len(students),
-        "with_proposals": len(students_with_proposals),
-        "analyzed_current_versions": analyzed_current_versions,
-        "waiting_for_analysis": waiting_for_analysis,
-        "revision_requested": revision_requested,
-        "reviewed": reviewed,
-        "recent_proposals": recent_proposals[:6],
+        "assigned_students": int(stats["assigned_students"] or 0),
+        "with_proposals": int(stats["with_proposals"] or 0),
+        "analyzed_current_versions": int(stats["analyzed_current_versions"] or 0),
+        "waiting_for_analysis": int(stats["waiting_for_analysis"] or 0),
+        "revision_requested": int(stats["revision_requested"] or 0),
+        "reviewed": int(stats["reviewed"] or 0),
+        "recent_proposals": recent_proposals,
     }
 
 
-def get_student_supervisors(connection: sqlite3.Connection, student_id: str) -> list[dict[str, Any]]:
+def get_student_supervisors(connection: Any, student_id: str) -> list[dict[str, Any]]:
     return _fetch_all(
         connection,
         """
@@ -345,7 +363,7 @@ def get_student_supervisors(connection: sqlite3.Connection, student_id: str) -> 
 
 
 def get_supervisor_student_assignment(
-    connection: sqlite3.Connection,
+    connection: Any,
     *,
     supervisor_id: str,
     student_id: str,
@@ -365,7 +383,7 @@ def get_supervisor_student_assignment(
 
 
 def get_active_supervisor_student_assignment(
-    connection: sqlite3.Connection,
+    connection: Any,
     *,
     supervisor_id: str,
     student_id: str,
@@ -385,7 +403,7 @@ def get_active_supervisor_student_assignment(
 
 
 def remove_supervisor_student_assignment(
-    connection: sqlite3.Connection,
+    connection: Any,
     *,
     supervisor_id: str,
     student_id: str,
@@ -415,7 +433,7 @@ def remove_supervisor_student_assignment(
     )
 
 
-def supervisor_is_assigned_to_student(connection: sqlite3.Connection, *, supervisor_id: str, student_id: str) -> bool:
+def supervisor_is_assigned_to_student(connection: Any, *, supervisor_id: str, student_id: str) -> bool:
     row = connection.execute(
         """
         SELECT 1
@@ -430,7 +448,7 @@ def supervisor_is_assigned_to_student(connection: sqlite3.Connection, *, supervi
 
 
 def create_proposal(
-    connection: sqlite3.Connection,
+    connection: Any,
     *,
     student_id: str,
     title: str,
@@ -450,11 +468,11 @@ def create_proposal(
     return get_proposal(connection, resolved_id)
 
 
-def get_proposal(connection: sqlite3.Connection, proposal_id: str) -> dict[str, Any] | None:
+def get_proposal(connection: Any, proposal_id: str) -> dict[str, Any] | None:
     return _fetch_one(connection, "SELECT * FROM proposals WHERE proposal_id = ?", (proposal_id,))
 
 
-def get_student_proposal_by_title(connection: sqlite3.Connection, student_id: str, title: str) -> dict[str, Any] | None:
+def get_student_proposal_by_title(connection: Any, student_id: str, title: str) -> dict[str, Any] | None:
     return _fetch_one(
         connection,
         "SELECT * FROM proposals WHERE student_id = ? AND title = ?",
@@ -462,7 +480,7 @@ def get_student_proposal_by_title(connection: sqlite3.Connection, student_id: st
     )
 
 
-def get_student_proposals(connection: sqlite3.Connection, student_id: str) -> list[dict[str, Any]]:
+def get_student_proposals(connection: Any, student_id: str) -> list[dict[str, Any]]:
     return _fetch_all(
         connection,
         "SELECT * FROM proposals WHERE student_id = ? ORDER BY created_at",
@@ -470,11 +488,18 @@ def get_student_proposals(connection: sqlite3.Connection, student_id: str) -> li
     )
 
 
-def delete_proposal_tree(connection: sqlite3.Connection, proposal_id: str) -> dict[str, int]:
-    """Hard-delete one proposal and SQLite-owned workflow dependents."""
+def delete_proposal_tree(connection: Any, proposal_id: str) -> dict[str, int]:
+    """Hard-delete one proposal and database-owned workflow dependents."""
     counts: dict[str, int] = {}
     try:
         connection.execute("BEGIN")
+        for table in (
+            "notification_logs",
+            "ai_supervisor_review_drafts",
+        ):
+            cursor = connection.execute(f"DELETE FROM {table} WHERE proposal_id = ?", (proposal_id,))
+            counts[table] = cursor.rowcount
+
         cursor = connection.execute(
             """
             DELETE FROM supervisor_review_drafts
@@ -485,9 +510,8 @@ def delete_proposal_tree(connection: sqlite3.Connection, proposal_id: str) -> di
             (proposal_id,),
         )
         counts["supervisor_review_drafts"] = cursor.rowcount
+
         for table in (
-            "notification_logs",
-            "ai_supervisor_review_drafts",
             "supervisor_reviews",
             "analyses",
             "proposal_versions",
@@ -503,7 +527,7 @@ def delete_proposal_tree(connection: sqlite3.Connection, proposal_id: str) -> di
 
 
 def create_proposal_version(
-    connection: sqlite3.Connection,
+    connection: Any,
     *,
     proposal_id: str,
     version_number: int,
@@ -549,7 +573,7 @@ def create_proposal_version(
 
 
 def create_revised_proposal_version_after_revision_request(
-    connection: sqlite3.Connection,
+    connection: Any,
     *,
     proposal_id: str,
     supervisor_id: str,
@@ -628,11 +652,11 @@ def create_revised_proposal_version_after_revision_request(
     return get_proposal_version(connection, resolved_id)
 
 
-def get_proposal_version(connection: sqlite3.Connection, version_id: str) -> dict[str, Any] | None:
+def get_proposal_version(connection: Any, version_id: str) -> dict[str, Any] | None:
     return _fetch_one(connection, "SELECT * FROM proposal_versions WHERE version_id = ?", (version_id,))
 
 
-def get_proposal_versions(connection: sqlite3.Connection, proposal_id: str) -> list[dict[str, Any]]:
+def get_proposal_versions(connection: Any, proposal_id: str) -> list[dict[str, Any]]:
     return _fetch_all(
         connection,
         "SELECT * FROM proposal_versions WHERE proposal_id = ? ORDER BY version_number",
@@ -641,7 +665,7 @@ def get_proposal_versions(connection: sqlite3.Connection, proposal_id: str) -> l
 
 
 def get_proposal_version_by_number(
-    connection: sqlite3.Connection,
+    connection: Any,
     proposal_id: str,
     version_number: int,
 ) -> dict[str, Any] | None:
@@ -653,7 +677,7 @@ def get_proposal_version_by_number(
 
 
 def create_analysis(
-    connection: sqlite3.Connection,
+    connection: Any,
     *,
     proposal_id: str,
     version_id: str,
@@ -679,11 +703,11 @@ def create_analysis(
     return _fetch_one(connection, "SELECT * FROM analyses WHERE analysis_id = ?", (resolved_id,))
 
 
-def get_analysis(connection: sqlite3.Connection, analysis_id: str) -> dict[str, Any] | None:
+def get_analysis(connection: Any, analysis_id: str) -> dict[str, Any] | None:
     return _fetch_one(connection, "SELECT * FROM analyses WHERE analysis_id = ?", (analysis_id,))
 
 
-def get_version_analyses(connection: sqlite3.Connection, version_id: str) -> list[dict[str, Any]]:
+def get_version_analyses(connection: Any, version_id: str) -> list[dict[str, Any]]:
     return _fetch_all(
         connection,
         "SELECT * FROM analyses WHERE version_id = ? ORDER BY created_at",
@@ -692,7 +716,7 @@ def get_version_analyses(connection: sqlite3.Connection, version_id: str) -> lis
 
 
 def create_supervisor_review(
-    connection: sqlite3.Connection,
+    connection: Any,
     *,
     proposal_id: str,
     version_id: str,
@@ -720,7 +744,7 @@ def create_supervisor_review(
 
 
 def update_supervisor_review(
-    connection: sqlite3.Connection,
+    connection: Any,
     *,
     review_id: str,
     decision: str,
@@ -739,7 +763,7 @@ def update_supervisor_review(
 
 
 def get_latest_supervisor_review(
-    connection: sqlite3.Connection,
+    connection: Any,
     *,
     version_id: str,
     supervisor_id: str,
@@ -761,7 +785,7 @@ def get_latest_supervisor_review(
 
 
 def save_current_supervisor_review(
-    connection: sqlite3.Connection,
+    connection: Any,
     *,
     proposal_id: str,
     version_id: str,
@@ -787,7 +811,7 @@ def save_current_supervisor_review(
     )
 
 
-def get_version_reviews(connection: sqlite3.Connection, version_id: str) -> list[dict[str, Any]]:
+def get_version_reviews(connection: Any, version_id: str) -> list[dict[str, Any]]:
     return _fetch_all(
         connection,
         """
@@ -803,7 +827,7 @@ def get_version_reviews(connection: sqlite3.Connection, version_id: str) -> list
 
 
 def create_ai_supervisor_review_draft(
-    connection: sqlite3.Connection,
+    connection: Any,
     *,
     proposal_id: str,
     version_id: str,
@@ -843,7 +867,7 @@ def create_ai_supervisor_review_draft(
 
 
 def get_ai_supervisor_review_draft(
-    connection: sqlite3.Connection,
+    connection: Any,
     *,
     version_id: str,
     analysis_id: str,
@@ -859,7 +883,7 @@ def get_ai_supervisor_review_draft(
 
 
 def get_supervisor_review_draft(
-    connection: sqlite3.Connection,
+    connection: Any,
     *,
     version_id: str,
     analysis_id: str,
@@ -876,7 +900,7 @@ def get_supervisor_review_draft(
 
 
 def save_supervisor_review_draft(
-    connection: sqlite3.Connection,
+    connection: Any,
     *,
     version_id: str,
     analysis_id: str,
@@ -976,7 +1000,7 @@ def save_supervisor_review_draft(
 
 
 def create_notification_log(
-    connection: sqlite3.Connection,
+    connection: Any,
     *,
     student_id: str,
     proposal_id: str,
@@ -989,6 +1013,9 @@ def create_notification_log(
     review_id: str | None = None,
     recipient_email: str | None = None,
     subject: str | None = None,
+    provider_name: str | None = None,
+    provider_message_id: str | None = None,
+    report_reference: str | None = None,
     sent_at: str | None = None,
     error_message: str | None = None,
     notification_id: str | None = None,
@@ -999,9 +1026,10 @@ def create_notification_log(
         INSERT INTO notification_logs (
             notification_id, student_id, proposal_id, version_id, analysis_id,
             supervisor_id, supervisor_review_draft_id, review_id, recipient_email,
-            subject, notification_type, status, created_at, sent_at, error_message
+            subject, notification_type, status, created_at, sent_at, error_message,
+            provider_name, provider_message_id, report_reference
         )
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """,
         (
             resolved_id,
@@ -1019,13 +1047,44 @@ def create_notification_log(
             _utc_now(),
             sent_at,
             error_message,
+            provider_name,
+            provider_message_id,
+            report_reference,
         ),
     )
     connection.commit()
     return _fetch_one(connection, "SELECT * FROM notification_logs WHERE notification_id = ?", (resolved_id,))
 
 
-def get_version_notifications(connection: sqlite3.Connection, version_id: str) -> list[dict[str, Any]]:
+def update_notification_log_status(
+    connection: Any,
+    notification_id: str,
+    *,
+    status: str,
+    sent_at: str | None = None,
+    error_message: str | None = None,
+    provider_name: str | None = None,
+    provider_message_id: str | None = None,
+    report_reference: str | None = None,
+) -> dict[str, Any]:
+    connection.execute(
+        """
+        UPDATE notification_logs
+        SET status = ?,
+            sent_at = ?,
+            error_message = ?,
+            provider_name = COALESCE(?, provider_name),
+            provider_message_id = COALESCE(?, provider_message_id),
+            report_reference = COALESCE(?, report_reference)
+        WHERE notification_id = ?
+        """,
+        (status, sent_at, error_message, provider_name, provider_message_id, report_reference, notification_id),
+    )
+    connection.commit()
+    return _fetch_one(connection, "SELECT * FROM notification_logs WHERE notification_id = ?", (notification_id,))
+
+
+def get_version_notifications(connection: Any, version_id: str) -> list[dict[str, Any]]:
     return _fetch_all(
         connection,
         "SELECT * FROM notification_logs WHERE version_id = ? ORDER BY created_at",
@@ -1034,7 +1093,7 @@ def get_version_notifications(connection: sqlite3.Connection, version_id: str) -
 
 
 def get_feedback_delivery_notifications(
-    connection: sqlite3.Connection,
+    connection: Any,
     *,
     version_id: str,
     analysis_id: str,
@@ -1055,7 +1114,7 @@ def get_feedback_delivery_notifications(
 
 
 def get_successful_feedback_delivery(
-    connection: sqlite3.Connection,
+    connection: Any,
     *,
     version_id: str,
     analysis_id: str,

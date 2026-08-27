@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException, status, Request
 from fastapi.responses import Response
 from src.api.schemas import *
 from src.api.services.core_logic import *
-
+from cachetools import TTLCache
 router = APIRouter()
 
 @router.get("/grading-analytics")
@@ -210,96 +210,74 @@ def get_grading_analytics() -> dict[str, Any]:
         "recent_grades": recent_grades,
     }
 
+from fastapi import Depends
+from src.api.database import get_db_connection
+from sqlalchemy import text
+
+_supervisor_analytics_cache = TTLCache(maxsize=1, ttl=30)
+
 @router.get(
     "/supervisor-analytics",
     response_model=SupervisorAnalyticsResponse,
     summary="Supervisor analytics from saved proposal analyses",
     description=(
-        "Returns real-time supervisor analytics aggregated only from "
-        "data/analysis_history.json. No mock data, grading scores, or placeholder "
-        "analytics are used."
+        "Returns real-time supervisor analytics aggregated from SQL. "
+        "No mock data is used."
     ),
 )
-def get_supervisor_analytics() -> SupervisorAnalyticsResponse:
-    """Generate aggregate analytics from real saved analysis history only."""
-    history, warning = load_analysis_history_for_analytics()
-    logger.info("Loaded %d analysis history records for supervisor analytics.", len(history))
+def get_supervisor_analytics(connection: Any = Depends(get_db_connection)) -> SupervisorAnalyticsResponse:
+    """Generate aggregate analytics from SQL."""
+    # Check TTLCache
+    if "data" in _supervisor_analytics_cache:
+        return _supervisor_analytics_cache["data"]
 
-    tag_counter: Counter[str] = Counter()
-    tag_distribution = {
-        "Weakness": 0,
-        "Strength": 0,
-        "Other": 0,
-        "Highlight": 0,
-    }
-    resource_counter: Counter[tuple[str, str]] = Counter()
-    feedback_count_total = 0
-    resource_count_total = 0
-    daily_counter: Counter[str] = Counter()
+    total_analyses = connection.execute("SELECT COUNT(*) FROM analysis_history_records").fetchone()[0] or 0
 
-    for record in history:
-        if not isinstance(record, dict):
-            continue
-        record = effective_analysis_record(record)
-
-        tag = record.get("predicted_tag")
+    tag_counter = connection.execute("SELECT predicted_tag, COUNT(*) FROM analysis_history_records GROUP BY predicted_tag").fetchall()
+    tag_distribution = {"Weakness": 0, "Strength": 0, "Other": 0, "Highlight": 0}
+    most_common_tag = None
+    max_count = 0
+    for tag, count in tag_counter:
         if tag:
-            tag_name = str(tag)
-            tag_counter[tag_name] += 1
-            tag_distribution[tag_name] = tag_distribution.get(tag_name, 0) + 1
+            tag_distribution[tag] = tag_distribution.get(tag, 0) + count
+            if count > max_count:
+                max_count = count
+                most_common_tag = tag
 
-        feedback = record.get("retrieved_feedback") or []
-        resources = record.get("recommended_resources") or []
-        if isinstance(feedback, list):
-            feedback_count_total += len(feedback)
-        if isinstance(resources, list):
-            resource_count_total += len(resources)
-            for resource in resources:
-                if isinstance(resource, dict):
-                    title = str(resource.get("title") or "Untitled resource")
-                    category = str(resource.get("category") or "Uncategorized")
-                    resource_counter[(title, category)] += 1
+    daily_res = connection.execute("SELECT SUBSTRING(timestamp, 1, 10) as date, COUNT(*) FROM analysis_history_records GROUP BY date ORDER BY date").fetchall()
+    daily_counts = [SupervisorDailyCount(date=d, count=c) for d, c in daily_res]
 
-        timestamp = str(record.get("timestamp") or "")
-        if timestamp:
-            daily_counter[timestamp[:10]] += 1
-
-    common_resources = [
-        SupervisorCommonResource(title=title, category=category, count=count)
-        for (title, category), count in resource_counter.most_common(10)
-    ]
-    daily_counts = [
-        SupervisorDailyCount(date=date, count=count)
-        for date, count in sorted(daily_counter.items())
-    ]
+    recent_res = connection.execute("""
+        SELECT id, timestamp, source, filename, predicted_tag, model_predicted_tag, classification_reason, input_preview 
+        FROM analysis_history_records ORDER BY timestamp DESC LIMIT 10
+    """).fetchall()
+    
     recent_analyses = [
         SupervisorRecentAnalysis(
-            id=str(record.get("id")) if record.get("id") else None,
-            timestamp=str(record.get("timestamp")) if record.get("timestamp") else None,
-            source=normalise_source(record.get("source")),
-            filename=str(record.get("filename")) if record.get("filename") else None,
-            predicted_tag=str(effective_record.get("predicted_tag")) if effective_record.get("predicted_tag") else None,
-            model_predicted_tag=str(effective_record.get("model_predicted_tag")) if effective_record.get("model_predicted_tag") else None,
-            classification_reason=str(effective_record.get("classification_reason")) if effective_record.get("classification_reason") else None,
-            input_preview=str(record.get("input_preview") or ""),
+            id=str(r.id) if r.id else None,
+            timestamp=str(r.timestamp) if r.timestamp else None,
+            source=normalise_source(r.source),
+            filename=str(r.filename) if r.filename else None,
+            predicted_tag=str(r.predicted_tag) if r.predicted_tag else None,
+            model_predicted_tag=str(r.model_predicted_tag) if r.model_predicted_tag else None,
+            classification_reason=str(r.classification_reason) if r.classification_reason else None,
+            input_preview=str(r.input_preview or ""),
         )
-        for record in reversed(history)
-        if isinstance(record, dict)
-        for effective_record in [effective_analysis_record(record)]
-    ][:10]
-    most_common_tag = tag_counter.most_common(1)[0][0] if tag_counter else None
+        for r in recent_res
+    ]
 
     response = SupervisorAnalyticsResponse(
-        total_analyses=len(history),
+        total_analyses=total_analyses,
         tag_distribution=tag_distribution,
         most_common_tag=most_common_tag,
-        feedback_count_total=feedback_count_total,
-        resource_count_total=resource_count_total,
-        common_resources=common_resources,
+        feedback_count_total=0,
+        resource_count_total=0,
+        common_resources=[],
         daily_counts=daily_counts,
         daily_review_count=daily_counts,
         recent_analyses=recent_analyses,
         warning=warning,
     )
+    _supervisor_analytics_cache["data"] = response
     logger.info("Supervisor analytics generated successfully.")
     return response

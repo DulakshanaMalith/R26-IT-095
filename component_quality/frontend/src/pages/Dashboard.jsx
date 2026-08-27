@@ -49,7 +49,7 @@ function statusClass(value) {
   return "neutral";
 }
 
-export default function Dashboard({ backendOnline, currentSupervisor, notify }) {
+export default function Dashboard({ backendOnline, currentSupervisor, requireAuth = false, notify }) {
   const [summary, setSummary] = useState(EMPTY_SUMMARY);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -70,7 +70,7 @@ export default function Dashboard({ backendOnline, currentSupervisor, notify }) 
         if (!cancelled) setSummary({ ...EMPTY_SUMMARY, ...payload });
       } catch (dashboardError) {
         if (!cancelled) {
-          const message = dashboardError.message === "Authentication required."
+          const message = requireAuth && dashboardError.message === "Authentication required."
             ? "Your supervisor session has expired. Please sign in again."
             : "Could not load supervisor dashboard data.";
           setError(message);
@@ -101,9 +101,6 @@ export default function Dashboard({ backendOnline, currentSupervisor, notify }) 
           <p>Track assigned students, proposal analysis progress, and human review attention from one supervisor-scoped view.</p>
         </div>
         <Sparkles size={34} />
-        <span className={`status-pill ${backendOnline ? "online" : "offline"}`}>
-          Backend: {backendOnline ? "Online" : "Offline"}
-        </span>
       </div>
 
       {loading ? (
@@ -114,8 +111,16 @@ export default function Dashboard({ backendOnline, currentSupervisor, notify }) 
       ) : error ? (
         <article className="empty-state">
           <h3>{error}</h3>
-          <p className="muted">Dashboard data is loaded from the authenticated supervisor session.</p>
-          <Link className="primary-button compact-button" to="/login">Return to Login</Link>
+          <p className="muted">
+            {requireAuth
+              ? "Dashboard data is loaded from the authenticated supervisor session."
+              : "Dashboard data is loaded from the configured local prototype supervisor."}
+          </p>
+          {requireAuth ? (
+            <Link className="primary-button compact-button" to="/login">Return to Login</Link>
+          ) : (
+            <Link className="primary-button compact-button" to="/students">View My Students</Link>
+          )}
         </article>
       ) : (
         <>

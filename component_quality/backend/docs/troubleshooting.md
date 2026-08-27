@@ -49,6 +49,20 @@ $env:VITE_API_BASE_URL
 
 4. Confirm `ALLOWED_ORIGINS` contains `http://127.0.0.1:5173`.
 
+## Database-Backed APIs Return 503
+
+Symptom: auth, supervisor, history, grading, graph, or analytics endpoints report that PostgreSQL is not configured or unavailable.
+
+Fix:
+
+```powershell
+Set-Location backend
+$env:DATABASE_URL="postgresql+psycopg://researchpilot:researchpilot@localhost:5432/researchpilot"
+alembic upgrade head
+```
+
+Then restart the backend.
+
 ## Proposal Is Rejected
 
 The validator requires research-proposal signals. Include enough text and sections such as:
@@ -78,17 +92,18 @@ python -m spacy download en_core_web_sm
 
 Fallback extraction still works, but concept quality can be lower.
 
-## JSON History Corruption
+## Legacy JSON History Corruption
 
-Symptom: history appears empty after a crash or manual edit.
+Symptom: the migration validation script fails while reading legacy `data/*_history.json`.
 
-Cause: history loader detected invalid JSON and moved the previous file to `.corrupted.json`.
+Cause: a legacy source history file is not a valid JSON array.
 
 Fix:
 
 1. Inspect `data/*.corrupted.json`.
 2. Repair JSON manually if needed.
-3. Replace the active `data/*_history.json` with valid JSON array content.
+3. Replace the legacy source `data/*_history.json` with valid JSON array content.
+4. Re-run `python scripts/migrate_to_postgres.py --validate-only`.
 
 ## Playwright Smoke Test Fails
 

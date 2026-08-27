@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { GitBranch, LoaderCircle, TriangleAlert } from "lucide-react";
+import { GitBranch, LoaderCircle, TriangleAlert, Network, AlertCircle, HelpCircle, Activity } from "lucide-react";
 import KnowledgeGraphHistoryModal from "./KnowledgeGraphHistoryModal";
 import KnowledgeGraphSummary from "./KnowledgeGraphSummary";
 
@@ -119,31 +119,39 @@ export default function KnowledgeGraphSection({
       )}
 
       {graph && (
-        <div className="kg-grid">
-          <article className="kg-card">
-            <h3>Main Concepts</h3>
-            <BadgeList items={concepts} emptyText="No concepts detected." />
-          </article>
-
-          <article className="kg-card">
-            <h3>Concept Relationships</h3>
+        <div className="kg-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px', marginTop: '16px' }}>
+          
+          <article className="kg-card" style={{ padding: '20px', backgroundColor: '#fff', border: '1px solid var(--border)', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.03)' }}>
+            <h3 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '0', color: 'var(--text-main)', fontSize: '1.1rem' }}>
+              <Network size={18} color="var(--primary)" />
+              Concept Relationships
+            </h3>
             {edges.length ? <EdgeList edges={edges} /> : <p className="empty-copy">No relationships detected.</p>}
           </article>
 
-          <article className="kg-card">
-            <h3>Missing Research Concepts</h3>
+          <article className="kg-card" style={{ padding: '20px', backgroundColor: '#fff', border: '1px solid var(--border)', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.03)' }}>
+            <h3 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '0', color: 'var(--text-main)', fontSize: '1.1rem' }}>
+              <AlertCircle size={18} color="var(--danger-color, #ef4444)" />
+              Missing Concepts
+            </h3>
             <BadgeList items={missingConcepts} variant="warning" emptyText="All major concepts detected." />
           </article>
           
           {implicitConcepts.length > 0 && (
-            <article className="kg-card">
-              <h3>Could Be Clearer</h3>
+            <article className="kg-card" style={{ padding: '20px', backgroundColor: '#fff', border: '1px solid var(--border)', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.03)' }}>
+              <h3 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '0', color: 'var(--text-main)', fontSize: '1.1rem' }}>
+                <HelpCircle size={18} color="var(--warning-color, #f59e0b)" />
+                Could Be Clearer
+              </h3>
               <BadgeList items={implicitConcepts} variant="warning" emptyText="None." />
             </article>
           )}
 
-          <article className="kg-card">
-            <h3>Graph Summary</h3>
+          <article className="kg-card" style={{ padding: '20px', backgroundColor: '#fff', border: '1px solid var(--border)', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.03)' }}>
+            <h3 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '0', color: 'var(--text-main)', fontSize: '1.1rem' }}>
+              <Activity size={18} color="var(--primary)" />
+              Graph Summary
+            </h3>
             <KnowledgeGraphSummary
               conceptCount={concepts.length}
               edgeCount={edges.length}

@@ -132,6 +132,8 @@ def analyze(payload: AnalyzeRequest, request: Request) -> AnalysisResponse:
         )
     text = clean_text(payload.text)
     validation = validate_research_proposal_text(text, payload.analysis_id)
+    _, _, _, sections_evidence, _ = calculate_sufficiency_aware_completeness(text, validation.detected_sections, validation.missing_sections)
+    
     model_text = prepare_model_text(text)
     print("[MODEL DEBUG] Input text length:", len(model_text))
     model_predicted_tag = predict_tag(request, model_text)
@@ -140,7 +142,12 @@ def analyze(payload: AnalyzeRequest, request: Request) -> AnalysisResponse:
     feedback_context = " ".join(
         str(match.get("comment_text", "")) for match in feedback_matches
     )
-    resources = get_recommended_resources(model_text, feedback_context, missing_sections=validation.missing_sections, top_k=3)
+    
+    learning_needs = payload.learning_needs
+    if not learning_needs:
+        learning_needs = build_learning_needs(validation.missing_sections, sections_evidence, feedback_matches)
+        
+    resources = get_recommended_resources(model_text, feedback_context, missing_sections=validation.missing_sections, learning_needs=learning_needs, top_k=3)
     record = save_analysis_record(
         analysis_id=payload.analysis_id,
         request_id=payload.request_id,

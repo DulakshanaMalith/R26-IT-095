@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { ArrowLeft, GitCompareArrows } from "lucide-react";
 import EmptyState from "../components/EmptyState";
 import Loader from "../components/Loader";
 import MetricCard from "../components/MetricCard";
 import { getProposalImprovement, getStudent, getVersionSupervisorReviews } from "../api";
+import { bestVersionViewModel, snapshotBadges } from "./proposalImprovementViewModel";
 
 function formatList(items, empty = "None") {
   return items?.length ? items.join(", ") : empty;
@@ -34,46 +35,46 @@ export default function ProposalImprovement({ backendOnline, backendChecked, cur
   const versions = improvement?.versions || [];
   const comparisons = improvement?.comparisons || [];
   const readyComparisons = comparisons.filter((comparison) => comparison.overall_direction !== "INSUFFICIENT_DATA");
+  const bestVersionPanel = bestVersionViewModel(improvement);
+
+  const loadImprovement = useCallback(async ({ silent = false } = {}) => {
+    if (!backendOnline || !proposalId) return;
+    if (!silent) setLoading(true);
+    setError("");
+    try {
+      const [studentPayload, improvementPayload] = await Promise.all([
+        studentId ? getStudent(studentId) : Promise.resolve(null),
+        getProposalImprovement(proposalId),
+      ]);
+      const reviewPairs = await Promise.all(
+        (improvementPayload.versions || []).map(async (version) => [
+          version.version_id,
+          await getVersionSupervisorReviews(version.version_id),
+        ]),
+      );
+      setStudent(studentPayload);
+      setImprovement(improvementPayload);
+      setVersionReviews(Object.fromEntries(reviewPairs));
+    } catch (loadError) {
+      const message = loadError.message || "Could not load proposal improvement.";
+      setError(message);
+      notify?.(message, "error");
+    } finally {
+      if (!silent) setLoading(false);
+    }
+  }, [backendOnline, notify, proposalId, studentId]);
 
   useEffect(() => {
     let cancelled = false;
-
-    async function loadImprovement() {
-      if (!backendOnline || !proposalId) return;
-      setLoading(true);
-      setError("");
-      try {
-        const [studentPayload, improvementPayload] = await Promise.all([
-          studentId ? getStudent(studentId) : Promise.resolve(null),
-          getProposalImprovement(proposalId),
-        ]);
-        const reviewPairs = await Promise.all(
-          (improvementPayload.versions || []).map(async (version) => [
-            version.version_id,
-            await getVersionSupervisorReviews(version.version_id),
-          ]),
-        );
-        if (cancelled) return;
-        setStudent(studentPayload);
-        setImprovement(improvementPayload);
-        setVersionReviews(Object.fromEntries(reviewPairs));
-      } catch (loadError) {
-        if (cancelled) return;
-        const message = loadError.message || "Could not load proposal improvement.";
-        setError(message);
-        notify?.(message, "error");
-      } finally {
-        if (!cancelled) setLoading(false);
-      }
-    }
-
     if (backendChecked && backendOnline) {
-      loadImprovement();
+      loadImprovement().then(() => {
+        if (cancelled) return;
+      });
     }
     return () => {
       cancelled = true;
     };
-  }, [backendChecked, backendOnline, notify, proposalId, studentId]);
+  }, [backendChecked, backendOnline, loadImprovement]);
 
   if (loading) return <Loader />;
 
@@ -107,6 +108,60 @@ export default function ProposalImprovement({ backendOnline, backendChecked, cur
             <MetricCard icon={GitCompareArrows} label="Analyzed Versions" value={versions.filter((version) => version.analyzed).length} detail="Linked SQLite analyses" />
           </div>
 
+          <article className="workspace-panel best-version-panel">
+            <div className="workspace-panel-header">
+              <div>
+                <span className="eyebrow">Best Available Version</span>
+                <strong>{bestVersionPanel.hasBest ? bestVersionPanel.title : "Best Available Version unavailable"}</strong>
+                <p>Based on currently saved analysis evidence</p>
+              </div>
+            </div>
+            {bestVersionPanel.hasBest ? (
+              <>
+                <div className="best-version-grid">
+                  <div>
+                    <span className="eyebrow">Why this version?</span>
+                    <ul className="best-version-reasons">
+                      {bestVersionPanel.reasons.map((reason) => (
+                        <li key={reason}>{reason}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="best-version-latest">
+                    <span>Latest Version</span>
+                    <strong>{bestVersionPanel.latestLabel}</strong>
+                    {bestVersionPanel.latestIsBest ? (
+                      <p>Latest version is also the Best Available Version.</p>
+                    ) : (
+                      <p>Latest version is not automatically treated as best.</p>
+                    )}
+                    {bestVersionPanel.regressions.map((regression) => (
+                      <p className="best-version-regression" key={`${regression.section}-${regression.message}`}>
+                        Regression detected: {regression.message}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+                <div className="supervisor-action-row compact-actions">
+                  {bestVersionPanel.showCompareWithLatest && (
+                    <a
+                      className="secondary-button"
+                      href={bestVersionPanel.compareHref}
+                      aria-label={`Compare ${bestVersionPanel.best.version_label} with ${bestVersionPanel.latestLabel}`}
+                    >
+                      Compare {bestVersionPanel.best.version_label} with {bestVersionPanel.latestLabel}
+                    </a>
+                  )}
+                  {!bestVersionPanel.showCompareWithLatest && (
+                    <span className="muted">Selection is based on saved analysis evidence.</span>
+                  )}
+                </div>
+              </>
+            ) : (
+              <p className="muted">{bestVersionPanel.message}</p>
+            )}
+          </article>
+
           <article className="workspace-panel">
             <div className="workspace-panel-header">
               <div>
@@ -116,8 +171,17 @@ export default function ProposalImprovement({ backendOnline, backendChecked, cur
             </div>
             <div className="workspace-version-strip">
               {versions.map((version) => (
-                <article className="detail-card" key={version.version_id}>
-                  <h3>V{version.version_number}</h3>
+                <article className="detail-card" id={`version-${version.version_id}`} key={version.version_id}>
+                  <div className="version-card-heading">
+                    <h3>V{version.version_number}</h3>
+                    <div className="version-card-badges">
+                      {snapshotBadges(version, improvement).map((badge) => (
+                        <span className={`workflow-status ${badge.tone === "best" ? "warning" : "neutral"}`} key={badge.label}>
+                          {badge.label}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                   <div className="result-summary">
                     <article>
                       <span>Analysis</span>
@@ -186,7 +250,11 @@ export default function ProposalImprovement({ backendOnline, backendChecked, cur
               </div>
               <div className="workspace-comparison-list">
                 {readyComparisons.map((comparison) => (
-                  <article className="comparison-card" key={`${comparison.from_version_id}-${comparison.to_version_id}`}>
+                  <article
+                    className="comparison-card"
+                    id={`comparison-${comparison.from_version_id}-${comparison.to_version_id}`}
+                    key={`${comparison.from_version_id}-${comparison.to_version_id}`}
+                  >
                     <div>
                       <span>{`V${comparison.from_version} -> V${comparison.to_version}`}</span>
                       <strong>{comparison.resolved_missing_sections?.length || 0}</strong>

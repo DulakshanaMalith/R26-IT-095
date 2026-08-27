@@ -12,6 +12,8 @@ from io import BytesIO
 from collections import Counter
 from contextlib import asynccontextmanager
 from datetime import datetime, timezone
+from functools import lru_cache, wraps
+import time
 from pathlib import Path
 from typing import Any
 from uuid import uuid4
@@ -27,7 +29,7 @@ try:
 except ImportError:  # pragma: no cover - keeps legacy installs usable until requirements are installed.
     load_dotenv = None
 
-from src.core.document_validator import validate_proposal_document
+from src.core.document_validator import validate_proposal_document, normalize_extracted_document_text
 from src.core.knowledge_graph import (
     analyze_knowledge_graph,
     load_graph_history,
@@ -36,6 +38,7 @@ from src.core.knowledge_graph import (
 from src.core.resource_recommender import is_valid_resource_url, recommend_resources
 from src.core.feedback_retrieval import get_feedback
 from src.core.semantic_transformer import SemanticTransformer
+from src.db import history_repositories
 from src.reviewer.service import run_review
 from src.reviewer.schemas import ReviewResult
 
@@ -70,8 +73,7 @@ MODEL_PATH = MODEL_DIR / "weakness_svm_model.pkl"
 GRADING_MODEL_PATH = MODEL_DIR / "semantic_grading_model.pkl"
 DATA_DIR = env_path("DATA_DIR", "data")
 REPORTS_DIR = ROOT_DIR / "reports"
-HISTORY_PATH = DATA_DIR / "analysis_history.json"
-GRADING_HISTORY_PATH = DATA_DIR / "grading_history.json"
+
 ALLOWED_ORIGINS = env_list(
     "ALLOWED_ORIGINS",
     [
@@ -162,6 +164,11 @@ SECTION_CONFIG = {
         "terms": ["purpose", "study", "research", "method", "findings", "contribution"],
         "min_words": 90,
     },
+    "Introduction": {
+        "headings": ["introduction", "background", "context"],
+        "terms": ["context", "background", "motivation", "important", "problem", "field", "area"],
+        "min_words": 150,
+    },
     "Research Gap": {
         "headings": ["research gap", "problem statement", "gap", "problem", "motivation"],
         "terms": ["gap", "problem", "limitation", "challenge", "lack", "need", "however"],
@@ -234,6 +241,16 @@ def load_svm_model(path: Path) -> Any:
     return model
 
 
+def timeit(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        start = time.time()
+        result = func(*args, **kwargs)
+        logger.info(f"[TIMER] {func.__name__} took {time.time() - start:.3f} seconds.")
+        return result
+    return wrapper
+
+
 def load_grading_model() -> Any:
     """Lazily load and validate the baseline semantic grading model."""
     global _grading_model
@@ -261,85 +278,28 @@ def load_grading_model() -> Any:
 
 
 def ensure_history_file() -> None:
-    """Create the data directory and history file when they do not exist."""
-    DATA_DIR.mkdir(parents=True, exist_ok=True)
-    if not HISTORY_PATH.exists():
-        HISTORY_PATH.write_text("[]", encoding="utf-8")
-    if not GRADING_HISTORY_PATH.exists():
-        GRADING_HISTORY_PATH.write_text("[]", encoding="utf-8")
+    """Retained for compatibility; runtime histories are PostgreSQL-backed."""
+    return None
 
 
 def load_analysis_history() -> list[dict[str, Any]]:
-    """Load saved analysis records, recovering from missing or corrupted JSON."""
-    ensure_history_file()
-    try:
-        history = json.loads(HISTORY_PATH.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError):
-        backup_path = HISTORY_PATH.with_suffix(".corrupted.json")
-        try:
-            HISTORY_PATH.replace(backup_path)
-        except OSError:
-            pass
-        HISTORY_PATH.write_text("[]", encoding="utf-8")
-        return []
-
-    if not isinstance(history, list):
-        HISTORY_PATH.write_text("[]", encoding="utf-8")
-        return []
-    return history
+    """Load saved analysis records from PostgreSQL."""
+    return history_repositories.list_analysis_history()
 
 
 def load_analysis_history_for_analytics() -> tuple[list[dict[str, Any]], str | None]:
-    """Load analysis history for analytics while preserving a warning for recovery."""
-    ensure_history_file()
-    try:
-        history = json.loads(HISTORY_PATH.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError) as exc:
-        warning = "Analysis history file was missing or corrupted; empty analytics returned."
-        backup_path = HISTORY_PATH.with_suffix(".corrupted.json")
-        try:
-            HISTORY_PATH.replace(backup_path)
-        except OSError:
-            pass
-        HISTORY_PATH.write_text("[]", encoding="utf-8")
-        logger.warning("Could not load analysis history for supervisor analytics: %s", exc)
-        return [], warning
-
-    if not isinstance(history, list):
-        warning = "Analysis history file did not contain a list; empty analytics returned."
-        HISTORY_PATH.write_text("[]", encoding="utf-8")
-        logger.warning("Analysis history for supervisor analytics was not a list.")
-        return [], warning
-
-    return history, None
+    """Load analysis history for analytics from PostgreSQL."""
+    return load_analysis_history(), None
 
 
 def write_analysis_history(history: list[dict[str, Any]]) -> None:
-    """Persist analysis history to disk."""
-    ensure_history_file()
-    HISTORY_PATH.write_text(
-        json.dumps(history, ensure_ascii=False, indent=2),
-        encoding="utf-8",
-    )
+    """Replace analysis history records in PostgreSQL."""
+    history_repositories.replace_analysis_history(history)
 
 
 def load_grading_history() -> list[dict[str, Any]]:
-    """Load saved semantic grading records, recovering from invalid JSON."""
-    ensure_history_file()
-    try:
-        history = json.loads(GRADING_HISTORY_PATH.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError):
-        backup_path = GRADING_HISTORY_PATH.with_suffix(".corrupted.json")
-        try:
-            GRADING_HISTORY_PATH.replace(backup_path)
-        except OSError:
-            pass
-        GRADING_HISTORY_PATH.write_text("[]", encoding="utf-8")
-        return []
-
-    if not isinstance(history, list):
-        GRADING_HISTORY_PATH.write_text("[]", encoding="utf-8")
-        return []
+    """Load saved semantic grading records from PostgreSQL."""
+    history = history_repositories.list_grading_history()
     changed = False
     for record in history:
         if isinstance(record, dict):
@@ -350,12 +310,8 @@ def load_grading_history() -> list[dict[str, Any]]:
 
 
 def write_grading_history(history: list[dict[str, Any]]) -> None:
-    """Persist semantic grading records to disk."""
-    ensure_history_file()
-    GRADING_HISTORY_PATH.write_text(
-        json.dumps(history, ensure_ascii=False, indent=2),
-        encoding="utf-8",
-    )
+    """Replace semantic grading records in PostgreSQL."""
+    history_repositories.replace_grading_history(history)
 
 
 def ensure_persisted_hybrid_fields(record: dict[str, Any]) -> bool:
@@ -419,7 +375,7 @@ def save_analysis_record(
     student_id: str | None,
     proposal_title: str | None,
 ) -> dict[str, Any]:
-    """Append one successful analysis record to the JSON history file."""
+    """Append one successful analysis record to PostgreSQL history."""
     normalized_analysis_id = (
         analysis_id.strip()
         if isinstance(analysis_id, str) and analysis_id.strip()
@@ -443,9 +399,7 @@ def save_analysis_record(
         "retrieved_feedback": feedback_matches,
         "recommended_resources": resources,
     }
-    history = load_analysis_history()
-    history.append(record)
-    write_analysis_history(history)
+    history_repositories.append_analysis_record(record)
     print(f"Analysis history saved: {record['id']}")
     return record
 
@@ -517,15 +471,9 @@ def linked_analysis_text_for_grading(
 def delete_analysis_record_by_id(analysis_id: str) -> dict[str, Any]:
     """Delete one analysis history record by ID and return it."""
     normalized_id = analysis_id.strip()
-    history = load_analysis_history()
-    for index, record in enumerate(history):
-        if isinstance(record, dict) and (
-            record.get("analysis_id") == normalized_id
-            or record.get("id") == normalized_id
-        ):
-            deleted = history.pop(index)
-            write_analysis_history(history)
-            return deleted
+    deleted = history_repositories.delete_analysis_history_record(normalized_id)
+    if deleted is not None:
+        return deleted
     raise HTTPException(
         status_code=status.HTTP_404_NOT_FOUND,
         detail="Analysis history record not found.",
@@ -932,6 +880,135 @@ def calculate_completeness_from_missing(missing_sections: list[Any]) -> tuple[fl
     return float(max(0, 100 - sum(deductions.values()))), deductions, canonical_missing
 
 
+def calculate_sufficiency_aware_completeness(
+    text: str,
+    detected_validator_sections: list[Any],
+    missing_validator_sections: list[Any],
+) -> tuple[float, dict[str, int], list[str], dict[str, Any], list[str]]:
+    """Calculate completeness weighted by section sufficiency/word count."""
+    
+    canonical_missing: list[str] = []
+    seen_missing: set[str] = set()
+    for section in missing_validator_sections or []:
+        label = canonical_section_label(section)
+        if label in COMPLETENESS_SECTION_WEIGHTS and label not in seen_missing:
+            canonical_missing.append(label)
+            seen_missing.add(label)
+            
+    canonical_detected: list[str] = []
+    seen_detected: set[str] = set()
+    for section in detected_validator_sections or []:
+        label = canonical_section_label(section)
+        if label in COMPLETENESS_SECTION_WEIGHTS and label not in seen_detected:
+            canonical_detected.append(label)
+            seen_detected.add(label)
+            
+    total_completeness = 0.0
+    deductions: dict[str, int] = {}
+    sections_evidence: dict[str, Any] = {}
+    warnings: list[str] = []
+    
+    normalized_text = normalize_extracted_document_text(text)
+    
+    for section_name, weight in COMPLETENESS_SECTION_WEIGHTS.items():
+        if section_name in canonical_missing:
+            deductions[section_name] = weight
+            sections_evidence[section_name] = {
+                "heading_found": False,
+                "word_count": 0,
+                "minimum_words": SECTION_CONFIG.get(section_name, {}).get("min_words", 0),
+                "sufficiency_percentage": 0
+            }
+            continue
+            
+        if section_name in canonical_detected:
+            min_words = SECTION_CONFIG.get(section_name, {}).get("min_words", 0)
+            if min_words > 0:
+                section_text, _ = extract_section_text(normalized_text, section_name)
+                word_count = len(re.findall(r"\b\w+\b", section_text))
+                
+                sufficiency_ratio = min(word_count / min_words, 1.0)
+                # Ensure a base contribution if the section is detected
+                sufficiency_ratio = max(0.20, sufficiency_ratio)
+                
+                contribution = weight * sufficiency_ratio
+                total_completeness += contribution
+                
+                if sufficiency_ratio < 1.0:
+                    deductions[section_name] = int(round(weight - contribution))
+                    warnings.append(f"{section_name} is present but shorter than the recommended minimum length ({word_count}/{min_words} words).")
+                    
+                sections_evidence[section_name] = {
+                    "heading_found": True,
+                    "word_count": word_count,
+                    "minimum_words": min_words,
+                    "sufficiency_percentage": int(round(sufficiency_ratio * 100))
+                }
+            else:
+                total_completeness += weight
+                sections_evidence[section_name] = {
+                    "heading_found": True,
+                    "word_count": 0,
+                    "minimum_words": 0,
+                    "sufficiency_percentage": 100
+                }
+        else:
+            # Fallback if not detected and not missing
+            total_completeness += weight
+
+    return float(min(100.0, max(0.0, round(total_completeness, 1)))), deductions, canonical_missing, sections_evidence, warnings
+
+
+def build_learning_needs(
+    missing_sections: list[str],
+    sections_evidence: dict[str, Any],
+    retrieved_feedback: list[dict[str, Any]] | None = None,
+    max_needs: int = 3,
+) -> list[dict[str, Any]]:
+    """Build a deterministic list of prioritized learning needs from structural validation and feedback."""
+    needs = []
+    
+    # Priority 1: Missing Sections
+    for section in missing_sections:
+        needs.append({
+            "area": section,
+            "status": "missing",
+            "reason": f"The {section} section is missing.",
+            "priority": 1,
+            "sufficiency": 0.0,
+        })
+        
+    # Priority 2: Insufficient Sections
+    for section, evidence in sections_evidence.items():
+        if evidence.get("heading_found") and evidence.get("sufficiency_percentage", 100) < 100:
+            word_count = evidence.get("word_count", 0)
+            min_words = evidence.get("minimum_words", 0)
+            needs.append({
+                "area": section,
+                "status": "insufficient",
+                "reason": f"The {section} section is too short ({word_count} words). Minimum required is {min_words} words.",
+                "priority": 2,
+                "sufficiency": evidence.get("sufficiency_percentage", 0.0),
+            })
+            
+    # Optional Priority 3: Feedback matches could be evaluated here in the future.
+    # For now, we focus on structural deficiencies.
+    
+    # Sort needs by priority, then by severity of insufficiency
+    needs.sort(key=lambda n: (n["priority"], n["sufficiency"]))
+    
+    # Strip internal sorting keys and enforce limit
+    final_needs = []
+    for need in needs[:max_needs]:
+        clean_need = dict(need)
+        clean_need.pop("priority", None)
+        clean_need.pop("sufficiency", None)
+        final_needs.append(clean_need)
+        
+    return final_needs
+
+
+
 def analysis_tag_from_validation(model_tag: str, validation: Any) -> tuple[str, str]:
     """Combine raw SVM tag with structural proposal validation for user-facing analytics."""
     completeness, _, missing_sections = calculate_completeness_from_missing(validation.missing_sections)
@@ -980,17 +1057,21 @@ def completeness_from_text(text: str, base_payload: Any = None) -> dict[str, Any
             if canonical_section_label(section)
         }
     )
-    completeness, deductions, missing_sections = calculate_completeness_from_missing(validation.missing_sections)
+    completeness, deductions, missing_sections, evidence, warnings = calculate_sufficiency_aware_completeness(
+        text, validation.detected_sections, validation.missing_sections
+    )
     readiness = readiness_for_completeness(completeness)
     normalized = dict(base_payload) if isinstance(base_payload, dict) else {}
+    combined_warnings = list(validation.warnings) + warnings
     normalized.update(
         {
             "percentage": completeness,
             "detected_sections": detected,
             "missing_sections": missing_sections,
             "deductions": deductions,
+            "sections_evidence": evidence,
             "validation_confidence": round(float(validation.confidence), 2),
-            "warnings": list(validation.warnings),
+            "warnings": combined_warnings,
             "status": readiness.status,
         }
     )
@@ -1072,9 +1153,11 @@ def build_final_proposal_assessment(
     predicted_score: float,
     percentage_score: float,
     label: str,
+    validation: Any = None,
 ) -> dict[str, Any]:
     """Build the non-ML academic completeness/readiness layer."""
-    validation = validate_proposal_document(text)
+    if validation is None:
+        validation = validate_proposal_document(text)
     detected = sorted(
         {
             canonical_section_label(section)
@@ -1082,16 +1165,20 @@ def build_final_proposal_assessment(
             if canonical_section_label(section)
         }
     )
-    completeness, deductions, missing_sections = calculate_completeness_from_missing(validation.missing_sections)
+    completeness, deductions, missing_sections, evidence, warnings = calculate_sufficiency_aware_completeness(
+        text, validation.detected_sections, validation.missing_sections
+    )
     readiness = readiness_for_completeness(completeness)
     final_readiness = calculate_final_readiness(percentage_score, completeness)
+    combined_warnings = list(validation.warnings) + warnings
     completeness_payload = ProposalCompletenessPayload(
         percentage=completeness,
         detected_sections=detected,
         missing_sections=missing_sections,
         deductions=deductions,
+        sections_evidence=evidence,
         validation_confidence=round(float(validation.confidence), 2),
-        warnings=list(validation.warnings),
+        warnings=combined_warnings,
         status=readiness.status,
     )
     final_payload = FinalProposalAssessmentPayload(
@@ -1163,9 +1250,7 @@ def save_grading_record(
         "model_status": model_status,
         "warning": warning,
     }
-    history = load_grading_history()
-    history.append(record)
-    write_grading_history(history)
+    history_repositories.append_grading_record(record)
     print(f"Grading history saved: {record['id']}")
     return record
 
@@ -1180,6 +1265,7 @@ def contains_term(normalized_text: str, term: str) -> bool:
     return re.search(rf"\b{re.escape(normalized_term)}\b", normalized_text) is not None
 
 
+@lru_cache(maxsize=32)
 def validate_research_proposal_text(text: str, analysis_id: str | None = None) -> Any:
     """Reject non-proposal documents before ML analysis or grading."""
     validation = validate_proposal_document(text)
@@ -1242,6 +1328,7 @@ def prepare_model_text(text: str, max_chars: int = MODEL_TEXT_LIMIT) -> str:
     return cleaned[:max_chars]
 
 
+@timeit
 def predict_tag(request: Request, text: str) -> str:
     """Predict an annotation tag with the startup-loaded SVM pipeline."""
     print("[MODEL DEBUG] Weakness prediction input text length:", len(text))
@@ -1263,6 +1350,7 @@ def predict_tag(request: Request, text: str) -> str:
         ) from exc
 
 
+@timeit
 def retrieve_feedback(text: str, top_k: int = 3) -> list[dict[str, Any]]:
     """Retrieve similar annotations and their feedback comments."""
     try:
@@ -1288,15 +1376,17 @@ def retrieve_feedback(text: str, top_k: int = 3) -> list[dict[str, Any]]:
         ) from exc
 
 
+@timeit
 def get_recommended_resources(
     text: str,
     feedback: str = "",
     missing_sections: list[str] | None = None,
+    learning_needs: list[dict[str, Any]] | None = None,
     top_k: int = 3,
 ) -> list[dict[str, Any]]:
     """Rank learning resources for the supplied weakness and feedback."""
     try:
-        resources = recommend_resources(text, feedback, missing_sections=missing_sections, top_k=top_k)
+        resources = recommend_resources(text, feedback, missing_sections=missing_sections, learning_needs=learning_needs, top_k=top_k)
         print("[MODEL DEBUG] Resource recommendations returned:", len(resources))
         return resources
     except (ValueError, TypeError) as exc:
@@ -1306,6 +1396,7 @@ def get_recommended_resources(
         ) from exc
 
 
+@timeit
 def grade_report_text(text: str) -> float:
     """Predict a baseline semantic grading score for full report text."""
     try:
@@ -1602,6 +1693,14 @@ def raw_text(value: Any, fallback: str = "Not available.", max_chars: int | None
     if max_chars and len(text) > max_chars:
         text = text[:max_chars].rsplit(" ", 1)[0].strip() + "..."
     return text or fallback
+
+
+def first_list_value(mapping: dict[str, Any], *keys: str) -> list[Any]:
+    for key in keys:
+        value = mapping.get(key)
+        if isinstance(value, list):
+            return list(value)
+    return []
 
 
 def readable_report_datetime(value: Any, fallback: str = "Not available.") -> str:
@@ -2405,7 +2504,7 @@ def generate_supervisor_final_feedback_pdf(
         completeness = semantic_evidence.get("proposal_completeness") or {}
         missing_sections = completeness.get("missing_sections") or semantic_evidence.get("missing_sections") or []
         missing_concepts = (evidence.get("knowledge_graph") or {}).get("missing_concepts") or []
-        recommendations = evidence.get("recommended_resources") or []
+        recommendations = first_list_value(evidence, "recommended_resources", "resources", "recommendations")
         lines = [
             "ResearchPilot Final Feedback Report",
             "",
@@ -2452,16 +2551,19 @@ def generate_supervisor_final_feedback_pdf(
         if recommendations:
             for resource in recommendations[:8]:
                 if isinstance(resource, dict):
+                    resource_url = resource.get("url") if is_valid_resource_url(resource.get("url")) else None
                     lines.extend([
                         "",
+                        f"Related Area: {paragraph_text(resource.get('category') or resource.get('area'), 'General')}",
                         paragraph_text(resource.get("title"), "Untitled resource"),
-                        f"Why: {paragraph_text(resource.get('description') or resource.get('reason') or resource.get('recommendation') or resource.get('category'), 'Resource support is available for this revision area.')}",
-                        f"Open Resource: {resource.get('url') if is_valid_resource_url(resource.get('url')) else 'Resource link not available'}",
+                        paragraph_text(resource.get("description"), "Resource support is available for this revision area."),
+                        f"Why: {paragraph_text(resource.get('reason') or resource.get('recommendation'), 'Resource support is available for this revision area.')}",
+                        f"Open Resource: {resource_url or 'Resource link unavailable'}",
                     ])
                 else:
-                    lines.extend(["", paragraph_text(resource), "Open Resource: Resource link not available"])
+                    lines.extend(["", paragraph_text(resource), "Open Resource: Resource link unavailable"])
         else:
-            lines.append("No learning resources were available.")
+            lines.append("No learning resources were available for this analysis.")
         lines.extend([
             "",
             "REPORT NOTE",
@@ -2598,25 +2700,35 @@ def generate_supervisor_final_feedback_pdf(
 
     def resource_title(resource: Any) -> str:
         if isinstance(resource, dict):
-            return raw_text(resource.get("title"), "Untitled resource", 160)
+            return raw_text(resource.get("title") or resource.get("name"), "Untitled resource", 160)
         return raw_text(resource, "Untitled resource", 160)
+
+    def resource_category(resource: Any) -> str:
+        if not isinstance(resource, dict):
+            return "General"
+        return raw_text(resource.get("category") or resource.get("area") or resource.get("related_area"), "General", 120)
 
     def resource_description(resource: Any) -> str:
         if isinstance(resource, dict):
             return raw_text(
                 resource.get("description")
-                or resource.get("reason")
-                or resource.get("recommendation")
-                or resource.get("category"),
+                or resource.get("summary")
+                or resource.get("details"),
                 "Resource support is available for this revision area.",
                 420,
             )
         return "Resource support is available for this revision area."
 
+    def resource_reason(resource: Any) -> str | None:
+        if not isinstance(resource, dict):
+            return None
+        reason = raw_text(resource.get("reason") or resource.get("recommendation"), "", 360)
+        return reason or None
+
     def resource_url(resource: Any) -> str | None:
         if not isinstance(resource, dict):
             return None
-        for key in ("url", "resource_url", "link"):
+        for key in ("url", "resource_url", "link", "href"):
             value = resource.get(key)
             if is_valid_resource_url(value):
                 return str(value).strip()
@@ -2635,23 +2747,28 @@ def generate_supervisor_final_feedback_pdf(
         area_terms = [term for term in re.findall(r"[a-z0-9]+", area_text) if len(term) > 3]
         return any(term in resource_text for term in area_terms)
 
-    def resource_link_paragraph(url: str | None) -> Any:
+    def resource_link_paragraph(title: str, url: str | None) -> Any:
         if not url:
-            return p("Resource link not available", "Small")
+            return p("Resource link unavailable", "Small")
+        safe_title = safe_text(title, "Untitled resource", 160)
         escaped_url = escape(url, {'"': "&quot;"})
         return Paragraph(
-            f'<link href="{escaped_url}"><font color="#2563eb">Open Resource</font></link>',
+            f'<link href="{escaped_url}" color="#2563eb">{safe_title} - Open Resource</link>',
             styles["Small"],
         )
 
     def add_resource(resource: Any) -> None:
         title = resource_title(resource)
+        category = resource_category(resource)
         description = resource_description(resource)
+        reason = resource_reason(resource)
         url = resource_url(resource)
+        story.append(Paragraph(f"<b>Related Area:</b> {safe_text(category)}", styles["Small"]))
         story.append(Paragraph(safe_text(title), styles["Subheading"]))
-        story.append(Paragraph(f"<b>Why:</b> {safe_text(description)}", styles["Normal"]))
-        story.append(Paragraph("<b>Open Resource:</b>", styles["Small"]))
-        story.append(resource_link_paragraph(url))
+        story.append(Paragraph(safe_text(description), styles["Normal"]))
+        if reason:
+            story.append(Paragraph(f"<b>Why recommended:</b> {safe_text(reason)}", styles["Normal"]))
+        story.append(resource_link_paragraph(title, url))
 
     def revision_action_items() -> list[dict[str, Any]]:
         topic_definitions = [
@@ -2659,9 +2776,9 @@ def generate_supervisor_final_feedback_pdf(
             ("objectives", "Add / Improve Research Objectives", ("objective", "objectives", "aim", "aims", "goal", "goals")),
             ("research_question", "Clarify the Research Question", ("research question", "question", "scope", "focused", "answerable")),
             ("research_gap", "Clarify the Research Gap", ("research gap", "gap", "shortcoming", "limitations", "limited studies")),
+            ("evaluation", "Develop the Evaluation Strategy", ("evaluation", "validation", "metric", "metrics", "baseline comparison", "performance", "experiment")),
             ("methodology", "Clarify the Methodology", ("methodology", "method", "methods", "implementation", "system components", "procedure", "process")),
             ("data_collection", "Clarify Data Collection", ("data collection", "sample", "sampling", "participant", "participants", "dataset", "survey", "interview")),
-            ("evaluation", "Develop the Evaluation Strategy", ("evaluation", "validation", "metric", "metrics", "baseline comparison", "performance", "experiment")),
             ("results", "Clarify Expected Results", ("result", "results", "outcome", "outputs", "findings")),
             ("limitations", "Address Limitations", ("limitation", "limitations", "threats", "constraints")),
             ("future_work", "Clarify Future Work", ("future work", "future", "extension", "extensions")),
@@ -2846,7 +2963,7 @@ def generate_supervisor_final_feedback_pdf(
     semantic_evidence = evidence.get("semantic_grade") or {}
     completeness = semantic_evidence.get("proposal_completeness") or {}
     missing_sections = completeness.get("missing_sections") or semantic_evidence.get("missing_sections") or []
-    recommendations = evidence.get("recommended_resources") or []
+    recommendations = first_list_value(evidence, "recommended_resources", "resources", "recommendations")
     missing_concepts = knowledge.get("missing_concepts") or []
     review_date = readable_report_datetime(supervisor_review.get("updated_at") or analysis.get("created_at"))
     generated_date = readable_report_datetime(generated_at)

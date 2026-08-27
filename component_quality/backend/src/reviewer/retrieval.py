@@ -12,7 +12,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 logger = logging.getLogger(__name__)
 
 ROOT_DIR = Path(__file__).resolve().parent.parent.parent
-DATA_PATH = ROOT_DIR / "data" / "feedback" / "weakness_vs_strength.csv"
+DATA_PATH = ROOT_DIR.parent / "training" / "data" / "processed" / "feedback_corpus.csv"
 EMBEDDINGS_PATH = ROOT_DIR.parent / "training" / "models" / "rag_embeddings.pkl"
 MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
 
@@ -49,6 +49,12 @@ class RAGRetriever:
         # Rebuild
         logger.info("Building RAG embeddings. This may take a moment...")
         self.df = pd.read_csv(DATA_PATH)
+        # Handle the new dataset columns
+        if "annotated_text" in self.df.columns:
+            self.df = self.df.rename(columns={"annotated_text": "span_text"})
+        if "tag" in self.df.columns and "annotation_tag" not in self.df.columns:
+            self.df = self.df.rename(columns={"tag": "annotation_tag"})
+            
         # Drop rows missing crucial texts
         self.df = self.df.dropna(subset=["span_text", "comment_text"])
         self.df = self.df.reset_index(drop=True)

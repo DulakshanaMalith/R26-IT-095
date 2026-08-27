@@ -10,6 +10,9 @@ from datetime import datetime, timezone
 from itertools import combinations
 from pathlib import Path
 from typing import Any
+from uuid import uuid4
+
+from src.db import history_repositories
 
 
 ROOT_DIR = Path(__file__).resolve().parent
@@ -30,7 +33,7 @@ def env_path(name: str, default: str) -> Path:
 
 
 DATA_DIR = env_path("DATA_DIR", "data")
-HISTORY_PATH = DATA_DIR / "knowledge_graph_history.json"
+
 
 DEFAULT_CHECKLIST = [
     "Research Question",
@@ -389,35 +392,29 @@ def analyze_knowledge_graph(text: str, max_concepts: int = 20) -> dict[str, Any]
 
 
 def ensure_history_file() -> None:
-    """Create the graph history file if missing."""
-    DATA_DIR.mkdir(parents=True, exist_ok=True)
-    if not HISTORY_PATH.exists():
-        HISTORY_PATH.write_text("[]", encoding="utf-8")
+    """Retained for compatibility; graph histories are PostgreSQL-backed."""
+    return None
 
 
 def load_graph_history() -> list[dict[str, Any]]:
-    """Load graph history with simple corruption recovery."""
-    ensure_history_file()
-    try:
-        history = json.loads(HISTORY_PATH.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError):
-        backup_path = HISTORY_PATH.with_suffix(".corrupted.json")
-        try:
-            HISTORY_PATH.replace(backup_path)
-        except OSError:
-            pass
-        HISTORY_PATH.write_text("[]", encoding="utf-8")
-        return []
-    return history if isinstance(history, list) else []
+    """Load graph history from PostgreSQL."""
+    return history_repositories.list_graph_history()
+
+
+def find_graph_record_by_analysis_id(analysis_id: str | None) -> dict[str, Any] | None:
+    """Return the newest graph record linked by exact analysis_id."""
+    if not isinstance(analysis_id, str) or not analysis_id.strip():
+        return None
+    normalized_id = analysis_id.strip()
+    for record in reversed(load_graph_history()):
+        if isinstance(record, dict) and record.get("analysis_id") == normalized_id:
+            return record
+    return None
 
 
 def write_graph_history(history: list[dict[str, Any]]) -> None:
-    """Persist graph history to disk."""
-    ensure_history_file()
-    HISTORY_PATH.write_text(
-        json.dumps(history, ensure_ascii=False, indent=2),
-        encoding="utf-8",
-    )
+    """Replace graph history records in PostgreSQL."""
+    history_repositories.replace_graph_history(history)
 
 
 def save_graph_history(
@@ -428,6 +425,7 @@ def save_graph_history(
 ) -> dict[str, Any]:
     """Save a lightweight graph summary for demo history."""
     record = {
+        "id": str(uuid4()),
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "analysis_id": analysis_id.strip() if isinstance(analysis_id, str) and analysis_id.strip() else None,
         "filename": filename or None,
@@ -437,7 +435,5 @@ def save_graph_history(
         "missing_concepts": graph.get("missing_concepts", []),
         "implicit_concepts": graph.get("implicit_concepts", []),
     }
-    history = load_graph_history()
-    history.append(record)
-    write_graph_history(history)
+    history_repositories.append_graph_record(record)
     return record

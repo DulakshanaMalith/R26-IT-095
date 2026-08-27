@@ -1,12 +1,17 @@
 from __future__ import annotations
 
 import json
-import sqlite3
+import logging
 from datetime import datetime, timezone
 from typing import Any
 from uuid import uuid4
+import asyncio
+import hashlib
+from fastapi.concurrency import run_in_threadpool
+from cachetools import TTLCache
 
 from fastapi import APIRouter, Depends, HTTPException, Request, Response, status
+from sqlalchemy.exc import IntegrityError
 
 from src.api.auth import get_current_supervisor
 from src.api.database import get_db_connection
@@ -37,6 +42,7 @@ from src.api.schemas import (
     SupervisorReviewResponse,
     StudentResponse,
     SupervisorStudentResponse,
+    UpdateStudentEmailRequest,
     VersionAnalysisResponse,
     ValidatedRetrievedFeedbackList,
 )
@@ -48,14 +54,18 @@ from src.db import repositories
 from src.reviewer.providers import get_llm_provider
 from src.reviewer.service import run_review
 
-router = APIRouter(tags=["Supervisor Data"])
+router = APIRouter(tags=["supervisors"])
+logger = logging.getLogger(__name__)
+
+_analysis_locks: dict[str, asyncio.Lock] = {}
+_analysis_cache = TTLCache(maxsize=100, ttl=300)
 
 
-def _close_connection(connection: sqlite3.Connection) -> None:
+def _close_connection(connection: Any) -> None:
     connection.close()
 
 
-def _constraint_error(exc: sqlite3.IntegrityError) -> HTTPException:
+def _constraint_error(exc: IntegrityError) -> HTTPException:
     message = str(exc).lower()
     if "students.academic_student_id" in message:
         detail = "A student with this academic student ID already exists."
@@ -78,7 +88,7 @@ def _require_record(record: dict[str, Any] | None, detail: str) -> dict[str, Any
     return record
 
 
-def _next_version_number(connection: sqlite3.Connection, proposal_id: str) -> int:
+def _next_version_number(connection: Any, proposal_id: str) -> int:
     row = connection.execute(
         "SELECT COALESCE(MAX(version_number), 0) + 1 AS next_version FROM proposal_versions WHERE proposal_id = ?",
         (proposal_id,),
@@ -97,6 +107,11 @@ def _version_text(version: dict[str, Any]) -> str:
         status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
         detail="Proposal version does not contain usable proposal text.",
     )
+
+
+def _proposal_version_response(version: dict[str, Any]) -> dict[str, Any]:
+    sanitized = dict(version)
+    return sanitized
 
 
 def _storage_decision(decision: str) -> str:
@@ -172,6 +187,12 @@ def _json_payload(value: Any) -> dict[str, Any]:
     return {}
 
 
+def _json_evidence(record: dict[str, Any] | None) -> dict[str, Any]:
+    if not record:
+        return {}
+    return _json_payload(record.get("evidence_json"))
+
+
 def _draft_response(record: dict[str, Any]) -> dict[str, Any]:
     return {
         "draft_id": record["draft_id"],
@@ -196,6 +217,14 @@ def _json_list(value: Any) -> list[str]:
             return []
         if isinstance(parsed, list):
             return [str(item) for item in parsed if str(item).strip()]
+    return []
+
+
+def _evidence_list(record: dict[str, Any], *keys: str) -> list[Any]:
+    for key in keys:
+        value = record.get(key)
+        if isinstance(value, list):
+            return list(value)
     return []
 
 
@@ -244,6 +273,9 @@ def _delivery_response(
             "created_at": None,
             "sent_at": None,
             "error_message": None,
+            "provider_name": None,
+            "provider_message_id": None,
+            "report_reference": None,
         }
     return {
         "notification_id": record["notification_id"],
@@ -258,6 +290,9 @@ def _delivery_response(
         "created_at": record["created_at"],
         "sent_at": record.get("sent_at"),
         "error_message": record.get("error_message"),
+        "provider_name": record.get("provider_name"),
+        "provider_message_id": record.get("provider_message_id"),
+        "report_reference": record.get("report_reference"),
     }
 
 
@@ -289,7 +324,7 @@ def _safe_delivery_error(exc: Exception) -> str:
 
 
 def _final_feedback_artifacts(
-    connection: sqlite3.Connection,
+    connection: Any,
     *,
     version_id: str,
     analysis_id: str,
@@ -299,7 +334,7 @@ def _final_feedback_artifacts(
     proposal = _require_supervisor_for_version(connection, version=version, supervisor_id=supervisor_id)
     student = _require_record(repositories.get_student(connection, proposal["student_id"]), "Student not found.")
     analysis = _linked_analysis_for_version(connection, version_id=version_id, analysis_id=analysis_id)
-    _require_record(
+    ai_draft = _require_record(
         repositories.get_ai_supervisor_review_draft(
             connection,
             version_id=version_id,
@@ -320,6 +355,25 @@ def _final_feedback_artifacts(
         )
 
     evidence = _review_draft_evidence(proposal=proposal, version=version, analysis_id=analysis_id)
+    saved_evidence = _json_evidence(ai_draft)
+    if saved_evidence:
+        repaired_evidence = dict(saved_evidence)
+        for key in ("retrieved_feedback", "recommended_resources"):
+            if not repaired_evidence.get(key):
+                repaired_evidence[key] = evidence.get(key, [])
+        repaired_evidence.setdefault("analysis_id", analysis_id)
+        repaired_evidence.setdefault("proposal_title", evidence.get("proposal_title"))
+        repaired_evidence.setdefault("version_number", evidence.get("version_number"))
+        repaired_evidence.setdefault("semantic_grade", evidence.get("semantic_grade", {}))
+        repaired_evidence.setdefault("knowledge_graph", evidence.get("knowledge_graph", {}))
+        evidence = repaired_evidence
+        logger.info(
+            "Recovered final-feedback resource evidence: version_id=%s analysis_id=%s saved_resources=%s linked_resources=%s",
+            version_id,
+            analysis_id,
+            len(saved_evidence.get("recommended_resources") or []),
+            len(evidence.get("recommended_resources") or []),
+        )
     filename, pdf_bytes = core_logic.generate_supervisor_final_feedback_pdf(
         student=student,
         proposal=proposal,
@@ -332,7 +386,7 @@ def _final_feedback_artifacts(
 
 
 def _review_outcome_artifacts(
-    connection: sqlite3.Connection,
+    connection: Any,
     *,
     version_id: str,
     analysis_id: str,
@@ -381,7 +435,7 @@ def _review_outcome_artifacts(
     )
 
 
-def _current_proposal_version(connection: sqlite3.Connection, proposal: dict[str, Any]) -> dict[str, Any] | None:
+def _current_proposal_version(connection: Any, proposal: dict[str, Any]) -> dict[str, Any] | None:
     current_version_id = proposal.get("current_version_id")
     if current_version_id:
         return repositories.get_proposal_version(connection, current_version_id)
@@ -390,7 +444,7 @@ def _current_proposal_version(connection: sqlite3.Connection, proposal: dict[str
 
 
 def _linked_analysis_for_version(
-    connection: sqlite3.Connection,
+    connection: Any,
     *,
     version_id: str,
     analysis_id: str,
@@ -410,7 +464,7 @@ def _linked_analysis_for_version(
 
 
 def _require_supervisor_for_version(
-    connection: sqlite3.Connection,
+    connection: Any,
     *,
     version: dict[str, Any],
     supervisor_id: str,
@@ -430,29 +484,11 @@ def _require_supervisor_for_version(
 
 
 def _find_grading_record_by_analysis_id_read_only(analysis_id: str) -> dict[str, Any] | None:
-    try:
-        history = json.loads(core_logic.GRADING_HISTORY_PATH.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError):
-        return None
-    if not isinstance(history, list):
-        return None
-    for record in reversed(history):
-        if isinstance(record, dict) and record.get("analysis_id") == analysis_id:
-            return record
-    return None
+    return core_logic.find_grading_record_by_analysis_id(analysis_id)
 
 
 def _find_graph_record_by_analysis_id_read_only(analysis_id: str) -> dict[str, Any] | None:
-    try:
-        history = json.loads(knowledge_graph.HISTORY_PATH.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError):
-        return None
-    if not isinstance(history, list):
-        return None
-    for record in reversed(history):
-        if isinstance(record, dict) and record.get("analysis_id") == analysis_id:
-            return record
-    return None
+    return knowledge_graph.find_graph_record_by_analysis_id(analysis_id)
 
 
 def _review_draft_evidence(
@@ -486,6 +522,13 @@ def _review_draft_evidence(
         "proposal_text": proposal_text,
         "predicted_tag": effective_analysis.get("predicted_tag"),
         "classification_reason": effective_analysis.get("classification_reason"),
+        "retrieved_feedback": _evidence_list(effective_analysis, "retrieved_feedback", "feedback"),
+        "recommended_resources": _evidence_list(
+            effective_analysis,
+            "recommended_resources",
+            "resources",
+            "recommendations",
+        ),
         "semantic_grade": {
             "predicted_score": grading_record.get("predicted_score") if grading_record else None,
             "max_score": grading_record.get("max_score") if grading_record else None,
@@ -643,14 +686,24 @@ def _run_version_analysis_pipeline(
     student: dict[str, Any] | None,
     analysis_id: str,
 ) -> dict[str, Any]:
+    import time
+    t0 = time.time()
     text = core_logic.clean_text(_version_text(version))
     validation = core_logic.validate_research_proposal_text(text, analysis_id)
+    t1 = time.time(); logger.info(f"[TIMER] validation took {t1 - t0:.3f}s")
+    
     model_text = core_logic.prepare_model_text(text)
     model_predicted_tag = core_logic.predict_tag(request, model_text)
     predicted_tag, classification_reason = core_logic.analysis_tag_from_validation(model_predicted_tag, validation)
+    t2 = time.time(); logger.info(f"[TIMER] predict_tag took {t2 - t1:.3f}s")
+    
     feedback_matches = core_logic.retrieve_feedback(model_text, top_k=3)
+    t3 = time.time(); logger.info(f"[TIMER] retrieve_feedback took {t3 - t2:.3f}s")
+    
     feedback_context = " ".join(str(match.get("comment_text", "")) for match in feedback_matches)
     resources = core_logic.get_recommended_resources(model_text, feedback_context, missing_sections=validation.missing_sections, top_k=3)
+    t4 = time.time(); logger.info(f"[TIMER] get_recommended_resources took {t4 - t3:.3f}s")
+    
     source = version.get("source_type")
     filename = version.get("original_filename")
     student_name = student.get("full_name") if student else None
@@ -675,6 +728,8 @@ def _run_version_analysis_pipeline(
     prepared_grade_text = core_logic.prepare_model_text(text, max_chars=50000)
     word_count = len(prepared_grade_text.split())
     raw_score = core_logic.grade_report_text(prepared_grade_text)
+    t5 = time.time(); logger.info(f"[TIMER] grade_report_text took {t5 - t4:.3f}s")
+    
     predicted_score = round(max(0.0, min(float(core_logic.GRADING_MAX_SCORE), raw_score)), 2)
     percentage_score = core_logic.percentage_from_score(predicted_score)
     label = core_logic.score_label(percentage_score)
@@ -684,6 +739,7 @@ def _run_version_analysis_pipeline(
         predicted_score,
         percentage_score,
         label,
+        validation=validation,
     )
     warning = (
         core_logic.GRADING_WARNING
@@ -749,7 +805,7 @@ def _run_version_analysis_pipeline(
 
 
 @router.post("/students", response_model=StudentResponse, status_code=status.HTTP_201_CREATED)
-def create_student(payload: CreateStudentRequest, connection: sqlite3.Connection = Depends(get_db_connection)) -> dict[str, Any]:
+def create_student(payload: CreateStudentRequest, connection: Any = Depends(get_db_connection)) -> dict[str, Any]:
     try:
         return repositories.create_student(
             connection,
@@ -759,7 +815,7 @@ def create_student(payload: CreateStudentRequest, connection: sqlite3.Connection
             program=payload.program,
             cohort=payload.cohort,
         )
-    except sqlite3.IntegrityError as exc:
+    except IntegrityError as exc:
         raise _constraint_error(exc) from exc
     finally:
         _close_connection(connection)
@@ -768,7 +824,7 @@ def create_student(payload: CreateStudentRequest, connection: sqlite3.Connection
 @router.get("/me/students", response_model=list[SupervisorStudentResponse])
 def get_current_supervisor_students(
     supervisor_profile: dict[str, Any] = Depends(get_current_supervisor),
-    connection: sqlite3.Connection = Depends(get_db_connection),
+    connection: Any = Depends(get_db_connection),
 ) -> list[dict[str, Any]]:
     try:
         return repositories.get_supervisor_students(connection, supervisor_profile["supervisor_id"])
@@ -779,7 +835,7 @@ def get_current_supervisor_students(
 @router.get("/me/dashboard", response_model=SupervisorDashboardResponse)
 def get_current_supervisor_dashboard(
     supervisor_profile: dict[str, Any] = Depends(get_current_supervisor),
-    connection: sqlite3.Connection = Depends(get_db_connection),
+    connection: Any = Depends(get_db_connection),
 ) -> dict[str, Any]:
     try:
         return repositories.get_supervisor_dashboard_summary(connection, supervisor_profile["supervisor_id"])
@@ -788,7 +844,7 @@ def get_current_supervisor_dashboard(
 
 
 def _create_or_assign_student_to_supervisor(
-    connection: sqlite3.Connection,
+    connection: Any,
     *,
     supervisor_id: str,
     payload: CreateStudentRequest,
@@ -826,6 +882,8 @@ def _create_or_assign_student_to_supervisor(
         student_id=student["student_id"],
         assignment_role="primary_supervisor",
     )
+    if student is not None and payload.email is not None:
+        student = repositories.update_student_email(connection, student["student_id"], payload.email.strip() or None)
     return student
 
 
@@ -833,7 +891,7 @@ def _create_or_assign_student_to_supervisor(
 def create_current_supervisor_student(
     payload: CreateStudentRequest,
     supervisor_profile: dict[str, Any] = Depends(get_current_supervisor),
-    connection: sqlite3.Connection = Depends(get_db_connection),
+    connection: Any = Depends(get_db_connection),
 ) -> dict[str, Any]:
     try:
         return _create_or_assign_student_to_supervisor(
@@ -841,7 +899,7 @@ def create_current_supervisor_student(
             supervisor_id=supervisor_profile["supervisor_id"],
             payload=payload,
         )
-    except sqlite3.IntegrityError as exc:
+    except IntegrityError as exc:
         raise _constraint_error(exc) from exc
     finally:
         _close_connection(connection)
@@ -851,7 +909,7 @@ def create_current_supervisor_student(
 def remove_current_supervisor_student(
     student_id: str,
     supervisor_profile: dict[str, Any] = Depends(get_current_supervisor),
-    connection: sqlite3.Connection = Depends(get_db_connection),
+    connection: Any = Depends(get_db_connection),
 ) -> dict[str, Any]:
     try:
         _require_record(repositories.get_student(connection, student_id), "Student not found.")
@@ -869,7 +927,7 @@ def remove_current_supervisor_student(
 def create_supervisor_student(
     supervisor_id: str,
     payload: CreateStudentRequest,
-    connection: sqlite3.Connection = Depends(get_db_connection),
+    connection: Any = Depends(get_db_connection),
 ) -> dict[str, Any]:
     try:
         _require_record(repositories.get_supervisor_profile(connection, supervisor_id), "Supervisor not found.")
@@ -878,16 +936,35 @@ def create_supervisor_student(
             supervisor_id=supervisor_id,
             payload=payload,
         )
-    except sqlite3.IntegrityError as exc:
+    except IntegrityError as exc:
         raise _constraint_error(exc) from exc
     finally:
         _close_connection(connection)
 
 
 @router.get("/students/{student_id}", response_model=StudentResponse)
-def get_student(student_id: str, connection: sqlite3.Connection = Depends(get_db_connection)) -> dict[str, Any]:
+def get_student(student_id: str, connection: Any = Depends(get_db_connection)) -> dict[str, Any]:
     try:
         return _require_record(repositories.get_student(connection, student_id), "Student not found.")
+    finally:
+        _close_connection(connection)
+
+
+@router.patch("/students/{student_id}/email", response_model=StudentResponse)
+def update_student_email(
+    student_id: str,
+    payload: UpdateStudentEmailRequest,
+    connection: Any = Depends(get_db_connection),
+) -> dict[str, Any]:
+    try:
+        _require_record(repositories.get_student(connection, student_id), "Student not found.")
+        email = payload.email.strip() if payload.email else None
+        if email:
+            try:
+                email_service.validate_email_address(email, field_name="student email")
+            except email_service.InvalidRecipientEmail as exc:
+                raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_ENTITY, detail=str(exc)) from exc
+        return _require_record(repositories.update_student_email(connection, student_id, email), "Student not found.")
     finally:
         _close_connection(connection)
 
@@ -901,7 +978,7 @@ def assign_student_to_supervisor(
     supervisor_id: str,
     student_id: str,
     payload: CreateAssignmentRequest,
-    connection: sqlite3.Connection = Depends(get_db_connection),
+    connection: Any = Depends(get_db_connection),
 ) -> dict[str, Any]:
     try:
         _require_record(repositories.get_supervisor_profile(connection, supervisor_id), "Supervisor not found.")
@@ -912,7 +989,7 @@ def assign_student_to_supervisor(
             student_id=student_id,
             assignment_role=payload.assignment_role,
         )
-    except sqlite3.IntegrityError as exc:
+    except IntegrityError as exc:
         raise _constraint_error(exc) from exc
     finally:
         _close_connection(connection)
@@ -922,7 +999,7 @@ def assign_student_to_supervisor(
 def remove_student_from_supervisor(
     supervisor_id: str,
     student_id: str,
-    connection: sqlite3.Connection = Depends(get_db_connection),
+    connection: Any = Depends(get_db_connection),
 ) -> dict[str, Any]:
     try:
         _require_record(repositories.get_supervisor_profile(connection, supervisor_id), "Supervisor not found.")
@@ -938,7 +1015,7 @@ def remove_student_from_supervisor(
 
 
 @router.get("/supervisors/{supervisor_id}/students", response_model=list[SupervisorStudentResponse])
-def get_supervisor_students(supervisor_id: str, connection: sqlite3.Connection = Depends(get_db_connection)) -> list[dict[str, Any]]:
+def get_supervisor_students(supervisor_id: str, connection: Any = Depends(get_db_connection)) -> list[dict[str, Any]]:
     try:
         _require_record(repositories.get_supervisor_profile(connection, supervisor_id), "Supervisor not found.")
         return repositories.get_supervisor_students(connection, supervisor_id)
@@ -950,19 +1027,19 @@ def get_supervisor_students(supervisor_id: str, connection: sqlite3.Connection =
 def create_student_proposal(
     student_id: str,
     payload: CreateProposalRequest,
-    connection: sqlite3.Connection = Depends(get_db_connection),
+    connection: Any = Depends(get_db_connection),
 ) -> dict[str, Any]:
     try:
         _require_record(repositories.get_student(connection, student_id), "Student not found.")
         return repositories.create_proposal(connection, student_id=student_id, title=payload.title, status="DRAFT")
-    except sqlite3.IntegrityError as exc:
+    except IntegrityError as exc:
         raise _constraint_error(exc) from exc
     finally:
         _close_connection(connection)
 
 
 @router.get("/students/{student_id}/proposals", response_model=list[ProposalResponse])
-def get_student_proposals(student_id: str, connection: sqlite3.Connection = Depends(get_db_connection)) -> list[dict[str, Any]]:
+def get_student_proposals(student_id: str, connection: Any = Depends(get_db_connection)) -> list[dict[str, Any]]:
     try:
         _require_record(repositories.get_student(connection, student_id), "Student not found.")
         return repositories.get_student_proposals(connection, student_id)
@@ -971,7 +1048,7 @@ def get_student_proposals(student_id: str, connection: sqlite3.Connection = Depe
 
 
 @router.get("/proposals/{proposal_id}", response_model=ProposalResponse)
-def get_proposal(proposal_id: str, connection: sqlite3.Connection = Depends(get_db_connection)) -> dict[str, Any]:
+def get_proposal(proposal_id: str, connection: Any = Depends(get_db_connection)) -> dict[str, Any]:
     try:
         return _require_record(repositories.get_proposal(connection, proposal_id), "Proposal not found.")
     finally:
@@ -982,7 +1059,7 @@ def get_proposal(proposal_id: str, connection: sqlite3.Connection = Depends(get_
 def delete_proposal(
     proposal_id: str,
     supervisor_id: str,
-    connection: sqlite3.Connection = Depends(get_db_connection),
+    connection: Any = Depends(get_db_connection),
 ) -> dict[str, Any]:
     try:
         proposal = _require_record(repositories.get_proposal(connection, proposal_id), "Proposal not found.")
@@ -1001,14 +1078,14 @@ def delete_proposal(
             "proposal_id": proposal_id,
             "student_id": proposal["student_id"],
             "deleted": deleted,
-            "message": "Proposal and SQLite workflow records deleted. Shared Analyzer history was preserved.",
+            "message": "Proposal workflow records deleted. Shared Analyzer history was preserved.",
         }
     finally:
         _close_connection(connection)
 
 
 @router.get("/proposals/{proposal_id}/improvement")
-def get_proposal_improvement(proposal_id: str, connection: sqlite3.Connection = Depends(get_db_connection)) -> dict[str, Any]:
+def get_proposal_improvement(proposal_id: str, connection: Any = Depends(get_db_connection)) -> dict[str, Any]:
     try:
         return _require_record(build_proposal_improvement(connection, proposal_id), "Proposal not found.")
     finally:
@@ -1019,11 +1096,11 @@ def get_proposal_improvement(proposal_id: str, connection: sqlite3.Connection = 
 def create_proposal_version(
     proposal_id: str,
     payload: CreateProposalVersionRequest,
-    connection: sqlite3.Connection = Depends(get_db_connection),
+    connection: Any = Depends(get_db_connection),
 ) -> dict[str, Any]:
     try:
         _require_record(repositories.get_proposal(connection, proposal_id), "Proposal not found.")
-        return repositories.create_proposal_version(
+        version = repositories.create_proposal_version(
             connection,
             proposal_id=proposal_id,
             version_number=_next_version_number(connection, proposal_id),
@@ -1032,7 +1109,8 @@ def create_proposal_version(
             extracted_text=payload.extracted_text,
             status="DRAFT",
         )
-    except sqlite3.IntegrityError as exc:
+        return _proposal_version_response(version)
+    except IntegrityError as exc:
         raise _constraint_error(exc) from exc
     finally:
         _close_connection(connection)
@@ -1042,7 +1120,7 @@ def create_proposal_version(
 def create_revised_proposal_version(
     proposal_id: str,
     payload: CreateRevisedProposalVersionRequest,
-    connection: sqlite3.Connection = Depends(get_db_connection),
+    connection: Any = Depends(get_db_connection),
 ) -> dict[str, Any]:
     try:
         supervisor_id = payload.supervisor_id.strip()
@@ -1057,7 +1135,7 @@ def create_revised_proposal_version(
                 status_code=status.HTTP_403_FORBIDDEN,
                 detail="Supervisor is not assigned to this proposal's student.",
             )
-        return repositories.create_revised_proposal_version_after_revision_request(
+        version = repositories.create_revised_proposal_version_after_revision_request(
             connection,
             proposal_id=proposal_id,
             supervisor_id=supervisor_id,
@@ -1066,6 +1144,7 @@ def create_revised_proposal_version(
             extracted_text=payload.extracted_text,
             status="DRAFT",
         )
+        return _proposal_version_response(version)
     except ValueError as exc:
         if str(exc) == "CURRENT_VERSION_NOT_FOUND":
             raise HTTPException(
@@ -1078,31 +1157,31 @@ def create_revised_proposal_version(
                 detail="Request revision on the current proposal version before uploading a revised proposal.",
             ) from exc
         raise
-    except sqlite3.IntegrityError as exc:
+    except IntegrityError as exc:
         raise _constraint_error(exc) from exc
     finally:
         _close_connection(connection)
 
 
 @router.get("/proposals/{proposal_id}/versions", response_model=list[ProposalVersionResponse])
-def get_proposal_versions(proposal_id: str, connection: sqlite3.Connection = Depends(get_db_connection)) -> list[dict[str, Any]]:
+def get_proposal_versions(proposal_id: str, connection: Any = Depends(get_db_connection)) -> list[dict[str, Any]]:
     try:
         _require_record(repositories.get_proposal(connection, proposal_id), "Proposal not found.")
-        return repositories.get_proposal_versions(connection, proposal_id)
+        return [_proposal_version_response(version) for version in repositories.get_proposal_versions(connection, proposal_id)]
     finally:
         _close_connection(connection)
 
 
 @router.get("/versions/{version_id}", response_model=ProposalVersionResponse)
-def get_version(version_id: str, connection: sqlite3.Connection = Depends(get_db_connection)) -> dict[str, Any]:
+def get_version(version_id: str, connection: Any = Depends(get_db_connection)) -> dict[str, Any]:
     try:
-        return _require_record(repositories.get_proposal_version(connection, version_id), "Version not found.")
+        return _proposal_version_response(_require_record(repositories.get_proposal_version(connection, version_id), "Version not found."))
     finally:
         _close_connection(connection)
 
 
 @router.get("/versions/{version_id}/analyses")
-def get_version_analyses(version_id: str, connection: sqlite3.Connection = Depends(get_db_connection)) -> list[dict[str, Any]]:
+def get_version_analyses(version_id: str, connection: Any = Depends(get_db_connection)) -> list[dict[str, Any]]:
     try:
         _require_record(repositories.get_proposal_version(connection, version_id), "Version not found.")
         return repositories.get_version_analyses(connection, version_id)
@@ -1110,12 +1189,27 @@ def get_version_analyses(version_id: str, connection: sqlite3.Connection = Depen
         _close_connection(connection)
 
 
-@router.get("/versions/{version_id}/review-draft", response_model=SupervisorReviewDraftResponse)
+@router.get("/versions/{version_id}/gradings", response_model=list[GradeReportResponse])
+def get_version_gradings(version_id: str, connection: Any = Depends(get_db_connection)) -> list[dict[str, Any]]:
+    try:
+        _require_record(repositories.get_proposal_version(connection, version_id), "Version not found.")
+        analyses = repositories.get_version_analyses(connection, version_id)
+        gradings = []
+        for analysis in analyses:
+            grading = _find_grading_record_by_analysis_id_read_only(analysis["analysis_id"])
+            if grading:
+                gradings.append(grading)
+        return gradings
+    finally:
+        _close_connection(connection)
+
+
+@router.get("/versions/{version_id}/review-draft", response_model=SupervisorReviewDraftResponse | None)
 def get_version_review_draft(
     version_id: str,
     analysis_id: str,
-    connection: sqlite3.Connection = Depends(get_db_connection),
-) -> dict[str, Any]:
+    connection: Any = Depends(get_db_connection),
+) -> dict[str, Any] | None:
     try:
         _require_record(repositories.get_proposal_version(connection, version_id), "Version not found.")
         _linked_analysis_for_version(connection, version_id=version_id, analysis_id=analysis_id)
@@ -1124,7 +1218,9 @@ def get_version_review_draft(
             version_id=version_id,
             analysis_id=analysis_id,
         )
-        return _draft_response(_require_record(draft, "AI supervisor review draft not found."))
+        if not draft:
+            return None
+        return _draft_response(draft)
     finally:
         _close_connection(connection)
 
@@ -1137,7 +1233,7 @@ def get_version_review_draft(
 def generate_version_review_draft(
     version_id: str,
     payload: SupervisorReviewDraftRequest,
-    connection: sqlite3.Connection = Depends(get_db_connection),
+    connection: Any = Depends(get_db_connection),
 ) -> dict[str, Any]:
     try:
         analysis_id = payload.analysis_id.strip()
@@ -1189,6 +1285,8 @@ def generate_version_review_draft(
             "predicted_tag": validated_evidence.get("predicted_tag"),
             "classification_reason": validated_evidence.get("classification_reason"),
             "retrieved_feedback_count": len(validated_evidence.get("retrieved_feedback") or []),
+            "retrieved_feedback": list(validated_evidence.get("retrieved_feedback") or []),
+            "recommended_resources": list(validated_evidence.get("recommended_resources") or []),
             "recommended_resource_titles": [
                 resource.get("title")
                 for resource in validated_evidence.get("recommended_resources") or []
@@ -1214,7 +1312,7 @@ def generate_version_review_draft(
             llm_metadata=metadata,
         )
         return _draft_response(saved)
-    except sqlite3.IntegrityError as exc:
+    except IntegrityError as exc:
         raise _constraint_error(exc) from exc
     finally:
         _close_connection(connection)
@@ -1225,7 +1323,7 @@ def get_supervisor_review_draft(
     version_id: str,
     analysis_id: str,
     supervisor_id: str,
-    connection: sqlite3.Connection = Depends(get_db_connection),
+    connection: Any = Depends(get_db_connection),
 ) -> dict[str, Any]:
     try:
         version = _require_record(repositories.get_proposal_version(connection, version_id), "Version not found.")
@@ -1254,7 +1352,7 @@ def get_supervisor_review_draft(
 def save_supervisor_review_draft(
     version_id: str,
     payload: SaveSupervisorEditedReviewDraftRequest,
-    connection: sqlite3.Connection = Depends(get_db_connection),
+    connection: Any = Depends(get_db_connection),
 ) -> dict[str, Any]:
     try:
         analysis_id = payload.analysis_id.strip()
@@ -1286,7 +1384,7 @@ def save_supervisor_review_draft(
             supervisor_comments=payload.supervisor_comments.strip() if payload.supervisor_comments else None,
         )
         return _edited_review_draft_response(saved)
-    except sqlite3.IntegrityError as exc:
+    except IntegrityError as exc:
         raise _constraint_error(exc) from exc
     finally:
         _close_connection(connection)
@@ -1297,7 +1395,7 @@ def generate_final_feedback_pdf(
     version_id: str,
     analysis_id: str,
     supervisor_id: str,
-    connection: sqlite3.Connection = Depends(get_db_connection),
+    connection: Any = Depends(get_db_connection),
 ) -> Response:
     try:
         _, _, _, _, _, filename, pdf_bytes = _final_feedback_artifacts(
@@ -1320,7 +1418,7 @@ def get_feedback_delivery(
     version_id: str,
     analysis_id: str,
     supervisor_id: str,
-    connection: sqlite3.Connection = Depends(get_db_connection),
+    connection: Any = Depends(get_db_connection),
 ) -> dict[str, Any]:
     try:
         version = _require_record(repositories.get_proposal_version(connection, version_id), "Version not found.")
@@ -1349,7 +1447,7 @@ def get_feedback_delivery(
 def send_feedback_to_student(
     version_id: str,
     payload: SendFeedbackRequest,
-    connection: sqlite3.Connection = Depends(get_db_connection),
+    connection: Any = Depends(get_db_connection),
 ) -> dict[str, Any]:
     try:
         analysis_id = payload.analysis_id.strip()
@@ -1363,6 +1461,12 @@ def send_feedback_to_student(
         recipient_email = str(student.get("email") or "").strip()
         if not recipient_email:
             raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_ENTITY, detail="Student email is not available.")
+        try:
+            email_service.validate_email_address(recipient_email, field_name="student email")
+        except email_service.InvalidRecipientEmail as exc:
+            raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_ENTITY, detail=str(exc)) from exc
+        if not pdf_bytes:
+            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Generated feedback PDF was not found.")
 
         existing_sent = repositories.get_successful_feedback_delivery(
             connection,
@@ -1379,8 +1483,23 @@ def send_feedback_to_student(
 
         subject = _feedback_email_subject(proposal, version)
         body = _feedback_email_body(student, proposal, version)
+        attempt = repositories.create_notification_log(
+            connection,
+            student_id=student["student_id"],
+            proposal_id=proposal["proposal_id"],
+            version_id=version_id,
+            analysis_id=analysis_id,
+            supervisor_id=supervisor_id,
+            supervisor_review_draft_id=saved_review["review_id"],
+            recipient_email=recipient_email,
+            subject=subject,
+            notification_type="FEEDBACK_SENT",
+            status="SENDING",
+            provider_name="resend",
+            report_reference=filename,
+        )
         try:
-            email_service.send_feedback_email(
+            provider_message_id = email_service.send_feedback_email(
                 recipient_email=recipient_email,
                 subject=subject,
                 body=body,
@@ -1392,51 +1511,50 @@ def send_feedback_to_student(
                 ],
             )
         except email_service.EmailDeliveryNotConfigured as exc:
-            failed = repositories.create_notification_log(
+            repositories.update_notification_log_status(
                 connection,
-                student_id=student["student_id"],
-                proposal_id=proposal["proposal_id"],
-                version_id=version_id,
-                analysis_id=analysis_id,
-                supervisor_id=supervisor_id,
-                supervisor_review_draft_id=saved_review["review_id"],
-                recipient_email=recipient_email,
-                subject=subject,
-                notification_type="FEEDBACK_SENT",
+                attempt["notification_id"],
                 status="FAILED",
                 error_message=_safe_delivery_error(exc),
+                provider_name="resend",
+                report_reference=filename,
+            )
+            logger.warning(
+                "Feedback email configuration failure: version_id=%s analysis_id=%s supervisor_id=%s error_type=%s",
+                version_id,
+                analysis_id,
+                supervisor_id,
+                exc.__class__.__name__,
             )
             raise HTTPException(status_code=status.HTTP_503_SERVICE_UNAVAILABLE, detail=str(exc)) from exc
         except email_service.EmailDeliveryError as exc:
-            failed = repositories.create_notification_log(
+            safe_detail = _safe_delivery_error(exc)
+            repositories.update_notification_log_status(
                 connection,
-                student_id=student["student_id"],
-                proposal_id=proposal["proposal_id"],
-                version_id=version_id,
-                analysis_id=analysis_id,
-                supervisor_id=supervisor_id,
-                supervisor_review_draft_id=saved_review["review_id"],
-                recipient_email=recipient_email,
-                subject=subject,
-                notification_type="FEEDBACK_SENT",
+                attempt["notification_id"],
                 status="FAILED",
-                error_message=_safe_delivery_error(exc),
+                error_message=safe_detail,
+                provider_name="resend",
+                report_reference=filename,
             )
-            raise HTTPException(status_code=status.HTTP_502_BAD_GATEWAY, detail="Email delivery failed. Please try again.") from exc
+            logger.warning(
+                "Feedback email delivery failure: version_id=%s analysis_id=%s supervisor_id=%s error_type=%s status_code=%s",
+                version_id,
+                analysis_id,
+                supervisor_id,
+                exc.__class__.__name__,
+                getattr(exc, "status_code", None),
+            )
+            raise HTTPException(status_code=status.HTTP_502_BAD_GATEWAY, detail=safe_detail) from exc
 
-        sent = repositories.create_notification_log(
+        sent = repositories.update_notification_log_status(
             connection,
-            student_id=student["student_id"],
-            proposal_id=proposal["proposal_id"],
-            version_id=version_id,
-            analysis_id=analysis_id,
-            supervisor_id=supervisor_id,
-            supervisor_review_draft_id=saved_review["review_id"],
-            recipient_email=recipient_email,
-            subject=subject,
-            notification_type="FEEDBACK_SENT",
+            attempt["notification_id"],
             status="SENT",
             sent_at=datetime.now(timezone.utc).isoformat(),
+            provider_name="resend",
+            provider_message_id=provider_message_id,
+            report_reference=filename,
         )
         return _delivery_response(
             version_id=version_id,
@@ -1454,7 +1572,7 @@ def get_review_outcome(
     version_id: str,
     analysis_id: str,
     supervisor_id: str,
-    connection: sqlite3.Connection = Depends(get_db_connection),
+    connection: Any = Depends(get_db_connection),
 ) -> dict[str, Any]:
     try:
         version = _require_record(repositories.get_proposal_version(connection, version_id), "Version not found.")
@@ -1479,7 +1597,7 @@ def get_review_outcome(
 def save_review_outcome(
     version_id: str,
     payload: ReviewOutcomeRequest,
-    connection: sqlite3.Connection = Depends(get_db_connection),
+    connection: Any = Depends(get_db_connection),
 ) -> dict[str, Any]:
     try:
         analysis_id = payload.analysis_id.strip()
@@ -1506,14 +1624,20 @@ def save_review_outcome(
                 review=latest_review,
             )
 
-        review = repositories.save_current_supervisor_review(
-            connection,
-            proposal_id=proposal["proposal_id"],
-            version_id=version["version_id"],
-            supervisor_id=supervisor_id,
-            decision=decision,
-            overall_comment=comments,
-        )
+        try:
+            review = repositories.save_current_supervisor_review(
+                connection,
+                proposal_id=proposal["proposal_id"],
+                version_id=version["version_id"],
+                supervisor_id=supervisor_id,
+                decision=decision,
+                overall_comment=comments,
+            )
+        except IntegrityError:
+            # Handle concurrent inserts race condition gracefully
+            connection.rollback()
+            pass
+
         enriched = repositories.get_latest_supervisor_review(
             connection,
             version_id=version_id,
@@ -1525,7 +1649,7 @@ def save_review_outcome(
             supervisor_id=supervisor_id,
             review=enriched or review,
         )
-    except sqlite3.IntegrityError as exc:
+    except IntegrityError as exc:
         raise _constraint_error(exc) from exc
     finally:
         _close_connection(connection)
@@ -1534,7 +1658,7 @@ def save_review_outcome(
 @router.get("/versions/{version_id}/supervisor-reviews", response_model=list[SupervisorReviewResponse])
 def get_version_supervisor_reviews(
     version_id: str,
-    connection: sqlite3.Connection = Depends(get_db_connection),
+    connection: Any = Depends(get_db_connection),
 ) -> list[dict[str, Any]]:
     try:
         _require_record(repositories.get_proposal_version(connection, version_id), "Version not found.")
@@ -1551,7 +1675,7 @@ def get_version_supervisor_reviews(
 def save_version_supervisor_review(
     version_id: str,
     payload: SupervisorReviewRequest,
-    connection: sqlite3.Connection = Depends(get_db_connection),
+    connection: Any = Depends(get_db_connection),
 ) -> dict[str, Any]:
     try:
         if not payload.supervisor_id:
@@ -1591,7 +1715,7 @@ def save_version_supervisor_review(
             supervisor_id=supervisor_profile["supervisor_id"],
         )
         return _review_response(enriched or review)
-    except sqlite3.IntegrityError as exc:
+    except IntegrityError as exc:
         raise _constraint_error(exc) from exc
     finally:
         _close_connection(connection)
@@ -1606,7 +1730,7 @@ def save_my_version_supervisor_review(
     version_id: str,
     payload: SupervisorReviewRequest,
     supervisor_profile: dict[str, Any] = Depends(get_current_supervisor),
-    connection: sqlite3.Connection = Depends(get_db_connection),
+    connection: Any = Depends(get_db_connection),
 ) -> dict[str, Any]:
     try:
         version = _require_record(repositories.get_proposal_version(connection, version_id), "Version not found.")
@@ -1640,7 +1764,7 @@ def save_my_version_supervisor_review(
             supervisor_id=supervisor_profile["supervisor_id"],
         )
         return _review_response(enriched or review)
-    except sqlite3.IntegrityError as exc:
+    except IntegrityError as exc:
         raise _constraint_error(exc) from exc
     finally:
         _close_connection(connection)
@@ -1650,7 +1774,7 @@ def save_my_version_supervisor_review(
 def link_existing_analysis_to_version(
     version_id: str,
     payload: LinkVersionAnalysisRequest,
-    connection: sqlite3.Connection = Depends(get_db_connection),
+    connection: Any = Depends(get_db_connection),
 ) -> dict[str, Any]:
     try:
         analysis_id = payload.analysis_id.strip()
@@ -1684,51 +1808,75 @@ def link_existing_analysis_to_version(
             source=analysis_record.get("source") or version.get("source_type"),
             input_text_snapshot=analysis_record.get("input_text"),
         )
-    except sqlite3.IntegrityError as exc:
+    except IntegrityError as exc:
         raise _constraint_error(exc) from exc
     finally:
         _close_connection(connection)
 
 
 @router.post("/versions/{version_id}/analyze", response_model=VersionAnalysisResponse, status_code=status.HTTP_201_CREATED)
-def analyze_proposal_version(
+async def analyze_proposal_version(
     version_id: str,
     request: Request,
-    connection: sqlite3.Connection = Depends(get_db_connection),
+    connection: Any = Depends(get_db_connection),
 ) -> dict[str, Any]:
     try:
         version = _require_record(repositories.get_proposal_version(connection, version_id), "Version not found.")
-        proposal = _require_record(repositories.get_proposal(connection, version["proposal_id"]), "Proposal not found.")
-        student = repositories.get_student(connection, proposal["student_id"])
-        analysis_id = str(uuid4())
-        pipeline = _run_version_analysis_pipeline(
-            request=request,
-            version=version,
-            proposal=proposal,
-            student=student,
-            analysis_id=analysis_id,
-        )
-        repositories.create_analysis(
-            connection,
-            analysis_id=analysis_id,
-            proposal_id=proposal["proposal_id"],
-            version_id=version_id,
-            request_id=analysis_id,
-            source=version.get("source_type"),
-            input_text_snapshot=pipeline["text"],
-        )
-        return {
-            "analysis_id": analysis_id,
-            "request_id": analysis_id,
-            "proposal_id": proposal["proposal_id"],
-            "version_id": version_id,
-            "version_number": version["version_number"],
-            "analysis": pipeline["analysis"],
-            "semantic_grade": pipeline["semantic_grade"],
-            "knowledge_graph": pipeline["knowledge_graph"],
-            "knowledge_graph_error": pipeline["knowledge_graph_error"],
-        }
-    except sqlite3.IntegrityError as exc:
+        text = core_logic.clean_text(_version_text(version))
+        content_hash = hashlib.sha256(text.encode()).hexdigest()
+        lock_key = f"{version_id}:{content_hash}"
+        
+        if lock_key not in _analysis_locks:
+            _analysis_locks[lock_key] = asyncio.Lock()
+            
+        async with _analysis_locks[lock_key]:
+            # Check cache to return immediately
+            if lock_key in _analysis_cache:
+                logger.info(f"Returning cached analysis for {lock_key}")
+                return _analysis_cache[lock_key]
+                
+            proposal = _require_record(repositories.get_proposal(connection, version["proposal_id"]), "Proposal not found.")
+            student = repositories.get_student(connection, proposal["student_id"])
+            analysis_id = str(uuid4())
+            
+            import time
+            start_time = time.time()
+            # Run the ML pipeline in a threadpool
+            pipeline = await run_in_threadpool(
+                _run_version_analysis_pipeline,
+                request=request,
+                version=version,
+                proposal=proposal,
+                student=student,
+                analysis_id=analysis_id,
+            )
+            logger.info(f"[TIMER] Full version analysis pipeline completed in {time.time() - start_time:.3f} seconds.")
+            
+            repositories.create_analysis(
+                connection,
+                analysis_id=analysis_id,
+                proposal_id=proposal["proposal_id"],
+                version_id=version_id,
+                request_id=analysis_id,
+                source=version.get("source_type"),
+                input_text_snapshot=pipeline["text"],
+            )
+            
+            result = {
+                "analysis_id": analysis_id,
+                "request_id": analysis_id,
+                "proposal_id": proposal["proposal_id"],
+                "version_id": version_id,
+                "version_number": version["version_number"],
+                "analysis": pipeline["analysis"],
+                "semantic_grade": pipeline["semantic_grade"],
+                "knowledge_graph": pipeline["knowledge_graph"],
+                "knowledge_graph_error": pipeline["knowledge_graph_error"],
+            }
+            # Cache the exact dictionary for identical requests
+            _analysis_cache[lock_key] = result
+            return result
+    except IntegrityError as exc:
         raise _constraint_error(exc) from exc
     finally:
         _close_connection(connection)

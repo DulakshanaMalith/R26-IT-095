@@ -10,7 +10,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from src.api.auth import hash_password, verify_password
 from src.api.database import get_db_connection
 from src.api.routers import auth, supervisor
-from src.db.connection import connect
+from tests.postgres_fixtures import connect
 from src.db.repositories import (
     assign_supervisor_to_student,
     create_analysis,
@@ -23,13 +23,13 @@ from src.db.repositories import (
     get_user_by_email,
     save_current_supervisor_review,
 )
-from src.db.schema import create_schema
+from tests.postgres_fixtures import create_schema
 
 
 @pytest.fixture()
 def auth_client(tmp_path, monkeypatch):
     monkeypatch.setenv("APP_AUTH_SECRET", "test-auth-secret")
-    database_path = tmp_path / "auth.sqlite"
+    database_path = tmp_path / "auth.postgresql"
     setup_connection = connect(database_path)
     create_schema(setup_connection)
     setup_connection.close()
@@ -474,6 +474,24 @@ def test_create_current_supervisor_student_rejects_duplicate_academic_id(auth_cl
     assert duplicate_response.json()["detail"] == "A student with this academic student ID already exists."
     students = client.get("/me/students").json()
     assert [student["academic_student_id"] for student in students] == ["ITDUP"]
+
+
+def test_local_student_email_update_persists_without_session(auth_client):
+    client, database_path = auth_client
+    connection = connect(database_path)
+    try:
+        student = create_student(connection, academic_student_id="ITEMAIL", full_name="Email Student")
+    finally:
+        connection.close()
+
+    response = client.patch(
+        f"/students/{student['student_id']}/email",
+        json={"email": "student@example.test"},
+    )
+
+    assert response.status_code == 200
+    assert response.json()["email"] == "student@example.test"
+    assert client.get(f"/students/{student['student_id']}").json()["email"] == "student@example.test"
 
 
 def test_spoofed_supervisor_id_cannot_authorize_authenticated_review(auth_client):

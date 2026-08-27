@@ -70,6 +70,19 @@ Thumbs.db
 *.pkl
 *.npz
 *.csv
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Machine Learning Data & Models
+*.pdf
+*.tex
+*.pkl
+*.npz
+*.csv
 training/data/raw/*
 !training/data/raw/.gitkeep
 training/data/processed/*
@@ -78,3 +91,8 @@ training/models/*
 !training/models/.gitkeep
 backend/models/*
 !backend/models/.gitkeep
+
+# Scratch files and manual tests
+scratch*.py
+backend/scratch*.py
+test_*.json

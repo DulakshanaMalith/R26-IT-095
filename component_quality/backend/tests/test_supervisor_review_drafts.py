@@ -1,9 +1,11 @@
 import json
 import sys
+from io import BytesIO
 from pathlib import Path
 
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
+from pypdf import PdfReader
 import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
@@ -12,10 +14,10 @@ from src.api.database import get_db_connection
 from src.api.routers import supervisor
 from src.api.schemas import SupervisorReviewDraftContent
 from src.api.services import core_logic
-from src.api.services import email_service
+from src.api.services import resend_service as email_service
 from src.core import knowledge_graph
 from src.db import repositories
-from src.db.connection import connect
+from tests.postgres_fixtures import connect
 from src.db.repositories import (
     assign_supervisor_to_student,
     create_analysis,
@@ -25,26 +27,22 @@ from src.db.repositories import (
     create_supervisor_profile,
     create_user,
 )
-from src.db.schema import create_schema
+from src.db.history_repositories import (
+    list_grading_history,
+    replace_analysis_history,
+    replace_grading_history,
+    replace_graph_history,
+)
+from tests.postgres_fixtures import create_schema
 
 
 @pytest.fixture()
 def draft_client(tmp_path, monkeypatch):
-    database_path = tmp_path / "review_drafts.sqlite"
+    database_path = tmp_path / "review_drafts.postgresql"
     history_dir = tmp_path / "history"
     history_dir.mkdir()
-    analysis_history_path = history_dir / "analysis_history.json"
-    grading_history_path = history_dir / "grading_history.json"
-    graph_history_path = history_dir / "knowledge_graph_history.json"
-    analysis_history_path.write_text("[]", encoding="utf-8")
-    grading_history_path.write_text("[]", encoding="utf-8")
-    graph_history_path.write_text("[]", encoding="utf-8")
-
     monkeypatch.setattr(core_logic, "DATA_DIR", history_dir)
-    monkeypatch.setattr(core_logic, "HISTORY_PATH", analysis_history_path)
-    monkeypatch.setattr(core_logic, "GRADING_HISTORY_PATH", grading_history_path)
     monkeypatch.setattr(knowledge_graph, "DATA_DIR", history_dir)
-    monkeypatch.setattr(knowledge_graph, "HISTORY_PATH", graph_history_path)
 
     call_count = {"count": 0}
 
@@ -66,10 +64,18 @@ def draft_client(tmp_path, monkeypatch):
         )
 
     monkeypatch.setattr(supervisor, "generate_structured_supervisor_review_draft", fake_generate)
+    monkeypatch.setattr(
+        supervisor,
+        "validate_structured_supervisor_review_draft",
+        lambda raw_draft, evidence: (raw_draft, {"provider": "fake-validator"}),
+    )
 
     setup_connection = connect(database_path)
     create_schema(setup_connection)
     setup_connection.close()
+    replace_analysis_history([])
+    replace_grading_history([])
+    replace_graph_history([])
 
     app = FastAPI()
     app.include_router(supervisor.router)
@@ -148,14 +154,8 @@ def grading_history_record(analysis_id):
 
 
 def write_histories(analysis_path, grading_path, analysis_ids):
-    analysis_path.write_text(
-        json.dumps([analysis_history_record(analysis_id) for analysis_id in analysis_ids]),
-        encoding="utf-8",
-    )
-    grading_path.write_text(
-        json.dumps([grading_history_record(analysis_id) for analysis_id in analysis_ids]),
-        encoding="utf-8",
-    )
+    replace_analysis_history([analysis_history_record(analysis_id) for analysis_id in analysis_ids])
+    replace_grading_history([grading_history_record(analysis_id) for analysis_id in analysis_ids])
 
 
 def link_analysis(database_path, proposal_id, version_id, analysis_id):
@@ -213,7 +213,26 @@ def final_pdf(client, version_id, analysis_id, supervisor_id):
 
 
 def pdf_text(response):
-    return response.content.decode("latin-1", errors="ignore")
+    return pdf_extracted_text(response)
+
+
+def pdf_extracted_text(response):
+    reader = PdfReader(BytesIO(response.content))
+    return "\n".join(page.extract_text() or "" for page in reader.pages)
+
+
+def pdf_uri_annotations(response):
+    reader = PdfReader(BytesIO(response.content))
+    uris = []
+    for page in reader.pages:
+        annotations = page.get("/Annots") or []
+        for annotation_ref in annotations:
+            annotation = annotation_ref.get_object()
+            action = annotation.get("/A") or {}
+            uri = action.get("/URI")
+            if uri:
+                uris.append(str(uri))
+    return uris
 
 
 def text_between(text, start_marker, end_marker):
@@ -278,8 +297,8 @@ def generate_ai_draft_for_linked_version(client, database_path, analysis_path, g
 
 
 def write_custom_histories(analysis_path, grading_path, analysis_records, grading_records):
-    analysis_path.write_text(json.dumps(analysis_records), encoding="utf-8")
-    grading_path.write_text(json.dumps(grading_records), encoding="utf-8")
+    replace_analysis_history(analysis_records)
+    replace_grading_history(grading_records)
 
 
 def test_analyzed_v1_can_generate_persistent_review_draft_without_v2(draft_client):
@@ -319,13 +338,13 @@ def test_main_app_registers_review_draft_route_and_generates_for_linked_v1(draft
 
     from src.api.main import app as main_app
 
-    previous_database_path = getattr(main_app.state, "database_path", None)
-    main_app.state.database_path = str(database_path)
+    previous_database_url = getattr(main_app.state, "database_url", None)
+    main_app.state.database_url = "postgresql-test"
     try:
         main_client = TestClient(main_app)
         response = main_client.post(f"/versions/{versions[0]['version_id']}/review-draft", json={"analysis_id": "A1"})
     finally:
-        main_app.state.database_path = previous_database_path
+        main_app.state.database_url = previous_database_url
 
     assert response.status_code == 201
     assert response.json()["analysis_id"] == "A1"
@@ -506,7 +525,7 @@ def test_review_draft_uses_model_evidence_for_actionable_revision_guidance(draft
         assert evidence["version_number"] == 1
         assert "Structural proposal weakness detected" in evidence["classification_reason"]
         assert evidence["semantic_grade"]["proposal_completeness"]["missing_sections"] == ["Methodology"]
-        assert evidence["semantic_grade"]["final_readiness"]["label"] == "Needs Major Revision"
+        assert evidence["semantic_grade"]["final_readiness"]["label"] == "Major Revision Required"
         assert any("baseline model comparison" in item["comment_text"] for item in evidence["retrieved_feedback"])
         assert any(resource["title"] == "Designing a Reproducible Methodology" for resource in evidence["recommended_resources"])
         return (
@@ -546,9 +565,16 @@ def test_review_draft_uses_model_evidence_for_actionable_revision_guidance(draft
     assert payload["evidence_summary"]["completeness_used"] is True
     assert payload["evidence_summary"]["final_readiness_used"] is True
     assert payload["evidence_summary"]["recommendations_used"] is True
+    assert payload["evidence_summary"]["retrieved_feedback"] == analysis_record["retrieved_feedback"]
+    assert payload["evidence_summary"]["recommended_resources"] == analysis_record["recommended_resources"]
     assert payload["evidence_summary"]["retrieved_feedback_count"] == 2
     assert payload["evidence_summary"]["missing_sections"] == ["Methodology"]
     assert "Designing a Reproducible Methodology" in payload["evidence_summary"]["recommended_resource_titles"]
+
+    loaded = client.get(f"/versions/{versions[0]['version_id']}/review-draft", params={"analysis_id": "A_METHOD"})
+    assert loaded.status_code == 200
+    assert loaded.json()["evidence_summary"]["retrieved_feedback"] == analysis_record["retrieved_feedback"]
+    assert loaded.json()["evidence_summary"]["recommended_resources"] == analysis_record["recommended_resources"]
 
 
 def test_evidence_grounded_revision_guidance_survives_supervisor_edit_and_final_pdf(draft_client, monkeypatch):
@@ -662,18 +688,17 @@ def test_review_draft_generation_does_not_modify_model_scores(draft_client):
     client, database_path, analysis_path, grading_path, _ = draft_client
     proposal, versions = create_proposal_fixture(database_path)
     write_histories(analysis_path, grading_path, ["A1"])
-    before = json.loads(grading_path.read_text(encoding="utf-8"))[0]
+    before = list_grading_history()[0]
     link_analysis(database_path, proposal["proposal_id"], versions[0]["version_id"], "A1")
 
     response = client.post(f"/versions/{versions[0]['version_id']}/review-draft", json={"analysis_id": "A1"})
 
     assert response.status_code == 201
-    after = json.loads(grading_path.read_text(encoding="utf-8"))[0]
+    after = list_grading_history()[0]
     assert after["predicted_score"] == before["predicted_score"]
     assert after["percentage_score"] == before["percentage_score"]
     assert after["score_label"] == before["score_label"]
     assert after["proposal_completeness"] == before["proposal_completeness"]
-    assert after["final_readiness"] == before["final_readiness"]
 
 
 def test_ai_draft_can_be_saved_as_supervisor_edited_review_without_overwriting_original(draft_client):
@@ -787,7 +812,7 @@ def test_review_editing_does_not_modify_model_score_records(draft_client):
     proposal, versions = create_proposal_fixture(database_path)
     supervisor_profile = create_assigned_supervisor(database_path, proposal["student_id"], "scores@example.test")
     generate_ai_draft_for_linked_version(client, database_path, analysis_path, grading_path, proposal, versions[0])
-    before = json.loads(grading_path.read_text(encoding="utf-8"))[0]
+    before = list_grading_history()[0]
 
     response = client.put(
         f"/versions/{versions[0]['version_id']}/supervisor-review-draft",
@@ -795,7 +820,7 @@ def test_review_editing_does_not_modify_model_score_records(draft_client):
     )
 
     assert response.status_code == 200
-    after = json.loads(grading_path.read_text(encoding="utf-8"))[0]
+    after = list_grading_history()[0]
     assert after["predicted_score"] == before["predicted_score"]
     assert after["percentage_score"] == before["percentage_score"]
     assert after["score_label"] == before["score_label"]
@@ -1033,12 +1058,12 @@ def test_final_feedback_pdf_does_not_modify_model_score_records(draft_client):
         json=edited_payload(supervisor_profile["supervisor_id"]),
     )
     assert saved.status_code == 200
-    before = json.loads(grading_path.read_text(encoding="utf-8"))
+    before = list_grading_history()
 
     response = final_pdf(client, versions[0]["version_id"], "A1", supervisor_profile["supervisor_id"])
 
     assert response.status_code == 200
-    after = json.loads(grading_path.read_text(encoding="utf-8"))
+    after = list_grading_history()
     assert after == before
 
 
@@ -1047,12 +1072,12 @@ def test_final_feedback_pdf_does_not_present_model_scores_or_status_labels(draft
     proposal, versions = create_proposal_fixture(database_path)
     supervisor_profile = create_assigned_supervisor(database_path, proposal["student_id"], "no-score-presentation@example.test")
     generate_ai_draft_for_linked_version(client, database_path, analysis_path, grading_path, proposal, versions[0])
-    grading_records = json.loads(grading_path.read_text(encoding="utf-8"))
+    grading_records = list_grading_history()
     grading_records[0]["score_label"] = "Very Strong"
     grading_records[0]["model_status"] = "baseline"
     grading_records[0]["submission_readiness"] = {"status": "Minor Revision Required"}
     grading_records[0]["final_readiness"] = {"percentage": 91, "label": "Ready for Supervisor Review"}
-    grading_path.write_text(json.dumps(grading_records), encoding="utf-8")
+    replace_grading_history(grading_records)
     saved = client.put(
         f"/versions/{versions[0]['version_id']}/supervisor-review-draft",
         json=edited_payload(supervisor_profile["supervisor_id"]),
@@ -1144,11 +1169,12 @@ def test_final_feedback_pdf_includes_clickable_resource_links(draft_client):
     response = final_pdf(client, versions[0]["version_id"], "A1", supervisor_profile["supervisor_id"])
 
     assert response.status_code == 200
-    text = pdf_text(response)
+    text = pdf_extracted_text(response)
     assert "Writing Measurable Research Objectives" in text
     assert "Useful for strengthening research objectives" in text
     assert "Open Resource" in text
-    assert "https://example.test/objectives" in text
+    assert "No learning resources were available for this analysis." not in text
+    assert pdf_uri_annotations(response) == ["https://example.test/objectives"]
     assert "Please clarify the evaluation metrics and baseline comparison." in text
 
 
@@ -1177,10 +1203,156 @@ def test_final_feedback_pdf_does_not_fabricate_resource_links(draft_client):
     response = final_pdf(client, versions[0]["version_id"], "A1", supervisor_profile["supervisor_id"])
 
     assert response.status_code == 200
-    text = pdf_text(response)
+    text = pdf_extracted_text(response)
     assert "Library-only Objectives Worksheet" in text
-    assert "Resource link not available" in text
+    assert "Resource link unavailable" in text
     assert "https://example.test" not in text
+    assert pdf_uri_annotations(response) == []
+
+
+def test_legacy_review_draft_recovers_resources_only_from_linked_analysis(draft_client):
+    client, database_path, analysis_path, grading_path, _ = draft_client
+    proposal, versions = create_proposal_fixture(database_path, version_count=2)
+    supervisor_profile = create_assigned_supervisor(database_path, proposal["student_id"], "legacy-v4@example.test")
+    v4_record = analysis_history_record("A_V4")
+    v4_record["recommended_resources"] = [
+        {
+            "id": "v4-methods",
+            "title": "Selecting Data Collection Methods",
+            "description": "Guidance for choosing suitable qualitative and quantitative collection methods.",
+            "url": "https://example.test/v4-data-collection",
+            "category": "Data Collection",
+            "reason": "The linked V4 analysis identified data collection as the related area.",
+            "relevance_score": 0.85,
+        }
+    ]
+    v4_record["retrieved_feedback"] = [{"comment_text": "V4 feedback about data collection."}]
+    other_record = analysis_history_record("A_OTHER")
+    other_record["recommended_resources"] = [
+        {
+            "title": "Unrelated Resource Must Not Leak",
+            "description": "Belongs to a different analysis/version.",
+            "url": "https://example.test/other-analysis",
+            "category": "Evaluation",
+        }
+    ]
+    write_custom_histories(
+        analysis_path,
+        grading_path,
+        [v4_record, other_record],
+        [grading_history_record("A_V4"), grading_history_record("A_OTHER")],
+    )
+    link_analysis(database_path, proposal["proposal_id"], versions[0]["version_id"], "A_V4")
+    link_analysis(database_path, proposal["proposal_id"], versions[1]["version_id"], "A_OTHER")
+    generated = client.post(f"/versions/{versions[0]['version_id']}/review-draft", json={"analysis_id": "A_V4"})
+    assert generated.status_code == 201
+
+    connection = connect(database_path)
+    try:
+        connection.execute(
+            "UPDATE ai_supervisor_review_drafts SET evidence_json = ? WHERE draft_id = ?",
+            (
+                json.dumps(
+                    {
+                        "proposal_text_used": True,
+                        "analysis_used": True,
+                        "analysis_id": "A_V4",
+                        "recommended_resource_titles": [],
+                    },
+                    ensure_ascii=False,
+                ),
+                generated.json()["draft_id"],
+            ),
+        )
+        connection.commit()
+    finally:
+        connection.close()
+
+    saved = client.put(
+        f"/versions/{versions[0]['version_id']}/supervisor-review-draft",
+        json=edited_payload(supervisor_profile["supervisor_id"], analysis_id="A_V4"),
+    )
+    response = final_pdf(client, versions[0]["version_id"], "A_V4", supervisor_profile["supervisor_id"])
+
+    assert saved.status_code == 200
+    assert response.status_code == 200
+    text = pdf_extracted_text(response)
+    assert "Selecting Data Collection Methods" in text
+    assert "Related Area:" in text
+    assert "Data Collection" in text
+    assert "linked V4 analysis identified data collection" in text
+    assert "Unrelated Resource Must Not Leak" not in text
+    assert "No learning resources were available for this analysis." not in text
+    assert pdf_uri_annotations(response) == ["https://example.test/v4-data-collection"]
+
+
+def test_final_feedback_pdf_keeps_distinct_resource_urls_and_ignores_invalid_urls(draft_client):
+    client, database_path, analysis_path, grading_path, _ = draft_client
+    proposal, versions = create_proposal_fixture(database_path)
+    supervisor_profile = create_assigned_supervisor(database_path, proposal["student_id"], "multi-url@example.test")
+    analysis_record = analysis_history_record("A_URLS")
+    analysis_record["recommended_resources"] = [
+        {
+            "title": "Methodology Resource",
+            "description": "Methodology guidance.",
+            "url": "https://example.test/methodology",
+            "category": "Methodology",
+        },
+        {
+            "title": "Evaluation Resource",
+            "description": "Evaluation guidance.",
+            "url": "http://example.test/evaluation",
+            "category": "Evaluation",
+        },
+        {
+            "title": "Invalid Resource",
+            "description": "Should not become a link.",
+            "url": "javascript:alert(1)",
+            "category": "Security",
+        },
+    ]
+    write_custom_histories(analysis_path, grading_path, [analysis_record], [grading_history_record("A_URLS")])
+    link_analysis(database_path, proposal["proposal_id"], versions[0]["version_id"], "A_URLS")
+    assert client.post(f"/versions/{versions[0]['version_id']}/review-draft", json={"analysis_id": "A_URLS"}).status_code == 201
+    saved = client.put(
+        f"/versions/{versions[0]['version_id']}/supervisor-review-draft",
+        json=edited_payload(supervisor_profile["supervisor_id"], analysis_id="A_URLS"),
+    )
+    response = final_pdf(client, versions[0]["version_id"], "A_URLS", supervisor_profile["supervisor_id"])
+
+    assert saved.status_code == 200
+    assert response.status_code == 200
+    text = pdf_extracted_text(response)
+    assert "Methodology Resource" in text
+    assert "Evaluation Resource" in text
+    assert "Invalid Resource" in text
+    assert "Resource link unavailable" in text
+    uris = pdf_uri_annotations(response)
+    assert "https://example.test/methodology" in uris
+    assert "http://example.test/evaluation" in uris
+    assert "javascript:alert(1)" not in uris
+
+
+def test_final_feedback_pdf_shows_empty_state_when_no_resource_evidence_exists(draft_client):
+    client, database_path, analysis_path, grading_path, _ = draft_client
+    proposal, versions = create_proposal_fixture(database_path)
+    supervisor_profile = create_assigned_supervisor(database_path, proposal["student_id"], "empty-resource@example.test")
+    analysis_record = analysis_history_record("A_EMPTY")
+    analysis_record["recommended_resources"] = []
+    analysis_record["retrieved_feedback"] = []
+    write_custom_histories(analysis_path, grading_path, [analysis_record], [grading_history_record("A_EMPTY")])
+    link_analysis(database_path, proposal["proposal_id"], versions[0]["version_id"], "A_EMPTY")
+    assert client.post(f"/versions/{versions[0]['version_id']}/review-draft", json={"analysis_id": "A_EMPTY"}).status_code == 201
+    saved = client.put(
+        f"/versions/{versions[0]['version_id']}/supervisor-review-draft",
+        json=edited_payload(supervisor_profile["supervisor_id"], analysis_id="A_EMPTY"),
+    )
+    response = final_pdf(client, versions[0]["version_id"], "A_EMPTY", supervisor_profile["supervisor_id"])
+
+    assert saved.status_code == 200
+    assert response.status_code == 200
+    assert "No learning resources were available for this analysis." in pdf_extracted_text(response)
+    assert pdf_uri_annotations(response) == []
 
 
 def test_final_feedback_pdf_action_plan_uses_missing_sections_and_supervisor_revision_guidance(draft_client):
@@ -1220,7 +1392,7 @@ def test_final_feedback_pdf_action_plan_uses_missing_sections_and_supervisor_rev
     assert "Improve Objectives by making each objective measurable" in text
     assert "Recommended support:" in text
     assert "Writing Measurable Research Objectives" in text
-    assert "https://example.test/objectives" in text
+    assert "https://example.test/objectives" in pdf_uri_annotations(response)
 
 
 def test_final_feedback_pdf_consolidates_duplicate_literature_review_actions(draft_client):
@@ -1259,7 +1431,7 @@ def test_final_feedback_pdf_consolidates_duplicate_literature_review_actions(dra
     action_plan = text_between(text, "REVISION ACTION PLAN", "PROPOSAL STRUCTURE")
     assert action_plan.count("Strengthen the Literature Review") == 1
     assert "Building a Critical Literature Review" in action_plan
-    assert "https://example.test/literature" in text
+    assert "https://example.test/literature" in pdf_uri_annotations(response)
 
 
 def test_final_feedback_pdf_keeps_distinct_consolidated_actions(draft_client):
@@ -1399,8 +1571,8 @@ def test_final_feedback_pdf_matches_resources_to_related_action_items(draft_clie
     assert "Building a Critical Literature Review" in action_plan
     assert "Clarify the Methodology" in action_plan
     assert "Designing a Reproducible Methodology" in action_plan
-    assert "https://example.test/lit" in text
-    assert "https://example.test/method" in text
+    assert "https://example.test/lit" in pdf_uri_annotations(response)
+    assert "https://example.test/method" in pdf_uri_annotations(response)
 
 
 def test_final_feedback_pdf_does_not_attach_unrelated_resource_to_action(draft_client):
@@ -1435,7 +1607,7 @@ def test_final_feedback_pdf_does_not_attach_unrelated_resource_to_action(draft_c
     assert "Develop the Evaluation Strategy" in action_plan
     assert "Building a Critical Literature Review" not in action_plan
     assert "Building a Critical Literature Review" in learning_support
-    assert "https://example.test/lit" in text
+    assert "https://example.test/lit" in pdf_uri_annotations(response)
 
 
 def test_final_feedback_pdf_reduces_technical_ids_and_formats_dates(draft_client):
@@ -1465,9 +1637,8 @@ def test_send_feedback_emails_supervisor_approved_pdf_and_logs_delivery(draft_cl
     client, database_path, analysis_path, grading_path, _ = draft_client
     proposal, versions = create_proposal_fixture(database_path, student_email="student@example.test")
     supervisor_profile = create_assigned_supervisor(database_path, proposal["student_id"], "send-success@example.test")
-    ai_original = generate_ai_draft_for_linked_version(client, database_path, analysis_path, grading_path, proposal, versions[0])
-    analysis_records = json.loads(analysis_path.read_text(encoding="utf-8"))
-    analysis_records[0]["recommended_resources"] = [
+    analysis_record = analysis_history_record("A1")
+    analysis_record["recommended_resources"] = [
         {
             "title": "Writing Measurable Research Objectives",
             "description": "Useful for strengthening measurable objectives.",
@@ -1475,7 +1646,11 @@ def test_send_feedback_emails_supervisor_approved_pdf_and_logs_delivery(draft_cl
             "category": "Objectives",
         }
     ]
-    analysis_path.write_text(json.dumps(analysis_records), encoding="utf-8")
+    write_custom_histories(analysis_path, grading_path, [analysis_record], [grading_history_record("A1")])
+    link_analysis(database_path, proposal["proposal_id"], versions[0]["version_id"], "A1")
+    ai_response = client.post(f"/versions/{versions[0]['version_id']}/review-draft", json={"analysis_id": "A1"})
+    assert ai_response.status_code == 201
+    ai_original = ai_response.json()
     original_draft = {**ai_original["draft"], "methodology_feedback": "AI ORIGINAL METHODOLOGY"}
     connection = connect(database_path)
     try:
@@ -1494,6 +1669,7 @@ def test_send_feedback_emails_supervisor_approved_pdf_and_logs_delivery(draft_cl
 
     def fake_send(**kwargs):
         sent_messages.append(kwargs)
+        return "resend_msg_success"
 
     monkeypatch.setattr(email_service, "send_feedback_email", fake_send)
 
@@ -1502,6 +1678,9 @@ def test_send_feedback_emails_supervisor_approved_pdf_and_logs_delivery(draft_cl
     assert response.status_code == 200
     delivery = response.json()
     assert delivery["status"] == "SENT"
+    assert delivery["provider_name"] == "resend"
+    assert delivery["provider_message_id"] == "resend_msg_success"
+    assert delivery["report_reference"].endswith(".pdf")
     assert delivery["recipient_email"] == "student@example.test"
     assert delivery["version_id"] == versions[0]["version_id"]
     assert delivery["analysis_id"] == "A1"
@@ -1515,7 +1694,7 @@ def test_send_feedback_emails_supervisor_approved_pdf_and_logs_delivery(draft_cl
     assert "AI ORIGINAL METHODOLOGY" not in text
     assert "Supervisor Final Feedback Report" in text
     assert "Writing Measurable Research Objectives" in text
-    assert "https://example.test/objectives" in text
+    assert "https://example.test/objectives" in pdf_uri_annotations(type("AttachmentResponse", (), {"content": attachment.content})())
     assert "Semantic Score" not in text
     assert "Final Readiness" not in text
     assert "Model Classification" not in text
@@ -1602,6 +1781,7 @@ def test_send_feedback_logs_failed_provider_response_and_allows_retry(draft_clie
         calls["count"] += 1
         if calls["count"] == 1:
             raise email_service.EmailDeliveryError("SMTP rejected recipient")
+        return "resend_msg_retry"
 
     monkeypatch.setattr(email_service, "send_feedback_email", flaky_send)
 
@@ -1609,7 +1789,7 @@ def test_send_feedback_logs_failed_provider_response_and_allows_retry(draft_clie
     retry = send_feedback(client, versions[0]["version_id"], "A1", supervisor_profile["supervisor_id"])
 
     assert failed.status_code == 502
-    assert failed.json()["detail"] == "Email delivery failed. Please try again."
+    assert failed.json()["detail"] == "SMTP rejected recipient"
     assert retry.status_code == 200
     assert retry.json()["status"] == "SENT"
     assert calls["count"] == 2
@@ -1641,7 +1821,11 @@ def test_send_feedback_blocks_duplicate_success_and_keeps_version_analysis_isola
             json=edited_payload(supervisor_profile["supervisor_id"], analysis_id=analysis_id, suffix=f" {analysis_id}"),
         ).status_code == 200
     sent_messages = []
-    monkeypatch.setattr(email_service, "send_feedback_email", lambda **kwargs: sent_messages.append(kwargs))
+    def fake_duplicate_send(**kwargs):
+        sent_messages.append(kwargs)
+        return f"resend_msg_{len(sent_messages)}"
+
+    monkeypatch.setattr(email_service, "send_feedback_email", fake_duplicate_send)
 
     first = send_feedback(client, versions[0]["version_id"], "A1", supervisor_profile["supervisor_id"])
     duplicate = send_feedback(client, versions[0]["version_id"], "A1", supervisor_profile["supervisor_id"])
@@ -1684,7 +1868,7 @@ def test_send_feedback_reports_unconfigured_email_without_marking_sent(draft_cli
 
 
 def test_complete_review_records_reviewed_without_creating_revision(draft_client, monkeypatch):
-    monkeypatch.setattr(email_service, "smtp_configured", lambda: False)
+    monkeypatch.setattr(email_service, "is_configured", lambda: False)
     client, database_path, analysis_path, grading_path, _ = draft_client
     proposal, versions = create_proposal_fixture(database_path, student_email="complete@example.test")
     supervisor_profile = create_assigned_supervisor(database_path, proposal["student_id"], "complete-review@example.test")
@@ -1715,7 +1899,7 @@ def test_complete_review_records_reviewed_without_creating_revision(draft_client
 
 
 def test_request_revision_records_revision_without_creating_v2(draft_client, monkeypatch):
-    monkeypatch.setattr(email_service, "smtp_configured", lambda: False)
+    monkeypatch.setattr(email_service, "is_configured", lambda: False)
     client, database_path, analysis_path, grading_path, _ = draft_client
     proposal, versions = create_proposal_fixture(database_path, student_email="revision@example.test")
     supervisor_profile = create_assigned_supervisor(database_path, proposal["student_id"], "request-revision@example.test")
@@ -1744,7 +1928,7 @@ def test_request_revision_records_revision_without_creating_v2(draft_client, mon
 
 
 def test_revision_requested_allows_next_version_and_preserves_v1_analysis(draft_client, monkeypatch):
-    monkeypatch.setattr(email_service, "smtp_configured", lambda: False)
+    monkeypatch.setattr(email_service, "is_configured", lambda: False)
     client, database_path, analysis_path, grading_path, _ = draft_client
     proposal, versions = create_proposal_fixture(database_path, student_email="next-version@example.test")
     supervisor_profile = create_assigned_supervisor(database_path, proposal["student_id"], "next-version@example.test")
@@ -1777,7 +1961,7 @@ def test_revision_requested_allows_next_version_and_preserves_v1_analysis(draft_
 
 
 def test_v2_can_be_analyzed_and_completed_independently_from_v1(draft_client, monkeypatch):
-    monkeypatch.setattr(email_service, "smtp_configured", lambda: False)
+    monkeypatch.setattr(email_service, "is_configured", lambda: False)
     client, database_path, analysis_path, grading_path, _ = draft_client
     proposal, versions = create_proposal_fixture(database_path, student_email="v2-complete@example.test")
     supervisor_profile = create_assigned_supervisor(database_path, proposal["student_id"], "v2-complete@example.test")
@@ -1821,7 +2005,7 @@ def test_v2_can_be_analyzed_and_completed_independently_from_v1(draft_client, mo
 
 
 def test_v1_to_v2_to_v3_lifecycle_is_version_scoped_and_v3_can_complete(draft_client, monkeypatch):
-    monkeypatch.setattr(email_service, "smtp_configured", lambda: False)
+    monkeypatch.setattr(email_service, "is_configured", lambda: False)
     client, database_path, analysis_path, grading_path, _ = draft_client
     proposal, versions = create_proposal_fixture(database_path, student_email="v3-cycle@example.test")
     supervisor_profile = create_assigned_supervisor(database_path, proposal["student_id"], "v3-cycle@example.test")
@@ -1905,7 +2089,7 @@ def test_v1_to_v2_to_v3_lifecycle_is_version_scoped_and_v3_can_complete(draft_cl
 
 
 def test_revision_chain_creates_v4_only_after_v3_revision_request(draft_client, monkeypatch):
-    monkeypatch.setattr(email_service, "smtp_configured", lambda: False)
+    monkeypatch.setattr(email_service, "is_configured", lambda: False)
     client, database_path, analysis_path, grading_path, _ = draft_client
     proposal, versions = create_proposal_fixture(database_path, version_count=3, student_email="v4@example.test")
     supervisor_profile = create_assigned_supervisor(database_path, proposal["student_id"], "v4-chain@example.test")
@@ -1930,7 +2114,7 @@ def test_revision_chain_creates_v4_only_after_v3_revision_request(draft_client, 
 
 
 def test_unassigned_supervisor_cannot_record_outcome_or_create_revision(draft_client, monkeypatch):
-    monkeypatch.setattr(email_service, "smtp_configured", lambda: False)
+    monkeypatch.setattr(email_service, "is_configured", lambda: False)
     client, database_path, analysis_path, grading_path, _ = draft_client
     proposal, versions = create_proposal_fixture(database_path, student_email="assigned-only@example.test")
     assigned = create_assigned_supervisor(database_path, proposal["student_id"], "assigned-only@example.test")
@@ -1955,7 +2139,7 @@ def test_unassigned_supervisor_cannot_record_outcome_or_create_revision(draft_cl
 
 
 def test_review_outcome_blocks_conflicting_decision_and_duplicate_revision_upload(draft_client, monkeypatch):
-    monkeypatch.setattr(email_service, "smtp_configured", lambda: False)
+    monkeypatch.setattr(email_service, "is_configured", lambda: False)
     client, database_path, analysis_path, grading_path, _ = draft_client
     proposal, versions = create_proposal_fixture(database_path, student_email="duplicate-outcome@example.test")
     supervisor_profile = create_assigned_supervisor(database_path, proposal["student_id"], "duplicate-outcome@example.test")

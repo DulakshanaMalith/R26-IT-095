@@ -2,152 +2,68 @@
 
 ## Summary
 
-No SQL database is implemented. There is no ORM, schema migration framework, database connection pool, indexes, or foreign-key enforcement. Persistence is file-based:
+ResearchPilot runtime persistence is PostgreSQL-backed. SQLAlchemy defines the model metadata, and Alembic is the schema authority. Production schema creation must be done with:
 
-- Runtime history: JSON files in `data/`
-- Processed datasets: CSV files in `processed/`
-- Model artifacts: pickle files in `models/`
-- Generated reports: PDF files in `reports/`
-
-The “database” documentation below describes the effective data stores that the application actually reads and writes.
-
-## Runtime JSON Stores
-
-| File | Written by | Read by | Purpose |
-| --- | --- | --- | --- |
-| `data/analysis_history.json` | `/analyze`, delete/clear helpers | history, dashboard, supervisor analytics, report generation | Successful proposal analysis records. |
-| `data/grading_history.json` | `/grade-report`, clear helper | grading history, grading analytics, report generation | Semantic grading and readiness records. |
-| `data/knowledge_graph_history.json` | `/knowledge-graph` | graph history, dashboard/history matching | Knowledge graph summaries. |
-| `data/*.corrupted.json` | corruption recovery logic | not used by normal app flow | Backup of invalid JSON detected at runtime. |
-
-## Runtime Store ER Diagram
-
-This diagram shows logical relationships by shared IDs. They are not database-enforced foreign keys.
-
-```mermaid
-erDiagram
-    ANALYSIS_HISTORY ||--o{ GRADING_HISTORY : "analysis_id"
-    ANALYSIS_HISTORY ||--o{ KNOWLEDGE_GRAPH_HISTORY : "analysis_id"
-
-    ANALYSIS_HISTORY {
-        string id PK
-        string analysis_id
-        string request_id
-        string timestamp
-        string source
-        string filename
-        string student_name
-        string student_id
-        string proposal_title
-        string input_text
-        string predicted_tag
-        string model_predicted_tag
-        string classification_reason
-        json retrieved_feedback
-        json recommended_resources
-    }
-
-    GRADING_HISTORY {
-        string id PK
-        string analysis_id FK
-        string timestamp
-        string source
-        string filename
-        string input_text
-        int word_count
-        float predicted_score
-        float percentage_score
-        string label
-        json section_scores
-        json proposal_completeness
-        json submission_readiness
-        json final_proposal_assessment
-        json final_readiness
-        string model_status
-        string warning
-    }
-
-    KNOWLEDGE_GRAPH_HISTORY {
-        string timestamp
-        string analysis_id FK
-        string filename
-        int concept_count
-        json concepts
-        json edges
-        json missing_concepts
-    }
+```bash
+cd backend
+alembic upgrade head
 ```
 
-## Processed Dataset Schemas
+The app no longer creates runtime tables with `Base.metadata.create_all()` and no longer writes analysis, grading, or knowledge graph history to JSON files during normal runtime.
 
-| File | Rows | Columns | Purpose |
-| --- | ---: | --- | --- |
-| `processed/exposia_annotations.csv` | 2,228 | `author`, `annotation_id`, `review`, `role`, `tag`, `annotated_text` | Base annotation corpus. |
-| `processed/exposia_comments.csv` | 2,253 | `author`, `comment_id`, `annotation_id`, `review`, `role`, `comment_text`, `tags` | Reviewer comments linked to annotations. |
-| `processed/exposia_grading_dataset.csv` | 165 | `author`, `submission_type`, `text`, `criteria_json`, `total_score` | Semantic grading model input/target rows. |
-| `processed/exposia_reports.csv` | 55 | `author`, `topic`, `draft_text`, `final_text`, `draft_scores`, `final_scores` | Draft/final proposal corpus. |
-| `processed/feedback_dataset.csv` | 2,152 | `annotated_text`, `tag`, `comment_text` | Initial retrieval dataset. |
-| `processed/feedback_dataset_final.csv` | 2,134 | `annotated_text`, `tag`, `comment_text` | Final retrieval dataset. |
-| `processed/weakness_dataset.csv` | 2,227 | `annotated_text`, `tag` | Initial classification dataset. |
-| `processed/weakness_dataset_final.csv` | 2,035 | `annotated_text`, `tag` | Final production classification dataset. |
-| `processed/weakness_dataset_labelclean_experimental.csv` | 1,913 | `annotated_text`, `tag` | Experimental label-cleaned classifier dataset. |
+## Runtime Tables
 
-## Processed Dataset ER Diagram
+| Area | Tables |
+| --- | --- |
+| Accounts | `users`, `supervisor_profiles` |
+| Student assignment | `students`, `supervisor_student_assignments` |
+| Proposal workflow | `proposals`, `proposal_versions`, `analyses` |
+| Review workflow | `ai_supervisor_review_drafts`, `supervisor_review_drafts`, `supervisor_reviews` |
+| Delivery | `notification_logs` |
+| Histories | `analysis_history_records`, `grading_records`, `knowledge_graph_records` |
 
-```mermaid
-erDiagram
-    EXPOSIA_REPORTS ||--o{ EXPOSIA_ANNOTATIONS : author
-    EXPOSIA_ANNOTATIONS ||--o{ EXPOSIA_COMMENTS : annotation_id
-    EXPOSIA_REPORTS ||--o{ EXPOSIA_GRADING_DATASET : author
-    EXPOSIA_ANNOTATIONS ||--o{ WEAKNESS_DATASET : annotated_text
-    EXPOSIA_COMMENTS ||--o{ FEEDBACK_DATASET : comment_text
+History tables keep relational columns for commonly queried fields and JSONB payload columns that preserve the original response/evidence objects.
 
-    EXPOSIA_REPORTS {
-        string author
-        string topic
-        text draft_text
-        text final_text
-        json draft_scores
-        json final_scores
-    }
-    EXPOSIA_ANNOTATIONS {
-        string author
-        string annotation_id
-        string review
-        string role
-        string tag
-        text annotated_text
-    }
-    EXPOSIA_COMMENTS {
-        string author
-        string comment_id
-        string annotation_id
-        string review
-        string role
-        text comment_text
-        json tags
-    }
-    EXPOSIA_GRADING_DATASET {
-        string author
-        string submission_type
-        text text
-        json criteria_json
-        float total_score
-    }
+## Configuration
+
+| Variable | Purpose |
+| --- | --- |
+| `DATABASE_URL` | Required PostgreSQL SQLAlchemy URL for application runtime. |
+| `TEST_DATABASE_URL` | Required separate PostgreSQL URL for destructive tests. |
+| `DATA_DIR` | Source JSON/SQLite location used by migration and archival workflows only. |
+
+Example:
+
+```env
+DATABASE_URL=postgresql+psycopg://researchpilot:researchpilot@localhost:5432/researchpilot
+TEST_DATABASE_URL=postgresql+psycopg://researchpilot:researchpilot@localhost:5432/researchpilot_test
 ```
 
-## Keys, Relationships, and Constraints
+## Migration
 
-| Concept | Implemented? | Notes |
-| --- | --- | --- |
-| Primary keys | Partially | Runtime history records have generated `id` fields; CSV datasets do not enforce uniqueness. |
-| Foreign keys | Logical only | `analysis_id` links analysis, graph, and grading histories when supplied. |
-| Indexes | No | Files are loaded and scanned in memory. |
-| Constraints | Application-level | Validation is performed by Python/Pydantic and dataset scripts. |
-| Migrations | No | Schema changes are handled by code-level normalization of legacy fields. |
-| Normalization | Partial | Processed datasets separate reports, annotations, comments, and grading rows; runtime JSON records duplicate denormalized data for convenience. |
+Validate source relationships before migrating:
 
-## Migration History
+```bash
+cd backend
+python scripts/migrate_to_postgres.py --validate-only --output data/migration_validation_report.json
+```
 
-No formal migration history exists. The code contains compatibility helpers such as legacy field normalization for report payloads and grading/completeness payloads, and JSON corruption recovery that backs up invalid history files with `.corrupted.json`.
+Create the PostgreSQL schema:
 
+```bash
+cd backend
+alembic upgrade head
+```
+
+Run the migration:
+
+```bash
+cd backend
+python scripts/migrate_to_postgres.py --migrate --output data/migration_report.json
+```
+
+The migration script backs up the source SQLite database, the three JSON history files, and any history corruption backups before writing to PostgreSQL. Source files are not deleted.
+
+## Relationship Policy
+
+Only exact existing `analyses.analysis_id` matches are treated as workflow relationships. Historical JSON records that cannot be safely linked are preserved as standalone history rows with nullable `analysis_id`; no relationships are invented.

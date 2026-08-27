@@ -2,10 +2,10 @@ from __future__ import annotations
 
 import os
 import secrets
-import sqlite3
 from typing import Any
 
 from fastapi import APIRouter, Depends, HTTPException, Response, status
+from sqlalchemy.exc import IntegrityError
 
 from src.api.auth import (
     clear_session_cookie,
@@ -28,7 +28,7 @@ DEFAULT_DEV_SUPERVISOR_EMAIL = "dev.supervisor@researchpilot.local"
 DEFAULT_DEV_SUPERVISOR_NAME = "Development Supervisor"
 
 
-def _close_connection(connection: sqlite3.Connection) -> None:
+def _close_connection(connection: Any) -> None:
     connection.close()
 
 
@@ -54,7 +54,7 @@ def _dev_login_enabled() -> bool:
 def login(
     payload: LoginRequest,
     response: Response,
-    connection: sqlite3.Connection = Depends(get_db_connection),
+    connection: Any = Depends(get_db_connection),
 ) -> dict[str, Any]:
     try:
         identity = repositories.get_supervisor_identity_by_email(connection, payload.email.strip().lower())
@@ -69,7 +69,7 @@ def login(
 @router.post("/dev-login", response_model=SupervisorIdentityResponse)
 def dev_login(
     response: Response,
-    connection: sqlite3.Connection = Depends(get_db_connection),
+    connection: Any = Depends(get_db_connection),
 ) -> dict[str, Any]:
     try:
         if not _dev_login_enabled():
@@ -94,7 +94,7 @@ def dev_login(
 def register(
     payload: RegisterSupervisorRequest,
     response: Response,
-    connection: sqlite3.Connection = Depends(get_db_connection),
+    connection: Any = Depends(get_db_connection),
 ) -> dict[str, Any]:
     try:
         full_name = payload.full_name.strip()
@@ -117,7 +117,7 @@ def register(
                 display_name=full_name,
                 password_hash=hash_password(payload.password),
             )
-        except sqlite3.IntegrityError:
+        except IntegrityError:
             raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="An account with this email already exists.")
         set_session_cookie(response, identity["user_id"])
         return public_supervisor_identity(identity)
@@ -128,7 +128,7 @@ def register(
 @router.get("/me", response_model=SupervisorIdentityResponse)
 def me(
     supervisor: dict[str, Any] = Depends(get_current_supervisor),
-    connection: sqlite3.Connection = Depends(get_db_connection),
+    connection: Any = Depends(get_db_connection),
 ) -> dict[str, Any]:
     try:
         return public_supervisor_identity(supervisor)

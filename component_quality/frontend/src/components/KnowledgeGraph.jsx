@@ -63,10 +63,6 @@ export default function KnowledgeGraph({ graph, loading, error }) {
       )}
       <div className="kg-grid">
         <article>
-          <h3>Main Concepts</h3>
-          <ChipList items={concepts} />
-        </article>
-        <article>
           <h3>Missing Concepts</h3>
           <ChipList items={missing} tone="warning" />
         </article>

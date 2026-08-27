@@ -9,7 +9,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from src.api.database import get_db_connection
 from src.api.routers import supervisor
-from src.db.connection import connect
+from tests.postgres_fixtures import connect
 from src.db.repositories import (
     assign_supervisor_to_student,
     create_ai_supervisor_review_draft,
@@ -22,12 +22,12 @@ from src.db.repositories import (
     create_user,
     save_supervisor_review_draft,
 )
-from src.db.schema import create_schema
+from tests.postgres_fixtures import create_schema
 
 
 @pytest.fixture()
 def api_client(tmp_path):
-    database_path = tmp_path / "researchpilot_phase2.sqlite"
+    database_path = tmp_path / "researchpilot_phase2.postgresql"
     setup_connection = connect(database_path)
     create_schema(setup_connection)
     setup_connection.close()
@@ -101,7 +101,7 @@ def test_supervisor_student_scoping_and_co_supervisor_support(api_client):
     }
 
 
-def test_supervisor_students_endpoint_uses_request_scoped_sqlite_connection(api_client):
+def test_supervisor_students_endpoint_uses_request_scoped_postgresql_connection(api_client):
     client, database_path = api_client
     supervisor = create_supervisor(database_path, "threaded-supervisor@example.test", "Threaded Supervisor")
     student = create_student(client, "ITTHREAD", "Threaded Student")

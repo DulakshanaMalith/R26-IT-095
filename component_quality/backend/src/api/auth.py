@@ -6,7 +6,6 @@ import hmac
 import json
 import os
 import secrets
-import sqlite3
 import time
 from typing import Any
 
@@ -116,7 +115,13 @@ def set_session_cookie(response: Response, user_id: str) -> None:
 
 
 def clear_session_cookie(response: Response) -> None:
-    response.delete_cookie(SESSION_COOKIE_NAME, path="/")
+    response.delete_cookie(
+        SESSION_COOKIE_NAME,
+        path="/",
+        httponly=True,
+        samesite="lax",
+        secure=False,
+    )
 
 
 def public_supervisor_identity(identity: dict[str, Any]) -> dict[str, Any]:
@@ -133,7 +138,7 @@ def public_supervisor_identity(identity: dict[str, Any]) -> dict[str, Any]:
 
 def get_current_supervisor(
     request: Request,
-    connection: sqlite3.Connection = Depends(get_db_connection),
+    connection: Any = Depends(get_db_connection),
 ) -> dict[str, Any]:
     user_id = verify_session_token(request.cookies.get(SESSION_COOKIE_NAME))
     if not user_id:

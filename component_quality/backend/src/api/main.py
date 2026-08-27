@@ -14,12 +14,12 @@ from src.api.services.core_logic import lifespan as model_lifespan, logger, REPO
 async def lifespan(app: FastAPI):
     """Load existing ML models, then deliberately initialize configured data DB."""
     async with model_lifespan(app):
-        database_path = initialize_configured_database()
-        app.state.database_path = str(database_path) if database_path else None
-        if database_path:
-            logger.info("Supervisor workflow database initialized at %s", database_path)
+        database_url = initialize_configured_database()
+        app.state.database_url = database_url
+        if database_url:
+            logger.info("PostgreSQL persistence configured; ensure Alembic migrations are applied.")
         else:
-            logger.info("APP_DATABASE_PATH is not set; supervisor data APIs will return 503.")
+            logger.info("DATABASE_URL is not set; database-backed APIs will return 503.")
         yield
 
 app = FastAPI(

@@ -10,7 +10,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from src.api.database import get_db_connection
 from src.api.routers import supervisor
 from src.api.services import core_logic
-from src.db.connection import connect
+from tests.postgres_fixtures import connect
 from src.db.repositories import (
     assign_supervisor_to_student,
     create_analysis,
@@ -21,12 +21,12 @@ from src.db.repositories import (
     create_user,
     get_version_reviews,
 )
-from src.db.schema import create_schema
+from tests.postgres_fixtures import create_schema
 
 
 @pytest.fixture()
 def review_client(tmp_path, monkeypatch):
-    database_path = tmp_path / "supervisor_reviews.sqlite"
+    database_path = tmp_path / "supervisor_reviews.postgresql"
     monkeypatch.setattr(core_logic, "predict_tag", lambda *args, **kwargs: pytest.fail("review endpoint must not invoke models"))
     monkeypatch.setattr(core_logic, "grade_report_text", lambda *args, **kwargs: pytest.fail("review endpoint must not grade"))
     monkeypatch.setattr(core_logic, "retrieve_feedback", lambda *args, **kwargs: pytest.fail("review endpoint must not retrieve feedback"))

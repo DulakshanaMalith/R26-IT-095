@@ -12,7 +12,7 @@ from src.api.database import get_db_connection
 from src.api.routers import supervisor
 from src.api.services import core_logic
 from src.core import knowledge_graph
-from src.db.connection import connect
+from tests.postgres_fixtures import connect
 from src.db.repositories import (
     create_proposal,
     create_proposal_version,
@@ -21,7 +21,8 @@ from src.db.repositories import (
     create_user,
     get_version_analyses,
 )
-from src.db.schema import create_schema
+from src.db.history_repositories import list_analysis_history, list_grading_history, list_graph_history
+from tests.postgres_fixtures import create_schema
 
 
 COMPLETE_PROPOSAL_TEXT = (
@@ -54,20 +55,27 @@ class FakeWeaknessModel:
 
 @pytest.fixture()
 def version_analysis_client(tmp_path, monkeypatch):
-    database_path = tmp_path / "phase3.sqlite"
+    database_path = tmp_path / "phase3.postgresql"
     history_dir = tmp_path / "history"
     history_dir.mkdir()
-    analysis_history_path = history_dir / "analysis_history.json"
-    grading_history_path = history_dir / "grading_history.json"
-    graph_history_path = history_dir / "knowledge_graph_history.json"
-
     monkeypatch.setattr(core_logic, "DATA_DIR", history_dir)
-    monkeypatch.setattr(core_logic, "HISTORY_PATH", analysis_history_path)
-    monkeypatch.setattr(core_logic, "GRADING_HISTORY_PATH", grading_history_path)
     monkeypatch.setattr(knowledge_graph, "DATA_DIR", history_dir)
-    monkeypatch.setattr(knowledge_graph, "HISTORY_PATH", graph_history_path)
     monkeypatch.setattr(core_logic, "retrieve_feedback", lambda text, top_k=3: [{"comment_text": "Improve clarity.", "tag": "Weakness"}])
-    monkeypatch.setattr(core_logic, "get_recommended_resources", lambda text, feedback="", top_k=3: [{"title": "Research Methods Guide", "type": "Guide"}])
+    monkeypatch.setattr(
+        core_logic,
+        "get_recommended_resources",
+        lambda text, feedback="", top_k=3, missing_sections=None: [
+            {
+                "id": "methods-guide",
+                "title": "Research Methods Guide",
+                "description": "Guidance for choosing a suitable academic research method.",
+                "url": "https://example.test/research-methods",
+                "category": "Methodology",
+                "reason": "The proposal needs stronger method design.",
+                "relevance_score": 0.85,
+            }
+        ],
+    )
     monkeypatch.setattr(core_logic, "grade_report_text", lambda text: 31.0)
     monkeypatch.setattr(
         core_logic,
@@ -119,13 +127,16 @@ def create_student_proposal_with_versions(database_path, version_texts):
 
 
 def read_history(history_dir, filename):
-    path = history_dir / filename
-    if not path.exists():
-        return []
-    return json.loads(path.read_text(encoding="utf-8"))
+    if filename == "analysis_history.json":
+        return list_analysis_history()
+    if filename == "grading_history.json":
+        return list_grading_history()
+    if filename == "knowledge_graph_history.json":
+        return list_graph_history()
+    return []
 
 
-def test_good_version_analysis_creates_sqlite_link_and_history(version_analysis_client):
+def test_good_version_analysis_creates_postgresql_link_and_history(version_analysis_client):
     client, database_path, history_dir = version_analysis_client
     _, proposal, versions = create_student_proposal_with_versions(database_path, [COMPLETE_PROPOSAL_TEXT])
 
@@ -140,6 +151,17 @@ def test_good_version_analysis_creates_sqlite_link_and_history(version_analysis_
     assert payload["analysis_id"] == payload["semantic_grade"]["analysis_id"]
     assert payload["knowledge_graph"]["analysis_id"] == payload["analysis_id"]
     assert payload["semantic_grade"]["final_readiness_percentage"] is not None
+    assert payload["analysis"]["recommended_resources"] == [
+        {
+            "id": "methods-guide",
+            "title": "Research Methods Guide",
+            "description": "Guidance for choosing a suitable academic research method.",
+            "url": "https://example.test/research-methods",
+            "category": "Methodology",
+            "reason": "The proposal needs stronger method design.",
+            "relevance_score": 0.85,
+        }
+    ]
 
     connection = connect(database_path)
     try:
@@ -150,12 +172,14 @@ def test_good_version_analysis_creates_sqlite_link_and_history(version_analysis_
     finally:
         connection.close()
 
-    assert [item["analysis_id"] for item in read_history(history_dir, "analysis_history.json")] == [payload["analysis_id"]]
+    analysis_history = read_history(history_dir, "analysis_history.json")
+    assert [item["analysis_id"] for item in analysis_history] == [payload["analysis_id"]]
+    assert analysis_history[0]["recommended_resources"] == payload["analysis"]["recommended_resources"]
     assert [item["analysis_id"] for item in read_history(history_dir, "grading_history.json")] == [payload["analysis_id"]]
     assert [item["analysis_id"] for item in read_history(history_dir, "knowledge_graph_history.json")] == [payload["analysis_id"]]
 
 
-def test_invalid_version_text_is_rejected_without_sqlite_link(version_analysis_client):
+def test_invalid_version_text_is_rejected_without_postgresql_link(version_analysis_client):
     client, database_path, history_dir = version_analysis_client
     _, _, versions = create_student_proposal_with_versions(database_path, [INVALID_TEXT])
 

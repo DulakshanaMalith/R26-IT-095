@@ -5,18 +5,18 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 
 from seed_demo_data import seed_demo_data
-from src.db.connection import connect
+from tests.postgres_fixtures import connect, create_schema
 
 
-def test_seed_demo_data_is_idempotent_and_uses_local_sqlite(tmp_path):
-    database_path = tmp_path / "researchpilot_dev.sqlite"
+def test_seed_demo_data_is_idempotent_and_uses_test_postgresql():
+    create_schema()
 
-    first = seed_demo_data(database_path)
-    second = seed_demo_data(database_path)
+    first = seed_demo_data()
+    second = seed_demo_data()
 
     assert first["supervisor_id"] == second["supervisor_id"]
 
-    connection = connect(database_path)
+    connection = connect()
     try:
         assert connection.execute("SELECT COUNT(*) FROM users").fetchone()[0] == 1
         assert connection.execute("SELECT COUNT(*) FROM supervisor_profiles").fetchone()[0] == 1

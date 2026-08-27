@@ -4,8 +4,6 @@ import { NavLink } from "react-router-dom";
 const links = [
   { to: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
   { to: "/students", label: "My Students", icon: UsersRound },
-  { to: "/analytics", label: "Analytics", icon: Activity },
-  { to: "/history", label: "History", icon: Clock3 },
 ];
 
 export default function Sidebar({ currentSupervisor, onLogout }) {

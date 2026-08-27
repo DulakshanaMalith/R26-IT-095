@@ -1,20 +1,19 @@
 """Seed local-only supervisor workflow demo data.
 
-This script is intentionally manual. It only writes to the SQLite path supplied
-by --database or APP_DATABASE_PATH and never runs during FastAPI startup.
+This script is intentionally manual. It writes to PostgreSQL through DATABASE_URL
+and never runs during FastAPI startup.
 """
 
 from __future__ import annotations
 
 import argparse
-import os
 import sys
 from pathlib import Path
 from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from src.db.connection import connect
+from src.db.session import get_session
 from src.db.repositories import (
     assign_supervisor_to_student,
     create_proposal,
@@ -29,7 +28,6 @@ from src.db.repositories import (
     get_supervisor_student_assignment,
     get_user_by_email,
 )
-from src.db.schema import create_schema
 
 
 SUPERVISOR_EMAIL = "supervisor@example.test"
@@ -116,10 +114,9 @@ def _ensure_version(
     return version
 
 
-def seed_demo_data(database_path: str | Path) -> dict[str, Any]:
-    connection = connect(database_path)
+def seed_demo_data() -> dict[str, Any]:
+    connection = get_session()
     try:
-        create_schema(connection)
         supervisor = _ensure_supervisor(connection)
         students = [
             _ensure_student(
@@ -170,7 +167,6 @@ def seed_demo_data(database_path: str | Path) -> dict[str, Any]:
         )
 
         return {
-            "database_path": str(database_path),
             "supervisor_id": supervisor["supervisor_id"],
             "students": students,
             "proposal_ids": [proposal_one["proposal_id"], proposal_two["proposal_id"]],
@@ -179,21 +175,13 @@ def seed_demo_data(database_path: str | Path) -> dict[str, Any]:
         connection.close()
 
 
-def _resolve_database_path(args: argparse.Namespace) -> str:
-    database_path = args.database or os.getenv("APP_DATABASE_PATH")
-    if not database_path:
-        raise SystemExit("Set APP_DATABASE_PATH or pass --database for the local development SQLite file.")
-    return database_path
-
-
 def main() -> None:
     parser = argparse.ArgumentParser(description="Seed local ResearchPilot supervisor demo data.")
-    parser.add_argument("--database", help="SQLite database path. Defaults to APP_DATABASE_PATH.")
-    args = parser.parse_args()
+    parser.parse_args()
 
-    result = seed_demo_data(_resolve_database_path(args))
+    result = seed_demo_data()
     print("Seeded local supervisor workflow demo data.")
-    print(f"Database: {result['database_path']}")
+    print("Database: PostgreSQL DATABASE_URL")
     print(f"Supervisor ID: {result['supervisor_id']}")
     print("Use set_supervisor_password.py to configure local supervisor login credentials.")
 

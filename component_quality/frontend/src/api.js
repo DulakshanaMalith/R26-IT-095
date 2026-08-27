@@ -1,4 +1,25 @@
-export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:9000";
+function sameLocalApiBaseUrl(configuredUrl) {
+  if (typeof window === "undefined") return configuredUrl;
+  try {
+    const apiUrl = new URL(configuredUrl);
+    const pageHost = window.location.hostname;
+    const loopbackHosts = new Set(["localhost", "127.0.0.1"]);
+    if (
+      apiUrl.protocol === window.location.protocol &&
+      loopbackHosts.has(apiUrl.hostname) &&
+      loopbackHosts.has(pageHost) &&
+      apiUrl.hostname !== pageHost
+    ) {
+      apiUrl.hostname = pageHost;
+      return apiUrl.toString().replace(/\/$/, "");
+    }
+  } catch {
+    return configuredUrl;
+  }
+  return configuredUrl;
+}
+
+export const API_BASE_URL = sameLocalApiBaseUrl(import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:9000");
 const TEMP_DEV_SUPERVISOR_ID = import.meta.env.VITE_DEMO_SUPERVISOR_ID || "";
 const TEMP_USE_LEGACY_SUPERVISOR_DATA = true;
 
@@ -60,6 +81,7 @@ export function analyzeText(text, metadata = {}) {
         student_id: metadata.student_id || null,
         proposal_title: metadata.proposal_title || null,
         analysis_id: metadata.analysis_id || null,
+        learning_needs: metadata.learning_needs || [],
       }),
     },
     "The proposal analysis could not be completed.",
@@ -116,6 +138,7 @@ export function recommendResources(text, feedback = "", metadata = {}) {
         text,
         feedback,
         analysis_id: metadata.analysis_id || null,
+        learning_needs: metadata.learning_needs || [],
       }),
     },
     "Could not generate learning resources.",
@@ -442,6 +465,18 @@ export function getStudent(studentId) {
   return request(`/students/${encodeURIComponent(studentId)}`, {}, "Could not load student details.");
 }
 
+export function updateStudentEmail(studentId, email) {
+  return request(
+    `/students/${encodeURIComponent(studentId)}/email`,
+    {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email }),
+    },
+    "Could not save student email.",
+  );
+}
+
 export function createStudent(payload) {
   return request(
     "/students",
@@ -547,6 +582,10 @@ export function getProposalVersion(versionId) {
 
 export function getVersionAnalyses(versionId) {
   return request(`/versions/${encodeURIComponent(versionId)}/analyses`, {}, "Could not load linked analyses.");
+}
+
+export function getVersionGradings(versionId) {
+  return request(`/versions/${encodeURIComponent(versionId)}/gradings`, {}, "Could not load gradings.");
 }
 
 export function getVersionSupervisorReviews(versionId) {

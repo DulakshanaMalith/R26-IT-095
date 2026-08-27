@@ -11,7 +11,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from src.api.database import get_db_connection
 from src.api.routers import supervisor
 from src.api.services import core_logic
-from src.db.connection import connect
+from tests.postgres_fixtures import connect
 from src.db.repositories import (
     create_proposal,
     create_proposal_version,
@@ -19,22 +19,16 @@ from src.db.repositories import (
     create_user,
     get_version_analyses,
 )
-from src.db.schema import create_schema
+from src.db.history_repositories import replace_analysis_history, replace_grading_history
+from tests.postgres_fixtures import create_schema
 
 
 @pytest.fixture()
 def link_client(tmp_path, monkeypatch):
-    database_path = tmp_path / "analysis_linking.sqlite"
+    database_path = tmp_path / "analysis_linking.postgresql"
     history_dir = tmp_path / "history"
     history_dir.mkdir()
-    analysis_history_path = history_dir / "analysis_history.json"
-    grading_history_path = history_dir / "grading_history.json"
-    analysis_history_path.write_text("[]", encoding="utf-8")
-    grading_history_path.write_text("[]", encoding="utf-8")
-
     monkeypatch.setattr(core_logic, "DATA_DIR", history_dir)
-    monkeypatch.setattr(core_logic, "HISTORY_PATH", analysis_history_path)
-    monkeypatch.setattr(core_logic, "GRADING_HISTORY_PATH", grading_history_path)
     monkeypatch.setattr(core_logic, "predict_tag", lambda *args, **kwargs: pytest.fail("link endpoint must not invoke models"))
     monkeypatch.setattr(core_logic, "grade_report_text", lambda *args, **kwargs: pytest.fail("link endpoint must not grade"))
     monkeypatch.setattr(core_logic, "analyze_knowledge_graph", lambda *args, **kwargs: pytest.fail("link endpoint must not build graphs"))
@@ -42,6 +36,8 @@ def link_client(tmp_path, monkeypatch):
     setup_connection = connect(database_path)
     create_schema(setup_connection)
     setup_connection.close()
+    replace_analysis_history([])
+    replace_grading_history([])
 
     app = FastAPI()
     app.include_router(supervisor.router)
@@ -80,7 +76,7 @@ def create_versioned_proposal(database_path, *, filenames=("same-name.pdf",), te
 
 
 def write_analysis_history(path, records):
-    path.write_text(json.dumps(records, indent=2), encoding="utf-8")
+    replace_analysis_history(records)
 
 
 def analysis_record(analysis_id, *, text="Completed proposal text", source="pdf"):
