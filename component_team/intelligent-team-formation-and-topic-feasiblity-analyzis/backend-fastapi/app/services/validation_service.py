@@ -860,8 +860,11 @@ def validate_cohort_slots(
         remainder_students = total_students % students_per_team
         required_team_count = full_team_count + (1 if remainder_students else 0)
         project_count = len({normalize_project_id(row.values.get("ProjectID")) for row in project_rows if normalize_project_id(row.values.get("ProjectID"))})
-        if project_count != required_team_count:
-            issues.append(ValidationIssue(severity="ERROR", code="PROJECT_TEAM_COUNT_MISMATCH", sheet="Projects", row=None, field="ProjectID", message=f"The cohort contains {total_students} students and the target team size is {students_per_team}, so {required_team_count} project teams are required. The workbook contains {project_count} approved projects."))
+        if project_count < required_team_count:
+            issues.append(ValidationIssue(severity="ERROR", code="INSUFFICIENT_APPROVED_PROJECTS", sheet="Projects", row=None, field="ProjectID", message=f"The cohort contains {total_students} students and the target team size is {students_per_team}, so {required_team_count} project teams are required. Only {project_count} approved projects are available. At least {required_team_count} approved projects are required."))
+        elif project_count > required_team_count:
+            surplus = project_count - required_team_count
+            issues.append(ValidationIssue(severity="WARNING", code="SURPLUS_APPROVED_PROJECTS", sheet="Projects", row=None, field="ProjectID", message=f"The cohort contains {total_students} students and the target team size is {students_per_team}, so {required_team_count} project teams are required. The workbook contains {project_count} approved projects. Team formation can continue: each allocation will use {required_team_count} unique approved projects and leave {surplus} approved project(s) unassigned."))
         if remainder_students:
             message = f"The cohort is not exactly divisible by the target team size. {full_team_count} full team(s) of {students_per_team} and one remainder team of {remainder_students} student(s) will be formed."
             if remainder_students == 1:
@@ -957,6 +960,8 @@ def validate_technical_feasibility(
 def validate_supervisor_capacity(
     supervisor_rows: List[ParsedRow],
     project_rows: List[ParsedRow],
+    student_rows: List[ParsedRow] | None = None,
+    students_per_team: int | None = None,
 ) -> List[ValidationIssue]:
     issues: List[ValidationIssue] = []
 
@@ -966,7 +971,22 @@ def validate_supervisor_capacity(
         if normalize_project_id(row.values.get("ProjectID"))
     }
 
-    project_count = len(project_ids)
+    approved_project_count = len(project_ids)
+    project_team_count = approved_project_count
+    if student_rows is not None and students_per_team is not None:
+        valid_student_ids = {
+            normalize_student_id(row.values.get("StudentID"))
+            for row in student_rows
+            if normalize_student_id(row.values.get("StudentID"))
+        }
+        if (
+            valid_student_ids
+            and isinstance(students_per_team, int)
+            and not isinstance(students_per_team, bool)
+            and students_per_team >= 2
+        ):
+            project_team_count = (len(valid_student_ids) + students_per_team - 1) // students_per_team
+
     total_available_slots = 0
 
     for row in supervisor_rows:
@@ -986,7 +1006,7 @@ def validate_supervisor_capacity(
                 maximum_teams - current_load
             )
 
-    if total_available_slots < project_count:
+    if total_available_slots < project_team_count:
         issues.append(
             ValidationIssue(
                 severity="ERROR",
@@ -995,7 +1015,7 @@ def validate_supervisor_capacity(
                 row=None,
                 field="MaximumTeams",
                 message=(
-                    f"There are {project_count} project teams, "
+                    f"The cohort requires {project_team_count} project teams, "
                     f"but only {total_available_slots} valid "
                     "supervisor slots are currently available."
                 ),

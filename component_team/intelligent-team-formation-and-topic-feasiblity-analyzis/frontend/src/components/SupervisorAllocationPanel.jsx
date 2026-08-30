@@ -21,9 +21,12 @@ export default function SupervisorAllocationPanel({ workbookFile, selectedSoluti
   const teams = selectedSolution?.teams ?? [];
   const allocateSupervisors = async () => {
     if (!workbookFile) return setErrorMessage('The cohort workbook is not available.');
+    const selectedProjectIds = teams.map((team) => team.project_id);
+    if (!selectedProjectIds.length) return setErrorMessage('The selected allocation does not contain any projects.');
     const formData = new FormData();
     formData.append('file', workbookFile);
     formData.append('students_per_team', String(studentsPerTeam));
+    formData.append('selected_project_ids', JSON.stringify(selectedProjectIds));
     setAllocating(true);
     setErrorMessage('');
     setResult(null);

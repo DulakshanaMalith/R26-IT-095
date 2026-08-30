@@ -1,4 +1,5 @@
 from datetime import datetime
+from math import ceil
 from uuid import uuid4
 from sqlalchemy import select, update
 from sqlalchemy.orm import Session, selectinload
@@ -27,6 +28,25 @@ def _validate_payload(request: FinalAllocationCreateRequest) -> tuple[list[dict]
         student_ids.extend(member.get("student_id") for member in members)
     if None in student_ids or len(student_ids) != len(set(student_ids)):
         raise ValueError("The selected solution contains a missing or duplicate student assignment.")
+
+    students_per_team = request.students_per_team
+    if isinstance(students_per_team, bool) or not isinstance(students_per_team, int) or students_per_team < 2:
+        raise ValueError("Students per team must be an integer of at least 2.")
+    required_team_count = ceil(len(student_ids) / students_per_team)
+    if len(teams) != required_team_count:
+        raise ValueError(
+            f"The selected solution must contain exactly {required_team_count} teams for "
+            f"{len(student_ids)} students at a target team size of {students_per_team}."
+        )
+    quotient, remainder = divmod(len(student_ids), students_per_team)
+    expected_sizes = sorted(([students_per_team] * quotient) + ([remainder] if remainder else []))
+    actual_sizes = sorted(len(team.get("students") or []) for team in teams)
+    if actual_sizes != expected_sizes:
+        raise ValueError(
+            f"The selected solution has invalid team sizes. Expected {expected_sizes}, "
+            f"received {actual_sizes}."
+        )
+
     assignments = request.supervisor_allocation.get("assignments") or []
     supervisor_by_project = {assignment.get("project_id"): assignment for assignment in assignments}
     if len(supervisor_by_project) != len(assignments):
@@ -37,7 +57,11 @@ def _validate_payload(request: FinalAllocationCreateRequest) -> tuple[list[dict]
         raise ValueError(f"Supervisor allocation must cover exactly the selected projects. Missing={missing}, unexpected={extra}.")
     return teams, supervisor_by_project
 
-def _validate_reference_matches_solution(reference_data: dict | None, teams: list[dict]) -> None:
+def _validate_reference_matches_solution(
+    reference_data: dict | None,
+    teams: list[dict],
+    students_per_team: int | None = None,
+) -> None:
     if not reference_data:
         return
     reference_students = {str(item.get("student_id") or "").strip().upper() for item in reference_data.get("students") or []}
@@ -46,8 +70,33 @@ def _validate_reference_matches_solution(reference_data: dict | None, teams: lis
     solution_projects = {str(team.get("project_id") or "").strip().upper() for team in teams}
     if reference_students != solution_students:
         raise ValueError("The uploaded source workbook student set does not match the selected final allocation.")
-    if reference_projects != solution_projects:
-        raise ValueError("The uploaded source workbook project set does not match the selected final allocation.")
+    if not solution_projects:
+        raise ValueError("The selected final allocation does not contain any projects.")
+    if not solution_projects.issubset(reference_projects):
+        unexpected = sorted(solution_projects - reference_projects)
+        raise ValueError(
+            "The selected final allocation contains project(s) that are not present in the "
+            f"uploaded source workbook: {unexpected}."
+        )
+
+    if students_per_team is not None:
+        if isinstance(students_per_team, bool) or not isinstance(students_per_team, int) or students_per_team < 2:
+            raise ValueError("Students per team must be an integer of at least 2.")
+        student_count = len(reference_students)
+        required_team_count = ceil(student_count / students_per_team)
+        if len(teams) != required_team_count:
+            raise ValueError(
+                f"The selected final allocation must contain exactly {required_team_count} teams "
+                f"for {student_count} students at a target team size of {students_per_team}."
+            )
+        quotient, remainder = divmod(student_count, students_per_team)
+        expected_sizes = sorted(([students_per_team] * quotient) + ([remainder] if remainder else []))
+        actual_sizes = sorted(len(team.get("students") or []) for team in teams)
+        if actual_sizes != expected_sizes:
+            raise ValueError(
+                f"The selected final allocation has invalid team sizes. Expected {expected_sizes}, "
+                f"received {actual_sizes}."
+            )
 
 def persist_final_allocation(
     db: Session,
@@ -160,7 +209,7 @@ def persist_final_allocation(
 
 def create_final_allocation(db: Session, request: FinalAllocationCreateRequest, reference_data: dict | None = None) -> dict:
     teams, supervisor_by_project = _validate_payload(request)
-    _validate_reference_matches_solution(reference_data, teams)
+    _validate_reference_matches_solution(reference_data, teams, request.students_per_team)
     solution = request.selected_solution
     optimizer = request.optimizer
     return persist_final_allocation(
@@ -181,7 +230,11 @@ def attach_reference_data(db: Session, allocation_id: str, reference_data: dict)
     if allocation is None:
         raise ValueError("Final allocation was not found.")
     existing = get_final_allocation(db, allocation_id)
-    _validate_reference_matches_solution(reference_data, existing.get("teams") or [])
+    _validate_reference_matches_solution(
+        reference_data,
+        existing.get("teams") or [],
+        int(existing.get("students_per_team") or 0),
+    )
     allocation.reference_data = reference_data
     db.commit()
     return get_final_allocation(db, allocation_id)

@@ -280,10 +280,16 @@ def _build_revision_candidate(parent: dict, reference_data: dict, team_rows: lis
     project_ids = list(team_project.values())
     if len(project_ids) != len(set(project_ids)):
         raise ValueError("Each project may be assigned to only one team.")
-    if set(project_ids) != set(projects):
-        missing = sorted(set(projects) - set(project_ids))
-        extra = sorted(set(project_ids) - set(projects))
-        raise ValueError(f"Revised allocation must use exactly the approved project set. Missing={missing}, unexpected={extra}.")
+    selected_project_set = set(project_ids)
+    approved_project_set = set(projects)
+    if not selected_project_set.issubset(approved_project_set):
+        extra = sorted(selected_project_set - approved_project_set)
+        raise ValueError(f"Revised allocation contains project(s) outside the approved project pool: {extra}.")
+    if len(project_ids) != required_team_count:
+        raise ValueError(
+            f"The revised allocation must assign exactly {required_team_count} unique approved projects "
+            f"to the {required_team_count} teams."
+        )
     quotient, remainder = divmod(student_count, team_size)
     expected_sizes = sorted(([team_size] * quotient) + ([remainder] if remainder else []))
     actual_sizes = sorted(len(members) for members in grouped.values())

@@ -12,11 +12,12 @@ def calculate_team_configuration(student_count: int, project_count: int, student
     full_team_count = student_count // students_per_team
     remainder_students = student_count % students_per_team
     required_team_count = ceil(student_count / students_per_team)
-    if project_count != required_team_count:
+    if project_count < required_team_count:
         raise ValueError(
             f"The cohort contains {student_count} students and the target team size is "
             f"{students_per_team}, so {required_team_count} project teams are required. "
-            f"The workbook currently contains {project_count} approved projects."
+            f"Only {project_count} approved projects are available. At least "
+            f"{required_team_count} approved projects are required."
         )
     return {
         "student_count": student_count,
@@ -24,6 +25,9 @@ def calculate_team_configuration(student_count: int, project_count: int, student
         "full_team_count": full_team_count,
         "remainder_students": remainder_students,
         "required_team_count": required_team_count,
+        "approved_project_count": project_count,
+        "surplus_project_count": max(0, project_count - required_team_count),
+        "project_selection_required": project_count > required_team_count,
         "has_remainder_team": remainder_students > 0,
         "small_remainder_warning": remainder_students == 1,
     }

@@ -145,6 +145,8 @@ def validate_workbook(
         validate_supervisor_capacity(
             supervisors,
             projects,
+            student_rows=students,
+            students_per_team=students_per_team,
         )
     )
 
