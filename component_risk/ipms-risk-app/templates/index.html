@@ -4,92 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IPMS Risk Prediction</title>
-    <link rel="stylesheet" href="/static/style.css?v=10">
-    <style>
-        /* CRITICAL VIEW FIXES */
-        body, html {
-            background: radial-gradient(circle at top right, #0f172a, #020617) !important;
-            background-attachment: fixed !important;
-            color: #f8fafc !important;
-        }
-
-        .panel, .result-summary > div, .metric-card {
-            background: rgba(30, 41, 59, 0.7) !important;
-            backdrop-filter: blur(12px) !important;
-            -webkit-backdrop-filter: blur(12px) !important;
-            border: 1px solid rgba(255, 255, 255, 0.1) !important;
-            border-radius: 12px !important;
-            color: #f8fafc !important;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3) !important;
-        }
-
-        h1, h2, h3, h4, h5, h6, strong, label, span, .summary-label, .metric-card span {
-            color: #f8fafc !important;
-        }
-
-        .metric-card span {
-            color: #94a3b8 !important;
-            font-size: 11px !important;
-        }
-
-        .metric-card strong {
-            color: #f8fafc !important;
-            font-size: 20px !important;
-        }
-
-        .risk-badge {
-            border-radius: 12px !important;
-            font-weight: 900 !important;
-            text-transform: uppercase !important;
-        }
-
-        .risk-badge.high-risk {
-            background: rgba(239, 68, 68, 0.2) !important;
-            border: 1px solid rgba(239, 68, 68, 0.4) !important;
-            color: #f87171 !important;
-        }
-
-        .risk-badge.medium-risk {
-            background: rgba(245, 158, 11, 0.2) !important;
-            border: 1px solid rgba(245, 158, 11, 0.4) !important;
-            color: #fbbf24 !important;
-        }
-
-        .risk-badge.low-risk {
-            background: rgba(16, 185, 129, 0.2) !important;
-            border: 1px solid rgba(16, 185, 129, 0.4) !important;
-            color: #34d399 !important;
-        }
-
-        .sample-button {
-            background: rgba(255, 255, 255, 0.05) !important;
-            border: 1px solid rgba(255, 255, 255, 0.1) !important;
-            color: #cbd5e1 !important;
-        }
-
-        .sample-button.active {
-            border-width: 2px !important;
-        }
-
-        input {
-            background: rgba(15, 23, 42, 0.6) !important;
-            border: 1px solid rgba(255, 255, 255, 0.2) !important;
-            color: #f8fafc !important;
-        }
-    </style>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
 
 <div class="app-shell">
-    <header class="app-header">
-        <div>
-            <p class="eyebrow">Intelligent Project Management System</p>
-            <h1>Risk Prediction</h1>
-        </div>
-        <div class="status-chip">ML Model Active</div>
-    </header>
+    {% with page_title = 'Risk Prediction', active_page = 'risk' %}
+        {% include '_nav.html' %}
+    {% endwith %}
 
     <main class="workspace">
+        {% if access_error %}
+        <div class="warning-box error">{{ access_error }}</div>
+        {% endif %}
+
         <section class="panel input-panel">
             <div class="panel-heading">
                 <div>
@@ -105,6 +33,7 @@
             </div>
 
             <form action="/predict" method="post">
+                <input type="hidden" name="project_id" value="{{ project.id if project else 0 }}">
                 <input type="hidden" name="sample_profile" value="{{ form_data.sample_profile }}">
 
                 <div class="form-section">
@@ -125,6 +54,21 @@
                             <span>GitHub Repository URL</span>
                             <input type="url" name="github_url" value="{{ form_data.github_url }}" placeholder="https://github.com/user/repo" required>
                         </label>
+
+                        <div class="inline-field">
+                            <label>
+                                <span>Jira Project Key (optional)</span>
+                                <input type="text" name="jira_project_key" value="{{ form_data.jira_project_key }}" placeholder="e.g. IPMS">
+                            </label>
+                            <button type="button" class="secondary" id="jira-fetch">Fetch from Jira</button>
+                        </div>
+                        {% if user and user.role == 'student' %}
+                <p class="field-note">
+                    You are viewing your assigned project. The repository and Jira key
+                    are set by your supervisor and cannot be changed here.
+                </p>
+                {% endif %}
+                <p class="field-note" id="jira-status">Delivery metrics are fetched from Jira automatically when a key is set.</p>
                 </div>
 
                 <div class="form-section">
@@ -200,6 +144,14 @@
                 {{ result.risk_status }}
             </div>
 
+            {% if result.jira_warning %}
+            <div class="warning-box">{{ result.jira_warning }} Manually entered delivery values were used instead.</div>
+            {% endif %}
+
+            {% if result.jira_used %}
+            <div class="info-box">Delivery metrics fetched live from Jira project <strong>{{ result.jira_project_key }}</strong>.</div>
+            {% endif %}
+
             <div class="metrics-grid">
                 {% for key, value in result.features.items() %}
                 <div class="metric-card">
@@ -226,6 +178,7 @@
             project_name: "Legacy Payment Migration",
             team_id: "TEAM-404",
             github_url: "https://github.com/ipms-samples/high-risk-demo",
+            jira_project_key: "",
             overdue_tasks: "12",
             delay_count: "8",
             task_completion_rate: "28.00",
@@ -239,6 +192,7 @@
             project_name: "Student Portal Upgrade",
             team_id: "TEAM-101",
             github_url: "https://github.com/ipms-samples/medium-risk-demo",
+            jira_project_key: "",
             overdue_tasks: "4",
             delay_count: "3",
             task_completion_rate: "63.00",
@@ -252,6 +206,7 @@
             project_name: "Library Services Dashboard",
             team_id: "TEAM-208",
             github_url: "https://github.com/ipms-samples/low-risk-demo",
+            jira_project_key: "",
             overdue_tasks: "0",
             delay_count: "0",
             task_completion_rate: "94.00",
@@ -287,8 +242,45 @@
             buttons.forEach((item) => item.classList.remove("active"));
         }
     });
+
+    const jiraFetchButton = document.getElementById("jira-fetch");
+    const jiraStatus = document.getElementById("jira-status");
+
+    jiraFetchButton.addEventListener("click", async () => {
+        const projectKey = form.elements.jira_project_key.value.trim();
+
+        if (!projectKey) {
+            jiraStatus.textContent = "Enter a Jira project key first.";
+            return;
+        }
+
+        jiraStatus.textContent = "Fetching metrics from Jira...";
+
+        try {
+            const response = await fetch(`/api/jira-metrics?project_key=${encodeURIComponent(projectKey)}`);
+            const data = await response.json();
+
+            if (data.error) {
+                jiraStatus.textContent = data.error;
+                return;
+            }
+
+            form.elements.overdue_tasks.value = data.metrics.overdue_tasks;
+            form.elements.delay_count.value = data.metrics.delay_count;
+            form.elements.task_completion_rate.value = data.metrics.task_completion_rate;
+            form.elements.progress_percentage.value = data.metrics.progress_percentage;
+
+            form.elements.sample_profile.value = "";
+            buttons.forEach((item) => item.classList.remove("active"));
+
+            jiraStatus.textContent =
+                `Loaded ${data.metrics.total_tasks} tasks from Jira ` +
+                `(${data.metrics.completed_tasks} done, ${data.metrics.overdue_tasks} overdue).`;
+        } catch (error) {
+            jiraStatus.textContent = "Could not reach the server to fetch Jira metrics.";
+        }
+    });
 </script>
 
-    <script src="/static/theme-toggle.js"></script>
 </body>
 </html>

@@ -14,7 +14,22 @@ FINAL METHODOLOGY:
   - class_weight='balanced' to handle class imbalance
   - Honest reporting: expect 72–84% (typical for real task assignment)
 =============================================================================
+NOTE (2026-10-10): The historical description above is no longer a validity
+claim. Its mixed labels and self-outcome member aggregates invalidate the
+student-suitability interpretation. Live assignment now uses LPT, and the
+time-aware GFG-only proxy experiment is in train_workload_model_v2.py.
 """
+
+import os
+
+# Audit-only script: the GFG/Apache target definitions differ, and member
+# aggregates may contain a row's own outcome. Do not replace the saved legacy
+# artifact through an accidental rerun, or treat its score as student fit.
+if os.environ.get("IPMS_ALLOW_LEGACY_PROXY_RETRAIN") != "1":
+    raise SystemExit(
+        "Legacy mixed-label experiment disabled. Use train_workload_model_v2.py "
+        "for the time-aware offline proxy; neither validates student suitability."
+    )
 
 import pandas as pd
 import numpy as np
@@ -56,7 +71,8 @@ FEATURES = [
 ]
 
 # ─────────────────────────────────────────────────────────────────
-# DATASET 1: GFG_FINAL.csv (Atlassian JIRA — 1,078 assigned rows)
+# DATASET 1: GFG_FINAL.csv is a legacy filename for Atlassian's
+# Sourcetree-for-Windows (SRCTREEWIN) Jira export; 1,078 assigned/dated rows used.
 # ─────────────────────────────────────────────────────────────────
 print("\n[1/6] Loading GFG_FINAL.csv ...")
 gfg = pd.read_csv(
@@ -82,7 +98,9 @@ gfg['completed_on_time']   = gfg['resolved_fixed']
 print(f"      Rows: {len(gfg):,}  |  Label: {gfg['completed_on_time'].value_counts().to_dict()}")
 
 # ─────────────────────────────────────────────────────────────────
-# DATASET 2: apache_jira_delay.csv (Apache FOSS — 333 rows)
+# DATASET 2: apache_jira_delay.csv is a 333-row local Apache-project summary.
+# Original issue keys/extraction metadata are not in this file; provenance is
+# incomplete, and the project-derived "Assignee" below is a pseudo-member.
 # ─────────────────────────────────────────────────────────────────
 print("\n[2/6] Loading apache_jira_delay.csv ...")
 apache = pd.read_csv(r'datasets\model3_delay\apache_jira_delay.csv')
@@ -249,9 +267,10 @@ joblib.dump({
     'cv_acc'        : round(cv_acc.mean() * 100, 2),
     'cv_std'        : round(cv_acc.std() * 100, 2),
     'split_method'  : 'Stratified Random 80/20',
-    'leakage_fixed' : True,
+    'leakage_fixed' : False,
+    'validated_for_student_assignment': False,
     'trained_on'    : f'{len(combined)} real JIRA records (Atlassian + Apache)',
-    'algorithm'     : 'Random Forest Classifier',
+    'algorithm'     : 'XGBClassifier',
     'member_stats'  : member_stats[['Assignee','member_completion_rate',
                                     'member_current_workload','member_avg_effort']],
     'global_defaults': {'cr': global_cr, 'wl': global_wl, 'ae': global_ae}

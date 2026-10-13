@@ -45,13 +45,20 @@ try:
     preds = xgb_model.predict(X_test)
     mae   = mean_absolute_error(y_test, preds)
     rmse  = np.sqrt(mean_squared_error(y_test, preds))
-    rel   = (np.exp(mae) - 1) * 100
+    actual_hours = np.expm1(y_test.to_numpy())
+    predicted_hours = np.expm1(preds)
+    absolute_hour_error = np.abs(predicted_hours - actual_hours)
+    # Percentage error is calculated row by row in the original unit. The
+    # former exp(log-MAE)-1 value was not a measured relative-error statistic.
+    percentage_errors = absolute_hour_error / actual_hours * 100
 
     print(f"  Training rows : {len(X_train)}")
     print(f"  Test rows     : {len(X_test)}")
     print(f"  MAE  (log)    : {mae:.4f}")
     print(f"  RMSE (log)    : {rmse:.4f}")
-    print(f"  Relative Error: ~{rel:.1f}%")
+    print(f"  MAE  (hours)  : {absolute_hour_error.mean():.2f}")
+    print(f"  MAPE (hours)  : {percentage_errors.mean():.1f}%")
+    print(f"  Median APE    : {np.median(percentage_errors):.1f}%")
     print("  ✅ Real evaluation complete.")
 
 except FileNotFoundError as e:
@@ -61,10 +68,10 @@ except Exception as e:
     print(f"  ❌ Error: {e}")
 
 # ============================================================
-# MODEL 2: Logistic Regression — Delay Risk
+# MODEL 2: Auxiliary defect-risk proxy (not the displayed Gantt risk)
 # Load the real model, load the real CSV, evaluate on real test split
 # ============================================================
-print("\n[2] Logistic Regression Delay Risk Classifier")
+print("\n[2] Auxiliary Defect-Risk Classifier")
 print("    Dataset: KC1 + KC2 + PC1 (NASA PROMISE, OpenML)")
 try:
     bundle  = joblib.load(r"models\logistic_delay.joblib")

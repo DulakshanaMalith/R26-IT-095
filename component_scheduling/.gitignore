@@ -1,0 +1,6 @@
+.env
+.runtime/
+submissions/
+__pycache__/
+*.pyc
+.pytest_cache/

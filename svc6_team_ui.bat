@@ -1,6 +1,5 @@
 @echo off
-title IPMS [6] Team Frontend :3001
-cd /d "d:\New folder (91)\component_team\intelligent-team-formation-and-topic-feasiblity-analyzis\frontend"
-echo Starting Team Frontend on port 3001...
-npm run dev -- --port 3001
+title IPMS C4 - Team Formation UI [Port 5174]
+cd /d "D:\New folder (91)\component_team\component_team\intelligent-team-formation-and-topic-feasiblity-analyzis\frontend"
+npm run dev
 pause

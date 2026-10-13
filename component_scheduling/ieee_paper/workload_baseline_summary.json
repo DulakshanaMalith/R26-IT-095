@@ -1,0 +1,115 @@
+{
+  "seed": 42,
+  "trials_per_scenario": 100,
+  "tasks_per_trial": 20,
+  "team_size": 4,
+  "held_out_task_rows": 283,
+  "member_profiles": 10,
+  "paired_cv_comparison": [
+    {
+      "scenario": "historical_profiles",
+      "hybrid_minus_lpt_mean_cv_points": 0.68,
+      "hybrid_minus_lpt_median_cv_points": 0.68,
+      "observed_delta_2_5th_percentile": -1.25,
+      "observed_delta_97_5th_percentile": 3.16
+    },
+    {
+      "scenario": "cold_start",
+      "hybrid_minus_lpt_mean_cv_points": 0.59,
+      "hybrid_minus_lpt_median_cv_points": 0.7,
+      "observed_delta_2_5th_percentile": -1.54,
+      "observed_delta_97_5th_percentile": 2.56
+    }
+  ],
+  "interpretation": "Observed paired trial differences are descriptive, not independent-team confidence intervals or evidence of student outcomes.",
+  "results": [
+    {
+      "scenario": "historical_profiles",
+      "policy": "random",
+      "cv_mean": 39.46,
+      "cv_std": 17.2,
+      "spread_mean": 187.02,
+      "overload_rate": 98.0,
+      "pair_score_mean": 45.95,
+      "guard_overrides_mean": 0.0,
+      "rebalance_moves_mean": 0.0
+    },
+    {
+      "scenario": "historical_profiles",
+      "policy": "lpt",
+      "cv_mean": 3.72,
+      "cv_std": 1.17,
+      "spread_mean": 16.68,
+      "overload_rate": 0.0,
+      "pair_score_mean": 48.0,
+      "guard_overrides_mean": 0.0,
+      "rebalance_moves_mean": 0.0
+    },
+    {
+      "scenario": "historical_profiles",
+      "policy": "model_only",
+      "cv_mean": 154.31,
+      "cv_std": 28.8,
+      "spread_mean": 657.78,
+      "overload_rate": 100.0,
+      "pair_score_mean": 93.88,
+      "guard_overrides_mean": 0.0,
+      "rebalance_moves_mean": 0.0
+    },
+    {
+      "scenario": "historical_profiles",
+      "policy": "hybrid",
+      "cv_mean": 4.4,
+      "cv_std": 1.09,
+      "spread_mean": 19.44,
+      "overload_rate": 0.0,
+      "pair_score_mean": 47.06,
+      "guard_overrides_mean": 13.83,
+      "rebalance_moves_mean": 1.92
+    },
+    {
+      "scenario": "cold_start",
+      "policy": "random",
+      "cv_mean": 42.35,
+      "cv_std": 15.27,
+      "spread_mean": 199.9,
+      "overload_rate": 99.0,
+      "pair_score_mean": 89.78,
+      "guard_overrides_mean": 0.0,
+      "rebalance_moves_mean": 0.0
+    },
+    {
+      "scenario": "cold_start",
+      "policy": "lpt",
+      "cv_mean": 3.68,
+      "cv_std": 1.1,
+      "spread_mean": 16.46,
+      "overload_rate": 0.0,
+      "pair_score_mean": 89.78,
+      "guard_overrides_mean": 0.0,
+      "rebalance_moves_mean": 0.0
+    },
+    {
+      "scenario": "cold_start",
+      "policy": "model_only",
+      "cv_mean": 167.4,
+      "cv_std": 11.06,
+      "spread_mean": 714.14,
+      "overload_rate": 100.0,
+      "pair_score_mean": 84.96,
+      "guard_overrides_mean": 0.0,
+      "rebalance_moves_mean": 0.0
+    },
+    {
+      "scenario": "cold_start",
+      "policy": "hybrid",
+      "cv_mean": 4.28,
+      "cv_std": 1.14,
+      "spread_mean": 18.74,
+      "overload_rate": 0.0,
+      "pair_score_mean": 89.78,
+      "guard_overrides_mean": 14.07,
+      "rebalance_moves_mean": 2.02
+    }
+  ]
+}

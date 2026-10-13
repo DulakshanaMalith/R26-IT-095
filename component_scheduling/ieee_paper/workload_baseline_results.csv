@@ -1,0 +1,9 @@
+scenario,policy,cv_mean,cv_std,spread_mean,overload_rate,pair_score_mean,guard_overrides_mean,rebalance_moves_mean
+historical_profiles,random,39.46,17.2,187.02,98.0,45.95,0.0,0.0
+historical_profiles,lpt,3.72,1.17,16.68,0.0,48.0,0.0,0.0
+historical_profiles,model_only,154.31,28.8,657.78,100.0,93.88,0.0,0.0
+historical_profiles,hybrid,4.4,1.09,19.44,0.0,47.06,13.83,1.92
+cold_start,random,42.35,15.27,199.9,99.0,89.78,0.0,0.0
+cold_start,lpt,3.68,1.1,16.46,0.0,89.78,0.0,0.0
+cold_start,model_only,167.4,11.06,714.14,100.0,84.96,0.0,0.0
+cold_start,hybrid,4.28,1.14,18.74,0.0,89.78,14.07,2.02

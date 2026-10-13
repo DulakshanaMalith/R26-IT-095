@@ -1,0 +1,184 @@
+{
+  "captured_at": "2026-10-10T19:07:40+05:30",
+  "scope": "Local isolated copies of ipms_scheduling and team_formation_db; screenshot run only, not production validation",
+  "requests": [
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8003/api/final-allocations/active/teams",
+      "status": 200,
+      "response_sha256": "a209c651df7b31dc878ab69bf3195307339e67a1c256a4498897deab972964ec"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/api/schedule/history?group_id=R26-IT-095",
+      "status": 200,
+      "response_sha256": "a14fcb8073051cd9f281e1d3bed02a2c94246bacc0f125b0153f9b72c06bb82f"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/api/progress/review-queue?project_id=R26-IT-095",
+      "status": 200,
+      "response_sha256": "6d42e850524c3063ab857a0a4dd9660f926c8804c6309fec02ba029564debdee"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/api/progress/tasks/9/evidence?project_id=R26-IT-095",
+      "status": 200,
+      "response_sha256": "b952c6f34503584178052aa19df510451fd20a797d9d83ea67c90db9d7f4e2fa"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/api/academic/events?group_id=R26-IT-095",
+      "status": 200,
+      "response_sha256": "cc27ce72b9ba6c44772968640e25ff3c8e0e2361889d5b18ae09d4d293414146"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/api/progress/tasks/1/evidence?project_id=R26-IT-095",
+      "status": 200,
+      "response_sha256": "13319b9d1f4b8077b7d57ab2778191ca57be4f3c84e7fc4572311bdc665e067f"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/api/progress/submissions/4/document",
+      "status": 200,
+      "content_type": "application/pdf",
+      "byte_count": 2812,
+      "response_sha256": "03460264a2322bbb28dff515eb0d4b49d1c9d5d65598de8d780084c3376c04a4"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8010/api/document-tasks?project_id=R26-IT-095&student_id=IT22114662",
+      "status": 200,
+      "response_sha256": "87440a9ea02e55509164bf86c07c4a4c2860b98617767945a79d99c13f11681d"
+    }
+  ],
+  "team_formation": {
+    "allocation_id": "TF-20260901-112700-9D3B69",
+    "allocation_status": "ACTIVE",
+    "revision_number": 1,
+    "team_count": 3,
+    "student_count": 12,
+    "teams": [
+      {
+        "team_number": 1,
+        "project_id": "P01",
+        "group_key": "TF-20260901-112700-9D3B69-T001",
+        "member_ids": [
+          "SIM-004",
+          "SIM-005",
+          "SIM-007",
+          "SIM-010"
+        ],
+        "supervisor_present": true
+      },
+      {
+        "team_number": 2,
+        "project_id": "P02",
+        "group_key": "TF-20260901-112700-9D3B69-T002",
+        "member_ids": [
+          "SIM-001",
+          "SIM-002",
+          "SIM-008",
+          "SIM-012"
+        ],
+        "supervisor_present": true
+      },
+      {
+        "team_number": 3,
+        "project_id": "P03",
+        "group_key": "TF-20260901-112700-9D3B69-T003",
+        "member_ids": [
+          "SIM-003",
+          "SIM-006",
+          "SIM-009",
+          "SIM-011"
+        ],
+        "supervisor_present": true
+      }
+    ],
+    "browser_fetch_confirmed_status": 200
+  },
+  "scheduling": {
+    "group_id": "R26-IT-095",
+    "versions": [
+      {
+        "version": 7,
+        "task_count": 25,
+        "assignment_stages": {
+          "UNASSIGNED": 25
+        },
+        "owner_count": 1
+      },
+      {
+        "version": 8,
+        "task_count": 25,
+        "assignment_stages": {
+          "BALANCED": 25
+        },
+        "owner_count": 5
+      }
+    ],
+    "review_queue_count": 1,
+    "review_queue": [
+      {
+        "task_id": 1,
+        "task_key": "R26-IT-095-TASK-001",
+        "review_status": null
+      }
+    ],
+    "task_9_github_commit_count": 1,
+    "task_9_github_statuses": [
+      "LINKED"
+    ],
+    "document_preview": {
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "byte_count": 2812
+    },
+    "academic_events_in_response": 80,
+    "academic_event_types": [
+      "PP1",
+      "PP2",
+      "Proposal Presentation",
+      "Viva"
+    ]
+  },
+  "cross_component_mapping": {
+    "team_project_ids": [
+      "P01",
+      "P02",
+      "P03"
+    ],
+    "scheduling_group_id": "R26-IT-095",
+    "automatic_id_match": false,
+    "note": "The Team Formation API populates the scheduling team-view page, but these sample allocation IDs do not map to this scheduling group. No automatic backend import is claimed."
+  },
+  "student_portal": {
+    "health": "Scheduling service connected",
+    "project_id": "R26-IT-095",
+    "student_id": "IT22114662",
+    "eligible_task_count": 7,
+    "eligible_task_ids": [
+      1,
+      12,
+      16,
+      18,
+      23,
+      24,
+      25
+    ],
+    "screenshot": "10_student_portal_task_selection.png",
+    "upload_performed": false,
+    "note": "GET task-list contract verified through standalone portal; no new document was submitted in this capture."
+  },
+  "code_file_sha256": {
+    "component_scheduling/main.py": "8b6c5d8d65806120f33347e0ce7c3db44285f7bd310edd8e0c7a22c246573c33",
+    "component_scheduling/progress_tracking.py": "dc7a17cff6d9577be8837b0cbf6defdf2d3ba3ba2bc93aec6fee0168a3774cb6",
+    "component_scheduling/frontend/script.js": "bde417dc9e92997de27daa1c8a4d7e7506861e9467f0d0dc1912676d996c9ae8",
+    "component_scheduling/frontend/academic_scheduler.js": "8ad3dc3b3711353f9138caa1b13cb9466db18d34681ea303e473ba024c3eecd8",
+    "component_scheduling/frontend/team_portal.html": "d7247332e330a9b0d513c9b1891bdfe001f8d871f82130de3ad790cddb8543b7",
+    "component_scheduling/student_submission_portal/app.py": "dc6abe29babc92112d56fd9d9e525151f6a0972686dc4b63388a6f483d9938ba",
+    "component_team/component_team/intelligent-team-formation-and-topic-feasiblity-analyzis/backend-fastapi/app/services/final_allocation_service.py": "5c86148d528ab1c07ca97802a7a419f77ec305b0c07100e1ffbac895e2204beb"
+  }
+}

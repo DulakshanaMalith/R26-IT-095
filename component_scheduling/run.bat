@@ -30,6 +30,10 @@ echo       This may take 20-30 seconds for models to load.
 echo.
 
 :: Start the server
+if not defined SCHEDULING_DATABASE_URL set "SCHEDULING_DATABASE_URL=postgresql://postgres@127.0.0.1:5432/ipms_scheduling"
+if not defined ENABLE_T5_WBS set "ENABLE_T5_WBS=0"
+if not defined IPMS_BIND_HOST set "IPMS_BIND_HOST=127.0.0.1"
+echo       Database: PostgreSQL ipms_scheduling on 127.0.0.1:5432
 echo [3/3] Server is starting on http://localhost:8000
 echo.
 echo ============================================================
@@ -38,6 +42,6 @@ echo    Press CTRL+C to stop the server.
 echo ============================================================
 echo.
 
-python -m uvicorn main:app --host 0.0.0.0 --port 8000
+python -m uvicorn main:app --host %IPMS_BIND_HOST% --port 8000
 
 pause

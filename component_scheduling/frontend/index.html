@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IPMS Adaptive Scheduling Engine</title>
-    <meta name="description" content="AI-Powered Project Planning and Delay Risk Prediction">
+    <meta name="description" content="Evidence-based project planning, workload balancing, and academic scheduling">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=20260831.4">
 </head>
 <body>
     <div class="background-elements">
@@ -21,13 +21,25 @@
                 <i class="fa-solid fa-layer-group"></i>
                 <h1>IPMS Adaptive <span>Scheduler</span></h1>
             </div>
+            <!-- Home button — navigate back to IPMS unified dashboard -->
+            <a href="http://127.0.0.1:8000/home" title="Back to IPMS Home" style="
+                display:inline-flex; align-items:center; gap:6px;
+                background:rgba(59,130,246,0.15); border:1px solid rgba(59,130,246,0.4);
+                color:#60a5fa; padding:6px 14px; border-radius:8px;
+                text-decoration:none; font-size:0.85rem; font-weight:600;
+                transition: background 0.2s;">
+                <i class="fa-solid fa-house"></i> Home
+            </a>
             <div class="header-right">
                 <div class="header-badges">
-                    <span class="badge model-badge"><i class="fa-solid fa-brain"></i> Multi-Task T5</span>
+                    <span class="badge model-badge"><i class="fa-solid fa-list-check"></i> Evidence-Based WBS</span>
                     <span class="badge model-badge"><i class="fa-solid fa-chart-line"></i> XGBoost</span>
-                    <span class="badge model-badge"><i class="fa-solid fa-shield-halved"></i> LogReg</span>
-                    <a href="progress.html" target="_blank" style="text-decoration:none;"><span class="badge model-badge" style="background:rgba(16,185,129,0.15);border-color:rgba(16,185,129,0.3);color:#34d399;cursor:pointer;"><i class="fa-solid fa-users"></i> Progress Tracker</span></a>
+                    <span class="badge model-badge" title="Final schedule capacity/deadline risk; NASA defect model retained only as a research proxy"><i class="fa-solid fa-shield-halved"></i> Schedule Risk</span>
                 </div>
+                
+                <button id="btnViewHistory" class="secondary-btn" title="View Schedule History" style="margin-right: 10px;">
+                    <i class="fa-solid fa-clock-rotate-left"></i> History
+                </button>
                 <button id="btnGithubConnect" class="secondary-btn" title="Connect GitHub Repository">
                     <i class="fa-brands fa-github"></i> Connect GitHub
                 </button>
@@ -38,12 +50,13 @@
             </div>
         </header>
 
+
         <main class="dashboard">
             <!-- Left Column: Input Form -->
             <section class="input-section glass-panel">
                 <div class="section-header">
                     <h2><i class="fa-solid fa-pen-to-square"></i> Project Proposal</h2>
-                    <p>Paste your raw academic proposal text below. Our AI will automatically extract the WBS and generate an adaptive schedule.</p>
+                    <p>Upload or paste an academic proposal to extract proposal-supported WBS tasks and generate a dependency-aware schedule.</p>
                 </div>
 
                 <form id="scheduleForm">
@@ -55,7 +68,13 @@
                             </label>
                             <input type="file" id="pdfUpload" accept="application/pdf" class="hidden">
                         </div>
-                        <textarea id="description" rows="8" placeholder="e.g., We are building a comprehensive hospital management system. The system requires a patient registration module, a doctor appointment scheduling system, a pharmacy inventory tracker, and a secure billing gateway..."></textarea>
+                                                <textarea id="description" rows="8" placeholder="Paste the proposal text, including the research objectives, methodology, implementation components, WBS or Gantt evidence, and expected deliverables."></textarea>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="groupId"><i class="fa-solid fa-users"></i> Group ID <span style="color:#fca5a5;">*</span></label>
+                        <input type="text" id="groupId" required autocomplete="off" placeholder="e.g. R26-IT-095" aria-describedby="groupIdHelp" style="width: 100%; padding: 0.85rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: var(--text-main);">
+                        <small id="groupIdHelp" style="display:block;margin-top:.35rem;color:var(--text-muted);">Required for PostgreSQL history, workload tracking, and all-group academic scheduling.</small>
                     </div>
 
                     <!-- PDF Validation Error Panel (shown when non-proposal PDF is uploaded) -->
@@ -93,8 +112,9 @@
                             <input type="number" id="duration" value="6" min="1" max="24" step="0.5">
                         </div>
                         <div class="input-group">
-                            <label for="complexity"><i class="fa-solid fa-gears"></i> Est. Function Points</label>
-                            <input type="number" id="complexity" value="120" min="10" max="1000">
+                            <label for="complexity"><i class="fa-solid fa-gears"></i> Estimated Project Size (Function Points)</label>
+                            <input type="number" id="complexity" value="120" min="10" max="1000" aria-describedby="functionPointsHelp">
+                            <small id="functionPointsHelp" style="display:block;margin-top:.3rem;color:var(--text-muted);font-size:.68rem;">Used by the XGBoost project-effort estimator.</small>
                         </div>
                         <div class="input-group">
                             <label for="startDate"><i class="fa-solid fa-flag-checkered"></i> Start Date</label>
@@ -103,7 +123,7 @@
                     </div>
 
                     <button type="submit" id="generateBtn" class="primary-btn">
-                        <span><i class="fa-solid fa-wand-magic-sparkles"></i> Generate AI Schedule</span>
+                        <span><i class="fa-solid fa-calendar-check"></i> Generate Project Schedule</span>
                         <div class="loader hidden" id="btnLoader"></div>
                     </button>
                 </form>
@@ -117,7 +137,7 @@
                         <i class="fa-solid fa-timeline"></i>
                     </div>
                     <h3>Awaiting Proposal Data</h3>
-                    <p>Input your project parameters on the left to see the AI-generated Work Breakdown Structure and risk-aware Gantt chart.</p>
+                    <p>Enter the project information to generate an evidence-backed Work Breakdown Structure and dependency-aware Gantt chart.</p>
                 </div>
 
                 <!-- Results Container (Hidden initially) -->
@@ -158,7 +178,7 @@
                     <!-- Gantt Chart Panel -->
                     <div class="gantt-panel glass-panel">
                         <div class="panel-header">
-                            <h2><i class="fa-solid fa-chart-gantt"></i> Predictive Schedule & Risk Flags</h2>
+                            <h2><i class="fa-solid fa-chart-gantt"></i> Dependency-Aware Schedule & Capacity Risk</h2>
                             <div class="legend">
                                 <span class="legend-item"><div class="color-box low-risk"></div> On Track</span>
                                 <span class="legend-item"><div class="color-box high-risk"></div> Delay Risk</span>
@@ -170,55 +190,11 @@
                         </div>
                     </div>
 
-                    <!-- ADVANCED AI ANALYTICS (NOVELTIES 8 & 10) -->
-                    <div class="advanced-analytics">
-                        <!-- What-If Simulator (Novelty 10) -->
-                        <div class="analytics-card glass-panel">
-                            <div class="panel-header">
-                                <h2><i class="fa-solid fa-code-branch"></i> What-If Simulation</h2>
-                            </div>
-                            <div class="sim-controls">
-                                <select id="simIntervention">
-                                    <option value="ADD_DEVELOPER">Add 1 Developer</option>
-                                    <option value="EXTEND_SPRINT">Extend Sprints by 20%</option>
-                                </select>
-                                <button id="btnSimulate" class="secondary-btn">Run Monte Carlo</button>
-                            </div>
-                            <div id="simResults" class="sim-results hidden">
-                                <p><strong>Simulated Runs:</strong> <span id="simRuns">1000</span></p>
-                                <p><strong>Mean Expected Duration:</strong> <span id="simDuration">0</span> days</p>
-                                <p><strong>Probability of On-Time Success:</strong> <span id="simProb" style="color: var(--success); font-weight: bold;">0%</span></p>
-                            </div>
-                        </div>
-
-                        <!-- Pareto Options (Novelty 8) -->
-                        <div class="analytics-card glass-panel">
-                            <div class="panel-header">
-                                <h2><i class="fa-solid fa-layer-group"></i> Multi-Objective Pareto Schedules</h2>
-                            </div>
-                            <button id="btnPareto" class="secondary-btn">Generate NSGA-II Trade-offs</button>
-                            <div id="paretoResults" class="pareto-results hidden">
-                                <table class="pareto-table">
-                                    <thead>
-                                        <tr>
-                                            <th>Option</th>
-                                            <th>Duration (Days)</th>
-                                            <th>Burnout Variance</th>
-                                            <th>Milestone Vis.</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="paretoTableBody">
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- NOVELTY 12: Individual WBS Progress Tracker -->
+                    <!-- Individual WBS Progress Tracker -->
                     <div class="progress-tracker-panel glass-panel" id="progressTrackerPanel">
                         <div class="panel-header">
-                            <h2><i class="fa-solid fa-users-gear"></i> Individual WBS Progress Tracker <span style="font-size:0.7rem;padding:0.2rem 0.6rem;background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.3);color:#34d399;border-radius:999px;margin-left:0.5rem;">NOVELTY 12</span></h2>
-                            <p style="font-size:0.82rem;color:var(--text-muted);margin-top:0.25rem;">Assign WBS tasks to team members. Progress is weighted by XGBoost-predicted effort hours.</p>
+                            <h2><i class="fa-solid fa-users-gear"></i> Individual WBS Progress Tracker</h2>
+                            <p style="font-size:0.82rem;color:var(--text-muted);margin-top:0.25rem;">Assign WBS tasks to team members. Progress is weighted by each task's allocated share of the XGBoost-derived project effort.</p>
                         </div>
 
                         <!-- Project-Level Progress Ring -->
@@ -243,6 +219,19 @@
                             <button id="btnRefreshProgress" class="secondary-btn" style="align-self:center;"><i class="fa-solid fa-rotate"></i> Refresh</button>
                         </div>
 
+                        <section class="review-queue" aria-labelledby="reviewQueueTitle">
+                            <div class="review-queue-header">
+                                <div>
+                                    <h3 id="reviewQueueTitle"><i class="fa-solid fa-file-circle-check"></i> Supervisor Review Queue</h3>
+                                    <p>Student-component submissions waiting for evidence review. Open a document before approving, rejecting, or requesting changes.</p>
+                                </div>
+                                <button id="btnRefreshReviewQueue" class="secondary-btn" type="button"><i class="fa-solid fa-rotate"></i> Refresh</button>
+                            </div>
+                            <div id="reviewQueueList" class="review-queue-list">
+                                <p class="review-empty">Generate or select a group to load its review queue.</p>
+                            </div>
+                        </section>
+
                         <!-- HOW IT WORKS — Process Explanation Panel (Fix 5) -->
                         <details id="howItWorksPanel" style="margin-top:1.25rem;padding:1rem;background:rgba(139,92,246,0.07);border:1px solid rgba(139,92,246,0.25);border-radius:10px;cursor:pointer;">
                             <summary style="font-size:0.82rem;font-weight:700;color:#c4b5fd;list-style:none;display:flex;align-items:center;gap:0.5rem;">
@@ -259,15 +248,15 @@
                                 <div style="display:flex;gap:0.75rem;align-items:flex-start;">
                                     <div style="width:28px;height:28px;border-radius:50%;background:rgba(139,92,246,0.25);border:1px solid rgba(139,92,246,0.5);display:flex;align-items:center;justify-content:center;font-size:0.78rem;font-weight:800;color:#c4b5fd;flex-shrink:0;">2</div>
                                     <div>
-                                        <div style="font-size:0.82rem;font-weight:700;color:#e2e8f0;">Random Forest ML — P_on_time Scoring</div>
-                                        <div style="font-size:0.76rem;color:var(--text-muted);margin-top:2px;">For each task, the Random Forest model scores every member using 7 features (effort, complexity, completion rate, current workload, avg effort, category, collaborative flag). The member with the highest P_on_time probability (chance of finishing on time) is selected.</div>
+                                        <div style="font-size:0.82rem;font-weight:700;color:#e2e8f0;">XGBoost — Task Completion Scoring</div>
+                                        <div style="font-size:0.76rem;color:var(--text-muted);margin-top:2px;">For each task, the XGBoost classifier scores every member using 7 features (effort, complexity, completion history, current workload, average effort, category, and collaborative flag). This is a completion proxy—not a proven on-time probability—and an overload guard can override it.</div>
                                     </div>
                                 </div>
                                 <div style="display:flex;gap:0.75rem;align-items:flex-start;">
                                     <div style="width:28px;height:28px;border-radius:50%;background:rgba(16,185,129,0.25);border:1px solid rgba(16,185,129,0.5);display:flex;align-items:center;justify-content:center;font-size:0.78rem;font-weight:800;color:#6ee7b7;flex-shrink:0;">3</div>
                                     <div>
                                         <div style="font-size:0.82rem;font-weight:700;color:#e2e8f0;">Overload Guard — Fairness Constraint (40% Threshold)</div>
-                                        <div style="font-size:0.76rem;color:var(--text-muted);margin-top:2px;">If the RF-selected member already has <strong style="color:#fcd34d;">40% more hours</strong> than the least-loaded member (W_best &gt; W_min &times; 1.40), the system overrides the ML decision and assigns to the least-loaded member instead. This mathematically prevents overloading.</div>
+                                        <div style="font-size:0.76rem;color:var(--text-muted);margin-top:2px;">If the XGBoost-selected member already has <strong style="color:#fcd34d;">40% more hours</strong> than the least-loaded member (W_best &gt; W_min &times; 1.40), the guard attempts a whole-task reassignment. If no feasible move exists, the remaining overload is reported instead of hidden.</div>
                                     </div>
                                 </div>
                             </div>
@@ -277,7 +266,7 @@
                         <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;margin-top:1.25rem;padding:1rem;background:rgba(59,130,246,0.06);border:1px solid rgba(59,130,246,0.2);border-radius:10px;">
                             <div style="flex:1;min-width:200px;">
                                 <div style="font-size:0.72rem;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.35rem;">
-                                    <i class="fa-solid fa-users"></i> Team Members (auto-extracted from PDF)
+                                    <i class="fa-solid fa-users"></i> Team Members (extracted or manually entered)
                                 </div>
                                 <div id="teamNamesDisplay" style="font-size:0.85rem;color:var(--text-main);margin-bottom:0.5rem;">
                                     Generate a schedule to extract team names.
@@ -328,10 +317,10 @@
         <div class="modal-box glass-panel">
             <div class="modal-header">
                 <h3><i class="fa-brands fa-github"></i> Connect GitHub Repository</h3>
-                <button id="closeGithubModal" class="icon-btn"><i class="fa-solid fa-xmark"></i></button>
+                <button id="closeGithubModal" class="icon-btn" type="button" aria-label="Close GitHub popup"><i class="fa-solid fa-xmark"></i></button>
             </div>
             <div id="githubStatusBanner" class="status-banner hidden"></div>
-            <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem;">Paste your repository URL below. The system will track your commits and automatically mark coding tasks as completed.</p>
+            <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem;">Paste the group's repository URL. Signed GitHub events are stored as task evidence; commits start progress but do not automatically prove completion.</p>
             <div class="modal-input-group">
                 <input type="text" id="githubRepoUrl" placeholder="https://github.com/username/repository" />
                 <button id="btnRegisterGithub" class="primary-btn" style="padding:0.75rem 1.5rem;">Connect</button>
@@ -342,8 +331,28 @@
                     <li>Go to your GitHub repo → <strong>Settings → Webhooks → Add webhook</strong></li>
                     <li>Set <strong>Payload URL</strong> to: <code id="webhookUrl" style="color:var(--brand-primary)"></code></li>
                     <li>Set <strong>Content type</strong> to <code>application/json</code></li>
-                    <li>Select <strong>"Just the push event"</strong> and click Save</li>
+                    <li>Use the same <strong>Secret</strong> configured in <code>IPMS_GITHUB_WEBHOOK_SECRET</code>.</li>
+                    <li>Select individual events: <strong>Pushes, Pull requests, and Pull request reviews</strong>, then save.</li>
                 </ol>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- History Modal -->
+    <div id="historyModal" class="modal-overlay hidden" style="z-index: 1200;">
+        <div class="modal-box glass-panel" style="max-width: 600px; width: 95%;">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-clock-rotate-left"></i> Generated Schedule History</h3>
+                <button id="closeHistoryModal" class="icon-btn" type="button" aria-label="Close schedule history"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem;">Select a previously generated schedule to view its Gantt chart and progress.</p>
+            <div style="margin-bottom:15px;display:flex;gap:10px;">
+                <input type="text" id="historySearch" placeholder="Search by Group ID..." style="flex-grow:1;padding:8px;border-radius:6px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.2);color:white;">
+                <button id="btnSearchHistory" class="primary-btn" type="button" style="padding:8px 15px;font-size:0.9rem;">Search</button>
+            </div>
+            <div id="historyList" style="max-height: 400px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px;">
+                <!-- Populated by JS -->
             </div>
         </div>
     </div>
@@ -356,22 +365,6 @@
         </div>
         <div id="notifList" class="notif-list">
             <p style="color:var(--text-muted);padding:1rem;font-size:0.85rem;">No unread notifications.</p>
-        </div>
-    </div>
-
-    <!-- Milestone Submit Modal -->
-    <div id="submitModal" class="modal-overlay hidden">
-        <div class="modal-box glass-panel">
-            <div class="modal-header">
-                <h3><i class="fa-solid fa-file-arrow-up"></i> Submit Milestone Document</h3>
-                <button id="closeSubmitModal" class="icon-btn"><i class="fa-solid fa-xmark"></i></button>
-            </div>
-            <p id="submitModalTaskName" style="color:var(--text-muted);font-size:0.85rem;margin-bottom:1rem;"></p>
-            <input type="file" id="milestoneFile" accept=".pdf,.docx,.doc,.txt" style="color:var(--text-main);margin-bottom:1rem;width:100%;" />
-            <button id="btnSubmitMilestone" class="primary-btn" style="width:100%;">
-                <i class="fa-solid fa-upload"></i> Upload & Mark Complete
-            </button>
-            <div id="submitResult" class="hidden" style="margin-top:1rem;padding:0.75rem;border-radius:8px;background:rgba(34,197,94,0.15);color:#22c55e;font-size:0.85rem;"></div>
         </div>
     </div>
 
@@ -393,9 +386,9 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
-    <script src="../../theme-toggle.js"></script>
-    <script src="academic_scheduler.js"></script>
+    <script src="script.js?v=20260831.7"></script>
+    <script src="theme-toggle.js?v=20260831.4"></script>
+    <script src="academic_scheduler.js?v=20260831.4"></script>
 
     <!-- ═══════════════════════════════════════════════════════════════════
          ACADEMIC EVENT SCHEDULER MODAL
@@ -406,9 +399,9 @@
             <div class="modal-header" style="display:flex;align-items:center;justify-content:space-between;padding-bottom:1rem;border-bottom:1px solid rgba(255,255,255,0.1);margin-bottom:1rem;flex-shrink:0;">
                 <div>
                     <div style="font-size:0.7rem;color:#818cf8;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.3rem;">
-                        <i class="fa-solid fa-calendar-check"></i> Intelligent Academic Event Scheduler
+                        <i class="fa-solid fa-calendar-check"></i> Academic Event Scheduler
                     </div>
-                    <h3 style="font-size:1.1rem;font-weight:700;color:#f8fafc;margin:0;">Auto-Schedule Proposal &middot; PP1 &middot; PP2</h3>
+                    <h3 style="font-size:1.1rem;font-weight:700;color:#f8fafc;margin:0;">Auto-Schedule Proposal &middot; PP1 &middot; PP2 &middot; Viva</h3>
                 </div>
                 <button id="closeAcademicModal" class="icon-btn" title="Close"><i class="fa-solid fa-xmark"></i></button>
             </div>
@@ -418,6 +411,7 @@
                 <!-- Auto-fill info banner -->
                 <div id="projectAutofillBanner" style="display:none;background:rgba(99,102,241,0.12);border:1px solid rgba(99,102,241,0.3);border-radius:10px;padding:0.65rem 1rem;margin-bottom:1rem;font-size:0.8rem;color:#c4b5fd;"></div>
 
+                <div id="academicManagementControls">
                 <!-- Step 1 & 2: Upload Files -->
                 <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.25rem;">
                     <!-- Upload Supervisors -->
@@ -467,8 +461,20 @@
                         </div>
                     </div>
 
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:0.75rem;">
+                        <div>
+                            <label for="defaultTeamSize" style="font-size:0.73rem;color:var(--text-muted);display:block;margin-bottom:0.3rem;font-weight:600;">Students per group (default)</label>
+                            <input type="number" id="defaultTeamSize" value="4" min="1" max="100" style="width:100%;padding:0.5rem;border-radius:8px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.05);color:var(--text-main);font-size:0.85rem;">
+                        </div>
+                        <div>
+                            <label for="academicAudienceSeats" style="font-size:0.73rem;color:var(--text-muted);display:block;margin-bottom:0.3rem;font-weight:600;">Additional audience seats</label>
+                            <input type="number" id="academicAudienceSeats" value="0" min="0" max="1000" style="width:100%;padding:0.5rem;border-radius:8px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.05);color:var(--text-main);font-size:0.85rem;">
+                        </div>
+                    </div>
+                    <div style="font-size:0.68rem;color:var(--text-muted);margin:-0.3rem 0 0.75rem;">Hall capacity must cover four panel members + students + additional audience seats. Change the default when groups are not four students.</div>
+
                     <!-- Row 2: Week number inputs -->
-                    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.75rem;margin-bottom:0.85rem;">
+                    <div class="academic-week-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:0.75rem;margin-bottom:0.85rem;">
                         <div style="background:rgba(99,102,241,0.1);border:1px solid rgba(99,102,241,0.25);border-radius:8px;padding:0.6rem;">
                             <label style="font-size:0.7rem;color:#818cf8;display:block;margin-bottom:0.3rem;font-weight:700;">📋 PROPOSAL — Week No.</label>
                             <input type="number" id="proposalWeek" value="2" min="1" max="52"
@@ -487,34 +493,81 @@
                                 style="width:100%;padding:0.45rem;border-radius:6px;border:1px solid rgba(16,185,129,0.3);background:rgba(16,185,129,0.1);color:#e2e8f0;font-size:0.9rem;font-weight:700;text-align:center;">
                             <div style="font-size:0.63rem;color:var(--text-muted);margin-top:0.25rem;text-align:center;">Date = Start + (Week-1)×7 days</div>
                         </div>
+                        <div style="background:rgba(236,72,153,0.1);border:1px solid rgba(236,72,153,0.25);border-radius:8px;padding:0.6rem;">
+                            <label style="font-size:0.7rem;color:#f9a8d4;display:block;margin-bottom:0.3rem;font-weight:700;">🎓 VIVA — Week No.</label>
+                            <input type="number" id="vivaWeek" value="20" min="1" max="52"
+                                style="width:100%;padding:0.45rem;border-radius:6px;border:1px solid rgba(236,72,153,0.3);background:rgba(236,72,153,0.1);color:#e2e8f0;font-size:0.9rem;font-weight:700;text-align:center;">
+                            <div style="font-size:0.63rem;color:var(--text-muted);margin-top:0.25rem;text-align:center;">Date = Start + (Week-1)×7 days</div>
+                        </div>
                     </div>
 
-                    <div style="font-size:0.75rem;color:var(--text-muted);margin-bottom:0.4rem;font-weight:600;">Groups (one per line: <code>GroupID | Research Topic</code>)</div>
-                    <textarea id="groupsInput" rows="3" placeholder="R26-IT-095 | Adaptive scheduling using machine learning&#10;R26-IT-096 | Computer vision for medical image classification" style="width:100%;padding:0.6rem;border-radius:8px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.05);color:var(--text-main);font-size:0.8rem;resize:vertical;"></textarea>
-
+                    <!-- Groups are now fetched directly from the database -->
+                    <div style="font-size:0.75rem;color:#34d399;margin-bottom:0.4rem;font-weight:600;"><i class="fa-solid fa-database"></i> Database Connected (Groups & Topics will be pulled automatically)</div>
                     <button id="btnAutoSchedule" class="primary-btn" style="width:100%;margin-top:0.75rem;background:linear-gradient(135deg,#d97706,#f59e0b);font-size:0.9rem;">
-                        <i class="fa-solid fa-wand-magic-sparkles"></i> Auto-Schedule All Groups (AI Matching)
+                        <i class="fa-solid fa-calendar-check"></i> Auto-Schedule All Groups (Expertise Matching)
                     </button>
                     <div id="autoScheduleStatus" style="font-size:0.8rem;margin-top:0.5rem;min-height:1.2rem;"></div>
+                </div>
                 </div>
 
                 <!-- Schedule Dashboard -->
                 <div id="vivaDashboard" style="display:none;">
+                    <div id="academicBatchBar" style="display:flex;align-items:center;gap:.55rem;flex-wrap:wrap;background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.22);border-radius:10px;padding:.65rem;margin-bottom:.8rem;">
+                        <label for="academicBatchSelect" style="font-size:.72rem;color:#c4b5fd;font-weight:700;">Schedule version</label>
+                        <select id="academicBatchSelect" style="flex:1;min-width:210px;padding:.42rem;border-radius:7px;background:#151827;color:#f8fafc;border:1px solid rgba(255,255,255,.14);"></select>
+                        <span id="academicBatchStatus" style="font-size:.7rem;color:var(--text-muted);"></span>
+                        <button type="button" id="btnPublishAcademicBatch" class="primary-btn" style="display:none;padding:.42rem .8rem;">Publish</button>
+                        <button type="button" id="btnDeleteAcademicDraft" class="icon-btn" style="display:none;color:#f87171;" title="Delete this draft"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                    <details style="margin:-.25rem 0 .8rem;font-size:.72rem;color:var(--text-muted);">
+                        <summary style="cursor:pointer;color:#a5b4fc;">Change audit</summary>
+                        <div id="academicAuditList" style="max-height:120px;overflow:auto;padding:.45rem 0;"></div>
+                    </details>
                     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.75rem;flex-wrap:wrap;gap:0.5rem;">
                         <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#f8fafc;">
                             <i class="fa-solid fa-calendar-days"></i> Generated Schedule
                         </div>
-                        <button id="btnExportExcel" style="background:linear-gradient(135deg,#065f46,#10b981);color:#fff;border:none;border-radius:20px;padding:0.4rem 1rem;font-size:0.78rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:0.4rem;">
-                            <i class="fa-solid fa-file-excel"></i> Export to Excel
-                        </button>
+                        <div style="display:flex;gap:.4rem;flex-wrap:wrap;">
+                            <button id="btnExportCalendar" style="background:#334155;color:#fff;border:none;border-radius:20px;padding:0.4rem 1rem;font-size:0.78rem;font-weight:700;cursor:pointer;"><i class="fa-solid fa-calendar-plus"></i> Calendar</button>
+                            <button id="btnExportExcel" style="background:linear-gradient(135deg,#065f46,#10b981);color:#fff;border:none;border-radius:20px;padding:0.4rem 1rem;font-size:0.78rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:0.4rem;">
+                                <i class="fa-solid fa-file-excel"></i> Export to Excel
+                            </button>
+                        </div>
                     </div>
+                    <div id="academicSummaryCards" style="display:grid;grid-template-columns:repeat(4,1fr);gap:0.55rem;margin-bottom:0.8rem;"></div>
                     <div style="display:flex;gap:0.5rem;margin-bottom:0.75rem;flex-wrap:wrap;" id="eventTypeFilter">
                         <button class="evt-filter-btn active" data-type="all">All Events</button>
                         <button class="evt-filter-btn" data-type="Proposal Presentation">Proposal</button>
                         <button class="evt-filter-btn" data-type="PP1">PP1</button>
                         <button class="evt-filter-btn" data-type="PP2">PP2</button>
+                        <button class="evt-filter-btn" data-type="Viva">Viva</button>
                     </div>
+                    <div class="academic-results-toolbar" role="search" aria-label="Search scheduled groups">
+                        <div class="academic-search-box">
+                            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                            <input type="search" id="academicGroupSearch" placeholder="Search Group ID or research topic…" autocomplete="off" aria-label="Search by Group ID or research topic">
+                            <button type="button" id="btnClearAcademicSearch" class="academic-search-clear" title="Clear search" aria-label="Clear group search"><i class="fa-solid fa-xmark"></i></button>
+                        </div>
+                        <select id="academicStatusFilter" aria-label="Filter groups by scheduling status">
+                            <option value="all">All statuses</option>
+                            <option value="Scheduled">Scheduled</option>
+                            <option value="Unscheduled">Needs review</option>
+                            <option value="Completed">Completed</option>
+                        </select>
+                        <select id="academicPageSize" aria-label="Groups per page">
+                            <option value="10">10 groups</option>
+                            <option value="25">25 groups</option>
+                            <option value="50">50 groups</option>
+                        </select>
+                        <button type="button" id="btnExpandAcademicPage" class="academic-compact-btn"><i class="fa-solid fa-angles-down"></i> Expand page</button>
+                    </div>
+                    <div id="academicResultsCount" class="academic-results-count" aria-live="polite"></div>
                     <div id="vivaEventsList"></div>
+                    <div id="academicPagination" class="academic-pagination" aria-label="Academic schedule pages">
+                        <button type="button" id="btnAcademicPrev" class="academic-page-btn"><i class="fa-solid fa-chevron-left"></i> Previous</button>
+                        <span id="academicPageInfo">Page 1 of 1</span>
+                        <button type="button" id="btnAcademicNext" class="academic-page-btn">Next <i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
                 </div>
 
             </div>
@@ -532,6 +585,50 @@
                transition:transform 0.2s,box-shadow 0.2s;">
         <i class="fa-solid fa-calendar-check"></i> Academic Scheduler
     </button>
+
+    <!-- ── IPMS RBAC ENFORCEMENT ────────────────────────────────────────────── -->
+    <script>
+        (function enforceRBAC() {
+            const role = localStorage.getItem("ipms_role") || sessionStorage.getItem("ipms_role");
+            const dashboard = document.querySelector("main.dashboard");
+            const btnAcademic = document.getElementById("btnOpenAcademicScheduler");
+            const headerRight = document.querySelector(".header-right");
+
+            if (!role) {
+                window.location.href = "/home";
+                return;
+            }
+
+            document.body.dataset.ipmsRole = role;
+
+            if (role === "staff") {
+                const inputSection = document.querySelector(".input-section");
+                if (inputSection) {
+                    inputSection.style.setProperty("display", "none", "important");
+                }
+                const resultsSection = document.querySelector(".results-section");
+                if (resultsSection) {
+                    resultsSection.style.width = "100%";
+                }
+
+                if (headerRight) {
+                    headerRight.style.setProperty("display", "none", "important");
+                }
+                
+                if (btnAcademic) {
+                    btnAcademic.style.bottom = "50%";
+                    btnAcademic.style.right = "50%";
+                    btnAcademic.style.transform = "translate(50%, 50%) scale(1.2)";
+                    
+                    setTimeout(() => {
+                        btnAcademic.click();
+                    }, 500);
+                }
+            }
+        })();
+    </script>
+    <!-- ─────────────────────────────────────────────────────────────────────── -->
+
 
 </body>
 </html>

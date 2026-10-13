@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPMS - Official Team Allocations</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0; padding: 0; font-family: 'Inter', sans-serif;
+            background: #0f172a; color: #f8fafc;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1000px; margin: 0 auto; padding: 2rem;
+        }
+        .header {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 1rem;
+        }
+        .header h1 {
+            margin: 0; font-size: 1.8rem; display: flex; align-items: center; gap: 0.75rem;
+            color: #10b981;
+        }
+        .back-btn {
+            background: rgba(59,130,246,0.15); border: 1px solid rgba(59,130,246,0.4);
+            color: #60a5fa; padding: 0.5rem 1rem; border-radius: 8px;
+            text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 0.5rem;
+        }
+        .meta-bar {
+            display: flex; gap: 1rem; margin-bottom: 2rem;
+        }
+        .meta-pill {
+            background: rgba(255,255,255,0.05); padding: 0.5rem 1rem; border-radius: 50px;
+            font-size: 0.85rem; border: 1px solid rgba(255,255,255,0.1);
+        }
+        .meta-pill strong { color: #818cf8; }
+        
+        .teams-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(450px, 1fr)); gap: 1.5rem;
+        }
+        .team-card {
+            background: rgba(30,41,59,0.7); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px; padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+        .team-header {
+            display: flex; justify-content: space-between; align-items: flex-start;
+            margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .team-title { font-size: 1.25rem; font-weight: 700; color: #f8fafc; margin: 0 0 0.25rem 0; }
+        .team-proj { font-size: 0.9rem; color: #94a3b8; margin: 0; }
+        .team-badge {
+            background: rgba(16,185,129,0.1); color: #34d399; border: 1px solid rgba(16,185,129,0.3);
+            padding: 0.25rem 0.75rem; border-radius: 50px; font-size: 0.75rem; font-weight: 700;
+        }
+        
+        .supervisor-box {
+            background: rgba(0,0,0,0.2); padding: 0.75rem; border-radius: 8px;
+            margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;
+        }
+        
+        .members-list { list-style: none; padding: 0; margin: 0; }
+        .member-item {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.03);
+        }
+        .member-item:last-child { border-bottom: none; }
+        .member-id { font-family: monospace; color: #93c5fd; }
+        
+        .loader { text-align: center; padding: 3rem; color: #94a3b8; }
+        .error { background: rgba(239,68,68,0.1); color: #fca5a5; padding: 1rem; border-radius: 8px; border: 1px solid rgba(239,68,68,0.3); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fa-solid fa-users"></i> Official Team Allocations</h1>
+            <a href="/home" class="back-btn"><i class="fa-solid fa-house"></i> Dashboard</a>
+        </div>
+        
+        <div id="content">
+            <div class="loader"><i class="fa-solid fa-circle-notch fa-spin fa-2x"></i><br><br>Loading teams from ML Engine...</div>
+        </div>
+    </div>
+
+    <script>
+        async function loadTeams() {
+            const content = document.getElementById('content');
+            try {
+                // Fetch from the Team Formation REST API (Component 4)
+                const response = await fetch('http://127.0.0.1:8003/api/final-allocations/active/teams');
+
+                // 404 means no allocation has been finalized yet — not a real error
+                if (response.status === 404) {
+                    content.innerHTML = `
+                        <div style="text-align:center;padding:4rem 2rem;">
+                            <i class="fa-solid fa-users-slash fa-3x" style="color:#475569;margin-bottom:1.5rem;display:block;"></i>
+                            <h2 style="color:#94a3b8;margin:0 0 0.75rem 0;">No Team Allocation Finalized Yet</h2>
+                            <p style="color:#64748b;max-width:480px;margin:0 auto 2rem auto;line-height:1.6;">
+                                The academic staff has not yet confirmed a final team allocation.<br>
+                                Once an allocation is finalized via the <strong style="color:#818cf8">Team Formation portal</strong>, it will appear here automatically.
+                            </p>
+                            <a href="http://127.0.0.1:5174" target="_blank"
+                               style="display:inline-flex;align-items:center;gap:0.6rem;
+                                      background:rgba(99,102,241,0.15);border:1px solid rgba(99,102,241,0.4);
+                                      color:#818cf8;padding:0.75rem 1.5rem;border-radius:10px;
+                                      text-decoration:none;font-weight:600;">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Team Formation Portal
+                            </a>
+                        </div>`;
+                    return;
+                }
+
+                if (!response.ok) throw new Error('API Error: ' + response.status);
+
+                const data = await response.json();
+                if (!data.success) throw new Error('Failed to load active allocations.');
+
+                let html = `
+                    <div class="meta-bar">
+                        <div class="meta-pill">Allocation ID: <strong>${data.allocation_id}</strong></div>
+                        <div class="meta-pill">Status: <strong style="color:#34d399">${data.allocation_status}</strong></div>
+                        <div class="meta-pill">Revision: <strong>#${data.revision_number || 1}</strong></div>
+                        <div class="meta-pill">Source: <strong>${data.allocation_source || 'OPTIMIZER'}</strong></div>
+                        <div class="meta-pill">Total Teams: <strong>${data.team_count}</strong></div>
+                        <div class="meta-pill">Total Students: <strong>${data.student_count}</strong></div>
+                    </div>
+                    <div class="teams-grid">
+                `;
+
+                data.teams.forEach(t => {
+                    // members is an array of student ID strings e.g. ["SIM-001", "SIM-004"]
+                    let membersHtml = t.members.map(m => {
+                        const id = (typeof m === 'object') ? (m.student_id || m.id || JSON.stringify(m)) : m;
+                        const name = (typeof m === 'object' && m.name) ? m.name : '';
+                        return `
+                            <li class="member-item">
+                                <div><i class="fa-regular fa-user" style="color:#64748b;margin-right:8px;"></i> ${name || id}</div>
+                                <div class="member-id">${name ? id : ''}</div>
+                            </li>`;
+                    }).join('');
+
+                    const sup = t.supervisor;
+                    const supText = sup
+                        ? `${sup.supervisor_name || sup.supervisor_id || sup}`
+                        : '<span style="color:#64748b;">Not assigned</span>';
+
+                    html += `
+                        <div class="team-card">
+                            <div class="team-header">
+                                <div>
+                                    <h3 class="team-title">Team ${t.team_number}</h3>
+                                    <p class="team-proj"><i class="fa-solid fa-laptop-code"></i> ${t.project_title} (${t.project_id})</p>
+                                </div>
+                                <div class="team-badge">${t.members.length} members</div>
+                            </div>
+
+                            <div class="supervisor-box">
+                                <i class="fa-solid fa-chalkboard-user" style="color:#818cf8;"></i>
+                                <span>Supervisor: <strong>${supText}</strong></span>
+                            </div>
+
+                            <h4 style="font-size:0.85rem;color:#94a3b8;margin:0 0 0.5rem 0;text-transform:uppercase;letter-spacing:0.05em;">Allocated Students</h4>
+                            <ul class="members-list">
+                                ${membersHtml}
+                            </ul>
+                        </div>
+                    `;
+                });
+
+                html += '</div>';
+                content.innerHTML = html;
+
+            } catch (err) {
+                content.innerHTML = `
+                    <div class="error">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        <strong>Failed to connect to Team Formation API:</strong> ${err.message}<br><br>
+                        Make sure Component 4 backend is running on port 8003.
+                        <br><br>
+                        <a href="http://127.0.0.1:8003/health" target="_blank"
+                           style="color:#f87171;font-size:0.85rem;">Check API Health →</a>
+                    </div>`;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', loadTeams);
+    </script>
+    <script src="theme-toggle.js?v=20260831.4"></script>
+</body>
+</html>

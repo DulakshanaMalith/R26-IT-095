@@ -1,150 +1,453 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IPMS Unified Dashboard</title>
+    <title>IPMS - Login</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        // Apply the saved theme before first paint so the login/dashboard does
+        // not flash dark while loading a saved light preference.
+        try {
+            document.documentElement.dataset.theme = localStorage.getItem('ipms-theme') || 'dark';
+        } catch (_) {
+            document.documentElement.dataset.theme = 'dark';
+        }
+    </script>
     <style>
-        :root {
-            --bg-color: #0f172a;
-            --surface: #1e293b;
-            --primary: #3b82f6;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-        }
-        body {
-            margin: 0;
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 4rem 2rem;
-        }
-        header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-        h1 {
-            font-size: 3rem;
-            margin: 0;
-            background: linear-gradient(to right, #60a5fa, #a78bfa);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        p.subtitle {
-            color: var(--text-muted);
-            font-size: 1.2rem;
-            margin-top: 1rem;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            width: 100%;
-            max-width: 1200px;
-        }
-        .card {
-            background: var(--surface);
-            border-radius: 16px;
-            padding: 2rem;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-decoration: none;
-            color: inherit;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
-            border-color: rgba(59, 130, 246, 0.5);
-        }
-        .icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary);
-        }
-        .card h2 {
-            font-size: 1.5rem;
-            margin: 0 0 1rem 0;
-        }
-        .card p {
-            color: var(--text-muted);
-            line-height: 1.5;
-            margin-bottom: 2rem;
-            flex-grow: 1;
-        }
-        .btn {
-            background: var(--primary);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            font-weight: 600;
-            width: 100%;
-            transition: background 0.2s;
-        }
-        .card:hover .btn {
-            background: #2563eb;
-        }
-        .status {
-            margin-top: 1rem;
-            font-size: 0.8rem;
-            color: var(--text-muted);
+        :root{--bg:#0f172a;--surface:#1e293b;--surface2:#273549;--primary:#3b82f6;--purple:#a78bfa;--pink:#f472b6;--green:#4ade80;--text:#f8fafc;--muted:#94a3b8;--border:rgba(255,255,255,0.08);}
+        *{box-sizing:border-box;margin:0;padding:0;}
+        body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
+        .bg-glow{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0;}
+        .bg-glow::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(59,130,246,0.12) 0%,transparent 70%);top:-200px;left:-200px;}
+        .bg-glow::after{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(167,139,250,0.10) 0%,transparent 70%);bottom:-150px;right:-150px;}
+        /* LOGIN */
+        #loginPage{position:relative;z-index:1;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2rem;}
+        .login-box{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:3rem 2.5rem;width:100%;max-width:420px;box-shadow:0 25px 60px rgba(0,0,0,0.4);}
+        .login-logo{text-align:center;margin-bottom:2rem;}
+        .login-logo i{font-size:2.8rem;background:linear-gradient(135deg,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+        .login-logo h1{font-size:1.6rem;font-weight:800;margin-top:0.5rem;background:linear-gradient(to right,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+        .login-logo p{font-size:0.82rem;color:var(--muted);margin-top:0.3rem;}
+        .field-group{margin-bottom:1.25rem;}
+        .field-group label{display:block;font-size:0.82rem;font-weight:600;color:var(--muted);margin-bottom:0.5rem;text-transform:uppercase;letter-spacing:0.04em;}
+        .field-group input,.field-group select{width:100%;padding:0.8rem 1rem;background:var(--surface2);border:1px solid var(--border);border-radius:10px;color:var(--text);font-size:0.95rem;font-family:inherit;outline:none;transition:border-color 0.2s;}
+        .field-group input:focus,.field-group select:focus{border-color:var(--primary);}
+        .field-group select option{background:#1e293b;}
+        .login-btn{width:100%;padding:0.9rem;background:linear-gradient(135deg,#3b82f6,#6366f1);border:none;border-radius:10px;color:white;font-size:1rem;font-weight:700;font-family:inherit;cursor:pointer;margin-top:0.5rem;transition:opacity 0.2s,transform 0.1s;}
+        .login-btn:hover{opacity:0.9;transform:translateY(-1px);}
+        .error-msg{background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.3);border-radius:8px;padding:0.7rem 1rem;color:#fca5a5;font-size:0.85rem;margin-bottom:1rem;display:none;}
+        .demo-hint{margin-top:1.5rem;padding:1rem;background:rgba(59,130,246,0.07);border:1px solid rgba(59,130,246,0.2);border-radius:10px;font-size:0.78rem;color:var(--muted);}
+        .demo-hint strong{color:#93c5fd;}
+        .demo-hint .cred{margin-top:0.4rem;font-family:monospace;font-size:0.82rem;}
+        /* DASHBOARD */
+        #dashPage{display:none;position:relative;z-index:1;min-height:100vh;padding-bottom:3rem;}
+        .topbar{display:flex;align-items:center;justify-content:space-between;padding:1rem 2.5rem;background:rgba(30,41,59,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;}
+        .topbar-brand{display:flex;align-items:center;gap:0.75rem;}
+        .topbar-brand i{font-size:1.4rem;color:var(--primary);}
+        .topbar-brand span{font-size:1.1rem;font-weight:700;}
+        .topbar-right{display:flex;align-items:center;gap:1rem;}
+        .role-badge{padding:0.35rem 0.9rem;border-radius:999px;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;}
+        .role-badge.supervisor{background:rgba(167,139,250,0.15);border:1px solid rgba(167,139,250,0.4);color:#c4b5fd;}
+        .role-badge.staff{background:rgba(74,222,128,0.15);border:1px solid rgba(74,222,128,0.4);color:#86efac;}
+        .user-name{font-size:0.9rem;color:var(--muted);}
+        .logout-btn{background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.25);color:#fca5a5;padding:0.4rem 0.9rem;border-radius:8px;font-size:0.82rem;font-weight:600;cursor:pointer;font-family:inherit;transition:background 0.2s;}
+        .logout-btn:hover{background:rgba(239,68,68,0.25);}
+        .welcome{text-align:center;padding:2.5rem 2rem 1.5rem;}
+        .welcome h2{font-size:2rem;font-weight:800;background:linear-gradient(to right,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+        .welcome p{color:var(--muted);margin-top:0.5rem;font-size:0.95rem;}
+        .role-strip{max-width:900px;margin:0 auto 2rem;padding:0.75rem 1.5rem;border-radius:10px;font-size:0.83rem;font-weight:600;display:flex;align-items:center;gap:0.6rem;}
+        .role-strip.supervisor{background:rgba(167,139,250,0.1);border:1px solid rgba(167,139,250,0.25);color:#c4b5fd;}
+        .role-strip.staff{background:rgba(74,222,128,0.1);border:1px solid rgba(74,222,128,0.25);color:#86efac;}
+        .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.75rem;max-width:1100px;margin:0 auto;padding:0 2rem;}
+        .card{background:var(--surface);border-radius:18px;padding:2rem;border:1px solid var(--border);display:flex;flex-direction:column;align-items:flex-start;cursor:pointer;transition:transform 0.25s,box-shadow 0.25s,border-color 0.25s;}
+        .card:hover{transform:translateY(-5px);}
+        .card.blue:hover{border-color:rgba(96,165,250,0.5);box-shadow:0 15px 35px rgba(59,130,246,0.15);}
+        .card.purple:hover{border-color:rgba(167,139,250,0.5);box-shadow:0 15px 35px rgba(167,139,250,0.15);}
+        .card.pink:hover{border-color:rgba(244,114,182,0.5);box-shadow:0 15px 35px rgba(244,114,182,0.15);}
+        .card.green:hover{border-color:rgba(74,222,128,0.5);box-shadow:0 15px 35px rgba(74,222,128,0.15);}
+        .card-icon{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1.25rem;}
+        .card-icon.blue{background:rgba(96,165,250,0.15);color:#60a5fa;}
+        .card-icon.purple{background:rgba(167,139,250,0.15);color:#a78bfa;}
+        .card-icon.pink{background:rgba(244,114,182,0.15);color:#f472b6;}
+        .card-icon.green{background:rgba(74,222,128,0.15);color:#4ade80;}
+        .card h3{font-size:1.15rem;font-weight:700;margin-bottom:0.5rem;}
+        .card p{color:var(--muted);font-size:0.85rem;line-height:1.6;flex-grow:1;margin-bottom:1.25rem;}
+        .card-tag{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;padding:0.25rem 0.65rem;border-radius:999px;margin-bottom:1rem;}
+        .card-tag.blue{background:rgba(96,165,250,0.12);color:#93c5fd;border:1px solid rgba(96,165,250,0.3);}
+        .card-tag.purple{background:rgba(167,139,250,0.12);color:#c4b5fd;border:1px solid rgba(167,139,250,0.3);}
+        .card-tag.pink{background:rgba(244,114,182,0.12);color:#f9a8d4;border:1px solid rgba(244,114,182,0.3);}
+        .card-tag.green{background:rgba(74,222,128,0.12);color:#86efac;border:1px solid rgba(74,222,128,0.3);}
+        .launch-btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.6rem 1.2rem;border-radius:9px;font-size:0.85rem;font-weight:700;border:none;cursor:pointer;font-family:inherit;transition:opacity 0.2s;}
+        .launch-btn:hover{opacity:0.85;}
+        .launch-btn.blue{background:rgba(96,165,250,0.2);color:#60a5fa;}
+        .launch-btn.purple{background:rgba(167,139,250,0.2);color:#a78bfa;}
+        .launch-btn.pink{background:rgba(244,114,182,0.2);color:#f472b6;}
+        .launch-btn.green{background:rgba(74,222,128,0.2);color:#4ade80;}
+        footer{text-align:center;padding:2rem;margin-top:2rem;color:var(--muted);font-size:0.78rem;border-top:1px solid var(--border);}
+
+        /* SHARED LOGIN + ROLE DASHBOARD THEME CONTROL */
+        .portal-theme-toggle{position:fixed;bottom:1.25rem;right:1.25rem;z-index:1000;display:inline-flex;align-items:center;gap:.5rem;padding:.58rem .9rem;border-radius:999px;background:rgba(30,41,59,.88);border:1px solid rgba(255,255,255,.14);box-shadow:0 8px 24px rgba(0,0,0,.24);color:#f8fafc;font:700 .78rem 'Inter',sans-serif;cursor:pointer;backdrop-filter:blur(12px);transition:transform .2s,background .2s,border-color .2s,box-shadow .2s;}
+        .portal-theme-toggle:hover{transform:translateY(-2px);border-color:rgba(96,165,250,.55);box-shadow:0 12px 28px rgba(0,0,0,.28);}
+        .portal-theme-toggle:focus-visible{outline:3px solid rgba(59,130,246,.35);outline-offset:3px;}
+
+        /* Light mode uses darker semantic accents for readable contrast. */
+        :root[data-theme="light"]{color-scheme:light;--bg:#dcecf9;--surface:#f2f8ff;--surface2:#e6f1fc;--primary:#2563eb;--purple:#7c3aed;--pink:#be185d;--green:#047857;--text:#172033;--muted:#586b84;--border:rgba(37,99,235,.16);}
+        :root[data-theme="light"] body{background:linear-gradient(135deg,#d7e9f8 0%,#edf6ff 48%,#dcecf9 100%);background-attachment:fixed;color:var(--text);}
+        :root[data-theme="light"] #loginPage{background:radial-gradient(circle at 50% 42%,rgba(255,255,255,.55),transparent 42%);}
+        :root[data-theme="light"] #dashPage{background:linear-gradient(180deg,rgba(231,242,252,.38),rgba(207,229,247,.22));}
+        :root[data-theme="light"] .bg-glow{opacity:.78;}
+        :root[data-theme="light"] .bg-glow::before{background:radial-gradient(circle,rgba(37,99,235,.19) 0%,transparent 68%);}
+        :root[data-theme="light"] .bg-glow::after{background:radial-gradient(circle,rgba(124,58,237,.12) 0%,transparent 68%);}
+        :root[data-theme="light"] .login-box{background:linear-gradient(145deg,#f8fbff,#e8f3fd);border-color:rgba(37,99,235,.2);box-shadow:0 24px 60px rgba(30,92,148,.18);}
+        :root[data-theme="light"] .field-group input,
+        :root[data-theme="light"] .field-group select{background:#e8f2fc;border-color:rgba(37,99,235,.2);color:var(--text);}
+        :root[data-theme="light"] .field-group input::placeholder{color:#8795a8;}
+        :root[data-theme="light"] .field-group select option{background:#edf6ff;color:var(--text);}
+        :root[data-theme="light"] .error-msg{background:#fef2f2;border-color:#fecaca;color:#b91c1c;}
+        :root[data-theme="light"] .demo-hint{background:#eff6ff;border-color:#bfdbfe;color:var(--muted);}
+        :root[data-theme="light"] .demo-hint strong{color:#1d4ed8;}
+        :root[data-theme="light"] .topbar{background:rgba(232,244,255,.94);border-color:rgba(37,99,235,.17);box-shadow:0 5px 22px rgba(30,92,148,.1);}
+        :root[data-theme="light"] .role-badge.supervisor,
+        :root[data-theme="light"] .role-strip.supervisor{background:#f3e8ff;border-color:#d8b4fe;color:#6b21a8;}
+        :root[data-theme="light"] .role-badge.staff,
+        :root[data-theme="light"] .role-strip.staff{background:#ecfdf5;border-color:#a7f3d0;color:#047857;}
+        :root[data-theme="light"] .logout-btn{background:#fff1f2;border-color:#fecdd3;color:#be123c;}
+        :root[data-theme="light"] .logout-btn:hover{background:#ffe4e6;}
+        :root[data-theme="light"] .card{background:linear-gradient(145deg,#f8fbff,#eaf4fd);border-color:rgba(37,99,235,.17);box-shadow:0 8px 24px rgba(30,92,148,.1);}
+        :root[data-theme="light"] .card h3{color:var(--text);}
+        :root[data-theme="light"] .card-icon.blue{background:#dbeafe;color:#1d4ed8;}
+        :root[data-theme="light"] .card-icon.purple{background:#ede9fe;color:#6d28d9;}
+        :root[data-theme="light"] .card-icon.pink{background:#fce7f3;color:#be185d;}
+        :root[data-theme="light"] .card-icon.green{background:#d1fae5;color:#047857;}
+        :root[data-theme="light"] .card-tag.blue{background:#eff6ff;color:#1d4ed8;border-color:#bfdbfe;}
+        :root[data-theme="light"] .card-tag.purple{background:#f5f3ff;color:#6d28d9;border-color:#ddd6fe;}
+        :root[data-theme="light"] .card-tag.pink{background:#fdf2f8;color:#be185d;border-color:#fbcfe8;}
+        :root[data-theme="light"] .card-tag.green{background:#ecfdf5;color:#047857;border-color:#a7f3d0;}
+        :root[data-theme="light"] .launch-btn.blue{background:#dbeafe;color:#1d4ed8;}
+        :root[data-theme="light"] .launch-btn.purple{background:#ede9fe;color:#6d28d9;}
+        :root[data-theme="light"] .launch-btn.pink{background:#fce7f3;color:#be185d;}
+        :root[data-theme="light"] .launch-btn.green{background:#d1fae5;color:#047857;}
+        :root[data-theme="light"] .portal-theme-toggle{background:rgba(232,244,255,.96);border-color:rgba(37,99,235,.2);color:#172033;box-shadow:0 8px 24px rgba(30,92,148,.15);}
+        :root[data-theme="light"] footer{background:rgba(218,235,249,.58);border-color:rgba(37,99,235,.14);}
+
+        /* MODERN ROLE DASHBOARD */
+        .topbar-brand .brand-mark{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,#2563eb,#7c3aed);box-shadow:0 8px 20px rgba(37,99,235,.3);}
+        .topbar-brand .brand-mark i{font-size:1rem;color:#fff;}
+        .brand-copy{display:flex;flex-direction:column;gap:.08rem;}
+        .brand-copy small{font-size:.66rem;color:var(--muted);font-weight:600;letter-spacing:.08em;text-transform:uppercase;}
+        .user-chip{display:flex;align-items:center;gap:.55rem;padding:.36rem .7rem .36rem .4rem;border:1px solid var(--border);background:rgba(255,255,255,.04);border-radius:999px;}
+        .user-avatar{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;font-size:.72rem;box-shadow:0 5px 14px rgba(59,130,246,.25);}
+        .dashboard-shell{width:min(1180px,calc(100% - 3rem));margin:0 auto;padding:2.2rem 0 1rem;}
+        .dashboard-hero{position:relative;overflow:hidden;display:flex;justify-content:space-between;align-items:center;gap:2rem;padding:2.1rem 2.25rem;border:1px solid var(--border);border-radius:24px;background:linear-gradient(135deg,rgba(59,130,246,.12),rgba(167,139,250,.08) 58%,rgba(74,222,128,.05));box-shadow:0 18px 50px rgba(0,0,0,.13);}
+        .dashboard-hero::after{content:'';position:absolute;width:260px;height:260px;border-radius:50%;right:-90px;top:-130px;background:radial-gradient(circle,rgba(96,165,250,.2),transparent 68%);pointer-events:none;}
+        .hero-copy{position:relative;z-index:1;max-width:700px;}
+        .hero-eyebrow{display:inline-flex;align-items:center;gap:.45rem;margin-bottom:.8rem;color:#93c5fd;font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;}
+        .dashboard-hero h2{font-size:clamp(1.65rem,3vw,2.35rem);line-height:1.15;font-weight:800;letter-spacing:-.035em;background:linear-gradient(100deg,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+        .dashboard-hero p{max-width:680px;margin-top:.65rem;color:var(--muted);font-size:.94rem;line-height:1.65;}
+        .hero-meta{position:relative;z-index:1;display:grid;gap:.6rem;min-width:175px;}
+        .hero-pill{display:flex;align-items:center;gap:.55rem;padding:.62rem .8rem;border:1px solid var(--border);border-radius:12px;background:rgba(15,23,42,.28);font-size:.74rem;font-weight:700;color:var(--muted);white-space:nowrap;}
+        .hero-pill i{color:#4ade80;}
+        .dashboard-shell .role-strip{max-width:none;margin:1rem 0 2rem;padding:.85rem 1rem;border-radius:14px;}
+        .workspace-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:1.5rem;margin-bottom:1.15rem;padding:0 .15rem;}
+        .workspace-heading .section-label{display:block;color:#60a5fa;font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.35rem;}
+        .workspace-heading h3{font-size:1.28rem;letter-spacing:-.02em;}
+        .tool-count{color:var(--muted);font-size:.78rem;}
+        .dashboard-shell .grid{max-width:none;margin:0;padding:0;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem;}
+        .dashboard-shell .card{position:relative;overflow:hidden;min-height:310px;padding:1.55rem;cursor:default;border-radius:20px;}
+        .dashboard-shell .card::before{content:'';position:absolute;inset:0 auto 0 0;width:4px;background:var(--card-accent,#60a5fa);opacity:.9;}
+        .dashboard-shell .card.blue{--card-accent:#3b82f6;}
+        .dashboard-shell .card.purple{--card-accent:#8b5cf6;}
+        .dashboard-shell .card.pink{--card-accent:#ec4899;}
+        .dashboard-shell .card.green{--card-accent:#10b981;}
+        .card-head{width:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.35rem;}
+        .dashboard-shell .card-icon{margin:0;width:52px;height:52px;border-radius:15px;}
+        .dashboard-shell .card-tag{margin:0;}
+        .card-body{display:flex;flex:1;flex-direction:column;align-items:flex-start;}
+        .dashboard-shell .card h3{font-size:1.22rem;margin-bottom:.65rem;letter-spacing:-.015em;}
+        .dashboard-shell .card p{font-size:.84rem;line-height:1.7;margin-bottom:1.45rem;}
+        .card-footer{width:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-top:1rem;border-top:1px solid var(--border);}
+        .card-footer .module-state{display:inline-flex;align-items:center;gap:.4rem;color:var(--muted);font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;}
+        .card-footer .module-state i{font-size:.48rem;color:#4ade80;}
+        .dashboard-shell .launch-btn{text-decoration:none;white-space:nowrap;transition:transform .2s,filter .2s;}
+        .dashboard-shell .launch-btn:hover{opacity:1;transform:translateX(2px);filter:saturate(1.15);}
+        :root[data-theme="light"] .topbar-brand .brand-mark{box-shadow:0 8px 20px rgba(37,99,235,.22);}
+        :root[data-theme="light"] .user-chip{background:rgba(255,255,255,.5);border-color:rgba(37,99,235,.14);}
+        :root[data-theme="light"] .dashboard-hero{background:linear-gradient(135deg,#e1effc,#edf4ff 55%,#e9f8f5);border-color:rgba(37,99,235,.16);box-shadow:0 18px 45px rgba(30,92,148,.11);}
+        :root[data-theme="light"] .hero-eyebrow{color:#2563eb;}
+        :root[data-theme="light"] .dashboard-hero h2{background:linear-gradient(100deg,#2563eb,#7c3aed);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+        :root[data-theme="light"] .hero-pill{background:rgba(255,255,255,.58);border-color:rgba(37,99,235,.14);}
+        :root[data-theme="light"] .hero-pill i,:root[data-theme="light"] .card-footer .module-state i{color:#059669;}
+
+        @media (max-width:640px){
+            .portal-theme-toggle{bottom:.75rem;right:.75rem;padding:.5rem .7rem;}
+            .portal-theme-toggle .theme-label{display:none;}
+            .topbar{padding:1rem;align-items:flex-start;flex-wrap:wrap;gap:.8rem;}
+            .topbar-right{width:100%;gap:.45rem;flex-wrap:wrap;justify-content:flex-start;}
+            .user-name{width:100%;text-align:right;}
+            .user-chip .user-name{width:auto;text-align:left;}
+            .login-box{padding:2.6rem 1.35rem 1.8rem;}
+            .dashboard-shell{width:min(100% - 1.25rem,1180px);padding-top:1rem;}
+            .dashboard-hero{align-items:flex-start;flex-direction:column;padding:1.45rem;border-radius:18px;gap:1.25rem;}
+            .hero-meta{width:100%;grid-template-columns:1fr 1fr;}
+            .workspace-heading{align-items:flex-start;flex-direction:column;gap:.35rem;}
+            .dashboard-shell .grid{grid-template-columns:1fr;}
+            .dashboard-shell .card{min-height:0;}
+            .card-footer{align-items:flex-start;flex-direction:column;}
+            .dashboard-shell .launch-btn{width:100%;justify-content:center;}
         }
     </style>
 </head>
 <body>
+<div class="bg-glow"></div>
+<button id="portalThemeToggle" class="portal-theme-toggle" type="button" aria-label="Switch to light mode" aria-pressed="false">
+    <i class="fa-solid fa-sun" aria-hidden="true"></i>
+    <span class="theme-label">Light Mode</span>
+</button>
 
-    <header>
-        <h1>IPMS Unified Workspace</h1>
-        <p class="subtitle">Integrated Project Management System - AI Microservices Architecture</p>
-    </header>
-
-    <div class="grid">
-        <!-- Component 1 -->
-        <a href="http://127.0.0.1:8000/app" target="_blank" class="card">
-            <i class="fa-solid fa-timeline icon" style="color: #60a5fa;"></i>
-            <h2>Adaptive Scheduling</h2>
-            <p>Generative WBS planning, XGBoost duration estimation, and NASA-trained schedule risk analysis.</p>
-            <div class="btn">Launch Subsystem</div>
-
-        </a>
-
-        <!-- Component 2 -->
-        <a href="http://127.0.0.1:3000" target="_blank" class="card">
-            <i class="fa-solid fa-microscope icon" style="color: #a78bfa;"></i>
-            <h2>Quality Assessment</h2>
-            <p>Automated semantic rubric matching and ML-based document quality analysis.</p>
-            <div class="btn">Launch Subsystem</div>
-
-        </a>
-
-        <!-- Component 3 -->
-        <a href="http://127.0.0.1:5000" target="_blank" class="card">
-            <i class="fa-solid fa-chart-line icon" style="color: #f472b6;"></i>
-            <h2>Risk Monitoring</h2>
-            <p>Predictive contribution analytics and real-time project risk detection algorithms.</p>
-            <div class="btn">Launch Subsystem</div>
-
-        </a>
-
-        <!-- Component 4 -->
-        <a href="http://127.0.0.1:3001" target="_blank" class="card">
-            <i class="fa-solid fa-users icon" style="color: #4ade80;"></i>
-            <h2>Team Formation</h2>
-            <p>Intelligent clustering and topic feasibility analysis for optimized developer allocation.</p>
-            <div class="btn">Launch Subsystem</div>
-
-        </a>
+<!-- LOGIN PAGE -->
+<div id="loginPage">
+    <div class="login-box">
+        <div class="login-logo">
+            <i class="fa-solid fa-layer-group"></i>
+            <h1>IPMS Portal</h1>
+            <p>Intelligent Project Management System</p>
+        </div>
+        <div class="error-msg" id="errorMsg"></div>
+        <div class="field-group">
+            <label><i class="fa-solid fa-user"></i>&nbsp; Username</label>
+            <input type="text" id="usernameInput" placeholder="Enter your username" autocomplete="username">
+        </div>
+        <div class="field-group">
+            <label><i class="fa-solid fa-lock"></i>&nbsp; Password</label>
+            <input type="password" id="passwordInput" placeholder="Enter your password">
+        </div>
+        <div class="field-group">
+            <label><i class="fa-solid fa-id-badge"></i>&nbsp; Login As</label>
+            <select id="roleSelect">
+                <option value="">-- Select Role --</option>
+                <option value="supervisor">Supervisor</option>
+                <option value="staff">Academic Staff</option>
+            </select>
+        </div>
+        <button class="login-btn" onclick="doLogin()">
+            <i class="fa-solid fa-right-to-bracket"></i>&nbsp; Sign In
+        </button>
+        <div class="demo-hint">
+            <strong><i class="fa-solid fa-circle-info"></i> Demo Credentials</strong>
+            <div class="cred">Supervisor &rarr; supervisor1 / super@2026</div>
+            <div class="cred">Staff &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&rarr; staff1 / staff@2026</div>
+        </div>
     </div>
+</div>
 
-    <script src="theme-toggle.js"></script>
+<!-- DASHBOARD PAGE -->
+<div id="dashPage">
+    <div class="topbar">
+        <div class="topbar-brand">
+            <span class="brand-mark"><i class="fa-solid fa-layer-group"></i></span>
+            <span class="brand-copy"><span>IPMS Portal</span><small>Academic workspace</small></span>
+        </div>
+        <div class="topbar-right">
+            <span class="user-chip"><span class="user-avatar"><i class="fa-solid fa-user"></i></span><span class="user-name" id="topbarUser"></span></span>
+            <span class="role-badge" id="topbarRole"></span>
+            <button class="logout-btn" onclick="doLogout()">
+                <i class="fa-solid fa-right-from-bracket"></i> Logout
+            </button>
+        </div>
+    </div>
+    <main class="dashboard-shell">
+        <section class="dashboard-hero">
+            <div class="hero-copy">
+                <span class="hero-eyebrow"><i class="fa-solid fa-wand-magic-sparkles"></i> Your intelligent workspace</span>
+                <h2 id="welcomeMsg">Welcome!</h2>
+                <p id="welcomeSub"></p>
+            </div>
+            <div class="hero-meta" aria-label="Workspace status">
+                <span class="hero-pill"><i class="fa-solid fa-circle-check"></i> Services available</span>
+                <span class="hero-pill"><i class="fa-solid fa-shield-halved"></i> Secure role access</span>
+            </div>
+        </section>
+        <div class="role-strip" id="roleStrip">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span id="roleStripText"></span>
+        </div>
+        <div class="workspace-heading">
+            <div>
+                <span class="section-label">Connected applications</span>
+                <h3>Your IPMS workspace</h3>
+            </div>
+            <span class="tool-count" id="toolCount"></span>
+        </div>
+        <div class="grid" id="cardsGrid"></div>
+    </main>
+    <footer>IPMS &middot; Intelligent Project Management System &nbsp;|&nbsp; R26-IT-095 &nbsp;|&copy; 2026</footer>
+</div>
+
+<script>
+function updatePortalThemeButton() {
+    var button = document.getElementById('portalThemeToggle');
+    if (!button) return;
+    var isLight = document.documentElement.dataset.theme === 'light';
+    button.innerHTML = isLight
+        ? '<i class="fa-solid fa-moon" aria-hidden="true"></i><span class="theme-label">Dark Mode</span>'
+        : '<i class="fa-solid fa-sun" aria-hidden="true"></i><span class="theme-label">Light Mode</span>';
+    button.setAttribute('aria-label', isLight ? 'Switch to dark mode' : 'Switch to light mode');
+    button.setAttribute('aria-pressed', String(isLight));
+}
+
+function togglePortalTheme() {
+    var next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+    document.documentElement.dataset.theme = next;
+    localStorage.setItem('ipms-theme', next);
+    updatePortalThemeButton();
+}
+
+document.getElementById('portalThemeToggle').addEventListener('click', togglePortalTheme);
+updatePortalThemeButton();
+
+var CARDS = {
+    supervisor: [
+        {color:"blue",  icon:"fa-timeline",    tag:"Component 1", title:"Adaptive Scheduling",
+         desc:"Upload project proposal PDF, auto-generate WBS tasks, view the risk-aware Gantt chart and choose from NSGA-II Pareto-optimal schedule alternatives.",
+         url:"http://127.0.0.1:8000/app", label:"Open Scheduler"},
+        {color:"purple",icon:"fa-microscope",  tag:"Component 2", title:"Quality Assessment",
+         desc:"Automated semantic proposal review, weakness classification, AI supervisor draft generation, and final feedback PDF delivery to students.",
+         url:"http://127.0.0.1:5173", label:"Open ResearchPilot"},
+        {color:"pink",  icon:"fa-chart-line",  tag:"Component 3", title:"Risk Monitoring",
+         desc:"Real-time GitHub contribution analytics and predictive delay risk detection. Uses a separate Risk component account.",
+         url:"http://127.0.0.1:5175/login", label:"Open Risk Monitor"}
+    ],
+    staff: [
+        {color:"blue",  icon:"fa-calendar-check", tag:"Component 1 - Staff", title:"Academic Event Scheduler",
+         desc:"Schedule PP1, PP2, and Viva presentation events. Upload supervisor and hall availability, run AI matching, and confirm event timetables.",
+         url:"http://127.0.0.1:8000/app", label:"Open Scheduler"},
+        {color:"green", icon:"fa-users",           tag:"Component 4",         title:"Team Formation",
+         desc:"View the latest officially confirmed team allocations generated by the Heuristic-Seeded NSGA-II optimizer, including supervisor assignments.",
+         url:"http://127.0.0.1:5174", label:"Open Team Portal"}
+    ]
+};
+
+async function doLogin() {
+    var username = document.getElementById('usernameInput').value.trim();
+    var password = document.getElementById('passwordInput').value;
+    var role     = document.getElementById('roleSelect').value;
+    var errBox   = document.getElementById('errorMsg');
+    errBox.style.display = 'none';
+
+    if (!username || !password || !role) {
+        errBox.textContent = 'Please fill in all fields.';
+        errBox.style.display = 'block'; return;
+    }
+    try {
+        var response = await fetch('http://127.0.0.1:8000/api/auth/login', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({username: username, password: password, role: role})
+        });
+        var data = await response.json();
+        if (!response.ok) throw new Error(data.detail || 'Login failed.');
+        localStorage.setItem('ipms_token', data.access_token);
+        localStorage.setItem('ipms_user', data.user.display);
+        localStorage.setItem('ipms_role', data.user.role);
+        showDashboard(data.user.display, data.user.role);
+    } catch (error) {
+        errBox.textContent = error.message || 'Unable to contact the IPMS authentication service.';
+        errBox.style.display = 'block';
+        document.getElementById('passwordInput').value = '';
+    }
+}
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' && document.getElementById('loginPage').style.display !== 'none') doLogin();
+});
+
+function showDashboard(displayName, role) {
+    document.getElementById('loginPage').style.display = 'none';
+    document.getElementById('dashPage').style.display  = 'block';
+
+    document.getElementById('topbarUser').textContent = displayName;
+    var rb = document.getElementById('topbarRole');
+    rb.textContent = role === 'supervisor' ? 'Supervisor' : 'Academic Staff';
+    rb.className   = 'role-badge ' + role;
+
+    document.getElementById('welcomeMsg').textContent = 'Welcome, ' + displayName + '!';
+    document.getElementById('welcomeSub').textContent = role === 'supervisor'
+        ? 'You have access to project scheduling, quality assessment, and risk monitoring tools.'
+        : 'You have access to academic event scheduling and team formation tools.';
+
+    var strip = document.getElementById('roleStrip');
+    strip.className = 'role-strip ' + role;
+    document.getElementById('roleStripText').textContent = role === 'supervisor'
+        ? 'Supervisor View  —  Access: Adaptive Scheduling  |  Quality Assessment  |  Risk Monitoring'
+        : 'Academic Staff View  —  Access: Academic Event Scheduler  |  Team Formation';
+
+    var grid = document.getElementById('cardsGrid');
+    grid.innerHTML = '';
+    var roleCards = CARDS[role] || [];
+    document.getElementById('toolCount').textContent = roleCards.length + (roleCards.length === 1 ? ' application available' : ' applications available');
+    roleCards.forEach(function(card) {
+        var el = document.createElement('article');
+        el.className = 'card ' + card.color;
+        el.innerHTML =
+            '<div class="card-head">' +
+                '<div class="card-icon ' + card.color + '"><i class="fa-solid ' + card.icon + '"></i></div>' +
+                '<span class="card-tag ' + card.color + '">' + card.tag + '</span>' +
+            '</div>' +
+            '<div class="card-body">' +
+                '<h3>' + card.title + '</h3>' +
+                '<p>' + card.desc + '</p>' +
+            '</div>' +
+            '<div class="card-footer">' +
+                '<span class="module-state"><i class="fa-solid fa-circle"></i> Module ready</span>' +
+                '<a class="launch-btn ' + card.color + '" href="' + card.url + '" target="_blank" rel="noopener noreferrer">' +
+                card.label + ' <i class="fa-solid fa-arrow-right"></i></a>' +
+            '</div>';
+        grid.appendChild(el);
+    });
+}
+
+function doLogout() {
+    // Remove only authentication data so the chosen visual theme survives
+    // logout and remains consistent on the login page.
+    localStorage.removeItem('ipms_token');
+    localStorage.removeItem('ipms_user');
+    localStorage.removeItem('ipms_role');
+    document.getElementById('dashPage').style.display  = 'none';
+    document.getElementById('loginPage').style.display = 'flex';
+    document.getElementById('usernameInput').value = '';
+    document.getElementById('passwordInput').value = '';
+    document.getElementById('roleSelect').value    = '';
+    document.getElementById('errorMsg').style.display = 'none';
+}
+
+(async function(){
+    var query = new URLSearchParams(window.location.search);
+    if (query.get('session') === 'expired') {
+        var expiredBox = document.getElementById('errorMsg');
+        expiredBox.textContent = 'Your session was missing or expired. Please sign in again.';
+        expiredBox.style.display = 'block';
+        history.replaceState({}, document.title, '/home');
+    }
+    var user = localStorage.getItem('ipms_user');
+    var role = localStorage.getItem('ipms_role');
+    var token = localStorage.getItem('ipms_token');
+    if (!user || !role || !token) return;
+    try {
+        var response = await fetch('http://127.0.0.1:8000/api/auth/me', {
+            headers: {Authorization: 'Bearer ' + token}
+        });
+        if (!response.ok) throw new Error('expired');
+        var sessionUser = await response.json();
+        localStorage.setItem('ipms_user', sessionUser.display);
+        localStorage.setItem('ipms_role', sessionUser.role);
+        showDashboard(sessionUser.display, sessionUser.role);
+    } catch (_) {
+        localStorage.removeItem('ipms_token');
+        localStorage.removeItem('ipms_user');
+        localStorage.removeItem('ipms_role');
+    }
+})();
+</script>
 </body>
 </html>

@@ -1,3 +1,189 @@
+// Global state - must be at top level so initProgressTracker (outside DOMContentLoaded) can access them
+var currentTeamMembers = [];
+var currentSchedule = [];
+let ganttRenderEpoch = 0;
+
+// Send the signed IPMS session with every same-origin API request. This keeps
+// the main scheduler, progress tools and academic dashboard on one login.
+const ipmsNativeFetch = window.fetch.bind(window);
+let ipmsSessionRedirecting = false;
+
+function clearIpmsSessionAndReturnToLogin() {
+    if (ipmsSessionRedirecting) return;
+    ipmsSessionRedirecting = true;
+    ['ipms_token', 'ipms_user', 'ipms_role'].forEach((key) => {
+        localStorage.removeItem(key);
+        sessionStorage.removeItem(key);
+    });
+    window.location.replace('/home?session=expired');
+}
+
+window.fetch = function(resource, options) {
+    const url = typeof resource === 'string' ? resource : resource.url;
+    if (!url.startsWith('/api/')) return ipmsNativeFetch(resource, options);
+    const token = localStorage.getItem('ipms_token') || sessionStorage.getItem('ipms_token');
+    const requestOptions = { ...(options || {}) };
+    requestOptions.headers = { ...(requestOptions.headers || {}), ...(token ? { Authorization: `Bearer ${token}` } : {}) };
+    return ipmsNativeFetch(resource, requestOptions).then((response) => {
+        if (response.status === 401) clearIpmsSessionAndReturnToLogin();
+        return response;
+    });
+};
+
+// The dashboard must never operate from a browser-only role value. A signed
+// backend token is required before any scheduler API request is attempted.
+if (!(localStorage.getItem('ipms_token') || sessionStorage.getItem('ipms_token'))) {
+    clearIpmsSessionAndReturnToLogin();
+}
+
+function activeProjectId() {
+    return window._currentProjectId || document.getElementById('groupId')?.value?.trim() || '';
+}
+
+function activeProjectQuery() {
+    return `project_id=${encodeURIComponent(activeProjectId())}`;
+}
+
+function escapeIpmsHtml(value) {
+    return String(value ?? '').replace(/[&<>'"]/g, (character) => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;'
+    })[character]);
+}
+
+async function openProtectedDocument(url) {
+    const previewWindow = window.open('about:blank', '_blank');
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            const payload = await response.json().catch(() => ({}));
+            throw new Error(payload.detail || 'Document could not be opened.');
+        }
+        const blobUrl = URL.createObjectURL(await response.blob());
+        if (previewWindow) previewWindow.location.href = blobUrl;
+        else throw new Error('Allow pop-ups to preview the submitted document.');
+        setTimeout(() => URL.revokeObjectURL(blobUrl), 60000);
+    } catch (error) {
+        if (previewWindow) previewWindow.close();
+        throw error;
+    }
+}
+
+function submissionEvidenceHtml(evidence) {
+    const submissions = evidence?.submissions || [];
+    const commits = evidence?.github_commits || [];
+    const pullRequests = evidence?.github_pull_requests || [];
+    const progress = evidence?.progress || {};
+    const linkedGitCount = commits.filter(item => item.status === 'LINKED').length +
+        pullRequests.filter(item => item.evidence_status === 'LINKED').length;
+    const flaggedGitCount = commits.length + pullRequests.length - linkedGitCount;
+    const submissionCards = submissions.length ? submissions.map((submission) => {
+        const statusClass = submission.review_status === 'APPROVED' ? 'approved' :
+            (submission.review_status === 'PENDING_REVIEW' ? 'pending' : 'rejected');
+        const canReview = submission.review_status === 'PENDING_REVIEW';
+        return `<article class="evidence-card">
+            <div style="display:flex;justify-content:space-between;gap:.6rem;align-items:flex-start;">
+                <div>
+                    <div style="font-weight:700;font-size:.8rem;">${escapeIpmsHtml(submission.filename)}</div>
+                    <div class="review-queue-meta">Version ${submission.version} · ${escapeIpmsHtml(submission.student_id || 'Unknown student')} · ${escapeIpmsHtml(new Date(submission.submitted_at).toLocaleString())}</div>
+                </div>
+                <span class="evidence-badge ${statusClass}">${submission.is_test ? 'TEST · ' : ''}${escapeIpmsHtml(submission.review_status)}</span>
+            </div>
+            ${submission.review_comments ? `<div class="review-queue-meta" style="margin-top:.55rem;">Review: ${escapeIpmsHtml(submission.review_comments)}</div>` : ''}
+            ${canReview ? `<textarea id="reviewComments-${submission.id}" class="evidence-comments" placeholder="Comments are required when rejecting or requesting changes"></textarea>` : ''}
+            <div class="evidence-actions">
+                <button type="button" class="secondary-btn" onclick="openProtectedDocument('${submission.document_url}').catch(error => alert(error.message))"><i class="fa-solid fa-eye"></i> View Document</button>
+                ${canReview ? `
+                    <button type="button" class="review-action approve" onclick="reviewSubmission(${submission.id}, 'APPROVED')">Approve</button>
+                    <button type="button" class="review-action changes" onclick="reviewSubmission(${submission.id}, 'CHANGES_REQUESTED')">Request Changes</button>
+                    <button type="button" class="review-action reject" onclick="reviewSubmission(${submission.id}, 'REJECTED')">Reject</button>` : ''}
+            </div>
+        </article>`;
+    }).join('') : '<p class="review-empty">No document evidence has been submitted for this task.</p>';
+    const commitCards = commits.length ? commits.map(commit => `
+        <article class="evidence-card">
+            <div style="font-size:.78rem;font-weight:700;"><i class="fa-brands fa-github"></i> ${escapeIpmsHtml((commit.sha || '').slice(0, 8))} · ${escapeIpmsHtml(commit.author || 'Unknown author')}</div>
+            <div style="font-size:.74rem;margin-top:.3rem;">${escapeIpmsHtml(commit.message)}</div>
+            <div class="review-queue-meta">${escapeIpmsHtml(commit.branch || '')} · ${commit.status === 'LINKED' ? 'Verified for assigned member' : `Flagged: ${escapeIpmsHtml(commit.status)}`}</div>
+        </article>`).join('') : '<p class="review-empty">No GitHub evidence is linked to this task.</p>';
+    const pullRequestCards = pullRequests.map(pull => {
+        const encodedUrl = encodeURIComponent(String(pull.url || ''));
+        return `
+        <article class="evidence-card">
+            <div style="font-size:.78rem;font-weight:700;"><i class="fa-solid fa-code-pull-request"></i> PR #${pull.number} · ${escapeIpmsHtml(pull.title)}</div>
+            <div class="review-queue-meta">${escapeIpmsHtml(pull.author || 'Unknown author')} · ${escapeIpmsHtml(pull.review_status)}${pull.merged ? ' · MERGED' : ''} · ${pull.evidence_status === 'LINKED' ? 'Verified for assigned member' : `Flagged: ${escapeIpmsHtml(pull.evidence_status || 'RECORDED')}`}</div>
+            ${pull.url ? `<div class="evidence-actions"><button type="button" class="secondary-btn" onclick="window.open(decodeURIComponent('${encodedUrl}'),'_blank','noopener,noreferrer')">Open Pull Request</button></div>` : ''}
+        </article>`;
+    }).join('');
+    return `<section style="margin-top:1.25rem;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:.5rem;margin-bottom:.5rem;">
+            <div style="font-size:.72rem;font-weight:700;text-transform:uppercase;color:var(--text-muted);"><i class="fa-solid fa-shield-halved"></i> Evidence Review</div>
+            <span class="evidence-badge ${progress.status === 'COMPLETED' ? 'approved' : 'pending'}">${escapeIpmsHtml(progress.status || 'NOT_STARTED')} · ${Number(progress.percentage || 0).toFixed(0)}%</span>
+        </div>
+        <details open><summary style="cursor:pointer;font-size:.78rem;font-weight:700;">Documents (${submissions.length})</summary>${submissionCards}</details>
+        <details style="margin-top:.75rem;"><summary style="cursor:pointer;font-size:.78rem;font-weight:700;">GitHub evidence (${linkedGitCount} linked · ${flaggedGitCount} flagged)</summary>${pullRequestCards}${commitCards}</details>
+    </section>`;
+}
+
+async function reviewSubmission(submissionId, decision) {
+    try {
+        const comments = document.getElementById(`reviewComments-${submissionId}`)?.value?.trim() || '';
+        if (decision !== 'APPROVED' && !comments) {
+            alert('Add supervisor comments before rejecting or requesting changes.');
+            return;
+        }
+        if (!confirm(`Confirm ${decision.toLowerCase().replace('_', ' ')} for this submission?`)) return;
+        const response = await fetch(`/api/progress/submissions/${submissionId}/review`, {
+            method: 'POST', headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({decision, comments})
+        });
+        const payload = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(payload.detail || 'Review could not be saved.');
+        await loadReviewQueue();
+        loadProgressCards();
+        if (window._activeEvidenceTask && window.openTaskProgressPopup) {
+            await window.openTaskProgressPopup(window._activeEvidenceTask);
+        }
+    } catch (error) {
+        alert(error.message || 'Review could not be saved.');
+    }
+}
+
+async function loadReviewQueue() {
+    const container = document.getElementById('reviewQueueList');
+    if (!container) return;
+    const projectId = activeProjectId();
+    if (!projectId) {
+        container.innerHTML = '<p class="review-empty">Enter or extract a Group ID to load submissions.</p>';
+        return;
+    }
+    container.innerHTML = '<p class="review-empty"><i class="fa-solid fa-spinner fa-spin"></i> Loading review queue...</p>';
+    try {
+        const response = await fetch(`/api/progress/review-queue?project_id=${encodeURIComponent(projectId)}`);
+        const payload = await response.json();
+        if (!response.ok) throw new Error(payload.detail || 'Review queue failed to load.');
+        container.innerHTML = payload.items.length ? payload.items.map(item => `
+            <article class="review-queue-item">
+                <div><div class="review-queue-title">${escapeIpmsHtml(item.task_name)}</div>
+                    <div class="review-queue-meta">${escapeIpmsHtml(item.task_key)} · ${escapeIpmsHtml(item.student_id || 'Unknown student')} · v${item.version}</div></div>
+                <div><span class="evidence-badge pending">${item.is_test ? 'TEST · ' : ''}PENDING REVIEW</span>
+                    <div class="review-queue-meta">${escapeIpmsHtml(new Date(item.submitted_at).toLocaleString())}</div></div>
+                <button type="button" class="secondary-btn" onclick="openReviewQueueTask(${item.task_id})"><i class="fa-solid fa-file-lines"></i> Open Review</button>
+            </article>`).join('') : '<p class="review-empty"><i class="fa-solid fa-circle-check"></i> No documents are waiting for review.</p>';
+    } catch (error) {
+        container.innerHTML = `<p class="review-empty" style="color:#fca5a5;">${escapeIpmsHtml(error.message)}</p>`;
+    }
+}
+
+function openReviewQueueTask(taskId) {
+    const task = (currentSchedule || []).find(item => Number(item.task_id) === Number(taskId));
+    if (!task || !window.openTaskProgressPopup) {
+        alert('Load this group\'s latest Gantt chart before opening its task evidence.');
+        return;
+    }
+    window.openTaskProgressPopup(task);
+}
+
+
 ﻿// ============================================================
 // IPMS ADAPTIVE SCHEDULING — Frontend Script
 // ============================================================
@@ -9,22 +195,20 @@
 //   Line  96  — renderResults()  — draws KPI cards + calls renderGantt()
 //   Line 119  — renderGantt()    — draws the Gantt chart bars
 //   Line 238  — openTaskProgressPopup() → API: GET /api/progress/individual
-//   Line 365  — NOVELTY 10: What-If Monte Carlo → API: POST /api/simulate
-//   Line 398  — NOVELTY 8:  Pareto/NSGA-II     → API: POST /api/schedule/pareto
 //   Line 447  — GitHub Connect Modal → API: GET/POST /api/github/*
 //   Line 489  — Notifications → API: GET /api/notifications
 //   Line 523  — Milestone Submit → API: POST /api/milestone/submit
-//   Line 582  — NOVELTY 12: initProgressTracker()
+//   Line 582  — initProgressTracker()
 //   Line 645  — createMultiSelect()  — multi-member assignment dropdown
 //   Line 782  — renderAssignmentTable() — draws the task assignment board
-//   Line 861  — NOVELTY 12: Auto-Assign → API: POST /api/progress/auto-assign
+//   Line 861  — Auto-Assign → API: POST /api/progress/auto-assign
 //   Line 927  — Apply IT Number Names button
 //   Line 964  — loadProgressCards() → API: GET /api/progress/individual
 // ============================================================
 
 document.addEventListener('DOMContentLoaded', () => {
     // Set default start date to today
-    document.getElementById('startDate').valueAsDate = new Date();
+    const _sd = document.getElementById('startDate'); if (_sd) _sd.valueAsDate = new Date();
 
     const form = document.getElementById('scheduleForm');
     const generateBtn = document.getElementById('generateBtn');
@@ -44,7 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // When the user selects a PDF, this sends it to the backend.
     // Backend uses pdfplumber to extract text, then regex IT\d{8}
     // to find team member IT numbers.
-    // Response: { extracted_text: "...", it_numbers: [...] }
+    // Response: { extracted_text: "...", group_id: "R26-IT-095", it_numbers: [...] }
     // ============================================================
     pdfUpload.addEventListener('change', async (e) => {
         const file = e.target.files[0];
@@ -97,6 +281,36 @@ document.addEventListener('DOMContentLoaded', () => {
             if (errorPanel) errorPanel.style.display = 'none';
             descriptionBox.value = data.extracted_text;
 
+            // === AUTO-FILL FROM PDF ===
+            // Auto-fill Group ID if extracted
+            if (data.group_id) {
+                const groupIdInput = document.getElementById('groupId');
+                if (groupIdInput) {
+                    groupIdInput.value = data.group_id;
+                    groupIdInput.dataset.source = 'pdf';
+                    groupIdInput.style.borderColor = '#34d399';
+                    setTimeout(() => groupIdInput.style.borderColor = '', 3000);
+                }
+            }
+            // Auto-fill IT numbers into the team names input
+            if (data.it_numbers && data.it_numbers.length > 0) {
+                window._pdfExtractedITNumbers = data.it_numbers;
+                const namesInput = document.getElementById('teamNamesInput');
+                if (namesInput) namesInput.value = data.it_numbers.join(', ');
+                const teamSizeInput = document.getElementById('teamSize');
+                if (teamSizeInput) {
+                    teamSizeInput.value = data.it_numbers.length;
+                    teamSizeInput.style.borderColor = '#34d399';
+                    setTimeout(() => teamSizeInput.style.borderColor = '', 3000);
+                }
+                const namesDisplay = document.getElementById('teamNamesDisplay');
+                if (namesDisplay) {
+                    namesDisplay.innerHTML = data.it_numbers.map(n =>
+                        `<span style="display:inline-block;background:rgba(139,92,246,0.15);border:1px solid rgba(139,92,246,0.4);border-radius:20px;padding:3px 12px;margin:2px;font-size:0.82rem;font-family:monospace;color:#c4b5fd;">${n}</span>`
+                    ).join('');
+                }
+            }
+
             // Brief success flash on the upload button
             const uploadLabel = document.querySelector('label[for="pdfUpload"]');
             if (uploadLabel) {
@@ -130,8 +344,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Backend pipeline:
     //   1. Extract WBS tasks (5 strategies: regex → verb → T5)
     //   2. Estimate effort with XGBoost (Model 2)
-    //   3. Predict delay risk with Logistic Regression (Model 3)
-    //   4. Scale durations proportionally across total project days
+    //   3. Infer and validate an acyclic dependency graph
+    //   4. Assign all tasks by cold-start LPT and schedule working-day capacity
+    //   5. Calculate capacity/deadline risk from the final schedule
     // Response: { schedule: [...tasks], total_tasks, total_effort_hours,
     //             total_duration_days, team_members: [IT numbers] }
     // ============================================================
@@ -144,6 +359,17 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        const groupIdInput = document.getElementById('groupId');
+        const groupId = groupIdInput ? groupIdInput.value.trim() : '';
+        if (!groupId) {
+            alert('Please enter the Group ID before generating the schedule.');
+            if (groupIdInput) {
+                groupIdInput.focus();
+                groupIdInput.reportValidity();
+            }
+            return;
+        }
+
         // UI Loading State
         btnText.classList.add('hidden');
         btnLoader.classList.remove('hidden');
@@ -152,6 +378,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Build the request payload — these fields are validated by
         // Pydantic's ProjectRequest model on the backend (main.py)
         const payload = {
+            project_id: groupId,
             description: description,                                            // Raw proposal text
             team_size: parseInt(document.getElementById('teamSize').value),      // Number of developers
             duration_months: parseFloat(document.getElementById('duration').value), // Project length
@@ -171,6 +398,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const data = await response.json();
+            // Store project ID so AutoBalance can use it
+            window._currentProjectId = payload.project_id;
             renderResults(data);
 
         } catch (error) {
@@ -190,15 +419,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // Called after a successful /api/schedule/generate response.
     // Updates the 4 KPI cards (Tasks, Effort, Days, High-Risk count)
     // then calls renderGantt() to draw the chart and
-    // initProgressTracker() to set up Novelty 12.
+    // initProgressTracker() sets up the individual progress board.
     // ============================================================
+    
+    window.renderResults = renderResults;
     function renderResults(data) {
         // Update KPI summary cards at the top of the results panel
         document.getElementById('kpiTasks').textContent = data.total_tasks;
         document.getElementById('kpiEffort').textContent = `${data.total_effort_hours} hrs`;
         document.getElementById('kpiDays').textContent = data.total_duration_days;
         
-        const highRiskCount = data.schedule.filter(t => t.delay_risk_pct >= 50).length;
+        const highRiskCount = data.schedule.filter(t => t.risk_status === 'HIGH').length;
         const riskEl = document.getElementById('kpiRisk');
         riskEl.textContent = highRiskCount;
         riskEl.style.color = highRiskCount > 0 ? 'var(--danger)' : 'var(--success)';
@@ -207,12 +438,30 @@ document.addEventListener('DOMContentLoaded', () => {
         emptyState.classList.add('hidden');
         resultsContainer.classList.remove('hidden');
 
-        // Render Gantt
-        renderGantt(data.schedule, data.total_duration_days);
+        let deadlineAlert = document.getElementById('deadlineFeasibilityAlert');
+        if (!deadlineAlert) {
+            deadlineAlert = document.createElement('div');
+            deadlineAlert.id = 'deadlineFeasibilityAlert';
+            deadlineAlert.style.cssText = 'margin:0 0 12px;padding:10px 12px;border-radius:8px;font-size:0.8rem;';
+            resultsContainer.prepend(deadlineAlert);
+        }
+        if (data.deadline_feasible === false) {
+            deadlineAlert.style.display = 'block';
+            deadlineAlert.style.background = 'rgba(239,68,68,0.14)';
+            deadlineAlert.style.border = '1px solid rgba(239,68,68,0.4)';
+            deadlineAlert.style.color = '#fca5a5';
+            deadlineAlert.textContent = data.deadline_warning || 'The generated schedule exceeds the project deadline.';
+        } else {
+            deadlineAlert.style.display = 'none';
+        }
 
-        // NOVELTY 12: Initialize the progress tracker with this schedule's tasks
+        // Initialize the progress tracker with this schedule's tasks
         // Pass real team member names extracted by the backend from the PDF
         initProgressTracker(data.schedule, data.team_size, data.team_members || []);
+
+        // Initialize state before drawing. The renderer also rejects stale
+        // async work so the initial chart cannot overwrite a newer balanced one.
+        renderGantt(data.schedule, data.total_duration_days);
     }
 
     // ============================================================
@@ -226,8 +475,38 @@ document.addEventListener('DOMContentLoaded', () => {
     //   • Risk badges (ON TRACK / HIGH RISK / OVERDUE)
     //   • Animated bar entry on load
     // ============================================================
-    function renderGantt(schedule, totalDays) {
+    async function renderGantt(schedule, totalDays) {
+        const renderEpoch = ++ganttRenderEpoch;
+        const projectId = activeProjectId();
+        if (projectId) {
+            try {
+                const progressResponse = await fetch(`/api/progress/overview?project_id=${encodeURIComponent(projectId)}`);
+                if (progressResponse.ok) {
+                    const progressPayload = await progressResponse.json();
+                    schedule.forEach(task => {
+                        const live = progressPayload.tasks?.[String(task.task_id)];
+                        if (!live) return;
+                        task.progress_pct = live.progress_percentage;
+                        task.status = live.status;
+                        task._evidence = live;
+                    });
+                }
+            } catch (error) {
+                console.warn('Live task progress could not be loaded.', error);
+            }
+        }
+        if (renderEpoch !== ganttRenderEpoch) return;
         ganttContainer.innerHTML = '';
+
+        const taskOwner = (task) => {
+            // Before workload balancing the chart is intentionally a flat WBS
+            // timeline. Classification flags must not create owner lanes until
+            // the assignment endpoint returns BALANCED tasks.
+            if (String(task.assignment_stage || '').toUpperCase() === 'UNASSIGNED') return '';
+            if (task.is_collaborative || task.is_parallel) return 'all';
+            const owner = String(task.component_owner || task.assigned_to || '').trim();
+            return /^(all|all members)$/i.test(owner) ? 'all' : owner;
+        };
 
         // Member color palette (Jira-like)
         const MEMBER_COLORS = [
@@ -246,7 +525,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Pull member list from the progress tracker state (populated by initProgressTracker)
         const memberSet = [];
         schedule.forEach(t => {
-            const owner = t.component_owner || t.assigned_to || null;
+            const owner = taskOwner(t);
             if (owner && owner !== 'all' && !memberSet.includes(owner)) memberSet.push(owner);
         });
 
@@ -292,6 +571,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const todayLine = document.createElement('div');
         todayLine.style.cssText = `position:absolute;top:0;bottom:0;left:${todayPct}%;width:2px;background:rgba(251,191,36,0.5);z-index:5;pointer-events:none;`;
         const todayLbl = document.createElement('div');
+        todayLbl.className = 'gantt-today-label';
         todayLbl.style.cssText = `position:absolute;top:2px;left:${todayPct}%;transform:translateX(-50%);font-size:0.6rem;color:#fbbf24;font-weight:700;white-space:nowrap;z-index:6;`;
         todayLbl.textContent = 'TODAY';
         rulerTrack.appendChild(todayLine);
@@ -302,6 +582,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const tick = document.createElement('div');
             tick.style.cssText = `position:absolute;left:${pct}%;top:0;height:100%;display:flex;flex-direction:column;align-items:flex-start;`;
             const line = document.createElement('div');
+            line.className = 'gantt-grid-line';
             line.style.cssText = 'width:1px;height:100%;background:rgba(255,255,255,0.07);';
             const lbl = document.createElement('span');
             lbl.style.cssText = 'font-size:0.68rem;color:#64748b;font-weight:600;padding-left:4px;margin-top:6px;white-space:nowrap;';
@@ -316,6 +597,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // ── Helper to render one task row ──────────────────────────────────────
         function renderTaskRow(task, colorScheme, index, laneIndex) {
             const row = document.createElement('div');
+            row.className = 'gantt-task-row';
             row.style.cssText = `
                 display:flex; align-items:center; min-height:52px;
                 border-bottom:1px solid rgba(255,255,255,0.04);
@@ -329,6 +611,7 @@ document.addEventListener('DOMContentLoaded', () => {
             info.style.cssText = 'width:220px;min-width:220px;padding:8px 12px;';
 
             const taskName = document.createElement('div');
+            taskName.className = 'gantt-task-name';
             taskName.style.cssText = 'font-size:0.8rem;font-weight:600;color:#e2e8f0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:200px;cursor:pointer;';
             taskName.textContent = task.task_name;
             taskName.title = task.task_name;
@@ -336,10 +619,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const taskMeta = document.createElement('div');
             taskMeta.style.cssText = 'font-size:0.68rem;color:#64748b;margin-top:2px;';
-            taskMeta.textContent = `${task.effort_hours}h · ${task.duration_days}d`;
+            taskMeta.textContent = `${task.effort_hours}h · ${task.duration_days}d · ${task.assigned_to || 'Unassigned'}`;
 
             info.appendChild(taskName);
             info.appendChild(taskMeta);
+            if (task._evidence?.document_count || task._evidence?.commit_count || task._evidence?.pull_request_count) {
+                const evidenceLine = document.createElement('div');
+                evidenceLine.className = 'review-queue-meta';
+                evidenceLine.innerHTML = `${task._evidence.document_count ? `<i class="fa-solid fa-file-lines"></i> ${task._evidence.document_count}` : ''}
+                    ${(task._evidence.commit_count || task._evidence.pull_request_count) ? `<i class="fa-brands fa-github" style="margin-left:.35rem;"></i> ${task._evidence.commit_count || 0} commits · ${task._evidence.pull_request_count || 0} PRs` : ''}
+                    <span class="evidence-badge ${task.status === 'COMPLETED' ? 'approved' : 'pending'}" style="margin-left:.35rem;">${escapeIpmsHtml(task.status)}</span>`;
+                info.appendChild(evidenceLine);
+            }
             row.appendChild(info);
 
             // ── Right: Gantt track ───────────────────────────────────────────
@@ -355,7 +646,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const today = new Date(); today.setHours(0,0,0,0);
             const endDate = new Date(task.end_date); endDate.setHours(0,0,0,0);
             const isOverdue = !task.status?.includes('COMPLETED') && today > endDate;
-            const isHighRisk = task.delay_risk_pct >= 50 && !isOverdue;
+            const isHighRisk = task.risk_status === 'HIGH' && !isOverdue;
 
             let barBg = colorScheme.bar;
             let barShadow = `0 2px 8px ${colorScheme.avatar}55`;
@@ -363,7 +654,11 @@ document.addEventListener('DOMContentLoaded', () => {
             else if (isHighRisk) { barBg = WARN_COLOR.bar; barShadow = `0 2px 10px ${WARN_COLOR.shadow}`; }
 
             const leftPct  = dateToPct(task.start_date);
-            const widthPct = daysToPct(task.duration_days);
+            const calendarSpanDays = Math.max(
+                1,
+                Math.round((new Date(task.end_date) - new Date(task.start_date)) / 86400000) + 1
+            );
+            const widthPct = daysToPct(calendarSpanDays);
 
             const bar = document.createElement('div');
             bar.style.cssText = `
@@ -377,14 +672,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 cursor:pointer; transition:left 0.3s ease, width 0.5s ease, box-shadow 0.2s;
                 z-index:3;
             `;
-            bar.title = `${task.task_name} — ${task.duration_days}d`;
+            bar.title = `${task.task_name} — ${task.effort_hours}h, ${task.duration_days} working days, ${task.start_date} to ${task.end_date}, assigned to ${task.assigned_to || 'Unassigned'}`;
             bar.addEventListener('click', () => openTaskProgressPopup(task));
             bar.addEventListener('mouseenter', () => bar.style.filter = 'brightness(1.15)');
             bar.addEventListener('mouseleave', () => bar.style.filter = '');
 
+            const verifiedPct = Math.max(0, Math.min(100, Number(task.progress_pct || 0)));
+            if (verifiedPct > 0) {
+                const progressFill = document.createElement('div');
+                progressFill.style.cssText = `position:absolute;inset:0 auto 0 0;width:${verifiedPct}%;background:rgba(16,185,129,.48);pointer-events:none;`;
+                bar.appendChild(progressFill);
+            }
+
             // Badge inside bar
             const badge = document.createElement('span');
-            badge.textContent = isOverdue ? 'OVERDUE' : isHighRisk ? `${task.delay_risk_pct}% risk` : `${task.duration_days}d`;
+            badge.style.position = 'relative';
+            badge.style.zIndex = '1';
+            badge.textContent = isOverdue ? 'OVERDUE' : isHighRisk ? `${task.delay_risk_pct}% risk` :
+                (verifiedPct > 0 ? `${verifiedPct.toFixed(0)}% · ${task.duration_days}d` : `${task.duration_days}d`);
             bar.appendChild(badge);
 
             // Risk icon badge (right side of bar)
@@ -412,6 +717,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // ── Render swim lane header ────────────────────────────────────────────
         function renderLaneHeader(label, colorScheme, taskCount) {
             const lane = document.createElement('div');
+            lane.className = 'gantt-lane-header';
             lane.style.cssText = `
                 display:flex; align-items:center; height:36px;
                 background:rgba(255,255,255,0.03);
@@ -422,6 +728,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const dot = document.createElement('div');
             dot.style.cssText = `width:10px;height:10px;border-radius:50%;background:${colorScheme.avatar};flex-shrink:0;`;
             const name = document.createElement('span');
+            name.className = 'gantt-lane-name';
             name.style.cssText = `font-size:0.75rem;font-weight:700;color:${colorScheme.label};`;
             name.textContent = label;
             const count = document.createElement('span');
@@ -434,11 +741,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // ── Split tasks into shared and per-member ─────────────────────────────
-        const sharedTasks = schedule.filter(t => !t.component_owner || t.component_owner === 'all');
+        const sharedTasks = schedule.filter(t => taskOwner(t) === 'all');
         const memberTasks = {};
         memberSet.forEach(m => { memberTasks[m] = []; });
         schedule.forEach(t => {
-            const owner = t.component_owner;
+            const owner = taskOwner(t);
             if (owner && owner !== 'all' && memberTasks[owner]) {
                 memberTasks[owner].push(t);
             }
@@ -446,13 +753,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // If no per-member tasks exist (no component_owner data), show all tasks flat
         const hasPerMember = memberSet.length > 0;
+        const isPreBalance = schedule.length > 0 && schedule.every(task =>
+            String(task.assignment_stage || '').toUpperCase() === 'UNASSIGNED'
+        );
 
         let rowIdx = 0;
 
         if (hasPerMember) {
             // ── All Members lane ──────────────────────────────────────────────
             if (sharedTasks.length > 0) {
-                renderLaneHeader('All Members — Shared Tasks', SHARED_COLOR, sharedTasks.length);
+                renderLaneHeader('All Members — Shared / Parallel Tasks', SHARED_COLOR, sharedTasks.length);
                 sharedTasks.forEach((t, i) => renderTaskRow(t, SHARED_COLOR, rowIdx++, -1));
             }
 
@@ -472,13 +782,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         } else {
-            // Flat list (no component detection)
+            // Initial generation is one neutral WBS lane. Member and shared
+            // lanes appear only after the user runs Workload Balance.
+            if (isPreBalance) {
+                renderLaneHeader(
+                    'Unassigned Tasks - Run Workload Balance to assign members',
+                    SHARED_COLOR,
+                    schedule.length
+                );
+            }
             schedule.forEach((t, i) => {
                 const color = MEMBER_COLORS[i % MEMBER_COLORS.length];
                 renderTaskRow(t, color, rowIdx++, 0);
             });
         }
     }
+    window.renderGantt = renderGantt;
 
 
     // ============================================================
@@ -508,8 +827,15 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>`;
 
         try {
-            const res = await fetch('/api/progress/individual');
+            window._activeEvidenceTask = task;
+            const [res, evidenceResponse] = await Promise.all([
+                fetch(`/api/progress/individual?${activeProjectQuery()}`),
+                fetch(`/api/progress/tasks/${task.task_id}/evidence?${activeProjectQuery()}`)
+            ]);
             const data = await res.json();
+            const evidence = await evidenceResponse.json();
+            if (!res.ok) throw new Error(data.detail || 'Progress could not be loaded.');
+            if (!evidenceResponse.ok) throw new Error(evidence.detail || 'Task evidence could not be loaded.');
 
             // ── Dynamic Risk Calculator ───────────────────────────────────────
             // The ML model gives a STATIC prediction at generation time.
@@ -522,13 +848,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const today       = new Date(); today.setHours(0,0,0,0);
             const startDate   = new Date(task.start_date); startDate.setHours(0,0,0,0);
             const endDate     = new Date(task.end_date);   endDate.setHours(0,0,0,0);
-            const isCompleted = task.status === 'COMPLETED';
+            // A task risk must use this task's verified evidence percentage,
+            // not the assigned member's overall project percentage.
+            const taskProgress = Math.max(0, Math.min(100, Number(evidence.progress?.percentage || 0)));
+            const isCompleted = ['COMPLETED', 'APPROVED'].includes(evidence.progress?.status) || taskProgress >= 100;
 
-            // Find this task's assigned member progress (from API response)
-            let memberProgress = 0;
+            let assignedTaskEntry = null;
             for (const m of (data.members || [])) {
                 const found = m.tasks.find(t => t.task_id === task.task_id);
-                if (found) { memberProgress = m.progress_pct; break; }
+                if (found) { assignedTaskEntry = found; break; }
             }
 
             // Days elapsed vs total task days (expected progress %)
@@ -542,16 +870,19 @@ document.addEventListener('DOMContentLoaded', () => {
             if (isCompleted) {
                 // Task already done — always safe
                 riskColor = '#10b981'; riskLabel = '✅ COMPLETED';
+            } else if (today < startDate) {
+                riskColor = '#3b82f6';
+                riskLabel = taskProgress > 0 ? `EARLY PROGRESS (${taskProgress}%)` : 'UPCOMING';
             } else if (today > endDate) {
                 // Deadline has PASSED and task is not done → OVERDUE
                 const daysLate = Math.abs(daysUntilEnd);
                 riskColor = '#dc2626'; riskLabel = `🚨 OVERDUE (${daysLate}d late)`;
-            } else if (daysUntilEnd <= 1 && memberProgress < 80) {
+            } else if (daysUntilEnd <= 1 && taskProgress < 80) {
                 // Deadline is TODAY or TOMORROW and progress is low
                 riskColor = '#ef4444'; riskLabel = `⚠️ HIGH RISK (due ${daysUntilEnd === 0 ? 'today' : 'tomorrow'})`;
-            } else if (elapsedDays > 0 && memberProgress < (expectedProgress - 20)) {
+            } else if (elapsedDays > 0 && taskProgress < (expectedProgress - 20)) {
                 // Significantly behind expected pace (>20% behind schedule)
-                riskColor = '#ef4444'; riskLabel = `⚠️ HIGH RISK (${Math.round(expectedProgress - memberProgress)}% behind pace)`;
+                riskColor = '#ef4444'; riskLabel = `⚠️ HIGH RISK (${Math.round(expectedProgress - taskProgress)}% behind pace)`;
             } else if (task.delay_risk_pct >= 50) {
                 // ML model flags it as high risk
                 riskColor = '#f59e0b'; riskLabel = `⚠️ AT RISK (${task.delay_risk_pct}% risk score)`;
@@ -573,7 +904,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Build assigned member card
             const assignedHtml = assignedMember ? (() => {
                 const m = assignedMember.member;
-                const pct = m.progress_pct;
+                const pct = taskProgress;
                 const barColor = pct >= 75 ? '#10b981' : pct >= 40 ? '#3b82f6' : '#f59e0b';
                 const initials = m.member.split(' ').map(w => w[0]).join('').toUpperCase().slice(0, 2);
                 return `
@@ -589,7 +920,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div style="background:rgba(255,255,255,0.08);border-radius:8px;height:10px;overflow:hidden;">
                         <div style="height:100%;width:${pct}%;background:${barColor};border-radius:8px;transition:width 0.8s ease;"></div>
                     </div>
-                    ${m.is_bottleneck ? `<div style="margin-top:0.6rem;color:#f59e0b;font-size:0.78rem;"><i class="fa-solid fa-triangle-exclamation"></i> Bottleneck detected — behind schedule</div>` : ''}
+                    ${assignedMember.taskEntry.schedule_reason ? `<div style="margin-top:0.6rem;color:#f59e0b;font-size:0.78rem;"><i class="fa-solid fa-triangle-exclamation"></i> ${assignedMember.taskEntry.schedule_reason}</div>` : ''}
                 </div>`;
             })() : `<div style="color:var(--text-muted);font-size:0.85rem;padding:1rem;background:rgba(255,255,255,0.04);border-radius:8px;">
                 <i class="fa-solid fa-user-slash"></i> No member assigned to this task yet.<br>
@@ -643,43 +974,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="tp-stat-box"><span class="tp-stat-label">End Date</span><span class="tp-stat-val" style="font-size:0.82rem;">${task.end_date}</span></div>
                 </div>
 
-                <!-- SHAP Explainability Panel -->
-                ${(task.shap_factors && task.shap_factors.length > 0) ? `
-                <div style="margin-bottom:1.25rem;background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.25);border-radius:12px;padding:1rem;">
-                    <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#818cf8;margin-bottom:0.75rem;">
-                        <i class="fa-solid fa-brain"></i> AI Risk Explanation (SHAP)
-                    </div>
-                    <div style="font-size:0.78rem;color:var(--text-muted);margin-bottom:0.75rem;">
-                        Top factors driving the <strong style="color:${riskColor};">${task.delay_risk_pct}% risk score</strong>:
-                    </div>
-                    ${task.shap_factors.map((f, idx) => {
-                        const absVal = Math.abs(f.shap_value);
-                        const maxVal = Math.abs(task.shap_factors[0].shap_value) || 1;
-                        const barPct = Math.round((absVal / maxVal) * 100);
-                        const barColor = f.shap_value > 0 ? '#ef4444' : '#10b981';
-                        const icon = f.shap_value > 0 ? '▲' : '▼';
-                        return `
-                        <div style="margin-bottom:0.6rem;">
-                            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.25rem;">
-                                <span style="font-size:0.8rem;font-weight:600;color:#e2e8f0;">${icon} ${f.label}</span>
-                                <span style="font-size:0.72rem;color:${barColor};font-weight:700;">${f.shap_value > 0 ? '+' : ''}${f.shap_value.toFixed(3)}</span>
-                            </div>
-                            <div style="background:rgba(255,255,255,0.06);border-radius:4px;height:6px;overflow:hidden;">
-                                <div style="height:100%;width:${barPct}%;background:${barColor};border-radius:4px;transition:width 0.6s ease;"></div>
-                            </div>
-                        </div>`;
-                    }).join('')}
-                    <div style="margin-top:0.75rem;font-size:0.72rem;color:var(--text-muted);border-top:1px solid rgba(255,255,255,0.08);padding-top:0.6rem;">
-                        <i class="fa-solid fa-circle-info"></i> Red bars raise risk · Green bars lower risk · Values are SHAP attributions
-                    </div>
-                </div>` : ''}
-
-
                 <!-- Assigned Member -->
                 <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);margin-bottom:0.6rem;">
                     <i class="fa-solid fa-user-check"></i> Assigned Member
                 </div>
                 ${assignedHtml}
+
+                ${submissionEvidenceHtml(evidence)}
 
                 <!-- Project Progress -->
                 <div style="margin-top:1.25rem;padding:0.75rem;background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.2);border-radius:8px;">
@@ -699,110 +1000,9 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error(err);
         }
     }
+    window.openTaskProgressPopup = openTaskProgressPopup;
 
-    // ============================================================
-    // SECTION 6: NOVELTY 10 — MONTE CARLO WHAT-IF SIMULATOR ⭐
-    // ─────────────────────────────────────────────────────────────
-    // API: POST /api/simulate
-    // Payload: { intervention_type: 'ADD_DEVELOPER' | 'EXTEND_SPRINT',
-    //            intervention_value: 1.0 }
-    // Backend: runs 1,000 Monte Carlo simulations with Gaussian
-    //          noise (sigma=10%) and returns:
-    //   - simulated_runs: 1000
-    //   - mean_new_duration_days: average completion time
-    //   - probability_on_time: % of runs that finished in time
-    // ============================================================
-    const btnSimulate = document.getElementById('btnSimulate');
-    if (btnSimulate) {
-        btnSimulate.addEventListener('click', async () => {
-            const intervention = document.getElementById('simIntervention').value;
-            const resContainer = document.getElementById('simResults');
-            btnSimulate.textContent = "Simulating...";
-            btnSimulate.disabled = true;
-
-            try {
-                const response = await fetch('/api/simulate', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ intervention_type: intervention, intervention_value: 1.0 })
-                });
-                
-                if (!response.ok) throw new Error("Need an active schedule first!");
-                const data = await response.json();
-                
-                document.getElementById('simRuns').textContent = data.simulated_runs;
-                document.getElementById('simDuration').textContent = data.mean_new_duration_days.toFixed(1);
-                document.getElementById('simProb').textContent = data.probability_on_time.toFixed(1) + "%";
-                
-                resContainer.classList.remove('hidden');
-            } catch (err) {
-                alert(err.message);
-            } finally {
-                btnSimulate.textContent = "Run Monte Carlo";
-                btnSimulate.disabled = false;
-            }
-        });
-    }
-
-    // ============================================================
-    // SECTION 7: NOVELTY 8 — PARETO-OPTIMAL SCHEDULE (NSGA-II) ⭐
-    // ─────────────────────────────────────────────────────────────
-    // API: POST /api/schedule/pareto
-    // Backend: runs NSGA-II genetic algorithm (pop_size=20, n_gen=10)
-    //          optimising 3 objectives simultaneously:
-    //   1. Duration  — minimise total project days
-    //   2. Burnout   — minimise variance in effort across tasks
-    //   3. Milestone Visibility — maximise early task weight
-    // Returns top 3 Pareto-front solutions (trade-off options)
-    // for the project manager to choose from.
-    // ============================================================
-    const btnPareto = document.getElementById('btnPareto');
-    if (btnPareto) {
-        btnPareto.addEventListener('click', async () => {
-            const resContainer = document.getElementById('paretoResults');
-            const tableBody = document.getElementById('paretoTableBody');
-            btnPareto.textContent = "Running NSGA-II...";
-            btnPareto.disabled = true;
-
-            try {
-                const response = await fetch('/api/schedule/pareto', { method: 'POST' });
-                const data = await response.json();
-                
-                tableBody.innerHTML = "";
-                data.pareto_fronts.forEach(opt => {
-                    tableBody.innerHTML += `
-                        <tr>
-                            <td><strong>Option ${opt.option_id}</strong></td>
-                            <td>${opt.duration_days} d</td>
-                            <td>${opt.burnout_variance_score}</td>
-                            <td>${opt.milestone_visibility_score}</td>
-                        </tr>
-                    `;
-                });
-                resContainer.classList.remove('hidden');
-            } catch (err) {
-                alert("Failed to generate Pareto schedules.");
-            } finally {
-                btnPareto.textContent = "Generate NSGA-II Trade-offs";
-                btnPareto.disabled = false;
-            }
-        });
-    }
-
-    // Delegate submit doc button clicks inside gantt
-    ganttContainer.addEventListener('click', (e) => {
-        const btn = e.target.closest('.task-submit-btn');
-        if (!btn) return;
-        currentSubmitTaskId = parseInt(btn.dataset.taskid);
-        document.getElementById('submitModalTaskName').textContent = `Task: ${btn.dataset.taskname}`;
-        document.getElementById('submitResult').classList.add('hidden');
-        document.getElementById('milestoneFile').value = '';
-        document.getElementById('submitModal').classList.remove('hidden');
-    });
 });
-
-// --- State for submit modal ---
-let currentSubmitTaskId = null;
 
 // ============================================================
 // SECTION 8: GITHUB INTEGRATION
@@ -812,18 +1012,18 @@ let currentSubmitTaskId = null;
 //   POST /api/github/register — saves repo URL so backend can
 //                               receive webhook push events
 // Once registered, GitHub sends commit data to:
-//   POST /api/webhooks/github  (NOVELTY 9 — Sentiment Analysis)
+//   POST /api/webhooks/github
 // The webhook handler reads commit messages, runs DistilBERT
 // sentiment, and auto-updates the matching task status.
 // ============================================================
-document.getElementById('btnGithubConnect').addEventListener('click', async () => {
+const _btnGH = document.getElementById('btnGithubConnect'); if (_btnGH) _btnGH.addEventListener('click', async () => {
     const modal = document.getElementById('githubModal');
     const banner = document.getElementById('githubStatusBanner');
     modal.classList.remove('hidden');
     banner.classList.add('hidden');
     // Check if already connected
     try {
-        const res = await fetch('/api/github/status');
+        const res = await fetch(`/api/github/status?${activeProjectQuery()}`);
         const data = await res.json();
         if (data.connected) {
             banner.textContent = `✅ Connected to: ${data.repo_url}`;
@@ -832,10 +1032,8 @@ document.getElementById('btnGithubConnect').addEventListener('click', async () =
         }
     } catch(e) {}
 });
-document.getElementById('closeGithubModal').addEventListener('click', () => {
-    document.getElementById('githubModal').classList.add('hidden');
-});
-document.getElementById('btnRegisterGithub').addEventListener('click', async () => {
+const _closeGH = document.getElementById('closeGithubModal'); if (_closeGH) _closeGH.addEventListener('click', () => { const m = document.getElementById('githubModal'); if(m) m.classList.add('hidden'); });
+const _btnReg = document.getElementById('btnRegisterGithub'); if (_btnReg) _btnReg.addEventListener('click', async () => {
     const url = document.getElementById('githubRepoUrl').value.trim();
     if (!url) return;
     const btn = document.getElementById('btnRegisterGithub');
@@ -844,15 +1042,21 @@ document.getElementById('btnRegisterGithub').addEventListener('click', async () 
         const res = await fetch('/api/github/register', {
             method: 'POST',
             headers: {'Content-Type':'application/json'},
-            body: JSON.stringify({repo_url: url})
+            body: JSON.stringify({project_id: activeProjectId(), repo_url: url})
         });
         const data = await res.json();
+        if (!res.ok) throw new Error(data.detail || 'Repository registration failed.');
         document.getElementById('webhookUrl').textContent = window.location.origin + '/api/webhooks/github';
         document.getElementById('webhookInstructions').classList.remove('hidden');
         const banner = document.getElementById('githubStatusBanner');
+        setTimeout(() => {
+            banner.textContent = data.webhook_secret_configured
+                ? 'Repository registered. Add the signed webhook using the instructions below.'
+                : 'Repository registered, but IPMS_GITHUB_WEBHOOK_SECRET must be configured before events are accepted.';
+        }, 0);
         banner.textContent = '✅ Repository registered! Follow the instructions below to activate webhook.';
         banner.classList.remove('hidden');
-    } catch(e) { alert('Failed to register.'); }
+    } catch(e) { alert(e.message || 'Failed to register.'); }
     btn.textContent = 'Connect';
 });
 
@@ -867,7 +1071,7 @@ document.getElementById('btnRegisterGithub').addEventListener('click', async () 
 // ============================================================
 async function loadNotifications() {
     try {
-        const res = await fetch('/api/notifications');
+        const res = await fetch(`/api/notifications?${activeProjectQuery()}`);
         const data = await res.json();
         const badge = document.getElementById('notifBadge');
         const list = document.getElementById('notifList');
@@ -894,7 +1098,7 @@ document.getElementById('notifBell').addEventListener('click', () => {
     document.getElementById('notifPanel').classList.toggle('hidden');
 });
 document.getElementById('btnMarkRead').addEventListener('click', async () => {
-    await fetch('/api/notifications/read', {method:'POST'});
+    await fetch(`/api/notifications/read?${activeProjectQuery()}`, {method:'POST'});
     loadNotifications();
     document.getElementById('notifPanel').classList.add('hidden');
 });
@@ -908,40 +1112,51 @@ document.getElementById('btnMarkRead').addEventListener('click', async () => {
 // The backend checks the task's requires_document flag and
 // stores the file reference in the database.
 // ============================================================
+/* Submission UI moved to the standalone student portal.
 document.getElementById('closeSubmitModal').addEventListener('click', () => {
     document.getElementById('submitModal').classList.add('hidden');
 });
 document.getElementById('btnSubmitMilestone').addEventListener('click', async () => {
     const fileInput = document.getElementById('milestoneFile');
     if (!fileInput.files[0]) { alert('Please select a file first.'); return; }
+    const studentId = document.getElementById('milestoneStudentId').value.trim();
+    if (!studentId) { alert('Enter the student ID for this test submission.'); return; }
+    if (!activeProjectId()) { alert('A Group ID is required.'); return; }
     const btn = document.getElementById('btnSubmitMilestone');
     btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Uploading...';
     btn.disabled = true;
     const formData = new FormData();
     formData.append('file', fileInput.files[0]);
     formData.append('task_id', currentSubmitTaskId);
+    formData.append('project_id', activeProjectId());
+    formData.append('student_id', studentId);
     try {
-        const res = await fetch('/api/milestone/submit', {method:'POST', body: formData});
+        const res = await fetch('/api/progress/test-submissions', {method:'POST', body: formData});
         const data = await res.json();
+        if (!res.ok) throw new Error(data.detail || 'Test submission failed.');
         const result = document.getElementById('submitResult');
         result.textContent = `✅ ${data.message} — File: ${data.filename}`;
         result.classList.remove('hidden');
         loadNotifications();
+        loadReviewQueue();
         setTimeout(() => {
             document.getElementById('submitModal').classList.add('hidden');
         }, 2000);
-    } catch(e) { alert('Upload failed. Please try again.'); }
-    btn.innerHTML = '<i class="fa-solid fa-upload"></i> Upload & Mark Complete';
+    } catch(e) { alert(e.message || 'Upload failed. Please try again.'); }
+    btn.innerHTML = '<i class="fa-solid fa-flask"></i> Create Test Submission';
     btn.disabled = false;
 });
 
+*/
 // Close modals on overlay click
 document.getElementById('githubModal').addEventListener('click', (e) => {
     if (e.target === document.getElementById('githubModal')) document.getElementById('githubModal').classList.add('hidden');
 });
+/* Standalone student portal owns document submission.
 document.getElementById('submitModal').addEventListener('click', (e) => {
     if (e.target === document.getElementById('submitModal')) document.getElementById('submitModal').classList.add('hidden');
 });
+*/
 
 // Task Progress Modal — close on X button or overlay click
 const taskProgressModal = document.getElementById('taskProgressModal');
@@ -959,15 +1174,13 @@ if (taskProgressModal) {
 }
 
 // ============================================================
-// NOVELTY 12: Individual WBS Progress Tracker JavaScript
+// Individual WBS Progress Tracker JavaScript
 // ============================================================
 
-// Stores real names returned by the backend (extracted from PDF)
-let currentTeamMembers = [];
-let currentSchedule = [];
+// (declarations moved to top)
 
 // ============================================================
-// SECTION 11: NOVELTY 12 — INDIVIDUAL PROGRESS TRACKER INIT ⭐
+// SECTION 11: INDIVIDUAL PROGRESS TRACKER INIT
 // ─────────────────────────────────────────────────────────────
 // Called right after schedule generation with the returned
 // task list and team member IT numbers.
@@ -975,13 +1188,14 @@ let currentSchedule = [];
 //   • The member name input chips (IT numbers displayed as pills)
 //   • The task assignment table (renderAssignmentTable)
 //   • The progress cards panel (loadProgressCards)
-// All changes persist to SQLite via the /api/progress/* endpoints.
+// All changes persist to PostgreSQL via the /api/progress/* endpoints.
 // ============================================================
 async function initProgressTracker(schedule, teamSize, teamMembers) {
     currentSchedule = schedule;
+    loadReviewQueue();
 
-    // Reset old assignments on the backend when a new schedule is generated
-    await fetch('/api/progress/reset', { method: 'DELETE' });
+    // The generated schedule is intentionally unassigned. The workload balance
+    // action below is the only step that creates authoritative member owners.
 
     // A name is a "placeholder" only if it matches "Member N" pattern.
     // IT numbers (IT22117014) and any other real strings are treated as valid.
@@ -990,6 +1204,9 @@ async function initProgressTracker(schedule, teamSize, teamMembers) {
 
     if (!isPlaceholder) {
         currentTeamMembers = teamMembers.slice(0, teamSize);
+    } else if (window._pdfExtractedITNumbers && window._pdfExtractedITNumbers.length > 0) {
+        // Use IT numbers extracted from PDF upload if available
+        currentTeamMembers = window._pdfExtractedITNumbers.slice(0, teamSize);
     } else {
         currentTeamMembers = Array.from({ length: teamSize }, (_, i) => `Member ${i + 1}`);
     }
@@ -1160,7 +1377,8 @@ function createMultiSelect(taskId, taskName, effort, memberNames, initialValue) 
                     task_id: parseInt(taskId),
                     task_name: taskName,
                     assigned_to: assignedTo,
-                    effort_hours: parseFloat(effort)
+                    effort_hours: parseFloat(effort),
+                    project_id: activeProjectId()
                 })
             });
             loadProgressCards();
@@ -1193,7 +1411,7 @@ document.addEventListener('click', () => {
 // Each row also has a "Mark Done" button:
 //   → API: POST /api/progress/task-complete
 //     Updates task status to COMPLETED in task_assignments
-//     and schedule_versions tables (SQLite).
+//     and the PostgreSQL schedule_versions table.
 // ============================================================
 function renderAssignmentTable(schedule, memberNames) {
     const container = document.getElementById('assignmentTable');
@@ -1224,7 +1442,7 @@ function renderAssignmentTable(schedule, memberNames) {
 
         // Multi-select
         const multiSelect = createMultiSelect(
-            task.task_id, task.task_name, task.effort_hours, memberNames, ''
+            task.task_id, task.task_name, task.effort_hours, memberNames, task.assigned_to || ''
         );
 
         const effortSpan = document.createElement('span');
@@ -1248,7 +1466,10 @@ function renderAssignmentTable(schedule, memberNames) {
                     await fetch('/api/progress/task-complete', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ task_id: parseInt(task.task_id) })
+                        body: JSON.stringify({
+                            task_id: parseInt(task.task_id),
+                            project_id: activeProjectId()
+                        })
                     });
                     row.classList.add('is-completed');
                     btn.outerHTML = `<span class="completed-badge"><i class="fa-solid fa-check"></i> Done</span>`;
@@ -1275,7 +1496,7 @@ function renderAssignmentTable(schedule, memberNames) {
 // Auto-Balance Workload Button Handler
 // ============================================================
 // ============================================================
-// SECTION 14: NOVELTY 12 — AUTO-ASSIGN (LPT Algorithm) ⭐
+// SECTION 14: AUTO-ASSIGN (LPT Algorithm)
 // ─────────────────────────────────────────────────────────────
 // API: POST /api/progress/auto-assign
 // Payload: { team_members: [...IT numbers], tasks: [...] }
@@ -1291,8 +1512,32 @@ function renderAssignmentTable(schedule, memberNames) {
 const btnAutoAssign = document.getElementById('btnAutoAssign');
 if (btnAutoAssign) {
     btnAutoAssign.addEventListener('click', async () => {
-        if (!currentSchedule.length || !currentTeamMembers.length) {
+        if (!currentSchedule.length) {
             alert('Please generate a schedule first.');
+            return;
+        }
+
+        // History may contain legacy unassigned versions without a saved roster.
+        // Never balance those against a fabricated "Member 1" placeholder.
+        const namesInput = document.getElementById('teamNamesInput');
+        if (namesInput && namesInput.value.trim()) {
+            const parsed = namesInput.value.split(',').map(n => n.trim()).filter(n => n.length > 1);
+            if (parsed.length > 0) {
+                currentTeamMembers = parsed;
+                // Update chips display
+                const namesDisplay = document.getElementById('teamNamesDisplay');
+                if (namesDisplay) {
+                    namesDisplay.innerHTML = currentTeamMembers.map(name => {
+                        const isIT = /^IT\d{8}$/.test(name);
+                        return `<span style="display:inline-block;background:${isIT?'rgba(139,92,246,0.15)':'rgba(59,130,246,0.15)'};border:1px solid ${isIT?'rgba(139,92,246,0.4)':'rgba(59,130,246,0.3)'};border-radius:20px;padding:3px 12px;margin:2px;font-size:0.82rem;font-family:${isIT?'monospace':'inherit'};color:${isIT?'#c4b5fd':'#93c5fd'};">${escapeIpmsHtml(name)}</span>`;
+                    }).join('');
+                }
+                renderAssignmentTable(currentSchedule, currentTeamMembers);
+            }
+        }
+
+        if (!currentTeamMembers.length || currentTeamMembers.some(n => /^Member\s*\d+$/i.test(n))) {
+            alert('Enter the actual team member IDs before balancing this schedule.');
             return;
         }
 
@@ -1312,12 +1557,26 @@ if (btnAutoAssign) {
                 body: JSON.stringify({
                     team_members: currentTeamMembers,
                     tasks: tasks,
-                    proposal_text: document.getElementById('proposalText')?.value || '',
-                    project_id: window._currentProjectId || 'demo_project_01'
+                    proposal_text: document.getElementById('description')?.value || '',
+                    project_id: activeProjectId()
                 })
             });
 
             const data = await res.json();
+
+            if (!res.ok) {
+                throw new Error(data.detail || 'Workload balancing failed.');
+            }
+
+            // The backend returns the persisted, ownership-normalized Gantt
+            // snapshot. Use it immediately so fresh and historical views match.
+            if (Array.isArray(data.schedule) && data.schedule.length > 0) {
+                currentSchedule = data.schedule;
+                const displayedDays = Number(document.getElementById('kpiDays')?.textContent) || 1;
+                if (typeof window.renderGantt === 'function') {
+                    window.renderGantt(currentSchedule, displayedDays);
+                }
+            }
 
             // Update all multi-selects to reflect auto-assigned values
             data.assignments.forEach(a => {
@@ -1352,7 +1611,7 @@ if (btnAutoAssign) {
                                 background:rgba(139,92,246,0.1);border:1px solid rgba(139,92,246,0.3);
                                 border-radius:8px;font-size:0.74rem;color:#ddd6fe;line-height:1.6;
                             `;
-                            tip.innerHTML = `<i class="fa-solid fa-robot" style="color:#a78bfa;margin-right:6px;"></i><strong>Algorithm Decision:</strong><br>${a.assign_reason.replace(/\|/g, '<br>→')}`;
+                            tip.innerHTML = `<i class="fa-solid fa-robot" style="color:#a78bfa;margin-right:6px;"></i><strong>Algorithm Decision:</strong><br>${escapeIpmsHtml(a.assign_reason).replace(/\|/g, '<br>→')}`;
                             row.after(tip);
                         });
                         // Insert before the effort span (4th child)
@@ -1377,7 +1636,7 @@ if (btnAutoAssign) {
 
         } catch (err) {
             console.error('Auto-assign failed:', err);
-            alert('Auto-assign failed. Make sure a schedule is generated first.');
+            alert(err.message || 'Auto-assign failed. Make sure a schedule is generated first.');
         } finally {
             btnAutoAssign.disabled = false;
             btnAutoAssign.innerHTML = '<i class="fa-solid fa-wand-magic-sparkles"></i> Auto-Balance Workload';
@@ -1449,7 +1708,7 @@ if (btnApplyNames) {
 // ============================================================
 async function loadProgressCards() {
     try {
-        const res = await fetch('/api/progress/individual');
+        const res = await fetch(`/api/progress/individual?${activeProjectQuery()}`);
         const data = await res.json();
         renderProgressRing(data.project_progress_pct);
         renderMemberCards(data);
@@ -1487,7 +1746,7 @@ function renderMemberCards(data) {
         const pctClass = pct >= 75 ? 'done' : pct >= 40 ? 'warning' : 'danger';
         const initials = member.member.split(' ').map(w => w[0]).join('').toUpperCase().slice(0, 2);
         const bottleneckHtml = member.is_bottleneck
-            ? `<div class="bottleneck-alert"><i class="fa-solid fa-triangle-exclamation"></i> Bottleneck detected — behind schedule</div>`
+            ? `<div class="bottleneck-alert"><i class="fa-solid fa-triangle-exclamation"></i> ${member.bottleneck_reason || 'One or more tasks are behind their planned pace'}</div>`
             : '';
 
         return `
@@ -1513,10 +1772,13 @@ function renderMemberCards(data) {
 }
 
 // Refresh button
-document.getElementById('btnRefreshProgress').addEventListener('click', loadProgressCards);
+const _btnRef = document.getElementById('btnRefreshProgress'); if (_btnRef) _btnRef.addEventListener('click', loadProgressCards);
 
 // On page load, try to load existing progress (persisted in DB)
 loadProgressCards();
+loadReviewQueue();
+const _btnReviewRefresh = document.getElementById('btnRefreshReviewQueue');
+if (_btnReviewRefresh) _btnReviewRefresh.addEventListener('click', loadReviewQueue);
 
 
 // ============================================================
@@ -1550,6 +1812,7 @@ function renderComponentTaskBoard(componentSummary, memberComponents) {
         const progressPct = totalTasks > 0 ? Math.round((doneTasks / totalTasks) * 100) : 0;
 
         const card = document.createElement('div');
+        card.className = 'component-task-card';
         card.style.cssText = `border:1px solid ${color.border};border-radius:14px;background:${color.bg};margin-bottom:1rem;overflow:hidden;`;
 
         const headerDiv = document.createElement('div');
@@ -1560,7 +1823,7 @@ function renderComponentTaskBoard(componentSummary, memberComponents) {
         leftInfo.innerHTML = `
             <i class="fa-solid ${icon}" style="color:${color.accent};font-size:1rem;"></i>
             <div>
-                <div style="font-weight:700;font-size:0.92rem;color:#e2e8f0;">
+                <div class="component-task-title" style="font-weight:700;font-size:0.92rem;color:#e2e8f0;">
                     ${isShared ? '\u{1F91D} Shared Tasks \u2014 All Members' : '\u{1F4E6} ' + comp.component_name}
                 </div>
                 ${!isShared ? `<div style="font-size:0.76rem;color:${color.accent};margin-top:2px;">Owner: ${comp.member}</div>` : ''}
@@ -1570,7 +1833,7 @@ function renderComponentTaskBoard(componentSummary, memberComponents) {
         rightInfo.style.cssText = 'display:flex;align-items:center;gap:1rem;';
         rightInfo.innerHTML = `
             <span style="font-size:0.76rem;color:var(--text-muted);">${totalTasks} tasks &bull; ${comp.total_effort}h</span>
-            <div style="width:80px;height:6px;background:rgba(255,255,255,0.1);border-radius:3px;overflow:hidden;">
+            <div class="component-progress-track" style="width:80px;height:6px;background:rgba(255,255,255,0.1);border-radius:3px;overflow:hidden;">
                 <div style="width:${progressPct}%;height:100%;background:${color.accent};border-radius:3px;"></div>
             </div>
             <span style="font-size:0.78rem;font-weight:600;color:${color.accent};">${progressPct}%</span>
@@ -1590,6 +1853,7 @@ function renderComponentTaskBoard(componentSummary, memberComponents) {
         comp.tasks.forEach((task, ti) => {
             const isDone = task.status === 'COMPLETED';
             const taskRow = document.createElement('div');
+            taskRow.className = 'component-task-row';
             taskRow.id = `comp-row-${task.task_id}-${idx}`;
             taskRow.style.cssText = `display:grid;grid-template-columns:2rem 1fr 7rem 5rem 5rem;padding:0.5rem 1.2rem;align-items:center;font-size:0.83rem;border-top:1px solid rgba(255,255,255,0.05);background:${isDone ? 'rgba(16,185,129,0.06)' : 'transparent'};opacity:${isDone ? '0.7' : '1'};`;
 
@@ -1598,8 +1862,8 @@ function renderComponentTaskBoard(componentSummary, memberComponents) {
 
             taskRow.innerHTML = `
                 <span style="color:var(--text-muted);">${ti + 1}</span>
-                <span style="font-weight:500;color:${isDone ? '#6b7280' : '#e2e8f0'};text-decoration:${isDone ? 'line-through' : 'none'};" title="${task.task_name}">${task.task_name}</span>
-                <span style="font-size:0.74rem;color:${color.accent};background:${color.bg};border:1px solid ${color.border};border-radius:10px;padding:1px 8px;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="${assigneeTxt}">${shortAssignee}</span>
+                <span class="component-task-name${isDone ? ' completed' : ''}" style="font-weight:500;color:${isDone ? '#6b7280' : '#e2e8f0'};text-decoration:${isDone ? 'line-through' : 'none'};" title="${task.task_name}">${task.task_name}</span>
+                <span class="component-owner" style="font-size:0.74rem;color:${color.accent};background:${color.bg};border:1px solid ${color.border};border-radius:10px;padding:1px 8px;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="${assigneeTxt}">${shortAssignee}</span>
                 <span style="text-align:right;color:var(--text-muted);font-size:0.8rem;">${task.effort_hours}h</span>
                 <span style="text-align:center;" class="status-cell-${task.task_id}"></span>`;
 
@@ -1672,6 +1936,11 @@ function renderWorkloadBalancePanel(data) {
     const meanHours     = data.mean_effort_hours ?? 0;
     const maxDev        = data.max_deviation_hours ?? 0;
     const label         = data.balance_label || 'N/A';
+    const cvLabel       = data.cv_balance_label || label;
+    const overload      = data.overload_detected === true;
+    const loadRatio     = data.max_to_min_ratio;
+    const ratioLimit    = data.overload_threshold_ratio ?? 1.40;
+    const rebalanceMoves = data.final_rebalance_moves || [];
     const collabCount   = data.collaborative_count || 0;
     const indivCount    = data.individual_count    || 0;
     const method        = data.fairness_method     || '';
@@ -1684,6 +1953,7 @@ function renderWorkloadBalancePanel(data) {
         GOOD      : { bg: 'rgba(59,130,246,0.2)',   border: 'rgba(59,130,246,0.5)',  text: '#93c5fd' },
         FAIR      : { bg: 'rgba(245,158,11,0.2)',   border: 'rgba(245,158,11,0.5)',  text: '#fcd34d' },
         POOR      : { bg: 'rgba(239,68,68,0.2)',    border: 'rgba(239,68,68,0.5)',   text: '#fca5a5' },
+        OVERLOADED: { bg: 'rgba(239,68,68,0.25)',   border: 'rgba(239,68,68,0.75)',  text: '#fecaca' },
     };
     const lc = labelColors[label] || labelColors.GOOD;
 
@@ -1701,9 +1971,9 @@ function renderWorkloadBalancePanel(data) {
 
         return `
         <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.55rem;">
-            <div style="width:110px;min-width:110px;font-size:0.76rem;color:#cbd5e1;text-align:right;
+            <div class="wb-member-name" style="width:110px;min-width:110px;font-size:0.76rem;color:#cbd5e1;text-align:right;
                         font-family:monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"
-                 title="${w.member}">${shortName}</div>
+                 title="${escapeIpmsHtml(w.member)}">${escapeIpmsHtml(shortName)}</div>
             <div style="flex:1;position:relative;height:26px;">
                 <div class="wb-bar-bg" style="width:100%;height:100%;background:rgba(255,255,255,0.05);border-radius:6px;overflow:hidden;">
                     <div class="wb-bar-fill" data-target="${pct}"
@@ -1718,7 +1988,7 @@ function renderWorkloadBalancePanel(data) {
                      title="Team average: ${meanHours}h"></div>
             </div>
             <div style="width:80px;min-width:80px;font-size:0.76rem;display:flex;gap:4px;align-items:center;">
-                <span style="color:#f8fafc;font-weight:700;">${w.total_effort_hours}h</span>
+                <span class="wb-hours" style="color:#f8fafc;font-weight:700;">${w.total_effort_hours}h</span>
                 <span style="color:${diffColor};font-size:0.68rem;">(${diffSign})</span>
             </div>
         </div>`;
@@ -1726,7 +1996,7 @@ function renderWorkloadBalancePanel(data) {
 
     panel.style.display = 'block';
     panel.innerHTML = `
-    <div style="background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.2);border-radius:12px;padding:1.25rem;">
+    <div class="workload-result-card" style="background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.2);border-radius:12px;padding:1.25rem;">
 
         <!-- Header row -->
         <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;margin-bottom:1rem;">
@@ -1734,13 +2004,13 @@ function renderWorkloadBalancePanel(data) {
                 <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);margin-bottom:0.25rem;">
                     <i class="fa-solid fa-scale-balanced"></i> Workload Distribution Result
                 </div>
-                <div style="font-size:0.78rem;color:#94a3b8;">
+                <div class="wb-summary" style="font-size:0.78rem;color:#94a3b8;">
                     📋 ${collabCount} collaborative tasks → All Members &nbsp;|&nbsp;
-                    👤 ${indivCount} individual tasks → RF + LPT assigned
+                    👤 ${indivCount} individual tasks → ${escapeIpmsHtml(data.assign_method || 'LPT')} assigned
                 </div>
             </div>
             <!-- Balance Score Badge -->
-            <div style="text-align:center;padding:0.6rem 1.2rem;
+            <div class="wb-score-badge balance-${String(label).toLowerCase()}" style="text-align:center;padding:0.6rem 1.2rem;
                         background:${lc.bg};border:2px solid ${lc.border};border-radius:10px;">
                 <div style="font-size:1.6rem;font-weight:800;color:${lc.text};line-height:1;">${balanceScore ?? '—'}%</div>
                 <div style="font-size:0.65rem;font-weight:700;color:${lc.text};text-transform:uppercase;letter-spacing:0.08em;">Balance Score</div>
@@ -1763,6 +2033,11 @@ function renderWorkloadBalancePanel(data) {
                 <span style="color:var(--text-muted);">Max deviation: </span>
                 <span style="color:#fca5a5;font-weight:700;">+${maxDev}h</span>
             </div>
+            <div style="background:rgba(0,0,0,0.2);border-radius:8px;padding:0.5rem 0.85rem;font-size:0.75rem;">
+                <span style="color:var(--text-muted);">Max/min ratio: </span>
+                <span style="color:${overload ? '#fca5a5' : '#86efac'};font-weight:700;">${loadRatio == null ? '∞' : Number(loadRatio).toFixed(2)}×</span>
+                <span style="color:var(--text-muted);font-size:0.68rem;"> (limit ${Number(ratioLimit).toFixed(2)}×)</span>
+            </div>
         </div>
 
         <!-- Legend -->
@@ -1775,11 +2050,16 @@ function renderWorkloadBalancePanel(data) {
         <div id="workloadBars">${barsHtml}</div>
 
         <!-- Fairness method note -->
-        <div style="margin-top:0.85rem;font-size:0.7rem;color:#475569;border-top:1px solid rgba(255,255,255,0.06);padding-top:0.6rem;">
+        <div class="wb-method-note" style="margin-top:0.85rem;font-size:0.7rem;color:#475569;border-top:1px solid rgba(255,255,255,0.06);padding-top:0.6rem;">
             <i class="fa-solid fa-circle-nodes" style="margin-right:4px;"></i>
             <strong>Method:</strong> ${method} &nbsp;|&nbsp;
             <i class="fa-solid fa-triangle-exclamation" style="color:#fbbf24;margin-right:2px;"></i>
-            <strong>Overload Guard:</strong> W_best &gt; W_min × 1.40 → reassign to least-loaded member
+            <strong>Final Guard:</strong>
+            ${overload
+                ? `FAILED — no whole-task move can currently bring max/min within ${Number(ratioLimit).toFixed(2)}×.`
+                : `PASSED — max/min is within ${Number(ratioLimit).toFixed(2)}×.`}
+            ${rebalanceMoves.length ? ` Reassigned ${rebalanceMoves.length} task${rebalanceMoves.length === 1 ? '' : 's'}.` : ''}
+            <br><span style="color:#64748b;">CV-only rating: ${cvLabel}. The ${balanceScore ?? '—'}% score is 100 − CV; overload is validated separately.</span>
         </div>
     </div>`;
 
@@ -1795,3 +2075,165 @@ function renderWorkloadBalancePanel(data) {
     // Scroll to the balance panel
     panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
+
+// ============================================================
+// HISTORY MODAL LOGIC
+// ============================================================
+document.addEventListener("DOMContentLoaded", () => {
+    const btnViewHistory = document.getElementById('btnViewHistory');
+    const historyModal = document.getElementById('historyModal');
+    const closeHistoryModal = document.getElementById('closeHistoryModal');
+    const historyList = document.getElementById('historyList');
+
+    if (btnViewHistory && historyModal && closeHistoryModal) {
+        const closeHistory = () => {
+            historyModal.classList.add('hidden');
+        };
+
+        btnViewHistory.addEventListener('click', async () => {
+            historyModal.classList.remove('hidden');
+            historyList.innerHTML = '<p style="color: var(--text-muted); font-size: 0.85rem;">Loading history...</p>';
+
+            try {
+                const searchVal = document.getElementById('historySearch') ? document.getElementById('historySearch').value.trim() : '';
+                const response = await fetch(`/api/schedule/history${searchVal ? '?group_id='+encodeURIComponent(searchVal) : ''}`);
+                if (!response.ok) {
+                    throw new Error(`History API returned HTTP ${response.status}`);
+                }
+                const data = await response.json();
+                
+                if (data.status === 'success' && data.history.length > 0) {
+                    historyList.innerHTML = '';
+                    data.history.forEach(item => {
+                        const div = document.createElement('div');
+                        div.className = 'schedule-history-item';
+                        div.style.cssText = `
+                            padding: 12px 15px;
+                            background: rgba(59,130,246,0.1);
+                            border: 1px solid rgba(59,130,246,0.3);
+                            border-radius: 8px;
+                            cursor: pointer;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            transition: all 0.2s;
+                        `;
+                        div.onmouseover = () => div.style.background = 'rgba(59,130,246,0.2)';
+                        div.onmouseout = () => div.style.background = 'rgba(59,130,246,0.1)';
+                        
+                        const parsedDate = new Date(item.created_at);
+                        const dateStr = Number.isNaN(parsedDate.getTime()) ? item.created_at : parsedDate.toLocaleString();
+                        const researchTopic = escapeIpmsHtml(item.research_topic || 'Research topic not recorded');
+                        div.innerHTML = `
+                            <div>
+                                <div class="history-version" style="font-weight: bold; color: #93c5fd; font-size: 0.95rem;">Version ${item.version}</div>
+                                <div class="history-group" style=\"font-size: 0.75rem; color: #c4b5fd;\">GroupID: ${item.project_id}</div>
+                                <div class="history-topic" style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 3px; max-width: 360px;">${researchTopic}</div>
+                                <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">${dateStr}</div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div class="history-task-count" style="font-size: 0.8rem; color: #e2e8f0;">${item.total_tasks} Tasks</div>
+                                <div style="font-size: 0.75rem; color: var(--text-muted);">${Math.round(item.total_effort_hours)} hrs</div>
+                            </div>
+                            <div class="history-actions" style="margin-left: 15px; padding-left: 15px; border-left: 1px solid rgba(255,255,255,0.1);">
+                                <button class="icon-btn delete-history-btn" data-id="${item.id}" style="color: #ef4444;" title="Delete Schedule" onclick="event.stopPropagation(); deleteScheduleHistory(${item.id})">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </div>
+                        `;
+
+                        div.addEventListener('click', () => {
+                            // Do not reuse IT numbers from another PDF/group when an
+                            // older History version has no persisted member roster.
+                            window._pdfExtractedITNumbers = [];
+                            // Populate renderResults format
+                            const payload = {
+                                project_id: item.project_id,
+                                research_topic: item.research_topic || '',
+                                total_tasks: item.total_tasks,
+                                total_effort_hours: item.total_effort_hours,
+                                total_duration_days: item.total_duration_days,
+                                schedule: item.schedule,
+                                team_size: item.team_size || item.team_members?.length || 1,
+                                team_members: item.team_members || []
+                            };
+                            
+                            // Re-calculate max duration days if it's 0 (from our patched API)
+                            if (!payload.total_duration_days && payload.schedule.length > 0) {
+                                let minStart = new Date(payload.schedule[0].start_date);
+                                let maxEnd = new Date(payload.schedule[0].end_date);
+                                payload.schedule.forEach(t => {
+                                    const st = new Date(t.start_date);
+                                    const en = new Date(t.end_date);
+                                    if(st < minStart) minStart = st;
+                                    if(en > maxEnd) maxEnd = en;
+                                });
+                                payload.total_duration_days = Math.max(2, Math.round((maxEnd - minStart) / (1000*60*60*24)));
+                            }
+                            
+                            if (typeof window.renderResults === 'function') {
+                                window._currentProjectId = item.project_id;
+                                const groupInput = document.getElementById('groupId');
+                                if (groupInput) groupInput.value = item.project_id;
+                                window.renderResults(payload);
+                                closeHistory();
+                                if (!item.team_members?.length) {
+                                    alert('This older schedule has no saved team IDs. Enter the actual member IDs before Auto-Balance.');
+                                }
+                            } else {
+                                console.error("renderResults is not defined!");
+                            }
+                        });
+                        historyList.appendChild(div);
+                    });
+                } else {
+                    historyList.innerHTML = '<p style="color: var(--text-muted); font-size: 0.85rem;">No schedule history found.</p>';
+                }
+            } catch (err) {
+                historyList.innerHTML = '<p style="color: #ef4444; font-size: 0.85rem;">Failed to load history.</p>';
+                console.error(err);
+            }
+        });
+
+        closeHistoryModal.addEventListener('click', closeHistory);
+        historyModal.addEventListener('click', (event) => {
+            if (event.target === historyModal) closeHistory();
+        });
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && !historyModal.classList.contains('hidden')) {
+                closeHistory();
+            }
+        });
+    }
+});
+
+window.deleteScheduleHistory = async function(id) {
+    if(!confirm("Are you sure you want to delete this schedule version?")) return;
+    try {
+        const res = await fetch(`/api/schedule/history/${id}`, { method: 'DELETE' });
+        if(res.ok) {
+            document.getElementById('btnViewHistory').click(); // refresh
+        } else {
+            alert("Failed to delete.");
+        }
+    } catch(e) {
+        console.error(e);
+    }
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+    const btnSearchHistory = document.getElementById('btnSearchHistory');
+    const historySearch = document.getElementById('historySearch');
+    if (btnSearchHistory) {
+        btnSearchHistory.addEventListener('click', () => {
+            document.getElementById('btnViewHistory').click();
+        });
+    }
+    if (historySearch) {
+        historySearch.addEventListener('keypress', (e) => {
+            if(e.key === 'Enter') document.getElementById('btnViewHistory').click();
+        });
+    }
+});
+
+

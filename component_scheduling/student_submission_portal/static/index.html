@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>IPMS Student Document Submission</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22%232563eb%22/><path d=%22M18 13h21l9 9v29H18z%22 fill=%22white%22/><path d=%22M39 13v10h9M24 31h18M24 38h18M24 45h12%22 fill=%22none%22 stroke=%22%232563eb%22 stroke-width=%223%22/></svg>">
+    <link rel="stylesheet" href="/static/styles.css?v=2">
+</head>
+<body>
+    <main class="shell">
+        <header class="hero">
+            <div class="brand">IPMS</div>
+            <div>
+                <p class="eyebrow">Student evidence portal</p>
+                <h1>Submit task documents</h1>
+                <p class="subtitle">Select one of your assigned document tasks. Submission sends it to the supervisor review queue; it does not mark the task complete.</p>
+            </div>
+            <div id="serviceStatus" class="service-status">Checking service…</div>
+        </header>
+
+        <section class="card identity-card">
+            <div class="field">
+                <label for="projectId">Group ID</label>
+                <input id="projectId" autocomplete="off" placeholder="R26-IT-095" required>
+            </div>
+            <div class="field">
+                <label for="studentId">Student ID</label>
+                <input id="studentId" autocomplete="off" placeholder="IT22114662" required>
+            </div>
+            <button id="loadTasks" class="button secondary" type="button">Load my document tasks</button>
+        </section>
+
+        <form id="submissionForm" class="card form-card" hidden>
+            <div class="field full">
+                <label for="taskId">Document task</label>
+                <select id="taskId" required></select>
+                <div id="taskMeta" class="task-meta"></div>
+            </div>
+            <div class="field full">
+                <label for="documentFile">Document</label>
+                <label class="drop-zone" for="documentFile">
+                    <span class="drop-icon">⇧</span>
+                    <strong id="fileName">Choose a PDF, Word or text document</strong>
+                    <small>Maximum 20 MB</small>
+                </label>
+                <input id="documentFile" type="file" accept=".pdf,.doc,.docx,.txt" required hidden>
+            </div>
+            <button id="submitButton" class="button primary" type="submit">Submit for supervisor review</button>
+        </form>
+
+        <section id="message" class="message" role="status" aria-live="polite" hidden></section>
+    </main>
+    <script src="/static/app.js?v=2"></script>
+</body>
+</html>

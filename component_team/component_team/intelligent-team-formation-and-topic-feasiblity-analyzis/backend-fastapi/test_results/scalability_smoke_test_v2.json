@@ -1,0 +1,92 @@
+{
+  "experiment": "NSGA-II Scalability Smoke Test",
+  "purpose": "Preliminary runtime and solution-size check before the full repeated scalability experiment.",
+  "configuration": {
+    "student_sizes": [
+      20,
+      40,
+      60,
+      100
+    ],
+    "conflict_level": "medium",
+    "dataset_seed": 2026,
+    "optimizer_seed": 42,
+    "population_size": 120,
+    "generations": 150
+  },
+  "total_runtime_seconds": 28.091029099945445,
+  "results": [
+    {
+      "students": 20,
+      "projects": 5,
+      "team_size": 4,
+      "conflict_level": "medium",
+      "dataset_seed": 2026,
+      "optimizer_seed": 42,
+      "population_size": 120,
+      "generations": 150,
+      "evaluations": 16634,
+      "runtime_seconds": 2.1446521999896504,
+      "pareto_point_count": 4,
+      "archive_chromosome_count": 21,
+      "best_technical_deficit": 0.0,
+      "technical_endpoint_preference_dissatisfaction": 0.166666666667,
+      "best_preference_dissatisfaction": 0.066666666667,
+      "preference_endpoint_technical_deficit": 0.4
+    },
+    {
+      "students": 40,
+      "projects": 10,
+      "team_size": 4,
+      "conflict_level": "medium",
+      "dataset_seed": 2026,
+      "optimizer_seed": 42,
+      "population_size": 120,
+      "generations": 150,
+      "evaluations": 16673,
+      "runtime_seconds": 4.7082747999811545,
+      "pareto_point_count": 4,
+      "archive_chromosome_count": 5,
+      "best_technical_deficit": 0.0,
+      "technical_endpoint_preference_dissatisfaction": 0.166666666667,
+      "best_preference_dissatisfaction": 0.133333333333,
+      "preference_endpoint_technical_deficit": 0.2
+    },
+    {
+      "students": 60,
+      "projects": 15,
+      "team_size": 4,
+      "conflict_level": "medium",
+      "dataset_seed": 2026,
+      "optimizer_seed": 42,
+      "population_size": 120,
+      "generations": 150,
+      "evaluations": 16679,
+      "runtime_seconds": 7.117625200015027,
+      "pareto_point_count": 2,
+      "archive_chromosome_count": 2,
+      "best_technical_deficit": 0.066666666667,
+      "technical_endpoint_preference_dissatisfaction": 0.25,
+      "best_preference_dissatisfaction": 0.211111111111,
+      "preference_endpoint_technical_deficit": 0.075
+    },
+    {
+      "students": 100,
+      "projects": 25,
+      "team_size": 4,
+      "conflict_level": "medium",
+      "dataset_seed": 2026,
+      "optimizer_seed": 42,
+      "population_size": 120,
+      "generations": 150,
+      "evaluations": 16705,
+      "runtime_seconds": 14.120476899959613,
+      "pareto_point_count": 12,
+      "archive_chromosome_count": 13,
+      "best_technical_deficit": 0.37,
+      "technical_endpoint_preference_dissatisfaction": 0.803333333333,
+      "best_preference_dissatisfaction": 0.68,
+      "preference_endpoint_technical_deficit": 0.565
+    }
+  ]
+}
