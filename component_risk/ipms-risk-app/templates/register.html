@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPMS Register</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="auth-shell">
+    <div class="panel auth-panel">
+        <p class="eyebrow">Intelligent Project Management System</p>
+        <h1 class="auth-title">Create Account</h1>
+
+        {% if error %}
+        <div class="warning-box error">{{ error }}</div>
+        {% endif %}
+
+        <form action="/register" method="post">
+            <label>
+                <span>Full Name</span>
+                <input type="text" name="full_name" value="{{ form.full_name or '' }}" required autofocus>
+            </label>
+            <label>
+                <span>Email</span>
+                <input type="email" name="email" value="{{ form.email or '' }}" required>
+            </label>
+            <label>
+                <span>Password (min 8 characters)</span>
+                <input type="password" name="password" minlength="8" required>
+            </label>
+            <label>
+                <span>Role</span>
+                <select name="role" required>
+                    <option value="student" {% if form.role != 'supervisor' %}selected{% endif %}>Student</option>
+                    <option value="supervisor" {% if form.role == 'supervisor' %}selected{% endif %}>Supervisor</option>
+                </select>
+            </label>
+            <button type="submit">Create Account</button>
+        </form>
+
+        <p class="auth-alt">Already registered? <a href="/login">Sign in</a></p>
+    </div>
+</div>
+
+</body>
+</html>

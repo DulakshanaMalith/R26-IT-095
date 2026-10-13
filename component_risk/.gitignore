@@ -1,0 +1,5 @@
+.venv/
+frontend/dist/
+frontend/node_modules/
+ipms-risk-app/__pycache__/
+ipms-risk-app/*.pyc

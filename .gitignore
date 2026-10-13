@@ -1,0 +1,49 @@
+__pycache__/
+*.pdf
+*.docx
+datasets/
+models/t5_wbs_final/
+component_scheduling/models/t5_wbs_final/model.safetensors
+component_scheduling/models/t5_wbs_parser/
+node_modules/
+*.db
+scratch_main.py
+diag_test.py
+component_team/intelligent-team-formation-and-topic-feasiblity-analyzis/backend-fastapi/models/feasibility_model.pkl
+
+# The research website is published from its own GitHub repository.
+research_project_website/
+research_project_website.rar
+
+# Local environments, secrets, caches, and generated bundles.
+**/.env
+**/.env.*
+!**/.env.example
+**/.venv/
+**/venv/
+**/dist/
+**/.runtime/
+**/.pytest_cache/
+.kilo/
+.qodo/
+*.log
+*.zip
+*.rar
+*.sqlite
+*.sqlite3
+component_scheduling/submissions/
+component_quality/backend/data/reports/
+
+# Archived team-formation prototype and benchmark downloads, not active runtime.
+component_team/component_team/intelligent-team-formation-and-topic-feasiblity-analyzis/backend-fastapi/legacy/prototype/
+
+# Local or regenerated records that may contain individual-level data.
+component_quality/backend/src/core/data/knowledge_graph_history.json
+component_quality/experiments/data/reviewer_eval_set.jsonl
+component_risk/data/data/combined_dataset.csv
+component_risk/data/data/combined_dataset.xlsx
+component_team/component_team/intelligent-team-formation-and-topic-feasiblity-analyzis/backend-fastapi/test_results/*runs.csv
+component_team/component_team/intelligent-team-formation-and-topic-feasiblity-analyzis/backend-fastapi/test_results/*runs.jsonl
+
+# Separate Git fixture repository; do not record a dangling gitlink here.
+component_scheduling/test_data_pack/progress_evidence_R26-IT-095/github_repo_R26-IT-095/

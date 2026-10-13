@@ -1,0 +1,14 @@
+pandas
+numpy
+matplotlib
+seaborn
+# The bundled model/scaler were trained and serialized with this version.
+scikit-learn==1.8.0
+joblib
+fastapi 
+uvicorn
+requests 
+jinja2
+python-multipart
+python-dotenv
+openpyxl

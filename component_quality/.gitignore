@@ -1,0 +1,98 @@
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+venv/
+*.local
+*.key
+*.pem
+*.p12
+*.pfx
+*credentials*
+*credential*
+.secrets
+.secrets.*
+secrets.*
+*.secret
+*.token
+
+# Frontend local environment
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+
+# Python generated files
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Node / Vite generated files
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/test-artifacts/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Logs and runtime output
+logs/
+*.log
+*.out.log
+*.err.log
+*.stderr.log
+*.stdout.log
+
+# Generated runtime reports/history
+reports/
+data/*.corrupted.json
+*.sqlite
+*.sqlite3
+*.db
+
+# Local nested/accidental clones
+automate/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Machine Learning Data & Models
+*.pdf
+*.tex
+*.pkl
+*.npz
+*.csv
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Machine Learning Data & Models
+*.pdf
+*.tex
+*.pkl
+*.npz
+*.csv
+training/data/raw/*
+!training/data/raw/.gitkeep
+training/data/processed/*
+!training/data/processed/.gitkeep
+training/models/*
+!training/models/.gitkeep
+backend/models/*
+!backend/models/.gitkeep
+
+# Scratch files and manual tests
+scratch*.py
+backend/scratch*.py
+test_*.json

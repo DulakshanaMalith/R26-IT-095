@@ -1,0 +1,53 @@
+flowchart TD
+    A([User Uploads Project\nProposal PDF]) --> B[PDF Text Extraction\npdfplumber / PyPDF2 / Raw Bytes]
+    B --> B1{Text\nExtracted?}
+    B1 -- No --> ERR([Error: Unreadable PDF])
+    B1 -- Yes --> C[Clean Text Ready]
+
+    C --> D[Auto-Detect Duration\nScan Gantt for M1...M10]
+    D --> D1{Month Markers\nFound?}
+    D1 -- Yes --> D2[Override duration\nwith detected months]
+    D1 -- No --> D3[Use user-provided\nduration input]
+
+    C --> E[5-Strategy WBS Task Extraction]
+
+    E --> S1[Strategy 1:\nWBS Table Section\nNumbered task rows]
+    S1 --> CHK1{tasks >= 4?}
+    CHK1 -- No --> S2[Strategy 2:\nGantt Chart Rows\nStrip M1-M10 ticks]
+    CHK1 -- Yes --> S3
+
+    S2 --> CHK2{tasks >= 4?}
+    CHK2 -- No --> S3
+    CHK2 -- Yes --> S3
+
+    S3[Strategy 3: Always Runs\nSpecific Objectives SO1 SO2\nStrip leading To prefix] --> CHK3{tasks >= 5?}
+    CHK3 -- No --> S4[Strategy 4:\nAction-Verb Heuristic\ndevelop implement design build]
+    CHK3 -- Yes --> VALID
+
+    S4 --> CHK4{tasks >= 5?}
+    CHK4 -- No --> S5[Strategy 5:\nT5 Zero-Shot NLP\nSummarize 300-word chunks]
+    CHK4 -- Yes --> VALID
+
+    S5 --> CHK5{tasks >= 4?}
+    CHK5 -- No --> FB[Research WBS\nTemplate Fallback\n10 standard FYP tasks]
+    CHK5 -- Yes --> VALID
+    FB --> VALID
+
+    VALID[is_valid_task filter\nRemove noise: References\nBudget Appendix etc.] --> TASKS([Task List Ready\nmax 12 tasks])
+
+    TASKS --> XGB[XGBoost Effort Estimation\nPredict total effort via\nFunction Points]
+    XGB --> DIST[Distribute effort per task\nusing FP weight array]
+    DIST --> EFFORTS([effort_hours per task])
+
+    EFFORTS --> LR[Logistic Regression\nDelay Risk Prediction\nNASA metric proxy mapping]
+    LR --> BLEND[Blend JIRA probability\nwith Capacity sigmoid risk]
+    BLEND --> RISKS([risk_pct and status\nper task])
+
+    EFFORTS --> GANTT[Build Gantt Schedule\nAssign start and end dates\nsequentially]
+    RISKS --> GANTT
+    GANTT --> DB1[(Save to SQLite DB\nschedule_versions)]
+    DB1 --> FRONT([Gantt Chart Displayed\nin Frontend])
+
+    FRONT --> BTN{User Clicks\nAuto-Balance\nWorkload?}
+    BTN -- Yes --> RF[Algorithm 6:\nML Workload Balancing\nRandom Forest + LPT + Fairness Guard]
+    RF --> BOARD([Task Assignment Board\nDisplayed with confidence scores])

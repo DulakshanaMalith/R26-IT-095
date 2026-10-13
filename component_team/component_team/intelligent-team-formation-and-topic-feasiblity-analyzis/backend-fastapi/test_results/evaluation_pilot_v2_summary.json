@@ -1,0 +1,37 @@
+{
+  "experiment": "Multi-Objective Team Formation Evaluation",
+  "output_prefix": "evaluation_pilot_v2",
+  "student_sizes": [
+    20
+  ],
+  "conflict_levels": [
+    "medium"
+  ],
+  "dataset_seeds": [
+    101
+  ],
+  "optimizer_seeds": [
+    1
+  ],
+  "population_size": 40,
+  "generations": 20,
+  "evaluation_budget": 800,
+  "methods": [
+    "Technical Greedy",
+    "Preference Greedy",
+    "Random Search",
+    "Weighted Single-Objective GA",
+    "Unseeded NSGA-II",
+    "Heuristic-Seeded NSGA-II"
+  ],
+  "dataset_count": 1,
+  "stochastic_method_count": 4,
+  "expected_record_count": 6,
+  "experiment_record_count": 6,
+  "all_loaded_record_count": 6,
+  "complete": true,
+  "total_runtime_seconds": 0.37902640004176646,
+  "jsonl_file": "test_results\\evaluation_pilot_v2_runs.jsonl",
+  "csv_file": "test_results\\evaluation_pilot_v2_runs.csv",
+  "summary_file": "test_results\\evaluation_pilot_v2_summary.json"
+}

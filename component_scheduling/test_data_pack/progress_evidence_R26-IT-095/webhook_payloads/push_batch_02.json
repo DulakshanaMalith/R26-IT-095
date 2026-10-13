@@ -1,0 +1,59 @@
+{
+  "ref": "refs/heads/main",
+  "repository": {
+    "full_name": "ModithaDilshan/test-repo"
+  },
+  "pusher": {
+    "name": "amaya-ui"
+  },
+  "commits": [
+    {
+      "id": "f6d55bca62b2d45c5ee40bf9ad67985973962dba",
+      "message": "[R26-IT-095-TASK-006] Prepare educational outcome prediction features",
+      "timestamp": "2026-06-22T09:15:00",
+      "author": {
+        "name": "dilan-dev",
+        "email": "dilan.dev@example.invalid",
+        "username": "dilan-dev"
+      },
+      "url": "https://github.com/ModithaDilshan/test-repo/commit/f6d55bca62b2d45c5ee40bf9ad67985973962dba"
+    },
+    {
+      "id": "25474c99f8371b24e38bbae28f527898693c9095",
+      "message": "[R26-IT-095-TASK-019] Build SBERT profiling service contract",
+      "timestamp": "2026-06-27T10:15:00",
+      "author": {
+        "name": "nethmi-ai",
+        "email": "nethmi.ai@example.invalid",
+        "username": "nethmi-ai"
+      },
+      "url": "https://github.com/ModithaDilshan/test-repo/commit/25474c99f8371b24e38bbae28f527898693c9095"
+    },
+    {
+      "id": "27f7df5b24439ba37f86f8d2004073ceea1756ab",
+      "message": "[R26-IT-095-TASK-020] Implement deterministic trade-off ranking",
+      "timestamp": "2026-07-02T11:15:00",
+      "author": {
+        "name": "kasun-ml",
+        "email": "kasun.ml@example.invalid",
+        "username": "kasun-ml"
+      },
+      "url": "https://github.com/ModithaDilshan/test-repo/commit/27f7df5b24439ba37f86f8d2004073ceea1756ab"
+    },
+    {
+      "id": "a5fee0643ca9abaa37bf5c9c61da69385ee146f8",
+      "message": "[R26-IT-095-TASK-021] Add XGBoost feasibility feature engineering",
+      "timestamp": "2026-07-07T12:15:00",
+      "author": {
+        "name": "amaya-ui",
+        "email": "amaya.ui@example.invalid",
+        "username": "amaya-ui"
+      },
+      "url": "https://github.com/ModithaDilshan/test-repo/commit/a5fee0643ca9abaa37bf5c9c61da69385ee146f8"
+    }
+  ],
+  "head_commit": {
+    "id": "a5fee0643ca9abaa37bf5c9c61da69385ee146f8",
+    "message": "[R26-IT-095-TASK-021] Add XGBoost feasibility feature engineering"
+  }
+}

@@ -1,0 +1,28 @@
+flowchart TD
+    A([Start: Auto-Balance\nWorkload Clicked]) --> B[Load Tasks and\nTeam Members]
+
+    subgraph SEP["Task Classification"]
+        B --> C{Is Task\nCollaborative?}
+        C -- Yes --> D[Assign to\nAll Members]
+        D --> E[Split Effort\nEqually Among Members]
+        C -- No --> F[Add to\nIndividual Task Pool]
+    end
+
+    E --> SORT[Sort Individual Tasks\nby Effort Hours Descending\nLongest Processing Time First]
+    F --> SORT
+
+    subgraph ML["Random Forest Assignment Loop"]
+        SORT --> H[Build 7-Feature Vector\nper Member]
+        H --> I[RF Model:\nPredict P_on_time\nfor Each Member]
+        I --> J[Select Member with\nHighest Probability]
+        J --> K{Overload Guard:\nW_best greater than\nW_min x 1.40?}
+        K -- Yes --> L[Override:\nAssign to\nLeast-Loaded Member]
+        K -- No --> M[Assign to\nRF-Selected Member]
+    end
+
+    L --> N[Update Member\nWorkload W_m]
+    M --> N
+    N --> O{More Individual\nTasks Remaining?}
+    O -- Yes --> H
+    O -- No --> P[Save All Assignments\nto Database]
+    P --> Q([End: Display\nTask Assignment Board])

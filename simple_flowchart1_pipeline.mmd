@@ -1,0 +1,32 @@
+flowchart TD
+    A([Start:\nUpload Project\nProposal PDF]) --> B
+
+    subgraph PDF["PDF Processing"]
+        B[Extract Text from PDF\npdfplumber / PyPDF2 / Raw Bytes]
+    end
+
+    B --> C
+
+    subgraph WBS["WBS Task Extraction - 5 Strategy Pipeline"]
+        C[Strategy 1: WBS Table Section]
+        C --> D[Strategy 2: Gantt Chart Rows]
+        D --> E[Strategy 3: Specific Objectives SO1 SO2]
+        E --> F[Strategy 4: Action-Verb Heuristic]
+        F --> G[Strategy 5: T5 Zero-Shot NLP]
+        G --> H{Enough Tasks\nExtracted?}
+        H -- No --> I[Research WBS\nTemplate Fallback]
+        H -- Yes --> J[Validate and Filter Tasks]
+        I --> J
+    end
+
+    J --> K
+
+    subgraph EST["Duration and Risk Estimation"]
+        K[XGBoost Model:\nEstimate Effort Hours per Task]
+        K --> L[Logistic Regression:\nPredict Delay Risk per Task]
+        L --> M[Auto-Detect Duration\nfrom Gantt Month Markers]
+    end
+
+    M --> N[Build Gantt Schedule\nAssign Dates Sequentially]
+    N --> O[(Save Schedule\nto Database)]
+    O --> P([End:\nDisplay Gantt Chart\nto User])
