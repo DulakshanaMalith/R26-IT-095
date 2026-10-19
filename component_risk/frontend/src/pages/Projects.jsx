@@ -3,7 +3,7 @@ import {
   ChevronRight, Download, FilePlus2, FileSpreadsheet, FolderGit2,
   LoaderCircle, TriangleAlert, Upload, Users
 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import Loader from "../components/Loader";
 import { createProject, getProjects, TEMPLATE_URL, uploadTeams } from "../api";
 
@@ -15,8 +15,16 @@ function riskTone(status) {
 }
 
 const EMPTY_FORM = { name: "", team_id: "", github_url: "", jira_project_key: "" };
+const ANALYTICS_LABELS = {
+  risk: "Risk Prediction",
+  contributions: "Contribution Index",
+  dashboard: "Dashboard"
+};
 
 export default function Projects({ user }) {
+  const [searchParams] = useSearchParams();
+  const selectedSection = searchParams.get("section");
+  const analyticsLabel = ANALYTICS_LABELS[selectedSection];
   const [projects, setProjects] = useState(null);
   const [error, setError] = useState("");
 
@@ -105,6 +113,11 @@ export default function Projects({ user }) {
 
   return (
     <main className="page">
+      {analyticsLabel && (
+        <div className="project-selection-hint" role="status">
+          Select a project to open its {analyticsLabel}.
+        </div>
+      )}
       {projects.length === 0 ? (
         <section className="card empty-card">
           <FolderGit2 size={34} />
@@ -118,7 +131,7 @@ export default function Projects({ user }) {
       ) : (
         <div className="project-grid">
           {projects.map((project) => (
-            <Link key={project.id} to={`/projects/${project.id}`} className="card project-card">
+            <Link key={project.id} to={`/projects/${project.id}${analyticsLabel ? `#${selectedSection}` : ""}`} className="card project-card">
               <div className="project-card-head">
                 <div>
                   <strong>{project.name}</strong>
