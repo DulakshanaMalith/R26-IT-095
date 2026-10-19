@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   ArrowLeft, Crown, ExternalLink, LoaderCircle, RefreshCw, TriangleAlert
 } from "lucide-react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import {
   Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis
 } from "recharts";
@@ -41,6 +41,7 @@ function ScoreRow({ name, value, sub, leader }) {
 
 export default function ProjectAnalytics() {
   const { projectId } = useParams();
+  const location = useLocation();
   const [detail, setDetail] = useState(null);
   const [analytics, setAnalytics] = useState(null);
   const [error, setError] = useState("");
@@ -77,6 +78,17 @@ export default function ProjectAnalytics() {
     timerRef.current = window.setInterval(() => loadAnalytics(false), REFRESH_SECONDS * 1000);
     return () => window.clearInterval(timerRef.current);
   }, [projectId, loadAnalytics]);
+
+  const analyticsReady = Boolean(analytics);
+  useEffect(() => {
+    if (!analyticsReady || !location.hash) return;
+    const section = location.hash.slice(1);
+    if (!["risk", "contributions", "dashboard"].includes(section)) return;
+    const frame = window.requestAnimationFrame(() => {
+      document.getElementById(section)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, [analyticsReady, location.hash, location.key]);
 
   const commitData = useMemo(() => {
     const weeks = analytics?.github?.weekly_activity || [];
@@ -146,25 +158,29 @@ export default function ProjectAnalytics() {
         </div>
       </div>
 
-      {analytics.risk_status && (
-        <div className={`risk-banner ${riskTone(analytics.risk_status)}`}>
-          <strong>{analytics.risk_status}</strong>
-          <span>ML prediction from live GitHub activity, Jira delivery data and team contribution scores.</span>
-        </div>
-      )}
+      <section id="risk" className="analysis-section" aria-label="Risk prediction">
+        {analytics.risk_status ? (
+          <div className={`risk-banner ${riskTone(analytics.risk_status)}`}>
+            <strong>{analytics.risk_status}</strong>
+            <span>ML prediction from live GitHub activity, Jira delivery data and team contribution scores.</span>
+          </div>
+        ) : (
+          <div className="risk-banner"><strong>Risk prediction unavailable</strong></div>
+        )}
 
-      {alerts.length > 0 && (
-        <div className="alert-stack">
-          {alerts.map((alert, index) => (
-            <div key={index} className={`alert-item ${alert.level}`}>
-              <span className="alert-dot" />
-              {alert.message}
-            </div>
-          ))}
-        </div>
-      )}
+        {alerts.length > 0 && (
+          <div className="alert-stack">
+            {alerts.map((alert, index) => (
+              <div key={index} className={`alert-item ${alert.level}`}>
+                <span className="alert-dot" />
+                {alert.message}
+              </div>
+            ))}
+          </div>
+        )}
+      </section>
 
-      <div className="metric-grid">
+      <div className="metric-grid" id="dashboard">
         <MetricCard label="Progress" value={`${delivery.progress_percentage}%`} />
         <MetricCard label="Task Completion" value={`${delivery.task_completion_rate}%`} />
         <MetricCard label="Overdue Tasks" value={delivery.overdue_tasks} tone={delivery.overdue_tasks > 0 ? "warn" : ""} />
@@ -225,7 +241,7 @@ export default function ProjectAnalytics() {
         </section>
       </div>
 
-      <div className="chart-row">
+      <div className="chart-row" id="contributions">
         <section className="card">
           <h3>Top Contributors <span className="muted">Contribution Index</span></h3>
           {members.length === 0 ? (

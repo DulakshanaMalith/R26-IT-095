@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
-import Sidebar from "./components/Sidebar";
 import Topbar from "./components/Topbar";
 import Loader from "./components/Loader";
 import Login from "./pages/Login";
@@ -58,9 +57,8 @@ export default function App() {
 
   return (
     <div className="app-shell">
-      <Sidebar user={user} onLogout={handleLogout} />
       <div className="app-content">
-        <Topbar user={user} />
+        <Topbar user={user} onLogout={handleLogout} />
         <Routes>
           <Route path="/projects" element={<Projects user={user} />} />
           <Route path="/projects/:projectId" element={<ProjectAnalytics user={user} />} />

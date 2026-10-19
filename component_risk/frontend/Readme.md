@@ -1,7 +1,7 @@
 # IPMS Risk — Frontend
 
 React + Vite frontend for the Predictive Risk Monitoring & Contribution Analytics component.
-Same design language as component_quality's frontend (indigo/cyan, dark sidebar, card layout).
+Uses the IPMS indigo/cyan visual style with a top navigation bar and card layout.
 
 ## Pages
 - **Login / Signup** — cookie-session auth against the FastAPI backend
@@ -9,6 +9,9 @@ Same design language as component_quality's frontend (indigo/cyan, dark sidebar,
 - **Project Analytics** — click a project: live ML risk prediction, alerts, KPI tiles,
   Jira task status, 52-week commit chart, Contribution Index rankings, Jira task scores,
   and the registered team members. Auto-refreshes every 60 s. No manual inputs.
+
+The top navigation opens the relevant section of Project Analytics. From My Projects,
+choose a project first; the app does not provide separate React pages for these sections.
 
 ## Run
 1. Start the backend (port 5000):
